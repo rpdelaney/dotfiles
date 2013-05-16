@@ -1,0 +1,55 @@
+! colors via: http://dotshare.it/dots/240/
+!*foreground:#cccccc
+!*background:#080808
+!!black
+!*color0:#282828
+!*color8:#363636
+!!red
+!*color1:#F35850
+!*color9:#FF756E
+!!green
+!*color2:#389E2F
+!*color10:#50B347
+!!yellow
+!*color3:#E3D172
+!*color11:#F0E9AB
+!!blue
+!*color4:#3A82A7
+!*color12:#4B95AD
+!!magenta
+!*color5:#EDC4C0
+!*color13:#E6DAD4
+!!cyan
+!*color6:#EA9A41
+!*color14:#D28142
+!!white
+!*color7:#FEFEFC
+!*color15:#FCEDE3
+
+!Background / Foreground
+*background: #202020
+*foreground: #ddccbb
+!Black / Light black
+*color0: #222222
+*color8: #666666
+!Red / Light red
+*color1:  #cc4747
+*color9:  #bf5858
+!Green / Light green
+*color2:  #a0cf5d
+*color10: #b8d68c
+!Yellow / Light yellow
+*color3:  #e0a524
+*color11: #edB85c
+!Blue / Light blue
+*color4:  #4194d9
+*color12: #60aae6
+!Purple / Light purple
+*color5:  #cc2f6e
+*color13: #db588c
+!Cyan / Light cyan
+*color6:  #6d878d
+*color14:  #42717b
+!White / Light white...?
+*color7:  #dedede
+*color15: #f2f2f2

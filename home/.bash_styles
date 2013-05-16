@@ -1,0 +1,138 @@
+# Below are the color init strings. A color init
+# string consists of one or more of the following numeric codes:
+#
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+
+# Variables for terminal requests.
+[[ -t 2 ]] && { 
+    alt=$(      tput smcup  || tput ti      ) # Start alt display
+    ealt=$(     tput rmcup  || tput te      ) # End   alt display
+    hide=$(     tput civis  || tput vi      ) # Hide cursor
+    show=$(     tput cnorm  || tput ve      ) # Show cursor
+    save=$(     tput sc                     ) # Save cursor
+    load=$(     tput rc                     ) # Load cursor
+    bold=$(     tput bold   || tput md      ) # Start bold
+    stout=$(    tput smso   || tput so      ) # Start stand-out
+    estout=$(   tput rmso   || tput se      ) # End stand-out
+    under=$(    tput smul   || tput us      ) # Start underline
+    eunder=$(   tput rmul   || tput ue      ) # End   underline
+    reset=$(    tput sgr0   || tput me      ) # Reset cursor
+    blink=$(    tput blink  || tput mb      ) # Start blinking
+    italic=$(   tput sitm   || tput ZH      ) # Start italic
+    eitalic=$(  tput ritm   || tput ZR      ) # End   italic
+[[ $TERM != *-m ]] && { 
+    red=$(      tput setaf 1|| tput AF 1    )
+    green=$(    tput setaf 2|| tput AF 2    )
+    yellow=$(   tput setaf 3|| tput AF 3    )
+    blue=$(     tput setaf 4|| tput AF 4    )
+    magenta=$(  tput setaf 5|| tput AF 5    )
+    cyan=$(     tput setaf 6|| tput AF 6    )
+}
+    white=$(    tput setaf 7|| tput AF 7    )
+    default=$(  tput op                     )                                                                                                                                                                   
+    eed=$(      tput ed     || tput cd      )   # Erase to end of display
+    eel=$(      tput el     || tput ce      )   # Erase to end of line
+    ebl=$(      tput el1    || tput cb      )   # Erase to beginning of line
+    ewl=$eel$ebl                                # Erase whole line
+    draw=$(     tput -S <<< '   enacs
+                                smacs
+                                acsc
+                                rmacs' || { \
+                tput eA; tput as;
+                tput ac; tput ae;         } )   # Drawing characters
+    back=$'\b'
+} 2>/dev/null ||:
+
+colorNONE="\[\033[0m\]"    # unsets color to term's fg color
+
+# Reset
+Color_Off='\e[0m'       # Text Reset
+
+# Regular Colors
+colorBlack='\e[0;30m'        # Black
+colorRed='\e[0;31m'          # Red
+colorGreen='\e[0;32m'        # Green
+colorYellow='\e[0;33m'       # Yellow
+colorBlue='\e[0;34m'         # Blue
+colorPurple='\e[0;35m'       # Purple
+colorCyan='\e[0;36m'         # Cyan
+colorWhite='\e[0;37m'        # White
+
+# Bold
+colorBBlack='\e[1;30m'       # Black
+colorBRed='\e[1;31m'         # Red
+colorBGreen='\e[1;32m'       # Green
+colorBYellow='\e[1;33m'      # Yellow
+colorBBlue='\e[1;34m'        # Blue
+colorBPurple='\e[1;35m'      # Purple
+colorBCyan='\e[1;36m'        # Cyan
+colorBWhite='\e[1;37m'       # White
+
+# Underline
+colorUBlack='\e[4;30m'       # Black
+colorURed='\e[4;31m'         # Red
+colorUGreen='\e[4;32m'       # Green
+colorUYellow='\e[4;33m'      # Yellow
+colorUBlue='\e[4;34m'        # Blue
+colorUPurple='\e[4;35m'      # Purple
+colorUCyan='\e[4;36m'        # Cyan
+colorUWhite='\e[4;37m'       # White
+
+# Background
+colorOn_Black='\e[40m'       # Black
+colorOn_Red='\e[41m'         # Red
+colorOn_Green='\e[42m'       # Green
+colorOn_Yellow='\e[43m'      # Yellow
+colorOn_Blue='\e[44m'        # Blue
+colorOn_Purple='\e[45m'      # Purple
+colorOn_Cyan='\e[46m'        # Cyan
+colorOn_White='\e[47m'       # White
+
+# High Intensty
+colorIBlack='\e[0;90m'       # Black
+colorIRed='\e[0;91m'         # Red
+colorIGreen='\e[0;92m'       # Green
+colorIYellow='\e[0;93m'      # Yellow
+colorIBlue='\e[0;94m'        # Blue
+colorIPurple='\e[0;95m'      # Purple
+colorICyan='\e[0;96m'        # Cyan
+colorIWhite='\e[0;97m'       # White
+
+# Bold High Intensty
+colorBIBlack='\e[1;90m'      # Black
+colorBIRed='\e[1;91m'        # Red
+colorBIGreen='\e[1;92m'      # Green
+colorBIYellow='\e[1;93m'     # Yellow
+colorBIBlue='\e[1;94m'       # Blue
+colorBIPurple='\e[1;95m'     # Purple
+colorBICyan='\e[1;96m'       # Cyan
+colorBIWhite='\e[1;97m'      # White
+
+# High Intensty backgrounds
+colorOn_IBlack='\e[0;100m'   # Black
+colorOn_IRed='\e[0;101m'     # Red
+colorOn_IGreen='\e[0;102m'   # Green
+colorOn_IYellow='\e[0;103m'  # Yellow
+colorOn_IBlue='\e[0;104m'    # Blue
+colorOn_IPurple='\e[10;95m'  # Purple
+colorOn_ICyan='\e[0;106m'    # Cyan
+colorOn_IWhite='\e[0;107m'   # White
+
+colorUser=$WE                       # user's color
+[ $UID -eq "0" ] && colorUser=$RD   # root's color
+
+#####################################################################
+
+# make manpages colorful
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'

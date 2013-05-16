@@ -1,0 +1,475 @@
+servers = (
+  {
+    address = "chat.freenode.net";
+    chatnet = "freenode";
+    port = "6697";
+    password = "causasui:***REMOVED***";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  freenode = {
+    type = "IRC";
+    nick = "causasui";
+    max_kicks = "1";
+    max_whois = "30";
+  };
+};
+
+channels = (
+  { name = "#mutt"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#irssi"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#postgresql"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#php"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#sql"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#python"; chatnet = "freenode"; autojoin = "yes"; },
+  {
+    name = "#wikipedia-en-admins";
+    chatnet = "freenode";
+    autojoin = "yes";
+    #wikipedia-en"; chatnet = "freenode"; autojoin = "yes"; },
+  },
+  { name = "##crypto"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#systemd"; chatnet = "freenode"; password = "-autojoin"; },
+  { name = "#fail2ban"; chatnet = "freenode"; password = "-autojoin"; },
+  { name = "##hardware"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xfce"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#byobu"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#vbox"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#django"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#django-cms"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#chromium-support";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "#regex"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#pulseaudio"; chatnet = "freenode"; autojoin = "yes"; },
+  {
+    name = "#wikipedia-en-revdel";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "##kernel"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#winehq"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##sed"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#postfix"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##rtorrent"; chatnet = "freenode"; autojoin = "yes"; }
+);
+
+logs = { };
+
+ignores = ( { level = "MODES JOINS PARTS QUITS NICKS"; } );
+
+settings = {
+  core = {
+    real_name = "causasui";
+    user_name = "causa sui";
+    nick = "causasui";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { 
+    theme = "zenburn.theme";
+    use_status_window = "yes";
+  };
+};
+statusbar = {
+  default = {
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_2 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_3 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_3 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_4 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_4 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_5 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_5 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_6 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_6 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+windows = {
+  1 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##linux";
+        tag = "freenode";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##kernel";
+        tag = "freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#archlinux";
+        tag = "freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#bash";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#regex";
+        tag = "freenode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##sed";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#xfce";
+        tag = "freenode";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pulseaudio";
+        tag = "freenode";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#vim";
+        tag = "freenode";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#git";
+        tag = "freenode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#postfix";
+        tag = "freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mutt";
+        tag = "freenode";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#irssi";
+        tag = "freenode";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##rtorrent";
+        tag = "freenode";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#byobu";
+        tag = "freenode";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#winehq";
+        tag = "freenode";
+      }
+    );
+  };
+  17 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#foobar2000";
+        tag = "freenode";
+      }
+    );
+  };
+  18 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#notepad++";
+        tag = "freenode";
+      }
+    );
+  };
+  19 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#chromium-support";
+        tag = "freenode";
+      }
+    );
+  };
+  20 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#vbox";
+        tag = "freenode";
+      }
+    );
+  };
+  21 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ahk";
+        tag = "freenode";
+      }
+    );
+  };
+  22 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#postgresql";
+        tag = "freenode";
+      }
+    );
+  };
+  23 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#sql";
+        tag = "freenode";
+      }
+    );
+  };
+  24 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#python";
+        tag = "freenode";
+      }
+    );
+  };
+  25 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#django";
+        tag = "freenode";
+      }
+    );
+  };
+  26 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#django-cms";
+        tag = "freenode";
+      }
+    );
+  };
+  27 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##crypto";
+        tag = "freenode";
+      }
+    );
+  };
+  28 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##hardware";
+        tag = "freenode";
+      }
+    );
+  };
+  29 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#dd-wrt";
+        tag = "freenode";
+      }
+    );
+  };
+  30 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##dd-wrt";
+        tag = "freenode";
+      }
+    );
+  };
+  31 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#wikipedia-en-admins";
+        tag = "freenode";
+      }
+    );
+  };
+  32 = { };
+  33 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#wikipedia-en-revdel";
+        tag = "freenode";
+      }
+    );
+  };
+  34 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##php";
+        tag = "freenode";
+      }
+    );
+  };
+};
+mainwindows = { 15 = { first_line = "1"; lines = "22"; }; };

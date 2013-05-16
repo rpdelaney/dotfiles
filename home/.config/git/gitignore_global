@@ -1,0 +1,73 @@
+#Global ignore for git
+
+# WHITELIST #
+#############
+#How-to: http://stackoverflow.com/questions/9162919/git-whitelisting-files-in-a-complex-directory-structure
+
+
+# Directories, paths, symlinks #
+################################
+#*/
+
+# Help files #
+##############
+*.help
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.bash_history
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# ssh, keys and etc #
+#####################
+*.ssh
+*.ssh/
+id_rsa
+id_rsa.*
+
+# svn               #
+#####################
+.svn/
+
+# git               #
+#####################
+*.git/
+
+# filezilla         #
+#####################
+sitemanager.xml
+recentservers.xml
+trustedcerts.xml
+bookmarks.xml

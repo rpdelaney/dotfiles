@@ -1,0 +1,52 @@
+#
+# /home/ryan/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Generated on Wed Mar 27 21:58:40 2013
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+ToolTips = Yes
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = Yes
+ShowQuitDialog = Yes
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
+mothership:0.0/CursorShadow=0
+mothership:0.0/CursorShadowAlpha=64
+mothership:0.0/CursorShadowRed=0
+mothership:0.0/CursorShadowGreen=0
+mothership:0.0/CursorShadowBlue=0
+mothership:0.0/CursorShadowXOffset=4
+mothership:0.0/CursorShadowYOffset=2
+mothership:0.0/SyncToVBlank=1
+mothership:0.0/LogAniso=0
+mothership:0.0/FSAA=0
+mothership:0.0/TextureSharpen=0
+mothership:0.0/TextureClamping=1
+mothership:0.0/FXAA=0
+mothership:0.0/AllowFlipping=1
+mothership:0.0/FSAAAppControlled=1
+mothership:0.0/LogAnisoAppControlled=1
+mothership:0.0/OpenGLImageSettings=1
+mothership:0.0/FSAAAppEnhanced=0
+mothership:0.0/DigitalVibrance[DFP-0]=0
+mothership:0.0/ColorSpace[DFP-0]=0
+mothership:0.0/ColorRange[DFP-0]=0
+mothership:0.0/XVideoSyncToDisplay=65536
+mothership:0[dpy:2]/RedBrightness=0.000000
+mothership:0[dpy:2]/GreenBrightness=0.000000
+mothership:0[dpy:2]/BlueBrightness=0.000000
+mothership:0[dpy:2]/RedContrast=0.000000
+mothership:0[dpy:2]/GreenContrast=0.000000
+mothership:0[dpy:2]/BlueContrast=0.000000
+mothership:0[dpy:2]/RedGamma=1.000000
+mothership:0[dpy:2]/GreenGamma=1.000000
+mothership:0[dpy:2]/BlueGamma=1.000000

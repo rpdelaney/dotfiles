@@ -1,0 +1,64 @@
+# do not bell on tab-completion
+#set bell-style none
+
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+
+# Match all files
+set match-hidden-files on
+
+# Expand homedir name
+set expand-tilde on
+
+# Append "/" to all dirnames
+set mark-directories on
+set mark-symlinked-directories on
+
+# show all if ambiguous
+set show-all-if-ambiguous on
+
+# but only if no completion is possible
+set show-all-if-unmodified on
+
+#ignore case when auto-completing
+set completion-ignore-case on
+
+#\C-y:"\M--\C-i"
+
+#binds
+TAB: menu-complete
+
+###################
+$if mode=emacs
+
+# for linux console and RH/Debian xterm
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[7~": beginning-of-line
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# for rxvt
+"\e[8~": end-of-line
+
+# for non RH/Debian xterm, can't hurt for RH/DEbian xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for freebsd console
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+$endif
+
+#Autocompletion magic from http://www.tikirobot.net/wp/2006/03/29/reverse-menu-complete-in-bash/
+#"\e[Z": "\e-1\C-i"

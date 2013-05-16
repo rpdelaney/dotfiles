@@ -1,0 +1,7 @@
+# all
+*
+
+# except
+!.gitignore
+!prefs.xml
+!status.xml

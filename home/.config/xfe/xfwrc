@@ -1,0 +1,61 @@
+[OPTIONS]
+height=883
+textnumberforeground=#9fafaf
+width=968
+textfont=DejaVu Sans Mono [unknown],140,normal,regular
+textselbackground=#8faf9f
+texthiliteforeground=#385f38
+stripreturn=0
+hidestatus=0
+textcursor=#8faf9f
+linesnum=1
+wordwrap=1
+wrapcols=80
+tabcols=8
+texthilitebackground=#f8f893
+textnumberbackground=Gray15
+searchpath=
+hidetoolbar=0
+textforeground=#dcdccc
+hilitematchtime=3000
+textbackground=#3f3f3f
+textselforeground=#000d18
+
+[SearchReplace]
+MA=0
+SA=<br>
+RA=
+
+[Recent Files]
+FILE6=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/e-xpc3.sfv
+FILE7=/mnt/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
+FILE4=/home/ryan/Desktop/New File
+FILE5=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
+FILE2=/home/ryan/vault/public/software/iso/TinyXP Platinum Edition 2/TinyXP.nfo
+FILE3=/mnt/vault/public/video/movies/A.Scanner.Darkly.2006.DVD5.720p.HDDVD.x264-REVEiLLE/reveille.nfo
+FILE10=/mnt/vault/Dropbox/games/autohotkey/code samples/spawn timer.txt
+FILE1=/home/ryan/SteamApps/Left 4 Dead 2 Beta/left4dead2/addons/readme.txt
+FILE8=/mnt/android/sdcard/Tasker/userbackup.xml
+FILE9=/mnt/vault/Dropbox/games/autohotkey/userDefineLang.xml
+
+[SETTINGS]
+activecolorpane=1
+tippause=500
+basecolor=#eeeeee
+tiptime=10000
+
+[FILEDIALOG]
+listmode=8388608
+type_size=100
+hiddenfiles=0
+thumbnails=0
+width=640
+attr_size=100
+user_size=50
+height=480
+ext_size=100
+grou_size=50
+modd_size=150
+name_size=200
+size_size=60
+

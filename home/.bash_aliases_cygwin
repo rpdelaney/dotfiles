@@ -1,0 +1,60 @@
+# Command aliases read in by .bashrc
+#
+# @author: Steve Corenflos
+# @created: Dec 18, 2007
+# @Modified by RPD Wed Aug 6 2008
+# Modified by RPD 2012-04-02, forked to make cygwin-specific
+
+#printing
+alias print="lpr"
+
+#apt-cyg
+alias apt-install="apt-cyg install"
+alias apt-uninstall="apt-cyg remove"
+alias apt-remove="apt-cyg remove"
+alias apt-update="apt-cyg update"
+alias apt-show="apt-cyg show"
+alias apt-find="apt-cyg find"
+alias apt-desc="apt-cyg describe"
+alias apt-describe="apt-cyg describe"
+alias apt-pkgof="apt-cyg packageof"
+
+#ghostscript
+alias gs='gs -sDEVICE=pngmono'
+
+# ack aliases
+#       ack is the new grep. to be filled in later
+
+# other
+alias find='find -L'
+alias cls='clear'
+alias ftk='echo "  PID  PGID   SID TTY  TIME CMD" && ps -e | grep'
+alias disk='df -lT --block-size=1048576'
+alias ps='ps -ef'
+
+# Some example alias instructions
+# If these are enabled they will be used instead of any instructions
+# they may mask.  For example, alias rm='rm -i' will mask the rm
+# application.  To override the alias instruction use a \ before, ie
+# \rm will call the real rm not the alias.
+#
+# Interactive operation...
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+#
+# Default to human readable figures
+# alias df='df -h'
+# alias du='du -h'
+#
+# Misc :)
+# alias less='less -r'                          # raw control characters
+# alias whence='type -a'                        # where, of a sort
+#
+# Some shortcuts for different directory listings
+# alias ls='ls -hF --color=tty'                 # classify files in colour
+# alias dir='ls --color=auto --format=vertical'
+# alias vdir='ls --color=auto --format=long'
+# alias ll='ls -l'                              # long list
+# alias la='ls -A'                              # all but . and ..
+# alias l='ls -CF'                              #
