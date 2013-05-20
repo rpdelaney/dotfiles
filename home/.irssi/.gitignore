@@ -1,0 +1,10 @@
+# ignore all
+*
+
+# except
+!.gitignore
+!config
+!default.theme
+!zenburn.theme
+!xchat.theme
+!scripts/*

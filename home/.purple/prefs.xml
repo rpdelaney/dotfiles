@@ -462,7 +462,7 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='93'/>
+				<pref name='width' type='int' value='98'/>
 				<pref name='height' type='int' value='27'/>
 			</pref>
 			<pref name='position'>

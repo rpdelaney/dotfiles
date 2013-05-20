@@ -1,24 +1,24 @@
 [OPTIONS]
-height=1000
 fileheight_pct=0.1
+thumbnails=1
 width=1920
 modd_size=150
-liststyle=33554432
 hiddenfiles=0
 showtoolbar=1
 filesshown=1
 grou_size=50
-thumbnails=1
-size_size=60
-name_size=200
+filterimgs=0
 type_size=100
 user_size=50
+fileview=66
 attr_size=100
 fitwin=1
 ext_size=100
-filterimgs=0
+size_size=60
 sort_func=ascendingCase
-fileview=66
+liststyle=33554432
+name_size=200
+height=1000
 
 [Recent Files]
 FILE6=/home/ryan/vault/incoming/downloads/irishlinc.com/New folder/2003-05-122_07-48_sheet4.jpg

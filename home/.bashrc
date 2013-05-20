@@ -5,6 +5,7 @@ source ~/.bash_private
 
 ##############################################################
 #   INITIALIZATION
+#
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
@@ -112,7 +113,7 @@ fi
 #set completion-ignore-case on
 #
 ##############################################################
-# FUNCTIONS
+u# FUNCTIONS
 #
 # Some people use a different file for functions
 
@@ -136,6 +137,9 @@ shopt -s nocaseglob
 
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
+
+# Use extended globbing
+#shopt -s extglob
 
 # When changing directory small typos can be ignored by bash
 # for example, cd /vr/lgo/apaache would find /var/log/apache
