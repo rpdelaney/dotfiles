@@ -113,7 +113,7 @@ fi
 #set completion-ignore-case on
 #
 ##############################################################
-u# FUNCTIONS
+# FUNCTIONS
 #
 # Some people use a different file for functions
 

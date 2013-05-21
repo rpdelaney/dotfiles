@@ -52,7 +52,8 @@ alias search='/usr/bin/grep --color=always -H --binary-files=text --directories=
 # pwd
 #
 alias ls='/usr/bin/ls --color=always --group-directories-first -h -L -o -p -X --time-style=+"%Y-%m-%d"'
-alias lsa='ls -H -a'
+alias la='ls -H -a'
+alias lsa='la'
 alias lss='ls | pager'
 alias lssa='lsa | pager'
 
@@ -62,7 +63,7 @@ alias dirs='dir | pager'
 # 
 # pager
 # 
-alias pager='/usr/bin/less -R -X'       #Maybe I'll remember to use this in other aliases. probably not
+#alias pager='/usr/bin/less -R -X'      #now in /usr/bin
 alias more='pager'                      #Less is more
 
 #
@@ -83,7 +84,8 @@ ch() {
                 echo "cd: directory "$red$bold$1$reset" not found."
         fi }           #change directory 
 
-alias whereami="namei '$(pwd)' -x -m | sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | sed -r 's@^\s(\s*)D@'$bold$yellow'\1Mn'$reset'@' | sed -r 's@^\s(\s*)l@'$bold$cyan'\1Ln'$reset'@'"
+# not working
+# alias whereami='namei "$(pwd)" -x -m | sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | sed -r 's@^\s(\s*)D@'$bold$yellow'\1Mn'$reset'@' | sed -r 's@^\s(\s*)l@'$bold$cyan'\1Ln'$reset'@'
 
 
 # 

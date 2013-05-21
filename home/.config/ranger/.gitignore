@@ -1,2 +1,8 @@
-history
-bookmarks
+# ignore all
+*
+
+# except
+!.gitignore
+!rc.conf
+!commands.py
+!scope.sh

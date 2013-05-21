@@ -7,6 +7,7 @@
    email = ryan.delaney@gmail.com
 [core]
    excludesfile = /home/ryan/.config/git/gitignore_global
+   pager = pager
 [push]
    default = simple
 [branch]
@@ -14,6 +15,7 @@
    # actually, don't. because that's dumb
    # autosetuprebase = always
 [diff]
+   external = gitdiff
    renames = copies
    mnemonicprefix = true
 [alias]

@@ -14,7 +14,7 @@ set expand-tilde on
 
 # Append "/" to all dirnames
 set mark-directories on
-set mark-symlinked-directories on
+set mark-symlinked-directories off
 
 # show all if ambiguous
 set show-all-if-ambiguous on
@@ -24,8 +24,6 @@ set show-all-if-unmodified on
 
 #ignore case when auto-completing
 set completion-ignore-case on
-
-#\C-y:"\M--\C-i"
 
 #binds
 TAB: menu-complete
@@ -59,6 +57,3 @@ $if mode=emacs
 "\e[H": beginning-of-line
 "\e[F": end-of-line
 $endif
-
-#Autocompletion magic from http://www.tikirobot.net/wp/2006/03/29/reverse-menu-complete-in-bash/
-#"\e[Z": "\e-1\C-i"
