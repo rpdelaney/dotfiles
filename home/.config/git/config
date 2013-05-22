@@ -8,6 +8,7 @@
 [core]
    excludesfile = /home/ryan/.config/git/gitignore_global
    pager = pager
+   whitespace=tab-in-indent
 [push]
    default = simple
 [branch]

@@ -1,18 +1,18 @@
 [OPTIONS]
+height=993
 toolstoolbar=1
-panel_view=2
-width=1920
-confirm_drag_and_drop=0
-use_startup_notification=1
 treetwopanels_tree_pct=0.2
+panel_view=0
+width=1920
+use_startup_notification=1
+preserve_date_warn=1
 confirm_delete=1
 use_sudo=0
 use_trash_can=0
 auto_save_layout=1
 use_trash_bypass=0
-preserve_date_warn=1
 mount_warn=1
-treepanel_tree_pct=0.2634445200816882
+treepanel_tree_pct=0.2635416666666667
 confirm_overwrite=1
 paneltoolbar=1
 confirm_delete_emptydir=1
@@ -21,14 +21,14 @@ ask_before_copy=0
 mount_messages=1
 confirm_execute=1
 locationbar=1
-twopanels_lpanel_pct=0.3447916666666667
+twopanels_lpanel_pct=0.05208333333333334
 root_warn=0
 confirm_trash=1
 treetwopanels_lpanel_pct=0.4
 status=1
 root_mode=1
 generaltoolbar=1
-height=993
+confirm_drag_and_drop=0
 
 [HISTORY]
 open=/usr/bin/viewnior:/usr/bin/xfw:/usr/bin/evince:/usr/bin/zathura:/usr/bin/gvim:/usr/bin/smplayer:/usr/bin/xfi:/usr/bin/vlc:
@@ -115,8 +115,8 @@ deldate_size=150
 origpath_size=200
 liststyle=0
 attr_size=131
+size_size=78
 user_size=65
-hiddenfiles=0
 dirs_first=1
 ext_size=131
 grou_size=65
@@ -125,7 +125,7 @@ ignore_case=1
 sort_func=ascendingCase
 showthumbnails=0
 name_size=671
-size_size=78
+hiddenfiles=0
 
 [PROGS]
 archiver=7zFM
@@ -141,17 +141,17 @@ deldate_size=150
 origpath_size=200
 liststyle=0
 attr_size=238
+size_size=234
 user_size=122
-hiddenfiles=0
 dirs_first=1
 ext_size=238
 grou_size=122
 modd_size=363
 ignore_case=1
-sort_func=ascendingCase
+sort_func=ascendingType
 showthumbnails=1
 name_size=684
-size_size=234
+hiddenfiles=0
 
 [SETTINGS]
 listforecolor=Black
@@ -165,12 +165,12 @@ relative_resize=1
 font=DejaVu Sans [unknown],120,normal,regular
 listbackcolor=Gray100
 shadowcolor=Gray65
-file_tooltips=1
 tippause=500
 scrollbarcolor=#eeeeee
 forecolor=Black
 basecolor=#eeeeee
 time_format=%x %X
+show_pathlinker=1
 selbackcolor=#637792
 wheellines=5
 smooth_scroll=0
@@ -181,7 +181,7 @@ tiptime=10000
 selforecolor=Gray100
 pbarcolor=#637792
 save_win_pos=0
-show_pathlinker=1
+file_tooltips=1
 
 [FILETYPES]
 ogm=mplayer,mplayer,;OggMedia Video;video_32x32.png;video_16x16.png;;

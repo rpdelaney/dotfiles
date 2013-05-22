@@ -67,7 +67,12 @@ channels = (
   { name = "#winehq"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##sed"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#postfix"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##rtorrent"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##rtorrent"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#archlinux-newbie";
+    chatnet = "freenode";
+    autojoin = "yes";
+  }
 );
 
 logs = { };
@@ -154,7 +159,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#bash";
+        name = "#archlinux-newbie";
         tag = "freenode";
       }
     );
@@ -164,7 +169,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#regex";
+        name = "#bash";
         tag = "freenode";
       }
     );
@@ -174,7 +179,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##sed";
+        name = "#regex";
         tag = "freenode";
       }
     );
@@ -184,7 +189,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#xfce";
+        name = "##sed";
         tag = "freenode";
       }
     );
@@ -194,7 +199,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#pulseaudio";
+        name = "#xfce";
         tag = "freenode";
       }
     );
@@ -204,7 +209,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#vim";
+        name = "#pulseaudio";
         tag = "freenode";
       }
     );
@@ -214,7 +219,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#git";
+        name = "#vim";
         tag = "freenode";
       }
     );
@@ -224,7 +229,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#postfix";
+        name = "#git";
         tag = "freenode";
       }
     );
@@ -234,7 +239,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#mutt";
+        name = "#postfix";
         tag = "freenode";
       }
     );
@@ -244,7 +249,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#irssi";
+        name = "#mutt";
         tag = "freenode";
       }
     );
@@ -254,7 +259,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##rtorrent";
+        name = "#irssi";
         tag = "freenode";
       }
     );
@@ -264,7 +269,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#byobu";
+        name = "##rtorrent";
         tag = "freenode";
       }
     );
@@ -274,7 +279,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#winehq";
+        name = "#byobu";
         tag = "freenode";
       }
     );
@@ -284,7 +289,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#foobar2000";
+        name = "#winehq";
         tag = "freenode";
       }
     );
@@ -294,7 +299,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#notepad++";
+        name = "#foobar2000";
         tag = "freenode";
       }
     );
@@ -304,7 +309,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#chromium-support";
+        name = "#notepad++";
         tag = "freenode";
       }
     );
@@ -314,7 +319,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#vbox";
+        name = "#chromium-support";
         tag = "freenode";
       }
     );
@@ -324,7 +329,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#ahk";
+        name = "#vbox";
         tag = "freenode";
       }
     );
@@ -334,7 +339,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#postgresql";
+        name = "#ahk";
         tag = "freenode";
       }
     );
@@ -344,7 +349,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#sql";
+        name = "#postgresql";
         tag = "freenode";
       }
     );
@@ -354,7 +359,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#python";
+        name = "#sql";
         tag = "freenode";
       }
     );
@@ -364,7 +369,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#django";
+        name = "#python";
         tag = "freenode";
       }
     );
@@ -374,7 +379,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#django-cms";
+        name = "#django";
         tag = "freenode";
       }
     );
@@ -384,7 +389,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##crypto";
+        name = "#django-cms";
         tag = "freenode";
       }
     );
@@ -394,7 +399,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##hardware";
+        name = "##crypto";
         tag = "freenode";
       }
     );
@@ -404,7 +409,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#dd-wrt";
+        name = "##hardware";
         tag = "freenode";
       }
     );
@@ -414,7 +419,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##dd-wrt";
+        name = "#dd-wrt";
         tag = "freenode";
       }
     );
@@ -424,13 +429,23 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
+        name = "##dd-wrt";
+        tag = "freenode";
+      }
+    );
+  };
+  32 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
         name = "#wikipedia-en-admins";
         tag = "freenode";
       }
     );
   };
-  32 = { };
-  33 = {
+  33 = { };
+  34 = {
     items = (
       {
         type = "CHANNEL";
@@ -440,7 +455,7 @@ windows = {
       }
     );
   };
-  34 = {
+  35 = {
     items = (
       {
         type = "CHANNEL";
@@ -450,5 +465,6 @@ windows = {
       }
     );
   };
+  36 = { };
 };
-mainwindows = { 15 = { first_line = "1"; lines = "22"; }; };
+mainwindows = { 4 = { first_line = "1"; lines = "26"; }; };
