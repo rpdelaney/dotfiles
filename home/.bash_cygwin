@@ -1,0 +1,8 @@
+#
+# Additional configuration options for when running in cygwin
+# 
+
+if echo "$(uname -o)" == "Cygwin"; then
+	echo "This is Cygwin!"
+fi
+
