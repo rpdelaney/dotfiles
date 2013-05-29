@@ -3,12 +3,12 @@
 # uncomment the options you wish to enable.
 
 # Maximum and minimum number of peers to connect to per torrent.
-#min_peers = 40
-#max_peers = 100
+min_peers = 5
+max_peers = 35
 
 # Same as above but for seeding completed torrents (-1 = same as downloading)
-#min_peers_seed = 10
-#max_peers_seed = 50
+min_peers_seed = 10
+max_peers_seed = 50
 
 # Maximum number of simultanious uploads per torrent.
 max_uploads = 15
@@ -18,7 +18,7 @@ download_rate = 850
 upload_rate = 100
 
 # Default directory to save the downloaded torrents.
-directory = /mnt/vault/incoming
+directory = /media/vault/unsorted
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
