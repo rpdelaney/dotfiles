@@ -3,6 +3,14 @@
 # 
 
 if echo "$(uname -o)" == "Cygwin"; then
-	echo "This is Cygwin!"
+	
+	#include path for postgresql windows binaries
+	PATH="${PATH}:${HOME}/pgsql/bin/"
+	
+	#function to copy files to mothership
+	#cphome() { scp $1 ryan@ryanpd.me:/media/vault/incoming/cygwin/ -P 22222 }
+	cphome() { rsync -rEAthztAXog --safe-links --progress --append $1 mothership:/media/vault/incoming/cygwin/ ; }
+	#function to move files to mothership
+	#mvhome() { scp $1 ryan@ryanpd.me:/home/ryan/ -P 22222 }
 fi
 
