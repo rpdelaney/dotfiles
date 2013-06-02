@@ -125,6 +125,7 @@ fi
 # SHELL OPTIONS
 #
 # See man bash for more options...
+#
 
 # Don't wait for job termination notification
 # set -o notify
@@ -159,3 +160,13 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:'
 # umask 077
 
 
+###################################################################
+#
+# cygwin
+#
+# additional configuration options for when running in cygwin
+# 
+
+if [ -f "${HOME}/.bash_cygwin" ]; then
+  source "${HOME}/.bash_cygwin"
+fi

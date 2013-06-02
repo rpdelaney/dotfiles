@@ -31,6 +31,11 @@ alias disk='df -lT --block-size=1048576'
 #
 alias top='htop'
 
+#  
+# pgsql is dumb and annoying
+# 
+alias pgsql='psql'
+
 #
 # best pastebin evar
 #
