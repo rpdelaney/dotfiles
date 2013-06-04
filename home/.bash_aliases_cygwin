@@ -28,9 +28,6 @@ alias gs='gs -sDEVICE=pngmono'
 # other
 alias find='find -L'
 alias cls='clear'
-alias ftk='echo "  PID  PGID   SID TTY  TIME CMD" && ps -e | grep'
-alias disk='df -lT --block-size=1048576'
-alias ps='ps -ef'
 
 # Some example alias instructions
 # If these are enabled they will be used instead of any instructions
