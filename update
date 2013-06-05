@@ -1,4 +1,4 @@
 git add .
-git commit -m "update"
+git commit -m "$(curl http://whatthecommit.com/index.txt)"
 git pull
 git push
