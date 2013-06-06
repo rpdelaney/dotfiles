@@ -1,5 +1,3 @@
-function parse_git_branch { ref=$(git-symbolic-ref HEAD 2> /dev/null) || return echo "("${ref#refs/heads/}")"; }
-
 function parse_git_dirty { [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo '#'; }
 
 function parse_git_branch { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"; }
@@ -13,8 +11,8 @@ case "$1" in
     ;;
     
 2)  #experimental
-    PS1="[$(ps aux | wc -l) proc]\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u@\h: \`if [[ `""pwd""|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\\n$\[\033[0m\] "; echo -ne "\033]0;`hostname`:""`pwd`""\007"
-    ps aux | wc -l
+    PS1="[$(ps aux | wc -l) proc]\$(parse_git_branch)\`if [[ \$? = "0" ]]; then echo "\\[\\033[34m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u@\h: \`if [[ `""pwd""|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\\n$\[\033[0m\] "; echo -ne "\033]0;`hostname`:""`pwd`""\007"
+    #ps aux | wc -l
     ;;
 
 *)  #the way this thing obtains the pwd gets confused by spaces and parens
