@@ -20,14 +20,11 @@ chatnets = {
 };
 
 channels = (
-  { name = "#mutt"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#irssi"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#postgresql"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#php"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#sql"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#python"; chatnet = "freenode"; autojoin = "yes"; },
   {
     name = "#wikipedia-en-admins";
     chatnet = "freenode";
@@ -46,25 +43,19 @@ channels = (
   { name = "#vbox"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#django"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#django-cms"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
   { 
     name = "#chromium-support";
     chatnet = "freenode";
     autojoin = "yes";
   },
   { name = "#regex"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#pulseaudio"; chatnet = "freenode"; autojoin = "yes"; },
   {
     name = "#wikipedia-en-revdel";
     chatnet = "freenode";
     autojoin = "yes";
   },
-  { name = "##kernel"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#winehq"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##sed"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#postfix"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##rtorrent"; chatnet = "freenode"; autojoin = "yes"; },
@@ -73,7 +64,8 @@ channels = (
     chatnet = "freenode";
     autojoin = "yes";
   },
-  { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 logs = { };
@@ -119,20 +111,6 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_3 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_4 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_4 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_5 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_5 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };

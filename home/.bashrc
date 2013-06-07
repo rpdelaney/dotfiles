@@ -170,3 +170,5 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:'
 if [ -f "${HOME}/.bash_cygwin" ]; then
   source "${HOME}/.bash_cygwin"
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

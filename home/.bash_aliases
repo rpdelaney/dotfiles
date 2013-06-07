@@ -80,18 +80,25 @@ alias ....='ch ../..'
 
 ch() { 
         if [ -d "$1" ]; then 
-                builtin cd "$1"
-                ls
+                new_dir=$1
         elif [ -d ."$1" ]; then
-                builtin cd ."$1"
-                ls
+                new_dir="."$1
         else
                 echo "cd: directory "$red$bold$1$reset" not found."
-        fi }           #change directory 
+        fi 
+
+        builtin cd $new_dir
+        git_branch=$(git branch)
+        ls
+}
 
 # not working
-# alias whereami='namei "$(pwd)" -x -m | sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | sed -r 's@^\s(\s*)D@'$bold$yellow'\1Mn'$reset'@' | sed -r 's@^\s(\s*)l@'$bold$cyan'\1Ln'$reset'@'
-
+whereami() { 
+        namei "$PWD" -x -m | \
+        sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | \
+        sed -r 's@^\s(\s*)D@'$bold$yellow'\1Mn'$reset'@' | \
+        sed -r 's@^\s(\s*)l@'$bold$cyan'\1Ln'$reset'@'
+}
 
 # 
 # safety valve
