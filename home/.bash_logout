@@ -20,4 +20,5 @@
 # when leaving the console clear the screen to increase privacy
 if [ "$SHLVL" = 1 ]; then
   [ -x /usr/bin/clear ] && /usr/bin/clear
+  [ -x /usr/bin/reset ] && /usr/bin/reset
 fi
