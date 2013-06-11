@@ -1,5 +1,6 @@
 set -x
 git add .
+git status
 git commit -m "$(curl http://whatthecommit.com/index.txt)"
 git pull
 git push
