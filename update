@@ -1,3 +1,4 @@
+set -x
 git add .
 git commit -m "$(curl http://whatthecommit.com/index.txt)"
 git pull
