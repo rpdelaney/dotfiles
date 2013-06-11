@@ -92,15 +92,19 @@ ch() {
         elif [ "$1" == '-' ]; then
             new_dir="-"
         else
-                echo "cd: directory "$red$bold$1$reset" not found."
+            error_msg="cd: directory "$red$bold$1$reset" not found."
         fi 
         
-        builtin cd $new_dir
-        ls
-        git_branch=$(parse_git_branch)
+        if [ "$error_msg" ]; then
+            echo $error_msg
+        else
+            builtin cd $new_dir
+            timeout 3 git_branch=$(parse_git_branch)
+            ls
+        fi
 }
 
-# not working
+# where the heck am I
 whereami() { 
         namei "$PWD" -x -m | \
         sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | \
@@ -144,7 +148,7 @@ alias traceroute='mtr'                                                          
 alias tracert='traceroute'
 
 # shredder
-alias shred='shred -fu'
+alias shred=' shred -vfu'
 
 # youtube-dl
 alias youget='youtube-dl -t -c -w --write-info-json --write-description -x -k --'
