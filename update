@@ -1,4 +1,13 @@
-set -x
+# 
+# don't type passwords a bunch of times. we are lazy.
+# 
+if $(ssh-add -L) == "The agent has no identities."; then
+        ssh-add ${HOME}/.ssh/identity
+fi
+
+# 
+# now that we have ssh kanged up, upload our crap
+# 
 git add .
 git status
 git commit -m "$(curl http://whatthecommit.com/index.txt)"
