@@ -1,7 +1,8 @@
 # 
 # don't type passwords a bunch of times. we are lazy.
 # 
-if $(ssh-add -L) == "The agent has no identities."; then
+if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
+        echo "No ssh identity found in ssh-agent. Adding..."
         ssh-add ${HOME}/.ssh/identity
 fi
 
