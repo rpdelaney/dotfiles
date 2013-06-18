@@ -28,7 +28,7 @@ treetwopanels_lpanel_pct=0.4
 status=1
 root_mode=1
 generaltoolbar=1
-height=983
+height=1053
 
 [HISTORY]
 open=/usr/bin/viewnior:/usr/bin/xfw:/usr/bin/evince:/usr/bin/zathura:/usr/bin/gvim:/usr/bin/smplayer:/usr/bin/xfi:/usr/bin/vlc:
@@ -148,7 +148,7 @@ ext_size=237
 grou_size=121
 modd_size=361
 ignore_case=1
-sort_func=descendingCase
+sort_func=ascendingCase
 showthumbnails=1
 name_size=680
 size_size=233

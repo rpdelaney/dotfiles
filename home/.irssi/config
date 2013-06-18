@@ -34,15 +34,11 @@ channels = (
   { name = "##crypto"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#systemd"; chatnet = "freenode"; password = "-autojoin"; },
   { name = "#fail2ban"; chatnet = "freenode"; password = "-autojoin"; },
-  { name = "##hardware"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#xfce"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#byobu"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vbox"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#django"; chatnet = "freenode"; autojoin = "yes"; },
   { 
     name = "#chromium-support";
     chatnet = "freenode";
@@ -104,13 +100,6 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_2 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_3 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_3 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };

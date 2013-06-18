@@ -97,6 +97,7 @@ ch() {
         
         if [ "$error_msg" ]; then
             echo $error_msg
+            unset error_msg
         else
             builtin cd $new_dir
             timeout 3 git_branch=$(parse_git_branch)

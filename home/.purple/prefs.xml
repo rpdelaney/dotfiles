@@ -463,10 +463,10 @@
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
 				<pref name='width' type='int' value='103'/>
-				<pref name='height' type='int' value='31'/>
+				<pref name='height' type='int' value='23'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='39'/>
+				<pref name='x' type='int' value='9'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='chats'>
@@ -487,7 +487,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='27'/>
+				<pref name='height' type='int' value='19'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
