@@ -1,0 +1,29 @@
+--- 
+- !masanjin.net,2006-10-01/Redwood/Maildir 
+  uri: maildir:/var/spool/mail/ryan
+  usual: true
+  archived: false
+  id: 1
+  labels: []
+
+- !masanjin.net,2006-10-01/Redwood/Maildir 
+  uri: maildir:/media/vault/mail/ryan.delaney@gmail.com
+  usual: true
+  archived: false
+  id: 2
+  labels: []
+
+- !masanjin.net,2006-10-01/Redwood/Maildir 
+  uri: maildir:/media/vault/mail/ryan@sierrautility.net
+  usual: true
+  archived: false
+  id: 3
+  labels: 
+  - SUSI
+- !masanjin.net,2006-10-01/Redwood/Maildir 
+  uri: maildir:/media/vault/mail/ryanatsierra@gmail.com
+  usual: true
+  archived: false
+  id: 4
+  labels: 
+  - SUSI

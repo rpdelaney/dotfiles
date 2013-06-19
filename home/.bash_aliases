@@ -100,7 +100,7 @@ ch() {
             unset error_msg
         else
             builtin cd $new_dir
-            timeout 3 git_branch=$(parse_git_branch)
+            timeout 3 git_branch=$(parse_git_branch 2>> /dev/null) 2>> /dev/null
             ls
         fi
 }

@@ -196,6 +196,11 @@ jobscount(){
     fi
 }
 
+# 
+# search commandlinefu from commandline
+# 
+cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
+
 #
 # smile for the exit status :)
 #

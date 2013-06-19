@@ -37,7 +37,6 @@ channels = (
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#vbox"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
   { 
     name = "#chromium-support";
@@ -61,7 +60,8 @@ channels = (
     autojoin = "yes";
   },
   { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xda-devs"; chatnet = "freenode"; }
 );
 
 logs = { };
@@ -121,7 +121,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##kernel";
+        name = "#archlinux";
         tag = "freenode";
       }
     );
@@ -131,7 +131,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#archlinux";
+        name = "#archlinux-newbie";
         tag = "freenode";
       }
     );
@@ -141,7 +141,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#archlinux-newbie";
+        name = "#bash";
         tag = "freenode";
       }
     );
@@ -151,7 +151,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#bash";
+        name = "#regex";
         tag = "freenode";
       }
     );
@@ -161,52 +161,14 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#regex";
-        tag = "freenode";
-      }
-    );
-  };
-  7 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
         name = "##sed";
         tag = "freenode";
       }
     );
   };
-  8 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#xfce";
-        tag = "freenode";
-      }
-    );
-  };
+  7 = { };
+  8 = { };
   9 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#pulseaudio";
-        tag = "freenode";
-      }
-    );
-  };
-  10 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#vim";
-        tag = "freenode";
-      }
-    );
-  };
-  11 = {
     items = (
       {
         type = "CHANNEL";
@@ -216,7 +178,7 @@ windows = {
       }
     );
   };
-  12 = {
+  10 = {
     items = (
       {
         type = "CHANNEL";
@@ -226,17 +188,8 @@ windows = {
       }
     );
   };
-  13 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mutt";
-        tag = "freenode";
-      }
-    );
-  };
-  14 = {
+  11 = { };
+  12 = {
     items = (
       {
         type = "CHANNEL";
@@ -246,7 +199,7 @@ windows = {
       }
     );
   };
-  15 = {
+  13 = {
     items = (
       {
         type = "CHANNEL";
@@ -256,7 +209,7 @@ windows = {
       }
     );
   };
-  16 = {
+  14 = {
     items = (
       {
         type = "CHANNEL";
@@ -266,27 +219,7 @@ windows = {
       }
     );
   };
-  17 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#byobu";
-        tag = "freenode";
-      }
-    );
-  };
-  18 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#winehq";
-        tag = "freenode";
-      }
-    );
-  };
-  19 = {
+  15 = {
     items = (
       {
         type = "CHANNEL";
@@ -296,7 +229,7 @@ windows = {
       }
     );
   };
-  20 = {
+  16 = {
     items = (
       {
         type = "CHANNEL";
@@ -306,7 +239,7 @@ windows = {
       }
     );
   };
-  21 = {
+  17 = {
     items = (
       {
         type = "CHANNEL";
@@ -316,17 +249,7 @@ windows = {
       }
     );
   };
-  22 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#vbox";
-        tag = "freenode";
-      }
-    );
-  };
-  23 = {
+  18 = {
     items = (
       {
         type = "CHANNEL";
@@ -336,7 +259,7 @@ windows = {
       }
     );
   };
-  24 = {
+  19 = {
     items = (
       {
         type = "CHANNEL";
@@ -346,47 +269,9 @@ windows = {
       }
     );
   };
-  25 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#sql";
-        tag = "freenode";
-      }
-    );
-  };
-  26 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#python";
-        tag = "freenode";
-      }
-    );
-  };
-  27 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#django";
-        tag = "freenode";
-      }
-    );
-  };
-  28 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#django-cms";
-        tag = "freenode";
-      }
-    );
-  };
-  29 = {
+  20 = { };
+  21 = { };
+  22 = {
     items = (
       {
         type = "CHANNEL";
@@ -396,27 +281,7 @@ windows = {
       }
     );
   };
-  30 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##hardware";
-        tag = "freenode";
-      }
-    );
-  };
-  31 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#dd-wrt";
-        tag = "freenode";
-      }
-    );
-  };
-  32 = {
+  23 = {
     items = (
       {
         type = "CHANNEL";
@@ -426,7 +291,7 @@ windows = {
       }
     );
   };
-  33 = {
+  24 = {
     items = (
       {
         type = "CHANNEL";
@@ -436,8 +301,7 @@ windows = {
       }
     );
   };
-  34 = { };
-  35 = {
+  25 = {
     items = (
       {
         type = "CHANNEL";
@@ -447,17 +311,25 @@ windows = {
       }
     );
   };
-  36 = {
+  26 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "##php";
+        name = "#sup";
         tag = "freenode";
       }
     );
   };
-  37 = { };
-  38 = { };
+  27 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#xda-devs";
+        tag = "freenode";
+      }
+    );
+  };
 };
-mainwindows = { 15 = { first_line = "1"; lines = "25"; }; };
+mainwindows = { 27 = { first_line = "1"; lines = "25"; }; };

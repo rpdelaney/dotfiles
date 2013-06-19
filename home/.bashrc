@@ -17,7 +17,11 @@ source ~/.bash_private
 
 EDITOR=nano
 VISUAL=nano
-PATH="${PATH}:${HOME}/bin"
+
+#
+# Add ~/bin and all subdirectories recursively to $PATH
+#
+PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
 
 ##############################################################
 #   HISTORY
@@ -74,6 +78,13 @@ if [ "$TERM" = "linux" ]; then
     clear                  #for background artifacting
 fi
 
+# 
+# If we're running in screen then use colors anyway
+#
+if [ "$TERM" = "screen-bce" ]; then
+    TERM="screen-256color-bce"
+fi
+
 ##############################################################
 #   PROMPT
 
@@ -115,7 +126,6 @@ fi
 ##############################################################
 # FUNCTIONS
 #
-# Some people use a different file for functions
 
 if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
@@ -149,7 +159,7 @@ shopt -s cdspell
 # Ignore some controlling instructions
 # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
 # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:' 
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history' 
 
 # Umask
 #
@@ -170,5 +180,3 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:'
 if [ -f "${HOME}/.bash_cygwin" ]; then
   source "${HOME}/.bash_cygwin"
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

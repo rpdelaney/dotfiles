@@ -265,6 +265,6 @@ formats = {
     line_start_irssi = "";
     # timestamp styling
     timestamp = "{timestamp %%H:%%M} ";
-    pubmsg = "%b<%w$2\00310$[-11]0%b> %K|%n $1";
+    pubmsg = "%b<%w$2\00312$[-11]0%b> %K|%n $1";
   };
 };
