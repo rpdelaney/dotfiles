@@ -11,6 +11,6 @@ fi
 # 
 git add .
 git status
-git commit -m "$(curl http://whatthecommit.com/index.txt)"
+git commit -m "$(curl -s http://whatthecommit.com/index.txt)"
 git pull
 git push
