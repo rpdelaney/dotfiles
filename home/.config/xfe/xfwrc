@@ -5,15 +5,15 @@ width=968
 textfont=DejaVu Sans Mono [unknown],140,normal,regular
 textselbackground=#8faf9f
 texthiliteforeground=#385f38
-textnumberbackground=Gray15
 stripreturn=0
 hidestatus=0
 textcursor=#8faf9f
 linesnum=1
 wordwrap=1
+wrapcols=80
 tabcols=8
 texthilitebackground=#f8f893
-wrapcols=80
+textnumberbackground=Gray15
 searchpath=
 hidetoolbar=0
 textforeground=#dcdccc
@@ -27,21 +27,21 @@ SA=<br>
 RA=
 
 [Recent Files]
-FILE6=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
-FILE7=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/e-xpc3.sfv
-FILE4=/mnt/vault/public/video/movies/A.Scanner.Darkly.2006.DVD5.720p.HDDVD.x264-REVEiLLE/reveille.nfo
-FILE5=/home/ryan/Desktop/New File
-FILE2=/home/ryan/SteamApps/Left 4 Dead 2 Beta/left4dead2/addons/readme.txt
-FILE3=/home/ryan/vault/public/software/iso/TinyXP Platinum Edition 2/TinyXP.nfo
-FILE10=/mnt/vault/Dropbox/games/autohotkey/userDefineLang.xml
-FILE1=/mnt/android/sdcard/Pictures/Screenshots/Screenshot_2013-04-10-16-45-09.png
-FILE8=/mnt/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
-FILE9=/mnt/android/sdcard/Tasker/userbackup.xml
+FILE6=/home/ryan/Desktop/New File
+FILE7=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
+FILE4=/home/ryan/vault/public/software/iso/TinyXP Platinum Edition 2/TinyXP.nfo
+FILE5=/mnt/vault/public/video/movies/A.Scanner.Darkly.2006.DVD5.720p.HDDVD.x264-REVEiLLE/reveille.nfo
+FILE2=/mnt/android/sdcard/Pictures/Screenshots/Screenshot_2013-04-10-16-45-09.png
+FILE3=/home/ryan/SteamApps/Left 4 Dead 2 Beta/left4dead2/addons/readme.txt
+FILE10=/mnt/android/sdcard/Tasker/userbackup.xml
+FILE1=/media/vault/public/video/movies/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR.nfo
+FILE8=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/e-xpc3.sfv
+FILE9=/mnt/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
 
 [SETTINGS]
 activecolorpane=1
 tippause=500
-basecolor=#eeeeee
+basecolor=#efebe7
 tiptime=10000
 
 [FILEDIALOG]

@@ -1,16 +1,16 @@
 [OPTIONS]
-height=1053
 toolstoolbar=1
-treetwopanels_tree_pct=0.2
 panel_view=0
 width=1910
+confirm_drag_and_drop=0
 use_startup_notification=1
-preserve_date_warn=1
+treetwopanels_tree_pct=0.2
 confirm_delete=1
 use_sudo=0
 use_trash_can=0
 auto_save_layout=1
 use_trash_bypass=0
+preserve_date_warn=1
 mount_warn=1
 treepanel_tree_pct=0.2633507853403141
 confirm_overwrite=1
@@ -28,7 +28,7 @@ treetwopanels_lpanel_pct=0.4
 status=1
 root_mode=1
 generaltoolbar=1
-confirm_drag_and_drop=0
+height=1053
 
 [HISTORY]
 open=/usr/bin/viewnior:/usr/bin/xfw:/usr/bin/evince:/usr/bin/zathura:/usr/bin/gvim:/usr/bin/smplayer:/usr/bin/xfi:/usr/bin/vlc:
@@ -115,8 +115,8 @@ deldate_size=150
 origpath_size=200
 liststyle=0
 attr_size=130
-size_size=78
 user_size=65
+hiddenfiles=0
 dirs_first=1
 ext_size=130
 grou_size=65
@@ -125,7 +125,7 @@ ignore_case=1
 sort_func=ascendingCase
 showthumbnails=0
 name_size=668
-hiddenfiles=0
+size_size=78
 
 [PROGS]
 archiver=7zFM
@@ -141,17 +141,17 @@ deldate_size=150
 origpath_size=200
 liststyle=0
 attr_size=237
-size_size=233
 user_size=121
+hiddenfiles=1
 dirs_first=1
 ext_size=237
 grou_size=121
 modd_size=361
 ignore_case=1
-sort_func=descendingSize
+sort_func=ascendingSize
 showthumbnails=1
-name_size=680
-hiddenfiles=1
+name_size=938
+size_size=233
 
 [SETTINGS]
 listforecolor=Black
@@ -165,12 +165,12 @@ relative_resize=1
 font=DejaVu Sans [unknown],120,normal,regular
 listbackcolor=#eeeeee
 shadowcolor=#a7a4a1
+file_tooltips=1
 tippause=500
 scrollbarcolor=#d4ac7c
 forecolor=Black
 basecolor=#efebe7
 time_format=%x %X
-show_pathlinker=1
 selbackcolor=#d3aa7b
 wheellines=5
 smooth_scroll=0
@@ -181,7 +181,7 @@ tiptime=10000
 selforecolor=Gray100
 pbarcolor=#c39e72
 save_win_pos=0
-file_tooltips=1
+show_pathlinker=1
 
 [FILETYPES]
 ogm=mplayer,mplayer,;OggMedia Video;video_32x32.png;video_16x16.png;;

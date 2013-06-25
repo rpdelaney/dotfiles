@@ -19,7 +19,7 @@ fi
 #
 # find to kill
 #
-alias ftk='echo "  PID  PGID   SID TTY          TIME CMD" && ps -e | grep -i'
+alias ftk='echo "  PID TT       USER     CMD" && ps -eo pid,tty,user,cmd | grep -i'
 
 #
 # disk usage in plain english
