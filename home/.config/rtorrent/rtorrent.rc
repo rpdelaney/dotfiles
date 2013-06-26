@@ -91,7 +91,7 @@ schedule = low_diskspace,5,60,close_low_diskspace=100M
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,load_start=/dev/null/*.torrent
+schedule = watch_directory,5,5,load=/dev/null/*.torrent
 schedule = untied_directory,5,5,stop_untied=
 
 #
