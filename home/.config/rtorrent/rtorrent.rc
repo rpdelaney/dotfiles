@@ -89,6 +89,11 @@ schedule = low_diskspace,5,60,close_low_diskspace=100M
 #
 #d.set_directory_base = $cat=~/download/\,$d.get_hash= 
 
+# Watch a directory for new torrents, and stop those that have been
+# deleted.
+schedule = watch_directory,5,5,load_start=/dev/null/*.torrent
+schedule = untied_directory,5,5,stop_untied=
+
 #
 # Watch another directory with a different destination. (0.7.7+)
 #
