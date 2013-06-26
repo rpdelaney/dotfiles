@@ -97,16 +97,16 @@ schedule = untied_directory,5,5,stop_untied=
 #
 # Watch another directory with a different destination. (0.7.7+)
 #
-schedule = watch_directory_2,10,10,"load=~/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
-schedule = watch_directory_3,10,10,"load=~/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
-schedule = watch_directory_4,10,10,"load=~/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
-schedule = watch_directory_5,10,10,"load=~/torrent/ebooks/*.torrent,d.set_directory=/media/vault/incoming/ebooks/"
-schedule = watch_directory_6,10,10,"load=~/torrent/graphics/*.torrent,d.set_directory=/media/vault/incoming/graphics/"
-schedule = watch_directory_7,10,10,"load=~/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
-schedule = watch_directory_8,10,10,"load=~/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
-schedule = watch_directory_9,10,10,"load=~/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
+schedule = watch_directory_2,10,10,"load=/var/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
+schedule = watch_directory_3,10,10,"load=/var/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
+schedule = watch_directory_4,10,10,"load=/var/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
+schedule = watch_directory_5,10,10,"load=/var/torrent/ebooks/*.torrent,d.set_directory=/media/vault/incoming/ebooks/"
+schedule = watch_directory_6,10,10,"load=/var/torrent/graphics/*.torrent,d.set_directory=/media/vault/incoming/graphics/"
+schedule = watch_directory_7,10,10,"load=/var/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
+schedule = watch_directory_8,10,10,"load=/var/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
+schedule = watch_directory_9,10,10,"load=/var/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
 
-schedule = watch_directory_10,10,10,"load=~/torrent/fish/*.torrent,d.set_directory=/media/crypt/fishing"
+schedule = watch_directory_10,10,10,"load=/var/torrent/fish/*.torrent,d.set_directory=/media/crypt/fishing"
 
 #
 # Create symlinks in the watch directory with a suffix indicating the
