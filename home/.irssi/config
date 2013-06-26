@@ -61,7 +61,8 @@ channels = (
   },
   { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#xda-devs"; chatnet = "freenode"; }
+  { name = "#xda-devs"; chatnet = "freenode"; },
+  { name = "##security"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 logs = { };
