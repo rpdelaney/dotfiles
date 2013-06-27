@@ -3,7 +3,7 @@
 # uncomment the options you wish to enable.
 
 #dvorak layout
-key_layout = dvorak
+key_layout = [dvorak]
 
 # Maximum and minimum number of peers to connect to per torrent.
 min_peers = 40
@@ -38,10 +38,10 @@ session = /home/ryan/torrent/.session
 #bind = rakshasa.no
 
 # Port range to use for listening.
-#port_range = 6890-6999
+port_range = 14000-15000
 
 # Start opening ports at a random position within the port range.
-#port_random = no
+port_random = yes
 
 # Check hash for finished torrents. Might be usefull until the bug is
 # fixed that causes lack of diskspace not to be properly reported.
@@ -112,17 +112,17 @@ schedule = watch_directory_10,10,10,"load=/var/torrent/fish/*.torrent,d.set_dire
 # Create symlinks in the watch directory with a suffix indicating the
 # download state.
 #
-on_start    = link1,"create_link=tied,,.started"
-on_stop     = link1,"delete_link=tied,,.started"
-on_finished = link1,"create_link=tied,,.finished"
-on_erase    = link1,"delete_link=tied,,.finished"
+#on_start    = link1,"create_link=tied,,.started"
+#on_stop     = link1,"delete_link=tied,,.started"
+#on_finished = link1,"create_link=tied,,.finished"
+#on_erase    = link1,"delete_link=tied,,.finished"
 
 # Create symlinks in the same directory as the download.
-on_start    = link2,"create_link=base_path,,.started"
-on_stop     = link2,"delete_link=base_path,,.started"
-on_finished = link2,"create_link=base_path,,.finished"
-on_erase    = link2,"delete_link=base_path,,.finished"
+#on_start    = link2,"create_link=base_path,,.started"
+#on_stop     = link2,"delete_link=base_path,,.started"
+#on_finished = link2,"create_link=base_path,,.finished"
+#on_erase    = link2,"delete_link=base_path,,.finished"
 
 # Create a symlink in another directory without a suffix.
 # You need to quote the command in this case.
-on_finished = link3,"create_link=base_filename,/files,"
+#on_finished = link3,"create_link=base_filename,/files,"
