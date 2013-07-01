@@ -3,7 +3,7 @@
 # uncomment the options you wish to enable.
 
 #dvorak layout
-key_layout = [dvorak]
+key_layout = dvorak
 
 # Maximum and minimum number of peers to connect to per torrent.
 min_peers = 40

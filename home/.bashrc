@@ -180,3 +180,10 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
 if [ -f "${HOME}/.bash_cygwin" ]; then
   source "${HOME}/.bash_cygwin"
 fi
+
+###################################################################
+#
+# gpg
+#
+GPG_TTY=`tty`
+export GPG_TTY

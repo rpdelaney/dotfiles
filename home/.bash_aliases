@@ -157,3 +157,5 @@ alias youget='youtube-dl -t -c -w --write-info-json --write-description -x -k --
 # dnuos is the new oidua
 alias oidua='dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd
 
+# yaourt is the new pacman
+alias yao='yaourt'
