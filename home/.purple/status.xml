@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
+	<status name='Auto-Cached' transient='true' created='1372729319' lastused='1372729319' usage_count='1'>
+		<state>available</state>
+		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
+	</status>
 	<status name='Auto-Cached' transient='true' created='1367946306' lastused='1367946306' usage_count='1'>
 		<state>away</state>
 		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
@@ -30,8 +34,5 @@
 	<status name='Trolling' created='1360710668' lastused='1360710668' usage_count='1'>
 		<state>available</state>
 		<message>Sufficiently advanced trolling is indistinguishable from thought leadership.</message>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1351223870' lastused='1351223870' usage_count='1'>
-		<state>available</state>
 	</status>
 </statuses>

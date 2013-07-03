@@ -159,3 +159,6 @@ alias oidua='dnuos --file=list -D -S -t .'                                      
 
 # yaourt is the new pacman
 alias yao='yaourt'
+alias yaos='yao -S'
+alias yaoss='yao -Ss'
+alias yaors='yao -Rs'

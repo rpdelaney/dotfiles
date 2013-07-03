@@ -5,15 +5,15 @@ width=968
 textfont=DejaVu Sans Mono [unknown],140,normal,regular
 textselbackground=#8faf9f
 texthiliteforeground=#385f38
-textnumberbackground=Gray15
 stripreturn=0
 hidestatus=0
 textcursor=#8faf9f
 linesnum=1
 wordwrap=1
+wrapcols=80
 tabcols=8
 texthilitebackground=#f8f893
-wrapcols=80
+textnumberbackground=Gray15
 searchpath=
 hidetoolbar=0
 textforeground=#dcdccc
@@ -27,16 +27,16 @@ SA=<br>
 RA=
 
 [Recent Files]
-FILE6=/mnt/vault/public/video/movies/A.Scanner.Darkly.2006.DVD5.720p.HDDVD.x264-REVEiLLE/reveille.nfo
-FILE7=/home/ryan/Desktop/New File
-FILE4=/home/ryan/SteamApps/Left 4 Dead 2 Beta/left4dead2/addons/readme.txt
-FILE5=/home/ryan/vault/public/software/iso/TinyXP Platinum Edition 2/TinyXP.nfo
-FILE2=/media/vault/public/video/movies/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR.nfo
-FILE3=/mnt/android/sdcard/Pictures/Screenshots/Screenshot_2013-04-10-16-45-09.png
-FILE10=/mnt/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
-FILE1=/home/ryan/sed1line.txt
-FILE8=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
-FILE9=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/e-xpc3.sfv
+FILE6=/home/ryan/vault/public/software/iso/TinyXP Platinum Edition 2/TinyXP.nfo
+FILE7=/mnt/vault/public/video/movies/A.Scanner.Darkly.2006.DVD5.720p.HDDVD.x264-REVEiLLE/reveille.nfo
+FILE4=/mnt/android/sdcard/Pictures/Screenshots/Screenshot_2013-04-10-16-45-09.png
+FILE5=/home/ryan/SteamApps/Left 4 Dead 2 Beta/left4dead2/addons/readme.txt
+FILE2=/home/ryan/sed1line.txt
+FILE3=/media/vault/public/video/movies/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR/No.Country.for.Old.Men.2007.720p.BluRay.DTS.x264-ESiR.nfo
+FILE10=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/e-xpc3.sfv
+FILE1=/home/ryan/Downloads/PrintGameSrc/PrintGame/PrintGame.cpp
+FILE8=/home/ryan/Desktop/New File
+FILE9=/home/ryan/vault/public/software/iso/Microsoft.Windows.XP.Professional.Corporate.SP3.Integrated-ETH0/eth0.nfo
 
 [SETTINGS]
 activecolorpane=1

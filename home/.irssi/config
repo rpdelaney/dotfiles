@@ -24,7 +24,6 @@ channels = (
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#postgresql"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#php"; chatnet = "freenode"; autojoin = "yes"; },
   {
     name = "#wikipedia-en-admins";
     chatnet = "freenode";
@@ -62,7 +61,8 @@ channels = (
   { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#xda-devs"; chatnet = "freenode"; },
-  { name = "##security"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##security"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##windows"; chatnet = "freenode"; }
 );
 
 logs = { };
