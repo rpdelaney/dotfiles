@@ -85,22 +85,22 @@ alias ..='ch ..'
 alias ....='ch ../..'
 
 ch() { 
-        if [ -d "$1" ]; then 
-            new_dir=$1
-        elif [ -d ."$1" ]; then
-            new_dir="."$1
-        elif [ "$1" == '-' ]; then
+        if [ -d "$@" ]; then 
+            new_dir="$@"
+        elif [ -d ."$@" ]; then
+            new_dir=".""$@"
+        elif [ "$@" == '-' ]; then
             new_dir="-"
         else
             error_msg="cd: directory "$red$bold$1$reset" not found."
         fi 
         
         if [ "$error_msg" ]; then
-            echo $error_msg
+            echo "$error_msg"
             unset error_msg
         else
-            builtin cd $new_dir
-            timeout 3 git_branch=$(parse_git_branch 2>> /dev/null) 2>> /dev/null
+            builtin cd "$new_dir"
+            timeout 3 git_branch="$(parse_git_branch 2>> /dev/null)" 2>> /dev/null
             ls
         fi
 }
@@ -157,3 +157,8 @@ alias youget='youtube-dl -t -c -w --write-info-json --write-description -x -k --
 # dnuos is the new oidua
 alias oidua='dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd
 
+# yaourt is the new pacman
+alias yao='yaourt'
+alias yaos='yao -S'
+alias yaoss='yao -Ss'
+alias yaors='yao -Rs'

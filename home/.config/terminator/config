@@ -1,18 +1,20 @@
 [global_config]
   dbus = True
   enabled_plugins = CustomCommandsMenu, InactivityWatch, TestPlugin, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
-  window_state = fullscreen
-  handle_size = 1
   title_transmit_bg_color = "#00bfc8"
+  handle_size = 1
+  tab_position = bottom
 [keybindings]
   copy = <Primary>j
+  close_term = F5
   paste = <Primary>k
+  close_window = F5
 [profiles]
   [[default]]
     scrollbar_position = hidden
     palette = "#1e2320:#705050:#60b48a:#dfaf8f:#506070:#dc8cc3:#8cd0d3:#ffffff:#709080:#dca3a3:#c3bf9f:#f0dfaf:#94bff3:#ecbcbc:#93e0e3:#dcdccc"
-    font = Consolas 14
     visible_bell = True
+    background_image = None
     background_darkness = 1.02
     urgent_bell = True
     use_system_font = False
@@ -23,7 +25,7 @@
     icon_bell = False
     exit_action = restart
     scroll_on_keystroke = False
-    copy_on_selection = True
+    font = Consolas 14
     background_color = "#3f3f3f"
     audible_bell = True
 [layouts]

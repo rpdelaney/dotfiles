@@ -36,10 +36,10 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1367946306'/>
+			<pref name='default' type='int' value='1372729319'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='1'/>
-			<pref name='idleaway' type='int' value='1362366073'/>
+			<pref name='idleaway' type='int' value='1372733650'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
 		<pref name='conversations'>
@@ -72,8 +72,8 @@
 		</pref>
 		<pref name='proxy'>
 			<pref name='type' type='string' value='none'/>
-			<pref name='host' type='string' value=''/>
-			<pref name='port' type='int' value='0'/>
+			<pref name='host' type='string' value='localhost'/>
+			<pref name='port' type='int' value='9050'/>
 			<pref name='username' type='string' value=''/>
 			<pref name='password' type='string' value=''/>
 			<pref name='socks4_remotedns' type='bool' value='0'/>
@@ -290,7 +290,7 @@
 				</pref>
 			</pref>
 			<pref name='gtk-plugin_pack-mystatusbox'>
-				<pref name='pane' type='int' value='652'/>
+				<pref name='pane' type='int' value='560'/>
 				<pref name='global' type='bool' value='0'/>
 				<pref name='show' type='int' value='0'/>
 				<pref name='iconsel' type='bool' value='0'/>
@@ -462,11 +462,11 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='105'/>
-				<pref name='height' type='int' value='21'/>
+				<pref name='width' type='int' value='89'/>
+				<pref name='height' type='int' value='23'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='24'/>
+				<pref name='x' type='int' value='27'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='chats'>
@@ -487,7 +487,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='18'/>
+				<pref name='height' type='int' value='19'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -568,31 +568,16 @@
 		</pref>
 		<pref name='plugins'>
 			<pref name='loaded' type='pathlist'>
-				<item value='/usr/lib/purple-2/slashexec.so'/>
-				<item value='/usr/lib/pidgin/album.so'/>
-				<item value='/usr/lib/purple-2/translate.so'/>
-				<item value='/usr/lib/purple-2/autoaccept.so'/>
-				<item value='/usr/lib/pidgin/blistops.so'/>
-				<item value='/usr/lib/pidgin/gtkbuddynote.so'/>
-				<item value='/usr/lib/purple-2/buddynote.so'/>
-				<item value='/usr/lib/purple-2/statenotify.so'/>
-				<item value='/usr/lib/pidgin/convbadger.so'/>
-				<item value='/usr/lib/pidgin/convcolors.so'/>
 				<item value='/usr/lib/pidgin/enhancedhist.so'/>
-				<item value='/usr/lib/purple-2/google.so'/>
-				<item value='/usr/lib/purple-2/groupmsg.so'/>
 				<item value='/usr/lib/pidgin/history.so'/>
-				<item value='/usr/lib/purple-2/idle.so'/>
-				<item value='/usr/lib/purple-2/ignore.so'/>
 				<item value='/usr/lib/pidgin/lastseen.so'/>
 				<item value='/usr/lib/pidgin/markerline.so'/>
 				<item value='/usr/lib/pidgin/notify.so'/>
 				<item value='/usr/lib/pidgin/timestamp_format.so'/>
 				<item value='/usr/lib/pidgin/mystatusbox.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
-				<item value='/usr/lib/purple-2/offlinemsg.so'/>
+				<item value='/usr/lib/pidgin/pidgin-otr.so'/>
 				<item value='/usr/lib/pidgin/themeedit.so'/>
-				<item value='/usr/lib/purple-2/psychic.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 				<item value='/usr/lib/purple-2/sslinfo.so'/>
 				<item value='/usr/lib/pidgin/spellchk.so'/>
@@ -687,11 +672,11 @@
 			<pref name='show_idle_time' type='bool' value='1'/>
 			<pref name='show_offline_buddies' type='bool' value='0'/>
 			<pref name='show_protocol_icons' type='bool' value='1'/>
-			<pref name='list_visible' type='bool' value='0'/>
+			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='none'/>
-			<pref name='x' type='int' value='1501'/>
-			<pref name='y' type='int' value='129'/>
+			<pref name='x' type='int' value='1567'/>
+			<pref name='y' type='int' value='92'/>
 			<pref name='width' type='int' value='325'/>
 			<pref name='height' type='int' value='866'/>
 			<pref name='theme' type='string' value=''/>
@@ -703,7 +688,7 @@
 			<pref name='send_italic' type='bool' value='0'/>
 			<pref name='send_underline' type='bool' value='0'/>
 			<pref name='spellcheck' type='bool' value='1'/>
-			<pref name='show_incoming_formatting' type='bool' value='1'/>
+			<pref name='show_incoming_formatting' type='bool' value='0'/>
 			<pref name='resize_custom_smileys' type='bool' value='1'/>
 			<pref name='custom_smileys_size' type='int' value='96'/>
 			<pref name='minimum_entry_lines' type='int' value='2'/>
@@ -727,8 +712,8 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='192'/>
-				<pref name='y' type='int' value='222'/>
+				<pref name='x' type='int' value='0'/>
+				<pref name='y' type='int' value='63'/>
 				<pref name='width' type='int' value='761'/>
 				<pref name='height' type='int' value='493'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>
@@ -765,6 +750,12 @@
 				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 		</pref>
+	</pref>
+	<pref name='OTR'>
+		<pref name='enabled' type='bool' value='1'/>
+		<pref name='automatic' type='bool' value='0'/>
+		<pref name='onlyprivate' type='bool' value='0'/>
+		<pref name='avoidloggingotr' type='bool' value='1'/>
 	</pref>
 	<pref name='core'>
 		<pref name='plugins'>
