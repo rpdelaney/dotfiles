@@ -58,7 +58,7 @@ check_hash = yes
 # Encryption options, set to none (default) or any combination of the following:
 # allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
 #
-encryption = require
+encryption = allow_incoming,try_outgoing
 
 #
 # Enable DHT support for trackerless torrents or when all trackers are down.
@@ -94,9 +94,9 @@ schedule = low_diskspace,5,60,close_low_diskspace=100M
 schedule = watch_directory,5,5,load=/dev/null/*.torrent
 schedule = untied_directory,5,5,stop_untied=
 
-#
+# 
 # Watch another directory with a different destination. (0.7.7+)
-#
+# 
 schedule = watch_directory_2,10,10,"load=/var/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
 schedule = watch_directory_3,10,10,"load=/var/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
 schedule = watch_directory_4,10,10,"load=/var/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
