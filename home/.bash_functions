@@ -201,6 +201,11 @@ jobscount(){
 # 
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 
+# 
+# download files from web via tor
+# 
+turl(){ curl -v --socks5-hostname localhost:9050 $@ ; }
+
 #
 # smile for the exit status :)
 #
@@ -291,3 +296,4 @@ settitle ()
 # }
 # 
 # alias cd=cd_func
+
