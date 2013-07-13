@@ -204,7 +204,7 @@ cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | 
 # 
 # download files from web via tor
 # 
-turl(){ curl -v --socks5-hostname localhost:9050 $@ ; }
+turl(){ curl --socks5-hostname localhost:9050 $@ ; }
 
 #
 # smile for the exit status :)
