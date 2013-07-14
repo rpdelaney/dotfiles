@@ -62,7 +62,7 @@ alias search='/usr/bin/grep --color=always -H --binary-files=text --directories=
 #
 # pwd
 #
-alias ls='/usr/bin/ls --color=always --group-directories-first -h -L -o -p -X --time-style=+"%Y-%m-%d"'
+alias ls='/usr/bin/ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
 alias la='ls -H -a'
 alias lsa='la'
 alias lss='ls | pager'
