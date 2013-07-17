@@ -11,7 +11,7 @@ setxkbmap dvorak
 # environment variables for the desktop environment only
 # 
 export DE="xfce"                # desktop environment
-export BROWSER="chromium"       # web browser
+export BROWSER="tor-browser"       # web browser
 
 #xfce
 #gtmanfred said i dont need --witch-ck-launch

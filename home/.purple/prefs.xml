@@ -6,7 +6,7 @@
 			<pref name='idle_reporting' type='string' value='never'/>
 			<pref name='away_when_idle' type='bool' value='0'/>
 			<pref name='mins_before_away' type='int' value='5'/>
-			<pref name='auto_reply' type='string' value='awayidle'/>
+			<pref name='auto_reply' type='string' value='never'/>
 		</pref>
 		<pref name='buddies'/>
 		<pref name='contact'>
@@ -36,10 +36,10 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1372729319'/>
+			<pref name='default' type='int' value='1374024761'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='1'/>
-			<pref name='idleaway' type='int' value='1372733650'/>
+			<pref name='idleaway' type='int' value='1373936324'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
 		<pref name='conversations'>
@@ -71,7 +71,7 @@
 			<pref name='ports_range_end' type='int' value='2048'/>
 		</pref>
 		<pref name='proxy'>
-			<pref name='type' type='string' value='none'/>
+			<pref name='type' type='string' value='tor'/>
 			<pref name='host' type='string' value='localhost'/>
 			<pref name='port' type='int' value='9050'/>
 			<pref name='username' type='string' value=''/>
@@ -170,6 +170,24 @@
 					<pref name='notify' type='bool' value='1'/>
 				</pref>
 			</pref>
+			<pref name='vvconfig'>
+				<pref name='audio'>
+					<pref name='src'>
+						<pref name='plugin' type='string' value=''/>
+						<pref name='device' type='string' value=''/>
+					</pref>
+					<pref name='sink'>
+						<pref name='plugin' type='string' value=''/>
+						<pref name='device' type='string' value=''/>
+					</pref>
+				</pref>
+				<pref name='video'>
+					<pref name='src'>
+						<pref name='plugin' type='string' value=''/>
+						<pref name='device' type='string' value=''/>
+					</pref>
+				</pref>
+			</pref>
 		</pref>
 		<pref name='lopl'/>
 		<pref name='prpl'>
@@ -261,9 +279,9 @@
 				<pref name='date_format' type='string' value='[%H:%M]'/>
 			</pref>
 			<pref name='infopane'>
-				<pref name='position' type='string' value='top'/>
+				<pref name='position' type='string' value='none'/>
 				<pref name='drag' type='bool' value='0'/>
-				<pref name='single' type='bool' value='1'/>
+				<pref name='single' type='bool' value='0'/>
 				<pref name='icon' type='bool' value='1'/>
 			</pref>
 			<pref name='amc_grim'>
@@ -290,7 +308,7 @@
 				</pref>
 			</pref>
 			<pref name='gtk-plugin_pack-mystatusbox'>
-				<pref name='pane' type='int' value='560'/>
+				<pref name='pane' type='int' value='407'/>
 				<pref name='global' type='bool' value='0'/>
 				<pref name='show' type='int' value='0'/>
 				<pref name='iconsel' type='bool' value='0'/>
@@ -388,6 +406,14 @@
 				<pref name='profile_accounts' type='stringlist'/>
 				<pref name='profile' type='string' value='Get AutoProfile for Purple at &lt;a href=&quot;http://autoprofile.sourceforge.net/&quot;&gt;autoprofile.sourceforge.net&lt;/a&gt;&lt;br&gt;&lt;br&gt;[Timestamp]'/>
 			</pref>
+			<pref name='vvconfig'>
+				<pref name='video'>
+					<pref name='sink'>
+						<pref name='plugin' type='string' value=''/>
+						<pref name='device' type='string' value=''/>
+					</pref>
+				</pref>
+			</pref>
 		</pref>
 		<pref name='gtk-rlaager-album'>
 			<pref name='window_height' type='int' value='245'/>
@@ -462,11 +488,11 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='89'/>
-				<pref name='height' type='int' value='20'/>
+				<pref name='width' type='int' value='96'/>
+				<pref name='height' type='int' value='29'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='27'/>
+				<pref name='x' type='int' value='0'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='chats'>
@@ -487,7 +513,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='17'/>
+				<pref name='height' type='int' value='26'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -568,19 +594,28 @@
 		</pref>
 		<pref name='plugins'>
 			<pref name='loaded' type='pathlist'>
+				<item value='/usr/lib/purple-2/slashexec.so'/>
 				<item value='/usr/lib/pidgin/enhancedhist.so'/>
+				<item value='/usr/lib/purple-2/groupmsg.so'/>
 				<item value='/usr/lib/pidgin/history.so'/>
+				<item value='/usr/lib/purple-2/idle.so'/>
+				<item value='/usr/lib/pidgin/infopane.so'/>
 				<item value='/usr/lib/pidgin/lastseen.so'/>
+				<item value='/usr/lib/purple-2/listhandler.so'/>
 				<item value='/usr/lib/pidgin/markerline.so'/>
 				<item value='/usr/lib/pidgin/notify.so'/>
 				<item value='/usr/lib/pidgin/timestamp_format.so'/>
 				<item value='/usr/lib/pidgin/mystatusbox.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
 				<item value='/usr/lib/pidgin/pidgin-otr.so'/>
+				<item value='/usr/lib/purple-2/offlinemsg.so'/>
 				<item value='/usr/lib/pidgin/themeedit.so'/>
+				<item value='/usr/lib/pidgin/icon_override.so'/>
+				<item value='/usr/lib/purple-2/psychic.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 				<item value='/usr/lib/purple-2/sslinfo.so'/>
 				<item value='/usr/lib/pidgin/spellchk.so'/>
+				<item value='/usr/lib/pidgin/vvconfig.so'/>
 			</pref>
 			<pref name='gtk-plugin_pack-irssi'>
 				<pref name='textfmt' type='bool' value='1'/>
@@ -625,12 +660,12 @@
 			<pref name='enabled'>
 				<pref name='login' type='bool' value='0'/>
 				<pref name='logout' type='bool' value='0'/>
-				<pref name='im_recv' type='bool' value='1'/>
+				<pref name='im_recv' type='bool' value='0'/>
 				<pref name='first_im_recv' type='bool' value='1'/>
-				<pref name='send_im' type='bool' value='1'/>
+				<pref name='send_im' type='bool' value='0'/>
 				<pref name='join_chat' type='bool' value='0'/>
 				<pref name='left_chat' type='bool' value='0'/>
-				<pref name='send_chat_msg' type='bool' value='1'/>
+				<pref name='send_chat_msg' type='bool' value='0'/>
 				<pref name='chat_msg_recv' type='bool' value='0'/>
 				<pref name='nick_said' type='bool' value='0'/>
 				<pref name='pounce_default' type='bool' value='1'/>
@@ -667,7 +702,7 @@
 			<pref name='buddyicon' type='path' value=''/>
 		</pref>
 		<pref name='blist'>
-			<pref name='show_buddy_icons' type='bool' value='1'/>
+			<pref name='show_buddy_icons' type='bool' value='0'/>
 			<pref name='show_empty_groups' type='bool' value='1'/>
 			<pref name='show_idle_time' type='bool' value='1'/>
 			<pref name='show_offline_buddies' type='bool' value='0'/>
@@ -675,8 +710,8 @@
 			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='none'/>
-			<pref name='x' type='int' value='1567'/>
-			<pref name='y' type='int' value='92'/>
+			<pref name='x' type='int' value='1474'/>
+			<pref name='y' type='int' value='84'/>
 			<pref name='width' type='int' value='325'/>
 			<pref name='height' type='int' value='866'/>
 			<pref name='theme' type='string' value=''/>
@@ -712,10 +747,10 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='63'/>
-				<pref name='width' type='int' value='761'/>
-				<pref name='height' type='int' value='493'/>
+				<pref name='x' type='int' value='289'/>
+				<pref name='y' type='int' value='148'/>
+				<pref name='width' type='int' value='997'/>
+				<pref name='height' type='int' value='648'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>
 				<pref name='entry_height' type='int' value='54'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>
@@ -753,9 +788,9 @@
 	</pref>
 	<pref name='OTR'>
 		<pref name='enabled' type='bool' value='1'/>
-		<pref name='automatic' type='bool' value='0'/>
+		<pref name='automatic' type='bool' value='1'/>
 		<pref name='onlyprivate' type='bool' value='0'/>
-		<pref name='avoidloggingotr' type='bool' value='1'/>
+		<pref name='avoidloggingotr' type='bool' value='0'/>
 	</pref>
 	<pref name='core'>
 		<pref name='plugins'>

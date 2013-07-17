@@ -1,17 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
+	<status name='Aristotle' created='1367625640' lastused='1374024726' usage_count='3'>
+		<state>away</state>
+		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &quot;Every man for himself!&quot; And the London Underground is not a political movement!</message>
+	</status>
+	<status name='fuck what ya herd' created='1374024761' lastused='1374024761' usage_count='1'>
+		<state>away</state>
+		<message>&amp;quot;FUCK WHAT YA HEARD - YALL LICK BALLS IN BONERTOWN USA AND THAT SHIT IS ABSURD&amp;quot; - Aristotle</message>
+	</status>
 	<status name='Auto-Cached' transient='true' created='1372729319' lastused='1372729319' usage_count='1'>
 		<state>available</state>
 		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
+		<substatus>
+			<account protocol='prpl-jabber'>ryan.delaney@gmail.com</account>
+			<state>available</state>
+			<message>&amp;quot;FUCK WHAT YA HEARD! YALL LICK BALLS IN BONERTOWN, USA AND THAT SHIT IS ABSURD!&amp;quot; -- Aristotle</message>
+		</substatus>
 	</status>
 	<status name='Auto-Cached' transient='true' created='1367946306' lastused='1367946306' usage_count='1'>
 		<state>away</state>
 		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
-	</status>
-	<status name='Aristotle' created='1367625640' lastused='1367625640' usage_count='1'>
-		<state>away</state>
-		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &quot;Every man for himself!&quot; And the London Underground is not a political movement!</message>
 	</status>
 	<status name='fopedush-linux' created='1366125477' lastused='1366125477' usage_count='1'>
 		<state>available</state>
