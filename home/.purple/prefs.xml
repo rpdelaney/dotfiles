@@ -36,10 +36,10 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1374024761'/>
+			<pref name='default' type='int' value='1366125461'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='1'/>
-			<pref name='idleaway' type='int' value='1373936324'/>
+			<pref name='idleaway' type='int' value='1374112404'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
 		<pref name='conversations'>
@@ -308,7 +308,7 @@
 				</pref>
 			</pref>
 			<pref name='gtk-plugin_pack-mystatusbox'>
-				<pref name='pane' type='int' value='407'/>
+				<pref name='pane' type='int' value='808'/>
 				<pref name='global' type='bool' value='0'/>
 				<pref name='show' type='int' value='0'/>
 				<pref name='iconsel' type='bool' value='0'/>
@@ -488,8 +488,8 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='96'/>
-				<pref name='height' type='int' value='29'/>
+				<pref name='width' type='int' value='71'/>
+				<pref name='height' type='int' value='42'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -513,7 +513,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='26'/>
+				<pref name='height' type='int' value='22'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -596,6 +596,7 @@
 			<pref name='loaded' type='pathlist'>
 				<item value='/usr/lib/purple-2/slashexec.so'/>
 				<item value='/usr/lib/pidgin/enhancedhist.so'/>
+				<item value='/usr/lib/pidgin/extplacement.so'/>
 				<item value='/usr/lib/purple-2/groupmsg.so'/>
 				<item value='/usr/lib/pidgin/history.so'/>
 				<item value='/usr/lib/purple-2/idle.so'/>
@@ -614,6 +615,7 @@
 				<item value='/usr/lib/purple-2/psychic.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 				<item value='/usr/lib/purple-2/sslinfo.so'/>
+				<item value='/usr/lib/pidgin/sepandtab.so'/>
 				<item value='/usr/lib/pidgin/spellchk.so'/>
 				<item value='/usr/lib/pidgin/vvconfig.so'/>
 			</pref>
@@ -710,10 +712,10 @@
 			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='none'/>
-			<pref name='x' type='int' value='1474'/>
-			<pref name='y' type='int' value='84'/>
+			<pref name='x' type='int' value='1486'/>
+			<pref name='y' type='int' value='63'/>
 			<pref name='width' type='int' value='325'/>
-			<pref name='height' type='int' value='866'/>
+			<pref name='height' type='int' value='984'/>
 			<pref name='theme' type='string' value=''/>
 		</pref>
 		<pref name='conversations'>
@@ -747,10 +749,10 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='289'/>
-				<pref name='y' type='int' value='148'/>
+				<pref name='x' type='int' value='53'/>
+				<pref name='y' type='int' value='108'/>
 				<pref name='width' type='int' value='997'/>
-				<pref name='height' type='int' value='648'/>
+				<pref name='height' type='int' value='746'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>
 				<pref name='entry_height' type='int' value='54'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>
@@ -782,7 +784,7 @@
 			<pref name='blink' type='bool' value='0'/>
 			<pref name='show' type='string' value='always'/>
 			<pref name='gtk'>
-				<pref name='embedded' type='bool' value='0'/>
+				<pref name='embedded' type='bool' value='1'/>
 			</pref>
 		</pref>
 	</pref>

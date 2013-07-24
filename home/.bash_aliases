@@ -52,7 +52,17 @@ alias asdf='setxkbmap dvorak'
 alias startx='startx &> ~/.Xoutput'
 
 #
-# grep 
+# rsync is the new (s)cp
+#
+alias rp='rsync -a --stats --progress'
+
+#
+# rsync is the new mv
+#
+alias rv='rsync -a --stats --progress --remove-source-files'
+
+#
+# grep can be pretty
 #
 alias grep='/usr/bin/grep --color=always'
 alias fgrep='/usr/bin/fgrep --color=always'
@@ -74,7 +84,6 @@ alias dirs='dir | pager'
 # 
 # pager
 # 
-#alias pager='/usr/bin/less -R -X'      #now in /usr/bin
 alias more='pager'                      #Less is more
 
 #
