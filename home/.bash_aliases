@@ -17,19 +17,9 @@ if [ -x /usr/bin/grc ] ; then
 fi
 
 #
-# find to kill
-#
-alias ftk='echo "  PID TT       USER     CMD" && ps -eo pid,tty,user,cmd | grep -i'
-
-#
 # disk usage in plain english
 #
 alias disk='df -lT --block-size=1048576'
-
-#
-# htop is the new top
-#
-alias top='htop'
 
 #  
 # pgsql is dumb and annoying
@@ -54,17 +44,18 @@ alias startx='startx &> ~/.Xoutput'
 #
 # rsync is the new (s)cp
 #
-alias rp='rsync -a --stats --progress'
+alias rp='rsync -a --append --stats --progress'
 
 #
 # rsync is the new mv
 #
-alias rv='rsync -a --stats --progress --remove-source-files'
+alias rv='rsync -a --append --stats --progress --remove-source-files'
 
 #
-# grep can be pretty
+# grep can be pretty :*
 #
 alias grep='/usr/bin/grep --color=always'
+alias agrep='/usr/bin/agrep --color=always'
 alias fgrep='/usr/bin/fgrep --color=always'
 alias egrep='/usr/bin/egrep --color=always'
 alias search='/usr/bin/grep --color=always -H --binary-files=text --directories=recurse --files-with-matches -n'
@@ -93,35 +84,6 @@ alias .='ls'
 alias ..='ch ..'
 alias ....='ch ../..'
 
-ch() { 
-        if [ -d "$@" ]; then 
-            new_dir="$@"
-        elif [ -d ."$@" ]; then
-            new_dir=".""$@"
-        elif [ "$@" == '-' ]; then
-            new_dir="-"
-        else
-            error_msg="cd: directory "$red$bold$1$reset" not found."
-        fi 
-        
-        if [ "$error_msg" ]; then
-            echo "$error_msg"
-            unset error_msg
-        else
-            builtin cd "$new_dir"
-            timeout 3 git_branch="$(parse_git_branch 2>> /dev/null)" 2>> /dev/null
-            ls
-        fi
-}
-
-# where the heck am I
-whereami() { 
-        namei "$PWD" -x -m | \
-        sed -r 's@f\:\s(.*)@'$bold$red'\1'$reset'@' | \
-        sed -r 's@^\s(\s*)D@'$bold$yellow'\1Mn'$reset'@' | \
-        sed -r 's@^\s(\s*)l@'$bold$cyan'\1Ln'$reset'@'
-}
-
 # 
 # safety valve
 # 
@@ -141,12 +103,6 @@ alias sudoe="/usr/bin/sudo -E"
 #alias head='cl head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 #alias tail='cl tail -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 
-#curl
-#alias define='curl dict://dict.org/d:'
-
-# panic button
-alias abandonship='sudo shutdown -h -P now'
-
 # networking
 alias netmonitor='sudo watch -n 3 lsof -i'                                      # watch incoming network connections
 
@@ -157,7 +113,7 @@ alias mounts='mount | column -t | pager'
 alias traceroute='mtr'                                                          # mtr is the new tracert
 alias tracert='traceroute'
 
-# shredder
+# private shredder
 alias shred=' shred -vfu'
 
 # youtube-dl
