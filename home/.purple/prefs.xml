@@ -489,7 +489,7 @@
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
 				<pref name='width' type='int' value='125'/>
-				<pref name='height' type='int' value='20'/>
+				<pref name='height' type='int' value='26'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -749,8 +749,8 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='63'/>
+				<pref name='x' type='int' value='106'/>
+				<pref name='y' type='int' value='109'/>
 				<pref name='width' type='int' value='997'/>
 				<pref name='height' type='int' value='746'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>

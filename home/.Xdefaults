@@ -1,81 +1,95 @@
-include ".Xcolors"
+#
+# zenburn terminal theme
+#
+# from http://snk.tuxfamily.org/log/zenburn-terminal-color-scheme.html
+#
+#~/.Xdefaults
+#
 
-Xft.hinting:            false
-Xft.hintstyle:          hintnone
-Xft.antialias:          true
-Xft.rgba:               rgb
-Xft.dpi:                96
+!BLK Cursor
+#define _color0        #000d18
+#define _color8        #000d18
 
-!urxvt settings
-urxvt*depth:            32
-urxvt*geometry:         132x50
-urxvt*saveLines:        65535
-urxvt*scrollTtyKeypress:true
-urxvt*scrollTtyOutput:  false
-urxvt*scrollBar:        false
-urxvt*loginShell:       true
-urxvt*termName:         rxvt-unicode-256color
-urxvt*inheritPixmap:    true
-urxvt*shading:          105
-urxvt*tintColor:        #202222
-urxvt*font:             xft:Inconsolata:pixelsize=14
-urxvt*print-pipe:       cat > $(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
-urxvt*secondaryScroll:  true
-urxvt*perl-ext-common:  default,matcher
-urxvt*urlLauncher:      /usr/bin/chromium
-urxvt*matcher.button:   1
-urxvt*xftAntialias:     true
-urxvt*borderless:       false
-urxvt*internalBorder:   5
-urxvt*externalBorder:   5
-urxvt*imLocale:         en_US.UTF-8
+!RED Tag
+#define _color1        #e89393
+#define _color9        #e89393
 
-!xterm settings
-xterm*dynamicColors:    true
-xterm*utf8:             2
-xterm*eightBitInput:    true
-xterm*saveLines:        32767
-xterm*scrollTtyKeypress:true
-xterm*scrollTtyOutput:  false
-xterm*scrollBar:        false
-xterm*loginShell:       true
-xterm*faceName:         Inconsolata:pixelsize=16
-xterm*jumpScroll:       true
-xterm*multiScroll:      true
-xterm*toolBar:          false
+!GRN SpecialKey
+#define _color2        #9ece9e
+#define _color10       #9ece9e
 
-!xpdf settings
-xpdf*enableFreetype:    true
-xpdf*antialias:         true
-xpdf*foreground:        white
-xpdf*background:        #1f1f1f
-xpdf*urlCommand:        /usr/bin/chromium %s
-xpdf*initialZoom:       125
-xpdf*continuousView:    true
-xpdf*viKeys:            true
+!YEL Keyword
+#define _color3        #f0dfaf
+#define _color11       #f0dfaf
 
-!xscreensaver settings
-xscreensaver.Dialog.headingFont:            -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:               -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:              -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:              -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:             -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:               -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:             -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.foreground:             #dddddd
-xscreensaver.Dialog.background:             #222222
-xscreensaver.Dialog.topShadowColor:         #222222
-xscreensaver.Dialog.bottomShadowColor:      #222222
-xscreensaver.Dialog.Button.foreground:      #666666
-xscreensaver.Dialog.Button.background:      #dddddd
-xscreensaver.Dialog.text.foreground:        #666666
-xscreensaver.Dialog.text.background:        #ffffff
-xscreensaver.Dialog.internalBorderWidth:    45
-xscreensaver.Dialog.borderWidth:            15
-xscreensaver.Dialog.shadowThickness:        2
-xscreensaver.Dialog.logo.width:             0
-xscreensaver.Dialog.logo.height:            0
-xscreensaver.passwd.thermometer.foreground: #ff0000
-xscreensaver.passwd.thermometer.background: #000000
-xscreensaver.passwd.thermometer.width:      12
-xscreensaver.dateFormat:                    %I:%M%P %a %b %d, %Y
+!BLU Number
+#define _color4        #8cd0d3
+#define _color12       #8cd0d3
+
+!MAG Precondit
+#define _color5        #c0bed1
+#define _color13       #c0bed1
+
+!CYN Float
+#define _color6        #dfaf8f
+#define _color14       #dfaf8f
+
+!WHT Search
+#define _color7        #efefef
+#define _color15       #efefef
+
+!FMT Include, StatusLine, ErrorMsg
+#define _colorBD       #ffcfaf
+#define _colorUL       #ccdc90
+#define _colorIT       #80d4aa
+
+!TXT Normal, Normal, Cursor
+#define _foreground    #dcdccc
+#define _background    #1f1f1f
+#define _cursorColor   #8faf9f
+
+URxvt*color0         : _color0
+URxvt*color1         : _color1
+URxvt*color2         : _color2
+URxvt*color3         : _color3
+URxvt*color4         : _color4
+URxvt*color5         : _color5
+URxvt*color6         : _color6
+URxvt*color7         : _color7
+URxvt*color8         : _color8
+URxvt*color9         : _color9
+URxvt*color10        : _color10
+URxvt*color11        : _color11
+URxvt*color12        : _color12
+URxvt*color13        : _color13
+URxvt*color14        : _color14
+URxvt*color15        : _color15
+URxvt*colorBD        : _colorBD
+URxvt*colorIT        : _colorIT
+URxvt*colorUL        : _colorUL
+URxvt*foreground     : _foreground
+URxvt*background     : _background
+URxvt*cursorColor    : _cursorColor
+
+XTerm*color0         : _color0
+XTerm*color1         : _color1
+XTerm*color2         : _color2
+XTerm*color3         : _color3
+XTerm*color4         : _color4
+XTerm*color5         : _color5
+XTerm*color6         : _color6
+XTerm*color7         : _color7
+XTerm*color8         : _color8
+XTerm*color9         : _color9
+XTerm*color10        : _color10
+XTerm*color11        : _color11
+XTerm*color12        : _color12
+XTerm*color13        : _color13
+XTerm*color14        : _color14
+XTerm*color15        : _color15
+XTerm*colorBD        : _colorBD
+XTerm*colorIT        : _colorIT
+XTerm*colorUL        : _colorUL
+XTerm*foreground     : _foreground
+XTerm*background     : _background
+XTerm*cursorColor    : _cursorColor

@@ -80,6 +80,7 @@ alias more='pager'                      #Less is more
 #
 # getting around
 # 
+alias ch='source '"$HOME"'/bin/chdir'
 alias .='ls'
 alias ..='ch ..'
 alias ....='ch ../..'
