@@ -1,8 +1,5 @@
 # ~/.bashrc: executed by bash(1) for interactive shells.
 
-# private stuff not to be cloned to public repositories / backups
-source ~/.bash_private
-
 ##############################################################
 #   INITIALIZATION
 #
@@ -42,7 +39,7 @@ HISTFILESIZE=1000
 shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ##############################################################
 #   COLORS
@@ -81,9 +78,7 @@ fi
 # 
 # If we're running in screen then use colors anyway
 #
-if [ "$TERM" = "screen-bce" ]; then
-    TERM="screen-256color-bce"
-fi
+[ "$TERM" = "screen-bce" ] && TERM="screen-256color-bce"
 
 ##############################################################
 #   PROMPT
@@ -95,17 +90,15 @@ fi
 # user logins, green for ssh sessions, cyan for telnet,
 # magenta with red "(ssh)" for ssh + su, magenta for telnet.
 
-source ~/.bash_styles
+[[ -f ~/.bash_styles ]] && source ~/.bash_styles
 
-source ~/.bash_prompt
+[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
 ##############################################################
 #   ALIASES
 
 # Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 ##############################################################
 #   AUTOCOMPLETE
@@ -126,10 +119,7 @@ fi
 ##############################################################
 # FUNCTIONS
 #
-
-if [ -f "${HOME}/.bash_functions" ]; then
-  source "${HOME}/.bash_functions"
-fi
+[[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
 
 ##############################################################
 # SHELL OPTIONS
@@ -176,10 +166,7 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
 #
 # additional configuration options for when running in cygwin
 # 
-
-if [ -f "${HOME}/.bash_cygwin" ]; then
-  source "${HOME}/.bash_cygwin"
-fi
+[[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
 
 ###################################################################
 #
@@ -187,3 +174,9 @@ fi
 #
 GPG_TTY=`tty`
 export GPG_TTY
+
+###################################################################
+# PRIVATE
+# 
+# private stuff not to be cloned to public repositories / backups
+[[ -f ~/.bash_private ]] && source ~/.bash_private
