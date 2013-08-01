@@ -39,7 +39,7 @@ alias asdf='setxkbmap dvorak'
 #
 # save x.org output to file 
 #
-alias startx='startx &> ~/.Xoutput'
+alias onscreen='startx | tee ${HOME}/.Xoutput'
 
 #
 # rsync is the new (s)cp
