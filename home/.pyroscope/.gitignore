@@ -1,8 +1,0 @@
-# all
-*
-
-# except
-!.gitignore
-!config.ini
-!config.py
-!bash-completion
