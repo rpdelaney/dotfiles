@@ -60,31 +60,7 @@ curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s=csco&f=l1' $1
 }
 
 #
-# bash function to decompress archives - http://www.shell-fu.org/lister.php?id=375
-#
-unpack () {
-    if [ -f $@ ] ; then
-        case $@ in
-            *.tar.bz2) tar xvjf $@;;
-            *.tar.gz) tar xvzf $@;;
-            *.bz2) bunzip2 $@;;
-            *.rar) unrar x $@;;
-            *.gz) gunzip $@;;
-            *.tar) tar xvf $@;;
-            *.tbz2) tar xvjf $@;;
-            *.tgz) tar xvzf $@;;
-            *.zip) unzip $@;;
-            *.Z) uncompress $@;;
-            *.7z) 7za x $@;;
-            *) echo "'$@' cannot be extracted via >extract<" ;;
-        esac
-else
-echo "'$@' is not a valid file"
-    fi
-}
-
-#
-# download album art from amazon
+#download album art from amazon
 #
 albumart() { local y="$@";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s 
 'http://www.albumart.org/index.php?srchkey='${y// /+}'&itempage=1&newsearch=1&searchindex=Music');}
