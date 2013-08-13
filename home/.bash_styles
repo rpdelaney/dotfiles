@@ -25,6 +25,8 @@
     blink=$(    tput blink  || tput mb      ) # Start blinking
     italic=$(   tput sitm   || tput ZH      ) # Start italic
     eitalic=$(  tput ritm   || tput ZR      ) # End   italic
+}
+
 [[ $TERM != *-m ]] && { 
     red=$(      tput setaf 1|| tput AF 1    )
     green=$(    tput setaf 2|| tput AF 2    )

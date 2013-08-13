@@ -39,7 +39,7 @@
 			<pref name='default' type='int' value='1366125461'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='1'/>
-			<pref name='idleaway' type='int' value='1374112404'/>
+			<pref name='idleaway' type='int' value='1375934007'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
 		<pref name='conversations'>
@@ -308,7 +308,7 @@
 				</pref>
 			</pref>
 			<pref name='gtk-plugin_pack-mystatusbox'>
-				<pref name='pane' type='int' value='380'/>
+				<pref name='pane' type='int' value='385'/>
 				<pref name='global' type='bool' value='0'/>
 				<pref name='show' type='int' value='0'/>
 				<pref name='iconsel' type='bool' value='0'/>
@@ -488,12 +488,12 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='0'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='111'/>
-				<pref name='height' type='int' value='26'/>
+				<pref name='width' type='int' value='87'/>
+				<pref name='height' type='int' value='31'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='0'/>
+				<pref name='y' type='int' value='11'/>
 			</pref>
 			<pref name='chats'>
 				<pref name='userlist' type='bool' value='0'/>
@@ -712,10 +712,10 @@
 			<pref name='list_visible' type='bool' value='1'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='none'/>
-			<pref name='x' type='int' value='1484'/>
-			<pref name='y' type='int' value='42'/>
+			<pref name='x' type='int' value='1479'/>
+			<pref name='y' type='int' value='85'/>
 			<pref name='width' type='int' value='325'/>
-			<pref name='height' type='int' value='936'/>
+			<pref name='height' type='int' value='941'/>
 			<pref name='theme' type='string' value=''/>
 		</pref>
 		<pref name='conversations'>
@@ -749,8 +749,8 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='64'/>
+				<pref name='x' type='int' value='318'/>
+				<pref name='y' type='int' value='153'/>
 				<pref name='width' type='int' value='1049'/>
 				<pref name='height' type='int' value='817'/>
 				<pref name='animate_buddy_icons' type='bool' value='0'/>

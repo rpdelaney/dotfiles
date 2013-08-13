@@ -6,19 +6,21 @@
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
-[ -z "$PS1" ] && return
+[[ -z "$PS1" ]] && return
 
 ##############################################################
 #   ENVIRONMENT
 #
 
-EDITOR=nano
-VISUAL=nano
+export EDITOR="nano"
+export VISUAL="nano"
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
 #
-PATH="${PATH}:$(find ${HOME}/bin -type d | tr '\n' ':' | sed 's/:$//')"
+#PATH="${PATH}:$(find ${HOME}/bin -maxdepth 1 -type d | tr '\n' ':' | sed 's/:$//')"
+
+#for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:$PATH; done
 
 ##############################################################
 #   HISTORY

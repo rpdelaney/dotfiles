@@ -105,8 +105,8 @@ schedule = watch_directory_6,10,10,"load=/var/torrent/graphics/*.torrent,d.set_d
 schedule = watch_directory_7,10,10,"load=/var/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
 schedule = watch_directory_8,10,10,"load=/var/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
 schedule = watch_directory_9,10,10,"load=/var/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
-
 schedule = watch_directory_10,10,10,"load=/var/torrent/fish/*.torrent,d.set_directory=/media/crypt/fishing"
+schedule = watch_directory_11,10,10,"load=/var/torrent/video/*.torrent,d.set_directory=/media/vault/incoming/video/"
 
 #
 # Create symlinks in the watch directory with a suffix indicating the
