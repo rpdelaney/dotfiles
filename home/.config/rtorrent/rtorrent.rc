@@ -112,9 +112,9 @@ schedule = watch_directory_11,10,10,"load=/var/torrent/video/*.torrent,d.set_dir
 # Create symlinks in the watch directory with a suffix indicating the
 # download state.
 #
-#on_start    = link1,"create_link=tied,,.started"
+on_start    = link1,"create_link=tied,,.started"
 #on_stop     = link1,"delete_link=tied,,.started"
-#on_finished = link1,"create_link=tied,,.finished"
+on_finished = link1,"create_link=tied,,.finished"
 #on_erase    = link1,"delete_link=tied,,.finished"
 
 # Create symlinks in the same directory as the download.
@@ -125,4 +125,4 @@ schedule = watch_directory_11,10,10,"load=/var/torrent/video/*.torrent,d.set_dir
 
 # Create a symlink in another directory without a suffix.
 # You need to quote the command in this case.
-#on_finished = link3,"create_link=base_filename,/files,"
+#on_finished = link3,"create_link=base_filename,/media/vault/outgoing/,"

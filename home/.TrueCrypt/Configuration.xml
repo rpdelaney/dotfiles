@@ -32,6 +32,6 @@
 		<config key="StartOnLogon">0</config>
 		<config key="UseKeyfiles">0</config>
 		<config key="WipeCacheOnAutoDismount">1</config>
-		<config key="WipeCacheOnClose">0</config>
+		<config key="WipeCacheOnClose">1</config>
 	</configuration>
 </TrueCrypt>
