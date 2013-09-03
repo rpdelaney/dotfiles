@@ -18,10 +18,10 @@ export VISUAL="nano"
 #
 # Add ~/bin and all subdirectories recursively to $PATH
 #
-#old method:
-#PATH="${PATH}:$(find ${HOME}/bin -maxdepth 1 -type d | tr '\n' ':' | sed 's/:$//')"
 
-for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
+PATH="${HOME}/bin/:$PATH"
+
+for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir}:"$PATH" ; done
 
 ##############################################################
 #   HISTORY
