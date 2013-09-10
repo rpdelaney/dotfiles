@@ -21,6 +21,7 @@ export VISUAL="nano"
 #old method:
 #PATH="${PATH}:$(find ${HOME}/bin -maxdepth 1 -type d | tr '\n' ':' | sed 's/:$//')"
 
+PATH="${PATH}:${HOME}/bin/"
 for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
 
 ##############################################################
