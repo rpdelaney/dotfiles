@@ -1,7 +1,7 @@
 # use grc to add color command support
-if [ -x /usr/bin/grc ] ; then
+if [[ -e /usr/bin/grc ]] ; then
 
-    alias hilite='/usr/bin/grc -es --colour=on'
+    alias hilite='\grc -es --colour=on'
 
     alias configure='hilite ./configure'
     alias diff='colordiff'                          #colordiff is the new diff
@@ -54,22 +54,22 @@ alias rv='rsync -a --append --stats --progress --remove-source-files'
 #
 # grep can be pretty :*
 #
-alias grep='/usr/bin/grep --color=always'
-alias agrep='/usr/bin/agrep --color=always'
-alias fgrep='/usr/bin/fgrep --color=always'
-alias egrep='/usr/bin/egrep --color=always'
-alias search='/usr/bin/grep --color=always -H --binary-files=text --directories=recurse --files-with-matches -n'
+alias grep='\grep --color=always'
+alias agrep='\agrep --color=always'
+alias fgrep='\fgrep --color=always'
+alias egrep='\egrep --color=always'
+alias search='\grep --color=always -H --binary-files=text --directories=recurse --files-with-matches -n'
 
 #
 # pwd
 #
-alias ls='/usr/bin/ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+alias ls='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
 alias la='ls -H -a'
 alias lsa='la'
 alias lss='ls | pager'
 alias lssa='lsa | pager'
 
-alias dir='/usr/bin/ls --color=always --format=across --group-directories-first'
+alias dir='\ls --color=always --format=across --group-directories-first'
 alias dirs='dir | pager'
 
 # 
@@ -98,7 +98,7 @@ alias chgrp='chgrp -c --preserve-root'
 alias mkdir='mkdir -vp'
 
 # ventriloquist
-alias sudoe="/usr/bin/sudo -E"
+alias sudoe="\sudo -E"
 
 # head/tail autosized to terminal width
 #alias head='cl head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
