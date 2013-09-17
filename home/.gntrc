@@ -22,7 +22,7 @@ urgent = red; black
 [general]
 shadow = 1
 # There is experimental mouse support
-mouse = 1
+mouse = 0
 # To use some custom window-manager
 wm = /usr/local/lib/gnt/s.so
 # There's also a custom window manager called irssi.so

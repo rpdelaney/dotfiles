@@ -37,11 +37,6 @@ channels = (
   { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
-  { 
-    name = "#chromium-support";
-    chatnet = "freenode";
-    autojoin = "yes";
-  },
   { name = "#regex"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
@@ -115,13 +110,6 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_4 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_5 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_5 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
