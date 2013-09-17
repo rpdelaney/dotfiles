@@ -19,7 +19,7 @@ fi
 #
 # disk usage in plain english
 #
-alias disk='df -lT --block-size=1048576'
+alias disk='df -lTH'
 
 #  
 # pgsql is dumb and annoying
@@ -39,17 +39,17 @@ alias asdf='setxkbmap dvorak'
 #
 # save x.org output to file 
 #
-alias onscreen='startx | tee ${HOME}/.Xoutput'
+alias onscreen='\startx | tee ${HOME}/.Xoutput'
 
 #
 # rsync is the new (s)cp
 #
-alias rp='rsync -a --append --stats --progress'
+alias rp='\rsync -a --append --stats --progress'
 
 #
 # rsync is the new mv
 #
-alias rv='rsync -a --append --stats --progress --remove-source-files'
+alias rv='\rsync -a --append --stats --progress --remove-source-files'
 
 #
 # grep can be pretty :*
@@ -80,7 +80,6 @@ alias more='pager'                      #Less is more
 #
 # getting around
 # 
-alias ch='source '"$HOME"'/bin/chdir'
 alias .='ls'
 alias ..='ch ..'
 alias ....='ch ../..'
@@ -88,14 +87,14 @@ alias ....='ch ../..'
 # 
 # safety valve
 # 
-alias mv='mv -iv'
-alias cp='cp -iv'
-alias rm='rm -Iv'
-alias rr='rm -r'
-alias chown='chown -c --preserve-root'
-alias chmod='chmod -c --preserve-root'
-alias chgrp='chgrp -c --preserve-root'
-alias mkdir='mkdir -vp'
+alias mv='\mv -iv'
+alias cp='\cp -iv'
+alias rm='\rm -Iv'
+alias rr='\rm -r'
+alias chown='\chown -c --preserve-root'
+alias chmod='\chmod -c --preserve-root'
+alias chgrp='\chgrp -c --preserve-root'
+alias mkdir='\mkdir -vp'
 
 # ventriloquist
 alias sudoe="\sudo -E"
@@ -118,7 +117,7 @@ alias tracert='traceroute'
 alias shred=' shred -vfu'
 
 # youtube-dl
-alias youget='youtube-dl -t -c -w --write-info-json --write-description -x -k --'
+alias youget='\youtube-dl -t -c -w --write-info-json --write-description -x -k --'
 
 # dnuos is the new oidua
 alias oidua='dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd

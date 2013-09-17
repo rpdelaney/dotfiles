@@ -19,14 +19,8 @@ export VISUAL="nano"
 # Add ~/bin and all subdirectories recursively to $PATH
 #
 
-<<<<<<< HEAD
 PATH="${PATH}:${HOME}/bin/"
 for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
-=======
-PATH="${HOME}/bin/:$PATH"
-
-for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir}:"$PATH" ; done
->>>>>>> 1fdba7c5d8405e3f7240c3e99a9e350cf5b85b0b
 
 ##############################################################
 #   HISTORY
@@ -107,6 +101,9 @@ fi
 
 # Alias definitions.
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+
+#chdir
+[[ -f ~/bin/chdir ]] & source ~/bin/chdir
 
 ##############################################################
 #   AUTOCOMPLETE
