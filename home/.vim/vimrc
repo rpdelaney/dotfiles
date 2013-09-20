@@ -1,0 +1,2 @@
+colors zenburn
+syntax on

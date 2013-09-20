@@ -515,7 +515,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='21'/>
-				<pref name='height' type='int' value='39'/>
+				<pref name='height' type='int' value='26'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>

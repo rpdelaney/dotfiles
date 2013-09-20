@@ -12,8 +12,8 @@
 #   ENVIRONMENT
 #
 
-export EDITOR="nano"
-export VISUAL="nano"
+export EDITOR="vim"
+export VISUAL="gvim"
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
