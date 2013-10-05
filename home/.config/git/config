@@ -14,7 +14,7 @@
 [branch]
    # always setup 'git pull' to rebase instead of merge
    # actually, don't. because that's dumb
-   # autosetuprebase = always
+   autosetuprebase = never
 [diff]
    external = gitdiff
    renames = copies

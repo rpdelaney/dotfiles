@@ -13,6 +13,11 @@ setxkbmap dvorak
 export DE="xfce"                # desktop environment
 export BROWSER="tor-browser"       # web browser
 
+#
+# xscreensaver daemon
+#
+/usr/bin/xscreensaver -no-splash &
+
 #xfce
 #gtmanfred said i dont need --witch-ck-launch
 #exec startxfce4 --with-ck-launch

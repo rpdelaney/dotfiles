@@ -1,10 +1,16 @@
+#
+# colordiff is the new diff
+#
+type colordiff &> /dev/null && alias diff='colordiff'
+
+#
 # use grc to add color command support
-if [[ -e /usr/bin/grc ]] ; then
-
+#
+if type grc &> /dev/null ; then
+    
     alias hilite='\grc -es --colour=on'
-
+    
     alias configure='hilite ./configure'
-    alias diff='colordiff'                          #colordiff is the new diff
     alias make='hilite make'
     alias gcc='hilite gcc'
     alias g++='hilite g++'
@@ -19,12 +25,12 @@ fi
 #
 # disk usage in plain english
 #
-alias disk='df -lTH'
+alias disk='\df -lTH'
 
 #  
 # pgsql is dumb and annoying
 # 
-alias pgsql='psql'
+alias pgsql='\psql'
 
 #
 # best pastebin evar
@@ -104,26 +110,26 @@ alias sudoe="\sudo -E"
 #alias tail='cl tail -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 
 # networking
-alias netmonitor='sudo watch -n 3 lsof -i'                                      # watch incoming network connections
+alias netmonitor='\sudo watch -n 3 lsof -i'                                      # watch incoming network connections
 
 # mount
-alias mounts='mount | column -t | pager'
+alias mounts='\mount | column -t | pager'
 
 # dos
-alias traceroute='mtr'                                                          # mtr is the new tracert
+alias traceroute='\mtr'                                                          # mtr is the new tracert
 alias tracert='traceroute'
 
 # private shredder
 alias shred=' shred -vfu'
 
 # youtube-dl
-alias youget='\youtube-dl -t -c -w --write-info-json --write-description -x -k --'
+alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
 
 # dnuos is the new oidua
-alias oidua='dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd
+alias oidua='\dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd
 
 # yaourt is the new pacman
-alias yao='yaourt'
+alias yao='\yaourt'
 alias yaos='yao -S'
 alias yaoss='yao -Ss'
 alias yaors='yao -Rs'
