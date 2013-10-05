@@ -3,7 +3,7 @@
 # 
 if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
         echo "I've got no clue who the fuck you are."
-        ssh-add ${HOME}/.ssh/identity
+        ssh-add ${HOME}/.ssh/id_rsa
 fi
 
 # 
