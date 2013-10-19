@@ -1,14 +1,14 @@
 [global_config]
   dbus = True
-  enabled_plugins = CustomCommandsMenu, InactivityWatch, TestPlugin, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = ActivityWatch,
   title_transmit_bg_color = "#00bfc8"
   handle_size = 1
   tab_position = bottom
 [keybindings]
-  copy = <Primary>j
-  close_term = F5
+  copy = Delete
+  close_term = Delete
   paste = <Primary>k
-  close_window = F5
+  close_window = Delete
 [profiles]
   [[default]]
     scrollbar_position = hidden

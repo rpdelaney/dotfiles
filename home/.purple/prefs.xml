@@ -188,6 +188,29 @@
 					</pref>
 				</pref>
 			</pref>
+			<pref name='events'>
+				<pref name='events'>
+					<pref name='message' type='bool' value='1'/>
+					<pref name='action' type='bool' value='1'/>
+					<pref name='signed-on' type='bool' value='1'/>
+					<pref name='signed-off' type='bool' value='0'/>
+					<pref name='away' type='bool' value='1'/>
+					<pref name='idle' type='bool' value='1'/>
+					<pref name='back' type='bool' value='1'/>
+					<pref name='status-message' type='bool' value='0'/>
+					<pref name='specials' type='bool' value='0'/>
+				</pref>
+				<pref name='restrictions'>
+					<pref name='blocked' type='bool' value='1'/>
+					<pref name='new-conv-only' type='bool' value='0'/>
+					<pref name='only-available' type='bool' value='0'/>
+					<pref name='stack-events' type='bool' value='0'/>
+				</pref>
+			</pref>
+			<pref name='libnotify+'>
+				<pref name='expire-timeout' type='int' value='-1'/>
+				<pref name='overlay-scale' type='int' value='50'/>
+			</pref>
 		</pref>
 		<pref name='lopl'/>
 		<pref name='prpl'>
@@ -438,7 +461,6 @@
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
 				<item value='/usr/lib/purple-2/offlinemsg.so'/>
 				<item value='/usr/lib/purple-2/psychic.so'/>
-				<item value='/home/ryan/.purple/plugins/sqlite-log.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 				<item value='/usr/lib/purple-2/sslinfo.so'/>
 				<item value='/usr/lib/finch/gnttinyurl.so'/>
@@ -490,12 +512,12 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='105'/>
-				<pref name='height' type='int' value='28'/>
+				<pref name='width' type='int' value='110'/>
+				<pref name='height' type='int' value='22'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='0'/>
+				<pref name='y' type='int' value='22'/>
 			</pref>
 			<pref name='chats'>
 				<pref name='userlist' type='bool' value='0'/>

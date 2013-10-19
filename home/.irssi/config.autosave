@@ -3,6 +3,7 @@ servers = (
     address = "chat.freenode.net";
     chatnet = "freenode";
     port = "6697";
+    password = "causasui:***REMOVED***";
     use_ssl = "yes";
     ssl_verify = "no";
     autoconnect = "yes";
@@ -19,15 +20,10 @@ chatnets = {
 };
 
 channels = (
-  { name = "#mutt"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#irssi"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#wine"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#bash"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#postgresql"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#php"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#sql"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#python"; chatnet = "freenode"; autojoin = "yes"; },
   {
     name = "#wikipedia-en-admins";
     chatnet = "freenode";
@@ -36,383 +32,39 @@ channels = (
   },
   { name = "##crypto"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#systemd"; chatnet = "freenode"; password = "-autojoin"; },
-  { name = "#fail2ban"; chatnet = "freenode"; password = "-autojoin"; }
+  { name = "#fail2ban"; chatnet = "freenode"; password = "-autojoin"; },
+  { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#regex"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##dd-wrt"; chatnet = "freenode"; autojoin = "yes"; },
+  {
+    name = "#wikipedia-en-revdel";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "##sed"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#postfix"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##rtorrent"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#archlinux-newbie";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xda-devs"; chatnet = "freenode"; },
+  { name = "##security"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##windows"; chatnet = "freenode"; },
+  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 logs = { };
 
 ignores = ( { level = "MODES JOINS PARTS QUITS NICKS"; } );
 
-windows = {
-  1 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mutt";
-        tag = "Freenode";
-      }
-    );
-    2 = {
-      items = (
-        {
-          type = "CHANNEL";
-          chat_type = "IRC";
-          name = "#irssi";
-          tag = "Freenode";
-        }
-      );
-      3 = {
-        items = (
-          {
-            type = "CHANNEL";
-            chat_type = "IRC";
-            name = "#wikipedia-en";
-            tag = "Freenode";
-          }
-        );
-        4 = {
-          items = (
-            {
-              type = "CHANNEL";
-              chat_type = "IRC";
-              name = "#wikipedia-en-admins";
-              tag = "Freenode";
-            }
-          );
-          5 = {
-            items = (
-              {
-                type = "CHANNEL";
-                chat_type = "IRC";
-                name = "#archlinux";
-                tag = "Freenode";
-              }
-            );
-            6 = {
-              items = (
-                {
-                  type = "CHANNEL";
-                  chat_type = "IRC";
-                  name = "#wine";
-                  tag = "Freenode";
-                }
-              );
-              7 = {
-                items = (
-                  {
-                    type = "CHANNEL";
-                    chat_type = "IRC";
-                    name = "#bash";
-                    tag = "Freenode";
-                  }
-                );
-                8 = {
-                  items = (
-                    {
-                      type = "CHANNEL";
-                      chat_type = "IRC";
-                      name = "#sql";
-                      tag = "Freenode";
-                    }
-                  );
-                  9 = {
-                    items = (
-                      {
-                        type = "CHANNEL";
-                        chat_type = "IRC";
-                        name = "#postgresql";
-                        tag = "Freenode";
-                      }
-                    );
-                    10 = {
-                      items = (
-                        {
-                          type = "CHANNEL";
-                          chat_type = "IRC";
-                          name = "#php";
-                          tag = "Freenode";
-                        }
-                      );
-                      11 = {
-                        items = (
-                          {
-                            type = "CHANNEL";
-                            chat_type = "IRC";
-                            name = "#python";
-                            tag = "Freenode";
-                          }
-                        );
-                        12 = { name = "hilight"; sticky = "yes"; };
-                      };
-
-                      mainwindows = {
-                        7 = { first_line = "6"; lines = "55"; };
-                        12 = { first_line = "1"; lines = "5"; };
-                      };
-
-                      aliases = {
-                        J = "join";
-                        WJOIN = "join -window";
-                        WQUERY = "query -window";
-                        LEAVE = "part";
-                        BYE = "quit";
-                        EXIT = "quit";
-                        SIGNOFF = "quit";
-                        DESCRIBE = "action";
-                        DATE = "time";
-                        HOST = "userhost";
-                        LAST = "lastlog";
-                        SAY = "msg *";
-                        WI = "whois";
-                        WII = "whois $0 $0";
-                        WW = "whowas";
-                        W = "who";
-                        N = "names";
-                        M = "msg";
-                        T = "topic";
-                        C = "clear";
-                        CL = "clear";
-                        K = "kick";
-                        KB = "kickban";
-                        KN = "knockout";
-                        BANS = "ban";
-                        B = "ban";
-                        MUB = "unban *";
-                        UB = "unban";
-                        IG = "ignore";
-                        UNIG = "unignore";
-                        SB = "scrollback";
-                        UMODE = "mode $N";
-                        WC = "window close";
-                        WN = "window new hide";
-                        SV = "say Irssi $J ($V) - http://irssi.org/";
-                        GOTO = "sb goto";
-                        CHAT = "dcc chat";
-                        RUN = "SCRIPT LOAD";
-                        CALC = "exec - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
-                        SBAR = "STATUSBAR";
-                        INVITELIST = "mode $C +I";
-                        Q = "QUERY";
-                        "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
-                        EXEMPTLIST = "mode $C +e";
-                        ATAG = "WINDOW SERVER";
-                        UNSET = "set -clear";
-                        RESET = "set -default";
-                      };
-
-                      statusbar = {
-                        # formats:
-                        # when using {templates}, the template is shown only if it's argument isn't
-                        # empty unless no argument is given. for example {sb} is printed always,
-                        # but {sb $T} is printed only if $T isn't empty.
-
-                        items = {
-                          # start/end text in statusbars
-                          barstart = "{sbstart}";
-                          barend = "{sbend}";
-
-                          topicbarstart = "{topicsbstart}";
-                          topicbarend = "{topicsbend}";
-
-                          # treated "normally", you could change the time/user name to whatever
-                          time = "{sb $Z}";
-                          user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
-
-                          # treated specially .. window is printed with non-empty windows,
-                          # window_empty is printed with empty windows
-                          window = "{sb $winref:$tag/$itemname{sbmode $M}}";
-                          window_empty = "{sb $winref{sbservertag $tag}}";
-                          prompt = "{prompt $[.15]itemname}";
-                          prompt_empty = "{prompt $winname}";
-                          topic = " $topic";
-                          topic_empty = " Irssi v$J - http://www.irssi.org";
-
-                          # all of these treated specially, they're only displayed when needed
-                          lag = "{sb Lag: $0-}";
-                          act = "{sb Act: $0-}";
-                          more = "-- more --";
-                        };
-
-                        # there's two type of statusbars. root statusbars are either at the top
-                        # of the screen or at the bottom of the screen. window statusbars are at
-                        # the top/bottom of each split window in screen.
-                        default = {
-                          # the "default statusbar" to be displayed at the bottom of the window.
-                          # contains all the normal items.
-                          window = {
-                            disabled = "no";
-
-                            # window, root
-                            type = "window";
-                            # top, bottom
-                            placement = "bottom";
-                            # number
-                            position = "1";
-                            # active, inactive, always
-                            visible = "active";
-
-                            # list of items in statusbar in the display order
-                            items = {
-                              barstart = { priority = "100"; };
-                              time = { };
-                              user = { };
-                              window = { };
-                              window_empty = { };
-                              lag = { priority = "-1"; };
-                              more = {
-                                priority = "-1";
-                                alignment = "right";
-                              };
-                              barend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                              usercount = { };
-                            };
-                          };
-
-                          # statusbar to use in inactive split windows
-                          window_inact = {
-                            type = "window";
-                            placement = "bottom";
-                            position = "1";
-                            visible = "inactive";
-                            items = {
-                              barstart = { priority = "100"; };
-                              window = { };
-                              window_empty = { };
-                              more = {
-                                priority = "-1";
-                                alignment = "right";
-                              };
-                              barend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                            };
-                          };
-
-                          # we treat input line as yet another statusbar :) It's possible to
-                          # add other items before or after the input line item.
-                          prompt = {
-                            type = "root";
-                            placement = "bottom";
-                            # we want to be at the bottom always
-                            position = "100";
-                            visible = "always";
-                            items = {
-                              prompt = { priority = "-1"; };
-                              prompt_empty = { priority = "-1"; };
-                              # treated specially, this is the real input line.
-                              input = { priority = "10"; };
-                            };
-                          };
-
-                          # topicbar
-                          topic = {
-                            type = "root";
-                            placement = "top";
-                            position = "1";
-                            visible = "always";
-                            items = {
-                              topicbarstart = { priority = "100"; };
-                              topic = { };
-                              topic_empty = { };
-                              topicbarend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                            };
-                          };
-                          awl_0 = {
-                            items = {
-                              barstart = { priority = "100"; };
-                              awl_0 = { };
-                              barend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                            };
-                          };
-                          awl_1 = {
-                            items = {
-                              barstart = { priority = "100"; };
-                              awl_1 = { };
-                              barend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                            };
-                          };
-                          awl_2 = {
-                            items = {
-                              barstart = { priority = "100"; };
-                              awl_2 = { };
-                              barend = {
-                                priority = "100";
-                                alignment = "right";
-                              };
-                            };
-                          };
-                        };
-                      };
-                      settings = {
-                        core = {
-                          real_name = "causa sui";
-                          user_name = "causasui";
-                          awaylog_level = "MSGS HILIGHT";
-                          awaylog_file = "~/logs/irssi/away.log ";
-                          nick = "causasui";
-                          resolve_prefer_ipv6 = "yes";
-                          hostname = "00:00:e8:5f:79:e7";
-                        };
-                        "fe-text" = { actlist_sort = "refnum"; };
-                        "fe-common/core" = {
-                          autolog = "yes";
-                          autolog_path = "~/logs/irssi/irclogs/%Y/$tag/$0.%m-%d.log";
-                          autolog_level = "ALL -CLIENTNOTICES -CRAP -CLIENTCRAP -CTCPS -SNOTES";
-                          hilight_nick_matches = "no";
-                          theme = "default";
-                          use_status_window = "yes";
-                          autolog_ignore_targets = "Chanserv Nickserv auth";
-                          hilight_color = "%Y %4";
-                        };
-                        "perl/core/scripts" = {
-                          awl_display_key = "$Q%K|%n$H$C$S";
-                          awl_block = "-18";
-                        };
-                      };
-                      hilights = (
-                        { 
-                          text = "causasui";
-                          nick = "yes";
-                          word = "no";
-                        },
-                        {
-                          text = "causasui-away";
-                          nick = "yes";
-                          word = "no";
-                        },
-                        {
-                          text = "causa";
-                          nick = "yes";
-                          word = "no";
-                          fullword = "yes";
-                        }
-                      );
-
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  };
-};
 settings = {
   core = {
     real_name = "causasui";
@@ -420,7 +72,10 @@ settings = {
     nick = "causasui";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "zenburn.theme"; };
+  "fe-common/core" = { 
+    theme = "zenburn.theme";
+    use_status_window = "yes";
+  };
 };
 statusbar = {
   default = {
@@ -431,5 +86,269 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_2 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_3 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_3 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
+windows = {
+  1 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##linux";
+        tag = "freenode";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#archlinux";
+        tag = "freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#archlinux-newbie";
+        tag = "freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#bash";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#regex";
+        tag = "freenode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##sed";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#git";
+        tag = "freenode";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#postfix";
+        tag = "freenode";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#irssi";
+        tag = "freenode";
+      }
+    );
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#mpd";
+        tag = "freenode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##rtorrent";
+        tag = "freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#foobar2000";
+        tag = "freenode";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#notepad++";
+        tag = "freenode";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#chromium-support";
+        tag = "freenode";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ahk";
+        tag = "freenode";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#postgresql";
+        tag = "freenode";
+      }
+    );
+  };
+  17 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##crypto";
+        tag = "freenode";
+      }
+    );
+  };
+  18 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##dd-wrt";
+        tag = "freenode";
+      }
+    );
+  };
+  19 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#wikipedia-en-admins";
+        tag = "freenode";
+      }
+    );
+  };
+  20 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#wikipedia-en-revdel";
+        tag = "freenode";
+      }
+    );
+  };
+  21 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##dvorak";
+        tag = "freenode";
+      }
+    );
+  };
+  22 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##security";
+        tag = "freenode";
+      }
+    );
+  };
+  23 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#gnupg";
+        tag = "freenode";
+      }
+    );
+  };
+  24 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#pidgin";
+        tag = "freenode";
+      }
+    );
+  };
+};
+mainwindows = { 4 = { first_line = "1"; lines = "24"; }; };
