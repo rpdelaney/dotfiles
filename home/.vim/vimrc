@@ -1,4 +1,114 @@
-set number
-colors zenburn
-syntax on
+" infect pathogen plugin loader
+call pathogen#infect()
 
+
+" UltiSnips
+let g:UltiSnipsEditSplit            = "vertical"
+let g:UltiSnipsListSnippets         = "<c-tab>"
+let g:UltiSnipsExpandTrigger        = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
+
+" use colors
+colorscheme mustang
+
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" Use :help 'option' to see the documentation for the given option.
+
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+
+set nrformats-=octal
+
+" always search the whole file regardless of cursor position
+set wrapscan
+
+" highlight all search matches
+set hlsearch
+
+" make left/right keys wrap to start of the line
+set whichwrap+=h,l,<,>,[,]
+
+" make tabs fit my arbitrary preconceptions
+" (use 4 spaces instead of a tab)
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" auto-shift to tab stop
+set shiftround
+
+" time out bindings that don't respond quickly
+set ttimeout
+set ttimeoutlen=50
+
+" search incrementally
+set incsearch
+
+" show search results visually
+set showmatch
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+set laststatus=2
+set ruler
+set number
+set showcmd
+set wildmenu
+
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  endif
+endif
+
+if &shell =~# 'fish$'
+  set shell=/usr/bin/bash
+endif
+
+set autoread
+set fileformats="unix,dos"
+
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+inoremap <C-U> <C-G>u<C-U>
+" vim:set ft=vim et sw=2:

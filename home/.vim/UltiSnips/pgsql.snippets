@@ -1,0 +1,75 @@
+snippet table "table schema definition" b
+/*
+    table: ${1:tableName}
+    ${2:tableComment}
+    created on: `date` 
+*/
+
+---------------------------------------------------------------
+create table $1
+(
+        -- primary key column
+    id serial,
+    
+        -- foreign key columns
+    
+        -- maintenance columns
+    insertedTime    timestamptz     default "now"(),
+    insertedUser    text            default "current_user"(),
+    updatedTime     timestamptz,
+    updatedUser     text,
+
+        -- data columns
+    
+        -- data validation constraints
+    
+        -- foreign key constraints
+    
+        -- primary key constraint
+    constraint pkey_$1 primary key (id)
+);
+
+alter   table       $1 owner to     ${3:postgres};
+grant   all on      $1 to           $3;
+revoke  all on      $1 from         public;
+
+comment on table    $1              is '$2';
+comment on column   $1.id           is 'primary key';
+endsnippet
+
+snippet function "function definer" b
+--
+-- function: ${1:functionName}(${2:functionParameters}) 
+-- ${3:functionComment}
+--
+
+---------------------------------------------------------------
+create function $1($2) returns boolean as
+  
+$body$
+declare
+
+begin
+        -- validation
+    
+        -- action
+    
+    return;
+end;
+
+$body$
+  --called on null input
+  language plpgsql volatile        --volatile, stable, immutable
+  cost 100;
+alter function $1($2) 
+  owner to functionowner;
+  
+endsnippet
+
+snippet nn "add a not null constraint to a column"
+    constraint      nnul_${1:columnName}   check ($1 is not null),
+endsnippet
+
+snippet uniq "add a unique constraint to a column" 
+    constraint      uniq_${1:columnName}   check ($1 is not null),
+endsnippet

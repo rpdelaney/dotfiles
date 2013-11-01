@@ -12,8 +12,17 @@
 #   ENVIRONMENT
 #
 
+# 
+# editor
+# 
 export EDITOR="vim"
 export VISUAL="gvim"
+
+#
+# gpg
+#
+GPG_TTY=`tty`
+export GPG_TTY
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
@@ -49,15 +58,11 @@ shopt -s checkwinsize
 # colorize the terminal
 # read in dircolors; enable color support
 
-if [ -f ~/.dir_colors ] ; then
-    eval "`dircolors -b ~/.bash_colors`"
-else
-    eval "`dircolors -b`"
-fi
+[[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
 
 #zenburn theme for tty 
 #by way of http://phraktured.net/linux-console-colors.html
-if [ "$TERM" = "linux" ]; then
+if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]P0222222" #black
     echo -en "\e]P8222222" #darkgrey
     echo -en "\e]P1803232" #darkred
@@ -80,7 +85,7 @@ fi
 # 
 # If we're running in screen then use colors anyway
 #
-[ "$TERM" = "screen-bce" ] && TERM="screen-256color-bce"
+[[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 
 ##############################################################
 #   PROMPT
@@ -162,23 +167,12 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
 # Set a more restrictive umask: i.e. no exec perms for others:
 # umask 027
 # Paranoid: neither group nor others have any perms:
-# umask 077
+umask 077
 
-
-###################################################################
-#
-# cygwin
 #
 # additional configuration options for when running in cygwin
 # 
 [[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
-
-###################################################################
-#
-# gpg
-#
-GPG_TTY=`tty`
-export GPG_TTY
 
 ###################################################################
 # PRIVATE

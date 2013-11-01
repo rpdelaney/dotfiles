@@ -6,8 +6,6 @@
 # The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
 # slackware version of dircolors) are recognized but ignored.
 # Below, there should be one TERM entry for each termtype that is colorizable
-
-# Last Modified: 2008-08-07
 TERM Eterm
 TERM ansi
 TERM color-xterm
@@ -68,8 +66,8 @@ LINK 01;36	# symbolic link. (If you set this to 'target' instead of a
                 # numerical value, the color is as for the file pointed to.)
 
 FIFO 40;33      # pipe
-SOCK 01;35 	# socket
-DOOR 01;35 	# door
+SOCK 00;35 	    # socket
+DOOR 00;35 	    # door
 BLK 40;33;01 	# block device driver
 CHR 40;33;01 	# character device driver
 ORPHAN 45;36;01	# symlink to nonexistent file, or non-stat'able file
@@ -79,133 +77,113 @@ STICKY_OTHER_WRITABLE 30;47	# dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 34;47		# dir that is other-writable and not sticky (o+w)
 STICKY 35;47	                # dir that is not other-writable and is sticky (+t)
 
-# This is for files with execute permission:
-EXEC 01;32
+EXEC 01;32 # This is for files with execute permission
+ 
+# executables (green)
+.sh		00;32
+.sp		00;32
+.sql	00;32
+.pgsql	00;32
 
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to colorize below. Put the extension, a space, and the color init string.
-# (and any comments you want to add after a '#')
+# archives or compressed (red)
+.tar	00;31
+.tgz	00;31
+.svgz	00;31
+.arj	00;31
+.taz	00;31
+.lzh	00;31
+.lzma	00;31
+.zip	00;31
+.z		00;31
+.Z		00;31
+.dz		00;31
+.gz		00;31
+.bz2	00;31
+.bz	    00;31
+.tbz2	00;31
+.tz	    00;31
+.deb	00;31
+.rpm	00;31
+.jar	00;31
+.rar	00;31
+.ace	00;31
+.zoo	00;31
+.cpio	00;31
+.7z	    00;31
+.rz	    00;31
+.iso	00;31
+.backup	00;31
 
-# If you use DOS-style suffixes, you may want to uncomment the following:
-.cmd 01;32 # executables (bright green)
-.exe 01;32
-.com 01;32
-.btm 01;32
-.bat 01;32
+#databases (bright red)
+.sqlite	01;31
 
-# Or if you want to colorize scripts even if they do not have the
-# executable bit actually set.
-#.sh 01;32
-#.csh 01;32
-#.pl 01;32
+# image formats (purple)
+.jpg	00;35
+.jpeg	00;35
+.gif	00;35
+.bmp	00;35
+.pbm	00;35
+.pgm	00;35
+.ppm	00;35
+.tga	00;35
+.xbm	00;35
+.xpm	00;35
+.tif	00;35
+.tiff	00;35
+.png	00;35
+.svg	00;35
+.mng	00;35
+.pcx	00;35
 
-# archives or compressed (bright red)
-.tar 01;31
-.tgz 01;31
-.svgz 01;31
-.arj 01;31
-.taz 01;31
-.lzh 01;31
-.lzma 01;31
-.zip 01;31
-.z 01;31
-.Z 01;31
-.dz 01;31
-.gz 01;31
-.bz2 01;31
-.bz 01;31
-.tbz2 01;31
-.tz 01;31
-.deb 01;31
-.rpm 01;31
-.jar 01;31
-.rar 01;31
-.ace 01;31
-.zoo 01;31
-.cpio 01;31
-.7z 01;31
-.rz 01;31
-
-# image formats (bright purple)
-.jpg 01;35
-.jpeg 01;35
-.gif 01;35
-.bmp 01;35
-.pbm 01;35
-.pgm 01;35
-.ppm 01;35
-.tga 01;35
-.xbm 01;35
-.xpm 01;35
-.tif 01;35
-.tiff 01;35
-.png 01;35
-.svg 01;35
-.mng 01;35
-.pcx 01;35
-
-#video formats
-.mov 01;35  #quicktime
-.mpg 01;35
-.mpeg 01;35
-.m2v 01;35  # MPEG-2 Video only
-.mkv 01;35  # Matroska (http://matroska.org/)
-.ogm 01;35  # Ogg Media File
-.mp4 01;35  # 'Offical' container for MPEG-4
-.m4v 01;35  # MPEG-4 Video only
-.mp4v 01;35 # MPEG-4 Video only
-.vob 01;35  # MPEG-2 DVD
-.qt 01;35   # Quicktime (http://developer.apple.com/qa/qtw/qtw99.html)
-.nuv 01;35
-.wmv 01;35  # Windows Media Video
-.asf 01;35  # Advanced Systems Format (contains Windows Media Video)
-.rm 01;35   # Real Media
-.rmvb 01;35 # Real Media Variable Bitrate
-.flc 01;35  # AutoDesk Animator
-.avi 01;35
-.fli 01;35
-.gl 01;35
-.dl 01;35
-.xcf 01;35
-.xwd 01;35
-.yuv 01;35
-.swf 01;35  # Shockwave Flash
-.flv 01;35  # Flash Video
-.mkv 01;35  # matroska
+#video formats (bright purple)
+.mov	01;35  #quicktime
+.mpg	01;35
+.mpeg	01;35
+.m2v	01;35  # MPEG-2 Video only
+.mkv	01;35  # Matroska (http://matroska.org/)
+.ogm	01;35  # Ogg Media File
+.mp4	01;35  # 'Offical' container for MPEG-4
+.m4v	01;35  # MPEG-4 Video only
+.mp4v	01;35 # MPEG-4 Video only
+.vob	01;35  # MPEG-2 DVD
+.qt	    01;35   # Quicktime (http://developer.apple.com/qa/qtw/qtw99.html)
+.nuv	01;35
+.wmv	01;35  # Windows Media Video
+.asf	01;35  # Advanced Systems Format (contains Windows Media Video)
+.rm	    01;35   # Real Media
+.rmvb	01;35 # Real Media Variable Bitrate
+.flc	01;35  # AutoDesk Animator
+.avi	01;35
+.fli	01;35
+.gl 	01;35
+.dl	    01;35
+.xcf	01;35
+.xwd	01;35
+.yuv	00;35
+.swf	00;35  # Shockwave Flash
+.flv	00;35  # Flash Video
+.mkv	00;35  # matroska
 
 # audio formats (cyan)
-.aac 00;36
-.au 00;36
-.flac 00;36
-.m4a 00;36
-.mid 00;36
-.midi 00;36
-.mka 00;36
-.mp3 00;36
-.mpc 00;36
-.ogg 00;36
-.ra 00;36
-.wav 00;36
+.aac	00;36
+.au		00;36
+.flac	00;36
+.m4a	00;36
+.mid	00;36
+.midi	00;36
+.mka	00;36
+.mp3	00;36
+.mpc	00;36
+.ogg	00;36
+.ra	    00;36
+.wav	00;36
 
-# document files (bright yellow)
-.css 01;33
-.diff 01;33
-.doc 01;33
-.docx 01;33
-.html 01;33
-.java 00;33
-.log 01;33
-.patch 01;33
-.pdf 01;33
-.properties 01;33
-.ps 01;33
-.tex 01;33
-.txt 01;33
+# digital document files (yellow)
+.doc	00;33
+.docx	00;33
+.java	00;33
+.pdf	00;33
+.properties	00;33
 
-# configuration files (cyan)
-.conf 01;36
-.ini 01;36
-.cfg 01;36
+# configuration files (bright yellow)
 
-# other files
-.iso 01;31

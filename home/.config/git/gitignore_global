@@ -34,6 +34,8 @@
 *.rar
 *.tar
 *.zip
+*.xz
+*.lzma
 
 # Logs and databases #
 ######################
@@ -49,6 +51,10 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# temporary files   #
+#####################
+*.sw?
+
 # ssh, keys and etc #
 #####################
 *.ssh
@@ -58,7 +64,7 @@ id_rsa.*
 
 # svn               #
 #####################
-.svn/
+*.svn/
 
 # git               #
 #####################
