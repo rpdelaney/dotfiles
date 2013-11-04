@@ -9,7 +9,7 @@ snippet table "table schema definition" b
 create table $1
 (
         -- primary key column
-    id serial,
+    id              serial,
     
         -- foreign key columns
     
@@ -26,7 +26,7 @@ create table $1
         -- foreign key constraints
     
         -- primary key constraint
-    constraint pkey_$1 primary key (id)
+    constraint pkey_$1      primary key (id)
 );
 
 alter   table       $1 owner to     ${3:postgres};
@@ -66,10 +66,15 @@ alter function $1($2)
   
 endsnippet
 
-snippet nn "add a not null constraint to a column"
+snippet nnul "add a not null constraint to a column" b
     constraint      nnul_${1:columnName}   check ($1 is not null),
 endsnippet
 
-snippet uniq "add a unique constraint to a column" 
+snippet uniq "add a unique constraint to a column" b 
     constraint      uniq_${1:columnName}   check ($1 is not null),
 endsnippet
+
+snippet chek "add a check constraint to a column" b
+    constraint      chek_${1:columnName}   check ($2)
+endsnippet
+

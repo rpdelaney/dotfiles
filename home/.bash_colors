@@ -113,6 +113,7 @@ EXEC 01;32 # This is for files with execute permission
 .rz	    00;31
 .iso	00;31
 .backup	00;31
+.xz     00;31
 
 #databases (bright red)
 .sqlite	01;31

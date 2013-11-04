@@ -461,6 +461,7 @@
 				<item value='/usr/lib/purple-2/joinpart.so'/>
 				<item value='/usr/lib/purple-2/purple-libnotify+.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
+				<item value='/usr/lib/purple-2/purple-otr.so'/>
 				<item value='/usr/lib/purple-2/offlinemsg.so'/>
 				<item value='/usr/lib/purple-2/psychic.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
@@ -468,6 +469,7 @@
 				<item value='/usr/lib/finch/gnttinyurl.so'/>
 			</pref>
 			<pref name='seen' type='pathlist'>
+				<item value='/usr/lib/purple-2/purple-otr.so'/>
 				<item value='/usr/lib/purple-2/purple-libnotify+.so'/>
 				<item value='/usr/lib/purple-2/purple-events.so'/>
 				<item value='/home/ryan/.purple/plugins/sqlite-log.so'/>
@@ -517,7 +519,7 @@
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
 				<pref name='width' type='int' value='78'/>
-				<pref name='height' type='int' value='31'/>
+				<pref name='height' type='int' value='25'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='69'/>
@@ -541,7 +543,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='21'/>
-				<pref name='height' type='int' value='26'/>
+				<pref name='height' type='int' value='31'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>

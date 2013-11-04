@@ -72,10 +72,7 @@ settings = {
     nick = "causasui";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { 
-    theme = "zenburn.theme";
-    use_status_window = "yes";
-  };
+  "fe-common/core" = { theme = "zenburn"; use_status_window = "yes"; };
 };
 statusbar = {
   default = {
@@ -104,6 +101,13 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_3 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_4 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_4 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
