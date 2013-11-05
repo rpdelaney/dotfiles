@@ -113,7 +113,7 @@ alias sudoe="\sudo -E"
 alias netmonitor='\sudo watch -n 3 lsof -i'                                      # watch incoming network connections
 
 # mount
-alias mounts='\mount | column -t | pager'
+alias mounts='\mount | \column -t | pager'
 
 # dos
 alias traceroute='\mtr'                                                          # mtr is the new tracert
@@ -133,3 +133,6 @@ alias yao='\yaourt'
 alias yaos='yao -S'
 alias yaoss='yao -Ss'
 alias yaors='yao -Rs'
+
+# tmux is the new screen
+alias tmux='tmux -f ~/.config/tmux/tmux.conf' 

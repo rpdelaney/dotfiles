@@ -10,18 +10,18 @@
 
 # Variables for terminal requests.
 [[ -t 2 ]] && { 
-    alt=$(      tput smcup  || tput ti      ) # Start alt display
-    ealt=$(     tput rmcup  || tput te      ) # End   alt display
+     alt=$(      tput smcup  || tput ti      ) # Start alt display
+     ealt=$(     tput rmcup  || tput te      ) # End   alt display
 #    hide=$(     tput civis  || tput vi      ) # Hide cursor
 #    show=$(     tput cnorm  || tput ve      ) # Show cursor
-    save=$(     tput sc                     ) # Save cursor
-    load=$(     tput rc                     ) # Load cursor
-    bold=$(     tput bold   || tput md      ) # Start bold
-    stout=$(    tput smso   || tput so      ) # Start stand-out
-    estout=$(   tput rmso   || tput se      ) # End stand-out
-    under=$(    tput smul   || tput us      ) # Start underline
-    eunder=$(   tput rmul   || tput ue      ) # End   underline
-    reset=$(    tput sgr0   || tput me      ) # Reset cursor
+     save=$(     tput sc                     ) # Save cursor
+     load=$(     tput rc                     ) # Load cursor
+     bold=$(     tput bold   || tput md      ) # Start bold
+     stout=$(    tput smso   || tput so      ) # Start stand-out
+     estout=$(   tput rmso   || tput se      ) # End stand-out
+     under=$(    tput smul   || tput us      ) # Start underline
+     eunder=$(   tput rmul   || tput ue      ) # End   underline
+     reset=$(    tput sgr0   || tput me      ) # Reset cursor
 #    blink=$(    tput blink  || tput mb      ) # Start blinking
 #    italic=$(   tput sitm   || tput ZH      ) # Start italic
 #    eitalic=$(  tput ritm   || tput ZR      ) # End   italic

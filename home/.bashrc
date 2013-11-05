@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # ~/.bashrc: executed by bash(1) for interactive shells.
 
 ##############################################################
@@ -53,6 +54,15 @@ shopt -s checkwinsize
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ##############################################################
+#   SSH IDENTITY
+
+# ask if we want to run a new ssh-agent for this session
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    timeout --foreground 3s confirm "initialize ssh-agent?" \
+    && eval $(ssh-agent)                                    \
+    && ssh-add -t 6h ~/.ssh/id_rsa                          
+fi
+##############################################################
 #   COLORS
 
 # colorize the terminal
@@ -80,12 +90,13 @@ if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]P7ffffff" #lightgrey
     echo -en "\e]PFdedede" #white
     clear                  #for background artifacting
-fi
-
+else
 # 
 # If we're running in screen then use colors anyway
 #
-[[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
+    [[ "$TERM" = "screen" ]] && TERM="screen-256color"
+    [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
+fi
 
 ##############################################################
 #   PROMPT

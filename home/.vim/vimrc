@@ -8,8 +8,15 @@ let g:UltiSnipsExpandTrigger        = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
 
-" use colors
-colorscheme mustang2
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  " If terminal does not support 256 colors, use Mustang2 instead of zenburn
+  set t_Co=16
+  colorscheme mustang2
+else
+  " otherwise, use zenburn"
+  colorscheme zenburn
+endif
 
 " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
@@ -103,10 +110,6 @@ if !empty(&viminfo)
   set viminfo^=!
 endif
 
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -114,4 +117,3 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 inoremap <C-U> <C-G>u<C-U>
-" vim:set ft=vim et sw=2:
