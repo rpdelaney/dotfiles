@@ -57,8 +57,10 @@ shopt -s checkwinsize
 #   SSH IDENTITY
 
 # ask if we want to run a new ssh-agent for this session
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-    timeout --foreground 3s confirm "initialize ssh-agent?" \
+if [[ $(type keychain) ]]; then
+    keychain --nogui
+elif [[ -z "$SSH_AUTH_SOCK" ]]; then
+    timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
     && eval $(ssh-agent)                                    \
     && ssh-add -t 6h ~/.ssh/id_rsa                          
 fi
@@ -68,7 +70,9 @@ fi
 # colorize the terminal
 # read in dircolors; enable color support
 
+
 [[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
+#[[ -e ${HOME}/LS_COLORS ]] && eval $(dircolors -b ~/LS_COLORS) || eval $(dircolors -b)
 
 #zenburn theme for tty 
 #by way of http://phraktured.net/linux-console-colors.html

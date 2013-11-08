@@ -5,10 +5,7 @@
   handle_size = 0
   tab_position = bottom
 [keybindings]
-  copy = Delete
-  close_term = Delete
   paste = <Primary>k
-  close_window = Delete
 [profiles]
   [[default]]
     scrollbar_position = hidden

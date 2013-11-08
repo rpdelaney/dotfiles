@@ -76,3 +76,7 @@ sitemanager.xml
 recentservers.xml
 trustedcerts.xml
 bookmarks.xml
+
+# backup files      #
+#####################
+*.bak*

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TTY=${TTY:-$(tty)}
 TTY=${TTY#/dev/}
