@@ -16,7 +16,7 @@
    # actually, don't. because that's dumb
    autosetuprebase = never
 [diff]
-   external = vim -d
+   external = gitdiff
    renames = copies
    mnemonicprefix = true
 [alias]

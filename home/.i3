@@ -1,0 +1,1 @@
+/home/ryan/dotfiles/home/.config/i3

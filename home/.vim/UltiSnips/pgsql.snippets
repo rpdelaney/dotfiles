@@ -5,19 +5,19 @@ snippet table "table schema definition" b
     created on: `date` 
 */
 
----------------------------------------------------------------
+raise notice 'Creating table $1...';
 create table $1
 (
         -- primary key column
-    id              serial,
+    id              serial
     
         -- foreign key columns
     
         -- maintenance columns
-    insertedTime    timestamptz     default "now"(),
-    insertedUser    text            default "current_user"(),
-    updatedTime     timestamptz,
-    updatedUser     text,
+,   insertedTime    timestamptz     default "now"()
+,   insertedUser    text            default "current_user"()
+,   updatedTime     timestamptz
+,   updatedUser     text
 
         -- data columns
     
@@ -26,24 +26,25 @@ create table $1
         -- foreign key constraints
     
         -- primary key constraint
-    constraint pkey_$1      primary key (id)
+,   constraint pkey_$1      primary key (id)
 );
-
+    --privileges
 alter   table       $1 owner to     ${3:postgres};
 grant   all on      $1 to           $3;
 revoke  all on      $1 from         public;
-
+    --comments
 comment on table    $1              is '$2';
 comment on column   $1.id           is 'primary key';
+    --indexes
 endsnippet
 
 snippet function "function definer" b
---
--- function: ${1:functionName}(${2:functionParameters}) 
--- ${3:functionComment}
---
+/*
+    function: ${1:functionName}(${2:functionParameters}) 
+    ${3:functionComment}
+    created on: `date`
+*/
 
----------------------------------------------------------------
 create function $1($2) returns boolean as
   
 $body$
@@ -59,11 +60,26 @@ end;
 
 $body$
   --called on null input
-  language plpgsql volatile        --volatile, stable, immutable
+  language plpgsql volatile
   cost 100;
-alter function $1($2) 
-  owner to functionowner;
+alter function $1($2) owner to $4;
   
+endsnippet
+
+snippet view "view definer" b
+/*
+    ${1:viewType} view: ${2:viewName}
+    ${3:viewComment}
+    created on: `date`
+*/
+create $1 view $2 as (
+    
+) 
+    -- privileges
+alter $1 view       $2      owner to    ${4:viewOwner}
+grant all on        $2      to          $4
+revoke all on       $2      from        public
+    -- indexes
 endsnippet
 
 snippet nnul "add a not null constraint to a column" b
@@ -78,3 +94,15 @@ snippet chek "add a check constraint to a column" b
     constraint      chek_${1:columnName}   check ($2)
 endsnippet
 
+snippet begin "transaction block"
+begin
+
+
+
+        -- error handling
+    exception
+        when others then
+            raise notice '% %', SQLERRM, SQLSTATE;
+            raise exception 'initDevice(): FATAL - an exception caused the transaction to be rolled back.';
+end;
+endsnippet

@@ -10,8 +10,7 @@ setxkbmap dvorak
 # 
 # environment variables for the desktop environment only
 # 
-export DE="xfce"                # desktop environment
-export BROWSER="tor-browser"       # web browser
+export BROWSER="firefox"       # web browser
 
 #
 # xscreensaver daemon
@@ -19,8 +18,9 @@ export BROWSER="tor-browser"       # web browser
 /usr/bin/xscreensaver -no-splash &
 
 #xfce
-#gtmanfred said i dont need --witch-ck-launch
-#exec startxfce4 --with-ck-launch
-exec startxfce4
+#export DE="xfce"                # desktop environment
+#exec startxfce4
 
-
+#i3
+export DE="i3"
+exec i3

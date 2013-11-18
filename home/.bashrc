@@ -58,10 +58,12 @@ shopt -s checkwinsize
 
 # ask if we want to run a new ssh-agent for this session
 if [[ $(type keychain) ]]; then
-    keychain --nogui
+    keychain --nogui -q
+    [[ -f ~/.keychain/"$HOSTNAME"-sh ]]      && source ~/.keychain/"$HOSTNAME"-sh
+    [[ -f ~/.keychain/"$HOSTNAME"-sh-gpg ]]  && source ~/.keychain/"$HOSTNAME"-sh-gpg
 elif [[ -z "$SSH_AUTH_SOCK" ]]; then
     timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
-    && eval $(ssh-agent)                                    \
+    && eval $(ssh-agent)                                                           \
     && ssh-add -t 6h ~/.ssh/id_rsa                          
 fi
 ##############################################################
@@ -112,8 +114,6 @@ fi
 # user logins, green for ssh sessions, cyan for telnet,
 # magenta with red "(ssh)" for ssh + su, magenta for telnet.
 
-[[ -f ~/.bash_styles ]] && source ~/.bash_styles
-
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
 ##############################################################
@@ -129,17 +129,6 @@ fi
 #   AUTOCOMPLETE
 #
 # MOVED TO ~/.inputrc
-#
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#    . /etc/bash_completion
-#fi
-#
-# make tab-completion case-insensitive
-#set completion-ignore-case on
 #
 ##############################################################
 # FUNCTIONS

@@ -2,6 +2,11 @@
 # 
 # don't type passwords a bunch of times. we are lazy.
 # 
+
+    # if there's a keychain, then double-check that it has been run on the current env
+[[ $(type keychain 2> /dev/null) ]] && keychain -q
+
+    # if there's still no identity in ssh-agent, add it
 if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
     if [[ $(type -p cowsay) ]]; then
         cowsay "Identify yourself."
@@ -11,9 +16,7 @@ if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
     ssh-add -t 12h ${HOME}/.ssh/id_rsa
 fi
 
-# 
-# now that we have ssh kanged up, upload our crap
-# 
+    # now that we have ssh kanged up, upload our crap
 git add .
 git status
 confirm || exit 1

@@ -1,6 +1,6 @@
 [global_config]
   dbus = True
-  enabled_plugins = ActivityWatch,
+  enabled_plugins = ,
   title_transmit_bg_color = "#00bfc8"
   handle_size = 0
   tab_position = bottom
@@ -19,7 +19,6 @@
     update_records = False
     scroll_on_output = False
     icon_bell = False
-    exit_action = restart
     custom_command = xterm
     scroll_on_keystroke = False
     font = Consolas 14

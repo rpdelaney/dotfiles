@@ -23,6 +23,11 @@ if type grc &> /dev/null ; then
 fi
 
 #
+# type is the new which
+#
+alias which="type -path"
+
+#
 # disk usage in plain english
 #
 alias disk='\df -lTH'
