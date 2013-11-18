@@ -11,7 +11,6 @@
 # Variables for terminal requests.
 if [[ $(type tput 2> /dev/null) ]]; then
  if [[ -t 2 ]]; then { 
-    echo "Initializing 256 colors using tput..."
     
     alt=$(      tput smcup  || tput ti      ) # Start alt display
     ealt=$(     tput rmcup  || tput te      ) # End   alt display

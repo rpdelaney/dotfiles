@@ -5,26 +5,19 @@ snippet table "table schema definition" b
     created on: `date` 
 */
 
-raise notice 'Creating table $1...';
 create table $1
 (
         -- primary key column
     id              serial
-    
         -- foreign key columns
-    
         -- maintenance columns
 ,   insertedTime    timestamptz     default "now"()
 ,   insertedUser    text            default "current_user"()
 ,   updatedTime     timestamptz
 ,   updatedUser     text
-
         -- data columns
-    
         -- data validation constraints
-    
         -- foreign key constraints
-    
         -- primary key constraint
 ,   constraint pkey_$1      primary key (id)
 );
@@ -52,14 +45,11 @@ declare
 
 begin
         -- validation
-    
         -- action
-    
-    return;
+    return true;
 end;
 
 $body$
-  --called on null input
   language plpgsql volatile
   cost 100;
 alter function $1($2) owner to $4;

@@ -19,6 +19,9 @@ else
   colorscheme zenburn
 endif
 
+" Disable background color erase
+set t_ut=
+
 " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -125,3 +128,10 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 inoremap <C-U> <C-G>u<C-U>
+
+" stop using arrow keys ya dummy
+
+noremap <left> :echoe "Stop using arrow keys."<cr>
+noremap <right> :echoe "Stop using arrow keys."<cr>
+noremap <up> :echoe "Stop using arrow keys."<cr>
+noremap <down> :echoe "Stop using arrow keys."<cr>
