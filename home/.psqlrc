@@ -1,0 +1,12 @@
+\set HISTSIZE 1000
+\set HISTCONTROL ignoredups
+\set FETCH_COUNT 500
+\set HISTFILE ~/logs/psql/history- :HOST - :DBNAME
+\set PROMPT1 '%M:%> %n@%/%R%# '
+\set PROMPT2 :PROMPT1
+\set PROMPT3 '>> '
+\encoding unicode
+\timing
+\pset null 'NULL'
+\set waits 'SELECT pg_stat_activity.procpid, pg_stat_activity.current_query, pg_stat_activity.waiting, now() - pg_stat_activity.query_start  as "totaltime", pg_stat_activity.backend_start FROM pg_stat_activity WHERE pg_stat_activity.current_query !~ \'%IDLE%\'::text AND pg_stat_activity.waiting = true;;'
+\set locks 'select pid,mode,current_query from pg_locks,pg_stat_activity where granted=false and locktype=\'transactionid\' and pid=procpid order by pid,granted;;'
