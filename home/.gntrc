@@ -21,14 +21,14 @@ disabled = gray; black
 urgent = red; black
 
 [general]
-shadow = 1
+shadow = 0
 # There is experimental mouse support
-mouse = 1
+mouse = 0
 # To use some custom window-manager
 wm = /usr/local/lib/gnt/s.so
 # There's also a custom window manager called irssi.so
 # Remember window-positions based on the titles (on by default)
-remember_position = 1
+remember_position = 0
 # Use borderless one-line high buttons
 small-button = true
 

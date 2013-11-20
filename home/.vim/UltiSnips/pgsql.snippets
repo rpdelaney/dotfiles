@@ -21,14 +21,15 @@ create table $1
         -- primary key constraint
 ,   constraint pkey_$1      primary key (id)
 );
-    --privileges
+    -- privileges
 alter   table       $1 owner to     ${3:postgres};
-grant   all on      $1 to           $3;
-revoke  all on      $1 from         public;
-    --comments
+grant   all      on $1 to           $3;
+revoke  all      on $1 from         public;
+    -- comments
 comment on table    $1              is '$2';
 comment on column   $1.id           is 'primary key';
-    --indexes
+    -- indexes
+    -- triggers
 endsnippet
 
 snippet function "function definer" b
@@ -67,9 +68,10 @@ create $1 view $2 as (
 ) 
     -- privileges
 alter $1 view       $2      owner to    ${4:viewOwner}
-grant all on        $2      to          $4
-revoke all on       $2      from        public
+grant all        on $2      to          $4
+revoke all       on $2      from        public
     -- indexes
+    -- triggers
 endsnippet
 
 snippet nnul "add a not null constraint to a column" b

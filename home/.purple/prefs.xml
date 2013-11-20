@@ -518,7 +518,7 @@
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
 				<pref name='width' type='int' value='149'/>
-				<pref name='height' type='int' value='18'/>
+				<pref name='height' type='int' value='51'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>

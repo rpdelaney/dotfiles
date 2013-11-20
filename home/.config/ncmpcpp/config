@@ -26,15 +26,15 @@ lyrics_directory = "/media/vault/public/audio/lyrics"
 #
 ## set it in order to make tag editor and renaming files work properly
 #
-#mpd_host = "localhost"
+mpd_host = "localhost"
 #
-#mpd_port = "6600"
+mpd_port = "6600"
 #
 mpd_music_dir = "/media/vault/public/audio/"
 #
 #mpd_connection_timeout = "5"
 #
-#mpd_crossfade_time = "5"
+mpd_crossfade_time = "0"
 #
 #mpd_communication_mode = "notifications" (polling/notifications)
 #
@@ -116,7 +116,7 @@ mpd_music_dir = "/media/vault/public/audio/"
 #
 ## defines how long various messages are supposed to be visible
 #
-#message_delay_time = "4"
+message_delay_time = "10"
 #
 ##### song format #####
 ##
@@ -204,7 +204,7 @@ mpd_music_dir = "/media/vault/public/audio/"
 ## text attributes listed above.
 ##
 #
-now_playing_prefix = "->$b"
+#now_playing_prefix = "$b"
 #
 #now_playing_suffix = "$/b"
 #
@@ -273,7 +273,7 @@ now_playing_prefix = "->$b"
 #
 #playlist_separate_albums = "no"
 #
-#playlist_display_mode = "classic" (classic/columns)
+playlist_display_mode = "columns" 
 #
 #browser_display_mode = "classic" (classic/columns)
 #
@@ -281,11 +281,11 @@ now_playing_prefix = "->$b"
 #
 #playlist_editor_display_mode = "classic" (classic/columns)
 #
-#discard_colors_if_item_is_selected = "yes"
+discard_colors_if_item_is_selected = "yes"
 #
 #incremental_seeking = "yes"
 #
-#seek_time = "1"
+seek_time = "5"
 #
 #autocenter_mode = "no"
 #
@@ -295,7 +295,7 @@ now_playing_prefix = "->$b"
 ## Note: You can specify third character which will
 ## be used to build 'empty' part of progressbar.
 ##
-#progressbar_look = "=>"
+progressbar_look = "#>"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
@@ -321,7 +321,7 @@ now_playing_prefix = "->$b"
 #
 #fancy_scrolling = "yes"
 #
-#cyclic_scrolling = "no"
+cyclic_scrolling = "yes"
 #
 #lines_scrolled = "2"
 #

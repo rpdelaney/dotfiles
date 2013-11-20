@@ -22,29 +22,19 @@ if type grc &> /dev/null ; then
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
-#
-# type is the new which
-#
+    # type is the new which
 alias which="type -path"
 
-#
-# disk usage in plain english
-#
+    # disk usage in plain english
 alias disk='\df -lTH'
 
-#  
-# pgsql is dumb and annoying
-# 
+    # pgsql is dumb and annoying
 alias pgsql='\psql'
 
-#
-# best pastebin evar
-#
+    # best pastebin evar
 alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 
-#
-# Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
-#
+    # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
 alias asdf='setxkbmap dvorak'
 
 #
@@ -107,37 +97,38 @@ alias chmod='\chmod -c --preserve-root'
 alias chgrp='\chgrp -c --preserve-root'
 alias mkdir='\mkdir -vp'
 
-# ventriloquist
+    # ventriloquist
 alias sudoe="\sudo -E"
 
 # head/tail autosized to terminal width
 #alias head='cl head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 #alias tail='cl tail -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
 
-# networking
+    # networking
 alias netmonitor='\sudo watch -n 3 lsof -i'                                      # watch incoming network connections
 
-# mount
+    # mount
 alias mounts='\mount | \column -t | pager'
 
-# dos
+    # dos
 alias traceroute='\mtr'                                                          # mtr is the new tracert
 alias tracert='traceroute'
 
-# private shredder
+    # private shredder
 alias shred=' shred -vfu'
 
-# youtube-dl
+    # youtube-dl
 alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
 
-# dnuos is the new oidua
-alias oidua='\dnuos --file=list -D -S -t .'                                      #save a dnuos list with stats starting from pwd
+    # dnuos is the new oidua
+    #save a dnuos list with stats starting from pwd
+alias oidua='\dnuos --file=list -D -S -t .'                                      
 
-# yaourt is the new pacman
+    # yaourt is the new pacman
 alias yao='\yaourt'
 alias yaos='yao -S'
 alias yaoss='yao -Ss'
 alias yaors='yao -Rs'
 
-# tmux is the new screen
+    # tmux is the new screen
 alias tmux='tmux -f ~/.config/tmux/tmux.conf' 
