@@ -1,0 +1,84 @@
+"any"                      
+"char"                     
+abstime                    
+aclitem                    
+anyarray                   
+anyelement                 
+anyenum                    
+anynonarray                
+anyrange                   
+bigint                     
+bit                        
+bit varying                
+boolean                    
+box                        
+bytea                      
+character                  
+character varying          
+cid                        
+cidr                       
+circle                     
+cstring                    
+date                       
+daterange                  
+double precision           
+event_trigger              
+fdw_handler                
+ghstore                    
+gtsvector                  
+hstore                     
+inet                       
+int2vector                 
+int4range                  
+int8range                  
+integer                    
+internal                   
+interval                   
+json                       
+language_handler           
+line                       
+lseg                       
+macaddr                    
+money                      
+name                       
+numeric                    
+numrange                   
+oid                        
+oidvector                  
+opaque                     
+path                       
+pg_node_tree               
+point                      
+polygon                    
+real                       
+record                     
+refcursor                  
+regclass                   
+regconfig                  
+regdictionary              
+regoper                    
+regoperator                
+regproc                    
+regprocedure               
+regtype                    
+reltime                    
+smallint                   
+smgr                       
+text                       
+tid                        
+time with time zone        
+time without time zone     
+timestamp with time zone   
+timestamp without time zone
+tinterval                  
+trigger                    
+tsquery                    
+tsrange                    
+tstzrange                  
+tsvector                   
+txid_snapshot              
+unknown                    
+uuid                       
+void                       
+xid                        
+xml                        
