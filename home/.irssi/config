@@ -34,7 +34,6 @@ channels = (
   { name = "#systemd"; chatnet = "freenode"; password = "-autojoin"; },
   { name = "#fail2ban"; chatnet = "freenode"; password = "-autojoin"; },
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#ahk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#notepad++"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#foobar2000"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#regex"; chatnet = "freenode"; autojoin = "yes"; },
@@ -58,7 +57,8 @@ channels = (
   { name = "#xda-devs"; chatnet = "freenode"; },
   { name = "##security"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##windows"; chatnet = "freenode"; },
-  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#mutt"; chatnet = "freenode"; }
 );
 
 logs = { };
@@ -94,6 +94,27 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_3 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_3 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_4 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_4 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_5 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_5 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };

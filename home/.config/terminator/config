@@ -1,9 +1,10 @@
 [global_config]
-  dbus = True
-  enabled_plugins = ,
-  title_transmit_bg_color = "#00bfc8"
   handle_size = 0
-  tab_position = bottom
+  enabled_plugins = ,
+  dbus = True
+  borderless = True
+  title_transmit_bg_color = "#00bfc8"
+  inactive_color_offset = 1.2
 [keybindings]
   paste = <Primary>k
 [profiles]
@@ -22,7 +23,7 @@
     icon_bell = False
     custom_command = xterm
     scroll_on_keystroke = False
-    font = Droid Sans Mono 14
+    font = Consolas 16
     audible_bell = True
 [layouts]
   [[default]]
