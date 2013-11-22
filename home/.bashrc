@@ -12,18 +12,19 @@
 ##############################################################
 #   ENVIRONMENT
 #
-
-# 
-# editor
-# 
+    # editor
 export EDITOR="vim"
 export VISUAL="gvim"
-
-#
-# gpg
-#
+    # gpg
 GPG_TTY=`tty`
 export GPG_TTY
+    # mutt
+PGPPATH="~/.gnupg/"
+export PGPPATH
+MAILDIR="/var/mail/"
+export MAILDIR
+TMPDIR="/tmp/"
+export TMPDIR
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
