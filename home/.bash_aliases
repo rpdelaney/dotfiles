@@ -31,6 +31,9 @@ alias disk='\df -lTH'
     # pgsql is dumb and annoying
 alias pgsql='\psql'
 
+    # gpg is the new pgp
+alias pgp='gpg'
+
     # best pastebin evar
 alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 

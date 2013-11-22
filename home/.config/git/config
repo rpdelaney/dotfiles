@@ -7,8 +7,7 @@
    email = ryan.delaney@gmail.com
 [core]
    excludesfile = /home/ryan/.config/git/gitignore_global
-   pager = pager
-   whitespace=tab-in-indent
+   whitespace=tab-in-indent,blank-at-eol
 [push]
    default = simple
 [branch]
@@ -71,3 +70,5 @@
    # set svn:mergeinfo when pushing merge commits
    pushmergeinfo = true
 
+[pager]
+	diff = 

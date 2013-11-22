@@ -22,5 +22,5 @@ export BROWSER="firefox"       # web browser
 #exec startxfce4
 
 #i3
-export DE="i3"
+#export DE="i3"
 exec i3

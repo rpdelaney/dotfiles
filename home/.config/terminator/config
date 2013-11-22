@@ -9,11 +9,12 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    use_system_font = False
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
     visible_bell = True
+    background_image = None
     background_darkness = 1.02
     urgent_bell = True
-    background_image = None
+    use_system_font = False
     cursor_color = "#8faf9f"
     foreground_color = "#ffffff"
     update_records = False
@@ -21,7 +22,7 @@
     icon_bell = False
     custom_command = xterm
     scroll_on_keystroke = False
-    font = Consolas 14
+    font = Droid Sans Mono 14
     audible_bell = True
 [layouts]
   [[default]]
