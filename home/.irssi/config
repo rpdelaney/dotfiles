@@ -53,7 +53,6 @@ channels = (
     autojoin = "yes";
   },
   { name = "#mpd"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##dvorak"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#xda-devs"; chatnet = "freenode"; },
   { name = "##security"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##windows"; chatnet = "freenode"; },
@@ -94,27 +93,6 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_2 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_3 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_3 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_4 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_4 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_5 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_5 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };

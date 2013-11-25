@@ -1,77 +1,156 @@
-# Below are the color init strings. A color init
-# string consists of one or more of the following numeric codes:
+#!/usr/bin/env bash
 #
-# Attribute codes:
-# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+#
 
-# Variables for terminal requests.
 if [[ $(type tput 2> /dev/null) ]]; then
- if [[ -t 2 ]]; then { 
-    
-    alt=$(      tput smcup  || tput ti      ) # Start alt display
-    ealt=$(     tput rmcup  || tput te      ) # End   alt display
-#   hide=$(     tput civis  || tput vi      ) # Hide cursor
-#   show=$(     tput cnorm  || tput ve      ) # Show cursor
-    save=$(     tput sc                     ) # Save cursor
-    load=$(     tput rc                     ) # Load cursor
-    bold=$(     tput bold   || tput md      ) # Start bold
-    stout=$(    tput smso   || tput so      ) # Start stand-out
-    estout=$(   tput rmso   || tput se      ) # End stand-out
-    under=$(    tput smul   || tput us      ) # Start underline
-    eunder=$(   tput rmul   || tput ue      ) # End   underline
-    reset=$(    tput sgr0   || tput me      ) # Reset cursor
-#   blink=$(    tput blink  || tput mb      ) # Start blinking
-#   italic=$(   tput sitm   || tput ZH      ) # Start italic
-#   eitalic=$(  tput ritm   || tput ZR      ) # End   italic
+    if [[ -t 2 ]]; then { 
+            
+        #
+        echo "TERMCAP Version 2.0 (256 colors)"
+        # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
+        #
 
-    red=$(      tput setaf 1 || tput AF 1    )
-    green=$(    tput setaf 2 || tput AF 2    )
-    yellow=$(   tput setaf 3 || tput AF 3    )
-    blue=$(     tput setaf 4 || tput AF 4    )
-    magenta=$(  tput setaf 5 || tput AF 5    )
-    cyan=$(     tput setaf 6 || tput AF 6    )
-    white=$(    tput setaf 7 || tput AF 7    )
-    black=$(    tput setaf 0 || tput AF 0    )
-    default=$(  tput op                      )
-    
-    bgred=$(    tput setab 1 || tput AB 1    )
-    bggreen=$(  tput setab 2 || tput AB 2    )
-    bgyellow=$( tput setab 3 || tput AB 3    )
-    bgblue=$(   tput setab 4 || tput AB 4    )
-    bgmagenta=$(tput setab 5 || tput AB 5    )
-    bgcyan=$(   tput setab 6 || tput AB 6    )
-    bgwhite=$(  tput setab 7 || tput AB 7    )
-    bgblack=$(  tput setab 0 || tput AB 0    )
-    bgdefault=$(tput op                     )
-    
-    eed=$(      tput ed     || tput cd      )   # Erase to end of display
-    eel=$(      tput el     || tput ce      )   # Erase to end of line
-    ebl=$(      tput el1    || tput cb      )   # Erase to beginning of line
-    ewl=$eel$ebl                                # Erase whole line
-    draw=$(     tput -S <<< '   enacs
-                                smacs
-                                acsc
-                                rmacs' )   # Drawing characters
-    back=$'\b'
-    
-    # make manpages colorful
-    export LESS_TERMCAP_mb=$'\E[01;31m'
-    export LESS_TERMCAP_md=$'\E[01;31m'
-    export LESS_TERMCAP_me=$'\E[0m'
-    export LESS_TERMCAP_se=$'\E[0m'
-    export LESS_TERMCAP_so=$'\E[01;44;33m'
-    export LESS_TERMCAP_ue=$'\E[0m'
-    export LESS_TERMCAP_us=$'\E[01;32m'
- }
- fi
+        alt=$(      tput smcup   || tput ti   2> /dev/null ) # Start alt display
+        ealt=$(     tput rmcup   || tput te   2> /dev/null ) # End   alt display
+            # Cursor 
+        hide=$(     tput civis   || tput vi   2> /dev/null ) # Hide cursor
+        show=$(     tput cnorm   || tput ve   2> /dev/null ) # Show cursor
+        save=$(     tput sc                   2> /dev/null ) # Save cursor
+        load=$(     tput rc                   2> /dev/null ) # Load cursor
+        reset=$(    tput sgr0    || tput me   2> /dev/null ) # Reset cursor
+            # Erase
+        eed=$(      tput ed      || tput cd   2> /dev/null ) # Erase to end of display
+        eel=$(      tput el      || tput ce   2> /dev/null ) # Erase to end of line
+        ebl=$(      tput el1     || tput cb   2> /dev/null ) # Erase to beginning of line
+        ewl=$eel$ebl                                         # Erase whole line
+            # Foreground
+        red=$(      tput setaf 1 || tput AF 1 2> /dev/null ) # Red
+        green=$(    tput setaf 2 || tput AF 2 2> /dev/null ) # Green 
+        yellow=$(   tput setaf 3 || tput AF 3 2> /dev/null ) # Yellow 
+        blue=$(     tput setaf 4 || tput AF 4 2> /dev/null ) # Blue 
+        magenta=$(  tput setaf 5 || tput AF 5 2> /dev/null ) # Magenta 
+        cyan=$(     tput setaf 6 || tput AF 6 2> /dev/null ) # Cyan 
+        white=$(    tput setaf 7 || tput AF 7 2> /dev/null ) # White 
+        black=$(    tput setaf 0 || tput AF 0 2> /dev/null ) # Black 
+            # Background
+        bgred=$(    tput setab 1 || tput AB 1 2> /dev/null ) # Red 
+        bggreen=$(  tput setab 2 || tput AB 2 2> /dev/null ) # Green 
+        bgyellow=$( tput setab 3 || tput AB 3 2> /dev/null ) # Yellow 
+        bgblue=$(   tput setab 4 || tput AB 4 2> /dev/null ) # Blue 
+        bgmagenta=$(tput setab 5 || tput AB 5 2> /dev/null ) # Magenta 
+        bgcyan=$(   tput setab 6 || tput AB 6 2> /dev/null ) # Cyan 
+        bgwhite=$(  tput setab 7 || tput AB 7 2> /dev/null ) # White
+        bgblack=$(  tput setab 0 || tput AB 0 2> /dev/null ) # Black
+            # Text mode
+        bold=$(     tput bold    || tput md   2> /dev/null ) # Start bold
+        stout=$(    tput smso    || tput so   2> /dev/null ) # Start stand-out
+        estout=$(   tput rmso    || tput se   2> /dev/null ) # End stand-out
+        under=$(    tput smul    || tput us   2> /dev/null ) # Start underline
+        eunder=$(   tput rmul    || tput ue   2> /dev/null ) # End   underline
+        blink=$(    tput blink   || tput mb   2> /dev/null ) # Start blinking
+        italic=$(   tput sitm    || tput ZH   2> /dev/null ) # Start italic
+        eitalic=$(  tput ritm    || tput ZR   2> /dev/null ) # End   italic
+        default=$(  tput op                   2> /dev/null ) # Reset all modes 
+
+        # colorful manpages
+        #
+            # begin blinking
+        export LESS_TERMCAP_mb=$blink      
+            # begin half-bright mode
+        export LESS_TERMCAP_mh=$bold
+            # begin double-bright mode
+        export LESS_TERMCAP_md=$bold$(tput setaf 38)
+            # begin standout-mode
+        export LESS_TERMCAP_so=$stout 
+            # end standout-mode
+        export LESS_TERMCAP_se=$estout           
+            # begin underline
+        export LESS_TERMCAP_us=$(tput setaf 15) 
+            # end underline
+        export LESS_TERMCAP_ue=$reset 
+            # disable all modes
+        export LESS_TERMCAP_me=$reset  
+    }
+    else
+    {
+        #
+        echo "TERMCAP Version 2.0 (88 colors)"
+        # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
+        #
+
+        alt=$(      tput smcup   || tput ti   2> /dev/null ) # Start alt display
+        ealt=$(     tput rmcup   || tput te   2> /dev/null ) # End   alt display
+            # Cursor
+        hide=$(     tput civis   || tput vi   2> /dev/null ) # Hide cursor
+        show=$(     tput cnorm   || tput ve   2> /dev/null ) # Show cursor
+        save=$(     tput sc                   2> /dev/null ) # Save cursor
+        load=$(     tput rc                   2> /dev/null ) # Load cursor
+        reset=$(    tput sgr0    || tput me   2> /dev/null ) # Reset cursor
+            # Erase
+        eed=$(      tput ed      || tput cd   2> /dev/null ) # Erase to end of display
+        eel=$(      tput el      || tput ce   2> /dev/null ) # Erase to end of line
+        ebl=$(      tput el1     || tput cb   2> /dev/null ) # Erase to beginning of line
+            # Foreground
+        red=$(      tput setaf 1 || tput AF 1 2> /dev/null ) # Red
+        green=$(    tput setaf 2 || tput AF 2 2> /dev/null ) # Green
+        yellow=$(   tput setaf 3 || tput AF 3 2> /dev/null ) # Yellow 
+        blue=$(     tput setaf 4 || tput AF 4 2> /dev/null ) # Blue
+        magenta=$(  tput setaf 5 || tput AF 5 2> /dev/null ) # Magenta
+        cyan=$(     tput setaf 6 || tput AF 6 2> /dev/null ) # Cyan
+        white=$(    tput setaf 7 || tput AF 7 2> /dev/null ) # White
+        black=$(    tput setaf 0 || tput AF 0 2> /dev/null ) # Black
+            # Background
+        bgred=$(    tput setab 1 || tput AB 1 2> /dev/null ) # Red
+        bggreen=$(  tput setab 2 || tput AB 2 2> /dev/null ) # Green
+        bgyellow=$( tput setab 3 || tput AB 3 2> /dev/null ) # Yellow
+        bgblue=$(   tput setab 4 || tput AB 4 2> /dev/null ) # Blue
+        bgmagenta=$(tput setab 5 || tput AB 5 2> /dev/null ) # Magenta
+        bgcyan=$(   tput setab 6 || tput AB 6 2> /dev/null ) # Cyan
+        bgwhite=$(  tput setab 7 || tput AB 7 2> /dev/null ) # White
+            # Text mode
+        bold=$(     tput bold    || tput md   2> /dev/null ) # Start bold
+        stout=$(    tput smso    || tput so   2> /dev/null ) # Start stand-out
+        estout=$(   tput rmso    || tput se   2> /dev/null ) # End stand-out
+        under=$(    tput smul    || tput us   2> /dev/null ) # Start underline
+        eunder=$(   tput rmul    || tput ue   2> /dev/null ) # End   underline
+        blink=$(    tput blink   || tput mb   2> /dev/null ) # Start blinking
+        italic=$(   tput sitm    || tput ZH   2> /dev/null ) # Start italic
+        eitalic=$(  tput ritm    || tput ZR   2> /dev/null ) # End   italic
+        bgblack=$(  tput setab 0 || tput AB 0 2> /dev/null ) # Black
+        default=$(  tput op                   2> /dev/null ) # Reset all modes
+
+            # Drawing characters
+        enacs=$( tput -S <<< enacs ) # Enable alternate character set
+        smacs=$( tput -S <<< smacs ) # Begin alternate character set
+        acsc=$(  tput -S <<< acsc  ) # Graphic character set pairs aAbBcC - default vt100
+        rmacs=$( tput -S <<< rmacs ) # End alternate character set
+
+        # colorful manpages
+        #
+            # begin blinking
+        export LESS_TERMCAP_mb=$blink
+            # begin half-bright mode
+        export LESS_TERMCAP_mh=$bold
+            # begin double-bright mode
+        export LESS_TERMCAP_md=$bold$(tput setaf 38)
+            # begin standout-mode
+        export LESS_TERMCAP_so=$stout
+            # end standout-mode
+        export LESS_TERMCAP_se=$estout
+            # begin underline
+        export LESS_TERMCAP_us=$(tput setaf 15)
+            # end underline
+        export LESS_TERMCAP_ue=$reset
+            # disable all modes
+        export LESS_TERMCAP_me=$reset
+    }
+    fi
 else
-    echo "Initializing 88 colors via old, ugly stuff..."
-    
-    colorNONE="\[\033[0m\]"    # unsets color to term's fg color
+    #
+    echo "TERMCAP Version 1.0 (88 colors)"
+    #
+
+    colorNONE="\[\033[0m\]"      # unsets color to term's fg color
 
     # Reset
     Color_Off='\e[0m'            # Text Reset
@@ -147,18 +226,12 @@ else
     colorOn_IWhite='\e[0;107m'   # White
 
     # make manpages colorful
-    export LESS_TERMCAP_mb=$'\E[01;31m'
-    export LESS_TERMCAP_md=$'\E[01;31m'
-    export LESS_TERMCAP_me=$'\E[0m'
-    export LESS_TERMCAP_se=$'\E[0m'
-    export LESS_TERMCAP_so=$'\E[01;44;33m'
-    export LESS_TERMCAP_ue=$'\E[0m'
-    export LESS_TERMCAP_us=$'\E[01;32m'
-
+    export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+    export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+    export LESS_TERMCAP_me=$'\E[0m'           # end mode
+    export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+    export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+    export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+    export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 fi
-
-colorUser=$WE                       # user's color
-[ $UID -eq "0" ] && colorUser=$RD   # root's color
-
-#####################################################################
 

@@ -75,7 +75,7 @@ fi
 
 
 [[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
-#[[ -e ${HOME}/LS_COLORS ]] && eval $(dircolors -b ~/LS_COLORS) || eval $(dircolors -b)
+[[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
 
 #zenburn theme for tty 
 #by way of http://phraktured.net/linux-console-colors.html
@@ -98,9 +98,7 @@ if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]PFdedede" #white
     clear                  #for background artifacting
 else
-# 
-# If we're running in screen then use colors anyway
-#
+        # If we're running in screen then use colors anyway
     [[ "$TERM" = "screen" ]] && TERM="screen-256color"
     [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
@@ -124,7 +122,7 @@ fi
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 #chdir
-[[ -f ~/bin/chdir ]] & source ~/bin/chdir
+[[ -f ~/bin/chdir ]] && source ~/bin/chdir
 
 ##############################################################
 #   AUTOCOMPLETE

@@ -22,6 +22,20 @@ if type grc &> /dev/null ; then
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
+    # mpd
+if type ncmpcpp &> /dev/null ; then
+    alias play='ncmpcpp play'
+    alias pause='ncmpcpp pause'
+    alias toggle='ncmpcpp toggle'
+    alias stop='ncmpcpp stop'
+    alias next='ncmpcpp next' 
+    alias prev='ncmpcpp prev' 
+    alias volume='ncmpcpp volume' 
+
+#elseif type ncmpc 2> /dev/null ; then
+    
+fi
+
     # type is the new which
 alias which="type -path"
 

@@ -22,6 +22,9 @@ endif
 " Disable background color erase
 set t_ut=
 
+" Exclude these files and directories from search
+set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
+
 " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -40,6 +43,9 @@ set autoindent
 set backspace=indent,eol,start
 set complete-=i
 set smarttab
+
+" don't wrap unless i say so
+set nowrap
 
 " always search the whole file regardless of cursor position
 set wrapscan
