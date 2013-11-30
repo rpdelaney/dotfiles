@@ -2,9 +2,10 @@
   handle_size = 0
   enabled_plugins = ,
   dbus = True
-  borderless = True
+  focus = system
+  always_on_top = True
   title_transmit_bg_color = "#00bfc8"
-  inactive_color_offset = 1.2
+  inactive_color_offset = 1.08
 [keybindings]
   paste = <Primary>k
 [profiles]
@@ -21,6 +22,7 @@
     update_records = False
     scroll_on_output = False
     icon_bell = False
+    show_titlebar = False
     custom_command = xterm
     scroll_on_keystroke = False
     font = Consolas 16

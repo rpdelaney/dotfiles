@@ -16,6 +16,7 @@ if &t_Co == 8 && $TERM !~# '^linux'
 else
   " otherwise, use zenburn
   set t_Co=256
+  let g:zenburn_high_contrast=1
   colorscheme zenburn
 endif
 
@@ -75,8 +76,8 @@ set incsearch
 " show search results visually
 set showmatch
 
-" When searching, scroll to the next search pattern automatically with 7+ lines visible above and below the cursor
-set scrolloff=7
+" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
+set scrolloff=4
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
@@ -87,8 +88,12 @@ set laststatus=2
 set ruler
 
 " display line numbers relative to the cursor position
-set relativenumber
+" set relativenumber
+" display line numbers in absolute terms
+set number
+" show last command 
 set showcmd
+"
 set wildmenu
 
 if !&scrolloff
@@ -98,10 +103,6 @@ if !&sidescrolloff
   set sidescrolloff=5
 endif
 set display+=lastline
-
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
 
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -117,16 +118,18 @@ endif
 set autoread
 set fileformats="unix,dos"
 
+" Enforce 1000 lines of history maximum
 if &history < 1000
   set history=1000
 endif
+" Enforce 50 tabs maximum
 if &tabpagemax < 50
   set tabpagemax=50
 endif
+" Put something in viminfo for some reason
 if !empty(&viminfo)
   set viminfo^=!
 endif
-
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -141,3 +144,4 @@ noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
+

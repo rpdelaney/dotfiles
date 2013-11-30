@@ -518,10 +518,10 @@
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
 				<pref name='width' type='int' value='126'/>
-				<pref name='height' type='int' value='33'/>
+				<pref name='height' type='int' value='34'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='0'/>
+				<pref name='x' type='int' value='27'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='chats'>

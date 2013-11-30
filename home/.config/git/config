@@ -3,72 +3,67 @@
 # retrieved 2013-05-13 from http://www.draconianoverlord.com/2010/03/04/git-config.html
 
 [user]
-   name = Ryan Delaney
-   email = ryan.delaney@gmail.com
+    name = Ryan Delaney
+    email = ryan.delaney@gmail.com
 [core]
-   excludesfile = /home/ryan/.config/git/gitignore_global
-   whitespace=tab-in-indent,blank-at-eol
+    excludesfile = /home/ryan/.config/git/gitignore_global
+    whitespace=tab-in-indent,blank-at-eol
 [push]
-   default = simple
+    default = simple
 [branch]
-   # always setup 'git pull' to rebase instead of merge
-   # actually, don't. because that's dumb
-   autosetuprebase = never
+        # reupbase is dumb
+    autosetuprebase = never
 [diff]
-   external = gitdiff
-   renames = copies
-   mnemonicprefix = true
+    external = gitdiff
+    renames = copies
+    mnemonicprefix = true
 [alias]
-   # 'add all' stages all new+changed+deleted files
-   aa = !git ls-files -z -d | xargs -0 -r git rm && git ls-files -z -m -o --exclude-standard | xargs -0 -r git add
-   # 'add grep' stages all new+changed that match $1
-   ag = "!sh -c 'git ls-files -z -m -o --exclude-standard | grep -z $1 | xargs -0 -r git add' -"
-   # 'checkout grep' checkouts any files that match $1
-   cg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git checkout' -"
-   # 'diff grep' diffs any files that match $1
-   dg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git diff' -"
-   # 'patch grep' diff --cached any files that match $1
-   pg = "!sh -c 'git ls-files -z -c | grep -z $1 | xargs -0 -r git diff --cached' -"
-   # 'remove grep' remove any files that match $1
-   rmg = "!sh -c 'git ls-files -z -d | grep -z $1 | xargs -0 -r git rm' -"
-   # 'reset grep' reset any files that match $1
-   rsg = "!sh -c 'git diff --cached --name-only | grep $1 | xargs -r git reset HEAD -- ' -"
-   # nice log output
-   lg = log --graph --pretty=oneline --abbrev-commit --decorate
-   # rerun svn show-ignore -> exclude
-   si = !git svn show-ignore > .git/info/exclude
-   # start git-sh
-   sh = !git-sh
+        # 'add all' stages all new+changed+deleted files
+    aa = !git ls-files -z -d | xargs -0 -r git rm && git ls-files -z -m -o --exclude-standard | xargs -0 -r git add
+        # 'add grep' stages all new+changed that match $1
+    ag = "!sh -c 'git ls-files -z -m -o --exclude-standard | grep -z $1 | xargs -0 -r git add' -"
+        # 'checkout grep' checkouts any files that match $1
+    cg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git checkout' -"
+        # 'diff grep' diffs any files that match $1
+    dg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git diff' -"
+        # 'patch grep' diff --cached any files that match $1
+    pg = "!sh -c 'git ls-files -z -c | grep -z $1 | xargs -0 -r git diff --cached' -"
+        # 'remove grep' remove any files that match $1
+    rmg = "!sh -c 'git ls-files -z -d | grep -z $1 | xargs -0 -r git rm' -"
+        # 'reset grep' reset any files that match $1
+    rsg = "!sh -c 'git diff --cached --name-only | grep $1 | xargs -r git reset HEAD -- ' -"
+        # nice log output
+    lg = log --graph --pretty=oneline --abbrev-commit --decorate
+        # rerun svn show-ignore -> exclude
+    si = !git svn show-ignore > .git/info/exclude
+        # start git-sh
+    sh = !git-sh
 [color]
-   # turn on color
-   diff = auto
-   status = auto
-   branch = auto
-   interactive = auto
-   ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
 [color "branch"]
-   # good looking colors i copy/pasted from somewhere
-   current = green bold
-   local = green
-   remote = red bold
+    current = green bold
+    local = green
+    remote = red bold
 [color "diff"]
-   # good looking colors i copy/pasted from somewhere
-   meta = yellow bold
-   frag = magenta bold
-   old = red bold
-   new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-   # good looking colors i copy/pasted from somewhere
-   added = green bold
-   changed = yellow bold
-   untracked = red
+    added = green bold
+    changed = yellow bold
+    untracked = red
 [color "sh"]
-   branch = yellow
+    branch = yellow
 [svn]
-   # push empty directory removals back to svn at directory deletes
-   rmdir = true
-   # set svn:mergeinfo when pushing merge commits
-   pushmergeinfo = true
+        # push empty directory removals back to svn at directory deletes
+    rmdir = true
+        # set svn:mergeinfo when pushing merge commits
+    pushmergeinfo = true
 
 [pager]
 	diff = 

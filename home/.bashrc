@@ -182,3 +182,9 @@ umask 077
 # 
 # private stuff not to be cloned to public repositories / backups
 [[ -f ~/.bash_private ]] && source ~/.bash_private
+
+###################################################################
+# ANNOUNCE
+#
+#
+echo "TERM is $TERM"
