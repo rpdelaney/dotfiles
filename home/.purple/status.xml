@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
-	<status name='fopedush-linux' created='1366125477' lastused='1377723108' usage_count='2'>
+	<status name='fopedush-linux' created='1366125477' lastused='1385945076' usage_count='3'>
 		<state>available</state>
 		<message>Fopedush: my team is basically the only one still operational because 80% of us use linux</message>
 	</status>
