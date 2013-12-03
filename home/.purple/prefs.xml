@@ -331,7 +331,7 @@
 				</pref>
 			</pref>
 			<pref name='gtk-plugin_pack-mystatusbox'>
-				<pref name='pane' type='int' value='952'/>
+				<pref name='pane' type='int' value='425'/>
 				<pref name='global' type='bool' value='0'/>
 				<pref name='show' type='int' value='0'/>
 				<pref name='iconsel' type='bool' value='0'/>
@@ -449,7 +449,6 @@
 			<pref name='loaded' type='pathlist'>
 				<item value='/usr/lib/purple-2/autoaccept.so'/>
 				<item value='/usr/lib/purple-2/statenotify.so'/>
-				<item value='/usr/lib/purple-2/purple-events.so'/>
 				<item value='/usr/lib/finch/gnthistory.so'/>
 				<item value='/usr/lib/purple-2/google.so'/>
 				<item value='/usr/lib/purple-2/groupmsg.so'/>
@@ -462,7 +461,6 @@
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
 				<item value='/usr/lib/purple-2/purple-otr.so'/>
 				<item value='/usr/lib/purple-2/offlinemsg.so'/>
-				<item value='/usr/lib/purple-2/psychic.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
 				<item value='/usr/lib/purple-2/sslinfo.so'/>
 				<item value='/usr/lib/finch/gnttinyurl.so'/>
@@ -517,11 +515,11 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='126'/>
+				<pref name='width' type='int' value='106'/>
 				<pref name='height' type='int' value='34'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='27'/>
+				<pref name='x' type='int' value='28'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='chats'>
@@ -815,7 +813,7 @@
 			<pref name='blink' type='bool' value='0'/>
 			<pref name='show' type='string' value='always'/>
 			<pref name='gtk'>
-				<pref name='embedded' type='bool' value='1'/>
+				<pref name='embedded' type='bool' value='0'/>
 			</pref>
 		</pref>
 	</pref>

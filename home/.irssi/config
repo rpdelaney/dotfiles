@@ -57,7 +57,7 @@ channels = (
   { name = "##security"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##windows"; chatnet = "freenode"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#mutt"; chatnet = "freenode"; },
+  { name = "#mutt"; chatnet = "freenode"; password = "-auto"; },
   { name = "#gnupg"; chatnet = "freenode"; }
 );
 

@@ -1,11 +1,7 @@
-#
-# colordiff is the new diff
-#
+    # colordiff is the new diff
 type colordiff &> /dev/null && alias diff='colordiff'
 
-#
-# use grc to add color command support
-#
+    # use grc to add color command support
 if type grc &> /dev/null ; then
     
     alias hilite='\grc -es --colour=on'
@@ -36,8 +32,11 @@ if type ncmpcpp &> /dev/null ; then
     
 fi
 
+    # vlc is best from a terminal :V
+alias ncvlc='vlc -I ncurses'
+
     # type is the new which
-alias which="type -path"
+alias which='type -path'
 
     # disk usage in plain english
 alias disk='\df -lTH'
@@ -54,33 +53,23 @@ alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
     # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
 alias asdf='setxkbmap dvorak'
 
-#
-# save x.org output to file 
-#
+    # save x.org output to file 
 alias onscreen='\startx | tee ${HOME}/.Xoutput'
 
-#
-# rsync is the new (s)cp
-#
+    # rsync is the new (s)cp
 alias rp='\rsync -a --append --stats --progress'
 
-#
-# rsync is the new mv
-#
+    # rsync is the new mv
 alias rv='\rsync -a --append --stats --progress --remove-source-files'
 
-#
-# grep can be pretty :*
-#
+    # grep can be pretty :*
 alias grep='\grep --color=always'
 alias agrep='\agrep --color=always'
 alias fgrep='\fgrep --color=always'
 alias egrep='\egrep --color=always'
 alias search='\grep --color=always -H --binary-files=text --directories=recurse --files-with-matches -n'
 
-#
-# pwd
-#
+    # pwd
 alias ls='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
 alias la='ls -H -a'
 alias lsa='la'
@@ -90,24 +79,18 @@ alias lssa='lsa | pager'
 alias dir='\ls --color=always --format=across --group-directories-first'
 alias dirs='dir | pager'
 
-# 
-# pager
-# 
+    # pager
 alias more='pager'                      #Less is more
 
-#
-# getting around
-# 
+    # getting around
 alias .='ls'
 alias ..='ch ..'
 alias ....='ch ../..'
 
-# 
-# safety valve
-# 
+    # safety valve
 alias mv='\mv -iv'
 alias cp='\cp -iv'
-alias rm='\rm -Iv'
+alias rm='\rm -iv'
 alias rr='\rm -r'
 alias chown='\chown -c --preserve-root'
 alias chmod='\chmod -c --preserve-root'
@@ -117,10 +100,6 @@ alias mkdir='\mkdir -vp'
     # ventriloquist
 alias sudoe="\sudo -E"
 
-# head/tail autosized to terminal width
-#alias head='cl head -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
-#alias tail='cl tail -n $((${LINES:-`tput lines 2>/dev/null||echo -n 12`} - 2))'
-
     # networking
 alias netmonitor='\sudo watch -n 3 lsof -i'                                      # watch incoming network connections
 
@@ -128,7 +107,7 @@ alias netmonitor='\sudo watch -n 3 lsof -i'                                     
 alias mounts='\mount | \column -t | pager'
 
     # dos
-alias traceroute='\mtr'                                                          # mtr is the new tracert
+alias traceroute='\mtr'
 alias tracert='traceroute'
 
     # private shredder
@@ -139,7 +118,7 @@ alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
 
     # dnuos is the new oidua
     #save a dnuos list with stats starting from pwd
-alias oidua='\dnuos --file=list -D -S -t .'                                      
+alias oidua='\dnuos --file=list -D -S -t .'
 
     # yaourt is the new pacman
 alias yao='\yaourt'

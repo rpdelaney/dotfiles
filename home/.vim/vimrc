@@ -1,67 +1,92 @@
-" infect pathogen plugin loader
+    " infect pathogen plugin loader
 call pathogen#infect()
 
-" UltiSnips bindings
-let g:UltiSnipsEditSplit            = "vertical"
-let g:UltiSnipsListSnippets         = "<c-tab>"
-let g:UltiSnipsExpandTrigger        = "<s-tab>"
-let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
+    " listchars to highlight stuff we don't like
+set list
+    " If we have utf-8 encoding, use fancy listchars
+if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+    set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
+else
+    set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
+endif
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
-  " If terminal does not support 256 colors, use Mustang2 instead of zenburn
-  set t_Co=16
-  colorscheme mustang2
+        " If terminal does not support 256 colors, use Mustang2 instead of zenburn
+    set t_Co=16
+    colorscheme mustang2
 else
-  " otherwise, use zenburn
-  set t_Co=256
-  let g:zenburn_high_contrast=1
-  colorscheme zenburn
+        " otherwise, use zenburn
+    set t_Co=256
+    let g:zenburn_high_contrast=1
+    colorscheme zenburn
 endif
 
-" Disable background color erase
+    " Disable background color erase
 set t_ut=
 
-" Exclude these files and directories from search
+    " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
 
-" if we have syntax, use it
+    " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
-  syntax enable
-  "use syntax engine to control folding
-  set foldmethod=syntax
-  "start with all folds open
-  set foldlevelstart=99
+    syntax enable
+        " use syntax engine to control folding
+    set foldmethod=syntax
+        " start with all folds open
+    set foldlevelstart=99
 endif
 
-" show what row and column I'm on
+    " show what row and column I'm on
 set cursorline
 set nocursorcolumn
 
-" indent like the previous line
+    " indent like the previous line
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
 set smarttab
 
-" don't wrap unless i say so
+    " don't wrap unless i say so
 set nowrap
 
-" always search the whole file regardless of cursor position
+    " always search the whole file regardless of cursor position
 set wrapscan
 
-" highlight all search matches
+    " highlight all search matches
 set hlsearch
 
-" make left/right keys wrap to start of the line
+    " make left/right keys wrap to start of the line
 set whichwrap+=h,l,<,>,[,]
 
-" make tabs fit my arbitrary preconceptions
-" (use 4 spaces instead of a tab)
-set tabstop=4
-set shiftwidth=4
+"
+" tabstops
+"
+    " expand tabs into whitespace
 set expandtab
+    " tabstop is 4 characters
+set tabstop=4
+    " delete key in insert mode deletes 4 spaces
+set softtabstop=4
+    " shift keys in normal mode add or remove 4 spaces
+set shiftwidth=4
+    " autocommands for specific file types
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  " Customisations based on house-style (arbitrary)
+  "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  "autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
 
 " auto-shift to tab stop
 set shiftround
@@ -104,12 +129,6 @@ if !&sidescrolloff
 endif
 set display+=lastline
 
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-  endif
-endif
 
 if &shell =~# 'fish$'
   set shell=/usr/bin/bash
@@ -144,4 +163,26 @@ noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
+
+" UltiSnips bindings
+let g:UltiSnipsEditSplit            = "vertical"
+let g:UltiSnipsListSnippets         = "<c-tab>"
+let g:UltiSnipsExpandTrigger        = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
+
+    " remove whitespace
+function! <SID>StripTrailingWhitespaces()
+        " Preparation. save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+        " Do the business:
+    %s/\s\+$//e
+        " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+    " do it automatically whenever we save
+autocmd BufWritePre *.py,*.js,*.sql,*.pgsql :call <SID>StripTrailingWhitespaces()
 
