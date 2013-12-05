@@ -8,7 +8,7 @@
   always_on_top = True
   geometry_hinting = False
   title_transmit_bg_color = "#00bfc8"
-  inactive_color_offset = 1.2
+  inactive_color_offset = 0.92
 [keybindings]
   paste = <Primary>k
 [profiles]

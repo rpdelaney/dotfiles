@@ -2,7 +2,7 @@
 # /home/ryan/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed Mar 27 21:58:40 2013
+# Generated on Tue Dec  3 21:57:58 2013
 #
 
 # ConfigProperties:
@@ -13,19 +13,13 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
 ShowQuitDialog = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
+UpdateRulesOnProfileNameChange = Yes
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
-mothership:0.0/CursorShadow=0
-mothership:0.0/CursorShadowAlpha=64
-mothership:0.0/CursorShadowRed=0
-mothership:0.0/CursorShadowGreen=0
-mothership:0.0/CursorShadowBlue=0
-mothership:0.0/CursorShadowXOffset=4
-mothership:0.0/CursorShadowYOffset=2
 mothership:0.0/SyncToVBlank=1
 mothership:0.0/LogAniso=0
 mothership:0.0/FSAA=0
@@ -35,18 +29,50 @@ mothership:0.0/FXAA=0
 mothership:0.0/AllowFlipping=1
 mothership:0.0/FSAAAppControlled=1
 mothership:0.0/LogAnisoAppControlled=1
-mothership:0.0/OpenGLImageSettings=1
+mothership:0.0/OpenGLImageSettings=3
 mothership:0.0/FSAAAppEnhanced=0
-mothership:0.0/DigitalVibrance[DFP-0]=0
-mothership:0.0/ColorSpace[DFP-0]=0
-mothership:0.0/ColorRange[DFP-0]=0
-mothership:0.0/XVideoSyncToDisplay=65536
-mothership:0[dpy:2]/RedBrightness=0.000000
-mothership:0[dpy:2]/GreenBrightness=0.000000
-mothership:0[dpy:2]/BlueBrightness=0.000000
-mothership:0[dpy:2]/RedContrast=0.000000
-mothership:0[dpy:2]/GreenContrast=0.000000
-mothership:0[dpy:2]/BlueContrast=0.000000
-mothership:0[dpy:2]/RedGamma=1.000000
-mothership:0[dpy:2]/GreenGamma=1.000000
-mothership:0[dpy:2]/BlueGamma=1.000000
+mothership:0.0/XVideoSyncToDisplayID=DVI-I-0
+mothership:0[DPY:DVI-I-0]/Dithering=0
+mothership:0[DPY:DVI-I-0]/DitheringMode=0
+mothership:0[DPY:DVI-I-0]/DitheringDepth=0
+mothership:0[DPY:DVI-I-0]/SynchronousPaletteUpdates=0
+mothership:0[DPY:DVI-I-1]/Dithering=0
+mothership:0[DPY:DVI-I-1]/DitheringMode=0
+mothership:0[DPY:DVI-I-1]/DitheringDepth=0
+mothership:0[DPY:DVI-I-1]/SynchronousPaletteUpdates=0
+mothership:0[DPY:DVI-I-2]/RedBrightness=0.000000
+mothership:0[DPY:DVI-I-2]/GreenBrightness=0.000000
+mothership:0[DPY:DVI-I-2]/BlueBrightness=0.000000
+mothership:0[DPY:DVI-I-2]/RedContrast=0.000000
+mothership:0[DPY:DVI-I-2]/GreenContrast=0.000000
+mothership:0[DPY:DVI-I-2]/BlueContrast=0.000000
+mothership:0[DPY:DVI-I-2]/RedGamma=1.000000
+mothership:0[DPY:DVI-I-2]/GreenGamma=1.000000
+mothership:0[DPY:DVI-I-2]/BlueGamma=1.000000
+mothership:0[DPY:DVI-I-2]/Dithering=0
+mothership:0[DPY:DVI-I-2]/DitheringMode=0
+mothership:0[DPY:DVI-I-2]/DitheringDepth=0
+mothership:0[DPY:DVI-I-2]/DigitalVibrance=0
+mothership:0[DPY:DVI-I-2]/ColorSpace=0
+mothership:0[DPY:DVI-I-2]/ColorRange=0
+mothership:0[DPY:DVI-I-2]/SynchronousPaletteUpdates=0
+mothership:0[DPY:HDMI-0]/Dithering=0
+mothership:0[DPY:HDMI-0]/DitheringMode=0
+mothership:0[DPY:HDMI-0]/DitheringDepth=0
+mothership:0[DPY:HDMI-0]/SynchronousPaletteUpdates=0
+mothership:0[DPY:DVI-I-3]/RedBrightness=0.000000
+mothership:0[DPY:DVI-I-3]/GreenBrightness=0.000000
+mothership:0[DPY:DVI-I-3]/BlueBrightness=0.000000
+mothership:0[DPY:DVI-I-3]/RedContrast=0.000000
+mothership:0[DPY:DVI-I-3]/GreenContrast=0.000000
+mothership:0[DPY:DVI-I-3]/BlueContrast=0.000000
+mothership:0[DPY:DVI-I-3]/RedGamma=1.000000
+mothership:0[DPY:DVI-I-3]/GreenGamma=1.000000
+mothership:0[DPY:DVI-I-3]/BlueGamma=1.000000
+mothership:0[DPY:DVI-I-3]/Dithering=0
+mothership:0[DPY:DVI-I-3]/DitheringMode=0
+mothership:0[DPY:DVI-I-3]/DitheringDepth=0
+mothership:0[DPY:DVI-I-3]/DigitalVibrance=0
+mothership:0[DPY:DVI-I-3]/ColorSpace=0
+mothership:0[DPY:DVI-I-3]/ColorRange=0
+mothership:0[DPY:DVI-I-3]/SynchronousPaletteUpdates=0

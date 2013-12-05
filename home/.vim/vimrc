@@ -22,7 +22,7 @@ else
     colorscheme zenburn
 endif
 
-    " Disable background color erase
+    " Disable background color erase - this could cause bugs in some terminals
 set t_ut=
 
     " Exclude these files and directories from search
@@ -88,37 +88,39 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 
-" auto-shift to tab stop
+    " auto-shift to tab stop
 set shiftround
 
-" time out bindings that don't respond quickly
+    " time out bindings that don't respond quickly
 set ttimeout
 set ttimeoutlen=50
 
-" search incrementally
+    " search incrementally
 set incsearch
 
-" show search results visually
+    " show search results visually
 set showmatch
 
-" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
+    " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
+    " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
+    " Always show the file status
 set laststatus=2
+    " Tell me where I am in the file
 set ruler
 
-" display line numbers relative to the cursor position
-" set relativenumber
-" display line numbers in absolute terms
+    " display line numbers relative to the cursor position
+set relativenumber
+    " display line numbers in absolute terms
 set number
-" show last command 
+    " show last command
 set showcmd
-"
+    " enable enhanced command-line completion
 set wildmenu
 
 if !&scrolloff
@@ -137,34 +139,34 @@ endif
 set autoread
 set fileformats="unix,dos"
 
-" Enforce 1000 lines of history maximum
+    " Enforce 1000 lines of history maximum
 if &history < 1000
   set history=1000
 endif
-" Enforce 50 tabs maximum
+    " Enforce 50 tabs maximum
 if &tabpagemax < 50
   set tabpagemax=50
 endif
-" Put something in viminfo for some reason
+    " Put something in viminfo for some reason
 if !empty(&viminfo)
   set viminfo^=!
 endif
 
-" Load matchit.vim, but only if the user hasn't installed a newer version.
+    " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
+    " Rebind this for some unknown reason
 inoremap <C-U> <C-G>u<C-U>
 
-" stop using arrow keys ya dummy
-
+    " stop using arrow keys ya dummy
 noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
 
-" UltiSnips bindings
+    " UltiSnips bindings
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
 let g:UltiSnipsExpandTrigger        = "<s-tab>"
@@ -184,5 +186,5 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
     " do it automatically whenever we save
-autocmd BufWritePre *.py,*.js,*.sql,*.pgsql :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
 
