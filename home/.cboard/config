@@ -1,0 +1,8 @@
+    # show UTF-8 pieces
+utf8_pieces true
+    # don't show coordinates
+coords_y_left false
+    # send the "go" command for the first move (for using polyglot engines)
+fm_polyglot true
+
+# vim: set filetype=config:

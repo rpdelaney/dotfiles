@@ -1,5 +1,5 @@
 # git config
-# based on tutorial by Stephen Haberman, 
+# based on tutorial by Stephen Haberman
 # retrieved 2013-05-13 from http://www.draconianoverlord.com/2010/03/04/git-config.html
 
 [user]
@@ -8,6 +8,10 @@
 [core]
     excludesfile = /home/ryan/.config/git/gitignore_global
     whitespace=tab-in-indent,blank-at-eol
+        # pay no attention to those permissions behind the curtain
+        # because windows filesystems (NTFS too) are retarded about this
+        # revert to true when we are finally free of that rat-patootey
+    filemode = false
 [push]
     default = simple
 [branch]
@@ -61,3 +65,5 @@
     branch = yellow
 [pager]
     diff = 
+[include]
+#   path = path/to/foo/inc

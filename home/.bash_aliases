@@ -67,7 +67,7 @@ alias grep='\grep --color=always'
 alias agrep='\agrep --color=always'
 alias fgrep='\fgrep --color=always'
 alias egrep='\egrep --color=always'
-alias search='\grep --color=always -H --binary-files=text --directories=recurse --files-with-matches -n'
+alias search='\grep --color=never -H --binary-files=text --directories=recurse --files-with-matches -n'
 
     # pwd
 alias ls='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
@@ -127,4 +127,4 @@ alias yaoss='yao -Ss'
 alias yaors='yao -Rs'
 
     # tmux is the new screen
-alias tmux='tmux -f ~/.config/tmux/tmux.conf' 
+alias tmux='tmux -f ~/.config/tmux/tmux.conf'

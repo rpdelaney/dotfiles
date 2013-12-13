@@ -58,7 +58,9 @@ channels = (
   { name = "##windows"; chatnet = "freenode"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#mutt"; chatnet = "freenode"; password = "-auto"; },
-  { name = "#gnupg"; chatnet = "freenode"; }
+  { name = "#gnupg"; chatnet = "freenode"; },
+  { name = "#tmux"; chatnet = "freenode"; },
+  { name = "#python"; chatnet = "freenode"; password = "-auto"; }
 );
 
 logs = { };

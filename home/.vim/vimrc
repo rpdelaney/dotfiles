@@ -6,6 +6,7 @@ set list
     " If we have utf-8 encoding, use fancy listchars
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
     set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
+    set showbreak=…
 else
     set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
 endif
@@ -187,4 +188,6 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
     " do it automatically whenever we save
 autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
+    " do it whenever we hit a key
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
