@@ -1,30 +1,15 @@
+#/usr/bin/env bash
 #
 # Additional configuration options for when running in cygwin
-# 
+#
 
 if echo "$(uname -o)" == "Cygwin"; then
-	
-	#include path for postgresql windows binaries
-	PATH="${PATH}:${HOME}/pgsql/bin/"
-	
-	#function to copy files to mothership
-	cphome() { rsync -rEAthztAXog --safe-links --progress --append $1 mothership:/media/vault/incoming/cygwin/ ; }
-	#function to move files to mothership
-	#mvhome() { scp $1 ryan@ryanpd.me:/home/ryan/ -P 22222 }
-
-	#better prompt
-	source $HOME/.bash_prompt 1
-	
-	#use windows merge tool
-	#git config merge.tool mymerge
-	#git config merge.mymerge.cmd 'kdiff3.exe --base "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
-        #git config merge.tool mymerge
-#set -x
-#git config --global merge.tool mykdiff3
-#git config --global mergetool.mykdiff3.cmd 'kdiff3.exe "$(cygpath -wla $BASE)" "$(cygpath -wla $LOCAL)" "$(cygpath -wla $REMOTE)" "$(cygpath 
-#-wla $MERGED)"'
-#git config --global diff.tool mykdiff3
-#git config --global difftool.mykdiff3.cmd 'kdiff3.exe $(cygpath -wla $LOCAL) $(cygpath -wla $REMOTE)'
-#set +x
-
+        # include path for postgresql windows binaries
+    PATH="${PATH}:${HOME}/pgsql/bin/"
+        # function to copy files to mothership
+    cphome() { rsync -rEAthztAXog --safe-links --progress --append $1 mothership:/media/vault/incoming/cygwin/ ; }
+        # function to move files to mothership
+    #mvhome() { scp $1 ryan@ryanpd.me:/home/ryan/ -P 22222 }
+        # export display for x11 forwarding
+    export DISPLAY=:0.0
 fi

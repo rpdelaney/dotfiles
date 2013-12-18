@@ -62,10 +62,11 @@ if [[ $(type keychain) ]]; then
     keychain --nogui -q
     [[ -f ~/.keychain/"$HOSTNAME"-sh ]]      && source ~/.keychain/"$HOSTNAME"-sh
     [[ -f ~/.keychain/"$HOSTNAME"-sh-gpg ]]  && source ~/.keychain/"$HOSTNAME"-sh-gpg
-elif [[ -z "$SSH_AUTH_SOCK" ]]; then
+#elif [[ -z "$SSH_AUTH_SOCK" ]]; then
+else
     timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
     && eval $(ssh-agent)                                                           \
-    && ssh-add -t 6h ~/.ssh/id_rsa                          
+    && ssh-add -t 6h ~/.ssh/id_rsa
 fi
 ##############################################################
 #   COLORS
@@ -73,11 +74,10 @@ fi
 # colorize the terminal
 # read in dircolors; enable color support
 
-
 [[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
 [[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
 
-#zenburn theme for tty 
+#zenburn theme for tty
 #by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]P0222222" #black
@@ -109,11 +109,19 @@ fi
 # Based on prompt by M Alexander (storm@tux.org) found here:
 # http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x865.html
 #
-# Set up prompts. Color code them for logins. Red for root, white for 
+# Set up prompts. Color code them for logins. Red for root, white for
 # user logins, green for ssh sessions, cyan for telnet,
 # magenta with red "(ssh)" for ssh + su, magenta for telnet.
 
-[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
+if [[ -f ~/.bash_prompt ]]; then
+  if [[ "$UID" == 0 ]]; then
+    # If we are root, try to make that hard to miss.
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    # And de-emphasize git status (we don't work as root)
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  fi
+  source ~/.bash_prompt
+fi
 
 ##############################################################
 #   ALIASES
@@ -162,7 +170,7 @@ shopt -s cdspell
 # Ignore some controlling instructions
 # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
 # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history' 
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
 
 # Umask
 #
@@ -174,12 +182,12 @@ umask 077
 
 #
 # additional configuration options for when running in cygwin
-# 
+#
 [[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
 
 ###################################################################
 # PRIVATE
-# 
+#
 # private stuff not to be cloned to public repositories / backups
 [[ -f ~/.bash_private ]] && source ~/.bash_private
 

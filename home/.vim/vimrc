@@ -1,17 +1,10 @@
     " infect pathogen plugin loader
 call pathogen#infect()
 
-    " listchars to highlight stuff we don't like
-set list
-    " If we have utf-8 encoding, use fancy listchars
-if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-    set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
-    set showbreak=…
-else
-    set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
-endif
-
-" Allow color schemes to do bright colors without forcing bold.
+"
+" Styles
+"
+    " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
         " If terminal does not support 256 colors, use Mustang2 instead of zenburn
     set t_Co=16
@@ -22,13 +15,25 @@ else
     let g:zenburn_high_contrast=1
     colorscheme zenburn
 endif
-
+    " listchars to highlight stuff we don't like
+set list
+if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+        " If we have utf-8 encoding, use fancy listchars
+    set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
+    set showbreak=…
+else
+        " Otherwise, use ANSI
+    set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
+endif
     " Disable background color erase - this could cause bugs in some terminals
 set t_ut=
-
+"
+" Interface
+"
+    " enable enhanced command-line completion
+set wildmenu
     " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
-
     " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
     syntax enable
@@ -37,29 +42,22 @@ if has('syntax') && !exists('g:syntax_on')
         " start with all folds open
     set foldlevelstart=99
 endif
-
     " show what row and column I'm on
 set cursorline
 set nocursorcolumn
-
     " indent like the previous line
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
 set smarttab
-
-    " don't wrap unless i say so
+    " don't wrap unless I say so
 set nowrap
-
     " always search the whole file regardless of cursor position
 set wrapscan
-
     " highlight all search matches
 set hlsearch
-
     " make left/right keys wrap to start of the line
 set whichwrap+=h,l,<,>,[,]
-
 "
 " tabstops
 "
@@ -71,75 +69,41 @@ set tabstop=4
 set softtabstop=4
     " shift keys in normal mode add or remove 4 spaces
 set shiftwidth=4
-    " autocommands for specific file types
-if has("autocmd")
-  " Enable file type detection
-  filetype on
-
-  " Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-  " Customisations based on house-style (arbitrary)
-  "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  "autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-
-  " Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-endif
-
     " auto-shift to tab stop
 set shiftround
-
     " time out bindings that don't respond quickly
 set ttimeout
 set ttimeoutlen=50
-
     " search incrementally
 set incsearch
-
     " show search results visually
 set showmatch
-
     " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
-
-    " Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endif
-
     " Always show the file status
 set laststatus=2
     " Tell me where I am in the file
 set ruler
-
-    " display line numbers relative to the cursor position
+    " show line numbers relative to the cursor position
 set relativenumber
-    " display line numbers in absolute terms
+    " show line numbers in absolute terms
 set number
     " show last command
 set showcmd
-    " enable enhanced command-line completion
-set wildmenu
-
+    "
 if !&scrolloff
   set scrolloff=1
 endif
+    "
 if !&sidescrolloff
   set sidescrolloff=5
 endif
+    "
 set display+=lastline
-
-
-if &shell =~# 'fish$'
-  set shell=/usr/bin/bash
-endif
-
+    "
 set autoread
+    "
 set fileformats="unix,dos"
-
     " Enforce 1000 lines of history maximum
 if &history < 1000
   set history=1000
@@ -152,28 +116,27 @@ endif
 if !empty(&viminfo)
   set viminfo^=!
 endif
-
-    " Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-    " Rebind this for some unknown reason
-inoremap <C-U> <C-G>u<C-U>
-
     " stop using arrow keys ya dummy
 noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
-
+"
+" Plugins
+"
     " UltiSnips bindings
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
 let g:UltiSnipsExpandTrigger        = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
-
+    " Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+"
+" functions
+"
     " remove whitespace
 function! <SID>StripTrailingWhitespaces()
         " Preparation. save last search, and cursor position.
@@ -186,8 +149,42 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-    " do it automatically whenever we save
-autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
     " do it whenever we hit a key
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-
+"
+" filetypes
+"
+if has("autocmd")
+        " Enable file type detection
+    filetype on
+        " Syntax of these languages is fussy over tabs Vs spaces
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+        " shell
+    autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4 
+        " python
+    autocmd FileType python let python_highlight_all = 1
+    autocmd FileType python let python_slow_sync = 1
+    autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
+    autocmd FileType python set completeopt=preview
+        " archlinux PKGBUILD
+    autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4 
+        " LaTeX
+    autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+    autocmd Filetype tex,latex let g:tex_flavor = "latex"
+        " Customisations based on house-style (arbitrary)
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+        " Treat .rss files as XML
+    autocmd BufNewFile,BufRead *.rss setfiletype xml
+        " automatically trim whitespace whenever we save these files
+    autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
+endif
+"
+" Bindings
+"
+    " Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
