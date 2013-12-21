@@ -13,7 +13,7 @@
         # revert to true when we are finally free of that rat-patootey
     filemode = false
 [push]
-    default = matching
+    default = simple
 [branch]
         # reupbase is dumb
     autosetuprebase = never
@@ -66,5 +66,3 @@
 [pager]
         # Don't use any diff pager, because pagers wreck vimdiff
     diff = 
-#[include]
-#   path = path/to/foo/inc
