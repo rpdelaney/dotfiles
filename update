@@ -1,7 +1,7 @@
 #!/usr/bin/bash
-# 
+#
 # don't type passwords a bunch of times. we are lazy.
-# 
+#
 
     # if there's a keychain, then double-check that it has been run on the current env
 [[ $(type keychain 2> /dev/null) ]] && keychain -q

@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-# convert dos plaintext to unix
-dos2unix -D "$FILE$" 
-
