@@ -1,30 +1,25 @@
 #!/usr/bin/env bash
 # ~/.bashrc: executed by bash(1) for interactive shells.
 
-##############################################################
-#   INITIALIZATION
-#
-
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
-##############################################################
-#   ENVIRONMENT
+#
+# ENVIRONMENT
 #
     # editor
 export EDITOR="vim"
 export VISUAL="gvim"
     # gpg
-GPG_TTY=`tty`
-export GPG_TTY
+export GPG_TTY=`tty`
     # mutt
-PGPPATH="~/.gnupg/"
-export PGPPATH
-MAILDIR="/var/mail/"
-export MAILDIR
-TMPDIR="/tmp/"
-export TMPDIR
+export PGPPATH="~/.gnupg/"
+export MAILDIR="/var/mail/"
+export TMPDIR="/tmp/"
+    # github
+export GITHUB_USER="rpdelaney"
+export GITHUB_PASSWORD="$(pass show github.com)"
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
@@ -33,31 +28,33 @@ export TMPDIR
 PATH="${PATH}:${HOME}/bin/"
 for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
 
-##############################################################
-#   HISTORY
+#
+# HISTORY
+#
 
-# append to the history file, don't overwrite it
+  # append to the history file, don't overwrite it
 shopt -s histappend
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
+  # don't put duplicate lines in the history. See bash(1) for more options
+  # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=2000
 HISTFILESIZE=1000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+  # check the window size after each command and, if necessary,
+  # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+  # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
-##############################################################
-#   SSH IDENTITY
+#
+# KEYCHAIN
+#
 
-# ask if we want to run a new ssh-agent for this session
+  # ask if we want to run a new ssh-agent for this session
 if [[ $(type keychain) ]]; then
     keychain --nogui -q
     [[ -f ~/.keychain/"$HOSTNAME"-sh ]]      && source ~/.keychain/"$HOSTNAME"-sh
@@ -68,17 +65,19 @@ else
     && eval $(ssh-agent)                                                           \
     && ssh-add -t 6h ~/.ssh/id_rsa
 fi
-##############################################################
-#   COLORS
 
-# colorize the terminal
-# read in dircolors; enable color support
+#
+#   COLORS
+#
+
+  # colorize the terminal
+  # read in dircolors; enable color support
 
 [[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
 [[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
 
-#zenburn theme for tty
-#by way of http://phraktured.net/linux-console-colors.html
+  #zenburn theme for tty
+  #by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]P0222222" #black
     echo -en "\e]P8222222" #darkgrey
@@ -103,52 +102,42 @@ else
     [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 
-##############################################################
-#   PROMPT
-
-# Based on prompt by M Alexander (storm@tux.org) found here:
-# http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x865.html
 #
-# Set up prompts. Color code them for logins. Red for root, white for
-# user logins, green for ssh sessions, cyan for telnet,
-# magenta with red "(ssh)" for ssh + su, magenta for telnet.
-
+#   PROMPT
+#
 if [[ -f ~/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]]; then
-    # If we are root, try to make that hard to miss.
+      # If we are root, try to make that hard to miss.
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-    # And de-emphasize git status (we don't work as root)
+      # And de-emphasize git status (we don't work as root)
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   fi
   source ~/.bash_prompt
 fi
 
-##############################################################
+#
 #   ALIASES
+#
 
-# Alias definitions.
+  # Alias definitions.
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
-#chdir
+  #chdir
 [[ -f ~/bin/chdir ]] && source ~/bin/chdir
 
-##############################################################
-#   AUTOCOMPLETE
-#
-# MOVED TO ~/.inputrc
-#
-##############################################################
-# FUNCTIONS
-#
+  # FUNCTIONS
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
 
-##############################################################
+#
+# additional configuration options for when running in cygwin
+#
+[[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
+
+#
 # SHELL OPTIONS
 #
-# See man bash for more options...
-#
 
-# Don't wait for job termination notification
+  # Don't wait for job termination notification
 # set -o notify
 
 # Don't use ^D to exit
@@ -181,14 +170,9 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
 umask 077
 
 #
-# additional configuration options for when running in cygwin
-#
-[[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
-
-###################################################################
 # PRIVATE
 #
-# private stuff not to be cloned to public repositories / backups
+  # private stuff not to be cloned to public repositories / backups
 [[ -f ~/.bash_private ]] && source ~/.bash_private
 
 ###################################################################

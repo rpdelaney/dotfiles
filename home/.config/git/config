@@ -13,7 +13,7 @@
         # revert to true when we are finally free of that rat-patootey
     filemode = false
 [push]
-    default = simple
+    default = matching
 [branch]
         # reupbase is dumb
     autosetuprebase = never
@@ -65,4 +65,4 @@
     branch = yellow
 [pager]
         # Don't use any diff pager, because pagers wreck vimdiff
-    diff = 
+    diff =
