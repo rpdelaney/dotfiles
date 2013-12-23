@@ -57,13 +57,12 @@
     frag = magenta bold
     old = red bold
     new = green bold
+[pager]
+        # Don't use any diff pager, because pagers wreck vimdiff
+    diff =
 [color "status"]
     added = green bold
     changed = yellow bold
     untracked = red
 [color "sh"]
     branch = yellow
-[pager]
-        # Don't use any diff pager, because pagers wreck vimdiff
-    diff =
-#
