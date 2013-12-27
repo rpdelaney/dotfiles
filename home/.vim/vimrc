@@ -51,7 +51,7 @@ set backspace=indent,eol,start
 set complete-=i
 set smarttab
     " don't wrap unless I say so
-set nowrap
+set wrap
     " always search the whole file regardless of cursor position
 set wrapscan
     " highlight all search matches

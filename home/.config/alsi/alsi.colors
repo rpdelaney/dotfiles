@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+# Colors for alsi
+
+use Term::ANSIColor qw(:constants);
+
+scalar {
+         black   => {normal => "\e[0;30m", bold => "\e[1;30m"},
+         red     => {normal => "\e[0;31m", bold => "\e[1;31m"},
+         green   => {normal => "\e[0;32m", bold => "\e[1;32m"},
+         yellow  => {normal => "\e[0;33m", bold => "\e[1;33m"},
+         default => {normal => (BRIGHT_BLUE), bold => (BRIGHT_BLUE BOLD)},
+         blue    => {normal => "\e[0;37m", bold => "\e[1;37m"},
+         purple  => {normal => "\e[0;35m", bold => "\e[1;35m"},
+         cyan    => {normal => "\e[0;36m", bold => "\e[1;36m"},
+         white   => {normal => "\e[0;37m", bold => "\e[1;37m"},
+         reset   => "\e[0m",
+}

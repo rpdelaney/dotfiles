@@ -19,7 +19,7 @@ export MAILDIR="/var/mail/"
 export TMPDIR="/tmp/"
     # github
 export GITHUB_USER="rpdelaney"
-export GITHUB_PASSWORD="$(pass show github.com)"
+#export GITHUB_PASSWORD="$(pass show github.com)"
 
 #
 # Add ~/bin and all subdirectories recursively to $PATH
@@ -31,29 +31,23 @@ for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
 #
 # HISTORY
 #
-
   # append to the history file, don't overwrite it
 shopt -s histappend
-
   # don't put duplicate lines in the history. See bash(1) for more options
   # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
-
   # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=2000
 HISTFILESIZE=1000
-
   # check the window size after each command and, if necessary,
   # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #
 # KEYCHAIN
 #
-
   # ask if we want to run a new ssh-agent for this session
 if [[ $(type keychain) ]]; then
     keychain --nogui -q
@@ -69,13 +63,10 @@ fi
 #
 #   COLORS
 #
-
   # colorize the terminal
   # read in dircolors; enable color support
-
 [[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
 [[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
-
   #zenburn theme for tty
   #by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
@@ -118,16 +109,12 @@ fi
 #
 #   ALIASES
 #
-
   # Alias definitions.
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
-
   #chdir
-[[ -f ~/bin/chdir ]] && source ~/bin/chdir
-
-  # FUNCTIONS
+[[ -f ~/bin/chdir ]] && source ~/bin/chdir 1> /dev/null
+  # Functions
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
-
 #
 # additional configuration options for when running in cygwin
 #
@@ -136,47 +123,38 @@ fi
 #
 # SHELL OPTIONS
 #
-
   # Don't wait for job termination notification
 # set -o notify
-
-# Don't use ^D to exit
+  # Don't use ^D to exit
 # set -o ignoreeof
-
-# Use case-insensitive filename globbing
+  # Use case-insensitive filename globbing
 shopt -s nocaseglob
-
-# Make bash append rather than overwrite the history on disk
+  # Make bash append rather than overwrite the history on disk
 shopt -s histappend
-
-# Use extended globbing
+  # Use extended globbing
 #shopt -s extglob
-
-# When changing directory small typos can be ignored by bash
-# for example, cd /vr/lgo/apaache would find /var/log/apache
+  # When changing directory small typos can be ignored by bash
+  # for example, cd /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
-
-# Ignore some controlling instructions
-# HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-# The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:whereami:ranger:history'
+  # Ignore some controlling instructions
+  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+  # The '&' is a special pattern which suppresses duplicate entries.
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:history'
 
 # Umask
 #
-# /etc/profile sets 022, removing write perms to group + others.
-# Set a more restrictive umask: i.e. no exec perms for others:
-# umask 027
-# Paranoid: neither group nor others have any perms:
+  # /etc/profile sets 022, removing write perms to group + others.
+  # Set a more restrictive umask: i.e. no exec perms for others:
+  # umask 027
+  # Paranoid: neither group nor others have any perms:
 umask 077
-
 #
 # PRIVATE
 #
   # private stuff not to be cloned to public repositories / backups
 [[ -f ~/.bash_private ]] && source ~/.bash_private
 
-###################################################################
-# ANNOUNCE
 #
+# Greeting
 #
-echo "TERM is $TERM"
+type alsi &> /dev/null && alsi || echo "TERM is $TERM"

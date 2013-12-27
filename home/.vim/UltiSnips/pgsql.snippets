@@ -2,9 +2,8 @@ snippet table "table schema definition" b
 /*
     table: ${1:tableName}
     ${2:tableComment}
-    created on: `date` 
+    created on: `date`
 */
-
 create table $1
 (
         -- primary key column
@@ -25,36 +24,32 @@ create table $1
 alter   table       $1 owner to     ${3:postgres};
 grant   all      on $1 to           $3;
 revoke  all      on $1 from         public;
+    -- indexes
+    -- triggers
     -- comments
 comment on table    $1              is '$2';
 comment on column   $1.id           is 'primary key';
-    -- indexes
-    -- triggers
 endsnippet
 
 snippet function "function definer" b
 /*
-    function: ${1:functionName}(${2:functionParameters}) 
+    function: ${1:functionName}(${2:functionParameters})
     ${3:functionComment}
     created on: `date`
 */
+create function $1($2) returns ${4:returnType} as
 
-create function $1($2) returns boolean as
-  
 $body$
 declare
 
 begin
-        -- validation
-        -- action
     return true;
 end;
 
 $body$
-  language plpgsql volatile
+  language ${6:plpgsql} ${7:volatile}
   cost 100;
-alter function $1($2) owner to $4;
-  
+alter function $1($2) owner to ${8:postgres};
 endsnippet
 
 snippet view "view definer" b
@@ -64,8 +59,12 @@ snippet view "view definer" b
     created on: `date`
 */
 create $1 view $2 as (
-    
-) 
+    select
+    from
+--  where
+--  order by
+--  having
+)
     -- privileges
 alter $1 view       $2      owner to    ${4:viewOwner}
 grant all        on $2      to          $4
@@ -75,15 +74,23 @@ revoke all       on $2      from        public
 endsnippet
 
 snippet nnul "add a not null constraint to a column" b
-    constraint      nnul_${1:columnName}   check ($1 is not null),
+,   constraint      nnul_${1:columnName}   check ($1 is not null)
 endsnippet
 
-snippet uniq "add a unique constraint to a column" b 
-    constraint      uniq_${1:columnName}   check ($1 is not null),
+snippet uniq "add a unique constraint to a column" b
+,   constraint      uniq_${1:columnName}   check ($1 is not null)
 endsnippet
 
 snippet chek "add a check constraint to a column" b
     constraint      chek_${1:columnName}   check ($2)
+endsnippet
+
+snippet idx "add an index to a column" b
+create index idx_${1:tableName}_${2:columnName} on $1 ( $2 );
+endsnippet
+
+snippet coc "add a comment to a column" b
+comment on column   $1.$2 is '$3';
 endsnippet
 
 snippet begin "transaction block"
@@ -95,6 +102,6 @@ begin
     exception
         when others then
             raise notice '% %', SQLERRM, SQLSTATE;
-            raise exception 'initDevice(): FATAL - an exception caused the transaction to be rolled back.';
+            raise exception '${1:functionName}(): FATAL - an unhandled exception caused the transaction to be rolled back.';
 end;
 endsnippet

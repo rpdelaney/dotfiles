@@ -3,8 +3,8 @@
 #
 
 if [[ $(type tput 2> /dev/null) ]]; then
-    if [[ -t 2 ]]; then { 
-            
+    if [[ -t 2 ]]; then {
+
         #
         # "TERMCAP Version 2.0 (256 colors)"
         # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
@@ -12,20 +12,20 @@ if [[ $(type tput 2> /dev/null) ]]; then
 
             # Foreground
         red=$(      tput setaf 124|| tput AF 124 2> /dev/null ) # Red
-        green=$(    tput setaf 71 || tput AF 71  2> /dev/null ) # Green 
-        yellow=$(   tput setaf 228|| tput AF 228 2> /dev/null ) # Yellow 
-        blue=$(     tput setaf 38 || tput AF 38  2> /dev/null ) # Blue 
-        magenta=$(  tput setaf 127|| tput AF 127 2> /dev/null ) # Magenta 
-        cyan=$(     tput setaf 123|| tput AF 123 2> /dev/null ) # Cyan 
-        white=$(    tput setaf 15 || tput AF 15  2> /dev/null ) # White 
-        black=$(    tput setaf 0  || tput AF 0   2> /dev/null ) # Black 
+        green=$(    tput setaf 71 || tput AF 71  2> /dev/null ) # Green
+        yellow=$(   tput setaf 228|| tput AF 228 2> /dev/null ) # Yellow
+        blue=$(     tput setaf 38 || tput AF 38  2> /dev/null ) # Blue
+        magenta=$(  tput setaf 127|| tput AF 127 2> /dev/null ) # Magenta
+        cyan=$(     tput setaf 123|| tput AF 123 2> /dev/null ) # Cyan
+        white=$(    tput setaf 15 || tput AF 15  2> /dev/null ) # White
+        black=$(    tput setaf 0  || tput AF 0   2> /dev/null ) # Black
             # Background
-        bgred=$(    tput setab 124|| tput AB 124 2> /dev/null ) # Red 
-        bggreen=$(  tput setab 71 || tput AB 71  2> /dev/null ) # Green 
-        bgyellow=$( tput setab 228|| tput AB 228 2> /dev/null ) # Yellow 
-        bgblue=$(   tput setab 38 || tput AB 38  2> /dev/null ) # Blue 
-        bgmagenta=$(tput setab 127|| tput AB 127 2> /dev/null ) # Magenta 
-        bgcyan=$(   tput setab 123|| tput AB 123 2> /dev/null ) # Cyan 
+        bgred=$(    tput setab 124|| tput AB 124 2> /dev/null ) # Red
+        bggreen=$(  tput setab 71 || tput AB 71  2> /dev/null ) # Green
+        bgyellow=$( tput setab 228|| tput AB 228 2> /dev/null ) # Yellow
+        bgblue=$(   tput setab 38 || tput AB 38  2> /dev/null ) # Blue
+        bgmagenta=$(tput setab 127|| tput AB 127 2> /dev/null ) # Magenta
+        bgcyan=$(   tput setab 123|| tput AB 123 2> /dev/null ) # Cyan
         bgwhite=$(  tput setab 15 || tput AB 15  2> /dev/null ) # White
         bgblack=$(  tput setab 0  || tput AB 0   2> /dev/null ) # Black
     }
@@ -38,7 +38,7 @@ if [[ $(type tput 2> /dev/null) ]]; then
             # Foreground
         red=$(      tput setaf 1  || tput AF 1   2> /dev/null ) # Red
         green=$(    tput setaf 2  || tput AF 2   2> /dev/null ) # Green
-        yellow=$(   tput setaf 3  || tput AF 3   2> /dev/null ) # Yellow 
+        yellow=$(   tput setaf 3  || tput AF 3   2> /dev/null ) # Yellow
         blue=$(     tput setaf 4  || tput AF 4   2> /dev/null ) # Blue
         magenta=$(  tput setaf 5  || tput AF 5   2> /dev/null ) # Magenta
         cyan=$(     tput setaf 6  || tput AF 6   2> /dev/null ) # Cyan
@@ -58,7 +58,7 @@ if [[ $(type tput 2> /dev/null) ]]; then
 
     alt=$(          tput smcup   || tput ti   2> /dev/null ) # Start alt display
     ealt=$(         tput rmcup   || tput te   2> /dev/null ) # End   alt display
-        # Cursor     
+        # Cursor
     hide=$(         tput civis   || tput vi   2> /dev/null ) # Hide cursor
     show=$(         tput cnorm   || tput ve   2> /dev/null ) # Show cursor
     save=$(         tput sc                   2> /dev/null ) # Save cursor
@@ -89,21 +89,21 @@ if [[ $(type tput 2> /dev/null) ]]; then
     # colorful manpages
     #
         # begin blinking
-    export LESS_TERMCAP_mb=$blink      
+    export LESS_TERMCAP_mb=$blink
         # begin half-bright mode
     export LESS_TERMCAP_mh=$bold
         # begin double-bright mode
     export LESS_TERMCAP_md=$bold$blue
         # begin standout-mode
-    export LESS_TERMCAP_so=$stout 
+    export LESS_TERMCAP_so=$stout
         # end standout-mode
-    export LESS_TERMCAP_se=$estout           
+    export LESS_TERMCAP_se=$estout
         # begin underline
-    export LESS_TERMCAP_us=$white 
+    export LESS_TERMCAP_us=$white
         # end underline
-    export LESS_TERMCAP_ue=$reset 
+    export LESS_TERMCAP_ue=$reset
         # disable all modes
-    export LESS_TERMCAP_me=$reset  
+    export LESS_TERMCAP_me=$reset
 
 else
     #
