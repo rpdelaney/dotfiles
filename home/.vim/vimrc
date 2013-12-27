@@ -58,19 +58,6 @@ set wrapscan
 set hlsearch
     " make left/right keys wrap to start of the line
 set whichwrap+=h,l,<,>,[,]
-"
-" tabstops
-"
-    " expand tabs into whitespace
-set expandtab
-    " tabstop is 4 characters
-set tabstop=4
-    " delete key in insert mode deletes 4 spaces
-set softtabstop=4
-    " shift keys in normal mode add or remove 4 spaces
-set shiftwidth=4
-    " auto-shift to tab stop
-set shiftround
     " time out bindings that don't respond quickly
 set ttimeout
 set ttimeoutlen=50
@@ -100,10 +87,8 @@ if !&sidescrolloff
 endif
     "
 set display+=lastline
-    "
+    " update the buffer if the source file changes on disk and we have not edited it
 set autoread
-    "
-set fileformats="unix,dos"
     " Enforce 1000 lines of history maximum
 if &history < 1000
   set history=1000
@@ -121,6 +106,19 @@ noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
+"
+" tabstops
+"
+    " expand tabs into whitespace
+set expandtab
+    " tabstop is 4 characters
+set tabstop=4
+    " delete key in insert mode deletes 4 spaces
+set softtabstop=4
+    " shift keys in normal mode add or remove 4 spaces
+set shiftwidth=4
+    " auto-shift to tab stop
+set shiftround
 "
 " Plugins
 "
@@ -152,8 +150,20 @@ endfunction
     " do it whenever we hit a key
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 "
-" filetypes
+" Bindings
 "
+    " Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+"
+" files
+"
+    " Use strong encryption when invoked with :X
+set cm=blowfish
+    " EOL formats to try when parsing new files with unclear MIMEtypes
+set fileformats="unix,dos"
+    " filetypes
 if has("autocmd")
         " Enable file type detection
     filetype on
@@ -180,11 +190,4 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.rss setfiletype xml
         " automatically trim whitespace whenever we save these files
     autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
-endif
-"
-" Bindings
-"
-    " Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
