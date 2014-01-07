@@ -45,11 +45,8 @@ endif
     " show what row and column I'm on
 set cursorline
 set nocursorcolumn
-    " indent like the previous line
-set autoindent
 set backspace=indent,eol,start
 set complete-=i
-set smarttab
     " don't wrap unless I say so
 set wrap
     " always search the whole file regardless of cursor position
@@ -109,6 +106,10 @@ noremap <down> :echoe "Stop using arrow keys."<cr>
 "
 " tabstops
 "
+    " indent like the previous line
+set autoindent
+    " 
+set smarttab
     " expand tabs into whitespace
 set expandtab
     " tabstop is 4 characters
@@ -167,7 +168,7 @@ set fileformats="unix,dos"
 if has("autocmd")
         " Enable file type detection
     filetype on
-        " Syntax of these languages is fussy over tabs Vs spaces
+        " Syntax of these languages is fussy over tabs vs spaces
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         " shell
@@ -177,7 +178,7 @@ if has("autocmd")
     autocmd FileType python let python_slow_sync = 1
     autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
     autocmd FileType python set completeopt=preview
-        " archlinux PKGBUILD
+        " archlinux package build
     autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4 
         " LaTeX
     autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
@@ -188,6 +189,50 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
         " Treat .rss files as XML
     autocmd BufNewFile,BufRead *.rss setfiletype xml
-        " automatically trim whitespace whenever we save these files
-    autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim :call <SID>StripTrailingWhitespaces()
+        " automatically trim trailing whitespace whenever we save these files
+    autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim,*.sh :call <SID>StripTrailingWhitespaces()
 endif
+"
+" hex editing
+" retrieved from http://vim.wikia.com/wiki/Improved_hex_editing on Sat Jan  4 13:03:41 PST 2014
+"
+" ex command for toggling hex mode - define mapping if desired
+command -bar Hexmode call ToggleHex()
+
+"" helper function to toggle hex mode
+function ToggleHex()
+  " hex mode should be considered a read-only operation
+  " save values for modified and read-only for restoration later,
+  " and clear the read-only flag for now
+  let l:modified=&mod
+  let l:oldreadonly=&readonly
+  let &readonly=0
+  let l:oldmodifiable=&modifiable
+  let &modifiable=1
+  if !exists("b:editHex") || !b:editHex
+    " save old options
+    let b:oldft=&ft
+    let b:oldbin=&bin
+    " set new options
+    setlocal binary " make sure it overrides any textwidth, etc.
+    let &ft="xxd"
+    " set status
+    let b:editHex=1
+    " switch to hex editor
+    %!xxd
+  else
+    " restore old options
+    let &ft=b:oldft
+    if !b:oldbin
+      setlocal nobinary
+    endif
+    " set status
+    let b:editHex=0
+    " return to normal editing
+    %!xxd -r
+  endif
+  " restore values for modified and read only state
+  let &mod=l:modified
+  let &readonly=l:oldreadonly
+  let &modifiable=l:oldmodifiable
+endfunction

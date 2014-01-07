@@ -1,3 +1,5 @@
+\set AUTOCOMMIT off
+\set ENCODING UTF8
 \set HISTSIZE 1000
 \set HISTCONTROL ignoredups
 \set FETCH_COUNT 500

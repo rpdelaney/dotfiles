@@ -1,7 +1,7 @@
 #    yaourtrc  - Configuration for yaourt
-# 
+#
 #   See yaourtrc(5) for more information
-#   
+#
 #
 
 # General
@@ -49,7 +49,6 @@ USECOLOR=1
 USEPAGER=1
 DETAILUPGRADE=1
 SHOWORPHANS=1
-    # default=0
 TERMINALTITLE=0
 
 # Command

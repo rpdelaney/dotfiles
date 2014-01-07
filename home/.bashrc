@@ -21,29 +21,9 @@ export TMPDIR="/tmp/"
 export GITHUB_USER="rpdelaney"
 #export GITHUB_PASSWORD="$(pass show github.com)"
 
-#
-# Add ~/bin and all subdirectories recursively to $PATH
-#
-
+  # Add ~/bin and all subdirectories recursively to $PATH
 PATH="${PATH}:${HOME}/bin/"
 for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
-
-#
-# HISTORY
-#
-  # append to the history file, don't overwrite it
-shopt -s histappend
-  # don't put duplicate lines in the history. See bash(1) for more options
-  # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2000
-HISTFILESIZE=1000
-  # check the window size after each command and, if necessary,
-  # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-  # make less more friendly for non-text input files, see lesspipe(1)
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 #
 # KEYCHAIN
@@ -59,6 +39,23 @@ else
     && eval $(ssh-agent)                                                           \
     && ssh-add -t 6h ~/.ssh/id_rsa
 fi
+
+
+#
+# HISTORY
+#
+  # append to the history file, don't overwrite it
+shopt -s histappend
+  # don't put duplicate lines in the history. See bash(1) for more options
+  # ... or force ignoredups and ignorespace
+HISTCONTROL=ignoreboth
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=2000
+HISTFILESIZE=1000
+  # Ignore some controlling instructions
+  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+  # The '&' is a special pattern which suppresses duplicate entries.
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:history'
 
 #
 #   COLORS
@@ -115,9 +112,9 @@ fi
 [[ -f ~/bin/chdir ]] && source ~/bin/chdir 1> /dev/null
   # Functions
 [[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
-#
-# additional configuration options for when running in cygwin
-#
+  # make less more friendly for non-text input files, see lesspipe(1)
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+  # additional configuration options for when running in cygwin
 [[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
 
 #
@@ -136,10 +133,9 @@ shopt -s histappend
   # When changing directory small typos can be ignored by bash
   # for example, cd /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
-  # Ignore some controlling instructions
-  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-  # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:history'
+  # check the window size after each command and, if necessary,
+  # update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # Umask
 #
@@ -157,4 +153,4 @@ umask 077
 #
 # Greeting
 #
-type alsi &> /dev/null && alsi || echo "TERM is $TERM"
+type alsi &> /dev/null && timeout 1 alsi || echo "TERM is $TERM"

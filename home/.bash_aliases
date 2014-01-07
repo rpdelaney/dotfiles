@@ -1,11 +1,81 @@
+#!/usr/bin/env bash
+
+if [[ $UID -ne 0 ]]; then
+    # yaourt
+  if type yaourt &> /dev/null; then
+    alias ya='\yaourt'
+    alias yaq='\yaourt -Q'
+    alias yas='\yaourt -S'
+    alias yass='\yaourt -Ss'
+    alias yars='\yaourt -Rs'
+  fi
+    # watch incoming network connections
+  alias netmonitor='\sudo watch -n 3 lsof -i'
+
+    # youtube-dl with lots of metadata
+  type youtube-dl &> /dev/null && alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
+
+    # save a dnuos list with stats starting from pwd
+  type dnuos &> /dev/null && alias oidua='\dnuos --file=list -D -S -t .'
+
+    # tmux is the new screen
+  type tmux &> /dev/null && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+
+    # mpd
+  if type ncmpcpp &> /dev/null ; then
+      alias mplay='ncmpcpp play'
+      alias mpause='ncmpcpp pause'
+      alias mtoggle='ncmpcpp toggle'
+      alias mstop='ncmpcpp stop'
+      alias mnext='ncmpcpp next'
+      alias mprev='ncmpcpp prev'
+      alias mvolume='ncmpcpp volume'
+  fi
+
+    # vlc is best from a terminal :V
+  type vlc &> /dev/null && alias ncvlc='vlc -I ncurses'
+
+else
+  #if type yaourt &> /dev/null; then
+  #  alias ya='\yaourt'
+  #  alias yaq='\yaourt -Q'
+  #  alias yas='\yaourt -S'
+  #  alias yass='\yaourt -Ss'
+  #  alias yars='\yaourt -Rs'
+  #fi
+    # watch incoming network connections
+  alias netmonitor='watch -n 3 lsof -i'
+fi
+    # ls
+alias l='\ls --color=always --format=across --group-directories-first'
+alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+alias la='ll -H -a'
+alias lr='ll -R'
+alias lla='la'
+alias lll='ll | pager'
+alias llla='lla | pager'
+alias .='ll'
+alias ..='\cd ..'
+alias ....='\cd ../..'
+
+    # safety valve
+alias mv='\mv -iv'
+alias cp='\cp -iv'
+alias rm='\rm -iv'
+alias chown='\chown -c --preserve-root'
+alias chmod='\chmod -c --preserve-root'
+alias chgrp='\chgrp -c --preserve-root'
+alias mkdir='\mkdir -vp'
+
+    # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
+alias asdf='setxkbmap dvorak'
+
     # colordiff is the new diff
 type colordiff &> /dev/null && alias diff='colordiff'
 
     # use grc to add color command support
 if type grc &> /dev/null ; then
-    
     alias hilite='\grc -es --colour=on'
-    
     alias configure='hilite ./configure'
     alias make='hilite make'
     alias gcc='hilite gcc'
@@ -18,113 +88,35 @@ if type grc &> /dev/null ; then
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
-    # mpd
-if type ncmpcpp &> /dev/null ; then
-    alias play='ncmpcpp play'
-    alias pause='ncmpcpp pause'
-    alias toggle='ncmpcpp toggle'
-    alias stop='ncmpcpp stop'
-    alias next='ncmpcpp next' 
-    alias prev='ncmpcpp prev' 
-    alias volume='ncmpcpp volume' 
-
-#elseif type ncmpc 2> /dev/null ; then
-    
-fi
-
-    # vlc is best from a terminal :V
-alias ncvlc='vlc -I ncurses'
-
-    # type is the new which
-alias which='type -path'
-
     # disk usage in plain english
 alias disk='\df -lTH'
-
-    # pgsql is dumb and annoying
-alias pgsql='\psql'
+alias df='\df -h'
+alias du='\df -c -h'
 
     # gpg is the new pgp
-alias pgp='gpg'
+type gpg &> /dev/null && alias pgp='gpg'
 
-    # best pastebin evar
-alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
-
-    # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
-alias asdf='setxkbmap dvorak'
-
-    # save x.org output to file 
-alias onscreen='\startx | tee ${HOME}/.Xoutput'
+    # console pastebin
+type curl &> /dev/null && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 
     # rsync is the new (s)cp
-alias rp='\rsync -a --append --stats --progress'
+type rsync &> /dev/null && alias rp='\rsync -a --append --stats --progress'
 
     # rsync is the new mv
-alias rv='\rsync -a --append --stats --progress --remove-source-files'
+type rsync &> /dev/null && alias rv='\rsync -a --append --stats --progress --remove-source-files'
 
     # grep can be pretty :*
-alias grep='\grep --color=always'
-alias agrep='\agrep --color=always'
-alias fgrep='\fgrep --color=always'
-alias egrep='\egrep --color=always'
-alias search='\grep --color=never -H --binary-files=text --directories=recurse --files-with-matches -n'
-
-    # pwd
-alias ls='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
-alias la='ls -H -a'
-alias lsa='la'
-alias lss='ls | pager'
-alias lssa='lsa | pager'
-
-alias dir='\ls --color=always --format=across --group-directories-first'
-alias dirs='dir | pager'
-
-    # pager
-alias more='pager'                      #Less is more
-
-    # getting around
-alias .='ls'
-alias ..='ch ..'
-alias ....='ch ../..'
-
-    # safety valve
-alias mv='\mv -iv'
-alias cp='\cp -iv'
-alias rm='\rm -iv'
-alias rr='\rm -r'
-alias chown='\chown -c --preserve-root'
-alias chmod='\chmod -c --preserve-root'
-alias chgrp='\chgrp -c --preserve-root'
-alias mkdir='\mkdir -vp'
-
-    # ventriloquist
-alias sudoe="\sudo -E"
-
-    # networking
-alias netmonitor='\sudo watch -n 3 lsof -i'                                      # watch incoming network connections
+if type grep &> /dev/null; then
+  alias crep='\grep --color=always'
+  alias acrep='\agrep --color=always'
+  alias fcrep='\fgrep --color=always'
+  alias ecrep='\egrep --color=always'
+  alias search='\grep --color=never -H --binary-files=text --directories=recurse --files-with-matches -n'
+fi
 
     # mount
 alias mounts='\mount | \column -t | pager'
 
-    # dos
-alias traceroute='\mtr'
-alias tracert='traceroute'
-
     # private shredder
-alias shred=' shred -vfu'
+type shred &> /dev/null && alias shred=' shred -vfu'
 
-    # youtube-dl
-alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
-
-    # dnuos is the new oidua
-    #save a dnuos list with stats starting from pwd
-alias oidua='\dnuos --file=list -D -S -t .'
-
-    # yaourt is the new pacman
-alias yao='\yaourt'
-alias yaos='yao -S'
-alias yaoss='yao -Ss'
-alias yaors='yao -Rs'
-
-    # tmux is the new screen
-alias tmux='tmux -f ~/.config/tmux/tmux.conf'
