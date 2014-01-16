@@ -12,6 +12,14 @@
     # Use the windows key
 set $mod Mod4
 
+    # Focus follows mouse
+focus_follows_mouse yes
+
+    # How to handle annoying popups
+    # popup_during_fullscreen <smart|ignore|leave_fullscreen>
+    # show the popup only if it belongs to the fullscreen application
+popup_during_fullscreen smart
+
 #
 # styles
 #
@@ -55,10 +63,6 @@ bindsym $mod+e exec dmenu_run
     # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
     # change focus
-#bindsym $mod+h focus left
-#bindsym $mod+t focus down
-#bindsym $mod+n focus up
-#bindsym $mod+s focus right
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -71,10 +75,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
     # move focused window
-#bindsym $mod+Shift+h move left
-#bindsym $mod+Shift+t move down
-#bindsym $mod+Shift+n move up
-#bindsym $mod+Shift+s move right
 bindsym $mod+space+h move left
 bindsym $mod+space+j move down
 bindsym $mod+space+k move up
@@ -87,11 +87,9 @@ bindsym $mod+space+Up move up
 bindsym $mod+space+Right move right
 
     # split in horizontal orientation
-#bindsym $mod+d split h
 bindsym $mod+shift+h split h
 
     # split in vertical orientation
-#bindsym $mod+k split v
 bindsym $mod+shift+v split v
 
     # enter fullscreen mode for the focused container
@@ -109,10 +107,10 @@ bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
 
     # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
     # focus the child container
-    #bindsym $mod+d focus child
+#bindsym $mod+d focus child
 
     # switch to workspace
 bindsym $mod+1 workspace 1: shell
@@ -122,7 +120,7 @@ bindsym $mod+4 workspace 4: comms
 bindsym $mod+5 workspace 5: steam
 bindsym $mod+6 workspace 6: media
 bindsym $mod+7 workspace 7: docs
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace 8: misc
 bindsym $mod+9 workspace 9: vm
 bindsym $mod+0 workspace 10: games
 
@@ -134,7 +132,7 @@ bindsym $mod+Shift+4 move container to workspace 4: comms
 bindsym $mod+Shift+5 move container to workspace 5: steam
 bindsym $mod+Shift+6 move container to workspace 6: media
 bindsym $mod+Shift+7 move container to workspace 7: docs
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace 8: misc
 bindsym $mod+Shift+9 move container to workspace 9: vm
 bindsym $mod+Shift+0 move container to workspace 10: games
 
@@ -144,7 +142,7 @@ bindsym $mod+Shift+r reload
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
     # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
     # resize window (you can also use the mouse for that)
 bindsym $mod+p mode "resize"
@@ -156,10 +154,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-       #bindsym h resize shrink width 10 px or 10 ppt
-       #bindsym t resize grow height 10 px or 10 ppt
-       #bindsym n resize shrink height 10 px or 10 ppt
-       #bindsym s resize grow width 10 px or 10 ppt
+        bindsym Shift+h resize shrink width 50 px or 50 ppt
+        bindsym Shift+l resize grow height 50 px or 50 ppt
+        bindsym Shift+j resize shrink height 50 px or 50 ppt
+        bindsym Shift+k resize grow width 50 px or 50 ppt
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym l resize grow height 10 px or 10 ppt
         bindsym j resize shrink height 10 px or 10 ppt
@@ -171,34 +169,84 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+        # back to normal: same hotkey
+        bindsym $mod+p mode "default"
 }
 
-    # Start i3bar to display a workspace bar (plus the system information i3status
-    # finds out, if available)
+    # Start i3bar
 bar {
+            # show the workspace buttons
+        workspace_buttons yes
+            # use a more readable font
+        font pango:Consolas 10
+            # show tray icons on the primary monitor
+        tray_output primary
+            # use our custom statusbar command
         status_command statusbar
 }
 
-    #assign application to workspace
+
+#
+# Workspaces
+#
+    # put the workspaces on the right screens
+workspace   "1: shell"   output    DVI-I-2
+workspace   "2: web"     output    DVI-I-2
+workspace   "3: misc"    output    DVI-I-2
+workspace   "4: chat"    output    DVI-I-2
+workspace   "5: steam"   output    DVI-I-3
+workspace   "6: media"   output    DVI-I-3
+workspace   "7: docs"    output    DVI-I-2
+workspace   "8: misc"    output    DVI-I-2
+workspace   "9: vbox"    output    DVI-I-3
+workspace  "10: games"   output    DVI-I-2
+
+    # default borders
+        # normal windows get 1pixel borders only
+new_window  1pixel
+        # floating windows get normal borders
+new_float   normal
+        # hide borders adjacent to the screen edges
+hide_edge_borders   both
+
+    # bind applications to their appropriate workspaces
 assign [class="Firefox"] → 2: web
 assign [class="chromium"] → 2: web
 assign [class="Opera"] → 2: web
 assign [class="Midori"] → 2: web
 assign [class="Mumble"] → 5: steam
 assign [class="Steam"] → 5: steam
-assign [class="SMPlayer"] → 6: media
-assign [class="SMTube"] → 6: media
-assign [class="MPlayer"] → 6: media
+assign [class="Smplayer"] → 6: media
+assign [class="Smtube"] → 6: media
+assign [class="Mplayer"] → 6: media
 assign [class="Vlc"] → 6: media
 assign [class="evince"] → 7: docs
 assign [class="Zathura"] → 7: docs
 assign [class="libreoffice-writer"] → 7: docs
-assign [class="xsane"] → 7: docs
+assign [class="Xsane"] → 7: docs
 assign [class="Gimp"] → 7: docs
-assign [class="Virtualbox"] → 9: vm
-assign [class="Left 4 Dead 2"] → 10: games
+assign [class="VirtualBox"] → 9: vm
+assign [class="hl2_linux"] → 10: games
 
-#vim: set ft=sh:
+#
+# Auto-run
+#
+    # auto-run these apps when starting i3
+        # 1:shell
+exec --no-startup-id i3-msg 'workspace 1: shell;new_window none'
+exec --no-startup-id i3-msg 'workspace 1: shell;exec terminator -b -m -T "terminator.shell" --execute tmux -2 attach-session -T shell'
+        # 4:chat
+exec --no-startup-id i3-msg 'workspace 4: chat;exec terminator -b -m -T "terminator.chat" --execute tmux -2 attach-session -T chat'
+        # 2:web
+exec --no-startup-id i3-msg 'workspace 2: web;new_window none'
+exec --no-startup-id i3-msg 'workspace 2: web;exec firefox'
+exec --no-startup-id i3-msg 'workspace 2: web;exec tor-browser-en'
+exec --no-startup-id i3-msg 'workspace 2: web;workspace_layout tabbed'
+        # 5:steam
+exec --no-startup-id i3-msg 'workspace 5: steam;workspace_layout splitv'
+exec --no-startup-id i3-msg 'workspace 5: steam;new_window 1pixel'
+exec --no-startup-id i3-msg 'workspace 5: steam;new_float normal'
+exec --no-startup-id i3-msg 'workspace 5: steam;exec mumble'
+exec --no-startup-id i3-msg 'workspace 5: steam;exec steam'
+
+exec --no-startup-id i3-msg 'workspace 1;'
