@@ -185,7 +185,6 @@ bar {
         status_command statusbar
 }
 
-
 #
 # Workspaces
 #
@@ -203,9 +202,9 @@ workspace  "10: games"   output    DVI-I-2
 
     # default borders
         # normal windows get 1pixel borders only
-new_window  1pixel
+new_window          1pixel
         # floating windows get normal borders
-new_float   normal
+new_float           normal
         # hide borders adjacent to the screen edges
 hide_edge_borders   both
 
@@ -216,7 +215,7 @@ assign [class="Opera"] → 2: web
 assign [class="Midori"] → 2: web
 assign [class="Mumble"] → 5: steam
 assign [class="Steam"] → 5: steam
-assign [class="Smplayer"] → 6: media
+#assign [class="Smplayer"] → 6: media
 assign [class="Smtube"] → 6: media
 assign [class="Mplayer"] → 6: media
 assign [class="Vlc"] → 6: media

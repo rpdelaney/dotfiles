@@ -82,7 +82,7 @@ snippet uniq "add a unique constraint to a column" b
 endsnippet
 
 snippet chek "add a check constraint to a column" b
-    constraint      chek_${1:columnName}   check ($2)
+,   constraint      chek_${1:columnName}   check ($2)
 endsnippet
 
 snippet idx "add an index to a column" b
@@ -95,7 +95,7 @@ endsnippet
 
 snippet begin "transaction block"
 begin
-
+        -- do your business
 
 
         -- error handling
