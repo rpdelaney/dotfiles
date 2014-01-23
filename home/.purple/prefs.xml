@@ -515,8 +515,8 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='127'/>
-				<pref name='height' type='int' value='37'/>
+				<pref name='width' type='int' value='93'/>
+				<pref name='height' type='int' value='32'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
