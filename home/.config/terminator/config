@@ -14,12 +14,14 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#3f3f3f:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
+    palette = "#4c4c4c:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#3f3f3f:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
+    font = Consolas 16
     visible_bell = True
     background_image = None
     background_darkness = 1.02
+    cursor_shape = underline
     use_system_font = False
-    cursor_color = "#8faf9f"
+    cursor_color = "#afab8f"
     foreground_color = "#ffffff"
     update_records = False
     scroll_on_output = False
@@ -27,7 +29,7 @@
     show_titlebar = False
     custom_command = xterm
     scroll_on_keystroke = False
-    font = Consolas 16
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
