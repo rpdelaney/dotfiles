@@ -20,7 +20,8 @@ set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
         " If we have utf-8 encoding, use fancy listchars
     set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
-    set showbreak=…
+        " I don't like showbreak
+    set showbreak=
 else
         " Otherwise, use ANSI
     set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 

@@ -2,7 +2,7 @@
 # /home/ryan/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Sat Dec 28 18:40:38 2013
+# Generated on Wed Jan 15 18:54:11 2014
 #
 
 # ConfigProperties:
@@ -14,9 +14,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
 ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -31,7 +31,7 @@ mothership:0.0/FSAAAppControlled=1
 mothership:0.0/LogAnisoAppControlled=1
 mothership:0.0/OpenGLImageSettings=3
 mothership:0.0/FSAAAppEnhanced=0
-mothership:0.0/XVideoSyncToDisplayID=DVI-I-2
+mothership:0.0/XVideoSyncToDisplayID=DVI-I-0
 mothership:0[DPY:DVI-I-0]/Dithering=0
 mothership:0[DPY:DVI-I-0]/DitheringMode=0
 mothership:0[DPY:DVI-I-0]/DitheringDepth=0
