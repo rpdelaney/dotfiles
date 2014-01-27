@@ -540,7 +540,7 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='40'/>
+				<pref name='height' type='int' value='35'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>

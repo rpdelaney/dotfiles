@@ -3,12 +3,15 @@
 # don't type passwords a bunch of times. we are lazy.
 #
 
+message="$(curl -s http://whatthecommit.com/index.txt)"
+if [[ "$message" == "" ]]; then message="this update is unusually unfunny"; fi
+
     # if there's a keychain, then double-check that it has been run on the current env
 [[ $(type keychain 2> /dev/null) ]] && keychain -q
 
     # if there's still no identity in ssh-agent, add it
 if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
-    if [[ $(type -p cowsay) ]]; then
+    if type -p cowsay; then
         cowsay "Identify yourself."
     else
         echo "Identify yourself."
@@ -20,6 +23,6 @@ fi
 git add . -A
 git status
 confirm || exit 1
-git commit -m "$(curl -s http://whatthecommit.com/index.txt)"
+git commit -m "$message"
 git pull
 git push
