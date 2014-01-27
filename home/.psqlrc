@@ -1,4 +1,4 @@
-\set AUTOCOMMIT off
+\set AUTOCOMMIT on
 \set ENCODING UTF8
 \set HISTSIZE 1000
 \set HISTCONTROL ignoredups
