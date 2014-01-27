@@ -20,21 +20,24 @@ set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
         " If we have utf-8 encoding, use fancy listchars
     set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
-        " I don't like showbreak
+        " Show this character on a wrapped line
     set showbreak=
 else
         " Otherwise, use ANSI
     set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
+        " Show this character on a wrapped line
+    set showbreak=
 endif
     " Disable background color erase - this could cause bugs in some terminals
 set t_ut=
-"
-" Interface
-"
     " enable enhanced command-line completion
 set wildmenu
     " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
+
+"
+" Interface
+"
     " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
     syntax enable
@@ -49,12 +52,12 @@ set nocursorcolumn
 set backspace=indent,eol,start
 set complete-=i
     " don't wrap unless I say so
-set wrap
+set nowrap
     " always search the whole file regardless of cursor position
 set wrapscan
     " highlight all search matches
 set hlsearch
-    " make left/right keys wrap to start of the line
+    " make left/right keys wrap to start of the next line
 set whichwrap+=h,l,<,>,[,]
     " time out bindings that don't respond quickly
 set ttimeout
@@ -104,12 +107,13 @@ noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
+
 "
 " tabstops
 "
     " indent like the previous line
 set autoindent
-    " 
+    "
 set smarttab
     " expand tabs into whitespace
 set expandtab
@@ -121,6 +125,7 @@ set softtabstop=4
 set shiftwidth=4
     " auto-shift to tab stop
 set shiftround
+
 "
 " Plugins
 "
@@ -173,14 +178,14 @@ if has("autocmd")
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         " shell
-    autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4 
+    autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
         " python
     autocmd FileType python let python_highlight_all = 1
     autocmd FileType python let python_slow_sync = 1
     autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
     autocmd FileType python set completeopt=preview
         " archlinux package build
-    autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4 
+    autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
         " LaTeX
     autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
     autocmd Filetype tex,latex let g:tex_flavor = "latex"

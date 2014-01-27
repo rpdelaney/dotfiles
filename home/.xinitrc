@@ -8,7 +8,7 @@ setxkbmap dvorak
 'redshift' -l 36.978:-121.98155 -t 6500:3500 &
 
     # environment variables for the desktop environment only
-export BROWSER="firefox"       # web browser
+export BROWSER="dwb"             # web browser
 
     # xscreensaver daemon
 #/usr/bin/xscreensaver -no-splash &

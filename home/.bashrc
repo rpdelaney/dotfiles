@@ -9,34 +9,51 @@
 # ENVIRONMENT
 #
     # editor
-export EDITOR="vim"
-export VISUAL="gvim"
+if type vim &> /dev/null; then
+  export EDITOR="vim"
+fi
+if type gvim &> /dev/null; then
+  export VISUAL="gvim"
+fi
     # gpg
-export GPG_TTY=`tty`
+if type gpg &> /dev/null; then
+  export GPG_TTY=`tty`
+  if type pass &> /dev/null; then
+    export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
+  fi
+fi
     # mutt
-export PGPPATH="~/.gnupg/"
-export MAILDIR="/var/mail/"
-export TMPDIR="/tmp/"
-    # github
-export GITHUB_USER="rpdelaney"
-#export GITHUB_PASSWORD="$(pass show github.com)"
-    # password-store
-export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
+if type mutt &> /dev/null; then
+  export PGPPATH="~/.gnupg/"
+  export MAILDIR="/var/mail/"
+  export TMPDIR="/tmp/"
+fi
+    # git
+if type git &> /dev/null; then
+  export GIT_EXTERNAL_DIFF="vimdiff"
+  export GITHUB_USER="rpdelaney"
+  #export GITHUB_PASSWORD="$(pass show github.com)"
+fi
     # lynx
-LYNX_CFG="/home/ryan/.config/lynx/config"
-http_proxy="http://localhost:9050/"
-ftp_proxy="http://localhost:9050/"
-gopher_proxy="http://localhost:9050/"
+if type lynx &> /dev/null; then
+  export LYNX_CFG="/home/ryan/.config/lynx/config"
+# export http_proxy="http://localhost:9050/"
+# export ftp_proxy="http://localhost:9050/"
+# export gopher_proxy="http://localhost:9050/"
+fi
     # yaourt colors
-export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
-  # Add ~/bin and all subdirectories recursively to $PATH
+if type yaourt &> /dev/null; then
+  export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
+fi
+    # Add ~/bin and all subdirectories recursively to $PATH
 PATH="${PATH}:${HOME}/bin/"
 for dir in find ~/bin -type d -not -path "*/.git/*" -not -name ".git"; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
+
 #
 # KEYCHAIN
 #
   # ask if we want to run a new ssh-agent for this session
-if [[ $(type keychain) ]]; then
+if type keychain &> /dev/null; then
     keychain --nogui -q
     [[ -f ~/.keychain/"$HOSTNAME"-sh ]]      && source ~/.keychain/"$HOSTNAME"-sh
     [[ -f ~/.keychain/"$HOSTNAME"-sh-gpg ]]  && source ~/.keychain/"$HOSTNAME"-sh-gpg
@@ -46,7 +63,6 @@ else
     && eval $(ssh-agent)                                                           \
     && ssh-add -t 6h ~/.ssh/id_rsa
 fi
-
 
 #
 # HISTORY
@@ -69,8 +85,8 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:hi
 #
   # colorize the terminal
   # read in dircolors; enable color support
-[[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
-[[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
+[[ -e "${HOME}"/.bash_colors ]] && eval $(dircolors -b "${HOME}"/.bash_colors) || eval $(dircolors -b)
+[[ -e "${HOME}"/.bash_styles ]] && source "${HOME}"/.bash_styles
   #zenburn theme for tty
   #by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
@@ -101,10 +117,16 @@ fi
 #   PROMPT
 #
 if [[ -f ~/.bash_prompt ]]; then
-  if [[ "$UID" == 0 ]]; then
       # If we are root, try to make that hard to miss.
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
       # And de-emphasize git status (we don't work as root)
+  if [[ "$UID" == 0 ]]; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  fi
+      # If we are wheel, try to make that hard to miss.
+      # And de-emphasize git status (we don't work as superuser)
+  if groups | grep -q wheel; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   fi
   source ~/.bash_prompt
