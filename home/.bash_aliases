@@ -61,7 +61,7 @@ alias ....='\cd ../..'
     # safety valve
 alias mv='\mv -iv'
 alias cp='\cp -iv'
-alias rm='\rm -iv'
+alias rm='\rm -Iv'
 alias chown='\chown -c --preserve-root'
 alias chmod='\chmod -c --preserve-root'
 alias chgrp='\chgrp -c --preserve-root'

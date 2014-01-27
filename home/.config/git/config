@@ -1,6 +1,4 @@
 # git config
-# based on tutorial by Stephen Haberman
-# retrieved 2013-05-13 from http://www.draconianoverlord.com/2010/03/04/git-config.html
 
 [user]
     name = Ryan Delaney
@@ -22,26 +20,11 @@
     renames = copies
     mnemonicprefix = true
 [alias]
-        # 'add all' stages all new+changed+deleted files
-    aa = !git ls-files -z -d | xargs -0 -r git rm && git ls-files -z -m -o --exclude-standard | xargs -0 -r git add
-        # 'add grep' stages all new+changed that match $1
-    ag = "!sh -c 'git ls-files -z -m -o --exclude-standard | grep -z $1 | xargs -0 -r git add' -"
-        # 'checkout grep' checkouts any files that match $1
-    cg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git checkout' -"
-        # 'diff grep' diffs any files that match $1
-    dg = "!sh -c 'git ls-files -z -m | grep -z $1 | xargs -0 -r git diff' -"
-        # 'patch grep' diff --cached any files that match $1
-    pg = "!sh -c 'git ls-files -z -c | grep -z $1 | xargs -0 -r git diff --cached' -"
-        # 'remove grep' remove any files that match $1
-    rmg = "!sh -c 'git ls-files -z -d | grep -z $1 | xargs -0 -r git rm' -"
-        # 'reset grep' reset any files that match $1
-    rsg = "!sh -c 'git diff --cached --name-only | grep $1 | xargs -r git reset HEAD -- ' -"
         # nice log output
     lg = log --graph --pretty=oneline --abbrev-commit --decorate
-        # rerun svn show-ignore -> exclude
-    si = !git svn show-ignore > .git/info/exclude
-        # start git-sh
-    sh = !git-sh
+        # accept my wordy lingo
+    remotes = remote -v
+        #
 [color]
     diff = auto
     status = auto

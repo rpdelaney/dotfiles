@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ~/.bashrc: executed by bash(1) for interactive shells.
+# "$HOME"/.bashrc: executed by bash(1) for interactive shells.
 
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
@@ -9,37 +9,63 @@
 # ENVIRONMENT
 #
     # editor
-export EDITOR="vim"
-export VISUAL="gvim"
-    # gpg
-export GPG_TTY=`tty`
-    # mutt
-export PGPPATH="~/.gnupg/"
-export MAILDIR="/var/mail/"
-export TMPDIR="/tmp/"
-    # github
-export GITHUB_USER="rpdelaney"
-#export GITHUB_PASSWORD="$(pass show github.com)"
-
-  # Add ~/bin and all subdirectories recursively to $PATH
-PATH="${PATH}:${HOME}/bin/"
-for dir in ~/bin/!(.git)/; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
+if type vim &> /dev/null; then
+  export EDITOR="vim"
+fi
+if type gvim &> /dev/null; then
+  export VISUAL="gvim"
+fi
+    # personal settings
+if [[ "$USER" == "ryan" ]]; then
+      # gpg
+  if type gpg &> /dev/null; then
+    export GPG_TTY=`tty`
+    if type pass &> /dev/null; then
+      export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
+    fi
+  fi
+      # mutt
+  if type mutt &> /dev/null; then
+    export PGPPATH=""$HOME"/.gnupg/"
+    export MAILDIR="/var/mail/"
+    export TMPDIR="/tmp/"
+  fi
+      # git
+  if type git &> /dev/null; then
+    export GIT_EXTERNAL_DIFF="vimdiff"
+    export GITHUB_USER="rpdelaney"
+    #export GITHUB_PASSWORD="$(pass show github.com)"
+  fi
+      # lynx
+  if type lynx &> /dev/null; then
+    export LYNX_CFG="$HOME"".config/lynx/config"
+  # export http_proxy="http://localhost:9050/"
+  # export ftp_proxy="http://localhost:9050/"
+  # export gopher_proxy="http://localhost:9050/"
+  fi
+fi
+    # yaourt colors
+if type yaourt &> /dev/null; then
+  export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
+fi
+    # Add "$HOME"/bin and all subdirectories recursively to $PATH
+PATH="${PATH}:$HOME/bin/"
+for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
 
 #
 # KEYCHAIN
 #
   # ask if we want to run a new ssh-agent for this session
-if [[ $(type keychain) ]]; then
+if type keychain &> /dev/null; then
     keychain --nogui -q
-    [[ -f ~/.keychain/"$HOSTNAME"-sh ]]      && source ~/.keychain/"$HOSTNAME"-sh
-    [[ -f ~/.keychain/"$HOSTNAME"-sh-gpg ]]  && source ~/.keychain/"$HOSTNAME"-sh-gpg
+    [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh ]]      && source "$HOME"/.keychain/"$HOSTNAME"-sh
+    [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh-gpg ]]  && source "$HOME"/.keychain/"$HOSTNAME"-sh-gpg
 #elif [[ -z "$SSH_AUTH_SOCK" ]]; then
 else
     timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
     && eval $(ssh-agent)                                                           \
-    && ssh-add -t 6h ~/.ssh/id_rsa
+    && ssh-add -t 6h "$HOME"/.ssh/id_rsa
 fi
-
 
 #
 # HISTORY
@@ -62,8 +88,8 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:hi
 #
   # colorize the terminal
   # read in dircolors; enable color support
-[[ -e ${HOME}/.bash_colors ]] && eval $(dircolors -b ~/.bash_colors) || eval $(dircolors -b)
-[[ -e ${HOME}/.bash_styles ]] && source ${HOME}/.bash_styles
+[[ -e "$HOME"/.bash_colors ]] && eval $(dircolors -b "$HOME"/.bash_colors) || eval $(dircolors -b)
+[[ -e "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
   #zenburn theme for tty
   #by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
@@ -93,29 +119,35 @@ fi
 #
 #   PROMPT
 #
-if [[ -f ~/.bash_prompt ]]; then
-  if [[ "$UID" == 0 ]]; then
+if [[ -f "$HOME"/.bash_prompt ]]; then
       # If we are root, try to make that hard to miss.
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
       # And de-emphasize git status (we don't work as root)
+  if [[ "$UID" == 0 ]]; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   fi
-  source ~/.bash_prompt
+      # If we are wheel, try to make that hard to miss.
+      # And de-emphasize git status (we don't work as superuser)
+  if groups | grep -q wheel; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  fi
+  source "$HOME"/.bash_prompt
 fi
 
 #
 #   ALIASES
 #
   # Alias definitions.
-[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
   #chdir
-[[ -f ~/bin/chdir ]] && source ~/bin/chdir 1> /dev/null
+[[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
   # Functions
-[[ -f "${HOME}/.bash_functions" ]] && source "${HOME}/.bash_functions"
+[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
   # additional configuration options for when running in cygwin
-[[ -f "${HOME}/.bash_cygwin" ]] && source "${HOME}/.bash_cygwin"
+[[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
 
 #
 # SHELL OPTIONS
@@ -148,7 +180,7 @@ umask 077
 # PRIVATE
 #
   # private stuff not to be cloned to public repositories / backups
-[[ -f ~/.bash_private ]] && source ~/.bash_private
+[[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 
 #
 # Greeting
