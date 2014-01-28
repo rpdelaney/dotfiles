@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Ryan Delaney <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
 # "$HOME"/.bashrc: executed by bash(1) for interactive shells.
 
 # If not running interactively, don't do anything
@@ -6,8 +7,34 @@
 [[ -z "$PS1" ]] && return
 
 #
+#   PROMPT
+#
+if [[ -f "$HOME"/.bash_prompt ]]; then
+      # If we are root, try to make that hard to miss.
+      # And de-emphasize git status (we don't work as root)
+  if [[ "$UID" == 0 ]]; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+      # If we are wheel, try to make that hard to miss.
+      # And de-emphasize git status (we don't work as superuser)
+  elif groups "$USER" | grep -q wheel; then
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  elif groups "$USER" | grep -q sudo; then
+    # Use defaults - do nothing
+    :
+  else
+      # Use unprivileged colorscheme
+    PROMPT_USER_COLOR="$(tput setaf 2)"
+  fi
+  source "$HOME"/.bash_prompt
+fi
+
+#
 # ENVIRONMENT
 #
+    # XDG
+export XDG_CONFIG_HOME="$HOME/.config/"
     # editor
 if type vim &> /dev/null; then
   export EDITOR="vim"
@@ -17,6 +44,18 @@ if type gvim &> /dev/null; then
 fi
     # personal settings
 if [[ "$USER" == "ryan" ]]; then
+      # pager
+  if type pager &> /dev/null; then
+    export PAGER="pager"
+  elif type most &> /dev/null; then
+    export PAGER="most"
+    export MOST_EDITOR="vim"
+    export MOST_INITFILE="$HOME/.config/most/mostrc"
+  elif type less &> /dev/null; then
+    export PAGER="less"
+    export LESSHISTSIZE="0"
+    export LESSEDIT="vim"
+  fi
       # gpg
   if type gpg &> /dev/null; then
     export GPG_TTY=`tty`
@@ -32,13 +71,28 @@ if [[ "$USER" == "ryan" ]]; then
   fi
       # git
   if type git &> /dev/null; then
+        # Always vim to edit even if I have a window manager.
+    GIT_EDITOR="vim"
+        # Number of context lines shown in a diff
+  # export GIT_DIFF_OPTS=
+        # Use vimdiff for git diff
     export GIT_EXTERNAL_DIFF="vimdiff"
+        # Stop searching here when trying to find git repos
+    export GIT_CEILING_DIRECTORIES=""
+        # Search for repos across filesystems. I like my symlinks
+    export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
+        # Add "glob" magic to all pathspec
+    export GIT_GLOB_PATHSPECS="1"
+        # Passwords
+  # export GIT_ASKPASS=""
+        # github
     export GITHUB_USER="rpdelaney"
     #export GITHUB_PASSWORD="$(pass show github.com)"
   fi
       # lynx
   if type lynx &> /dev/null; then
     export LYNX_CFG="$HOME"".config/lynx/config"
+  # export WWW_HOME=""
   # export http_proxy="http://localhost:9050/"
   # export ftp_proxy="http://localhost:9050/"
   # export gopher_proxy="http://localhost:9050/"
@@ -116,24 +170,6 @@ else
     [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 
-#
-#   PROMPT
-#
-if [[ -f "$HOME"/.bash_prompt ]]; then
-      # If we are root, try to make that hard to miss.
-      # And de-emphasize git status (we don't work as root)
-  if [[ "$UID" == 0 ]]; then
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  fi
-      # If we are wheel, try to make that hard to miss.
-      # And de-emphasize git status (we don't work as superuser)
-  if groups | grep -q wheel; then
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  fi
-  source "$HOME"/.bash_prompt
-fi
 
 #
 #   ALIASES
@@ -169,11 +205,12 @@ shopt -s cdspell
   # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+#
 # Umask
 #
   # /etc/profile sets 022, removing write perms to group + others.
   # Set a more restrictive umask: i.e. no exec perms for others:
-  # umask 027
+# umask 027
   # Paranoid: neither group nor others have any perms:
 umask 077
 #
@@ -185,4 +222,4 @@ umask 077
 #
 # Greeting
 #
-type alsi &> /dev/null && timeout 1 alsi || echo "TERM is $TERM"
+type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
