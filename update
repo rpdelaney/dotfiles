@@ -16,7 +16,7 @@ if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
     else
         echo "Identify yourself."
     fi
-    ssh-add -t 12h ${HOME}/.ssh/id_rsa
+    ssh-add -t 12h "$HOME/.ssh/id_rsa"
 fi
 
     # now that we have ssh kanged up, upload our crap

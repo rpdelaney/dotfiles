@@ -1,1 +1,0 @@
-/home/ryan/src/shell/vim/pgsql.vim/syntax/pgsql.vim

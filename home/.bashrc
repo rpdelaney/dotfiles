@@ -17,10 +17,10 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
       # If we are wheel, try to make that hard to miss.
       # And de-emphasize git status (we don't work as superuser)
-  elif groups "$USER" | grep -q wheel; then
+  elif groups "$USER" | grep -qP '(wheel|admin|sysop)'; then
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -q sudo; then
+  elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
     # Use defaults - do nothing
     :
   else
@@ -91,7 +91,7 @@ if [[ "$USER" == "ryan" ]]; then
   fi
       # lynx
   if type lynx &> /dev/null; then
-    export LYNX_CFG="$HOME"".config/lynx/config"
+    export LYNX_CFG="$HOME""/.config/lynx/config"
   # export WWW_HOME=""
   # export http_proxy="http://localhost:9050/"
   # export ftp_proxy="http://localhost:9050/"

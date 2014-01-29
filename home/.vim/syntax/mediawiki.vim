@@ -1,1 +1,0 @@
-/home/ryan/src/shell/vim/mediawiki.vim/syntax/mediawiki.vim
