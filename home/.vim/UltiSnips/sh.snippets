@@ -1,7 +1,3 @@
-snippet psqlc "bash command statement " b
-psql -U postgres -c "$1"
-endsnippet
-
 snippet shebang "shebang for bash" b
 #!/usr/bin/env bash
 endsnippet
@@ -10,7 +6,12 @@ snippet usage "template for usage function" b
 usage() {
 cat <<EOD
 ${1:appname}
-© Copyright `date --iso-8601=date` Ryan Delaney. All rights reserved. This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the implied wa rranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See README for additional terms and conditions on your use of this software.
+© Copyright `date --iso-8601=date` Ryan Delaney. All rights reserved.
+This work is distributed WITHOUT ANY WARRANTY whatsoever; without even
+the implied wa rranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. See README for additional terms and conditions on your use of
+this software.
+
 Web site: http://github.com/rpdelaney
 
 $1 ${2:description}
@@ -31,29 +32,29 @@ snippet arguments "template argument reader" b
 #
 while :
 do
-    case \$1 in
-        --help | -\?)
-            #  Call your Help() or usage() function here.
-            usage
-            exit 0
-            ;;
-        -v | --verbose)
-            # Each instance of -v adds 1 to verbosity
-            verbose=\$((verbose+1))
-            shift
-            ;;
-        --) # End of all options
-            shift
-            break
-            ;;
-        -*)
-            echo "WARN: Unknown option (ignored): \$1" >&2
-            shift
-            ;;
-        *)  # no more options. Stop while loop
-            break
-            ;;
-    esac
+  case \$1 in
+    --help | -\?)
+      #  Call your Help() or usage() function here.
+      usage
+      exit 0
+      ;;
+    -v | --verbose)
+      # Each instance of -v adds 1 to verbosity
+      verbose=\$((verbose+1))
+      shift
+      ;;
+    --) # End of all options
+      shift
+      break
+      ;;
+    -*)
+      echo "WARN: Unknown option (ignored): \$1" >&2
+      shift
+      ;;
+    *)  # no more options. Stop while loop
+      break
+      ;;
+  esac
 done
 endsnippet
 

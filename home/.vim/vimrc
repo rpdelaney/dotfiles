@@ -51,6 +51,8 @@ set cursorline
 set nocursorcolumn
 set backspace=indent,eol,start
 set complete-=i
+    " look for modelines
+set modeline
     " don't wrap unless I say so
 set nowrap
     " always search the whole file regardless of cursor position
@@ -94,10 +96,6 @@ set autoread
 if &history < 1000
   set history=1000
 endif
-    " Enforce 50 tabs maximum
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
     " Put something in viminfo for some reason
 if !empty(&viminfo)
   set viminfo^=!
@@ -109,22 +107,26 @@ noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
 
 "
-" tabstops
+" tabs
 "
     " indent like the previous line
 set autoindent
-    "
+    " use tabs for indentation and spaces everywhere else
 set smarttab
-    " expand tabs into whitespace
-set expandtab
+    " don't automatically expand tabs into whitespace
+set noexpandtab
     " tabstop is 4 characters
 set tabstop=4
     " delete key in insert mode deletes 4 spaces
-set softtabstop=4
+"set softtabstop=4
     " shift keys in normal mode add or remove 4 spaces
 set shiftwidth=4
     " auto-shift to tab stop
 set shiftround
+    " Enforce 50 tabs maximum
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
 
 "
 " Plugins
