@@ -1,51 +1,54 @@
 # git config
 
 [user]
-    name = Ryan Delaney
-    email = ryan.delaney@gmail.com
+	name = Ryan Delaney
+	email = ryan.delaney@gmail.com
 [core]
-    excludesfile = /home/ryan/.config/git/gitignore_global
-    whitespace=tab-in-indent,blank-at-eol
-        # pay no attention to those permissions behind the curtain
-        # because windows filesystems (NTFS too) are retarded about this
-        # revert to true when we are finally free of that rat-patootey
-    filemode = false
+	excludesfile = /home/ryan/.config/git/gitignore_global
+	whitespace=tab-in-indent,blank-at-eol
+		# pay no attention to those permissions behind the curtain
+		# because windows filesystems (NTFS too) are retarded about this
+		# revert to true when we are finally free of that rat-patootey
+	filemode = false
+		# automatically perform dos2unix conversion when committing
+		# text
+	autocrlf = true
 [push]
-    default = matching
+	default = matching
 [branch]
-        # reupbase is dumb
-    autosetuprebase = never
+		# reupbase is dumb
+	autosetuprebase = never
 [diff]
-    external = gitdiff
-    renames = copies
-    mnemonicprefix = true
+	external = gitdiff
+	renames = copies
+	mnemonicprefix = true
 [alias]
-        # nice log output
-    lg = log --graph --pretty=oneline --abbrev-commit --decorate
-        # accept my wordy lingo
-    remotes = remote -v
-        #
+		# nice log output
+	lg = log --graph --pretty=oneline --abbrev-commit --decorate
+		# accept my wordy lingo
+	remotes = remote -v
+		#
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
 [color "branch"]
-    current = green bold
-    local = green
-    remote = red bold
+	current = green bold
+	local = green
+	remote = red bold
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [pager]
-        # Don't use any diff pager, because pagers wreck vimdiff
-    diff =
+		# Don't use any diff pager, because pagers wreck vimdiff
+	diff =
 [color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = red
+	added = green bold
+	changed = yellow bold
+	untracked = red
 [color "sh"]
-    branch = yellow
+	branch = yellow
