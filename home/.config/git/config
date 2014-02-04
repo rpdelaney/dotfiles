@@ -27,6 +27,7 @@
 	lg = log --graph --pretty=oneline --abbrev-commit --decorate
 		# accept my wordy lingo
 	remotes = remote -v
+	branches = branch -v
 		#
 [color]
 	diff = auto
