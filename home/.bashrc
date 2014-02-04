@@ -72,7 +72,7 @@ if [[ "$USER" == "ryan" ]]; then
     # git
   if type git &> /dev/null; then
     # Find my config
-  if [[ -f "$HOME/.config/git/config" ]];
+  if [[ -f "$HOME/.config/git/config" ]]; then
     export GIT_CONFIG="$HOME/.config/git/config"
   fi
     # Always vim to edit even if I have a window manager.
