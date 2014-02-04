@@ -52,7 +52,9 @@ xkcd(){ wget -qO- http://xkcd.com/|tee >(feh $('grep' -Po '(?<=")http://imgs[^/]
 # manipulating files and directories
 #
   # print a diff of two directory trees
-dirdiff() { diff <(cd $1 && find | sort) <(cd $2 && find | sort); }
+dirdiff() { 
+  vimdiff <(cd $1 && find -not -iwholename "*.git" | sort) <(cd $2 && find -not -iwholename "*.git" | sort); 
+}
 
   # find duplicate files in pwd by md5sum
 fdupes() {
