@@ -13,19 +13,19 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
     # If we are root, try to make that hard to miss.
     # And de-emphasize git status (we don't work as root)
   if [[ "$UID" == 0 ]]; then
-  PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-  PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
     # If we are wheel, try to make that hard to miss.
     # And de-emphasize git status (we don't work as superuser)
   elif groups "$USER" | grep -qP '(wheel|admin|sysop)'; then
-  PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
-  PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
   # Use defaults - do nothing
   :
   else
     # Use unprivileged colorscheme
-  PROMPT_USER_COLOR="$(tput setaf 2)"
+    PROMPT_USER_COLOR="$(tput setaf 2)"
   fi
   source "$HOME"/.bash_prompt
 fi
@@ -36,62 +36,55 @@ fi
   # XDG
 export XDG_CONFIG_HOME="$HOME/.config/"
   # editor
-if type vim &> /dev/null; then
-  export EDITOR="vim"
-fi
-if type gvim &> /dev/null; then
-  export VISUAL="gvim"
-fi
+if type vim &> /dev/null; then export EDITOR="vim"; fi
+if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # personal settings
 if [[ "$USER" == "ryan" ]]; then
     # pager
   if type pager &> /dev/null; then
-  export PAGER="pager"
+    export PAGER="pager"
   elif type most &> /dev/null; then
-  export PAGER="most"
-  export MOST_EDITOR="vim"
-  export MOST_INITFILE="$HOME/.config/most/mostrc"
+    export PAGER="most"
+    export MOST_EDITOR="vim"
+    export MOST_INITFILE="$HOME/.config/most/mostrc"
   elif type less &> /dev/null; then
-  export PAGER="less"
-  export LESSHISTSIZE="0"
-  export LESSEDIT="vim"
+    export PAGER="less"
+    export LESSHISTSIZE="0"
+    export LESSEDIT="vim"
   fi
     # gpg
   if type gpg &> /dev/null; then
-  export GPG_TTY=`tty`
-  if type pass &> /dev/null; then
-    export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
+    export GPG_TTY=`tty`
+    export GNUPGHOME="$HOME/.config/gnupg/"
   fi
-  fi
+  if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
     # mutt
   if type mutt &> /dev/null; then
-  export PGPPATH=""$HOME"/.gnupg/"
-  export MAILDIR="/var/mail/"
-  export TMPDIR="/tmp/"
+    export PGPPATH="$HOME$GNUPGHOME"
+    export MAILDIR="/var/mail/"
+    export TMPDIR="/tmp/"
   fi
     # git
   if type git &> /dev/null; then
-    # Find my config
-  if [[ -f "$HOME/.config/git/config" ]]; then
-    export GIT_CONFIG="$HOME/.config/git/config"
-  fi
-    # Always vim to edit even if I have a window manager.
-  export GIT_EDITOR="vim"
-    # Number of context lines shown in a diff
-  # export GIT_DIFF_OPTS=
-    # Use vimdiff for git diff
-  export GIT_EXTERNAL_DIFF="vimdiff"
-    # Stop searching here when trying to find git repos
-  export GIT_CEILING_DIRECTORIES=""
-    # Search for repos across filesystems. I like my symlinks
-  export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
-    # Add "glob" magic to all pathspec
-  export GIT_GLOB_PATHSPECS="1"
-    # Passwords
+      # Find my config
+    if [[ -f "$HOME/.config/git/config" ]]; then export GIT_CONFIG="$HOME/.config/git/config"; fi
+      # Always vim to edit even if I have a window manager.
+    export GIT_EDITOR="vim"
+      # Number of context lines shown in a diff
+    # export GIT_DIFF_OPTS=
+      # Use vimdiff for git diff
+    export GIT_EXTERNAL_DIFF="vimdiff"
+      # Stop searching here when trying to find git repos
+  # export GIT_CEILING_DIRECTORIES=""
+      # Search for repos across filesystems. I like my symlinks
+    export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
+      # Add "glob" magic to all pathspec
+    export GIT_GLOB_PATHSPECS="1"
+      # Passwords
   # export GIT_ASKPASS=""
-    # github
-  export GITHUB_USER="rpdelaney"
-  #export GITHUB_PASSWORD="$(pass show github.com)"
+      # github
+    export GITHUB_USER="rpdelaney"
+  # export GITHUB_PASSWORD="$(pass show github.com)"
   fi
     # lynx
   if type lynx &> /dev/null; then
@@ -122,7 +115,7 @@ if type keychain &> /dev/null; then
 else
   timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
   && eval $(ssh-agent)                                                           \
-  && ssh-add -t 6h "$HOME"/.ssh/id_rsa
+  && ssh-add -t 8h "$HOME"/.ssh/id_rsa
 fi
 
 #
