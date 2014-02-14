@@ -120,3 +120,5 @@ alias mounts='\mount | \column -t | pager'
     # private shredder
 type shred &> /dev/null && alias shred=' shred -vfu'
 
+  # always make secure passwords
+type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
