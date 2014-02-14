@@ -10,7 +10,6 @@
 # don't type passwords a bunch of times when using git as a glorified backup tool.
 # we are lazy.
 #
-set -x
 
 message="$(curl -s http://whatthecommit.com/index.txt)"
 if [[ "$message" == "" ]]; then message="this update is unusually unfunny"; fi
