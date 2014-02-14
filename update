@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
+# GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
 #
-# don't type passwords a bunch of times. we are lazy.
+# © Copyright 2014-02-12 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
 #
+# don't type passwords a bunch of times when using git as a glorified backup tool.
+# we are lazy.
+#
+set -x
 
 message="$(curl -s http://whatthecommit.com/index.txt)"
 if [[ "$message" == "" ]]; then message="this update is unusually unfunny"; fi
@@ -20,9 +29,7 @@ if [[ $(ssh-add -L) == "The agent has no identities." ]]; then
 fi
 
     # now that we have ssh kanged up, upload our crap
-git add . -A
+if ! git add . -A; then echo 'FATAL: Git add failed. WTF have you done?'; exit 1; fi
 git status
 confirm || exit 1
-git commit -m "$message"
-git pull
-git push
+git commit -m "$message" && git pull && git push

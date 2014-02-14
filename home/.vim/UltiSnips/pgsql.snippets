@@ -3,6 +3,7 @@ snippet table "table schema definition" b
 	table: ${1:tableName}
 	${2:tableComment}
 	created on: `date`
+	copyright
 */
 create table $1
 (
@@ -12,8 +13,8 @@ create table $1
 		-- maintenance columns
 ,   insertedTime	timestamptz	 default "now"()
 ,   insertedUser	text			default "current_user"()
-,   updatedTime	 timestamptz
-,   updatedUser	 text
+,   updatedTime		timestamptz
+,   updatedUser	 	text
 		-- data columns
 		-- data validation constraints
 		-- foreign key constraints
@@ -36,6 +37,7 @@ snippet function "function definer" b
 	function: ${1:functionName}(${2:functionParameters})
 	${3:functionComment}
 	created on: `date`
+	copyright
 */
 create function $1($2) returns ${4:returnType} as
 
@@ -57,6 +59,7 @@ snippet view "view definer" b
 	${1:viewType }view: ${2:viewName}
 	${3:viewComment}
 	created on: `date`
+	copyright
 */
 create $1 view $2 as (
 	select

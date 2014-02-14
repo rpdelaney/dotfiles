@@ -209,10 +209,12 @@ new_float           normal
 hide_edge_borders   both
 
     # bind applications to their appropriate workspaces
+    # get window class with xprop
 assign [class="Firefox"] → 2: web
 assign [class="chromium"] → 2: web
 assign [class="Opera"] → 2: web
 assign [class="Midori"] → 2: web
+assign [class="Dwb"] → 2: web
 assign [class="Mumble"] → 5: steam
 assign [class="Steam"] → 5: steam
 #assign [class="Smplayer"] → 6: media
@@ -233,14 +235,14 @@ assign [class="hl2_linux"] → 10: games
     # auto-run these apps when starting i3
         # 1:shell
 exec --no-startup-id i3-msg 'workspace 1: shell;new_window none'
-exec --no-startup-id i3-msg 'workspace 1: shell;exec terminator -b -m -T "terminator.shell" --execute tmux -2 attach-session -T shell'
-        # 4:chat
-exec --no-startup-id i3-msg 'workspace 4: chat;exec terminator -b -m -T "terminator.chat" --execute tmux -2 attach-session -T chat'
+exec --no-startup-id i3-msg 'workspace 1: shell;exec terminator -b -m -T "terminator.shell" --execute "tmux -2 attach-session -T shell"'
         # 2:web
 exec --no-startup-id i3-msg 'workspace 2: web;new_window none'
-exec --no-startup-id i3-msg 'workspace 2: web;exec firefox'
+exec --no-startup-id i3-msg 'workspace 2: web;exec dwb'
 exec --no-startup-id i3-msg 'workspace 2: web;exec tor-browser-en'
 exec --no-startup-id i3-msg 'workspace 2: web;workspace_layout tabbed'
+        # 4:chat
+exec --no-startup-id i3-msg 'workspace 4: chat;exec terminator -b -m -T "terminator.chat" --execute "tmux -2 attach-session -T chat"'
         # 5:steam
 exec --no-startup-id i3-msg 'workspace 5: steam;workspace_layout splitv'
 exec --no-startup-id i3-msg 'workspace 5: steam;new_window 1pixel'

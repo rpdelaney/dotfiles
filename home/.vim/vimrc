@@ -1,207 +1,179 @@
-    " infect pathogen plugin loader
+	" infect pathogen plugin loader
 call pathogen#infect()
 
+" Interface {{{1
 "
-" Styles
+" Styles {{{2
 "
-    " Allow color schemes to do bright colors without forcing bold.
+	" Colorscheme {{{3
+	" Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
-        " If terminal does not support 256 colors, use Mustang2 instead of zenburn
-    set t_Co=16
-    colorscheme mustang2
+		" If terminal does not support 256 colors, use Mustang2 instead of zenburn
+	set t_Co=16
+	colorscheme mustang2
 else
-        " otherwise, use zenburn
-    set t_Co=256
-    let g:zenburn_high_contrast=1
-    colorscheme zenburn
+		" otherwise, use zenburn
+	set t_Co=256
+	let g:zenburn_high_contrast=1
+	colorscheme zenburn
 endif
-    " listchars to highlight stuff we don't like
+	" Listchars {{{3
+	" listchars to highlight stuff we don't like
 set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-        " If we have utf-8 encoding, use fancy listchars
-    set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
-        " Show this character on a wrapped line
-    set showbreak=
+		" If we have utf-8 encoding, use fancy listchars
+	set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
+		" Show this character on a wrapped line
+	set showbreak=
 else
-        " Otherwise, use ANSI
-    set listchars=tab:>\ ,eol:\ ,trail:•,extends:>,precedes:<,conceal:¤,nbsp: 
-        " Show this character on a wrapped line
-    set showbreak=
+		" Otherwise, use ANSI
+	set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<,conceal:*,nbsp:-
+	" Show this character on a wrapped line
+	set showbreak=
 endif
-    " Disable background color erase - this could cause bugs in some terminals
+	" Disable background color erase - this could cause bugs in some terminals
 set t_ut=
-    " enable enhanced command-line completion
+	" enable enhanced command-line completion
 set wildmenu
-    " Exclude these files and directories from search
+	" Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
 
-"
-" Interface
-"
-    " if we have syntax, use it
+	" Syntax {{{2
+	" if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
-    syntax enable
-        " use syntax engine to control folding
-    set foldmethod=syntax
-        " start with all folds open
-    set foldlevelstart=99
+	syntax enable
+		" use syntax engine to control folding
+	set foldmethod=syntax
 endif
-    " show what row and column I'm on
-set cursorline
-set nocursorcolumn
-set backspace=indent,eol,start
-set complete-=i
-    " look for modelines
-set modeline
-    " don't wrap unless I say so
-set nowrap
-    " always search the whole file regardless of cursor position
-set wrapscan
-    " highlight all search matches
-set hlsearch
-    " make left/right keys wrap to start of the next line
-set whichwrap+=h,l,<,>,[,]
-    " time out bindings that don't respond quickly
-set ttimeout
-set ttimeoutlen=50
-    " search incrementally
-set incsearch
-    " show search results visually
-set showmatch
-    " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
-set scrolloff=4
-    " Always show the file status
-set laststatus=2
-    " Tell me where I am in the file
-set ruler
-    " show line numbers relative to the cursor position
-set relativenumber
-    " show line numbers in absolute terms
-set number
-    " show last command
-set showcmd
-    "
-if !&scrolloff
-  set scrolloff=1
-endif
-    "
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
-    "
-set display+=lastline
-    " update the buffer if the source file changes on disk and we have not edited it
-set autoread
-    " Enforce 1000 lines of history maximum
-if &history < 1000
-  set history=1000
-endif
-    " Put something in viminfo for some reason
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-    " stop using arrow keys ya dummy
-noremap <left> :echoe "Stop using arrow keys."<cr>
-noremap <right> :echoe "Stop using arrow keys."<cr>
-noremap <up> :echoe "Stop using arrow keys."<cr>
-noremap <down> :echoe "Stop using arrow keys."<cr>
-
+" Indentation {{{2
 "
-" tabs
-"
-    " indent like the previous line
+	" do smart autoindenting on new lines
+set smartindent
+	" indent like the previous line
 set autoindent
-    " use tabs for indentation and spaces everywhere else
-set smarttab
-    " don't automatically expand tabs into whitespace
-set noexpandtab
-    " tabstop is 4 characters
-set tabstop=4
-    " delete key in insert mode deletes 4 spaces
-"set softtabstop=4
-    " shift keys in normal mode add or remove 4 spaces
+	" shift keys in normal mode add or remove 4 spaces
 set shiftwidth=4
-    " auto-shift to tab stop
+	" use tabs for indentation and spaces everywhere else
+set smarttab
+	" don't automatically expand tabs into whitespace
+set noexpandtab
+	" tabstop is 4 characters
+set tabstop=4
+	" delete key in insert mode deletes 4 spaces
+set softtabstop=4
+	" auto-shift to tab stop
 set shiftround
-    " Enforce 50 tabs maximum
+	" Enforce 50 tabs maximum
 if &tabpagemax < 50
   set tabpagemax=50
 endif
 
+	" Orientation {{{2
+	" Tell me where I am in the file
+set ruler
+	" show line numbers relative to the cursor position
+set relativenumber
+	" show line numbers in absolute terms
+set number
+	" show what row and column I'm on
+set cursorline
+set nocursorcolumn
+set backspace=indent,eol,start
+	" Searching {{{2
+	" highlight all search matches
+set hlsearch
+	" always search the whole file regardless of cursor position
+set wrapscan
+	" show search results visually
+set showmatch
+	" search incrementally
+set incsearch
+	" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
+set scrolloff=4
+
+	" Navigation {{{2
+set modeline
+	" don't wrap unless I say so
+set nowrap
+	" make left/right keys wrap to start of the next line
+set whichwrap+=h,l,<,>,[,]
+
+	" Other {{{2
+	"
+set complete-=i
+	" look for modelines
+	" Always show the file status
+set laststatus=2
+	" show last command
+set showcmd
+	"
+if !&scrolloff
+  set scrolloff=1
+endif
+	"
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+	"
+set display+=lastline
+	" update the buffer if the source file changes on disk and we have not edited it
+set autoread
+	" Enforce 1000 lines of history maximum
+if &history < 1000
+  set history=1000
+endif
+	" Put something in viminfo for some reason
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+
+" Bindings {{{1
 "
-" Plugins
+	" stop using arrow keys ya dummy
+noremap <left> :echoe "Stop using arrow keys."<cr>
+noremap <right> :echoe "Stop using arrow keys."<cr>
+noremap <up> :echoe "Stop using arrow keys."<cr>
+noremap <down> :echoe "Stop using arrow keys."<cr>
+	" time out bindings that don't respond quickly
+set ttimeout
+set ttimeoutlen=50
+	" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+" Plugins {{{1
 "
-    " UltiSnips bindings
+	" UltiSnips bindings
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
 let g:UltiSnipsExpandTrigger        = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
-    " Load matchit.vim, but only if the user hasn't installed a newer version.
+	" Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
+
+" Functions {{{1
 "
-" functions
-"
-    " remove whitespace
+	" * Whitespace: {{{2
+	" remove whitespace
 function! <SID>StripTrailingWhitespaces()
-        " Preparation. save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-        " Do the business:
-    %s/\s\+$//e
-        " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+		" Preparation. save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+		" Do the business:
+	%s/\s\+$//e
+		" Clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
 endfunction
-    " do it whenever we hit a key
+	" do it whenever we hit a key
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-"
-" Bindings
-"
-    " Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endif
-"
-" files
-"
-    " Use strong encryption when invoked with :X
-set cm=blowfish
-    " EOL formats to try when parsing new files with unclear MIMEtypes
-set fileformats="unix,dos"
-    " filetypes
-if has("autocmd")
-        " Enable file type detection
-    filetype on
-        " Syntax of these languages is fussy over tabs vs spaces
-    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-        " shell
-    autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
-        " python
-    autocmd FileType python let python_highlight_all = 1
-    autocmd FileType python let python_slow_sync = 1
-    autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
-    autocmd FileType python set completeopt=preview
-        " archlinux package build
-    autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
-        " LaTeX
-    autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
-    autocmd Filetype tex,latex let g:tex_flavor = "latex"
-        " Customisations based on house-style (arbitrary)
-    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-        " Treat .rss files as XML
-    autocmd BufNewFile,BufRead *.rss setfiletype xml
-        " automatically trim trailing whitespace whenever we save these files
-    autocmd BufWritePre *.py,*.js,*.sql,*.pgsql,*.vim,*.sh :call <SID>StripTrailingWhitespaces()
-endif
-"
-" hex editing
+
+" * Hex Editing {{{2
 " retrieved from http://vim.wikia.com/wiki/Improved_hex_editing on Sat Jan  4 13:03:41 PST 2014
 "
 " ex command for toggling hex mode - define mapping if desired
@@ -218,29 +190,68 @@ function ToggleHex()
   let l:oldmodifiable=&modifiable
   let &modifiable=1
   if !exists("b:editHex") || !b:editHex
-    " save old options
-    let b:oldft=&ft
-    let b:oldbin=&bin
-    " set new options
-    setlocal binary " make sure it overrides any textwidth, etc.
-    let &ft="xxd"
-    " set status
-    let b:editHex=1
-    " switch to hex editor
-    %!xxd
+	" save old options
+	let b:oldft=&ft
+	let b:oldbin=&bin
+	" set new options
+	setlocal binary " make sure it overrides any textwidth, etc.
+	let &ft="xxd"
+	" set status
+	let b:editHex=1
+	" switch to hex editor
+	%!xxd
   else
-    " restore old options
-    let &ft=b:oldft
-    if !b:oldbin
-      setlocal nobinary
-    endif
-    " set status
-    let b:editHex=0
-    " return to normal editing
-    %!xxd -r
+	" restore old options
+	let &ft=b:oldft
+	if !b:oldbin
+	  setlocal nobinary
+	endif
+	" set status
+	let b:editHex=0
+	" return to normal editing
+	%!xxd -r
   endif
   " restore values for modified and read only state
   let &mod=l:modified
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
 endfunction
+
+" Files {{{1
+"
+	" Use strong encryption when invoked with :X
+set cm=blowfish
+	" EOL formats to try when parsing new files with unclear MIMEtypes
+set fileformats="unix,dos"
+	" filetype-specific settings {{{2
+if has("autocmd")
+		" Enable file type detection
+	filetype on
+		" Syntax of these languages is fussy over tabs vs spaces
+	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+		" shell
+	autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
+		" python
+	autocmd FileType python let python_highlight_all = 1
+	autocmd FileType python let python_slow_sync = 1
+	autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
+	autocmd FileType python set completeopt=preview
+		" archlinux package build
+	autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
+		" LaTeX
+	autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+	autocmd Filetype tex,latex let g:tex_flavor = "latex"
+		" Customisations based on house-style (arbitrary)
+	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+		" Treat .rss files as XML
+	autocmd BufNewFile,BufRead *.rss setfiletype xml
+		" Treat document formats as zip files
+		" TODO: this doesn't really work
+	" au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
+	" au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
+endif
+" Modelines {{{1
+" vim600: set foldmethod=marker foldlevel=0 :

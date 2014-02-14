@@ -19,7 +19,6 @@
     visible_bell = True
     background_image = None
     background_darkness = 1.02
-    cursor_shape = underline
     use_system_font = False
     cursor_color = "#afab8f"
     foreground_color = "#ffffff"

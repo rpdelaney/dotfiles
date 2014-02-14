@@ -1,5 +1,13 @@
-snippet shebang "shebang for bash" b
+snippet shebang "shebang for bash"
 #!/usr/bin/env bash
+# `bash --version | head -n 1`
+#
+# © Copyright `date --iso-8601=date` Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
 endsnippet
 
 snippet usage "template for usage function" b
@@ -7,11 +15,6 @@ usage() {
 cat <<EOD
 ${1:appname}
 © Copyright `date --iso-8601=date` Ryan Delaney. All rights reserved.
-This work is distributed WITHOUT ANY WARRANTY whatsoever; without even
-the implied wa rranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-PURPOSE. See README for additional terms and conditions on your use of
-this software.
-
 Web site: http://github.com/rpdelaney
 
 $1 ${2:description}
@@ -58,3 +61,6 @@ do
 done
 endsnippet
 
+snippet depends "template for dependency check" b
+if type $1 &> /dev/null; then echo "Missing dependency."; exit 1; fi
+endsnippet

@@ -12,7 +12,7 @@
 	filemode = false
 		# automatically perform dos2unix conversion when committing
 		# text
-	autocrlf = input
+#	autocrlf = input
 [push]
 	default = matching
 [branch]

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Ryan Delaney <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
+# GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 201 Ryan Delaney. All rights reserved.
+# <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
 # "$HOME"/.bashrc: executed by bash(1) for interactive shells.
 
 # If not running interactively, don't do anything
@@ -39,63 +42,67 @@ export XDG_CONFIG_HOME="$HOME/.config/"
 if type vim &> /dev/null; then export EDITOR="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # personal settings
-if [[ "$USER" == "ryan" ]]; then
-    # pager
-  if type pager &> /dev/null; then
-    export PAGER="pager"
-  elif type most &> /dev/null; then
-    export PAGER="most"
-    export MOST_EDITOR="vim"
-    export MOST_INITFILE="$HOME/.config/most/mostrc"
-  elif type less &> /dev/null; then
-    export PAGER="less"
-    export LESSHISTSIZE="0"
-    export LESSEDIT="vim"
-  fi
-    # gpg
-  if type gpg &> /dev/null; then
-    export GPG_TTY=`tty`
-    export GNUPGHOME="$HOME/.config/gnupg/"
-  fi
-  if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
-    # mutt
-  if type mutt &> /dev/null; then
-    export PGPPATH="$HOME$GNUPGHOME"
-    export MAILDIR="/var/mail/"
-    export TMPDIR="/tmp/"
-  fi
-    # git
-  if type git &> /dev/null; then
-      # Find my config
-    if [[ -f "$HOME/.config/git/config" ]]; then export GIT_CONFIG="$HOME/.config/git/config"; fi
-      # Always vim to edit even if I have a window manager.
-    export GIT_EDITOR="vim"
-      # Number of context lines shown in a diff
-    # export GIT_DIFF_OPTS=
-      # Use vimdiff for git diff
-    export GIT_EXTERNAL_DIFF="vimdiff"
-      # Stop searching here when trying to find git repos
-  # export GIT_CEILING_DIRECTORIES=""
-      # Search for repos across filesystems. I like my symlinks
-    export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
-      # Add "glob" magic to all pathspec
-    export GIT_GLOB_PATHSPECS="1"
-      # Passwords
-  # export GIT_ASKPASS=""
-      # github
-    export GITHUB_USER="rpdelaney"
-  # export GITHUB_PASSWORD="$(pass show github.com)"
-  fi
-    # lynx
-  if type lynx &> /dev/null; then
-  export LYNX_CFG="$HOME""/.config/lynx/config"
-  # export WWW_HOME=""
-  # export http_proxy="http://localhost:9050/"
-  # export ftp_proxy="http://localhost:9050/"
-  # export gopher_proxy="http://localhost:9050/"
-  fi
+  # pager
+if type pager &> /dev/null; then
+  export PAGER="pager"
+elif type most &> /dev/null; then
+  export PAGER="most"
+  export MOST_EDITOR="vim"
+  export MOST_INITFILE="$HOME/.config/most/mostrc"
+elif type less &> /dev/null; then
+  export PAGER="less"
+  export LESSHISTSIZE="0"
+  export LESSEDIT="vim"
 fi
-  # yaourt colors
+  # gpg
+if type gpg &> /dev/null; then
+    # Remember the current tty (so we don't bleed permissions?)
+  export GPG_TTY=`tty`
+    # If XDG-config-dir exists, use it
+  if [[ -d "$HOME/.config/gnupg/" ]]; then export GNUPGHOME="$HOME/.config/gnupg/"; fi
+fi
+  # Don't ask which gpg key to use with the pass store; use this one
+if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
+  # mutt
+if type mutt &> /dev/null; then
+  export PGPPATH="$HOME$GNUPGHOME"
+  export MAILDIR="/var/mail/"
+  export TMPDIR="/tmp/"
+fi
+  # git
+if type git &> /dev/null; then
+    # use git(hub)
+  if type hub &> /dev/null; then 
+    alias git='hub'
+    export GITHUB_USER="rpdelaney"
+#   export GITHUB_PASSWORD="$(pass show github.com)"
+  fi
+    # If XDG-config-dir exists, use it
+  if [[ -f "$HOME/.config/git/config" ]]; then export GIT_CONFIG="$HOME/.config/git/config"; fi
+    # Always vim to edit even if I have a window manager.
+  export GIT_EDITOR="vim"
+    # Number of context lines shown in a diff
+#   export GIT_DIFF_OPTS=
+    # Use vimdiff for git diff
+  export GIT_EXTERNAL_DIFF="vimdiff"
+    # Stop searching here when trying to find git repos
+# export GIT_CEILING_DIRECTORIES=""
+    # Search for repos across filesystems. I like my symlinks
+  export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
+    # Don't automatically add "glob" magic to all pathspecs
+  export GIT_NOGLOB_PATHSPECS="1"
+    # Passwords
+# export GIT_ASKPASS=""
+fi
+  # lynx
+if type lynx &> /dev/null; then
+export LYNX_CFG="$HOME/.config/lynx/config"
+# export WWW_HOME=""
+# export http_proxy="http://localhost:9050/"
+# export ftp_proxy="http://localhost:9050/"
+# export gopher_proxy="http://localhost:9050/"
+fi
+# yaourt colors
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
@@ -111,11 +118,13 @@ if type keychain &> /dev/null; then
   keychain --nogui -q
   [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh ]]      && source "$HOME"/.keychain/"$HOSTNAME"-sh
   [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh-gpg ]]  && source "$HOME"/.keychain/"$HOSTNAME"-sh-gpg
-#elif [[ -z "$SSH_AUTH_SOCK" ]]; then
 else
-  timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
-  && eval $(ssh-agent)                                                           \
-  && ssh-add -t 8h "$HOME"/.ssh/id_rsa
+  echo "keychain(1) not found."
+  if type ssh-agent &> /dev/null; then
+    timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?" \
+    && eval "$(ssh-agent)" \
+    && ssh-add -t 8h "$HOME/.ssh/id_rsa"
+  fi
 fi
 
 #
