@@ -37,7 +37,32 @@ fi
 # ENVIRONMENT
 #
   # XDG
+  # Because lots of apps are dumb and don't use the defaults like they should
+  #
+  # defines the base directory relative to which user specific configuration
+  # files should be stored. If $XDG_CONFIG_HOME is either not set or empty, a
+  # default equal to $HOME/.config should be used.
 export XDG_CONFIG_HOME="$HOME/.config/"
+  # defines the base directory relative to which user specific data files
+  # should be stored. If $XDG_DATA_HOME is either not set or empty, a default
+  # equal to $HOME/.local/share should be used.
+export XDG_DATA_HOME="$HOME/.local/share"
+  # defines the preference-ordered set of base directories to search for data
+  # files in addition to the $XDG_DATA_HOME base directory. The directories in
+  # $XDG_DATA_DIRS should be seperated with a colon ':'. If $XDG_DATA_DIRS is
+  # either not set or empty, a value equal to /usr/local/share/:/usr/share/
+  # should be used.
+export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+  # defines the base directory relative to which user specific non-essential
+  # data files should be stored. If $XDG_CACHE_HOME is either not set or
+  # empty, a default equal to $HOME/.cache should be used.
+export XDG_CACHE_HOME="$HOME/.cache/"
+  # defines the base directory relative to which user-specific non-essential
+  # runtime files and other file objects (such as sockets, named pipes, ...)
+  # should be stored. The directory MUST be owned by the user, and he MUST be
+  # the only one having read and write access to it. Its Unix access mode MUST
+  # be 0700.
+#export XDG_RUNTIME_DIR=""
   # editor
 if type vim &> /dev/null; then export EDITOR="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
@@ -72,7 +97,7 @@ fi
   # git
 if type git &> /dev/null; then
     # use git(hub)
-  if type hub &> /dev/null; then 
+  if type hub &> /dev/null; then
     alias git='hub'
     export GITHUB_USER="rpdelaney"
 #   export GITHUB_PASSWORD="$(pass show github.com)"
@@ -90,6 +115,7 @@ if type git &> /dev/null; then
     # Search for repos across filesystems. I like my symlinks
   export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
     # Don't automatically add "glob" magic to all pathspecs
+  export GIT_GLOB_PATHSPECS="0"
   export GIT_NOGLOB_PATHSPECS="1"
     # Passwords
 # export GIT_ASKPASS=""
