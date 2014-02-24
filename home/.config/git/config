@@ -24,11 +24,30 @@
 	mnemonicprefix = true
 [alias]
 		# nice log output
-	lg = log --graph --pretty=oneline --abbrev-commit --decorate
+#	lg = log --graph --pretty=oneline --abbrev-commit --decorate
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --no-merges
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	lgd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 		# accept my wordy lingo
 	remotes = remote -v
 	branches = branch -v
-		#
+	tags = tag --list -n3
+		# accept my abbreviated lingo
+	cp = cherry-pick
+	st = status -s
+	cl = clone
+	ci = commit
+	co = checkout
+	br = branch 
+	diff = diff --word-diff
+	dc = diff --cached
+	r = reset
+		# tools
+	find = "!git ls-files | grep -i"
+	grep = "grep -Ii"
+		# merging
+	ours = "!f() { git co --ours $@ && git add $@; }; f"
+	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [color]
 	diff = auto
 	status = auto
@@ -50,6 +69,6 @@
 [color "status"]
 	added = green bold
 	changed = yellow bold
-	untracked = red
+	untracked = red bold
 [color "sh"]
 	branch = yellow
