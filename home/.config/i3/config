@@ -197,7 +197,7 @@ workspace   "5: steam"   output    DVI-I-3
 workspace   "6: media"   output    DVI-I-3
 workspace   "7: docs"    output    DVI-I-2
 workspace   "8: misc"    output    DVI-I-2
-workspace   "9: vbox"    output    DVI-I-3
+workspace   "9: vm"      output    DVI-I-3
 workspace  "10: games"   output    DVI-I-2
 
     # default borders
