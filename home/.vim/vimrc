@@ -73,9 +73,9 @@ endif
 set ruler
 	" show line numbers relative to the cursor position
 set relativenumber
-	" show line numbers in absolute terms
-set number
-	" show what row and column I'm on
+	" don't show line numbers in absolute terms
+set nonumber
+	" highlight current row 
 set cursorline
 set nocursorcolumn
 set backspace=indent,eol,start
@@ -256,4 +256,4 @@ if has("autocmd")
 	" au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
 endif
 " Modelines {{{1
-" vim600: set foldmethod=marker foldlevel=0 :
+" vim600: set foldmethod=marker foldlevel=0 nolist:
