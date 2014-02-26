@@ -1,0 +1,22 @@
+# MS Office files
+application/msword; xdg-open %s
+application/vnd.ms-excel; xdg-open %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; xdg-open %s
+application/vnd.oasis.opendocument.text; xdg-open %s
+
+# Images
+image/jpg; xdg-open %s
+image/jpeg; xdg-open %s
+image/pjpeg; xdg-open %s
+image/png; xdg-open %s
+image/gif; xdg-open %s
+
+# PDFs
+application/pdf; xdg-open %s
+
+# HTML
+text/html; xdg-open %s
+
+# Unidentified files
+application/octet-stream; xdg-open %s
+
