@@ -9,8 +9,7 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
-#
-#   PROMPT
+#   PROMPT {{{1
 #
 if [[ -f "$HOME"/.bash_prompt ]]; then
     # If we are root, try to make that hard to miss.
@@ -33,8 +32,7 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   source "$HOME"/.bash_prompt
 fi
 
-#
-# ENVIRONMENT
+# ENVIRONMENT {{{1
 #
   # XDG
   # Because lots of apps are dumb and don't use the defaults like they should
@@ -136,8 +134,7 @@ fi
 PATH="${PATH}:$HOME/bin/"
 for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
 
-#
-# KEYCHAIN
+# KEYCHAIN {{{1
 #
   # ask if we want to run a new ssh-agent for this session
 if type keychain &> /dev/null; then
@@ -153,8 +150,7 @@ else
   fi
 fi
 
-#
-# HISTORY
+# HISTORY {{{1
 #
   # append to the history file, don't overwrite it
 shopt -s histappend
@@ -167,10 +163,9 @@ HISTFILESIZE=1000
   # Ignore some controlling instructions
   # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
   # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:lss:lssa:lsa:.:dir:whereami:ranger:history'
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 
-#
-#   COLORS
+#   COLORS {{{1
 #
   # colorize the terminal
   # read in dircolors; enable color support
@@ -203,8 +198,7 @@ else
 fi
 
 
-#
-#   ALIASES
+#   ALIASES {{{1
 #
   # Alias definitions.
 [[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
@@ -217,8 +211,7 @@ fi
   # additional configuration options for when running in cygwin
 [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
 
-#
-# SHELL OPTIONS
+# SHELL OPTIONS {{{1
 #
   # Don't wait for job termination notification
 # set -o notify
@@ -237,8 +230,7 @@ shopt -s cdspell
   # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-#
-# Umask
+# Umask {{{1
 #
   # /etc/profile sets 022, removing write perms to group + others.
   # Set a more restrictive umask: i.e. no exec perms for others:
@@ -251,7 +243,9 @@ umask 077
   # private stuff not to be cloned to public repositories / backups
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 
-#
-# Greeting
+# Greeting {{{1
 #
 type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
+
+# Modelines {{{1
+# vim: ft=sh foldmethod=marker
