@@ -12,18 +12,18 @@
 #   PROMPT {{{1
 #
 if [[ -f "$HOME"/.bash_prompt ]]; then
+  if [[ "$UID" == 0 ]]; then
     # If we are root, try to make that hard to miss.
     # And de-emphasize git status (we don't work as root)
-  if [[ "$UID" == 0 ]]; then
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  elif groups "$USER" | grep -qP '( wheel | admin | sysop )'; then
     # If we are wheel, try to make that hard to miss.
     # And de-emphasize git status (we don't work as superuser)
-  elif groups "$USER" | grep -qP '(wheel|admin|sysop)'; then
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
-  # Use defaults - do nothing
+    # Use defaults - do nothing
   :
   else
     # Use unprivileged colorscheme
