@@ -9,7 +9,7 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
-#   PROMPT {{{1
+# PROMPT {{{1
 #
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]]; then
@@ -34,7 +34,7 @@ fi
 
 # ENVIRONMENT {{{1
 #
-  # XDG
+  # XDG {{{2
   # Because lots of apps are dumb and don't use the defaults like they should
   #
   # defines the base directory relative to which user specific configuration
@@ -61,11 +61,11 @@ export XDG_CACHE_HOME="$HOME/.cache/"
   # the only one having read and write access to it. Its Unix access mode MUST
   # be 0700.
 #export XDG_RUNTIME_DIR=""
-  # editor
+  # Editor {{{2
 if type vim &> /dev/null; then export EDITOR="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # personal settings
-  # pager
+  # Pager {{{2
 if type pager &> /dev/null; then
   export PAGER="pager"
 elif type most &> /dev/null; then
@@ -77,7 +77,8 @@ elif type less &> /dev/null; then
   export LESSHISTSIZE="0"
   export LESSEDIT="vim"
 fi
-  # gpg
+  # }}}
+  # gpg {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
@@ -86,21 +87,36 @@ if type gpg &> /dev/null; then
 fi
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
-  # mutt
+  # }}}
+  # mutt {{{2
 if type mutt &> /dev/null; then
   export PGPPATH="$HOME$GNUPGHOME"
   export MAILDIR="/var/mail/"
   export TMPDIR="/tmp/"
 fi
-  # git
+  # git {{{2
 if type git &> /dev/null; then
-    # use git(hub)
+    # git(hub) {{{3
   if type hub &> /dev/null; then
     alias git='hub'
     export GITHUB_USER="rpdelaney"
 #   export GITHUB_PASSWORD="$(pass show github.com)"
   fi
-    # If XDG-config-dir exists, use it
+    # tig {{{3
+  if type tig &> /dev/null; then
+  #         Path of the user configuration file (defaults to ~/.tigrc).
+    TIGRC_USER="$HOME/.config/tig/config"
+  #         Path of the system wide configuration file (defaults to {sysconfdir}/tigrc).
+  # TIGRC_SYSTEM
+  #         Set command for retrieving all repository references. The command should output data in the same format as git-ls-remote(1).
+  # TIG_LS_REMOTE
+  #         The diff options to use in the diff view. The diff view uses git-show(1) for formatting and always passes --patch-with-stat. You may also set
+  #         the diff-options setting in your tigrc(5).
+    TIG_DIFF_OPTS="-y"
+  #         Path for trace file where information about Git commands are logged.
+  # TIG_TRACE
+  fi
+    # XDG-git {{{3
   if [[ -f "$HOME/.config/git/config" ]]; then export GIT_CONFIG="$HOME/.config/git/config"; fi
     # Always vim to edit even if I have a window manager.
   export GIT_EDITOR="vim"
@@ -118,7 +134,7 @@ if type git &> /dev/null; then
     # Passwords
 # export GIT_ASKPASS=""
 fi
-  # lynx
+  # lynx {{{2
 if type lynx &> /dev/null; then
 export LYNX_CFG="$HOME/.config/lynx/config"
 # export WWW_HOME=""
@@ -126,14 +142,15 @@ export LYNX_CFG="$HOME/.config/lynx/config"
 # export ftp_proxy="http://localhost:9050/"
 # export gopher_proxy="http://localhost:9050/"
 fi
-# yaourt colors
+  # yaourt colors {{{1
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
+  # $PATH {{{1
   # Add "$HOME"/bin and all subdirectories recursively to $PATH
 PATH="${PATH}:$HOME/bin/"
 for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do [[ -d $dir ]] && PATH=${dir%/}:"$PATH" ; done
-
+  # }}}
 # KEYCHAIN {{{1
 #
   # ask if we want to run a new ssh-agent for this session
@@ -165,14 +182,14 @@ HISTFILESIZE=1000
   # The '&' is a special pattern which suppresses duplicate entries.
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 
-#   COLORS {{{1
+# COLORS {{{1
 #
-  # colorize the terminal
+  # terminal {{{2
   # read in dircolors; enable color support
 [[ -e "$HOME"/.bash_colors ]] && eval $(dircolors -b "$HOME"/.bash_colors) || eval $(dircolors -b)
 [[ -e "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
-  #zenburn theme for tty
-  #by way of http://phraktured.net/linux-console-colors.html
+  # tty {{{2
+  # zenburn theme for tty by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
   echo -en "\e]P0222222" #black
   echo -en "\e]P8222222" #darkgrey
@@ -197,8 +214,7 @@ else
   [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 
-
-#   ALIASES {{{1
+# ALIASES {{{1
 #
   # Alias definitions.
 [[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
@@ -213,6 +229,7 @@ fi
 
 # SHELL OPTIONS {{{1
 #
+  # shopt {{{2
   # Don't wait for job termination notification
 # set -o notify
   # Don't use ^D to exit
@@ -230,15 +247,15 @@ shopt -s cdspell
   # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Umask {{{1
+# Umask {{{2
 #
   # /etc/profile sets 022, removing write perms to group + others.
   # Set a more restrictive umask: i.e. no exec perms for others:
 # umask 027
   # Paranoid: neither group nor others have any perms:
 umask 077
-#
-# PRIVATE
+
+# PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
@@ -246,6 +263,6 @@ umask 077
 # Greeting {{{1
 #
 type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
+# }}}
 
-# Modelines {{{1
 # vim: ft=sh foldmethod=marker
