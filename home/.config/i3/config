@@ -226,7 +226,7 @@ assign [class="Zathura"] → 7: docs
 assign [class="libreoffice-writer"] → 7: docs
 assign [class="Xsane"] → 7: docs
 assign [class="Gimp"] → 7: docs
-assign [class="VirtualBox"] → 9: vm
+#assign [class="VirtualBox"] → 9: vm
 assign [class="hl2_linux"] → 10: games
 
 #
