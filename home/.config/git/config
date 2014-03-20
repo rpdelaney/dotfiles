@@ -150,3 +150,5 @@
     # In case of failure in the output of git-rm(1), show
     # directions on how to proceed from the current state.
     rmHints = true
+[submodule "home/.vim/bundle/fsharp"]
+	url = git://github.com/kongo2002/fsharp-vim.git
