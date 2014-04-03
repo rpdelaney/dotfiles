@@ -4,7 +4,6 @@ call pathogen#infect()
 " Interface {{{1
 "
 " Styles {{{2
-"
 	" Colorscheme {{{3
 	" Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
@@ -16,10 +15,12 @@ else
 	set t_Co=256
 	let g:zenburn_high_contrast=1
 	colorscheme zenburn
-endif
+endif " }}}
 	" Listchars {{{3
 	" listchars to highlight stuff we don't like
 set list
+	" Make sure NonText looks grey
+set highlight+=8:NonText
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
 		" If we have utf-8 encoding, use fancy listchars
 	set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
@@ -30,7 +31,7 @@ else
 	set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<,conceal:*,nbsp:-
 	" Show this character on a wrapped line
 	set showbreak=
-endif
+endif " }}}
 	" Disable background color erase - this could cause bugs in some terminals
 set t_ut=
 	" enable enhanced command-line completion
@@ -78,7 +79,6 @@ set nonumber
 	" highlight current row 
 set cursorline
 set nocursorcolumn
-set backspace=indent,eol,start
 	" Searching {{{2
 	" highlight all search matches
 set hlsearch
@@ -93,10 +93,17 @@ set scrolloff=4
 
 	" Navigation {{{2
 set modeline
+	" what to do when I hit backspace
+set backspace=indent,eol,start
 	" don't wrap unless I say so
 set nowrap
 	" make left/right keys wrap to start of the next line
 set whichwrap+=h,l,<,>,[,]
+	" how many rows to show on each side of the cursor
+	" a large value like 999 will keep the cursor in the center of the screen
+set scrolloff=999
+	" how many columns to show on each side of the cursor
+set sidescrolloff=1
 
 	" Other {{{2
 	"
@@ -146,12 +153,14 @@ cmap W w !sudo tee % >/dev/null<CR>
 
 " Plugins {{{1
 "
-	" UltiSnips bindings
+	" UltiSnips {{{2
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
 let g:UltiSnipsExpandTrigger        = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
+
+	" matchit {{{2
 	" Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
