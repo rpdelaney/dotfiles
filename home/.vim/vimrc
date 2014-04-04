@@ -153,6 +153,15 @@ cmap W w !sudo tee % >/dev/null<CR>
 
 " Plugins {{{1
 "
+	" supertab {{{2
+	" binds to start the autocompletion
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+	" Attempt to guess what I am auto-completing by context
+	" e.g. method calls or attribute references via '.', '::' or '->', and file paths with '/'
+let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabContextDefaultCompletionType="<c-p>"
+	" }}}
 	" UltiSnips {{{2
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
