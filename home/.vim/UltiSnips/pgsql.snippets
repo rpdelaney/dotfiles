@@ -54,6 +54,23 @@ $body$
 alter function $1($2) owner to ${8:postgres};
 endsnippet
 
+snippet aggregate "aggregate definer" b
+/*
+	aggregate: ${1:aggregateName}(${2:functionParameters})
+	${3:aggregateComment}
+	created on: `date`
+	copyright
+*/
+create aggregate $1($2) (
+	SFUNC = sfunc,
+	STYPE = state_data_type
+	[ , FINALFUNC = ffunc ]
+	[ , INITCOND = initial_condition ]
+	[ , SORTOP = sort_operator ]
+)
+alter aggregate $1($2) owner to ${8:postgres};
+endsnippet
+
 snippet view "view definer" b
 /*
 	${1:viewType }view: ${2:viewName}
