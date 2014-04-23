@@ -33,13 +33,13 @@ endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
 verbose() {
-  if [[ "$verbose" = "1" ]]; then
-    echo "$1" >&2
+  if [[ "\$verbose" = "1" ]]; then
+    echo "\$1" >&2
   fi
 }
 
 error () {
-  echo "$1" >&2
+  echo "\$1" >&2
 }
 # }}}
 endsnippet
