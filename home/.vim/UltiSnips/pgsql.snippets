@@ -3,7 +3,10 @@ snippet table "table schema definition" b
 	table: ${1:tableName}
 	${2:tableComment}
 	created on: `date`
-	copyright
+	© Copyright 2014 ${1:Ryan Delaney}. All rights reserved. This work is
+	distributed WITHOUT ANY WARRANTY whatsoever; without even the implied
+	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	README file for terms and conditions on your use of this software.
 */
 create table $1
 (
@@ -11,7 +14,7 @@ create table $1
 	id			  serial
 		-- foreign key columns
 		-- maintenance columns
-,   insertedTime	timestamptz	 default "now"()
+,   insertedTime	timestamptz		default "now"()
 ,   insertedUser	text			default "current_user"()
 ,   updatedTime		timestamptz
 ,   updatedUser	 	text
@@ -19,12 +22,12 @@ create table $1
 		-- data validation constraints
 		-- foreign key constraints
 		-- primary key constraint
-,   constraint pkey_$1	  primary key (id)
+,   constraint pkey_$1				primary key (id)
 );
 	-- privileges
-alter	table	 $1 owner to	${3:postgres};
-grant	all	  on $1 to			$3;
-revoke	all	  on $1 from		public;
+alter		table			$1 owner to		${3:postgres};
+grant		all	  on		$1 to			$3;
+revoke		all	  on		$1 from			public;
 	-- indexes
 	-- triggers
 	-- comments
