@@ -9,9 +9,8 @@ snippet shebang "shebang for bash"
 # software.
 #
 endsnippet
-
 snippet usage "template for usage function" b
-# Usage function {{1
+# Usage {{{1
 #
 usage() {
 cat <<EOD
@@ -31,8 +30,20 @@ exit 1
 }
 # }}}
 endsnippet
+snippet functions "standard functions" b
+# Functions {{{1
+verbose() {
+  if [[ "$verbose" = "1" ]]; then
+    echo "$1" >&2
+  fi
+}
 
-snippet parameters "template parameter reader" b
+error () {
+  echo "$1" >&2
+}
+# }}}
+endsnippet
+snippet parameters "command-line arguments reader" b
 # Parameters {{{1
 #
 while :
@@ -63,7 +74,6 @@ do
 done
 # }}}
 endsnippet
-
 snippet depends "template for dependency check" b
 if type $1 &> /dev/null; then echo "Missing dependency."; exit 1; fi
 endsnippet
