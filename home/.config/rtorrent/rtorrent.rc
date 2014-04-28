@@ -80,7 +80,7 @@ peer_exchange = no
 #
 # Close torrents when diskspace is low.
 #
-schedule = low_diskspace,5,60,close_low_diskspace=100M
+schedule = low_diskspace,5,60,close_low_diskspace=300M
 
 #
 # Sets the base directory to '~/download/<info_hash>'.
@@ -90,21 +90,21 @@ schedule = low_diskspace,5,60,close_low_diskspace=100M
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
 schedule = watch_directory,5,5,load=/dev/null/*.torrent
-schedule = untied_directory,5,5,stop_untied=
+#schedule = untied_directory,5,5,stop_untied=
 
 #
 # Watch another directory with a different destination. (0.7.7+)
 #
-schedule = watch_directory_2,10,10,"load=/var/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
-schedule = watch_directory_3,10,10,"load=/var/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
-schedule = watch_directory_4,10,10,"load=/var/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
-schedule = watch_directory_5,10,10,"load=/var/torrent/ebooks/*.torrent,d.set_directory=/media/vault/incoming/ebooks/"
-schedule = watch_directory_6,10,10,"load=/var/torrent/graphics/*.torrent,d.set_directory=/media/vault/incoming/graphics/"
-schedule = watch_directory_7,10,10,"load=/var/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
-schedule = watch_directory_8,10,10,"load=/var/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
-schedule = watch_directory_9,10,10,"load=/var/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
-schedule = watch_directory_10,10,10,"load=/var/torrent/fish/*.torrent,d.set_directory=/media/crypt/fishing"
-schedule = watch_directory_11,10,10,"load=/var/torrent/video/*.torrent,d.set_directory=/media/vault/incoming/video/"
+schedule = watch_directory_2,10,10,"load=/home/ryan/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
+schedule = watch_directory_3,10,10,"load=/home/ryan/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
+schedule = watch_directory_4,10,10,"load=/home/ryan/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
+schedule = watch_directory_5,10,10,"load=/home/ryan/torrent/ebooks/*.torrent,d.set_directory=/media/vault/incoming/ebooks/"
+schedule = watch_directory_6,10,10,"load=/home/ryan/torrent/graphics/*.torrent,d.set_directory=/media/vault/incoming/graphics/"
+schedule = watch_directory_7,10,10,"load=/home/ryan/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
+schedule = watch_directory_8,10,10,"load=/home/ryan/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
+schedule = watch_directory_9,10,10,"load=/home/ryan/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
+schedule = watch_directory_10,10,10,"load=/home/ryan/torrent/fish/*.torrent,d.set_directory=/media/crypt/fishing"
+schedule = watch_directory_11,10,10,"load=/home/ryan/torrent/video/*.torrent,d.set_directory=/media/vault/incoming/video/"
 
 #
 # Create symlinks in the watch directory with a suffix indicating the
