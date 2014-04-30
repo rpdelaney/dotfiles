@@ -6,10 +6,8 @@
 [core]
 	excludesfile = /home/ryan/.config/git/gitignore_global
 	whitespace=tab-in-indent,blank-at-eol
-		# pay no attention to those permissions behind the curtain
-		# because windows filesystems (NTFS too) are retarded about this
-		# revert to true when we are finally free of that rat-patootey
-	filemode = false
+	filemode = true
+#	symlinks = true
 		# automatically perform dos2unix conversion when committing
 		# text
 #	autocrlf = input
