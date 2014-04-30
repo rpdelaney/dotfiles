@@ -1,0 +1,32 @@
+compress
+compresscmd /usr/bin/xz
+compressoptions -q
+compressext xz
+
+/var/mail/ryan.delaney@gmail.com/getmail.log {
+	rotate 3
+	weekly
+	nomail
+	minsize 2M
+	maxsize 5M
+	dateext
+	maxage 90
+}
+
+/var/local/log/mpd/mpd.log {
+	rotate 3
+	daily
+	nomail
+	minsize 2M
+	maxsize 5M
+	missingok
+}
+
+/home/ryan/.config/q3a/cpma/games.log {
+	rotate 0
+	weekly
+	nomail
+	dateext
+	noshred
+	missingok
+}
