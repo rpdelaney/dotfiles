@@ -62,6 +62,47 @@ export XDG_CACHE_HOME="$HOME/.cache/"
   # be 0700.
 #export XDG_RUNTIME_DIR=""
 # }}}
+# SHELL OPTIONS {{{2
+#
+# SHOPT {{{3
+  # Don't wait for job termination notification
+# set -o notify
+  # Don't use ^D to exit
+# set -o ignoreeof
+  # Use case-insensitive filename globbing
+shopt -s nocaseglob
+  # Make bash append rather than overwrite the history on disk
+shopt -s histappend
+  # Use extended globbing
+#shopt -s extglob
+  # When changing directory small typos can be ignored by bash
+  # for example, cd /vr/lgo/apaache would find /var/log/apache
+shopt -s cdspell
+  # check the window size after each command and, if necessary,
+  # update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+# }}}
+# UMASK {{{3
+  # /etc/profile sets 022, removing write perms to group + others.
+  # Set a more restrictive umask: i.e. no exec perms for others:
+# umask 027
+  # Paranoid: neither group nor others have any perms:
+umask 077
+# }}}
+# HISTORY {{{3
+  # append to the history file, don't overwrite it
+shopt -s histappend
+  # don't put duplicate lines in the history. See bash(1) for more options
+HISTCONTROL=ignoreboth
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=2000
+HISTFILESIZE=1000
+  # Ignore some controlling instructions
+  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+  # The '&' is a special pattern which suppresses duplicate entries.
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
+# }}}
+# }}}
 # Editor {{{2
 if type vim &> /dev/null; then export EDITOR="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
@@ -163,7 +204,6 @@ for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
   [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
 done
 # }}}
-# }}}
 # KEYCHAIN {{{1
 #
   # determine if we want to run a new ssh-agent for this session
@@ -180,20 +220,6 @@ else
     fi
   fi
 fi
-# }}}
-# HISTORY {{{1
-#
-  # append to the history file, don't overwrite it
-shopt -s histappend
-  # don't put duplicate lines in the history. See bash(1) for more options
-HISTCONTROL=ignoreboth
-  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2000
-HISTFILESIZE=1000
-  # Ignore some controlling instructions
-  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-  # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 # }}}
 # COLORS {{{1
 #
@@ -241,35 +267,6 @@ fi
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
   # additional configuration options for when running in cygwin
 [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
-# }}}
-# SHELL OPTIONS {{{1
-#
-# shopt {{{2
-  # Don't wait for job termination notification
-# set -o notify
-  # Don't use ^D to exit
-# set -o ignoreeof
-  # Use case-insensitive filename globbing
-shopt -s nocaseglob
-  # Make bash append rather than overwrite the history on disk
-shopt -s histappend
-  # Use extended globbing
-#shopt -s extglob
-  # When changing directory small typos can be ignored by bash
-  # for example, cd /vr/lgo/apaache would find /var/log/apache
-shopt -s cdspell
-  # check the window size after each command and, if necessary,
-  # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-# }}}
-# Umask {{{2
-#
-  # /etc/profile sets 022, removing write perms to group + others.
-  # Set a more restrictive umask: i.e. no exec perms for others:
-# umask 027
-  # Paranoid: neither group nor others have any perms:
-umask 077
-# }}}
 # }}}
 # PRIVATE {{{1
 #
