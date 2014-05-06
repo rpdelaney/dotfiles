@@ -39,9 +39,6 @@ thumbnail() { ffmpeg  -itsoffset -20 -i $i -vcodec mjpeg -vframes 1 -an -f rawvi
   # not working: sox captures audio and pipes a stream. but as written, ffmpeg does not read from stdin.
 #alsamp3() { ffmpeg -f alsa -ac 2 -i hw:1,0 -acodec libmp3lame -ab 96k output.mp3; }
 
-  # fix broken flv files that can't seek
-fixflv() { ffmpeg -i broken.flv -acodec copy -vcodec copy fixed.flv; }
-
   # get duration of audio file
 duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo ${durline#*\: }; }
 
@@ -51,14 +48,6 @@ xkcd(){ wget -qO- http://xkcd.com/|tee >(feh $('grep' -Po '(?<=")http://imgs[^/]
 #
 # manipulating files and directories
 #
-  # print a diff of two directory trees
-dirdiff() { 
-  vimdiff <(cd $1 && find -not -iwholename "*.git" | sort) <(cd $2 && find -not -iwholename "*.git" | sort); 
-}
-
-  # find duplicate files in pwd by md5sum
-fdupes() {
-        find -L -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 33 | cut -c 35- ; }
 
   # return the first of existing files
 myfirst () { local i fn=$1; shift; for i; do $fn "$i" && echo "$i" && return; done; return 1; }
@@ -75,28 +64,6 @@ define() { curl -s dict://dict.org/d:$1; }
 
   # define words shorter
 def() { curl -s dict://dict.org/d:$1 | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; }
-
-  # print a graphical tree of directories to stdout
-dirtree() {
-        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'
-}
-
-  # print a traceroute and geolocation of an internet address
-iptrace() {
-        mtr -o RSDA -r -c 1 -b $1 && lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1 | grep address --color=never | grep -P --color=never 'city|state|country' | awk '{print $3,$4,$5,$6,$7,$8}' | sed -r 's@ip\saddress\sflag\s@@g' | sed 's@My@@'
-}
-
-  # Set the title of a Terminal window
-  # http://code-and-hacks.blogspot.com/
-function settitle() {
-     if [ -n "$STY" ] ; then         # We are in a screen session
-      echo "Setting screen titles to $@"
-      printf "\033k%s\033\\" "$@"
-      screen -X eval "at \\# title $@" "shelltitle $@"
-     else
-      printf "\033]0;%s\007" "$@"
-     fi
-}
 
   # jobs count
 jobscount(){
@@ -116,23 +83,23 @@ turl(){ curl --socks5-hostname localhost:9050 $@ ; }
 
 # smile for the exit status :)
 exitstatus() {
-    EXITSTATUS="$?"
-    BOLD="\[\033[1m\]"
-    RED="\[\033[1;31m\]"
-    GREEN="\[\e[32;1m\]"
-    BLUE="\[\e[34;1m\]"
-    OFF="\[\033[m\]"
+    exitstatus="$?"
+    bold="\[\033[1m\]"
+    red="\[\033[1;31m\]"
+    green="\[\e[32;1m\]"
+    blue="\[\e[34;1m\]"
+    off="\[\033[m\]"
 
-    PROMPT="[\u@\h ${BLUE}\W${OFF}"
+    PROMPT="[\u@\h ${blue}\w${off}"
 
-    if [ "${EXITSTATUS}" -eq 0 ]
+    if [ "${exitstatus}" -eq 0 ]
     then
-       PS1="${PROMPT} ${BOLD}${GREEN}:)${OFF} ]\$ "
+       PS1="${PROMPT} ${bold}${green}:)${off} ]\$ "
     else
-       PS1="${PROMPT} ${BOLD}${RED}:(${OFF} ]\$ "
+       PS1="${PROMPT} ${bold}${red}:(${off} ]\$ "
     fi
 
-    PS2="${BOLD}>${OFF} "
+    PS2="${bold}>${off} "
 }
 
   # b) function cd_func
