@@ -18,7 +18,7 @@ rmorphans() {
 
   # make a backup list of installed packages
 packagebackup() {
-  comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > pkglist.txt
+  comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)
 }
 
   # sort installed packages by size and print a list to stdout
