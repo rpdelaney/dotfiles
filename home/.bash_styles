@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 #
+# © Copyright 2014 Ryan Delaney. All rights reserved. This work is
+# distributed WITHOUT ANY WARRANTY whatsoever; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# README file for terms and conditions on your use of this software.
 #
 
 if [[ $(type tput 2> /dev/null) ]]; then
-    if [[ -t 2 ]]; then {
-
+    # tput {{{1
+    if [[ -t 2 ]]; then
+        # 256 color {{{2
         #
         # "TERMCAP Version 2.0 (256 colors)"
         # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
@@ -28,8 +33,9 @@ if [[ $(type tput 2> /dev/null) ]]; then
         bgcyan=$(   tput setab 123|| tput AB 123 2> /dev/null ) # Cyan
         bgwhite=$(  tput setab 15 || tput AB 15  2> /dev/null ) # White
         bgblack=$(  tput setab 0  || tput AB 0   2> /dev/null ) # Black
-    }
-    else {
+    # 2}}}
+    else 
+        # 88 color {{{2
         #
         # "TERMCAP Version 2.0 (88 colors)"
         # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
@@ -53,23 +59,27 @@ if [[ $(type tput 2> /dev/null) ]]; then
         bgcyan=$(   tput setab 6  || tput AB 6   2> /dev/null ) # Cyan
         bgwhite=$(  tput setab 7  || tput AB 7   2> /dev/null ) # White
         bgblack=$(  tput setab 0  || tput AB 0   2> /dev/null ) # Black
-    }
+    # 2}}}
     fi
-
+    # Common {{{2
+      # Alt {{{3
     alt=$(          tput smcup   || tput ti   2> /dev/null ) # Start alt display
     ealt=$(         tput rmcup   || tput te   2> /dev/null ) # End   alt display
-        # Cursor
+      # 3}}}
+        # Cursor {{{3
     hide=$(         tput civis   || tput vi   2> /dev/null ) # Hide cursor
     show=$(         tput cnorm   || tput ve   2> /dev/null ) # Show cursor
     save=$(         tput sc                   2> /dev/null ) # Save cursor
     load=$(         tput rc                   2> /dev/null ) # Load cursor
     reset=$(        tput sgr0    || tput me   2> /dev/null ) # Reset cursor
-        # Erase
+        # 3}}}
+        # Erase {{{3
     eed=$(          tput ed      || tput cd   2> /dev/null ) # Erase to end of display
     eel=$(          tput el      || tput ce   2> /dev/null ) # Erase to end of line
     ebl=$(          tput el1     || tput cb   2> /dev/null ) # Erase to beginning of line
     ewl=$eel$ebl                                             # Erase whole line
-        # Text mode
+        # 3}}}
+        # Text mode {{{3
     bold=$(         tput bold    || tput md   2> /dev/null ) # Start bold
     stout=$(        tput smso    || tput so   2> /dev/null ) # Start stand-out
     estout=$(       tput rmso    || tput se   2> /dev/null ) # End stand-out
@@ -79,15 +89,14 @@ if [[ $(type tput 2> /dev/null) ]]; then
     italic=$(       tput sitm    || tput ZH   2> /dev/null ) # Start italic
     eitalic=$(      tput ritm    || tput ZR   2> /dev/null ) # End   italic
     default=$(      tput op                   2> /dev/null ) # Reset all modes
-        # Drawing characters
+        # 3}}}
+        # Drawing {{{3
     enacs=$( tput -S <<< enacs ) # Enable alternate character set
     smacs=$( tput -S <<< smacs ) # Begin alternate character set
     acsc=$(  tput -S <<< acsc  ) # Graphic character set pairs aAbBcC - default vt100
     rmacs=$( tput -S <<< rmacs ) # End alternate character set
-
-    #
-    # colorful manpages
-    #
+        # 3}}}
+    # Manpages {{{3
         # begin blinking
     export LESS_TERMCAP_mb=$blink
         # begin half-bright mode
@@ -104,9 +113,11 @@ if [[ $(type tput 2> /dev/null) ]]; then
     export LESS_TERMCAP_ue=$reset
         # disable all modes
     export LESS_TERMCAP_me=$reset
-
+    # 3}}}
+    # 2}}}
+# 1}}}
 else
-    #
+    # TERMCAP {{{1
     # "TERMCAP Version 1.0 (88 colors)"
     #
 
@@ -115,7 +126,7 @@ else
     # Reset
     Color_Off='\e[0m'            # Text Reset
 
-    # Regular Colors
+    # Regular Colors {{{2
     colorBlack='\e[0;30m'        # Black
     colorRed='\e[0;31m'          # Red
     colorGreen='\e[0;32m'        # Green
@@ -125,7 +136,7 @@ else
     colorCyan='\e[0;36m'         # Cyan
     colorWhite='\e[0;37m'        # White
 
-    # Bold
+    # Bold {{{2
     colorBBlack='\e[1;30m'       # Black
     colorBRed='\e[1;31m'         # Red
     colorBGreen='\e[1;32m'       # Green
@@ -135,7 +146,7 @@ else
     colorBCyan='\e[1;36m'        # Cyan
     colorBWhite='\e[1;37m'       # White
 
-    # Underline
+    # Underline {{{2
     colorUBlack='\e[4;30m'       # Black
     colorURed='\e[4;31m'         # Red
     colorUGreen='\e[4;32m'       # Green
@@ -145,7 +156,7 @@ else
     colorUCyan='\e[4;36m'        # Cyan
     colorUWhite='\e[4;37m'       # White
 
-    # Background
+    # Background {{{2
     colorOn_Black='\e[40m'       # Black
     colorOn_Red='\e[41m'         # Red
     colorOn_Green='\e[42m'       # Green
@@ -155,7 +166,7 @@ else
     colorOn_Cyan='\e[46m'        # Cyan
     colorOn_White='\e[47m'       # White
 
-    # High Intensty
+    # High Intensty {{{2
     colorIBlack='\e[0;90m'       # Black
     colorIRed='\e[0;91m'         # Red
     colorIGreen='\e[0;92m'       # Green
@@ -165,7 +176,7 @@ else
     colorICyan='\e[0;96m'        # Cyan
     colorIWhite='\e[0;97m'       # White
 
-    # Bold High Intensty
+    # Bold High Intensty {{{2
     colorBIBlack='\e[1;90m'      # Black
     colorBIRed='\e[1;91m'        # Red
     colorBIGreen='\e[1;92m'      # Green
@@ -175,7 +186,7 @@ else
     colorBICyan='\e[1;96m'       # Cyan
     colorBIWhite='\e[1;97m'      # White
 
-    # High Intensty backgrounds
+    # High Intensty backgrounds {{{2
     colorOn_IBlack='\e[0;100m'   # Black
     colorOn_IRed='\e[0;101m'     # Red
     colorOn_IGreen='\e[0;102m'   # Green
@@ -185,7 +196,7 @@ else
     colorOn_ICyan='\e[0;106m'    # Cyan
     colorOn_IWhite='\e[0;107m'   # White
 
-    # make manpages colorful
+    # manpages {{{2
     export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
     export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
     export LESS_TERMCAP_me=$'\E[0m'           # end mode
@@ -193,5 +204,7 @@ else
     export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
     export LESS_TERMCAP_ue=$'\E[0m'           # end underline
     export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-fi
-
+    # 2}}}
+# 1}}}
+fi 
+# vim: ft=sh foldmethod=marker foldlevel=0:
