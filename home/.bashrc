@@ -10,7 +10,7 @@
 [[ -z "$PS1" ]] && return
 
 # PROMPT {{{1
-#
+  # PS1 {{{2
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]]; then
     # If we are root, try to make that hard to miss.
@@ -31,7 +31,23 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   fi
   source "$HOME"/.bash_prompt
 fi
-# }}}
+  # 2}}}
+  # PS2 {{{2
+  # Continuation prompt
+  # Default: '> '
+PS2="... "
+  # 2}}}
+  # PS3 {{{2
+  # Option select prompt
+  # Default: '#?'
+PS3='#?'
+  # 2}}}
+  # PS4 {{{2
+  # Script debug mode prefix
+  # Default: '+'
+PS4="    +++"
+  # 2}}}
+# 1}}}
 # ENVIRONMENT {{{1
 #
 # XDG {{{2
