@@ -78,6 +78,13 @@ export XDG_CACHE_HOME="$HOME/.cache/"
   # be 0700.
 #export XDG_RUNTIME_DIR=""
 # }}}
+# PATH {{{2
+  # Add "$HOME"/bin and all subdirectories recursively to $PATH
+PATH="${PATH}:$HOME/bin/"
+for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do 
+  [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
+done
+# }}}
 # SHELL OPTIONS {{{2
 #
 # SHOPT {{{3
@@ -119,11 +126,29 @@ HISTFILESIZE=1000
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 # }}}
 # }}}
-# Editor {{{2
+# nvidia {{{2
+export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+  # Setting the environment variable __GL_SYNC_TO_VBLANK to a non-zero value
+  # will force glXSwapBuffers to sync to your monitor's vertical refresh
+  # (perform a swap only during the vertical blanking period).
+export __GL_SYNC_TO_VBLANK="0"
+  # When using __GL_SYNC_TO_VBLANK with TwinView, OpenGL can only sync to one
+  # of the display devices; this may cause tearing corruption on the display
+  # device to which OpenGL is not syncing. You can use the environment variable
+  # __GL_SYNC_DISPLAY_DEVICE to specify to which display device OpenGL should
+  # sync. You should set this environment variable to the name of a display
+  # device; for example "CRT-1". Look for the line "Connected display
+  # device(s):" in your X log file for a list of the display devices present
+  # and their names. You may also find it useful to review Chapter 13,
+  # Configuring TwinView "Configuring Twinview" and the section on Ensuring
+  # Identical Mode Timings in Chapter 19, Programming Modes.
+#export __GL_SYNC_DISPLAY_DEVICE=""
+# }}}
+# editor {{{2
 if type vim &> /dev/null; then export EDITOR="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
 # }}}
-# Pager {{{2
+# pager {{{2
 if type pager &> /dev/null; then
   export PAGER="pager"
 elif type most &> /dev/null; then
@@ -208,17 +233,10 @@ if type lynx &> /dev/null; then
 # export gopher_proxy="http://localhost:9050/"
 fi
 # }}}
-# yaourt colors {{{2
+# yaourt {{{2
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
-# }}}
-# PATH {{{2
-  # Add "$HOME"/bin and all subdirectories recursively to $PATH
-PATH="${PATH}:$HOME/bin/"
-for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do 
-  [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
-done
 # }}}
 # KEYCHAIN {{{1
 #
