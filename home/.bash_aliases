@@ -65,6 +65,8 @@ alias rm='\rm -Iv'
 alias chown='\chown -c --preserve-root'
 alias chmod='\chmod -c --preserve-root'
 alias chgrp='\chgrp -c --preserve-root'
+
+  # Make directory including intermediate directories
 alias mkdir='\mkdir -vp'
 
     # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
@@ -122,3 +124,6 @@ type shred &> /dev/null && alias shred=' shred -vfu'
 
   # always make secure passwords
 type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
+
+  # weechat is dumb
+type weechat &> /dev/null && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
