@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 # GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
 #
-# © Copyright 201 Ryan Delaney. All rights reserved.
+# © Copyright 2014 Ryan Delaney. All rights reserved.
 # <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
 # "$HOME"/.bashrc: executed by bash(1) for interactive shells.
 
 # If not running interactively, don't do anything
@@ -10,7 +24,7 @@
 [[ -z "$PS1" ]] && return
 
 # PROMPT {{{1
-#
+  # PS1 {{{2
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]]; then
     # If we are root, try to make that hard to miss.
@@ -31,9 +45,24 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   fi
   source "$HOME"/.bash_prompt
 fi
-# }}}
+  # 2}}}
+  # PS2 {{{2
+  # Continuation prompt
+  # Default: '> '
+PS2="... "
+  # 2}}}
+  # PS3 {{{2
+  # Option select prompt
+  # Default: '#?'
+PS3='#?'
+  # 2}}}
+  # PS4 {{{2
+  # Script debug mode prefix
+  # Default: '+'
+PS4="    +++"
+  # 2}}}
+# 1}}}
 # ENVIRONMENT {{{1
-#
 # XDG {{{2
   # Because lots of apps are dumb and don't use the defaults like they should
   #
@@ -61,6 +90,13 @@ export XDG_CACHE_HOME="$HOME/.cache/"
   # the only one having read and write access to it. Its Unix access mode MUST
   # be 0700.
 #export XDG_RUNTIME_DIR=""
+# }}}
+# PATH {{{2
+  # Add "$HOME"/bin and all subdirectories recursively to $PATH
+PATH="${PATH}:$HOME/bin/"
+for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
+  [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
+done
 # }}}
 # SHELL OPTIONS {{{2
 #
@@ -103,11 +139,38 @@ HISTFILESIZE=1000
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 # }}}
 # }}}
-# Editor {{{2
-if type vim &> /dev/null; then export EDITOR="vim"; fi
-if type gvim &> /dev/null; then export VISUAL="gvim"; fi
+# EDITOR {{{2
+if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 # }}}
-# Pager {{{2
+# DISPLAY {{{2
+  # If we are connected remotely, then don't assign a value to DISPLAY
+  if [[ -n "$SSH_AUTH_SOCK" ]]; then
+    unset DISPLAY
+  # Otherwise, set-up the display environment
+  else
+  # GVIM
+  if type gvim &> /dev/null; then export VISUAL="gvim"; fi
+  # NVIDIA {{{3
+    export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+  # Setting the environment variable __GL_SYNC_TO_VBLANK to a non-zero value
+  # will force glXSwapBuffers to sync to your monitor's vertical refresh
+  # (perform a swap only during the vertical blanking period).
+    export __GL_SYNC_TO_VBLANK="0"
+  # When using __GL_SYNC_TO_VBLANK with TwinView, OpenGL can only sync to one
+  # of the display devices; this may cause tearing corruption on the display
+  #  device to which OpenGL is not syncing. You can use the environment variable
+  # __GL_SYNC_DISPLAY_DEVICE to specify to which display device OpenGL should
+  # sync. You should set this environment variable to the name of a display
+  # device; for example "CRT-1". Look for the line "Connected display
+  # device(s):" in your X log file for a list of the display devices present
+  # and their names. You may also find it useful to review Chapter 13,
+  # Configuring TwinView "Configuring Twinview" and the section on Ensuring
+  # Identical Mode Timings in Chapter 19, Programming Modes.
+  # export __GL_SYNC_DISPLAY_DEVICE=""
+  # }}}
+fi
+# }}}
+# PAGER {{{2
 if type pager &> /dev/null; then
   export PAGER="pager"
 elif type most &> /dev/null; then
@@ -120,7 +183,7 @@ elif type less &> /dev/null; then
   export LESSEDIT="vim"
 fi
 # }}}
-# gpg {{{2
+# GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
@@ -130,14 +193,14 @@ fi
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
 # }}}
-# mutt {{{2
+# MUTT {{{2
 if type mutt &> /dev/null; then
   export PGPPATH="$HOME$GNUPGHOME"
   export MAILDIR="/var/mail/"
   export TMPDIR="/tmp/"
 fi
 # }}}
-# git {{{2
+# GIT {{{2
 if type git &> /dev/null; then
     # git(hub) {{{3
   if type hub &> /dev/null; then
@@ -146,7 +209,7 @@ if type git &> /dev/null; then
 #   export GITHUB_PASSWORD="$(pass show github.com)"
   fi
     # }}}
-    # tig {{{3
+    # TIG {{{3
   if type tig &> /dev/null; then
   #         Path of the user configuration file (defaults to ~/.tigrc).
     TIGRC_USER="$HOME/.config/tig/config"
@@ -192,17 +255,10 @@ if type lynx &> /dev/null; then
 # export gopher_proxy="http://localhost:9050/"
 fi
 # }}}
-# yaourt colors {{{2
+# yaourt {{{2
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
-# }}}
-# PATH {{{2
-  # Add "$HOME"/bin and all subdirectories recursively to $PATH
-PATH="${PATH}:$HOME/bin/"
-for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do 
-  [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
-done
 # }}}
 # KEYCHAIN {{{1
 #

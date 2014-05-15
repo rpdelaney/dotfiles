@@ -81,27 +81,6 @@ cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | 
   # download files from web via tor
 turl(){ curl --socks5-hostname localhost:9050 $@ ; }
 
-# smile for the exit status :)
-exitstatus() {
-    exitstatus="$?"
-    bold="\[\033[1m\]"
-    red="\[\033[1;31m\]"
-    green="\[\e[32;1m\]"
-    blue="\[\e[34;1m\]"
-    off="\[\033[m\]"
-
-    PROMPT="[\u@\h ${blue}\w${off}"
-
-    if [ "${exitstatus}" -eq 0 ]
-    then
-       PS1="${PROMPT} ${bold}${green}:)${off} ]\$ "
-    else
-       PS1="${PROMPT} ${bold}${red}:(${off} ]\$ "
-    fi
-
-    PS2="${bold}>${off} "
-}
-
   # b) function cd_func
   # This function defines a 'cd' replacement function capable of keeping,
   # displaying and accessing history of visited directories, up to 10 entries.

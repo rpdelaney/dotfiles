@@ -20,8 +20,7 @@ focus_follows_mouse yes
     # show the popup only if it belongs to the fullscreen application
 popup_during_fullscreen smart
 
-#
-# styles
+# styles {{{1
 #
 
     # Font for window titles. Will also be used by the bar unless a different font
@@ -42,9 +41,8 @@ floating_modifier $mod
 #client.unfocused        #191919 #191919 #999999
 #client.urgent           #cd989a #cd989a #2e3436
 #client.background       #121212
-
-#
-# Hotkeys
+# }}}
+# Hotkeys {{{1
 #
     #Screenshot
 #bindsym $mod+0xff57 exec scrot  ~/Pictures/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
@@ -145,8 +143,9 @@ bindsym $mod+Shift+p restart
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
     # resize window (you can also use the mouse for that)
-bindsym $mod+p mode "resize"
-
+# bindsym $mod+p mode "resize"
+# }}}
+# Modes {{{1
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -184,9 +183,8 @@ bar {
             # use our custom statusbar command
         status_command statusbar
 }
-
-#
-# Workspaces
+# }}}
+# Workspaces {{{1
 #
     # put the workspaces on the right screens
 workspace   "1: shell"   output    DVI-I-2
@@ -199,6 +197,7 @@ workspace   "7: docs"    output    DVI-I-2
 workspace   "8: misc"    output    DVI-I-2
 workspace   "9: vm"      output    DVI-I-3
 workspace  "10: games"   output    DVI-I-2
+# }}}
 
     # default borders
         # normal windows get 1pixel borders only
@@ -208,6 +207,7 @@ new_float           normal
         # hide borders adjacent to the screen edges
 hide_edge_borders   both
 
+# window classes {{{1
     # bind applications to their appropriate workspaces
     # get window class with xprop
 assign [class="Firefox"] → 2: web
@@ -228,9 +228,8 @@ assign [class="Xsane"] → 7: docs
 assign [class="Gimp"] → 7: docs
 #assign [class="VirtualBox"] → 9: vm
 assign [class="hl2_linux"] → 10: games
-
-#
-# Auto-run
+# }}}
+# Auto-run {{{1
 #
     # auto-run these apps when starting i3
         # 1:shell
@@ -251,3 +250,6 @@ exec --no-startup-id i3-msg 'workspace 5: steam;exec mumble'
 exec --no-startup-id i3-msg 'workspace 5: steam;exec steam'
 
 exec --no-startup-id i3-msg 'workspace 1;'
+# }}}
+
+# vim: foldmethod=marker:
