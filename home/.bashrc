@@ -144,8 +144,9 @@ if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 # }}}
 # DISPLAY {{{2
   # If we are connected remotely, then don't assign a value to DISPLAY
-  if [[ -n "$SSH_AUTH_SOCK" ]]; then
-    unset DISPLAY
+if [[ -n "$SSH_AUTH_SOCK" ]]; then
+  :
+#   unset DISPLAY
   # Otherwise, set-up the display environment
   else
   # GVIM
@@ -244,7 +245,7 @@ if type git &> /dev/null; then
 fi
 # }}}
 # }}}
-# lynx {{{2
+# LYNX {{{2
 if type lynx &> /dev/null; then
   export LYNX_CFG="$HOME/.config/lynx/config"
 # these settings don't just affect lynx, unfortunately.
@@ -255,9 +256,27 @@ if type lynx &> /dev/null; then
 # export gopher_proxy="http://localhost:9050/"
 fi
 # }}}
-# yaourt {{{2
+# YAOURT {{{2
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
+fi
+# }}}
+# TMUX {{{
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && tmux has-session; then
+  # If:
+  #     we are connected remotely,
+  #     tmux has open sessions already,
+  #     and we aren't attached to tmux yet,
+  # Then:
+  #      propogate the environment settings to tmux
+  for session in $(tmux list-sessions -F "#S"); do
+    tmux set-environment -g DISPLAY "$DISPLAY"
+    tmux set-environment -g SSH_TTY "$SSH_TTY"
+    tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
+    tmux set-environment -t "$session" DISPLAY "$DISPLAY"
+    tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
+    tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
+  done
 fi
 # }}}
 # KEYCHAIN {{{1
@@ -329,7 +348,7 @@ fi
   # private stuff not to be cloned to public repositories / backups
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
-# Greeting {{{1
+# GREETING {{{1
 #
 type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
 # }}}
