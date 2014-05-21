@@ -261,22 +261,43 @@ if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
 # }}}
-# TMUX {{{
-if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && tmux has-session; then
-  # If:
+# SSH {{{
+# If:
+#   there is at least one tmux session,
+if tmux has-session; then
+  # and:
   #     we are connected remotely,
-  #     tmux has open sessions already,
-  #     and we aren't attached to tmux yet,
-  # Then:
-  #      propogate the environment settings to tmux
-  for session in $(tmux list-sessions -F "#S"); do
-    tmux set-environment -g DISPLAY "$DISPLAY"
-    tmux set-environment -g SSH_TTY "$SSH_TTY"
-    tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
-    tmux set-environment -t "$session" DISPLAY "$DISPLAY"
-    tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
-    tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
-  done
+  if [[ -n "$SSH_CONNECTION" ]]; then
+  # More reliable to use one of these? $SSH_TTY $SSH_AUTH_SOCK -- Ryan Delaney 2014-05-21T09:28-0700 OpenGPG: 0D98863B4E1D07B6
+    # and:
+    #     we aren't attached to tmux yet,
+    if [[ -z "$TMUX" ]]; then
+      # then:
+      #      propagate the environment settings to tmux
+      for session in $(tmux list-sessions -F "#S"); do
+        tmux set-environment -g DISPLAY "$DISPLAY"
+        tmux set-environment -g SSH_TTY "$SSH_TTY"
+        tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
+        tmux set-environment -t "$session" DISPLAY "$DISPLAY"
+        tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
+        tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
+      done
+    fi
+  # else if:
+  #   we are not connected remotely,
+  else
+    # then:
+    # purge ssh environment settings from tmux
+    for session in $(tmux list-sessions -F "#S"); do
+      tmux set-environment -g -u DISPLAY
+      tmux set-environment -g -u SSH_TTY
+      tmux set-environment -g -u SSH_CONNECTION
+      tmux set-environment -t "$session" -u DISPLAY
+      tmux set-environment -t "$session" -u SSH_TTY
+      tmux set-environment -t "$session" -u SSH_CONNECTION
+    done
+    :
+  fi
 fi
 # }}}
 # KEYCHAIN {{{1
