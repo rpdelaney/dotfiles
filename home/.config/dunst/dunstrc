@@ -19,7 +19,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%a: <b>%s</b>\n%b %p"
 
     # Sort messages by urgency
     sort = yes
@@ -216,4 +216,4 @@
 #    urgency = normal
 #
 
-#vim:set ft=config
+#vim:set ft=conf
