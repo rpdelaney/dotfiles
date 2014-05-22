@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 # GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
 #
-# © Copyright 201 Ryan Delaney. All rights reserved.
+# © Copyright 2014 Ryan Delaney. All rights reserved.
 # <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
 # "$HOME"/.bashrc: executed by bash(1) for interactive shells.
 
 # If not running interactively, don't do anything
@@ -49,7 +63,6 @@ PS4="    +++"
   # 2}}}
 # 1}}}
 # ENVIRONMENT {{{1
-#
 # XDG {{{2
   # Because lots of apps are dumb and don't use the defaults like they should
   #
@@ -81,7 +94,7 @@ export XDG_CACHE_HOME="$HOME/.cache/"
 # PATH {{{2
   # Add "$HOME"/bin and all subdirectories recursively to $PATH
 PATH="${PATH}:$HOME/bin/"
-for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do 
+for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
   [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
 done
 # }}}
@@ -126,15 +139,27 @@ HISTFILESIZE=1000
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 # }}}
 # }}}
-# nvidia {{{2
-export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+# EDITOR {{{2
+if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
+# }}}
+# DISPLAY {{{2
+  # If we are connected remotely, then don't assign a value to DISPLAY
+if [[ -n "$SSH_AUTH_SOCK" ]]; then
+  :
+#   unset DISPLAY
+  # Otherwise, set-up the display environment
+  else
+  # GVIM
+  if type gvim &> /dev/null; then export VISUAL="gvim"; fi
+  # NVIDIA {{{3
+    export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
   # Setting the environment variable __GL_SYNC_TO_VBLANK to a non-zero value
   # will force glXSwapBuffers to sync to your monitor's vertical refresh
   # (perform a swap only during the vertical blanking period).
-export __GL_SYNC_TO_VBLANK="0"
+    export __GL_SYNC_TO_VBLANK="0"
   # When using __GL_SYNC_TO_VBLANK with TwinView, OpenGL can only sync to one
   # of the display devices; this may cause tearing corruption on the display
-  # device to which OpenGL is not syncing. You can use the environment variable
+  #  device to which OpenGL is not syncing. You can use the environment variable
   # __GL_SYNC_DISPLAY_DEVICE to specify to which display device OpenGL should
   # sync. You should set this environment variable to the name of a display
   # device; for example "CRT-1". Look for the line "Connected display
@@ -142,13 +167,11 @@ export __GL_SYNC_TO_VBLANK="0"
   # and their names. You may also find it useful to review Chapter 13,
   # Configuring TwinView "Configuring Twinview" and the section on Ensuring
   # Identical Mode Timings in Chapter 19, Programming Modes.
-#export __GL_SYNC_DISPLAY_DEVICE=""
+  # export __GL_SYNC_DISPLAY_DEVICE=""
+  # }}}
+fi
 # }}}
-# editor {{{2
-if type vim &> /dev/null; then export EDITOR="vim"; fi
-if type gvim &> /dev/null; then export VISUAL="gvim"; fi
-# }}}
-# pager {{{2
+# PAGER {{{2
 if type pager &> /dev/null; then
   export PAGER="pager"
 elif type most &> /dev/null; then
@@ -161,7 +184,7 @@ elif type less &> /dev/null; then
   export LESSEDIT="vim"
 fi
 # }}}
-# gpg {{{2
+# GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
@@ -171,14 +194,14 @@ fi
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
 # }}}
-# mutt {{{2
+# MUTT {{{2
 if type mutt &> /dev/null; then
   export PGPPATH="$HOME$GNUPGHOME"
   export MAILDIR="/var/mail/"
   export TMPDIR="/tmp/"
 fi
 # }}}
-# git {{{2
+# GIT {{{2
 if type git &> /dev/null; then
     # git(hub) {{{3
   if type hub &> /dev/null; then
@@ -187,7 +210,7 @@ if type git &> /dev/null; then
 #   export GITHUB_PASSWORD="$(pass show github.com)"
   fi
     # }}}
-    # tig {{{3
+    # TIG {{{3
   if type tig &> /dev/null; then
   #         Path of the user configuration file (defaults to ~/.tigrc).
     TIGRC_USER="$HOME/.config/tig/config"
@@ -222,7 +245,7 @@ if type git &> /dev/null; then
 fi
 # }}}
 # }}}
-# lynx {{{2
+# LYNX {{{2
 if type lynx &> /dev/null; then
   export LYNX_CFG="$HOME/.config/lynx/config"
 # these settings don't just affect lynx, unfortunately.
@@ -233,9 +256,48 @@ if type lynx &> /dev/null; then
 # export gopher_proxy="http://localhost:9050/"
 fi
 # }}}
-# yaourt {{{2
+# YAOURT {{{2
 if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
+fi
+# }}}
+# SSH {{{
+# If:
+#   there is at least one tmux session,
+if tmux has-session; then
+  # and:
+  #     we are connected remotely,
+  if [[ -n "$SSH_CONNECTION" ]]; then
+  # More reliable to use one of these? $SSH_TTY $SSH_AUTH_SOCK -- Ryan Delaney 2014-05-21T09:28-0700 OpenGPG: 0D98863B4E1D07B6
+    # and:
+    #     we aren't attached to tmux yet,
+    if [[ -z "$TMUX" ]]; then
+      # then:
+      #      propagate the environment settings to tmux
+      for session in $(tmux list-sessions -F "#S"); do
+        tmux set-environment -g DISPLAY "$DISPLAY"
+        tmux set-environment -g SSH_TTY "$SSH_TTY"
+        tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
+        tmux set-environment -t "$session" DISPLAY "$DISPLAY"
+        tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
+        tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
+      done
+    fi
+  # else if:
+  #   we are not connected remotely,
+  else
+    # then:
+    # purge ssh environment settings from tmux
+    for session in $(tmux list-sessions -F "#S"); do
+      tmux set-environment -g -u DISPLAY
+      tmux set-environment -g -u SSH_TTY
+      tmux set-environment -g -u SSH_CONNECTION
+      tmux set-environment -t "$session" -u DISPLAY
+      tmux set-environment -t "$session" -u SSH_TTY
+      tmux set-environment -t "$session" -u SSH_CONNECTION
+    done
+    :
+  fi
 fi
 # }}}
 # KEYCHAIN {{{1
@@ -307,7 +369,7 @@ fi
   # private stuff not to be cloned to public repositories / backups
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
-# Greeting {{{1
+# GREETING {{{1
 #
 type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
 # }}}

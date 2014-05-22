@@ -36,7 +36,7 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1366125477'/>
+			<pref name='default' type='int' value='1399907083'/>
 			<pref name='startup' type='int' value='0'/>
 			<pref name='startup_current_status' type='bool' value='1'/>
 			<pref name='idleaway' type='int' value='1367625640'/>
@@ -450,6 +450,7 @@
 				<item value='/usr/lib/purple-2/slashexec.so'/>
 				<item value='/usr/lib/purple-2/autoaccept.so'/>
 				<item value='/usr/lib/purple-2/statenotify.so'/>
+				<item value='/usr/lib/purple-2/purple-events.so'/>
 				<item value='/usr/lib/finch/gnthistory.so'/>
 				<item value='/usr/lib/purple-2/google.so'/>
 				<item value='/usr/lib/purple-2/groupmsg.so'/>
@@ -457,6 +458,7 @@
 				<item value='/usr/lib/purple-2/idle.so'/>
 				<item value='/usr/lib/purple-2/ignore.so'/>
 				<item value='/usr/lib/purple-2/joinpart.so'/>
+				<item value='/usr/lib/purple-2/purple-libnotify+.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
 				<item value='/usr/lib/purple-2/offlinemsg.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
@@ -512,8 +514,8 @@
 			<pref name='timestamps' type='bool' value='1'/>
 			<pref name='notify_typing' type='bool' value='1'/>
 			<pref name='size'>
-				<pref name='width' type='int' value='110'/>
-				<pref name='height' type='int' value='32'/>
+				<pref name='width' type='int' value='157'/>
+				<pref name='height' type='int' value='38'/>
 			</pref>
 			<pref name='position'>
 				<pref name='x' type='int' value='0'/>
@@ -537,10 +539,10 @@
 		<pref name='blist'>
 			<pref name='size'>
 				<pref name='width' type='int' value='24'/>
-				<pref name='height' type='int' value='33'/>
+				<pref name='height' type='int' value='32'/>
 			</pref>
 			<pref name='position'>
-				<pref name='x' type='int' value='132'/>
+				<pref name='x' type='int' value='108'/>
 				<pref name='y' type='int' value='0'/>
 			</pref>
 			<pref name='idletime' type='bool' value='1'/>

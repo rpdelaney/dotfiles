@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
+	<status name='Auto-Cached' transient='true' created='1399907083' lastused='1399907083' usage_count='1'>
+		<state>available</state>
+	</status>
 	<status name='fopedush-linux' created='1366125477' lastused='1385945076' usage_count='3'>
 		<state>available</state>
 		<message>Fopedush: my team is basically the only one still operational because 80% of us use linux</message>
@@ -39,9 +42,6 @@
 		<message>Awesome pics. Great size. Look thick. Solid. Tight. Keep us all posted on your continued progress with any new progress pics or vid clips. Show us what you got man. Wanna see how freakin&apos; huge, solid, thick and tight you can get. Thanks for the motivation. </message>
 	</status>
 	<status name='Auto-Cached' transient='true' created='1363559098' lastused='1363559098' usage_count='1'>
-		<state>available</state>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1361245222' lastused='1361245222' usage_count='1'>
 		<state>available</state>
 	</status>
 	<status name='Trolling' created='1360710668' lastused='1360710668' usage_count='1'>
