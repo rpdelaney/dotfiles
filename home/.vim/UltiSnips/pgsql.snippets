@@ -3,7 +3,8 @@ snippet table "table schema definition" b
 	table: ${1:tableName}
 	${2:tableComment}
 	created on: `date`
-	© Copyright 2014 ${1:Ryan Delaney}. All rights reserved. This work is
+
+	© Copyright `date +%Y` ${1:Ryan Delaney}. All rights reserved. This work is
 	distributed WITHOUT ANY WARRANTY whatsoever; without even the implied
 	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	README file for terms and conditions on your use of this software.
@@ -34,7 +35,6 @@ revoke		all	  on		$1 from			public;
 comment on table	$1				is '$2';
 comment on column	$1.id			is 'primary key';
 endsnippet
-
 snippet function "function definer" b
 /*
 	function: ${1:functionName}(${2:functionParameters})
@@ -56,7 +56,6 @@ $body$
   cost 100;
 alter function $1($2) owner to ${8:postgres};
 endsnippet
-
 snippet aggregate "aggregate definer" b
 /*
 	aggregate: ${1:aggregateName}(${2:functionParameters})
@@ -73,7 +72,6 @@ create aggregate $1($2) (
 )
 alter aggregate $1($2) owner to ${8:postgres};
 endsnippet
-
 snippet view "view definer" b
 /*
 	${1:viewType }view: ${2:viewName}
@@ -95,27 +93,21 @@ grant all		on $2	to				  $4;
 	-- indexes
 	-- triggers
 endsnippet
-
 snippet nnul "add a not null constraint to a column" b
 ,   constraint	  nnul_${1:columnName}	check ($1 is not null)
 endsnippet
-
 snippet uniq "add a unique constraint to a column" b
 ,   constraint	  uniq_${1:columnName}	check ($1 is not null)
 endsnippet
-
 snippet chek "add a check constraint to a column" b
 ,   constraint	  chek_${1:columnName}	check ($2)
 endsnippet
-
 snippet idx "add an index to a column" b
 create index	idx_${1:tableName}_${2:columnName} on		$1 ( $2 );
 endsnippet
-
 snippet coc "add a comment to a column" b
 comment on column   $1.$2			is '$3';
 endsnippet
-
 snippet begin "transaction block"
 begin
 		-- do your business
