@@ -156,3 +156,5 @@
 	url = git@github.com:yakiang/excel.vim.git
 [submodule "home/.vim/bundle/vim-daylight"]
 	url = git@github.com:rpdelaney/vim-daylight.git
+[submodule "home/.vim/bundle/pgsql"]
+	url = git@github.com:rpdelaney/vim-pgsql.git
