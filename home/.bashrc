@@ -266,13 +266,14 @@ fi
 #   there is at least one tmux session,
 if tmux has-session; then
   # and:
-  #     we are connected remotely,
-  if [[ -n "$SSH_CONNECTION" ]]; then
+  #     we aren't attached to tmux yet,
+  if [[ -z "$TMUX" ]]; then
     # and:
-    #     we aren't attached to tmux yet,
-    if [[ -z "$TMUX" ]]; then
+    #     we are not connected remotely,
+    if [[ -z "$SSH_CONNECTION" ]]; then
       # then:
       #      propagate the environment settings to tmux
+      echo "Propagating environment to tmux"
       for session in $(tmux list-sessions -F "#S"); do
         tmux set-environment -g DISPLAY "$DISPLAY"
         tmux set-environment -g SSH_TTY "$SSH_TTY"
@@ -281,21 +282,21 @@ if tmux has-session; then
         tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
         tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
       done
+    # else if:
+    #   we are connected remotely,
+    else
+      # then:
+      # purge ssh environment settings from tmux
+      echo "Purging environment from tmux"
+      for session in $(tmux list-sessions -F "#S"); do
+        tmux set-environment -g -u DISPLAY
+        tmux set-environment -g -u SSH_TTY
+        tmux set-environment -g -u SSH_CONNECTION
+        tmux set-environment -t "$session" -u DISPLAY
+        tmux set-environment -t "$session" -u SSH_TTY
+        tmux set-environment -t "$session" -u SSH_CONNECTION
+      done
     fi
-  # else if:
-  #   we are not connected remotely,
-  else
-    # then:
-    # purge ssh environment settings from tmux
-    for session in $(tmux list-sessions -F "#S"); do
-      tmux set-environment -g -u DISPLAY
-      tmux set-environment -g -u SSH_TTY
-      tmux set-environment -g -u SSH_CONNECTION
-      tmux set-environment -t "$session" -u DISPLAY
-      tmux set-environment -t "$session" -u SSH_TTY
-      tmux set-environment -t "$session" -u SSH_CONNECTION
-    done
-    :
   fi
 fi
 # }}}

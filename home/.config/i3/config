@@ -43,9 +43,9 @@ floating_modifier $mod
 #client.background       #121212
 # }}}
 # Hotkeys {{{1
-#
+	# i3 {{{2
     #Screenshot
-#bindsym $mod+0xff57 exec scrot  ~/Pictures/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png
+#bindsym $mod+0xff57 exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
 
     # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -143,8 +143,12 @@ bindsym $mod+Shift+p restart
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
     # resize window (you can also use the mouse for that)
-# bindsym $mod+p mode "resize"
-# }}}
+bindsym $mod+p mode "resize"
+# 2}}}
+# Command shortcuts {{{2
+bindsym $mod+w exec i3-input -F 'exec pw type password %s'
+
+# 2}}}
 # Modes {{{1
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
