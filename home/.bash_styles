@@ -6,7 +6,7 @@
 # README file for terms and conditions on your use of this software.
 #
 
-if [[ $(type tput 2> /dev/null) ]]; then
+if type tput 2> /dev/null; then
     # tput {{{1
     if [[ -t 2 ]]; then
         # 256 color {{{2
