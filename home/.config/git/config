@@ -154,3 +154,5 @@
 	url = git@github.com:rpdelaney/vim-sourcecfg.git
 [submodule "home/.vim/bundle/vim-excel"]
 	url = git@github.com:yakiang/excel.vim.git
+[submodule "home/.vim/bundle/vim-daylight"]
+	url = git@github.com:rpdelaney/vim-daylight.git
