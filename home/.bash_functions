@@ -79,7 +79,7 @@ jobscount(){
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 
   # download files from web via tor
-turl(){ curl --socks5-hostname localhost:9050 $@ ; }
+turl(){ curl --sslv3 --socks5-hostname localhost:9050 $@ ; }
 
   # b) function cd_func
   # This function defines a 'cd' replacement function capable of keeping,
