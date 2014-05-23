@@ -1,9 +1,6 @@
 [submodule "home/.vim/bundle/fsharp"]
 	path = home/.vim/bundle/fsharp
 	url = git://github.com/kongo2002/fsharp-vim.git
-[submodule "vim-daylight"]
-	path = vim-daylight
-	url = ./home/.vim/bundle/vim-daylight/
 [submodule "home/.vim/bundle/vim-sourcecfg"]
 	path = home/.vim/bundle/vim-sourcecfg
 	url = git@github.com:rpdelaney/vim-sourcecfg.git
