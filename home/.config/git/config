@@ -158,3 +158,5 @@
 	url = git@github.com:rpdelaney/vim-daylight.git
 [submodule "home/.vim/bundle/pgsql"]
 	url = git@github.com:rpdelaney/vim-pgsql.git
+[submodule "home/.vim/bundle/sprunge"]
+	url = git@github.com:chilicuil/vim-sprunge.git
