@@ -144,7 +144,7 @@ if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 # }}}
 # DISPLAY {{{2
   # If we are connected remotely, then don't assign a value to DISPLAY
-if [[ -n "$SSH_AUTH_SOCK" ]]; then
+if [[ -n "$SSH_CONNECTION" ]]; then
   :
 #   unset DISPLAY
   # Otherwise, set-up the display environment
@@ -268,7 +268,6 @@ if tmux has-session; then
   # and:
   #     we are connected remotely,
   if [[ -n "$SSH_CONNECTION" ]]; then
-  # More reliable to use one of these? $SSH_TTY $SSH_AUTH_SOCK -- Ryan Delaney 2014-05-21T09:28-0700 OpenGPG: 0D98863B4E1D07B6
     # and:
     #     we aren't attached to tmux yet,
     if [[ -z "$TMUX" ]]; then
