@@ -7,3 +7,6 @@
 [submodule "home/.vim/bundle/vim-sourcecfg"]
 	path = home/.vim/bundle/vim-sourcecfg
 	url = git@github.com:rpdelaney/vim-sourcecfg.git
+[submodule "home/.vim/bundle/vim-excel"]
+	path = home/.vim/bundle/vim-excel
+	url = git@github.com:yakiang/excel.vim.git
