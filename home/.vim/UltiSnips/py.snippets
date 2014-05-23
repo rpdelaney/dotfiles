@@ -1,0 +1,56 @@
+snippet shebang "shebang for python"
+#!/usr/bin/env python
+# `python --version`
+#
+# © Copyright `date +%Y` Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+endsnippet
+snippet usage "usage function" b
+# Usage {{{1
+#
+def usage():
+	print '''
+	${1:appname}
+	© Copyright `date +%Y` Ryan Delaney. All rights reserved.
+	Web site: http://github.com/rpdelaney
+
+	$1.py ${2:description}
+
+	Usage: $1 [OPTION]
+
+	Options
+	-?, --help                  print this help and exit
+	-v, --verbose               increase verbosity
+	EOD
+	exit 1'''
+# }}}
+endsnippet
+snippet functions "standard functions" b
+endsnippet
+snippet parameters "command-line arguments reader" b
+def main(argv):
+   inputfile = ''
+   outputfile = ''
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+   except getopt.GetoptError:
+      print 'test.py -i <inputfile> -o <outputfile>'
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt == '-h':
+         print 'test.py -i <inputfile> -o <outputfile>'
+         sys.exit()
+      elif opt in ("-i", "--ifile"):
+         inputfile = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+   print 'Input file is "', inputfile
+   print 'Output file is "', outputfile
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+endsnippet
