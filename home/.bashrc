@@ -264,7 +264,7 @@ fi
 # SSH {{{
 # If:
 #   there is at least one tmux session,
-if tmux has-session; then
+if tmux has-session &> /dev/null; then
   # and:
   #     we aren't attached to tmux yet,
   if [[ -z "$TMUX" ]]; then
