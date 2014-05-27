@@ -1,12 +1,13 @@
-\set AUTOCOMMIT on
+\set AUTOCOMMIT off
 \set ENCODING UTF8
 \set HISTSIZE 1000
 \set HISTCONTROL ignoredups
-\set FETCH_COUNT 500
+\set FETCH_COUNT 50
 \set HISTFILE ~/logs/psql/history-:DBNAME
-\set PROMPT1 '\n psql://%n@%`hostname`:%>/%/\n%# '
-\set PROMPT2 '%[%033[2;30m%]%#%[%033[0m%] '
-\set PROMPT3 '>> '
+\set PROMPT1 '\npsql://%n@%`hostname`:%>/%/ %:AUTOCOMMIT:\n %x %# '
+\set PROMPT2 '%x   ... '
+\set PROMPT3 '%x  >> '
+\pset border 0
 \encoding unicode
 \timing
 \set waits 'SELECT pg_stat_activity.procpid, pg_stat_activity.current_query, pg_stat_activity.waiting, now() - pg_stat_activity.query_start  as "totaltime", pg_stat_activity.backend_start FROM pg_stat_activity WHERE pg_stat_activity.current_query !~ \'%IDLE%\'::text AND pg_stat_activity.waiting = true;;'
