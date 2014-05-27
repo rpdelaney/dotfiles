@@ -7,3 +7,12 @@
 [submodule "home/.vim/bundle/vim-excel"]
 	path = home/.vim/bundle/vim-excel
 	url = git@github.com:yakiang/excel.vim.git
+[submodule "home/.vim/bundle/vim-daylight"]
+	path = home/.vim/bundle/vim-daylight
+	url = git@github.com:rpdelaney/vim-daylight.git
+[submodule "home/.vim/bundle/pgsql"]
+	path = home/.vim/bundle/pgsql
+	url = git@github.com:rpdelaney/vim-pgsql.git
+[submodule "home/.vim/bundle/sprunge"]
+	path = home/.vim/bundle/sprunge
+	url = git@github.com:chilicuil/vim-sprunge.git
