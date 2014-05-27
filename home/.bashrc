@@ -139,45 +139,6 @@ HISTFILESIZE=1000
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:l:la:ls:lss:lssa:lsa:.:..:....:dir:whereami:ranger:his(tory)?'
 # }}}
 # }}}
-# SSH {{{2
-# If:
-#   there is at least one tmux session,
-if tmux has-session; then
-  # and:
-  #     we aren't attached to tmux yet,
-  if [[ -z "$TMUX" ]]; then
-    # and:
-    #     we are not connected remotely,
-    if [[ -z "$SSH_CONNECTION" ]]; then
-      # then:
-      #      propagate the environment settings to tmux
-      echo "Propagating environment to tmux"
-      for session in $(tmux list-sessions -F "#S"); do
-        tmux set-environment -g DISPLAY "$DISPLAY"
-        tmux set-environment -g SSH_TTY "$SSH_TTY"
-        tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
-        tmux set-environment -t "$session" DISPLAY "$DISPLAY"
-        tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
-        tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
-      done
-    # else if:
-    #   we are connected remotely,
-    else
-      # then:
-      # purge ssh environment settings from tmux
-      echo "Purging environment from tmux"
-      for session in $(tmux list-sessions -F "#S"); do
-        tmux set-environment -g -u DISPLAY
-        tmux set-environment -g -u SSH_TTY
-        tmux set-environment -g -u SSH_CONNECTION
-        tmux set-environment -t "$session" -u DISPLAY
-        tmux set-environment -t "$session" -u SSH_TTY
-        tmux set-environment -t "$session" -u SSH_CONNECTION
-      done
-    fi
-  fi
-fi
-# }}}
 # EDITOR {{{2
 if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 # }}}
@@ -300,7 +261,6 @@ if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
 # }}}
-<<<<<<< HEAD
 # PSQL {{{2
 if type psql &> /dev/ null; then
   export PSQL_EDITOR="vim"
@@ -310,8 +270,9 @@ if type psql &> /dev/ null; then
 # export PGHOST
 # export PGPORT
 # export PGUSER
-=======
-# SSH {{{
+fi
+# }}}
+# SSH {{{2
 # If:
 #   there is at least one tmux session,
 if tmux has-session &> /dev/null; then
@@ -348,9 +309,7 @@ if tmux has-session &> /dev/null; then
       done
     fi
   fi
->>>>>>> origin/master
 fi
-
 # 2}}}
 # KEYCHAIN {{{1
 #
