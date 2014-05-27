@@ -261,7 +261,18 @@ if type yaourt &> /dev/null; then
   export YAOURT_COLORS="pkg=1:ver=0:lver=1;37:orphan=31:dsc:0:installed=43m:votes=36:testing=1;30m;41m:core=1;31:extra=1;32:community=1;33:local=1;44m:aur=1;35"
 fi
 # }}}
-# SSH {{{
+# PSQL {{{2
+if type psql &> /dev/ null; then
+  export PSQL_EDITOR="vim"
+  export PSQLRC="$XDG_CONFIG_DIR/psql/config"
+# export PSQL_HISTORY
+# export PGDATABASE
+# export PGHOST
+# export PGPORT
+# export PGUSER
+fi
+# }}}
+# SSH {{{2
 # If:
 #   there is at least one tmux session,
 if tmux has-session &> /dev/null; then
@@ -299,7 +310,7 @@ if tmux has-session &> /dev/null; then
     fi
   fi
 fi
-# }}}
+# 2}}}
 # KEYCHAIN {{{1
 #
   # determine if we want to run a new ssh-agent for this session

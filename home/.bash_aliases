@@ -19,7 +19,7 @@ if [[ $UID -ne 0 ]]; then
   type dnuos &> /dev/null && alias oidua='\dnuos --file=list -D -S -t .'
 
     # tmux is the new screen
-  type tmux &> /dev/null && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+  type tmux &> /dev/null && [[ -f "$XDG_CONFIG_DIR"/tmux/tmux.conf ]] && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 
     # mpd
   if type ncmpcpp &> /dev/null ; then
