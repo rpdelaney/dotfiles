@@ -262,9 +262,9 @@ if type yaourt &> /dev/null; then
 fi
 # }}}
 # PSQL {{{2
-if type psql &> /dev/ null; then
+if type psql &> /dev/null; then
   export PSQL_EDITOR="vim"
-  export PSQLRC="$XDG_CONFIG_DIR/psql/config"
+  export PSQLRC="$XDG_CONFIG_HOME/psql/config"
 # export PSQL_HISTORY
 # export PGDATABASE
 # export PGHOST
