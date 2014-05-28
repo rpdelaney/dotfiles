@@ -1,22 +1,23 @@
 " Vim syntax file
 " Language: tmux(1) configuration file
-" Maintainer: Tiago Cunha <tcunha@users.sourceforge.net>
-" Last Change: $Date: 2010-07-27 18:29:07 $
-" License: This file is placed in the public domain.
+" Maintainer: Ryan Delaney <ryan dot delaney at gmail dot com> OpenGPG: 0D98863B4E1D07B6
+" Last Change: $Tue May 27 14:31:15 PDT 2014$
+" License: GNU General Public License v3
 "
-" To install this file:
+" This program is free software: you can redistribute it and/or modify it
+" under the terms of the GNU General Public License as published by the
+" Free Software Foundation, either version 3 of the License, or (at your
+" option) any later version.
 "
-" - Drop the file in the syntax directory into runtimepath (such as
-"  ~/.vim/syntax/tmux.vim).
-" - Make the filetype recognisable by adding the following to filetype.vim
-"   (~/.vim/filetype.vim):
+" This program is distributed in the hope that it will be useful, but
+" WITHOUT ANY WARRANTY; without even the implied warranty of
+" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+" General Public License for more details.
 "
-"	augroup filetypedetect
-"		au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-"	augroup END
+" You should have received a copy of the GNU General Public License along
+" with this program.  If not, see <http://www.gnu.org/licenses/>.
 "
-" - Switch on syntax highlighting by adding "syntax enable" to .vimrc.
-"
+" Based on tmux.vim by Tiago Cunha <tcunha@users.sourceforge.net>
 
 if version < 600
 	syntax clear
@@ -24,13 +25,12 @@ elseif exists("b:current_syntax")
 	finish
 endif
 
-setlocal iskeyword+=-
 syntax case match
 
-syn keyword tmuxAction	any current none
-syn keyword tmuxBoolean	off on
+setlocal iskeyword+=-
 
-syn keyword tmuxCmds
+" tmuxCmds {{{1
+syn keyword tmuxCmds 
 	\ attach[-session]
 	\ bind[-key]
 	\ break-pane
@@ -165,7 +165,8 @@ syn keyword tmuxCmds
 	\ unlink-window
 	\ unlinkw
 	\ wait[-for]
-
+" }}}
+" tmuxOptsSet {{{1
 syn keyword tmuxOptsSet
 	\ assume-paste-time
 	\ base-index
@@ -225,7 +226,8 @@ syn keyword tmuxOptsSet
 	\ visual-content
 	\ visual-silence
 	\ word-separators
-
+" 1}}}
+" tmuxOptsSetw {{{1
 syn keyword tmuxOptsSetw
 	\ aggressive-resize
 	\ allow-rename
@@ -262,9 +264,10 @@ syn keyword tmuxOptsSetw
 	\ window-status-style
 	\ wrap-search
 	\ xterm-keys
-
+" 1}}}
 syn keyword tmuxTodo FIXME NOTE TODO XXX contained
-
+syn keyword tmuxAction	any current none
+syn keyword tmuxBoolean	off on
 syn match tmuxKey		/\(C-\|M-\|\^\)\+\S\+/	display
 syn match tmuxNumber 		/\d\+/			display
 syn match tmuxOptions		/\s-\a\+/		display
@@ -275,18 +278,22 @@ syn region tmuxComment	start=/#/ end=/$/ contains=tmuxTodo display oneline
 syn region tmuxString	start=/"/ end=/"/ display oneline
 syn region tmuxString	start=/'/ end=/'/ display oneline
 
-hi def link tmuxAction			Boolean
-hi def link tmuxBoolean			Boolean
-hi def link tmuxCmds			Keyword
-hi def link tmuxComment			Comment
-hi def link tmuxKey			Special
-hi def link tmuxNumber			Number
-hi def link tmuxOptions			Identifier
-hi def link tmuxOptsSet			Function
-hi def link tmuxOptsSetw		Function
-hi def link tmuxString			String
-hi def link tmuxTodo			Todo
-hi def link tmuxVariable		Constant
+" Define {{{1
+hi def link tmuxAction				Boolean
+hi def link tmuxBoolean				Boolean
+hi def link tmuxCmds				Keyword
+hi def link tmuxComment				Comment
+hi def link tmuxKey					Special
+hi def link tmuxNumber				Number
+hi def link tmuxOptions				Identifier
+hi def link tmuxOptsSet				Function
+hi def link tmuxOptsSetw			Function
+hi def link tmuxString				String
+hi def link tmuxTodo				Todo
+hi def link tmuxVariable			Constant
 hi def link tmuxVariableExpansion	Constant
+" }}}
 
 let b:current_syntax = "tmux"
+
+" vim: ft=vim foldmethod=marker:
