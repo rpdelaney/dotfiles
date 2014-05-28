@@ -140,7 +140,7 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+p mode "resize"
 # 3}}}
 # 2}}}
-# Command shortcuts {{{2
+# commands {{{2
     # dmenu {{{3
 bindsym $mod+e exec dmenu_run
     # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -155,7 +155,14 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
 # 3}}}
     # password {{{3
+	# ask for user input, then pass it to xkeypass
+	# facilitates reading passwords from the password store
 bindsym $mod+w exec i3-input -F 'exec pw type password %s'
+# 3}}}
+	# i3-input {{{3
+	# ask for user input, then pass it to i3-msg
+	# facilitates sending arbitrary commands to i3
+bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 # 3}}}
 # 2}}}
 # modes {{{1
