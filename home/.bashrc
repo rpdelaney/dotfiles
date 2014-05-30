@@ -93,6 +93,7 @@ export XDG_CACHE_HOME="$HOME/.cache/"
 # }}}
 # PATH {{{2
   # Add "$HOME"/bin and all subdirectories recursively to $PATH
+  # But exclude directories named .git so we don't pollute our $PATH with a bunch of irrelevant stuff
 PATH="${PATH}:$HOME/bin/"
 for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
   [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
@@ -213,14 +214,14 @@ if type git &> /dev/null; then
     # TIG {{{3
   if type tig &> /dev/null; then
   #         Path of the user configuration file (defaults to ~/.tigrc).
-    TIGRC_USER="$HOME/.config/tig/config"
+    export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
   #         Path of the system wide configuration file (defaults to {sysconfdir}/tigrc).
   # TIGRC_SYSTEM
   #         Set command for retrieving all repository references. The command should output data in the same format as git-ls-remote(1).
   # TIG_LS_REMOTE
   #         The diff options to use in the diff view. The diff view uses git-show(1) for formatting and always passes --patch-with-stat. You may also set
   #         the diff-options setting in your tigrc(5).
-    TIG_DIFF_OPTS="-y"
+    export TIG_DIFF_OPTS="-y"
   #         Path for trace file where information about Git commands are logged.
   # TIG_TRACE
   fi
