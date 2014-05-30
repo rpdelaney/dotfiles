@@ -62,6 +62,7 @@ case "$extension" in
     ;;
     # HTML Pages:
     htm|html|xhtml)
+#       try lynx   && { dump | trim | fmt -s -w $width; exit 4; }
         try w3m    -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
@@ -71,7 +72,7 @@ esac
 case "$mimetype" in
     # Syntax highlight for text files:
     text/* | */xml)
-        try vimcat "$path" && { dump | trim; exit 0; } || exit 1
+        try vimcat "$path" && { dump | trim; exit 0; } || exit 2
         try highlight --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2
         ;;
     # Ascii-previews of images:
@@ -87,3 +88,5 @@ case "$mimetype" in
 esac
 
 exit 1
+
+# vim: ft=sh foldmethod=marker:
