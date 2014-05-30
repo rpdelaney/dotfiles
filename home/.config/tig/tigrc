@@ -1,3 +1,5 @@
+# This can be simplified a lot. See man tigrc
+
 color default color231 color237
 color cursor color220 color243
 color status color231 color234
@@ -9,9 +11,9 @@ color date color214 color237
 color author color177 color237
 color mode color190 default
 
-color tree-head color148 color237
-color tree-dir color111 color237
-color tree-file color252 color237
+color tree.header color148 color237
+color tree.directory color111 color237
+color tree.file color252 color237
 
 color graph-commit color190 color237
 color palette-0 color202 color237
@@ -30,8 +32,8 @@ color main-tag color190 color237
 color main-local-tag color189 color237
 color main-ref color186 color237
 
-color stat-head color232 color214
-color stat-section color231 color243
+color status.header color232 color214
+color status.section color231 color243
 color stat-staged color155 color237
 color stat-unstaged color147 color237
 color stat-untracked color225 color237
@@ -44,20 +46,22 @@ color diff-stat color153 color237
 
 color diff-oldmode color220 color237
 color diff-newmode color220 color237
-color diff-copy-from color220 color237
-color diff-copy-to color220 color237
+color 'copy from ' color220 color237
+color 'copy to ' color220 color237
 color diff-similarity color220 color237
-color diff-dissimilarity color220 color237
-color diff-tree color220 color237
+color 'dissimilarity ' color220 color237
+color 'diff-tree ' color220 color237
 color diff-index color247 color237
 
-color pp-commit color211 color237
-color pp-date color214 color237
-color pp-adate color214 color237
-color pp-cdate color214 color237
-color pp-adate color214 color237
-color pp-author color177 color237
+color 'Commit: ' color211 color237
+color 'Date: ' color214 color237
+color 'AuthorDate: ' color214 color237
+color 'CommitDate: ' color214 color237
+color 'AuthorDate: ' color214 color237
+color 'Author: ' color177 color237
 color pp-refs color190 default
 
 color commit color211 color237
 color author color177 color238
+
+# vim: ft=gitconfig
