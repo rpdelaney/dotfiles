@@ -16,3 +16,6 @@
 [submodule "home/.vim/bundle/sprunge"]
 	path = home/.vim/bundle/sprunge
 	url = git@github.com:chilicuil/vim-sprunge.git
+[submodule "home/.vim/bundle/vim-shell-executor"]
+	path = home/.vim/bundle/shell-executor
+	url = git@github.com:rpdelaney/vim-shell-executor.git
