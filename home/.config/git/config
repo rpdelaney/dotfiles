@@ -15,7 +15,7 @@
 		# Only push the active branch unless told otherwise
 	default = tracking
 [branch]
-		# auto-reupbase is dumb, and rebase is evil
+		# auto-reupbase is dumb, because rebase is evil
 	autosetuprebase = never
 [diff]
 	external = gitdiff
@@ -26,7 +26,13 @@
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --no-merges
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	lgd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-		# merging
+		# fetch
+	# Should we use --recurse-submodules-yes by default?
+	f = fetch
+	fa = fetch --all
+	fd = fetch --dry-run
+	fp = fetch --prune
+		# merge
 	cp = cherry-pick
 	dc = diff --cached
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
@@ -37,6 +43,7 @@
 		# status
 	s  = status
 	st = status -s
+	sp = status --porcelain
 		# commits
 	c  = commit
 	cs = commit -S
