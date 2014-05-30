@@ -19,3 +19,6 @@
 [submodule "home/.vim/bundle/vim-shell-executor"]
 	path = home/.vim/bundle/shell-executor
 	url = git@github.com:rpdelaney/vim-shell-executor.git
+[submodule "home/.vim/bundle/fugitive"]
+	path = home/.vim/bundle/fugitive
+	url = git@github.com:tpope/vim-fugitive.git
