@@ -233,7 +233,7 @@ if type git &> /dev/null; then
     # Number of context lines shown in a diff
 #   export GIT_DIFF_OPTS=
     # Use vimdiff for git diff
-  export GIT_EXTERNAL_DIFF="vimdiff"
+# export GIT_EXTERNAL_DIFF="vimdiff"
     # Stop searching here when trying to find git repos
 # export GIT_CEILING_DIRECTORIES=""
     # Search for repos across filesystems. I like my symlinks

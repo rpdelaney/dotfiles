@@ -44,17 +44,25 @@
 		# auto-reupbase is dumb, because rebase is evil
 	autosetuprebase = never
 [diff]
-	external = gitdiff
+	tool = vimdiff
 	renames = copies
 	mnemonicprefix = true
+[difftool]
+	prompt = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = true
 [pager]
-		# Don't use any diff pager, because pagers wreck vimdiff
-	diff =
+	diff = less
 [alias] # {{{
 		# logs
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --no-merges
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	lgd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+		# diff
+	d = difftool -t vimdiff
 		# fetch
 	# Should we use --recurse-submodules-yes by default?
 	f = fetch
@@ -62,6 +70,7 @@
 	fd = fetch --dry-run
 	fp = fetch --prune
 		# merge
+	m = mergetool -t vimdiff
 	cp = cherry-pick
 	dc = diff --cached
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
