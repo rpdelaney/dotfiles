@@ -79,8 +79,7 @@
 	cl = clone
 	remotes = remote -v
 		# status
-	s  = status
-	st = status -s
+	s  = status -s
 	sp = status --porcelain
 		# commits
 	c  = commit
