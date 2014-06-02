@@ -2,7 +2,7 @@
 # Maintainer: Magnus Woldrich <m@japh.se>
 #        URL: https://github.com/trapd00r/LS_COLORS
 #    Version: 0.254
-#    Updated: 2013-06-07 08:42:38
+#    Updated: Sun Jun  1 14:36:30 PDT 2014
 #
 #   This is a collection of extension:color mappings, suitable to use as your
 #   LS_COLORS environment variable. Most of them use the extended color map,
@@ -510,6 +510,14 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .theme                38;5;116
 .torrent              38;5;116
 .urlview              38;5;116
+# }}}
+# encrypted data {{{1
+.gpg                  38;5;192;3
+.signature            38;5;192;3
+.sig                  38;5;192;3
+.pgp                  38;5;192;3
+.asc                  38;5;192;3
+.enc                  38;5;192;3
 # }}}
 # emulators {{{1
 .32x                  38;5;137
