@@ -178,7 +178,7 @@ if type pager &> /dev/null; then
 elif type most &> /dev/null; then
   export PAGER="most"
   export MOST_EDITOR="vim"
-  export MOST_INITFILE="$HOME/.config/most/mostrc"
+  export MOST_INITFILE="$XDG_CONFIG_HOME/most/mostrc"
 elif type less &> /dev/null; then
   export PAGER="less"
   export LESSHISTSIZE="0"
@@ -190,7 +190,7 @@ if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
     # If XDG-config-dir exists, use it
-  if [[ -d "$HOME/.config/gnupg/" ]]; then export GNUPGHOME="$HOME/.config/gnupg/"; fi
+  if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]]; then export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"; fi
 fi
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
@@ -227,7 +227,7 @@ if type git &> /dev/null; then
   fi
     # }}}
 # XDG-git {{{3
-  if [[ -f "$HOME/.config/git/config" ]]; then export GIT_CONFIG="$HOME/.config/git/config"; fi
+  if [[ -f "$XDG_CONFIG_HOME/git/config" ]]; then export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"; fi
     # Always vim to edit even if I have a window manager.
   export GIT_EDITOR="vim"
     # Number of context lines shown in a diff
@@ -248,7 +248,7 @@ fi
 # }}}
 # LYNX {{{2
 if type lynx &> /dev/null; then
-  export LYNX_CFG="$HOME/.config/lynx/config"
+  export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
 # these settings don't just affect lynx, unfortunately.
 # http_proxy causes ALL http requests to be filtered through tor. :(
 # export WWW_HOME=""
