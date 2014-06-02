@@ -120,10 +120,10 @@ fi
 alias mounts='\mount | \column -t | pager'
 
     # private shredder
-type shred &> /dev/null && alias shred=' shred -vfu'
+type shred &> /dev/null && alias shred=' shred -v'
 
   # always make secure passwords
 type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
 
   # weechat is dumb
-type weechat &> /dev/null && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
+type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
