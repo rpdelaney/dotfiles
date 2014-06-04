@@ -103,7 +103,7 @@ set nowrap
 set whichwrap+=h,l,<,>,[,]
 	" how many rows to show on each side of the cursor
 	" a large value like 999 will keep the cursor in the center of the screen
-set scrolloff=999
+set scrolloff=8
 	" how many columns to show on each side of the cursor
 set sidescrolloff=1
 	" }}}
