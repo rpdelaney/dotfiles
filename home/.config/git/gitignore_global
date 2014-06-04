@@ -1,20 +1,13 @@
 #Global ignore for git
 
-# WHITELIST #
-#############
+# WHITELIST
 #How-to: http://stackoverflow.com/questions/9162919/git-whitelisting-files-in-a-complex-directory-structure
 
 
-# Directories, paths, symlinks #
-################################
-#*/
-
-# Help files #
-##############
+# Help files
 *.help
 
-# Compiled source #
-###################
+# Compiled source
 *.com
 *.class
 *.dll
@@ -22,8 +15,7 @@
 *.o
 *.so
 
-# Packages #
-############
+# Packages
 # it's better to unpack these files and commit the raw source
 # git has its own built in compression methods
 *.7z
@@ -37,46 +29,60 @@
 *.xz
 *.lzma
 
-# Logs and databases #
-######################
+# Logs and databases
 *.log
 *.sqlite
 *.sqlite3
 *.bash_history
 
-# OS generated files #
-######################
+# OS generated files
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
+thumbs.db
 
-# temporary files   #
-#####################
-*.sw?
+# temporary files
+*.un~
+# backups
+*.BUP
+*.bak
+*.o
+# temporary files
+*.swp
+*.swo
+*.tmp
+# state files
+*.pid
+*.state
+# error logs
+*.err
+*.error
+*.stderr
+# state dumps
+*.dump
+*.stackdump
+*.zcompdump
+*.zwc
+# tcpdump, network traffic capture
+*.pcap
+*.cap
+*.dmp
 
-# ssh, keys and etc #
-#####################
+# ssh, keys and etc
 *.ssh
 *.ssh/
 id_rsa
 id_rsa.*
 
-# svn               #
-#####################
+# svn
 *.svn/
 
-# git               #
-#####################
+# git
 *.git/
 
-# filezilla         #
-#####################
+# filezilla
 sitemanager.xml
 recentservers.xml
 trustedcerts.xml
 bookmarks.xml
-
-# backup files      #
-#####################
-*.bak*
