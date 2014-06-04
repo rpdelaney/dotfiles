@@ -320,7 +320,7 @@ if type keychain &> /dev/null; then
   [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh-gpg ]]  && source "$HOME"/.keychain/"$HOSTNAME"-sh-gpg
 else
   echo "keychain(1) not found."
-  if type ssh-agent &> /dev/null; then
+  if type ssh-agent &> /dev/null && [[ -z "$SSH_AGENT_PID" ]]; then
     if timeout --foreground 2s confirm "keychain(1) not found. initialize ssh-agent?"; then
        eval "$(ssh-agent)" \
        ssh-add -t 8h "$HOME/.ssh/id_rsa"
