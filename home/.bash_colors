@@ -102,6 +102,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .ods                  38;5;112
 .xla                  38;5;76
 #   Excel spreadsheet
+.xls                  38:5:112
 .xlsx                 38;5;112
 #   Excel spreadsheet with macros
 .xlsxm                38;5;112;4
@@ -205,6 +206,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .htm                  38;5;125;1
 .html                 38;5;125;1
 .jhtm                 38;5;125;1
+.mht                  38;5;125;1
 # }}}
 # java {{{2
 .coffee               38;5;074;1
@@ -484,10 +486,13 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 # state files
 .pid                  38;5;248
 .state                38;5;248
-# state dumps
-.dump                 38;5;241
+# error logs
 .err                  38;5;160;1
 .error                38;5;160;1
+.stderr               38;5;160;1
+# state dumps
+.dump                 38;5;241
+.stackdump            38;5;241
 .zcompdump            38;5;241
 .zwc                  38;5;241
 # tcpdump, network traffic capture
