@@ -60,6 +60,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 *README               38;5;220;1
 *LICENSE              38;5;220;1
 .log                  38;5;190
+.description          1
 # plain-text {{{2
 .txt                  38;5;253
 # markup {{{2
@@ -72,6 +73,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .tex                  38;5;184
 .textile              38;5;184
 # key-value, non-relational data {{{2
+.pgn                  38;5;178
 .xml                  38;5;178
 .json                 38;5;178
 .yml                  38;5;178
@@ -85,6 +87,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .PDF                  38;5;141
 # words {{{3
 .docm                 38;5;111;4
+.doc                  38;5;111
 .docx                 38;5;111
 .eps                  38;5;111
 .odb                  38;5;111
