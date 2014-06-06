@@ -373,7 +373,7 @@ fi
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
   # additional configuration options for when running in cygwin
-[[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
+[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
 # }}}
 # PRIVATE {{{1
 #
