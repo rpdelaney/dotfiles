@@ -231,7 +231,11 @@
 	url = git@github.com:rpdelaney/vim-pgsql.git
 [submodule "home/.vim/bundle/sprunge"]
 	url = git@github.com:chilicuil/vim-sprunge.git
-# }}}
-# vim: ft=gitconfig foldmethod=marker:
 [submodule "fdupes"]
 	url = git@github.com:tobiasschulz/fdupes.git
+[submodule "home/.vim/bundle/fugitive"]
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/vim-shell-executor"]
+	url = git@github.com:rpdelaney/vim-shell-executor.git
+
+# vim: ft=gitconfig foldmethod=marker:
