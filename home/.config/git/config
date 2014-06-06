@@ -14,10 +14,11 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-[user]
+[user] # {{{1
 	name = Ryan Delaney
 	email = ryan.delaney@gmail.com
-[core]
+# 1}}}
+[core] # {{{1
 	excludesfile = /home/ryan/.config/git/gitignore_global
 	whitespace=trailing-space,space-before-tab
 	# core.filemode
@@ -37,26 +38,32 @@
 		# automatically perform dos2unix conversion when committing
 		# text
 #	autocrlf = input
-[push]
+# 1}}}
+[push] # {{{1
 		# Only push the active branch unless told otherwise
 	default = tracking
-[branch]
+# 1}}}
+[branch] # {{{1
 		# auto-reupbase is dumb, because rebase is evil
 	autosetuprebase = never
-[diff]
+# 1}}}
+[diff] # {{{1
 	tool = vimdiff
 	renames = copies
 	mnemonicprefix = true
 [difftool]
 	prompt = true
-[merge]
+# 1}}}
+[merge] # {{{1
 	tool = vimdiff
 	conflictstyle = diff3
 [mergetool]
 	prompt = true
-[pager]
+# 1}}}
+[pager] # {{{1
 	diff = less
-[alias] # {{{
+# 1}}}
+[alias] # {{{1
 		# logs
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --no-merges
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
@@ -94,8 +101,8 @@
 		# searching
 	find = "!git ls-files | grep -i"
 	grep = "grep -Ii"
-# }}}
-[color] # {{{
+# 1}}}
+[color] # {{{1
 	diff = auto
 	status = auto
 	branch = auto
@@ -116,8 +123,8 @@
 	untracked = red bold
 [color "sh"]
 	branch = yellow
-# }}}
-[advice] # {{{
+# 1}}}
+[advice] # {{{1
 	# Set this variable to false if you want to disable
 	# pushNonFFCurrent, pushNonFFDefault, pushNonFFMatching,
 	# pushAlreadyExists, pushFetchFirst, and pushNeedsForce
@@ -192,7 +199,7 @@
     # In case of failure in the output of git-rm(1), show
     # directions on how to proceed from the current state.
     rmHints = true
-# }}}
+# 1}}}
 # Remotes {{{
 #
 	# If there are a large number of similarly-named remote repositories and you want
