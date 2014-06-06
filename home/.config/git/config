@@ -80,6 +80,7 @@
 	remotes = remote -v
 		# status
 	s  = status -s
+	st = status
 	sp = status --porcelain
 		# commits
 	c  = commit
