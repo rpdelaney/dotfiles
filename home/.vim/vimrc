@@ -38,7 +38,7 @@ set t_ut=
 set wildmenu
 	" Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
-
+    " 2}}}
 	" Syntax {{{2
 	" if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
@@ -46,8 +46,8 @@ if has('syntax') && !exists('g:syntax_on')
 		" use syntax engine to control folding
 	set foldmethod=syntax
 endif
-" Indentation {{{2
-"
+    " 2}}}
+	" Indentation {{{2
 	" do smart autoindenting on new lines
 set smartindent
 	" indent like the previous line
@@ -68,7 +68,7 @@ set shiftround
 if &tabpagemax < 50
   set tabpagemax=50
 endif
-
+    " 2}}}
 	" Orientation {{{2
 	" Tell me where I am in the file
 set ruler
@@ -79,8 +79,10 @@ set nonumber
 	" highlight current row 
 set cursorline
 set nocursorcolumn
+    " 2}}}
 	" Statusline {{{2
 	  set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+	" 2}}}
 	" Searching {{{2
 	" ignore case
 set ignorecase
@@ -94,7 +96,11 @@ set showmatch
 set incsearch
 	" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
-
+	" 2}}}
+	" Buffers {{{2 
+	" Permit switching buffers when the current buffer is dirty
+	set hidden	
+	" 2}}}
 	" Navigation {{{2
 set modeline
 	" what to do when I hit backspace
