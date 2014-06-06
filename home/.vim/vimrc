@@ -79,6 +79,8 @@ set nonumber
 	" highlight current row 
 set cursorline
 set nocursorcolumn
+	" Statusline {{{2
+	  set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 	" Searching {{{2
 	" ignore case
 set ignorecase

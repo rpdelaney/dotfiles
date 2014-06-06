@@ -239,3 +239,5 @@
 	url = git@github.com:rpdelaney/vim-shell-executor.git
 
 # vim: ft=gitconfig foldmethod=marker:
+[submodule "home/.vim/bundle/smartusline"]
+	url = git@github.com:molok/vim-smartusline.git
