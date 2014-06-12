@@ -117,7 +117,8 @@ if type grep &> /dev/null; then
 fi
 
     # mount
-alias mounts='\mount | \column -t | pager'
+type mount &> /dev/null && type column &> /dev/null && alias mounts='\mount | \column -t | pager'
+type mountpoint &> /dev/null && alias mp='mountpoint'
 
     # private shredder
 type shred &> /dev/null && alias shred=' shred -v'
