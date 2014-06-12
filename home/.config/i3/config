@@ -148,9 +148,6 @@ bindsym $mod+e exec dmenu_run
     # installed.
     # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # 3}}}
-    # start a terminal {{{3
-bindsym $mod+Return exec i3-sensible-terminal
-# 3}}}
     # screenshot {{{3
 bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
 # 3}}}
