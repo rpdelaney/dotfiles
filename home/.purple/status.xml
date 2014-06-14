@@ -1,6 +1,19 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
+	<status name='Auto-Cached' transient='true' created='1372729319' lastused='1402685208' usage_count='2'>
+		<state>available</state>
+		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
+		<substatus>
+			<account protocol='prpl-jabber'>ryan.delaney@gmail.com</account>
+			<state>available</state>
+			<message>&amp;quot;FUCK WHAT YA HEARD! YALL LICK BALLS IN BONERTOWN, USA AND THAT SHIT IS ABSURD!&amp;quot; -- Aristotle</message>
+		</substatus>
+	</status>
+	<status name='Shai Hulud' created='1402685226' lastused='1402685226' usage_count='1'>
+		<state>available</state>
+		<message>Jason Popps: i may have to rename my penis from mjollnir to shai-hulud</message>
+	</status>
 	<status name='Auto-Cached' transient='true' created='1399907083' lastused='1399907083' usage_count='1'>
 		<state>available</state>
 	</status>
@@ -23,15 +36,6 @@
 	<status name='fuck what ya herd' created='1374024761' lastused='1374024761' usage_count='1'>
 		<state>away</state>
 		<message>&amp;quot;FUCK WHAT YA HEARD - YALL LICK BALLS IN BONERTOWN USA AND THAT SHIT IS ABSURD&amp;quot; - Aristotle</message>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1372729319' lastused='1372729319' usage_count='1'>
-		<state>available</state>
-		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
-		<substatus>
-			<account protocol='prpl-jabber'>ryan.delaney@gmail.com</account>
-			<state>available</state>
-			<message>&amp;quot;FUCK WHAT YA HEARD! YALL LICK BALLS IN BONERTOWN, USA AND THAT SHIT IS ABSURD!&amp;quot; -- Aristotle</message>
-		</substatus>
 	</status>
 	<status name='Auto-Cached' transient='true' created='1367946306' lastused='1367946306' usage_count='1'>
 		<state>away</state>
