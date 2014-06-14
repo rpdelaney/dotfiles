@@ -124,4 +124,4 @@ schedule = watch_directory_10,10,10,"load=/home/ryan/torrent/video/*.torrent,d.s
 # You need to quote the command in this case.
 #on_finished = link3,"create_link=base_filename,/media/vault/outgoing/"
 
-# vim: set filetype=conf:
+# vim: set filetype=rtorrent:
