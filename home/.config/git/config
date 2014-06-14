@@ -249,3 +249,7 @@
 # vim: ft=gitconfig foldmethod=marker:
 [submodule "home/.vim/bundle/smartusline"]
 	url = git@github.com:molok/vim-smartusline.git
+[submodule "home/.vim/bundle/solarized"]
+	url = git@github.com:altercation/solarized.git
+[submodule "home/.vim/bundle/rtorrent"]
+	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
