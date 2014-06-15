@@ -3,9 +3,13 @@
 set line-graphics = utf-8
 set show-changes = true
 set tab-size = 2
+set diff-options = -y
+set commit-order = date
+set mouse = false
+set grep-view = file-name:yes line-number:yes,interval=1 text
 
-color default color254 color000
-color cursor color233 color109 #
+color default color254 color000 #
+color cursor color233 color109 # Cursor
 color title-focus color007 color234 #
 color title-blur color007 color243 #
 color delimiter color245 default #
@@ -17,26 +21,26 @@ color tree.directory color109 default # Directory
 color tree.file color223 default # Identifier
 
 # color commit color211 default
-# color graph-commit color190 default
-# color main-commit color205 default
-# color main-head color215 default
+color graph-commit color004 default
+# color main-commit color231 default
+# color main-head color123 default
 # color main-remote color204 default
 # color main-tracked color221 default
-# color main-tag color181 default #
-# color main-local-tag color189 default
-# color main-ref color186 default
+color main-tag color088 default #
+color main-local-tag color249 default # Exception
+#color main-ref color201 default
 # 
-# color status color236 color108 #
-# color status.header color232 color214
-# color status.section color231 color243
-# color stat-staged color108 default #
-# color stat-unstaged color184 default # ?
-# color stat-untracked color196 default # ?
+#color status color201 color108 #
+color status.header color187 default # Label
+color status.section color223 default # ModeMsg
+color stat-staged color108 default # SpecialComment
+color stat-unstaged color015 color236 # WarningMsg
+color stat-untracked color236 color210 # VisualNOS
 # 
 # color diff-header color231 color243
 # color diff-chunk color183 default
-# color diff-add color066 color237 #
-# color diff-del color236 color238 #
+color diff-add color066 color237 # DiffAdd
+color diff-del color236 color238 # DiffDel
 # color diff-stat color217 color237 #
 # color diff-oldmode color220 default
 # color diff-newmode color220 default
@@ -47,11 +51,11 @@ color tree.file color223 default # Identifier
 # color 'diff-tree ' color220 default
 # color diff-index color247 default
 # 
-# color date color166 default # ?
+color date color108 default # Comment
 # color 'Date: ' color166 default # ?
 # color 'Commit: ' color007 default # ?
 # color 'CommitDate: ' color214 default
-# color author color181 default # ?
+color author color079 default # ?
 # color 'AuthorDate: ' color166 default # ?
 # color 'Author: ' color181 default # ?
 # color pp-refs color190 default
