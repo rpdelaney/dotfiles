@@ -137,7 +137,7 @@ HISTFILESIZE=1000
   # Ignore some controlling instructions
   # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
   # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:l*:ll*:la*:ls*:lss*:lssa*:lsa*:.:..:....:dir*:whereami:ranger*:hist*'
+export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
 export HISTIGNORE="$HISTIGNORE"':clear'
 # }}}
 # }}}
