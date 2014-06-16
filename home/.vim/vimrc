@@ -39,6 +39,31 @@ set wildmenu
 	" Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
     " 2}}}
+	" Cursor {{{2
+"if &term =~ "xterm\\|rxvt|screen-256color"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+"endif
+
+if &term =~ '^xterm'
+  " solid underscore
+  let &t_SI .= "\<Esc>[4 q"
+  " solid block
+  let &t_EI .= "\<Esc>[2 q"
+  " 1 or 0 -> blinking block
+  " 3 -> blinking underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
+
+	" 2}}}
 	" Syntax {{{2
 	" if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
@@ -174,20 +199,27 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 	" e.g. method calls or attribute references via '.', '::' or '->', and file paths with '/'
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-p>"
-	" }}}
+	" 2}}}
 	" UltiSnips {{{2
 let g:UltiSnipsEditSplit            = "vertical"
 let g:UltiSnipsListSnippets         = "<c-tab>"
 let g:UltiSnipsExpandTrigger        = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
-
+	" 2}}}
 	" matchit {{{2
 	" Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-
+	" 2}}}
+	" smartusline {{{2
+let g:smartusline_string_to_highlight = '(%n) %f '
+let g:smartusline_hi_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
+let g:smartusline_hi_insert = 'guibg=orange guifg=black ctermbg=58 ctermfg=black'
+let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
+let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
+	" 2}}}
 " Functions {{{1
 "
 	" * Whitespace: {{{2
