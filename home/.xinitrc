@@ -25,4 +25,6 @@ export BROWSER="firefox"
 export DE="i3"
 exec i3
 
+	# Merge in .Xdefaults
+[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
 # vim: ft=conf
