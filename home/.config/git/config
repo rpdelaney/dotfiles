@@ -252,3 +252,6 @@
 [submodule "home/.vim/bundle/rtorrent"]
 	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
 # vim: ft=gitconfig foldmethod=marker:
+[gui]
+	wmstate = normal
+	geometry = 1920x1014+1680+18 192 177
