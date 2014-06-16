@@ -1,97 +1,147 @@
-#
-# zenburn terminal theme
-#
-# from http://snk.tuxfamily.org/log/zenburn-terminal-color-scheme.html
-#
-#~/.Xdefaults
-#
+! X cursor
+Xcursor.theme: Vanilla-DMZ
+! Xcursor.size: 16
 
-!BLK Cursor
-#define _color0        #000d18
-#define _color8        #000d18
 
-!RED Tag
-#define _color1        #e89393
-#define _color9        #e89393
+! XFT and Font settings
+Xft*dpi:       96
+Xft*antialias: true
+Xft*hinting:   true
+Xft*hintstyle: hintfull
+Xft*rgba:      rgb
+!*font: -*-terminus-medium-*-*-*-17-120-*-*-*-*-iso10646-1
+! *font: -*-proggyclean-*-*-*-*-*-80-*-*-*-*-*-*
 
-!GRN SpecialKey
-#define _color2        #9ece9e
-#define _color10       #9ece9e
 
-!YEL Keyword
-#define _color3        #f0dfaf
-#define _color11       #f0dfaf
+! General colors
+! *background: #000010
+! *foreground: #ffffff
+! *color0: #000000
+! *color1: #9e1828
+! *color2: #aece92
+! *color3: #968a38
+! *color4: #414171
+! *color5: #963c59
+! *color6: #418179
+! *color7: #bebebe
+! *color8: #666666
+! *color9: #cf6171
+! *color10: #c5f779
+! *color11: #fff796
+! *color12: #4186be
+! *color13: #cf9ebe
+! *color14: #71bebe
+! *color15: #ffffff
+! *cursorColor: magenta
 
-!BLU Number
-#define _color4        #8cd0d3
-#define _color12       #8cd0d3
+! XTerm
+XTerm*background: #000010
+XTerm*foreground: #ffffff
+XTerm*color0: #000000
+XTerm*color1: #9e1828
+XTerm*color2: #aece92
+XTerm*color3: #968a38
+XTerm*color4: #414171
+XTerm*color5: #963c59
+XTerm*color6: #418179
+XTerm*color7: #bebebe
+XTerm*color8: #666666
+XTerm*color9: #cf6171
+XTerm*color10: #c5f779
+XTerm*color11: #fff796
+XTerm*color12: #4186be
+XTerm*color13: #cf9ebe
+XTerm*color14: #71bebe
+XTerm*color15: #ffffff
+XTerm*cursorColor: magenta
 
-!MAG Precondit
-#define _color5        #c0bed1
-#define _color13       #c0bed1
+! disable the urxvt unicode input mechanism (I use a different one)
+URxvt.iso14755: false
+! URxvt.geometry: 80x25
+URxvt*font: xft:inconsolata:pixelsize=20,xft:consolas:pixelsize=20,xft:freemono:pixelsize=20
+!URxvt.font: xft:sourcecodepro:pixelsize:20,xft:inconsolata:pixelsize=20,xft:consolas:pixelsize=20
+URxvt*inheritPixmap: true
+! URxvt*tintColor: gray30
+URxvt.internalBorder: 0
+URxvt.jumpScroll: true
+! URxvt.loginShell: true
+URxvt.perl-ext-common: default,matcher,searchable-scrollback
+URxvt.pointerBlank: true
+URxvt.saveLines: 4000
+URxvt.secondaryScroll: true
+URxvt.scrollBar: false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollWithBuffer: true
+URxvt*urlLauncher: /usr/bin/xdg-open
 
-!CYN Float
-#define _color6        #dfaf8f
-#define _color14       #dfaf8f
+! Colors
+URxvt*cursorColor: #bfbfbf
+!URxvt*colorUL: #c5f779
+!URxvt*underlineColor: #c5f779
 
-!WHT Search
-#define _color7        #efefef
-#define _color15       #efefef
+urxvt*background: #101010
+urxvt*foreground: #f2f2f2
 
-!FMT Include, StatusLine, ErrorMsg
-#define _colorBD       #ffcfaf
-#define _colorUL       #ccdc90
-#define _colorIT       #80d4aa
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+urxvt*color0:    #101010
+urxvt*color1:    #e9897c
+urxvt*color2:    #b6e77d
+urxvt*color3:    #ecebbe
+urxvt*color4:    #a9cdeb
+urxvt*color5:    #ea96eb
+urxvt*color6:    #c9caec
+urxvt*color7:    #f2f2f2
+! Light
+! color8    black
+! color9    red
+! color10   green
+! color11   yellow
+! color12   blue
+! color13   purple
+! color14   cyan
+urxvt*color8:    #101010
+urxvt*color9:    #f99286
+urxvt*color10:   #c3f786
+urxvt*color11:   #fcfbcc
+urxvt*color12:   #b6defb
+urxvt*color13:   #fba1fb
+urxvt*color14:   #d7d9fc
+urxvt*color15:   #e2e2e2
 
-!TXT Normal, Normal, Cursor
-#define _foreground    #dcdccc
-#define _background    #1f1f1f
-#define _cursorColor   #8faf9f
+URxvt*color0: #3f3f3f
+URxvt*color1: #705050
+URxvt*color2: #60b48a
+URxvt*color3: #dfaf8f
+URxvt*color4: #506070
+URxvt*color5: #dc8cc3
+URxvt*color6: #8cd0d3
+URxvt*color7: #DCDCCC
+ 
+URxvt*color8: #709080
+URxvt*color9: #cc9393
+URxvt*color10: #7f9f7f
+URxvt*color11: #f0dfaf
+URxvt*color12: #94bff3
+URxvt*color13: #ec93d3
+URxvt*color14: #93e0e3
+URxvt*color15: #ffffff
 
-URxvt*color0         : _color0
-URxvt*color1         : _color1
-URxvt*color2         : _color2
-URxvt*color3         : _color3
-URxvt*color4         : _color4
-URxvt*color5         : _color5
-URxvt*color6         : _color6
-URxvt*color7         : _color7
-URxvt*color8         : _color8
-URxvt*color9         : _color9
-URxvt*color10        : _color10
-URxvt*color11        : _color11
-URxvt*color12        : _color12
-URxvt*color13        : _color13
-URxvt*color14        : _color14
-URxvt*color15        : _color15
-URxvt*colorBD        : _colorBD
-URxvt*colorIT        : _colorIT
-URxvt*colorUL        : _colorUL
-URxvt*foreground     : _foreground
-URxvt*background     : _background
-URxvt*cursorColor    : _cursorColor
 
-XTerm*color0         : _color0
-XTerm*color1         : _color1
-XTerm*color2         : _color2
-XTerm*color3         : _color3
-XTerm*color4         : _color4
-XTerm*color5         : _color5
-XTerm*color6         : _color6
-XTerm*color7         : _color7
-XTerm*color8         : _color8
-XTerm*color9         : _color9
-XTerm*color10        : _color10
-XTerm*color11        : _color11
-XTerm*color12        : _color12
-XTerm*color13        : _color13
-XTerm*color14        : _color14
-XTerm*color15        : _color15
-XTerm*colorBD        : _colorBD
-XTerm*colorIT        : _colorIT
-XTerm*colorUL        : _colorUL
-XTerm*foreground     : _foreground
-XTerm*background     : _background
-XTerm*cursorColor    : _cursorColor
 
-Xterm*termName       : xterm-256color
+
+! Emacs.geometry: 80x50
+! Emacs*font: DejaVu Sans Mono-12
+Emacs.pane.menubar.shadowThickness: 1
+Emacs.pane.menubar.margin: 1
+Emacs.toolBar: off
+Emacs.menuBar: off
+Emacs.verticalScrollBars: off
+Emacs.cursorColor: magenta
