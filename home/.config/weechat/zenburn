@@ -1,0 +1,157 @@
+#!/usr/bin/env bash
+#
+# load my zenesque colors using weechat FIFO plugin
+#
+
+Normal='188'
+Normal_bg='233'
+#Normal_bg='228'
+Boolean='181'
+Character='*181'
+Comment='108'
+Conditional='*223'
+Constant='*181'
+Cursor='*233'
+Cursor_bg='109'
+Debug='*181'
+Define='*223'
+Delimiter='245'
+DiffAdd='*66'
+DiffAdd_bg='237'
+DiffChange='66'
+DiffChange_bg='236'
+DiffDelete='236'
+DiffDelete_bg='238'
+DiffText='*217'
+DiffText_bg='237'
+Directory='*109'
+ErrorMsg='*115'
+ErrorMsg_bg='236'
+Exception='*249'
+Float='251'
+Folded='109'
+Folded_bg='233'
+Function='228'
+Identifier='223'
+IncSearch='238'
+IncSearch_bg='228'
+Keyword='*223'
+Label='_187'
+LineNr='248'
+LineNr_bg='233'
+Macro='*223'
+ModeMsg='223'
+MoreMsg='*15'
+Number='116'
+NonText='238'
+Operator='230'
+PreCondit='*180'
+PreProc='*223'
+Question='*15'
+Repeat='*223'
+Search='230'
+Search_bg='236'
+SpecialChar='*181'
+SpecialComment='*108'
+Special='181'
+SpecialKey='151'
+Statement='187'
+Statement_bg='234'
+StatusLine='236'
+StatusLine_bg='186'
+StatusLineNC='235'
+StatusLineNC_bg='108'
+StorageClass='*249'
+String='174'
+Structure='*229'
+Tag='*181'
+Title='*7'
+Title_bg='234'
+Todo='*108'
+Todo_bg='234'
+Typedef='*253'
+Type='*187'
+Underlined='_188'
+Underlined_bg='234'
+VertSplit='236'
+VertSplit_bg='65'
+VisualNOS='*236'
+VisualNOS_bg='210'
+WarningMsg='*15'
+WarningMsg_bg='236'
+WildMenu='*194'
+WildMenu_bg='236'
+SpellLocal='14'
+SpellLocal_bg='237'
+SpellBad='9'
+SpellBad_bg='237'
+SpellCap='12'
+SpellCap_bg='237'
+SpellRare='13'
+SpellRare_bg='237'
+PMenu='248'
+PMenu_bg='0'
+PMenuSel='223'
+PMenuSel_bg='235'
+
+echo "*/set weechat.color.bar_more ""$VertSplit"
+echo "*/set weechat.color.chat ""$Normal"
+echo "*/set weechat.color.chat_bg ""$Normal_bg"
+echo "*/set weechat.color.chat_buffer ""$Normal"
+echo "*/set weechat.color.chat_channel ""$Directory"
+echo "*/set weechat.color.chat_day_change ""$DiffChange"
+echo "*/set weechat.color.chat_delimiters ""$Delimiter"
+echo "*/set weechat.color.chat_highlight ""$IncSearch"
+echo "*/set weechat.color.chat_highlight_bg ""$IncSearch_bg"
+echo "*/set weechat.color.chat_host ""$SpecialChar"
+echo "*/set weechat.color.chat_inactive_buffer ""$Normal"
+echo "*/set weechat.color.chat_inactive_window ""$Normal"
+echo "*/set weechat.color.chat_nick ""$Identifier"
+echo "*/set weechat.color.chat_nick_colors "'"31,35,38,40,49,63,70,80,92,99,112,126,130,138,142,148,160,162,167,169,174,176,178,184,186,210,212,215,247"'
+echo "*/set weechat.color.chat_nick_offline ""$Folded"
+echo "*/set weechat.color.chat_nick_offline_highlight ""$Folded"
+echo "*/set weechat.color.chat_nick_offline_highlight_bg ""$Normal_bg"
+echo "*/set weechat.color.chat_nick_other ""$Identifier"
+echo "*/set weechat.color.chat_nick_prefix ""$Operator"
+echo "*/set weechat.color.chat_nick_self ""$Conditional"
+echo "*/set weechat.color.chat_nick_suffix ""$Operator"
+echo "*/set weechat.color.chat_prefix_action ""$PreProc"
+echo "*/set weechat.color.chat_prefix_buffer ""$Normal"
+echo "*/set weechat.color.chat_prefix_buffer_inactive_buffer ""$Normal"
+echo "*/set weechat.color.chat_prefix_error ""$ErrorMsg"
+echo "*/set weechat.color.chat_prefix_join ""$DiffAdd"
+echo "*/set weechat.color.chat_prefix_more ""$Normal"
+echo "*/set weechat.color.chat_prefix_network ""$Operator"
+echo "*/set weechat.color.chat_prefix_quit ""$DiffDelete"
+echo "*/set weechat.color.chat_prefix_suffix ""$Operator"
+echo "*/set weechat.color.chat_read_marker ""$VertSplit"
+echo "*/set weechat.color.chat_read_marker_bg ""$VertSplit_bg"
+echo "*/set weechat.color.chat_server ""$Title"
+echo "*/set weechat.color.chat_tags ""$Tag"
+echo "*/set weechat.color.chat_text_found ""$Search"
+echo "*/set weechat.color.chat_text_found_bg ""$Search_bg"
+echo "*/set weechat.color.chat_time ""$Number"
+echo "*/set weechat.color.chat_time_delimiters ""$Delimiter"
+echo "*/set weechat.color.chat_value ""$Number"
+echo "*/set weechat.color.emphasized ""$ErrorMsg"
+echo "*/set weechat.color.emphasized_bg ""$ErrorMsg_bg"
+echo "*/set weechat.color.input_actions ""$Normal"
+echo "*/set weechat.color.input_text_not_found ""$ErrorMsg"
+echo "*/set weechat.color.nicklist_away ""$Folded"
+echo "*/set weechat.color.nicklist_group ""$Directory"
+echo "*/set weechat.color.nicklist_offline ""$NonText"
+echo "*/set weechat.color.separator ""$VertSplit"
+echo "*/set weechat.color.status_count_highlight ""$Label"
+echo "*/set weechat.color.status_count_msg ""$Number"
+echo "*/set weechat.color.status_count_other ""$Number"
+echo "*/set weechat.color.status_count_private ""$Number"
+echo "*/set weechat.color.status_data_highlight ""$IncSearch_bg"
+echo "*/set weechat.color.status_data_msg ""$Normal"
+echo "*/set weechat.color.status_data_other ""$Normal"
+echo "*/set weechat.color.status_data_private ""$Tag"
+echo "*/set weechat.color.status_filter ""$WildMenu"
+echo "*/set weechat.color.status_more ""$DiffAdd"
+echo "*/set weechat.color.status_name ""$Exception"
+echo "*/set weechat.color.status_name_ssl ""$Exception"
+echo "*/set weechat.color.status_number ""$Number"
+echo "*/set weechat.color.status_time ""$Number"
