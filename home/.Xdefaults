@@ -2,6 +2,7 @@
 Xcursor.theme: Vanilla-DMZ
 ! Xcursor.size: 16
 
+*urlLauncher: /usr/bin/xdg-open
 
 ! XFT and Font settings
 Xft*dpi:       96
@@ -9,134 +10,107 @@ Xft*antialias: true
 Xft*hinting:   true
 Xft*hintstyle: hintfull
 Xft*rgba:      rgb
-!*font: -*-terminus-medium-*-*-*-17-120-*-*-*-*-iso10646-1
-! *font: -*-proggyclean-*-*-*-*-*-80-*-*-*-*-*-*
+*font: xft:Inconsolata\-g:style=g:pixelsize=20,xft:Courier New:pixelsize=20,xft:FreeMono:style=Bold:pixelsize=20
 
+*cursorColor: #bfbfbf
+*colorUL: #c5f779
+*underlineColor: #c5f779
+*background: #101010
+*foreground: #f2f2f2
+! color0    black
+*color0: #3f3f3f
+! color8    light black
+*color8: #709080
+! color1    red
+*color1: #705050
+! color9    light red
+*color9: #cc9393
+! color2    green
+*color2: #60b48a
+! color10   light green
+*color10: #7f9f7f
+! color3    yellow
+*color3: #dfaf8f
+! color11   light yellow
+*color11: #f0dfaf
+! color4    blue
+*color4: #3399CC
+! color12   light blue
+*color12: #91C9E8
+! color5    purple
+*color5: #dc8cc3
+! color13   light purple
+*color13: #ec93d3
+! color6    cyan
+*color6: #8cd0d3
+! color14   light cyan
+*color14: #93e0e3
+! color7    white
+*color7: #DCDCCC
+! color15:  light white
+*color15: #ffffff
 
-! General colors
-! *background: #000010
-! *foreground: #ffffff
-! *color0: #000000
-! *color1: #9e1828
-! *color2: #aece92
-! *color3: #968a38
-! *color4: #414171
-! *color5: #963c59
-! *color6: #418179
-! *color7: #bebebe
-! *color8: #666666
-! *color9: #cf6171
-! *color10: #c5f779
-! *color11: #fff796
-! *color12: #4186be
-! *color13: #cf9ebe
-! *color14: #71bebe
-! *color15: #ffffff
-! *cursorColor: magenta
-
-! XTerm
-XTerm*background: #000010
-XTerm*foreground: #ffffff
-XTerm*color0: #000000
-XTerm*color1: #9e1828
-XTerm*color2: #aece92
-XTerm*color3: #968a38
-XTerm*color4: #414171
-XTerm*color5: #963c59
-XTerm*color6: #418179
-XTerm*color7: #bebebe
-XTerm*color8: #666666
-XTerm*color9: #cf6171
-XTerm*color10: #c5f779
-XTerm*color11: #fff796
-XTerm*color12: #4186be
-XTerm*color13: #cf9ebe
-XTerm*color14: #71bebe
-XTerm*color15: #ffffff
-XTerm*cursorColor: magenta
-
+! Urxvt
+! Locale
+URxvt.imLocale: en_US.UTF-8
 ! disable the urxvt unicode input mechanism (I use a different one)
 URxvt.iso14755: false
 ! URxvt.geometry: 80x25
-URxvt*font: xft:inconsolata:pixelsize=20,xft:consolas:pixelsize=20,xft:freemono:pixelsize=20
-!URxvt.font: xft:sourcecodepro:pixelsize:20,xft:inconsolata:pixelsize=20,xft:consolas:pixelsize=20
 URxvt*inheritPixmap: true
-! URxvt*tintColor: gray30
 URxvt.internalBorder: 0
 URxvt.jumpScroll: true
 ! URxvt.loginShell: true
 URxvt.perl-ext-common: default,matcher,searchable-scrollback
 URxvt.pointerBlank: true
-URxvt.saveLines: 4000
+URxvt.saveLines: 8192
 URxvt.secondaryScroll: true
 URxvt.scrollBar: false
 URxvt.scrollTtyKeypress: true
 URxvt.scrollWithBuffer: true
-URxvt*urlLauncher: /usr/bin/xdg-open
+URxvt.visualBell: true
+URxvt.insecure: false
 
 ! Colors
-URxvt*cursorColor: #bfbfbf
-!URxvt*colorUL: #c5f779
-!URxvt*underlineColor: #c5f779
-
-urxvt*background: #101010
-urxvt*foreground: #f2f2f2
-
-! Normal
-! color0    black
-! color1    red
-! color2    green
-! color3    yellow
-! color4    blue
-! color5    purple
-! color6    cyan
-! color7    white
-urxvt*color0:    #101010
-urxvt*color1:    #e9897c
-urxvt*color2:    #b6e77d
-urxvt*color3:    #ecebbe
-urxvt*color4:    #a9cdeb
-urxvt*color5:    #ea96eb
-urxvt*color6:    #c9caec
-urxvt*color7:    #f2f2f2
-! Light
-! color8    black
-! color9    red
-! color10   green
-! color11   yellow
-! color12   blue
-! color13   purple
-! color14   cyan
-urxvt*color8:    #101010
-urxvt*color9:    #f99286
-urxvt*color10:   #c3f786
-urxvt*color11:   #fcfbcc
-urxvt*color12:   #b6defb
-urxvt*color13:   #fba1fb
-urxvt*color14:   #d7d9fc
-urxvt*color15:   #e2e2e2
-
-URxvt*color0: #3f3f3f
-URxvt*color1: #705050
-URxvt*color2: #60b48a
-URxvt*color3: #dfaf8f
-URxvt*color4: #506070
-URxvt*color5: #dc8cc3
-URxvt*color6: #8cd0d3
-URxvt*color7: #DCDCCC
- 
-URxvt*color8: #709080
-URxvt*color9: #cc9393
-URxvt*color10: #7f9f7f
-URxvt*color11: #f0dfaf
-URxvt*color12: #94bff3
-URxvt*color13: #ec93d3
-URxvt*color14: #93e0e3
-URxvt*color15: #ffffff
+# ! urxvt*color0:    #101010
+# ! urxvt*color1:    #e9897c
+# ! urxvt*color2:    #b6e77d
+# ! urxvt*color3:    #ecebbe
+# ! urxvt*color4:    #a9cdeb
+# ! urxvt*color5:    #ea96eb
+# ! urxvt*color6:    #c9caec
+# ! urxvt*color7:    #f2f2f2
+# ! urxvt*color8:    #101010
+# ! urxvt*color9:    #f99286
+# ! urxvt*color10:   #c3f786
+# ! urxvt*color11:   #fcfbcc
+# ! urxvt*color12:   #b6defb
+# ! urxvt*color13:   #fba1fb
+# ! urxvt*color14:   #d7d9fc
+# ! urxvt*color15:   #e2e2e2
 
 
+! XTerm
+! XTerm*background: #000010
+! XTerm*foreground: #ffffff
+! XTerm*color0: #000000
+! XTerm*color1: #9e1828
+! XTerm*color2: #aece92
+! XTerm*color3: #968a38
+! XTerm*color4: #414171
+! XTerm*color5: #963c59
+! XTerm*color6: #418179
+! XTerm*color7: #bebebe
+! XTerm*color8: #666666
+! XTerm*color9: #cf6171
+! XTerm*color10: #c5f779
+! XTerm*color11: #fff796
+! XTerm*color12: #4186be
+! XTerm*color13: #cf9ebe
+! XTerm*color14: #71bebe
+! XTerm*color15: #ffffff
+! XTerm*cursorColor: magenta
 
-
+! Emacs
 ! Emacs.geometry: 80x50
 ! Emacs*font: DejaVu Sans Mono-12
 Emacs.pane.menubar.shadowThickness: 1
