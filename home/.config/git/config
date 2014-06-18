@@ -239,7 +239,7 @@
 	url = git@github.com:rpdelaney/vim-pgsql.git
 [submodule "home/.vim/bundle/sprunge"]
 	url = git@github.com:chilicuil/vim-sprunge.git
-[submodule "fdupes"]
+[submodule "home/bin/fdupes"]
 	url = git@github.com:tobiasschulz/fdupes.git
 [submodule "home/.vim/bundle/fugitive"]
 	url = git@github.com:tpope/vim-fugitive.git
@@ -251,7 +251,10 @@
 	url = git@github.com:altercation/solarized.git
 [submodule "home/.vim/bundle/rtorrent"]
 	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
-# vim: ft=gitconfig foldmethod=marker:
+[submodule "home/.vim/bundle/json"]
+	url = git@github.com:jkufner/vim-json.git
+[submodule "home/.vim/bundle/sourcepawn"]
+	url = git@github.com:/withgod/vim-sourcepawn.git
 [gui]
 	wmstate = normal
 	geometry = 1920x1014+1680+18 192 177

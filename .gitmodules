@@ -31,3 +31,9 @@
 [submodule "home/.vim/bundle/rtorrent"]
 	path = home/.vim/bundle/rtorrent
 	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
+[submodule "home/.vim/bundle/json"]
+	path = home/.vim/bundle/json
+	url = git@github.com:jkufner/vim-json.git
+[submodule "home/.vim/bundle/sourcepawn"]
+	path = home/.vim/bundle/sourcepawn
+	url = git@github.com:/withgod/vim-sourcepawn.git
