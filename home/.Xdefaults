@@ -10,7 +10,7 @@ Xft*antialias: true
 Xft*hinting:   true
 Xft*hintstyle: hintfull
 Xft*rgba:      rgb
-*font: xft:Inconsolata\-g:style=g:pixelsize=20,xft:Courier New:pixelsize=20,xft:FreeMono:style=Bold:pixelsize=20
+*font: xft:Inconsolata\-g:style=g:pixelsize=20,xft:FreeMono:style=Bold:pixelsize=20,xft:Courier New:pixelsize=20
 
 *cursorColor: #bfbfbf
 *colorUL: #c5f779
