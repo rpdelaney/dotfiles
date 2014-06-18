@@ -1,14 +1,15 @@
 [global_config]
   window_state = maximise
   handle_size = 0
+  custom_url_handler = xdg-open
   enabled_plugins = ,
   dbus = True
   focus = system
+  use_custom_url_handler = True
   title_inactive_fg_color = "#ffffff"
   always_on_top = True
   geometry_hinting = False
   title_transmit_bg_color = "#00bfc8"
-  inactive_color_offset = 0.92
 [keybindings]
   cycle_prev = None
   next_tab = None
@@ -54,9 +55,9 @@
   toggle_scrollbar = None
 [profiles]
   [[default]]
-    scrollbar_position = hidden
+    update_records = False
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#1e90ff:#cd00cd:#00cdcd:#e5e5e5:#4c4c4c:#ff0000:#00ff00:#ffff00:#4682b4:#ff00ff:#00ffff:#ffffff"
-    font = Inconsolata Medium 16
+    font = Inconsolata-g Medium 15
     visible_bell = True
     background_image = None
     background_darkness = 1.02
@@ -64,13 +65,15 @@
     use_system_font = False
     cursor_color = "#afab8f"
     foreground_color = "#ffffff"
-    update_records = False
+    backspace_binding = automatic
     scroll_on_output = False
     icon_bell = False
     show_titlebar = False
     custom_command = xterm
+    delete_binding = automatic
     scroll_on_keystroke = False
     copy_on_selection = True
+    scrollbar_position = hidden
 [layouts]
   [[default]]
     [[[child1]]]
