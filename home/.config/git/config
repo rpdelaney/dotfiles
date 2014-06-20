@@ -258,3 +258,5 @@
 [gui]
 	wmstate = normal
 	geometry = 1920x1014+1680+18 192 177
+[submodule "home/.vim/bundle/psqlrc"]
+	url = git@github.com:rpdelaney/vim-psqlrc.git

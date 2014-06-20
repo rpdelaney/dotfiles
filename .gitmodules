@@ -37,3 +37,6 @@
 [submodule "home/.vim/bundle/sourcepawn"]
 	path = home/.vim/bundle/sourcepawn
 	url = git@github.com:/withgod/vim-sourcepawn.git
+[submodule "home/.vim/bundle/psqlrc"]
+	path = home/.vim/bundle/psqlrc
+	url = git@github.com:rpdelaney/vim-psqlrc.git
