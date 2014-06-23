@@ -245,8 +245,6 @@
 	url = git@github.com:tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/vim-shell-executor"]
 	url = git@github.com:rpdelaney/vim-shell-executor.git
-[submodule "home/.vim/bundle/smartusline"]
-	url = git@github.com:molok/vim-smartusline.git
 [submodule "home/.vim/bundle/solarized"]
 	url = git@github.com:altercation/solarized.git
 [submodule "home/.vim/bundle/rtorrent"]
@@ -260,3 +258,5 @@
 	geometry = 1920x1014+1680+18 192 177
 [submodule "home/.vim/bundle/psqlrc"]
 	url = git@github.com:rpdelaney/vim-psqlrc.git
+[submodule "home/.vim/bundle/airline"]
+	url = git@github.com:bling/vim-airline.git
