@@ -1,4 +1,5 @@
 \set AUTOCOMMIT off
+\set ON_ERROR_ROLLBACK on
 \set ENCODING UTF8
 \set HISTSIZE 1000
 \set HISTCONTROL ignoredups
