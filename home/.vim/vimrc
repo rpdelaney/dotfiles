@@ -3,7 +3,7 @@ call pathogen#infect()
 
 " Interface {{{1
 "
-" Styles {{{2
+	" Styles {{{2
 	" Colorscheme {{{3
 	" Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
@@ -15,7 +15,10 @@ else
 	set t_Co=256
 	let g:zenburn_high_contrast=1
 	colorscheme zenburn
-endif " }}}
+endif 
+	" Disable background color erase - this could cause bugs in some terminals
+set t_ut=
+	" 3}}}
 	" Listchars {{{3
 	" listchars to highlight stuff we don't like
 set list
@@ -32,22 +35,16 @@ else
 	" Show this character on a wrapped line
 	set showbreak=
 endif " }}}
-	" Disable background color erase - this could cause bugs in some terminals
-set t_ut=
-	" enable enhanced command-line completion
-set wildmenu
-	" Exclude these files and directories from search
-set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
     " 2}}}
 	" Cursor {{{2
 "if &term =~ "xterm\\|rxvt|screen-256color"
 " " use an orange cursor in insert mode
-" let &t_SI = "\<Esc>]12;orange\x7"
+  let &t_SI = "\<Esc>]12;orange\x7"
 " " use a red cursor otherwise
-" let &t_EI = "\<Esc>]12;red\x7"
+  let &t_EI = "\<Esc>]12;white\x7"
 " silent !echo -ne "\033]12;red\007"
 " " reset cursor when vim exits
-" autocmd VimLeave * silent !echo -ne "\033]112\007"
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
 " " use \003]12;gray\007 for gnome-terminal
 "endif
 
@@ -106,9 +103,17 @@ set cursorline
 set nocursorcolumn
     " 2}}}
 	" Statusline {{{2
-	  set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+	" show last command
+set showcmd
+	" Always show the file status
+set laststatus=2
 	" 2}}}
 	" Searching {{{2
+	" enable enhanced command-line completion
+set wildmenu
+	" Exclude these files and directories from search
+set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
 	" ignore case
 set ignorecase
 	" highlight all search matches
@@ -146,21 +151,8 @@ set spellfile="~/.aspell/vim.utf8.add"
 	" Other {{{2
 	"
 set complete-=i
-	" look for modelines
-	" Always show the file status
-set laststatus=2
-	" show last command
-set showcmd
 	"
-if !&scrolloff
-  set scrolloff=1
-endif
-	"
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
-	"
-set display+=lastline
+" set display+=lastline
 	" update the buffer if the source file changes on disk and we have not edited it
 set autoread
 	" Enforce 1000 lines of history maximum
@@ -171,7 +163,7 @@ endif
 if !empty(&viminfo)
   set viminfo^=!
 endif
-
+	" 2}}}
 " Bindings {{{1
 "
 	" stop using arrow keys ya dummy
