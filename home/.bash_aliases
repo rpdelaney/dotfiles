@@ -93,7 +93,6 @@ fi
     # disk usage in plain english
 alias disk='\df -lTH'
 alias df='\df -h'
-alias du='\df -c -h'
 
     # gpg is the new pgp
 type gpg &> /dev/null && alias pgp='gpg'
