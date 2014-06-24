@@ -42,7 +42,7 @@ EXEC                  38;5;208;1
 FIFO                  38;5;126
 FILE                  38;5;253
 LINK                  target
-MULTIHARDLINK         38;5;220;1
+MULTIHARDLINK         38;5;222;1
 # "NORMAL don't reset the bold attribute -
 # https://github.com/trapd00r/LS_COLORS/issues/11
 #NORMAL                38;5;254
@@ -59,6 +59,9 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 # documents {{{1
 *README               38;5;220;1
 *LICENSE              38;5;220;1
+*COPYRIGHT            38;5;220;1
+*AUTHORS              38;5;220;1
+*HISTORY              38;5;220;1
 .log                  38;5;190
 .description          1
 # plain-text {{{2
@@ -73,6 +76,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .tex                  38;5;184
 .textile              38;5;184
 # key-value, non-relational data {{{2
+.msg                  38;5;178
 .pgn                  38;5;178
 .xml                  38;5;178
 .json                 38;5;178
@@ -102,7 +106,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .ods                  38;5;112
 .xla                  38;5;76
 #   Excel spreadsheet
-.xls                  38:5:112
+.xls                  38;5;112
 .xlsx                 38;5;112
 #   Excel spreadsheet with macros
 .xlsxm                38;5;112;4
@@ -229,7 +233,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .am                   38;5;242
 .in                   38;5;242
 .old                  38;5;242
-.out                  38;5;46;1
+.out                  38;5;242
 .SKIP                 38;5;244
 # }}}
 # patch files {{{2
@@ -255,6 +259,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .divx                 38;5;114
 .IFO                  38;5;114
 .m2v                  38;5;114
+.m4v                  38;5;114
 .mkv                  38;5;114
 .MOV                  38;5;114
 .mov                  38;5;114
@@ -310,6 +315,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .pfb                  38;5;66
 .pfm                  38;5;66
 .ttf                  38;5;66
+.otf                  38;5;66
 #   postscript fonts
 .PFA                  38;5;66
 .pfa                  38;5;66
@@ -331,6 +337,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .jad                  38;5;215
 .jar                  38;5;215
 .cab                  38;5;215
+.pak                  38;5;215
 .vdf                  38;5;215
 .vpk                  38;5;215
 .bsp                  38;5;215
@@ -486,6 +493,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 # state files
 .pid                  38;5;248
 .state                38;5;248
+*lockfile             38;5;248
 # error logs
 .err                  38;5;160;1
 .error                38;5;160;1
