@@ -15,7 +15,7 @@ else
 	set t_Co=256
 	let g:zenburn_high_contrast=1
 	colorscheme zenburn
-endif 
+endif
 	" Disable background color erase - this could cause bugs in some terminals
 set t_ut=
 	" 3}}}
@@ -35,7 +35,7 @@ else
 	" Show this character on a wrapped line
 	set showbreak=
 endif " }}}
-    " 2}}}
+	" 2}}}
 	" Cursor {{{2
 "if &term =~ "xterm\\|rxvt|screen-256color"
 " " use an orange cursor in insert mode
@@ -68,7 +68,7 @@ if has('syntax') && !exists('g:syntax_on')
 		" use syntax engine to control folding
 	set foldmethod=syntax
 endif
-    " 2}}}
+	" 2}}}
 	" Indentation {{{2
 	" do smart autoindenting on new lines
 set smartindent
@@ -90,7 +90,7 @@ set shiftround
 if &tabpagemax < 50
   set tabpagemax=50
 endif
-    " 2}}}
+	" 2}}}
 	" Orientation {{{2
 	" Tell me where I am in the file
 set ruler
@@ -98,10 +98,10 @@ set ruler
 set relativenumber
 	" don't show line numbers in absolute terms
 set nonumber
-	" highlight current row 
+	" highlight current row
 set cursorline
 set nocursorcolumn
-    " 2}}}
+	" 2}}}
 	" Statusline {{{2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 	" show last command
@@ -127,9 +127,9 @@ set incsearch
 	" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
 	" 2}}}
-	" Buffers {{{2 
+	" Buffers {{{2
 	" Permit switching buffers when the current buffer is dirty
-	set hidden	
+	set hidden
 	" 2}}}
 	" Navigation {{{2
 set modeline
@@ -180,7 +180,9 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 	" Editing a protected file as 'sudo'
 " cmap W w !sudo tee % >/dev/null<CR>
-
+	" Copy-paste mode
+noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
+noremap <silent> <c-p> :set paste! <CR> <Insert>
 " Plugins {{{1
 "
 	" supertab {{{2
@@ -193,9 +195,9 @@ let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-p>"
 	" 2}}}
 	" UltiSnips {{{2
-let g:UltiSnipsEditSplit            = "vertical"
-let g:UltiSnipsListSnippets         = "<c-tab>"
-let g:UltiSnipsExpandTrigger        = "<s-tab>"
+let g:UltiSnipsEditSpli	        = "vertical"
+let g:UltiSnipsListSnippet	     = "<c-tab>"
+let g:UltiSnipsExpandTrigge	    = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
 	" 2}}}
@@ -213,7 +215,6 @@ let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magent
 let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
 	" 2}}}
 " Functions {{{1
-"
 	" * Whitespace: {{{2
 	" remove whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -238,40 +239,40 @@ command -bar Hexmode call ToggleHex()
 
 "" helper function to toggle hex mode
 function ToggleHex()
-  " hex mode should be considered a read-only operation
-  " save values for modified and read-only for restoration later,
-  " and clear the read-only flag for now
-  let l:modified=&mod
-  let l:oldreadonly=&readonly
-  let &readonly=0
-  let l:oldmodifiable=&modifiable
-  let &modifiable=1
-  if !exists("b:editHex") || !b:editHex
-	" save old options
-	let b:oldft=&ft
-	let b:oldbin=&bin
-	" set new options
-	setlocal binary " make sure it overrides any textwidth, etc.
-	let &ft="xxd"
-	" set status
-	let b:editHex=1
-	" switch to hex editor
-	%!xxd
-  else
-	" restore old options
-	let &ft=b:oldft
-	if !b:oldbin
-	  setlocal nobinary
+	" hex mode should be considered a read-only operation
+	" save values for modified and read-only for restoration later,
+	" and clear the read-only flag for now
+	let l:modified=&mod
+	let l:oldreadonly=&readonly
+	let &readonly=0
+	let l:oldmodifiable=&modifiable
+	let &modifiable=1
+	if !exists("b:editHex") || !b:editHex
+		" save old options
+		let b:oldft=&ft
+		let b:oldbin=&bin
+		" set new options
+		setlocal binary " make sure it overrides any textwidth, etc.
+		let &ft="xxd"
+		" set status
+		let b:editHex=1
+		" switch to hex editor
+		%!xxd
+	else
+		" restore old options
+		let &ft=b:oldft
+		if !b:oldbin
+	setlocal nobinary
+		endif
+		" set status
+		let b:editHex=0
+		" return to normal editing
+		%!xxd -r
 	endif
-	" set status
-	let b:editHex=0
-	" return to normal editing
-	%!xxd -r
-  endif
-  " restore values for modified and read only state
-  let &mod=l:modified
-  let &readonly=l:oldreadonly
-  let &modifiable=l:oldmodifiable
+	" restore values for modified and read only state
+	let &mod=l:modified
+	let &readonly=l:oldreadonly
+	let &modifiable=l:oldmodifiable
 endfunction
 
 " Files {{{1
