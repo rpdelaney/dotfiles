@@ -208,7 +208,12 @@ if type gpg &> /dev/null; then
   if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]]; then export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"; fi
 fi
   # Don't ask which gpg key to use with the pass store; use this one
-if type pass &> /dev/null; then export PASSWORD_STORE_KEY="0D98863B4E1D07B6"; fi
+if type pass &> /dev/null; then 
+  export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
+  export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
+  export PASSWORD_STORE_CLIP_TIME="15"
+  export PASSWORD_STORE_UMASK="0600"
+fi
 # }}}
 # MUTT {{{2
 if type mutt &> /dev/null; then
