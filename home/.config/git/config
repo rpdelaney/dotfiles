@@ -260,3 +260,5 @@
 	url = git@github.com:rpdelaney/vim-psqlrc.git
 [submodule "home/.vim/bundle/airline"]
 	url = git@github.com:bling/vim-airline.git
+[submodule "home/.vim/bundle/gitgutter"]
+	url = git@github.com:airblade/vim-gitgutter.git
