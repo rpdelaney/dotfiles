@@ -102,10 +102,24 @@ done
 # SHELL OPTIONS {{{2
 #
 # SHOPT {{{3
-  # Don't wait for job termination notification
-# set -o notify
-  # Don't use ^D to exit
-# set -o ignoreeof
+  # causes the shell to notify the user asynchronously of background job
+  # completions.
+set -b
+  # causes the shell to exit if any command exits nonzero, excepting procedural
+  # logic and subshells (see `man set`)
+set +e
+  # Don't use ^D to exit a shell: require an explicit exit command
+set -o ignoreeof
+  # Allow shell command line editing using the built-in vi editor. Enabling vi
+  # mode shall  disable any other command line editing mode provided as an
+  # implementation extension.
+set -o vi
+  # The shell shall read commands but does not execute them; this can be used to
+  # check for shell script syn‐ tax errors. An interactive shell may ignore this
+  # option. 
+#set -o noexec
+  # The shell shall write its input to standard error as it is read.
+#set -v
   # Use case-insensitive filename globbing
 shopt -s nocaseglob
   # Make bash append rather than overwrite the history on disk
