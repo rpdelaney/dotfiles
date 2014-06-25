@@ -267,3 +267,5 @@
 	url = git@github.com:rpdelaney/better-header.git
 [submodule "home/.vim/bundle/syntastic"]
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "home/.vim/bundle/gnupg"]
+	url = https://github.com/jamessan/vim-gnupg.git
