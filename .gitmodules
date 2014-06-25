@@ -8,7 +8,7 @@
 	path = home/.vim/bundle/excel
 	url = git@github.com:yakiang/excel.vim.git
 [submodule "home/.vim/bundle/vim-daylight"]
-	path = home/.vim/bundle/vim-daylight
+	path = home/.vim/bundle/daylight
 	url = git@github.com:rpdelaney/vim-daylight.git
 [submodule "home/.vim/bundle/pgsql"]
 	path = home/.vim/bundle/pgsql
