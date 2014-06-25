@@ -77,7 +77,8 @@
 	fd = fetch --dry-run
 	fp = fetch --prune
 		# merge
-	m = mergetool -t vimdiff
+	m = merge
+	mt = mergetool -t vimdiff
 	cp = cherry-pick
 	dc = diff --cached
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
