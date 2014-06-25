@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/better-header"]
 	path = home/.vim/bundle/better-header
 	url = git@github.com:rpdelaney/better-header.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
