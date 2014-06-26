@@ -1,15 +1,10 @@
 snippet table "table schema definition" b
 /*
-	table: ${1:tableName}
-	${2:tableComment}
+	${1:tabletype}table: ${2:tableName}
+	${3:tableComment}
 	created on: `date`
-
-	© Copyright `date +%Y` ${1:Ryan Delaney}. All rights reserved. This work is
-	distributed WITHOUT ANY WARRANTY whatsoever; without even the implied
-	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	README file for terms and conditions on your use of this software.
 */
-create table $1
+create $1table $2
 (
 		-- primary key column
 	id			  serial
@@ -23,17 +18,17 @@ create table $1
 		-- data validation constraints
 		-- foreign key constraints
 		-- primary key constraint
-,   constraint pkey_$1				primary key (id)
+,   constraint pkey_$2				primary key ( id )
 );
 	-- privileges
-alter		table			$1 owner to		${3:postgres};
-grant		all	  on		$1 to			$3;
-revoke		all	  on		$1 from			public;
+alter		table			$2 owner to		${4:postgres};
+grant		all	  on		$2 to			$4;
+revoke		all	  on		$2 from			public;
 	-- indexes
 	-- triggers
 	-- comments
-comment on table	$1				is '$2';
-comment on column	$1.id			is 'primary key';
+comment on table	$2				is '$3';
+comment on column	$2.id			is 'primary key';
 endsnippet
 snippet function "function definer" b
 /*
@@ -120,4 +115,3 @@ begin
 			raise exception '${1:functionName}(): FATAL - an unhandled exception caused the transaction to be rolled back.';
 end;
 endsnippet
-
