@@ -269,3 +269,5 @@
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/gnupg"]
 	url = https://github.com/jamessan/vim-gnupg.git
+[submodule "aurvote"]
+	url = https://github.com/rpdelaney/aurvote
