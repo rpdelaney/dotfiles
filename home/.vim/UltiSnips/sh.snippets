@@ -1,7 +1,3 @@
-snippet fold "generic fold" b
-# $1 {{{$2
-# $2}}}
-endsnippet
 snippet shebang "shebang for bash"
 #!/usr/bin/env bash
 # `bash --version | head -n 1`
@@ -81,8 +77,3 @@ endsnippet
 snippet depends "template for dependency check"
 if ! type $1 &> /dev/null; then echo "ERROR: Missing dependency: $1" 1>&2; exit 1; fi
 endsnippet
-snippet modelines
-# vim: ft=sh foldmethod=marker:
-endsnippet
-
-# vim: ft=snippets foldmethod=marker:
