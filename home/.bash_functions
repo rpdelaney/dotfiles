@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
+
 speedtest() { 
   if [[ -z "$1" ]]; then
     host="localhost"
@@ -13,17 +15,7 @@ speedtest() {
     size="$2"
   fi
 
-# yes | pv --wait --name "$host" --size "$size" --stop-at-size  --progress --numeric --rate --average-rate --buffer-percent | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host" --size "$size" --stop-at-size  --progress --numeric --rate --average-rate  | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host" --size "$size" --stop-at-size  --progress --numeric --rate   | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host" --size "$size" --stop-at-size  --progress  | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host" --size "$size" --stop-at-size --eta  | ssh "$host" "cat > /dev/null"
   yes | pv --wait --name "$host" --size "$size" --stop-at-size | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host" --size "$size"  | ssh "$host" "cat > /dev/null"
-# yes | pv --wait --name "$host"  | ssh "$host" "cat > /dev/null"
-# yes | pv --wait  | ssh "$host" "cat > /dev/null"
-# yes | pv  | ssh "$host" "cat > /dev/null"
-
 }
 #
 # pacman
