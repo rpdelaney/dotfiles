@@ -1,42 +1,42 @@
-	" infect pathogen plugin loader
+  " infect pathogen plugin loader
 call pathogen#infect()
 
 " Interface {{{1
 "
-	" Styles {{{2
-	" Colorscheme {{{3
-	" Allow color schemes to do bright colors without forcing bold.
+  " Styles {{{2
+  " Colorscheme {{{3
+  " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux'
-		" If terminal does not support 256 colors, use Mustang2 instead of zenburn
-	set t_Co=16
-	colorscheme mustang2
+    " If terminal does not support 256 colors, use Mustang2 instead of zenburn
+  set t_Co=16
+  colorscheme mustang2
 else
-		" otherwise, use zenburn
-	set t_Co=256
-	let g:zenburn_high_contrast=1
-	colorscheme zenburn
+    " otherwise, use zenburn
+  set t_Co=256
+  let g:zenburn_high_contrast=1
+  colorscheme zenburn
 endif
-	" Disable background color erase - this could cause bugs in some terminals
+  " Disable background color erase - this could cause bugs in some terminals
 set t_ut=
-	" 3}}}
-	" Listchars {{{3
-	" listchars to highlight stuff we don't like
+  " 3}}}
+  " Listchars {{{3
+  " listchars to highlight stuff we don't like
 set list
-	" Make sure NonText looks grey
+  " Make sure NonText looks grey
 set highlight+=8:NonText
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-		" If we have utf-8 encoding, use fancy listchars
-	set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
-		" Show this character on a wrapped line
-	set showbreak=
+    " If we have utf-8 encoding, use fancy listchars
+  set listchars=tab:→\ ,eol:\ ,trail:°,extends:≻,precedes:≺,conceal:�,nbsp:—
+    " Show this character on a wrapped line
+  set showbreak=
 else
-		" Otherwise, use ANSI
-	set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<,conceal:*,nbsp:-
-	" Show this character on a wrapped line
-	set showbreak=
+    " Otherwise, use ANSI
+  set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<,conceal:*,nbsp:-
+  " Show this character on a wrapped line
+  set showbreak=
 endif " }}}
-	" 2}}}
-	" Cursor {{{2
+  " 2}}}
+  " Cursor {{{2
 "if &term =~ "xterm\\|rxvt|screen-256color"
 " " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
@@ -60,221 +60,221 @@ endif " }}}
   " 6 -> solid vertical bar
 "endif
 
-	" 2}}}
-	" Syntax {{{2
-	" if we have syntax, use it
+  " 2}}}
+  " Syntax {{{2
+  " if we have syntax, use it
 if has('syntax') && !exists('g:syntax_on')
-	syntax enable
-		" use syntax engine to control folding
-	set foldmethod=syntax
+  syntax enable
+    " use syntax engine to control folding
+  set foldmethod=syntax
 endif
-	" 2}}}
-	" Indentation {{{2
-	" do smart autoindenting on new lines
+  " 2}}}
+  " Indentation {{{2
+  " do smart autoindenting on new lines
 set smartindent
-	" indent like the previous line
+  " indent like the previous line
 set autoindent
-	" shift keys in normal mode add or remove 4 spaces
+  " shift keys in normal mode add or remove 4 spaces
 set shiftwidth=4
-	" use tabs for indentation and spaces everywhere else
+  " use tabs for indentation and spaces everywhere else
 set smarttab
-	" don't automatically expand tabs into whitespace
+  " don't automatically expand tabs into whitespace
 set noexpandtab
-	" tabstop is 4 characters
+  " tabstop is 4 characters
 set tabstop=4
-	" delete key in insert mode deletes 4 spaces
+  " delete key in insert mode deletes 4 spaces
 set softtabstop=4
-	" auto-shift to tab stop
+  " auto-shift to tab stop
 set shiftround
-	" Enforce 50 tabs maximum
+  " Enforce 50 tabs maximum
 if &tabpagemax < 50
   set tabpagemax=50
 endif
-	" 2}}}
-	" Orientation {{{2
-	" Tell me where I am in the file
+  " 2}}}
+  " Orientation {{{2
+  " Tell me where I am in the file
 set ruler
-	" show line numbers relative to the cursor position
+  " show line numbers relative to the cursor position
 set relativenumber
-	" don't show line numbers in absolute terms
+  " don't show line numbers in absolute terms
 set nonumber
-	" highlight current row
+  " highlight current row
 set cursorline
 set nocursorcolumn
-	" 2}}}
-	" Statusline {{{2
+  " 2}}}
+  " Statusline {{{2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-	" show last command
+  " show last command
 set showcmd
-	" Always show the file status
+  " Always show the file status
 set laststatus=2
-	" 2}}}
-	" Searching {{{2
-	" enable enhanced command-line completion
+  " 2}}}
+  " Searching {{{2
+  " enable enhanced command-line completion
 set wildmenu
-	" Exclude these files and directories from search
+  " Exclude these files and directories from search
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
-	" ignore case
+  " ignore case
 set ignorecase
-	" highlight all search matches
+  " highlight all search matches
 set hlsearch
-	" always search the whole file regardless of cursor position
+  " always search the whole file regardless of cursor position
 set wrapscan
-	" show search results visually
+  " show search results visually
 set showmatch
-	" search incrementally
+  " search incrementally
 set incsearch
-	" When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
+  " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
-	" 2}}}
-	" Buffers {{{2
-	" Permit switching buffers when the current buffer is dirty
-	set hidden
-	" 2}}}
-	" Navigation {{{2
+  " 2}}}
+  " Buffers {{{2
+  " Permit switching buffers when the current buffer is dirty
+  set hidden
+  " 2}}}
+  " Navigation {{{2
 set modeline
-	" what to do when I hit backspace
+  " what to do when I hit backspace
 set backspace=indent,eol,start
-	" don't wrap unless I say so
+  " don't wrap unless I say so
 set nowrap
-	" make left/right keys wrap to start of the next line
+  " make left/right keys wrap to start of the next line
 set whichwrap+=h,l,<,>,[,]
-	" how many rows to show on each side of the cursor
-	" a large value like 999 will keep the cursor in the center of the screen
+  " how many rows to show on each side of the cursor
+  " a large value like 999 will keep the cursor in the center of the screen
 set scrolloff=8
-	" how many columns to show on each side of the cursor
+  " how many columns to show on each side of the cursor
 set sidescrolloff=1
-	" }}}
-	" Spelling {{{2
+  " }}}
+  " Spelling {{{2
 set spellfile="~/.aspell/vim.utf8.add"
-	" }}}
-	" Other {{{2
-	"
+  " }}}
+  " Other {{{2
+  "
 set complete-=i
-	"
+  "
 " set display+=lastline
-	" update the buffer if the source file changes on disk and we have not edited it
+  " update the buffer if the source file changes on disk and we have not edited it
 set autoread
-	" Enforce 1000 lines of history maximum
+  " Enforce 1000 lines of history maximum
 if &history < 1000
   set history=1000
 endif
-	" Put something in viminfo for some reason
+  " Put something in viminfo for some reason
 if !empty(&viminfo)
   set viminfo^=!
 endif
-	" 2}}}
+  " 2}}}
 " Bindings {{{1
 "
-	" stop using arrow keys ya dummy
+  " stop using arrow keys ya dummy
 noremap <left> :echoe "Stop using arrow keys."<cr>
 noremap <right> :echoe "Stop using arrow keys."<cr>
 noremap <up> :echoe "Stop using arrow keys."<cr>
 noremap <down> :echoe "Stop using arrow keys."<cr>
-	" time out bindings that don't respond quickly
+  " time out bindings that don't respond quickly
 set ttimeout
 set ttimeoutlen=50
-	" Use <C-L> to clear the highlighting of :set hlsearch.
+  " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
-	" Editing a protected file as 'sudo'
+  " Editing a protected file as 'sudo'
 " cmap W w !sudo tee % >/dev/null<CR>
-	" Copy-paste mode
+  " Copy-paste mode
 noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set paste! <CR> <Insert>
 " Plugins {{{1
 "
-	" better header {{{2
-		" Default user. please override this in your vimrc.
-		if !exists("g:BHAUTHOR")
-			let g:BHAUTHOR = 'Ryan Delaney <ryan.delaney@gmail.com>'
-		endif
+  " better header {{{2
+    " Default user. please override this in your vimrc.
+    if !exists("g:BHAUTHOR")
+      let g:BHAUTHOR = 'Ryan Delaney <ryan.delaney@gmail.com>'
+    endif
 
-		" Enabled suffix. please override in your vimrc, and with each new suffix, 
-		" set a xx_header in your vimrc.
-		if !exists("g:BHEnabledSuffix")
-			let g:BHEnabledSuffix = ['py', 'sh']
-		endif
+    " Enabled suffix. please override in your vimrc, and with each new suffix,
+    " set a xx_header in your vimrc.
+    if !exists("g:BHEnabledSuffix")
+      let g:BHEnabledSuffix = ['py', 'sh']
+    endif
 
-		" a list of keywords. which would be recognized.
-		if !exists("g:BHKeywords")
-			let g:BHKeywords = {}
-		endif
+    " a list of keywords. which would be recognized.
+    if !exists("g:BHKeywords")
+      let g:BHKeywords = {}
+    endif
 
-		" whether we would update old headers after we opened an existing file.
-		if !exists("g:BHModify")
-			let g:BHModify = "0"
-		endif
+    " whether we would update old headers after we opened an existing file.
+    if !exists("g:BHModify")
+      let g:BHModify = "0"
+    endif
 
-		" name your fields to be updated during a buffer write.
-		if !exists("g:BHUpdates")
-	"		let g:BHUpdates = {'Last Change'}
-		endif
+    " name your fields to be updated during a buffer write.
+    if !exists("g:BHUpdates")
+       let g:BHUpdates = ('Last Change')
+    endif
 
-		" We would not write header for files under these directories.
-		if !exists("g:BHExcludeDir")
-			let g:BHExcludeDir = ['usr', 'mnt', 'var', 'private', 'Volumes', 'opt']
-		endif
+    " We would not write header for files under these directories.
+    if !exists("g:BHExcludeDir")
+      let g:BHExcludeDir = ['usr', 'mnt', 'var', 'private', 'Volumes', 'opt']
+    endif
 
-		" We would write header for files in these directories.
-		if !exists("g:BHIn")
-			let g:BHIn = ['']
-		endif
+    " We would write header for files in these directories.
+    if !exists("g:BHIn")
+      let g:BHIn = ['']
+    endif
 
-		" We would write header for files under these directories.
-		if !exists("g:BHUnder")
-			let g:BHUnder = ['~/dotfiles/','~/src/','~/.vim/bundle/']
-		endif
+    " We would write header for files under these directories.
+    if !exists("g:BHUnder")
+      let g:BHUnder = ['~/dotfiles/','~/src/','~/.vim/bundle/']
+    endif
 
-		if !exists("g:BHDebug")
-			let g:BHDebug = "0"
-		endif
-	" 2}}}
-	" supertab {{{2
-	" binds to start the autocompletion
+    if !exists("g:BHDebug")
+      let g:BHDebug = "0"
+    endif
+  " 2}}}
+  " supertab {{{2
+  " binds to start the autocompletion
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
-	" Attempt to guess what I am auto-completing by context
-	" e.g. method calls or attribute references via '.', '::' or '->', and file paths with '/'
+  " Attempt to guess what I am auto-completing by context
+  " e.g. method calls or attribute references via '.', '::' or '->', and file paths with '/'
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-p>"
-	" 2}}}
-	" UltiSnips {{{2
-let g:UltiSnipsEditSplit	        = "vertical"
-let g:UltiSnipsListSnippet			= "<c-tab>"
-let g:UltiSnipsExpandTrigger	    = "<s-tab>"
+  " 2}}}
+  " UltiSnips {{{2
+let g:UltiSnipsEditSplit          = "vertical"
+let g:UltiSnipsListSnippet      = "<c-tab>"
+let g:UltiSnipsExpandTrigger      = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
-	" 2}}}
-	" matchit {{{2
-	" Load matchit.vim, but only if the user hasn't installed a newer version.
+  " 2}}}
+  " matchit {{{2
+  " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-	" 2}}}
-	" smartusline {{{2
+  " 2}}}
+  " smartusline {{{2
 let g:smartusline_string_to_highlight = '(%n) %f '
 let g:smartusline_hi_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
 let g:smartusline_hi_insert = 'guibg=orange guifg=black ctermbg=58 ctermfg=black'
 let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
 let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
-	" 2}}}
+  " 2}}}
 " Functions {{{1
-	" * Whitespace: {{{2
-	" remove whitespace
+  " * Whitespace: {{{2
+  " remove whitespace
 function! <SID>StripTrailingWhitespaces()
-		" Preparation. save last search, and cursor position.
-	let _s=@/
-	let l = line(".")
-	let c = col(".")
-		" Do the business:
-	%s/\s\+$//e
-		" Clean up: restore previous search history, and cursor position
-	let @/=_s
-	call cursor(l, c)
+    " Preparation. save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+    " Do the business:
+  %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
-	" do it whenever we hit a key
+  " do it whenever we hit a key
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " * Hex Editing {{{2
@@ -285,77 +285,77 @@ command -bar Hexmode call ToggleHex()
 
 "" helper function to toggle hex mode
 function ToggleHex()
-	" hex mode should be considered a read-only operation
-	" save values for modified and read-only for restoration later,
-	" and clear the read-only flag for now
-	let l:modified=&mod
-	let l:oldreadonly=&readonly
-	let &readonly=0
-	let l:oldmodifiable=&modifiable
-	let &modifiable=1
-	if !exists("b:editHex") || !b:editHex
-		" save old options
-		let b:oldft=&ft
-		let b:oldbin=&bin
-		" set new options
-		setlocal binary " make sure it overrides any textwidth, etc.
-		let &ft="xxd"
-		" set status
-		let b:editHex=1
-		" switch to hex editor
-		%!xxd
-	else
-		" restore old options
-		let &ft=b:oldft
-		if !b:oldbin
-	setlocal nobinary
-		endif
-		" set status
-		let b:editHex=0
-		" return to normal editing
-		%!xxd -r
-	endif
-	" restore values for modified and read only state
-	let &mod=l:modified
-	let &readonly=l:oldreadonly
-	let &modifiable=l:oldmodifiable
+  " hex mode should be considered a read-only operation
+  " save values for modified and read-only for restoration later,
+  " and clear the read-only flag for now
+  let l:modified=&mod
+  let l:oldreadonly=&readonly
+  let &readonly=0
+  let l:oldmodifiable=&modifiable
+  let &modifiable=1
+  if !exists("b:editHex") || !b:editHex
+    " save old options
+    let b:oldft=&ft
+    let b:oldbin=&bin
+    " set new options
+    setlocal binary " make sure it overrides any textwidth, etc.
+    let &ft="xxd"
+    " set status
+    let b:editHex=1
+    " switch to hex editor
+    %!xxd
+  else
+    " restore old options
+    let &ft=b:oldft
+    if !b:oldbin
+  setlocal nobinary
+    endif
+    " set status
+    let b:editHex=0
+    " return to normal editing
+    %!xxd -r
+  endif
+  " restore values for modified and read only state
+  let &mod=l:modified
+  let &readonly=l:oldreadonly
+  let &modifiable=l:oldmodifiable
 endfunction
 
 " Files {{{1
-	" Use strong encryption when invoked with :X
+  " Use strong encryption when invoked with :X
 set cm=blowfish
-	" EOL formats to try when parsing new files with unclear MIMEtypes
+  " EOL formats to try when parsing new files with unclear MIMEtypes
 set fileformats="unix,dos"
-	" filetype-specific settings {{{2
+  " filetype-specific settings {{{2
 if has("autocmd")
-		" Enable file type detection
-	filetype on
-		" Syntax of these languages is fussy over tabs vs spaces
-	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-		" shell
-	autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
-		" python
-	autocmd FileType python let python_highlight_all = 1
-	autocmd FileType python let python_slow_sync = 1
-	autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
-	autocmd FileType python set completeopt=preview
-		" archlinux package build
-	autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
-		" LaTeX
-	autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
-	autocmd Filetype tex,latex let g:tex_flavor = "latex"
-		" Customisations based on house-style (arbitrary)
-	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-	autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-	autocmd FileType mail setlocal textwidth=79 spell
-		" Treat .rss files as XML
-	autocmd BufNewFile,BufRead *.rss setfiletype xml
-		" Treat document formats as zip files
-		" TODO: this doesn't really work
-	" au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
-	" au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
+    " Enable file type detection
+  filetype on
+    " Syntax of these languages is fussy over tabs vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    " shell
+  autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
+    " python
+  autocmd FileType python let python_highlight_all = 1
+  autocmd FileType python let python_slow_sync = 1
+  autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType python set completeopt=preview
+    " archlinux package build
+  autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
+    " LaTeX
+  autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
+  autocmd Filetype tex,latex let g:tex_flavor = "latex"
+    " Customisations based on house-style (arbitrary)
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType mail setlocal textwidth=79 spell
+    " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+    " Treat document formats as zip files
+    " TODO: this doesn't really work
+  " au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
+  " au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
 endif
 " Modelines {{{1
 " vim600: set foldmethod=marker foldlevel=0 nolist:
