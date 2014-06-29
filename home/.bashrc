@@ -138,7 +138,7 @@ shopt -s checkwinsize
   # Set a more restrictive umask: i.e. no exec perms for others:
 # umask 027
   # Paranoid: neither group nor others have any perms:
-umask 077
+umask 0077
 # }}}
 # HISTORY {{{3
   # append to the history file, don't overwrite it
@@ -212,7 +212,7 @@ if type pass &> /dev/null; then
   export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
   export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
   export PASSWORD_STORE_CLIP_TIME="15"
-  export PASSWORD_STORE_UMASK="0600"
+  export PASSWORD_STORE_UMASK="0077"
 fi
 # }}}
 # MUTT {{{2
