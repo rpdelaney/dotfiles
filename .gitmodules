@@ -73,3 +73,6 @@
 [submodule "home/.vim/bundle/characterize"]
 	path = home/.vim/bundle/characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule "home/.vim/bundle/obsession"]
+	path = home/.vim/bundle/obsession
+	url = https://github.com/tpope/vim-obsession.git

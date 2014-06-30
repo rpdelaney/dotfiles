@@ -285,3 +285,5 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "home/.vim/bundle/characterize"]
 	url = https://github.com/tpope/vim-characterize
+[submodule "home/.vim/bundle/obsession"]
+	url = https://github.com/tpope/vim-obsession.git
