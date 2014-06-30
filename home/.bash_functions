@@ -2,21 +2,6 @@
 
 rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
 
-speedtest() { 
-  if [[ -z "$1" ]]; then
-    host="localhost"
-  else
-    host="$1"
-  fi
-
-  if [[ -z "$2" ]]; then
-    size="20M"
-  else
-    size="$2"
-  fi
-
-  yes | pv --wait --name "$host" --size "$size" --stop-at-size | ssh "$host" "cat > /dev/null"
-}
 #
 # pacman
 #
