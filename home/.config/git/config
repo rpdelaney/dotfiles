@@ -287,3 +287,5 @@
 	url = https://github.com/tpope/vim-characterize
 [submodule "home/.vim/bundle/obsession"]
 	url = https://github.com/tpope/vim-obsession.git
+[submodule "home/.vim/bundle/abolish"]
+	url = https://github.com/tpope/vim-abolish.git
