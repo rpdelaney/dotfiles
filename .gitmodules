@@ -67,3 +67,9 @@
 [submodule "home/.vim/bundle/pathogen"]
 	path = home/.vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "home/.vim/bundle/repeat"]
+	path = home/.vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "home/.vim/bundle/characterize"]
+	path = home/.vim/bundle/characterize
+	url = https://github.com/tpope/vim-characterize
