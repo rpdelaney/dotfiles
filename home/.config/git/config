@@ -273,3 +273,7 @@
 	url = https://github.com/rpdelaney/aurvote
 [submodule "home/.vim/bundle/sourcecfg"]
 	url = git@github.com:rpdelaney/vim-sourcecfg.git
+[submodule "shellcheck"]
+	url = https://github.com/koalaman/shellcheck.git
+[submodule "home/.vim/bundle/minibufexpl"]
+	url = https://github.com/fholgado/minibufexpl.vim.git
