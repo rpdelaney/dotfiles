@@ -277,3 +277,5 @@
 	url = https://github.com/koalaman/shellcheck.git
 [submodule "home/.vim/bundle/minibufexpl"]
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "home/.vim/bundle/surround"]
+	url = https://github.com/tpope/vim-surround.git
