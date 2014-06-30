@@ -1,7 +1,7 @@
 [submodule "home/.vim/bundle/fsharp"]
 	path = home/.vim/bundle/fsharp
 	url = git://github.com/kongo2002/fsharp-vim.git
-[submodule "home/.vim/bundle/vim-sourcecfg"]
+[submodule "home/.vim/bundle/sourcecfg"]
 	path = home/.vim/bundle/sourcecfg
 	url = git@github.com:rpdelaney/vim-sourcecfg.git
 [submodule "home/.vim/bundle/vim-excel"]
@@ -55,9 +55,6 @@
 [submodule "home/.vim/bundle/gnupg"]
 	path = home/.vim/bundle/gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
-[submodule "home/.vim/bundle/sourcecfg"]
-	path = home/.vim/bundle/sourcecfg
-	url = git@github.com:rpdelaney/vim-sourcecfg.git
 [submodule "home/.vim/bundle/minibufexpl"]
 	path = home/.vim/bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
@@ -79,3 +76,6 @@
 [submodule "home/.vim/bundle/abolish"]
 	path = home/.vim/bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "home/.vim/bundle/jedi"]
+	path = home/.vim/bundle/jedi
+	url = https://github.com/davidhalter/jedi-vim.git
