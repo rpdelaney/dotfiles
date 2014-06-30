@@ -271,3 +271,5 @@
 	url = https://github.com/jamessan/vim-gnupg.git
 [submodule "aurvote"]
 	url = https://github.com/rpdelaney/aurvote
+[submodule "home/.vim/bundle/sourcecfg"]
+	url = git@github.com:rpdelaney/vim-sourcecfg.git

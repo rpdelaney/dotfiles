@@ -55,3 +55,6 @@
 [submodule "home/.vim/bundle/gnupg"]
 	path = home/.vim/bundle/gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
+[submodule "home/.vim/bundle/sourcecfg"]
+	path = home/.vim/bundle/sourcecfg
+	url = git@github.com:rpdelaney/vim-sourcecfg.git
