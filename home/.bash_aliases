@@ -127,3 +127,6 @@ type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
 
   # weechat is dumb
 type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
+
+  # test the output of commands
+alias winfail='&& echo "win" || echo "fail"'
