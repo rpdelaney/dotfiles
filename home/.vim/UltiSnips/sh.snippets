@@ -25,6 +25,7 @@ Usage: $1 [OPTION]
 Options
   -?, --help                  print this help and exit
   -v, --verbose               increase verbosity
+  -q, --quiet                 suppress all output (ignores -v)
 EOD
 exit 1
 }
@@ -33,13 +34,15 @@ endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
 verbose() {
-  if [[ "\$verbose" = "1" ]]; then
+  if [[ "\$verbose" -ge "1" ]] && [[ -z "\$quiet" ]]; then
     echo "\$1" >&2
   fi
 }
 
 error() {
-  echo "\$1" >&2
+  if [[ -z "\$quiet" ]]; then
+    echo "\$1" >&2
+  fi
 }
 # }}}
 endsnippet
@@ -56,6 +59,10 @@ do
     -v | --verbose)
       # Each instance of -v adds 1 to verbosity
       verbose=\$((verbose+1))
+      shift
+      ;;
+    -q | --quiet)
+      quiet="1"
       shift
       ;;
     --) # End of all options
