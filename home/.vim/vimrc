@@ -330,6 +330,8 @@ set fileformats="unix,dos"
 if has("autocmd")
     " Enable file type detection
   filetype on
+	" bash vi-mode
+  autocmd BufRead,BufNewFile /tmp/bash-fc-* set filetype=sh
     " Syntax of these languages is fussy over tabs vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -357,5 +359,6 @@ if has("autocmd")
   " au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
   " au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
 endif
+" }}}
 " Modelines {{{1
 " vim600: set foldmethod=marker foldlevel=0 nolist:
