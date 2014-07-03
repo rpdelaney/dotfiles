@@ -69,27 +69,58 @@ PS4="    +++"
   # defines the base directory relative to which user specific configuration
   # files should be stored. If $XDG_CONFIG_HOME is either not set or empty, a
   # default equal to $HOME/.config should be used.
-export XDG_CONFIG_HOME="$HOME/.config/"
+if [[ -d "$HOME/.config/" ]] ; then
+  export XDG_CONFIG_HOME="$HOME/.config/"
+else
+  echo "XDG_CONFIG_HOME not found." >&2
+fi
   # defines the base directory relative to which user specific data files
   # should be stored. If $XDG_DATA_HOME is either not set or empty, a default
   # equal to $HOME/.local/share should be used.
-export XDG_DATA_HOME="$HOME/.local/share"
+if [[ -d "$HOME/.local/share" ]] ; then
+  export XDG_DATA_HOME="$HOME/.local/share"
+else
+  echo "XDG_DATA_HOME not found." >&2
+fi
   # defines the preference-ordered set of base directories to search for data
   # files in addition to the $XDG_DATA_HOME base directory. The directories in
   # $XDG_DATA_DIRS should be seperated with a colon ':'. If $XDG_DATA_DIRS is
   # either not set or empty, a value equal to /usr/local/share/:/usr/share/
   # should be used.
-export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+if [[ -d "/usr/local/share/" ]] || [[ -d "/usr/share/" ]] ; then
+  export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+else
+  echo "XDG_DATA_DIRS not found." >&2
+fi
   # defines the base directory relative to which user specific non-essential
   # data files should be stored. If $XDG_CACHE_HOME is either not set or
   # empty, a default equal to $HOME/.cache should be used.
-export XDG_CACHE_HOME="$HOME/.cache/"
+if [[ -d "$HOME/.cache/" ]] ; then
+  export XDG_CACHE_HOME="$HOME/.cache/"
+else
+  echo "XDG_CACHE_HOME not found." >&2
+fi
   # defines the base directory relative to which user-specific non-essential
   # runtime files and other file objects (such as sockets, named pipes, ...)
   # should be stored. The directory MUST be owned by the user, and he MUST be
   # the only one having read and write access to it. Its Unix access mode MUST
   # be 0700.
-#export XDG_RUNTIME_DIR=""
+# Test runtime directory exists
+if [[ -d "/run/user/$(id -u)" ]] ; then
+  # Test runtime directory is owned by us
+  if [[ "$(stat -c "%u" "/run/user/$(id -u)")" == "$(id -u)" ]] ; then
+    # Test runtime directory permissions
+    if [[ "$(stat -c "%a" "/run/user/$(id -u)")" == "700" ]] ; then
+      export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    else
+      echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
+    fi
+  else
+    echo "XDG_RUNTIME_DIR is not owned by $(id -u)." >&2
+  fi
+else
+  echo "XDG_RUNTIME_DIR not found." >&2
+fi
 # }}}
 # PATH {{{2
   # Add "$HOME"/bin and all subdirectories recursively to $PATH
@@ -168,7 +199,11 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   # GVIM
   if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # NVIDIA {{{3
-    export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+    if [[ -d "$XDG_CACHE_HOME/.nvidia" ]] ; then
+      export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+    else
+      echo "__GL_SHADER_DISK_CACHE_PATH not found." >&2
+    fi
   # Setting the environment variable __GL_SYNC_TO_VBLANK to a non-zero value
   # will force glXSwapBuffers to sync to your monitor's vertical refresh
   # (perform a swap only during the vertical blanking period).
@@ -193,7 +228,11 @@ if type pager &> /dev/null; then
 elif type most &> /dev/null; then
   export PAGER="most"
   export MOST_EDITOR="vim"
-  export MOST_INITFILE="$XDG_CONFIG_HOME/most/mostrc"
+  if [[ -f "$XDG_CONFIG_HOME/most/mostrc" ]] ; then
+    export MOST_INITFILE="$XDG_CONFIG_HOME/most/mostrc"
+  else
+    echo "MOST_INITFILE not found." >&2
+  fi
 elif type less &> /dev/null; then
   export PAGER="less"
   export LESSHISTSIZE="0"
@@ -204,12 +243,19 @@ fi
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
-    # If XDG-config-dir exists, use it
-  if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]]; then export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"; fi
+  if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]] ; then
+    export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"
+  else
+    echo "GNUPGHOME not found." >&2
+  fi
 fi
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then 
-  export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
+  if [[ -d "$HOME/docs/passwords/" ]] ; then
+    export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
+  else
+    echo "PASSWORD_STORE_DIR not found." >&2
+  fi
   export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
   export PASSWORD_STORE_CLIP_TIME="15"
   export PASSWORD_STORE_UMASK="0077"
@@ -217,9 +263,21 @@ fi
 # }}}
 # MUTT {{{2
 if type mutt &> /dev/null; then
-  export PGPPATH="$HOME$GNUPGHOME"
-  export MAILDIR="/var/mail/"
-  export TMPDIR="/tmp/"
+  if [[ -d "$GNUPGHOME" ]] ; then
+    export PGPPATH="$GNUPGHOME"
+  else
+    echo "PGPPATH not found." >&2
+  fi
+  if [[ -d "/var/mail/" ]] ; then
+    export MAILDIR="/var/mail/"
+  else
+    echo "MAILDIR not found." >&2
+  fi
+  if [[ -d "/tmp/" ]] ; then
+    export TMPDIR="/tmp/"
+  else
+    echo "TMPDIR not found." >&2
+  fi
 fi
 # }}}
 # GIT {{{2
@@ -234,7 +292,11 @@ if type git &> /dev/null; then
     # TIG {{{3
   if type tig &> /dev/null; then
   #         Path of the user configuration file (defaults to ~/.tigrc).
+  if [[ -f "$XDG_CONFIG_HOME/tig/tigrc" ]] ; then
     export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
+  else
+    echo "TIGRC_USER not found." >&2
+  fi
   #         Path of the system wide configuration file (defaults to {sysconfdir}/tigrc).
   # TIGRC_SYSTEM
   #         Set command for retrieving all repository references. The command should output data in the same format as git-ls-remote(1).
@@ -247,11 +309,15 @@ if type git &> /dev/null; then
   fi
     # }}}
 # XDG-git {{{3
-  if [[ -f "$XDG_CONFIG_HOME/git/config" ]]; then export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"; fi
+  if [[ ! -d "$XDG_CONFIG_HOME/git/config" ]] ; then
+    export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"
+  else
+    echo "GIT_CONFIG not found." >&2
+  fi
     # Always vim to edit even if I have a window manager.
   export GIT_EDITOR="vim"
     # Number of context lines shown in a diff
-#   export GIT_DIFF_OPTS=
+# export GIT_DIFF_OPTS=
     # Use vimdiff for git diff
 # export GIT_EXTERNAL_DIFF="vimdiff"
     # Stop searching here when trying to find git repos
@@ -285,12 +351,18 @@ fi
 # TORSOCKS {{{2
 if type torsocks &> /dev/null && [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
   export TORSOCKS_CONF_FILE="$XDG_CONFIG_HOME/torsocks/config"
+else
+  echo "torsocks.conf not found." >&2
 fi
 # 2}}}
 # PSQL {{{2
 if type psql &> /dev/null; then
+  if [[ -f "$XDG_CONFIG_HOME/psql/config" ]]; then
+    export PSQLRC="$XDG_CONFIG_HOME/psql/config"
+  else
+    echo "PSQLRC not found." >&2
+  fi
   export PSQL_EDITOR="vim"
-  export PSQLRC="$XDG_CONFIG_HOME/psql/config"
 # export PSQL_HISTORY
 # export PGDATABASE
 # export PGHOST
