@@ -89,10 +89,6 @@ set tabstop=4
 set softtabstop=4
   " auto-shift to tab stop
 set shiftround
-  " Enforce 50 tabs maximum
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
   " 2}}}
   " Orientation {{{2
   " Tell me where I am in the file
@@ -149,6 +145,10 @@ set whichwrap+=h,l,<,>,[,]
 set scrolloff=8
   " how many columns to show on each side of the cursor
 set sidescrolloff=1
+  " Enforce 50 tabs maximum
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
   " }}}
   " Spelling {{{2
 set spellfile="~/.aspell/vim.utf8.add"
