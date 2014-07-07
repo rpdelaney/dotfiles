@@ -1,6 +1,9 @@
   " infect pathogen plugin loader
 call pathogen#infect()
 
+  " Use vim defaults in favor of backward-compatibility with vi
+set nocompatible
+
 " Interface {{{1
 "
   " Styles {{{2
@@ -242,10 +245,10 @@ let g:SuperTabContextDefaultCompletionType="<c-p>"
   " 2}}}
   " UltiSnips {{{2
 let g:UltiSnipsEditSplit          = "vertical"
-let g:UltiSnipsListSnippet      = "<c-tab>"
+let g:UltiSnipsListSnippet        = "<c-tab>"
 let g:UltiSnipsExpandTrigger      = "<s-tab>"
-let g:UltiSnipsJumpForwardTrigger   = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger  = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger   = "<s-l>"
+let g:UltiSnipsJumpBackwardTrigger  = "<s-h>"
   " 2}}}
   " matchit {{{2
   " Load matchit.vim, but only if the user hasn't installed a newer version.
