@@ -82,3 +82,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "LS_COLORS"]
+	path = LS_COLORS
+	url = https://github.com/rpdelaney/LS_COLORS

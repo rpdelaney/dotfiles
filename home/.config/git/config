@@ -293,3 +293,5 @@
 	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "home/.vim/bundle/ultisnips"]
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "LS_COLORS"]
+	url = https://github.com/rpdelaney/LS_COLORS
