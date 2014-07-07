@@ -291,3 +291,5 @@
 	url = https://github.com/tpope/vim-abolish.git
 [submodule "home/.vim/bundle/jedi"]
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "home/.vim/bundle/ultisnips"]
+	url = https://github.com/SirVer/ultisnips.git
