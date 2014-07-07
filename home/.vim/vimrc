@@ -5,7 +5,6 @@ call pathogen#infect()
 set nocompatible
 
 " Interface {{{1
-"
   " Styles {{{2
   " Colorscheme {{{3
   " Allow color schemes to do bright colors without forcing bold.
@@ -169,6 +168,7 @@ if !empty(&viminfo)
   set viminfo^=!
 endif
   " 2}}}
+  " 1}}}
 " Bindings {{{1
 "
   " stop using arrow keys ya dummy
@@ -188,8 +188,8 @@ endif
   " Copy-paste mode
 noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set paste! <CR> <Insert>
+" 1}}}
 " Plugins {{{1
-"
   " better header {{{2
     " Default user. please override this in your vimrc.
     if !exists("g:BHAUTHOR")
@@ -265,6 +265,7 @@ let g:smartusline_hi_insert = 'guibg=orange guifg=black ctermbg=58 ctermfg=black
 let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
 let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
   " 2}}}
+" 1}}}
 " Functions {{{1
   " * Whitespace: {{{2
   " remove whitespace
@@ -281,7 +282,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
   " do it whenever we hit a key
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-
+" 2}}}
 " * Hex Editing {{{2
 " retrieved from http://vim.wikia.com/wiki/Improved_hex_editing on Sat Jan  4 13:03:41 PST 2014
 "
@@ -325,7 +326,8 @@ function ToggleHex()
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
 endfunction
-
+" 2}}}
+" 1}}}
 " Files {{{1
   " Use strong encryption when invoked with :X
 set cm=blowfish
@@ -365,5 +367,6 @@ if has("autocmd")
   " au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
 endif
 " }}}
+" 1}}}
 " Modelines {{{1
 " vim600: set foldmethod=marker foldlevel=0 nolist:
