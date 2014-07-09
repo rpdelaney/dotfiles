@@ -199,8 +199,8 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   # GVIM
   if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # NVIDIA {{{3
-    if [[ -d "$XDG_CACHE_HOME/.nvidia" ]] ; then
-      export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/.nvidia"
+    if [[ -d "$XDG_CACHE_HOME/nvidia" ]] ; then
+      export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nvidia"
     else
       echo "__GL_SHADER_DISK_CACHE_PATH not found." >&2
     fi
