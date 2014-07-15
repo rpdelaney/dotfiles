@@ -7,7 +7,7 @@ rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
 #
 
   # print a sorted list of available applications with their descriptions
-alias whatisall='whatis /usr/bin/* 2> /dev/null'
+if type whatis &> /dev/null; then alias whatisall='whatis /usr/bin/* 2> /dev/null'; fi
 
   # recursively remove orphaned packages
 rmorphans() {
