@@ -64,7 +64,13 @@ define() {
 }
 
   # define words shorter
-def() { curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; }
+def() { 
+  if type torsocks &> /dev/null; then
+    torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; 
+  else
+    curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; 
+  fi
+}
 
   # jobs count
 jobscount(){
