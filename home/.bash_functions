@@ -35,42 +35,41 @@ packagesize() {
 # manipulating multimedia
 #
   # create a thumbnail of a video file
-thumbnail() { ffmpeg  -itsoffset -20 -i $i -vcodec mjpeg -vframes 1 -an -f rawvideo -s 640x272 ${i%.*}.jpg; }
+thumbnail() { ffmpeg  -itsoffset -20 -i "$1" -vcodec mjpeg -vframes 1 -an -f rawvideo -s 640x272 "${1%.*}".jpg; }
 
   # capture alsa audio to an mp3 file
   # not working: sox captures audio and pipes a stream. but as written, ffmpeg does not read from stdin.
 #alsamp3() { ffmpeg -f alsa -ac 2 -i hw:1,0 -acodec libmp3lame -ab 96k output.mp3; }
 
   # get duration of audio file
-duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo ${durline#*\: }; }
+duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo "${durline#*\: }"; }
 
   # view today's xkcd and the tagline
-xkcd(){ wget -qO- http://xkcd.com/|tee >(feh $('grep' -Po '(?<=")http://imgs[^/]+/comics/[^"]+\.\w{3}'))|'grep' -Po '(?<=(\w{3})" title=").*(?=" alt)';}
-
-#
-# manipulating files and directories
-#
-
-  # return the first of existing files
-myfirst () { local i fn=$1; shift; for i; do $fn "$i" && echo "$i" && return; done; return 1; }
+xkcd(){ wget -qO- http://xkcd.com/|tee >(feh "$('grep' -Po '(?<=")http://imgs[^/]+/comics/[^"]+\.\w{3}')")|'grep' -Po '(?<=(\w{3})" title=").*(?=" alt)';}
 
 #
 # miscellaneous
 #
   #download album art from amazon
-albumart() { local y="$@";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s
-'http://www.albumart.org/index.php?srchkey='${y// /+}'&itempage=1&newsearch=1&searchindex=Music');}
+albumart() { local y="$*";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s
+'http://www.albumart.org/index.php?srchkey='"${y// /+}"'&itempage=1&newsearch=1&searchindex=Music');}
 
   # define words
-define() { curl -s dict://dict.org/d:$1; }
+define() { 
+  if type torsocks &> /dev/null; then
+    torsocks curl -s dict://dict.org/d:"$1"
+  else
+    curl -s dict://dict.org/d:"$1"
+  fi
+}
 
   # define words shorter
-def() { curl -s dict://dict.org/d:$1 | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; }
+def() { curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; }
 
   # jobs count
 jobscount(){
     jobs_cnt=$(jobs -s | wc -l)
-    if [ $jobs_cnt -eq 0 ]; then
+    if [ "$jobs_cnt" -eq 0 ]; then
         echo -n ""
     else
         echo -n "$jobs_cnt "
@@ -78,10 +77,10 @@ jobscount(){
 }
 
   # search commandlinefu from commandline
-cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
+cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n "$@" | openssl base64)/plaintext"; }
 
   # download files from web via tor
-turl(){ curl --sslv3 --socks5-hostname localhost:9050 $@ ; }
+turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
 
   # b) function cd_func
   # This function defines a 'cd' replacement function capable of keeping,
