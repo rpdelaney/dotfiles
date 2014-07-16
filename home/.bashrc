@@ -2,7 +2,6 @@
 # GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
 #
 # © Copyright 2014 Ryan Delaney. All rights reserved.
-# <ryan delaney gmail com> OpenGPG: 0D98863B4E1D07B6
 #
 # This program is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
