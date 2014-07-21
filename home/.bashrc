@@ -105,17 +105,18 @@ fi
   # the only one having read and write access to it. Its Unix access mode MUST
   # be 0700.
 # Test runtime directory exists
-if [[ -d "/run/user/$(id -u)" ]] ; then
+uid="$(id -u)"
+if [[ -d "/run/user/$uid" ]] ; then
   # Test runtime directory is owned by us
-  if [[ "$(stat -c "%u" "/run/user/$(id -u)")" == "$(id -u)" ]] ; then
+  if [[ "$(stat -c "%u" "/run/user/$uid")" == "$uid" ]] ; then
     # Test runtime directory permissions
-    if [[ "$(stat -c "%a" "/run/user/$(id -u)")" == "700" ]] ; then
-      export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    if [[ "$(stat -c "%a" "/run/user/$uid")" == "700" ]] ; then
+      export XDG_RUNTIME_DIR="/run/user/$uid"
     else
       echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
     fi
   else
-    echo "XDG_RUNTIME_DIR is not owned by $(id -u)." >&2
+    echo "XDG_RUNTIME_DIR is not owned by $uid." >&2
   fi
 else
   echo "XDG_RUNTIME_DIR not found." >&2
@@ -146,7 +147,7 @@ set -o ignoreeof
 set -o vi
   # The shell shall read commands but does not execute them; this can be used to
   # check for shell script syn‐ tax errors. An interactive shell may ignore this
-  # option. 
+  # option.
 #set -o noexec
   # The shell shall write its input to standard error as it is read.
 #set -v
@@ -249,7 +250,7 @@ if type gpg &> /dev/null; then
   fi
 fi
   # Don't ask which gpg key to use with the pass store; use this one
-if type pass &> /dev/null; then 
+if type pass &> /dev/null; then
   if [[ -d "$HOME/docs/passwords/" ]] ; then
     export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
   else
