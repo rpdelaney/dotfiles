@@ -452,10 +452,10 @@ if [[ "$TERM" = "linux" ]]; then
   echo -en "\e]P7ffffff" #lightgrey
   echo -en "\e]PFdedede" #white
   clear                  #for background artifacting
-else
+#else
       # If we're running in screen then use colors anyway
-  [[ "$TERM" = "screen" ]] && TERM="screen-256color"
-  [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
+# [[ "$TERM" = "screen" ]] && TERM="screen-256color"
+# [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 # }}}
 # }}}
