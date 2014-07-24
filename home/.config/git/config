@@ -295,3 +295,5 @@
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "LS_COLORS"]
 	url = https://github.com/rpdelaney/LS_COLORS
+[submodule "home/.vim/bundle/recover"]
+	url = git@github.com:chrisbra/Recover.vim.git

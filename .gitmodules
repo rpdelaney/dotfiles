@@ -85,3 +85,6 @@
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/rpdelaney/LS_COLORS
+[submodule "home/.vim/bundle/recover"]
+	path = home/.vim/bundle/recover
+	url = git@github.com:chrisbra/Recover.vim.git
