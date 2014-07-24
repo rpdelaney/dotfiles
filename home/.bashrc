@@ -36,15 +36,17 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
+    # If we are in sudoers,
     # Use defaults - do nothing
   :
   else
+    # If we are not root, wheel, nor a sudoer,
     # Use unprivileged colorscheme
     PROMPT_USER_COLOR="$(tput setaf 2)"
   fi
   source "$HOME"/.bash_prompt
 fi
-  # 2}}}
+- # 2}}}
   # PS2 {{{2
   # Continuation prompt
   # Default: '> '
@@ -146,7 +148,7 @@ set -o ignoreeof
 set -o vi
   # The shell shall read commands but does not execute them; this can be used to
   # check for shell script syn‐ tax errors. An interactive shell may ignore this
-  # option. 
+  # option.
 #set -o noexec
   # The shell shall write its input to standard error as it is read.
 #set -v
@@ -249,7 +251,7 @@ if type gpg &> /dev/null; then
   fi
 fi
   # Don't ask which gpg key to use with the pass store; use this one
-if type pass &> /dev/null; then 
+if type pass &> /dev/null; then
   if [[ -d "$HOME/docs/passwords/" ]] ; then
     export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
   else
