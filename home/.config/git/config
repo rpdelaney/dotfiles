@@ -296,3 +296,5 @@
 	url = https://github.com/rpdelaney/LS_COLORS
 [submodule "home/.vim/bundle/recover"]
 	url = git@github.com:chrisbra/Recover.vim.git
+[submodule "home/.vim/bundle/tabular"]
+	url = git://github.com/godlygeek/tabular.git
