@@ -201,6 +201,10 @@
     # directions on how to proceed from the current state.
     rmHints = true
 # 1}}}
+[gui] # {{{1
+	wmstate = normal
+	geometry = 1920x1014+1680+18 192 177
+# 1}}}
 # Remotes {{{
 #
 	# If there are a large number of similarly-named remote repositories and you want
@@ -254,9 +258,6 @@
 	url = git@github.com:jkufner/vim-json.git
 [submodule "home/.vim/bundle/sourcepawn"]
 	url = git@github.com:/withgod/vim-sourcepawn.git
-[gui]
-	wmstate = normal
-	geometry = 1920x1014+1680+18 192 177
 [submodule "home/.vim/bundle/psqlrc"]
 	url = git@github.com:rpdelaney/vim-psqlrc.git
 [submodule "home/.vim/bundle/airline"]
