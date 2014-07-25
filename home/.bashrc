@@ -46,7 +46,7 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   fi
   source "$HOME"/.bash_prompt
 fi
-- # 2}}}
+# 2}}}
   # PS2 {{{2
   # Continuation prompt
   # Default: '> '
