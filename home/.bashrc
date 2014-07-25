@@ -188,6 +188,16 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
 export HISTIGNORE="$HISTIGNORE"':clear'
 # }}}
 # }}}
+# TERM {{{2
+  # read /etc/lsb-release for distribution name and version
+source /etc/lsb-release
+  # If running urxvt in Ubuntu/debian, reset the terminal.
+  # This is necessary because most debian systems don't have terminfo for
+  # rxvt-unicode-256color
+if [[ "$TERM" == "rxvt-unicode-256color" ]] && [[ "$DISTRIB_ID" == "Ubuntu" ]]; then
+  TERM="rxvt-unicode"
+fi
+# 2}}}
 # EDITOR {{{2
 if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 # }}}
