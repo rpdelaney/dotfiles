@@ -107,17 +107,18 @@ fi
   # the only one having read and write access to it. Its Unix access mode MUST
   # be 0700.
 # Test runtime directory exists
-if [[ -d "/run/user/$(id -u)" ]] ; then
+uid="$(id -u)"
+if [[ -d "/run/user/$uid" ]] ; then
   # Test runtime directory is owned by us
-  if [[ "$(stat -c "%u" "/run/user/$(id -u)")" == "$(id -u)" ]] ; then
+  if [[ "$(stat -c "%u" "/run/user/$uid")" == "$uid" ]] ; then
     # Test runtime directory permissions
-    if [[ "$(stat -c "%a" "/run/user/$(id -u)")" == "700" ]] ; then
-      export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    if [[ "$(stat -c "%a" "/run/user/$uid")" == "700" ]] ; then
+      export XDG_RUNTIME_DIR="/run/user/$uid"
     else
       echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
     fi
   else
-    echo "XDG_RUNTIME_DIR is not owned by $(id -u)." >&2
+    echo "XDG_RUNTIME_DIR is not owned by $uid." >&2
   fi
 else
   echo "XDG_RUNTIME_DIR not found." >&2
@@ -453,10 +454,10 @@ if [[ "$TERM" = "linux" ]]; then
   echo -en "\e]P7ffffff" #lightgrey
   echo -en "\e]PFdedede" #white
   clear                  #for background artifacting
-else
+#else
       # If we're running in screen then use colors anyway
-  [[ "$TERM" = "screen" ]] && TERM="screen-256color"
-  [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
+# [[ "$TERM" = "screen" ]] && TERM="screen-256color"
+# [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 # }}}
 # }}}
