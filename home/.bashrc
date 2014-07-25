@@ -491,7 +491,11 @@ fi
 # }}}
 # GREETING {{{1
 #
-type alsi &> /dev/null && timeout 1 alsi 2> /dev/null || echo "TERM is $TERM"
+if type alsi &> /dev/null ; then
+  timeout 1 alsi 2> /dev/null 
+else
+  echo "TERM is $TERM"
+fi
 # }}}
 
 # vim: ft=sh foldmethod=marker
