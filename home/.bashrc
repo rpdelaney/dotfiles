@@ -22,47 +22,6 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
-# PROMPT {{{1
-  # PS1 {{{2
-if [[ -f "$HOME"/.bash_prompt ]]; then
-  if [[ "$UID" == 0 ]]; then
-    # If we are root, try to make that hard to miss.
-    # And de-emphasize git status (we don't work as root)
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -qP '( wheel\b| admin\b| sysop\b)'; then
-    # If we are wheel, try to make that hard to miss.
-    # And de-emphasize git status (we don't work as superuser)
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
-    # If we are in sudoers,
-    # Use defaults - do nothing
-  :
-  else
-    # If we are not root, wheel, nor a sudoer,
-    # Use unprivileged colorscheme
-    PROMPT_USER_COLOR="$(tput setaf 2)"
-  fi
-  source "$HOME"/.bash_prompt
-fi
-# 2}}}
-  # PS2 {{{2
-  # Continuation prompt
-  # Default: '> '
-PS2="... "
-  # 2}}}
-  # PS3 {{{2
-  # Option select prompt
-  # Default: '#?'
-PS3='#?'
-  # 2}}}
-  # PS4 {{{2
-  # Script debug mode prefix
-  # Default: '+'
-PS4="    +++"
-  # 2}}}
-# 1}}}
 # ENVIRONMENT {{{1
 # XDG {{{2
   # Because lots of apps are dumb and don't use the defaults like they should
@@ -420,6 +379,47 @@ if tmux has-session &> /dev/null; then
   fi
 fi
 # 2}}}
+# PROMPT {{{1
+  # PS1 {{{2
+if [[ -f "$HOME"/.bash_prompt ]]; then
+  if [[ "$UID" == 0 ]]; then
+    # If we are root, try to make that hard to miss.
+    # And de-emphasize git status (we don't work as root)
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  elif groups "$USER" | grep -qP '( wheel\b| admin\b| sysop\b)'; then
+    # If we are wheel, try to make that hard to miss.
+    # And de-emphasize git status (we don't work as superuser)
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+  elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
+    # If we are in sudoers,
+    # Use defaults - do nothing
+  :
+  else
+    # If we are not root, wheel, nor a sudoer,
+    # Use unprivileged colorscheme
+    PROMPT_USER_COLOR="$(tput setaf 2)"
+  fi
+  source "$HOME"/.bash_prompt
+fi
+# 2}}}
+  # PS2 {{{2
+  # Continuation prompt
+  # Default: '> '
+PS2="... "
+  # 2}}}
+  # PS3 {{{2
+  # Option select prompt
+  # Default: '#?'
+PS3='#?'
+  # 2}}}
+  # PS4 {{{2
+  # Script debug mode prefix
+  # Default: '+'
+PS4="    +++"
+  # 2}}}
+# 1}}}
 # KEYCHAIN {{{1
 #
   # determine if we want to run a new ssh-agent for this session
