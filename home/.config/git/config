@@ -201,6 +201,10 @@
     # directions on how to proceed from the current state.
     rmHints = true
 # 1}}}
+[gui] # {{{1
+	wmstate = normal
+	geometry = 1920x1014+1680+18 192 177
+# 1}}}
 # Remotes {{{
 #
 	# If there are a large number of similarly-named remote repositories and you want
@@ -254,9 +258,6 @@
 	url = git@github.com:jkufner/vim-json.git
 [submodule "home/.vim/bundle/sourcepawn"]
 	url = git@github.com:/withgod/vim-sourcepawn.git
-[gui]
-	wmstate = normal
-	geometry = 1920x1014+1680+18 192 177
 [submodule "home/.vim/bundle/psqlrc"]
 	url = git@github.com:rpdelaney/vim-psqlrc.git
 [submodule "home/.vim/bundle/airline"]
@@ -271,8 +272,6 @@
 	url = https://github.com/jamessan/vim-gnupg.git
 [submodule "aurvote"]
 	url = https://github.com/rpdelaney/aurvote
-[submodule "home/.vim/bundle/sourcecfg"]
-	url = git@github.com:rpdelaney/vim-sourcecfg.git
 [submodule "shellcheck"]
 	url = https://github.com/koalaman/shellcheck.git
 [submodule "home/.vim/bundle/minibufexpl"]
@@ -295,3 +294,7 @@
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "LS_COLORS"]
 	url = https://github.com/rpdelaney/LS_COLORS
+[submodule "home/.vim/bundle/recover"]
+	url = git@github.com:chrisbra/Recover.vim.git
+[submodule "home/.vim/bundle/tabular"]
+	url = git://github.com/godlygeek/tabular.git

@@ -36,15 +36,17 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
+    # If we are in sudoers,
     # Use defaults - do nothing
   :
   else
+    # If we are not root, wheel, nor a sudoer,
     # Use unprivileged colorscheme
     PROMPT_USER_COLOR="$(tput setaf 2)"
   fi
   source "$HOME"/.bash_prompt
 fi
-  # 2}}}
+- # 2}}}
   # PS2 {{{2
   # Continuation prompt
   # Default: '> '
