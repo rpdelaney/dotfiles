@@ -35,13 +35,13 @@ snippet functions "standard functions" b
 # Functions {{{1
 verbose() {
   if [[ "\$verbose" -ge "1" ]] && [[ -z "\$quiet" ]]; then
-    echo "\$1" >&2
+    echo "\$1" >&2 || return 1
   fi
 }
 
 error() {
   if [[ -z "\$quiet" ]]; then
-    echo "\$1" >&2
+    echo "\$1" >&2 || return 1
   fi
 }
 # 1}}}
