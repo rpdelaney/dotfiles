@@ -104,7 +104,7 @@ bindsym $mod+space+l move right
 bindsym $mod+Shift+1 move container to workspace 1: shell
 bindsym $mod+Shift+2 move container to workspace 2: web
 bindsym $mod+Shift+3 move container to workspace 3: misc
-bindsym $mod+Shift+4 move container to workspace 4: comms
+bindsym $mod+Shift+4 move container to workspace 4: chat
 bindsym $mod+Shift+5 move container to workspace 5: steam
 bindsym $mod+Shift+6 move container to workspace 6: media
 bindsym $mod+Shift+7 move container to workspace 7: docs
@@ -121,7 +121,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+1 workspace 1: shell
 bindsym $mod+2 workspace 2: web
 bindsym $mod+3 workspace 3: misc
-bindsym $mod+4 workspace 4: comms
+bindsym $mod+4 workspace 4: chat
 bindsym $mod+5 workspace 5: steam
 bindsym $mod+6 workspace 6: media
 bindsym $mod+7 workspace 7: docs
