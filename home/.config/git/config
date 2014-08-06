@@ -298,3 +298,5 @@
 	url = git@github.com:chrisbra/Recover.vim.git
 [submodule "home/.vim/bundle/tabular"]
 	url = git://github.com/godlygeek/tabular.git
+[submodule "home/.vim/bundle/easy-align"]
+	url = git@github.com:junegunn/vim-easy-align.git
