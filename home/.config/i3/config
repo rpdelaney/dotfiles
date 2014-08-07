@@ -224,20 +224,19 @@ assign [class="hl2_linux"] → 10: games
     # auto-run these apps when starting i3
         # 1:shell
 exec --no-startup-id i3-msg 'workspace 1: shell;new_window none'
-exec --no-startup-id i3-msg 'workspace 1: shell;exec terminator -b -m -T "terminator.shell" --execute "tmux -2 attach-session -T shell"'
+exec --no-startup-id i3-msg 'workspace 1: shell;exec myterm'
         # 2:web
 exec --no-startup-id i3-msg 'workspace 2: web;new_window none'
 exec --no-startup-id i3-msg 'workspace 2: web;exec dwb'
 exec --no-startup-id i3-msg 'workspace 2: web;exec tor-browser-en'
 exec --no-startup-id i3-msg 'workspace 2: web;workspace_layout tabbed'
         # 4:chat
-exec --no-startup-id i3-msg 'workspace 4: chat;exec terminator -b -m -T "terminator.chat" --execute "tmux -2 attach-session -T chat"'
+exec --no-startup-id i3-msg 'workspace 4: chat;exec myterm'
         # 5:steam
 exec --no-startup-id i3-msg 'workspace 5: steam;workspace_layout splitv'
 exec --no-startup-id i3-msg 'workspace 5: steam;new_window 1pixel'
 exec --no-startup-id i3-msg 'workspace 5: steam;new_float normal'
 exec --no-startup-id i3-msg 'workspace 5: steam;exec mumble'
-exec --no-startup-id i3-msg 'workspace 5: steam;exec steam'
 
 exec --no-startup-id i3-msg 'workspace 1;'
 # }}}
