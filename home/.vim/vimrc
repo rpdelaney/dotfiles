@@ -269,6 +269,13 @@ let g:smartusline_hi_insert = 'guibg=orange guifg=black ctermbg=58 ctermfg=black
 let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
 let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
   " 2}}}
+  " easy-align {{{2
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+"
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
+  " 2}}}
 " 1}}}
 " Functions {{{1
   " * Whitespace: {{{2

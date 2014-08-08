@@ -81,8 +81,8 @@
 	mt = mergetool -t vimdiff
 	cp = cherry-pick
 	dc = diff --cached
-	ours = "!f() { git co --ours $@ && git add $@; }; f"
-	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 		# remotes
 	cl = clone
 	remotes = remote -v
@@ -100,8 +100,8 @@
 	br = branch
 	r = reset
 		# searching
-	find = "!git ls-files | grep -i"
-	grep = "grep -Ii"
+	find = "!git ls-files | grep -i"  
+	g = "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I"
 # 1}}}
 [color] # {{{1
 	diff = auto
@@ -298,3 +298,5 @@
 	url = git@github.com:chrisbra/Recover.vim.git
 [submodule "home/.vim/bundle/tabular"]
 	url = git://github.com/godlygeek/tabular.git
+[submodule "home/.vim/bundle/easy-align"]
+	url = git@github.com:junegunn/vim-easy-align.git
