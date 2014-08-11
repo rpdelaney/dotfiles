@@ -272,6 +272,7 @@ let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen cter
   " easy-align {{{2
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
+vmap <s-Enter> <Plug>(LiveEasyAlign)
 "
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
