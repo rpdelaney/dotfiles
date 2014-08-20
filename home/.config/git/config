@@ -264,8 +264,6 @@
 	url = git@github.com:bling/vim-airline.git
 [submodule "home/.vim/bundle/gitgutter"]
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "home/.vim/bundle/better-header"]
-	url = git@github.com:rpdelaney/better-header.git
 [submodule "home/.vim/bundle/syntastic"]
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/gnupg"]
