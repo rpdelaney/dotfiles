@@ -76,6 +76,7 @@
 	fa = fetch --all
 	fd = fetch --dry-run
 	fp = fetch --prune
+	fap = fetch --all --prune
 		# merge
 	m = merge
 	mt = mergetool -t vimdiff
