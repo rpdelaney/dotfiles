@@ -73,10 +73,10 @@
 		# fetch
 	# Should we use --recurse-submodules-yes by default?
 	f = fetch
-	fa = fetch --all
+	fa = fetch --all --recurse-submodules=on-demand
 	fd = fetch --dry-run
 	fp = fetch --prune
-	fap = fetch --all --prune
+	fap = fetch --all --prune --recurse-submodules=on-demand
 		# merge
 	m = merge
 	mt = mergetool -t vimdiff
