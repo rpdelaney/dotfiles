@@ -225,7 +225,11 @@ if type pass &> /dev/null; then
   if [[ -d "$HOME/docs/passwords/" ]] ; then
     export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
   else
-    echo "PASSWORD_STORE_DIR not found." >&2
+    if [[ -d "$HOME/.password-store" ]] ; then
+      export PASSWORD_STORE_DIR="$HOME/.password-store"
+    else
+      echo "PASSWORD_STORE_DIR not found." >&2
+    fi
   fi
   export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
   export PASSWORD_STORE_CLIP_TIME="15"
