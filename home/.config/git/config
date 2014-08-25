@@ -98,6 +98,7 @@
 		# branches
 	co = checkout
 	br = branch -v
+	bra = branch -va
 	r = reset
 		# searching
 	find = "!git ls-files | grep -i"
