@@ -96,12 +96,11 @@
 	cs = commit -S
 	tags = tag --list -n3
 		# branches
-	branches = branch -v
 	co = checkout
-	br = branch
+	br = branch -v
 	r = reset
 		# searching
-	find = "!git ls-files | grep -i"  
+	find = "!git ls-files | grep -i"
 	g = "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I"
 # 1}}}
 [color] # {{{1
