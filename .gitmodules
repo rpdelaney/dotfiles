@@ -91,3 +91,6 @@
 [submodule "home/.vim/bundle/easy-align"]
 	path = home/.vim/bundle/easy-align
 	url = git@github.com:junegunn/vim-easy-align.git
+[submodule "home/.vim/bundle/targets.vim"]
+	path = home/.vim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim
