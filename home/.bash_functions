@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# usage: sprunge FILE 
+# or some_command | sprunge
+unalias sprunge
+sprunge() { curl -F 'sprunge=<-' http://sprunge.us < "${1:-/dev/stdin}"; } 
+
 rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
 
 #
