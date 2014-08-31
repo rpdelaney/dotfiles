@@ -181,6 +181,7 @@ mode "resize" {
 
         # back to normal: same hotkey
         bindsym $mod+p mode "default"
+		bindsym Escape mode "default"
 }
 # }}}
 # workspaces {{{1
