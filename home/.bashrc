@@ -470,8 +470,8 @@ if [[ "$TERM" = "linux" ]]; then
   clear                  #for background artifacting
 #else
       # If we're running in screen then use colors anyway
-# [[ "$TERM" = "screen" ]] && TERM="screen-256color"
-# [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
+[[ "$TERM" = "screen" ]] && TERM="screen-256color"
+[[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
 fi
 # }}}
 # }}}
