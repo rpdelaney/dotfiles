@@ -329,7 +329,9 @@ fi
 # }}}
 # LYNX {{{2
 if type lynx &> /dev/null; then
-  export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
+  if [[ -f "$XDG_CONFIG_HOME/lynx/config" ]]; then
+    export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
+  fi
 # these settings don't just affect lynx, unfortunately.
 # http_proxy causes ALL http requests to be filtered through tor. :(
 # export WWW_HOME=""
