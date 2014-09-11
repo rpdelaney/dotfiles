@@ -411,7 +411,7 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
     # And de-emphasize git status (we don't work as root)
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
     PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -qP '( wheel\b| admin\b| sysop\b)'; then
+  elif groups "$USER" | grep -qP '(\bwheel\b|\badmin\b|\bsysop\b)'; then
     # If we are wheel, try to make that hard to miss.
     # And de-emphasize git status (we don't work as superuser)
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
