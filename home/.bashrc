@@ -334,7 +334,7 @@ if type lynx &> /dev/null; then
   fi
 # these settings don't just affect lynx, unfortunately.
 # http_proxy causes ALL http requests to be filtered through tor. :(
-# export WWW_HOME=""
+  export WWW_HOME="https://duckduckgo.com/"
 # export http_proxy="http://localhost:9050/"
 # export ftp_proxy="http://localhost:9050/"
 # export gopher_proxy="http://localhost:9050/"
