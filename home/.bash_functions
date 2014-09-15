@@ -2,7 +2,7 @@
 
 # usage: sprunge FILE 
 # or some_command | sprunge
-unalias sprunge
+unalias sprunge &> /dev/null
 sprunge() { curl -F 'sprunge=<-' http://sprunge.us < "${1:-/dev/stdin}"; } 
 
 rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
@@ -52,6 +52,54 @@ duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo "${d
   # view today's xkcd and the tagline
 xkcd(){ wget -qO- http://xkcd.com/|tee >(feh "$('grep' -Po '(?<=")http://imgs[^/]+/comics/[^"]+\.\w{3}')")|'grep' -Po '(?<=(\w{3})" title=").*(?=" alt)';}
 
+
+  # Parse YouTube url (get youtube video id)
+youtube-urlid() {
+ url="$*"
+
+ for i in ".*youtu\.be/\([^\/&?#]\+\)" ".*youtu.\+v[=/]\([^\/&?#]\+\)" ".*youtu.\+embed/\([^\/&?#]\+\)"; do
+  vid="$(expr "${url}" : "${i}")"
+  if [[ -n "$vid" ]]; then
+    echo "$vid"
+  fi
+ done
+}
+
+
+if type youtube-dl &> /dev/null ; then
+  youtube-watch() {
+    # watch video youtube without flash but with mplayer and youtube-dl
+    mplayer $(youtube-dl -g "$*")
+  }
+
+  youtube-listen() {
+    :
+  }
+
+  youtube-chanrip() {
+    # Download Entire YouTube Channel - all of a user's videos
+    for i in $(curl -s http://gdata.youtube.com/feeds/api/users/"$1"/uploads | grep -Eo "watch\?v=[^[:space:]\"\'\\]{11}" | uniq); do
+      youtube-dl --title --no-overwrites http://youtube.com/"$i"
+    done 
+  }
+  youtube-playlistdl() {
+    # Download YouTube music playlist and convert it to mp3 files
+    :
+  }
+
+  youtube2gif() {
+    # Create an animated gif from a Youtube video
+    url="$1"
+    id="$(youtube-urlid "$url")"
+    tmpfile="$TMPDIR/$id.flv"
+
+    youtube-dl -o "$tmpfile" "$url"
+    mplayer "$tmpfile" -ss 03:16 -endpos 5 -vo jpeg:outdir="$id":quality=100:smooth=30:progressive -vf scale=320:240 -nosound
+    convert -delay 4 -loop 0 "$TMPDIR/$id"/*.jpg "$TMPDIR/$id".gif
+  }
+
+
+fi
 #
 # miscellaneous
 #
@@ -86,9 +134,6 @@ jobscount(){
         echo -n "$jobs_cnt "
     fi
 }
-
-  # search commandlinefu from commandline
-cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n "$@" | openssl base64)/plaintext"; }
 
   # download files from web via tor
 turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
