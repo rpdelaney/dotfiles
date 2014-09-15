@@ -12,8 +12,12 @@ if [[ $UID -ne 0 ]]; then
     # watch incoming network connections
   alias netmonitor='\sudo watch -n 3 lsof -i'
 
-    # youtube-dl with lots of metadata
-  type youtube-dl &> /dev/null && alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
+  if type youtube-dl &> /dev/null ; then
+      # youtube-dl with lots of metadata
+    alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
+      # Convert Youtube videos to MP3
+    alias youtube-dla='youtube-dl -t --extract-audio --audio-format mp3 --'
+  fi
 
     # save a dnuos list with stats starting from pwd
   type dnuos &> /dev/null && alias oidua='\dnuos --file=list -D -S -t .'
@@ -129,4 +133,5 @@ type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
 type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
 
   # test the output of commands
-alias winfail='&& echo "win" || echo "fail"'
+  # this doesn't really work
+alias winfail='if $!; then echo "win"; else echo "fail"; fi'
