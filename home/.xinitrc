@@ -5,12 +5,12 @@ xset m 0 4
 setxkbmap dvorak
 # numlockx on
 
-# security
+	# security
 # xautolock -time 45 -locker xlock # -notify 30 -notifier ??
 
     # redshift
 #redshift -l 36.978:-121.98155 -t 6500:3500 &
-redshift -b 1:0.65 -l 37:-122 -t 6500:3500 &
+#redshift -b 1:0.65 -l 37:-122 -t 6500:3500 &
 
 	# notify daemon
 dunst &
