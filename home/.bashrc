@@ -239,7 +239,7 @@ fi
 # MAIL {{{2
   # If this parameter is set to a filename or directory name and the MAILPATH
   # variable is not set, Bash informs the user of the arrival of mail in the
-  # specified file or Maildir-format directory. 
+  # specified file or Maildir-format directory.
 if [[ -d "/var/mail/$USERNAME" ]] ; then
   export MAIL="/var/mail/$USERNAME"
 else
@@ -250,7 +250,7 @@ fi
   # specified in the MAILPATH or MAIL variables. The default is 60 seconds. When
   # it is time to check for mail, the shell does so before displaying the primary
   # prompt. If this variable is unset, or set to a value that is not a number
-  # greater than or equal to zero, the shell disables mail checking. 
+  # greater than or equal to zero, the shell disables mail checking.
 export MAILCHECK=60
 
 # Mutt {{{3
@@ -329,8 +329,15 @@ fi
 # }}}
 # LYNX {{{2
 if type lynx &> /dev/null; then
+    # Where to find the config
   if [[ -f "$XDG_CONFIG_HOME/lynx/config" ]]; then
     export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
+  fi
+    # Where to save downloaded files
+  if [[ -d "$HOME/incoming/" ]]; then
+    export LYNX_SAVE_SPACE="$HOME/incoming"
+  else
+    export LYNX_SAVE_SPACE="$HOME"
   fi
 # these settings don't just affect lynx, unfortunately.
 # http_proxy causes ALL http requests to be filtered through tor. :(
@@ -367,6 +374,17 @@ if type psql &> /dev/null; then
 # export PGUSER
 fi
 # }}}
+# ADB {{{2
+if type adb &> /dev/null; then
+    # Print debug information. A comma separated list of the following values 1 or
+    # all, adb, sockets, packets, rwx, usb, sync, sysdeps, transport, jdwp
+  export ADB_TRACE="adb,transports,usb"
+    # The serial number to connect to. -s takes priority over this if given.
+  export ANDROID_SERIAL="0146B5040401801E"
+    # When used with the logcat option, only these debug tags are printed.
+# export ANDROID_LOG_TAGS=
+fi
+# 2}}}
 # SSH {{{2
 # If:
 #   there is at least one tmux session,
@@ -518,7 +536,7 @@ fi
 # GREETING {{{1
 #
 if type alsi &> /dev/null ; then
-  timeout 1 alsi 2> /dev/null 
+  timeout 1 alsi 2> /dev/null
 else
   echo "TERM is $TERM"
 fi
