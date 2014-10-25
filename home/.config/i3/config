@@ -203,10 +203,10 @@ workspace  "10: games"   output    DVI-I-2
     # bind applications to their appropriate workspaces
     # get window class with xprop
 assign [class="Firefox"] → 2: web
-assign [class="chromium"] → 2: web
 assign [class="Opera"] → 2: web
 assign [class="Midori"] → 2: web
 assign [class="Dwb"] → 2: web
+assign [class="Chromium"] → 4: chat
 assign [class="Mumble"] → 5: steam
 assign [class="Steam"] → 5: steam
 #assign [class="Smplayer"] → 6: media
