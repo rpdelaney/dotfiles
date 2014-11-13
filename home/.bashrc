@@ -378,7 +378,7 @@ fi
 if type adb &> /dev/null; then
     # Print debug information. A comma separated list of the following values 1 or
     # all, adb, sockets, packets, rwx, usb, sync, sysdeps, transport, jdwp
-  export ADB_TRACE="adb,transports,usb"
+  export ADB_TRACE="adb,usb"
     # The serial number to connect to. -s takes priority over this if given.
   export ANDROID_SERIAL="0146B5040401801E"
     # When used with the logcat option, only these debug tags are printed.
@@ -423,10 +423,15 @@ if tmux has-session &> /dev/null; then
   fi
 fi
 # 2}}}
+# WINE {{{2
+if type wine &> /dev/null; then
+  export WINEDEBUG="fixme-all"
+fi
+# 2}}}
 # PROMPT {{{1
   # PS1 {{{2
 if [[ -f "$HOME"/.bash_prompt ]]; then
-  if [[ "$UID" == 0 ]]; then
+  if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
     # If we are root, try to make that hard to miss.
     # And de-emphasize git status (we don't work as root)
     PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
@@ -508,11 +513,11 @@ if [[ "$TERM" = "linux" ]]; then
   echo -en "\e]P7ffffff" #lightgrey
   echo -en "\e]PFdedede" #white
   clear                  #for background artifacting
+fi
 #else
       # If we're running in screen then use colors anyway
 [[ "$TERM" = "screen" ]] && TERM="screen-256color"
 [[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
-fi
 # }}}
 # }}}
 # ALIASES {{{1
