@@ -425,6 +425,7 @@ fi
 # 2}}}
 # WINE {{{2
 if type wine &> /dev/null; then
+  # Hide fixme messages. I don't do winedev
   export WINEDEBUG="fixme-all"
 fi
 # 2}}}
