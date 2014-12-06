@@ -191,7 +191,7 @@ mode "resize" {
 workspace   "1: shell"   output    DVI-I-2
 workspace   "2: web"     output    DVI-I-2
 workspace   "3: misc"    output    DVI-I-2
-workspace   "4: chat"    output    DVI-I-2
+workspace   "4: chat"    output    DVI-I-3
 workspace   "5: steam"   output    DVI-I-3
 workspace   "6: media"   output    DVI-I-3
 workspace   "7: docs"    output    DVI-I-2
