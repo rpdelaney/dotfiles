@@ -103,7 +103,7 @@ set +e
   # Don't use ^D to exit a shell: require an explicit exit command
 set -o ignoreeof
   # Allow shell command line editing using the built-in vi editor. Enabling vi
-  # mode shall  disable any other command line editing mode provided as an
+  # mode shall disable any other command line editing mode provided as an
   # implementation extension.
 set -o vi
   # The shell shall read commands but does not execute them; this can be used to
@@ -118,11 +118,11 @@ shopt -s nocaseglob
 shopt -s histappend
   # Use extended globbing
 #shopt -s extglob
-  # When changing directory small typos can be ignored by bash
-  # for example, cd /vr/lgo/apaache would find /var/log/apache
+  # When changing directory small typos can be ignored by bash for example, cd
+  # /vr/lgo/apaache would find /var/log/apache
 shopt -s cdspell
-  # check the window size after each command and, if necessary,
-  # update the values of LINES and COLUMNS.
+  # check the window size after each command and, if necessary, update the
+  # values of LINES and COLUMNS.
 shopt -s checkwinsize
 # }}}
 # UMASK {{{3
@@ -429,19 +429,49 @@ if type wine &> /dev/null; then
   export WINEDEBUG="fixme-all"
 fi
 # 2}}}
+# GREP {{{2
+  # If set, grep behaves as POSIX requires; otherwise, grep behaves more like
+  # other GNU programs. POSIX requires that options that follow file names must
+  # be treated as file names; by default, such options are permuted to the front
+  # of the operand list and are treated as options. Also, POSIX requires that
+  # unrecognized options be diagnosed as “illegal”, but since they are not
+  # really against the law the default is to diagnose them as “invalid”.
+  # POSIXLY_CORRECT also disables _N_GNU_nonoption_argv_flags_, described below.
+if [[ -n "$POSIXLY_CORRECT" ]]; then
+  unset POSIXLY_CORRECT
+fi
+  # This variable specifies default options to be placed in front of any
+  # explicit options. As this causes problems when writing portable scripts,
+  # this feature will be removed in a future release of grep, and grep warns if
+  # it is used. Please use an alias or script instead.
+if [[ -n "$GREP_OPTIONS" ]]; then
+  unset GREP_OPTIONS
+fi
+  # This variable specifies the color used to highlight matched (non-empty)
+  # text. It is deprecated in favor of GREP_COLORS, but still supported. The mt,
+  # ms, and mc capabilities of GREP_COLORS have priority over it. It can only
+  # specify the color used to highlight the matching non-empty text in any
+  # matching line (a selected line when the -v command-line option is omitted,
+  # or a context line when -v is specified). The default is 01;31, which means a
+  # bold red foreground text on the terminal's default background.
+export GREP_COLOR=
+  # Specifies the colors and other attributes used to highlight various parts
+  # of the output. See `man grep` for details.
+export GREP_COLORS=
+# 2}}}
 # PROMPT {{{1
   # PS1 {{{2
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
     # If we are root, try to make that hard to miss.
     # And de-emphasize git status (we don't work as root)
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    export PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    export PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP '(\bwheel\b|\badmin\b|\bsysop\b)'; then
     # If we are wheel, try to make that hard to miss.
     # And de-emphasize git status (we don't work as superuser)
-    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
-    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    export PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    export PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
   elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
     # If we are in sudoers,
     # Use defaults - do nothing
@@ -449,7 +479,7 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   else
     # If we are not root, wheel, nor a sudoer,
     # Use unprivileged colorscheme
-    PROMPT_USER_COLOR="$(tput setaf 2)"
+    export PROMPT_USER_COLOR="$(tput setaf 2)"
   fi
   source "$HOME"/.bash_prompt
 fi
@@ -457,17 +487,17 @@ fi
   # PS2 {{{2
   # Continuation prompt
   # Default: '> '
-PS2="... "
+export PS2="... "
   # 2}}}
   # PS3 {{{2
   # Option select prompt
   # Default: '#?'
-PS3='#?'
+export PS3='#?'
   # 2}}}
   # PS4 {{{2
   # Script debug mode prefix
   # Default: '+'
-PS4="    +++"
+export PS4="    +++"
   # 2}}}
 # 1}}}
 # KEYCHAIN {{{1
@@ -475,8 +505,8 @@ PS4="    +++"
   # determine if we want to run a new ssh-agent for this session
 if type keychain &> /dev/null; then
   keychain --nogui -q
-  [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh ]]      && source "$HOME"/.keychain/"$HOSTNAME"-sh
-  [[ -f "$HOME"/.keychain/"$HOSTNAME"-sh-gpg ]]  && source "$HOME"/.keychain/"$HOSTNAME"-sh-gpg
+  [[ -f "$HOME/.keychain/$HOSTNAME"-sh ]]      && source "$HOME/.keychain/$HOSTNAME"-sh
+  [[ -f "$HOME/.keychain/$HOSTNAME"-sh-gpg ]]  && source "$HOME/.keychain/$HOSTNAME"-sh-gpg
 else
   echo "keychain(1) not found."
   if type ssh-agent &> /dev/null && [[ -z "$SSH_AGENT_PID" ]]; then
