@@ -521,7 +521,12 @@ fi
 #
 # terminal {{{2
 # read in dircolors; enable color support
-[[ -e "$HOME"/.bash_colors ]] && eval $(dircolors -b "$HOME"/.bash_colors) || eval $(dircolors -b)
+if [[ -e "$HOME"/.bash_colors ]] ; then
+  eval "$(dircolors -b "$HOME"/.bash_colors)"
+else
+  eval "$(dircolors -b)"
+fi
+
 [[ -e "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
 # }}}
 # tty {{{2
