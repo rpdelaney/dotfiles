@@ -519,16 +519,17 @@ fi
 # }}}
 # COLORS {{{1
 #
-# terminal {{{2
-# read in dircolors; enable color support
+  # If we're running in screen then use colors anyway
+[[ "$TERM" = "screen" ]] && export TERM="screen-256color"
+[[ "$TERM" = "screen-bce" ]] && export TERM="screen-256color-bce"
+  # read in dircolors
 if [[ -e "$HOME"/.bash_colors ]] ; then
   eval "$(dircolors -b "$HOME"/.bash_colors)"
 else
   eval "$(dircolors -b)"
 fi
-
+  # enable color support
 [[ -f "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
-# }}}
 # tty {{{2
   # zenburn theme for tty by way of http://phraktured.net/linux-console-colors.html
 if [[ "$TERM" = "linux" ]]; then
@@ -550,12 +551,8 @@ if [[ "$TERM" = "linux" ]]; then
   echo -en "\e]PFdedede" #white
   clear                  #for background artifacting
 fi
-#else
-      # If we're running in screen then use colors anyway
-[[ "$TERM" = "screen" ]] && TERM="screen-256color"
-[[ "$TERM" = "screen-bce" ]] && TERM="screen-256color-bce"
-# }}}
-# }}}
+# 2}}}
+# 1}}}
 # ALIASES {{{1
 #
   # Alias definitions.
