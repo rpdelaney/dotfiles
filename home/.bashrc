@@ -527,7 +527,7 @@ else
   eval "$(dircolors -b)"
 fi
 
-[[ -e "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
+[[ -f "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
 # }}}
 # tty {{{2
   # zenburn theme for tty by way of http://phraktured.net/linux-console-colors.html
