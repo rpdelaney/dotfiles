@@ -220,7 +220,8 @@ assign [class="Xsane"] → 7: docs
 assign [class="Gimp"] → 7: docs
 #assign [class="VirtualBox"] → 9: vm
 assign [class="hl2_linux"] → 10: games
-assign [class="EufloriaHD.bin.x86_64"]	10:games
+assign [class="EufloriaHD.bin.x86_64"]	10: games
+assign [class="csgo_linux"]	10: games
 # }}}
 # auto-run {{{1
 #
