@@ -132,6 +132,9 @@ type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
   # weechat is dumb
 type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
 
+  # dosbox coercion to use XDG standard
+type dosbox &> /dev/null && [[ -f "$XDG_CONFIG_HOME/dosbox/dosbox.conf" ]] && alias dosbox="dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox.conf"
+
   # test the output of commands
   # this doesn't really work
 alias winfail='if $!; then echo "win"; else echo "fail"; fi'
