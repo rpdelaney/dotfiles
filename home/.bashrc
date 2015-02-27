@@ -22,6 +22,118 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
+# SHELL OPTIONS {{{2
+#
+# SHOPT {{{3
+#  # causes the shell to notify the user asynchronously of background job
+#  # completions.
+#set -b
+#  # causes the shell to exit if any command exits nonzero, excepting procedural
+#  # logic and subshells (see `man set`)
+#set +e
+#  # Don't use ^D to exit a shell: require an explicit exit command
+#set -o ignoreeof
+#  # Allow shell command line editing using the built-in vi editor. Enabling vi
+#  # mode shall disable any other command line editing mode provided as an
+#  # implementation extension.
+#set -o vi
+#  # The shell shall read commands but does not execute them; this can be used to
+#  # check for shell script syn‐ tax errors. An interactive shell may ignore this
+#  # option.
+##set -o noexec
+#  # The shell shall write its input to standard error as it is read.
+##set -v
+#  # Use case-insensitive filename globbing
+#shopt -s nocaseglob
+#  # Make bash append rather than overwrite the history on disk
+#shopt -s histappend
+#  # Use extended globbing
+##shopt -s extglob
+#  # When changing directory small typos can be ignored by bash for example, cd
+#  # /vr/lgo/apaache would find /var/log/apache
+#shopt -s cdspell
+#  # check the window size after each command and, if necessary, update the
+#  # values of LINES and COLUMNS.
+#shopt -s checkwinsize
+# }}}
+# UMASK {{{3
+  # /etc/profile sets 022, removing write perms to group + others.
+  # Set a more restrictive umask: i.e. no exec perms for others:
+# umask 027
+  # Paranoid: neither group nor others have any perms:
+umask 0077
+# }}}
+# HISTORY {{{3
+  # append to the history file, don't overwrite it
+shopt -s histappend
+  # don't put duplicate lines in the history. See bash(1) for more options
+HISTCONTROL=ignoreboth
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=12000
+HISTFILESIZE=1000
+  # Ignore some controlling instructions
+  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
+  # The '&' is a special pattern which suppresses duplicate entries.
+export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
+export HISTIGNORE="$HISTIGNORE"':clear'
+# }}}
+# }}}
+# SETTINGS {{{1
+#  # Mark variables which are modified or created for export.
+##set +a
+#  # Notify of job termination immediately.
+#set -b
+#  # Exit immediately if a command exits with a non-zero status.
+#set +e
+#  # Disable file name generation (globbing).
+#set +f
+#  # Remember the location of commands as they are looked up.
+#set -h
+#  # All assignment arguments are placed in the environment for a
+#  # command, not just those that precede the command name.
+#set -k
+#  # Job control is enabled.
+#set -m
+#  # Read commands but do not execute them.
+#set +n
+#  # Use a vi-style editing interface on the command line
+#set -o vi
+#  # Turned on whenever the real and effective user ids do not match.
+#  # Disables processing of the $ENV file and importing of shell
+#  # functions.  Turning this option off causes the effective uid and
+#  # gid to be set to the real uid and gid.
+#set +p
+#  # Exit after reading and executing one command.
+#set -t
+#  # Treat unset variables as an error when substituting.
+#set -u
+#  # Print shell input lines as they are read.
+#set -v
+#  # Print commands and their arguments as they are executed.
+#set -x
+#  # the shell will perform brace expansion
+#set -B
+#  # If set, disallow existing regular files to be overwritten
+#  # by redirection of output.
+#set -C
+#  # If set, the ERR trap is inherited by shell functions.
+#set -E
+#  # Enable ! style history substitution.  This flag is on
+#  # by default when the shell is interactive.
+#set -H
+#  # If set, do not resolve symbolic links when executing commands
+#  # such as cd which change the current directory.
+#set -P
+#  # If set, the DEBUG trap is inherited by shell functions.
+#set -T
+#  # Assign any remaining arguments to the positional parameters.
+#set --
+#  # If there are no remaining arguments, the positional parameters
+#  # are unset.
+#set -
+#  # Assign any remaining arguments to the positional parameters.
+#  # The -x and -v options are turned off.
+## 1}}}
 # ENVIRONMENT {{{1
 # XDG {{{2
   # Because lots of apps are dumb and don't use the defaults like they should
@@ -90,62 +202,6 @@ PATH="${PATH}:$HOME/bin/"
 for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
   [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
 done
-# }}}
-# SHELL OPTIONS {{{2
-#
-# SHOPT {{{3
-  # causes the shell to notify the user asynchronously of background job
-  # completions.
-set -b
-  # causes the shell to exit if any command exits nonzero, excepting procedural
-  # logic and subshells (see `man set`)
-set +e
-  # Don't use ^D to exit a shell: require an explicit exit command
-set -o ignoreeof
-  # Allow shell command line editing using the built-in vi editor. Enabling vi
-  # mode shall disable any other command line editing mode provided as an
-  # implementation extension.
-set -o vi
-  # The shell shall read commands but does not execute them; this can be used to
-  # check for shell script syn‐ tax errors. An interactive shell may ignore this
-  # option.
-#set -o noexec
-  # The shell shall write its input to standard error as it is read.
-#set -v
-  # Use case-insensitive filename globbing
-shopt -s nocaseglob
-  # Make bash append rather than overwrite the history on disk
-shopt -s histappend
-  # Use extended globbing
-#shopt -s extglob
-  # When changing directory small typos can be ignored by bash for example, cd
-  # /vr/lgo/apaache would find /var/log/apache
-shopt -s cdspell
-  # check the window size after each command and, if necessary, update the
-  # values of LINES and COLUMNS.
-shopt -s checkwinsize
-# }}}
-# UMASK {{{3
-  # /etc/profile sets 022, removing write perms to group + others.
-  # Set a more restrictive umask: i.e. no exec perms for others:
-# umask 027
-  # Paranoid: neither group nor others have any perms:
-umask 0077
-# }}}
-# HISTORY {{{3
-  # append to the history file, don't overwrite it
-shopt -s histappend
-  # don't put duplicate lines in the history. See bash(1) for more options
-HISTCONTROL=ignoreboth
-  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=12000
-HISTFILESIZE=1000
-  # Ignore some controlling instructions
-  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-  # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
-export HISTIGNORE="$HISTIGNORE"':clear'
-# }}}
 # }}}
 # TERM {{{2
   # read /etc/lsb-release for distribution name and version
