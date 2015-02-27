@@ -228,14 +228,14 @@ assign [class="csgo_linux"]	10: games
     # auto-run these apps when starting i3
         # 1:shell
 exec --no-startup-id i3-msg 'workspace 1: shell;new_window none'
-exec --no-startup-id i3-msg 'workspace 1: shell;exec myterm tmux new-session'
+exec --no-startup-id i3-msg 'workspace 1: shell;exec myterm'
         # 2:web
 exec --no-startup-id i3-msg 'workspace 2: web;new_window none'
 #exec --no-startup-id i3-msg 'workspace 2: web;exec dwb'
 #exec --no-startup-id i3-msg 'workspace 2: web;exec tor-browser-en'
 exec --no-startup-id i3-msg 'workspace 2: web;workspace_layout tabbed'
         # 4:chat
-exec --no-startup-id i3-msg 'workspace 4: chat;exec myterm tmux new-session'
+exec --no-startup-id i3-msg 'workspace 4: chat;exec myterm'
         # 5:steam
 exec --no-startup-id i3-msg 'workspace 5: steam;workspace_layout splitv'
 exec --no-startup-id i3-msg 'workspace 5: steam;new_window 1pixel'
