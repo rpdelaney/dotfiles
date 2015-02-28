@@ -6,11 +6,10 @@ setxkbmap dvorak
 # numlockx on
 
 	# security
-# xautolock -time 45 -locker xlock # -notify 30 -notifier ??
+# xautolock -time 45 -locker xlock -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
 
     # redshift
-#redshift -l 36.978:-121.98155 -t 6500:3500 &
-#redshift -b 1:0.65 -l 37:-122 -t 6500:3500 &
+redshift -b 1:0.65 -l 37:-122 -t 6500:3500 &
 
 	# notify daemon
 dunst &
@@ -27,4 +26,5 @@ exec i3
 
 	# Merge in .Xdefaults
 [[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
+
 # vim: ft=conf
