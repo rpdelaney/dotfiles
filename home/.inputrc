@@ -17,20 +17,20 @@ set expand-tilde on
 
 # Append "/" to all dirnames
 set mark-directories on
-set mark-symlinked-directories on
+set mark-symlinked-directories off
 
 # auto-completion {{{
 	# ignore case when auto-completing
 set completion-ignore-case on
 	# show all if ambiguous
-set show-all-if-ambiguous off
+set show-all-if-ambiguous on
 	# Match all files
 set match-hidden-files on
 	# but only if no completion is possible
 set show-all-if-unmodified on
 # }}}
 # binds {{{
-TAB: menu-complete
+#TAB: menu-complete
 # }}}
 # console mode {{{
 $if mode=emacs
