@@ -3,7 +3,8 @@ xset m 0 4
 
     # set keyboard layout again
 setxkbmap dvorak
-# numlockx on
+    # Kill X with Ctrl-Alt-Backspace
+setxkbmap -option terminate:ctrl_alt_bksp
 
 	# security
 # xautolock -time 45 -locker xlock -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
