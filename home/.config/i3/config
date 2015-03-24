@@ -138,7 +138,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+x exec "i3-msg exit"
 # 3}}}
     # resize {{{3
-bindsym $mod+p mode "resize"
+bindsym $mod+p exec notify-send --app-name="i3" "Entering RESIZE mode"; mode "resize"
 # 3}}}
 # 2}}}
 # commands {{{2
@@ -165,6 +165,7 @@ bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 # 2}}}
 # modes {{{1
 mode "resize" {
+#		
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
