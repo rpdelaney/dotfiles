@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ $UID -ne 0 ]]; then
+    # cleanly become another user
+  alias become='sudo su --login'
+
     # yaourt
   if type yaourt &> /dev/null; then
     alias ya='\yaourt'
@@ -144,6 +147,7 @@ if type smplayer &> /dev/null ; then
   alias smplayer='smplayer -no-close-at-end -mpcgui'
   alias smadd='smplayer -add-to-playlist'
 fi
+
   # test the output of commands
   # this doesn't really work
 alias winfail='if $!; then echo "win"; else echo "fail"; fi'
