@@ -138,7 +138,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+x exec "i3-msg exit"
 # 3}}}
     # resize {{{3
-bindsym $mod+p exec notify-send --app-name="i3" "Entering RESIZE mode"; mode "resize"
+bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; mode "resize"
 # 3}}}
 # 2}}}
 # commands {{{2
@@ -183,7 +183,7 @@ mode "resize" {
 
         # back to normal: same hotkey
         bindsym $mod+p mode "default"
-		bindsym Escape mode "default"
+		bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 # }}}
 # workspaces {{{1
