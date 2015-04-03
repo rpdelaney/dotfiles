@@ -79,6 +79,8 @@ id_rsa
 id_rsa.*
 id_dsa
 id_dsa.*
+*.gpg
+random_seed
 
 # svn
 *.svn/
