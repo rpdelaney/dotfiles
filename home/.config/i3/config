@@ -23,6 +23,55 @@ focus_follows_mouse yes
     # show the popup only if it belongs to the fullscreen application
 popup_during_fullscreen smart
 
+# workspaces {{{1
+#
+set $WS1 "1: shell"
+set $WS2 "2: web"
+set $WS3 "3: misc"
+set $WS4 "4: chat"
+set $WS5 "5: steam"
+set $WS6 "6: media"
+set $WS7 "7: docs"
+set $WS8 "8: misc"
+set $WS9 "9: vm"
+set $WS0 "10: games"
+
+    # put the workspaces on the right screens
+workspace   $WS1      output    DVI-I-2
+workspace   $WS2      output    DVI-I-2
+workspace   $WS3      output    DVI-I-2
+workspace   $WS4      output    DVI-I-3
+workspace   $WS5      output    DVI-I-3
+workspace   $WS6      output    DVI-I-3
+workspace   $WS7      output    DVI-I-2
+workspace   $WS8      output    DVI-I-2
+workspace   $WS9      output    DVI-I-3
+workspace   $WS0      output    DVI-I-2
+# window classes {{{2
+    # bind applications to their appropriate workspaces
+    # get window class with xprop
+assign [class="Firefox"] → $WS2
+assign [class="Opera"] → $WS2
+assign [class="Midori"] → $WS2
+assign [class="Dwb"] → $WS2
+assign [class="Chromium"] → $WS4
+assign [class="Mumble"] → $WS5
+assign [class="Steam"] → $WS5
+#assign [class="Smplayer"] → $WS6
+assign [class="Smtube"] → $WS6
+assign [class="Mplayer"] → $WS6
+assign [class="Vlc"] → $WS6
+assign [class="evince"] → $WS7
+assign [class="Zathura"] → $WS7
+assign [class="libreoffice-writer"] → $WS7
+assign [class="Xsane"] → $WS7
+assign [class="Gimp"] → $WS7
+#assign [class="VirtualBox"] → 9: vm
+assign [class="hl2_linux"] → 10: games
+assign [class="EufloriaHD.bin.x86_64"]	10: games
+assign [class="csgo_linux"]	10: games
+# 2}}}
+# 1}}}
 # styles {{{1
 #
 # i3bar {{{2
@@ -101,14 +150,14 @@ bindsym $mod+space+j move down
 bindsym $mod+space+k move up
 bindsym $mod+space+l move right
     # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: shell
-bindsym $mod+Shift+2 move container to workspace 2: web
-bindsym $mod+Shift+3 move container to workspace 3: misc
-bindsym $mod+Shift+4 move container to workspace 4: chat
-bindsym $mod+Shift+5 move container to workspace 5: steam
-bindsym $mod+Shift+6 move container to workspace 6: media
-bindsym $mod+Shift+7 move container to workspace 7: docs
-bindsym $mod+Shift+8 move container to workspace 8: misc
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
 bindsym $mod+Shift+9 move container to workspace 9: vm
 bindsym $mod+Shift+0 move container to workspace 10: games
 # }}}
@@ -118,14 +167,14 @@ bindsym $mod+Shift+space floating toggle
 #bindsym $mod+space focus mode_toggle
 # }}}
     # switch to workspace {{{3
-bindsym $mod+1 workspace 1: shell
-bindsym $mod+2 workspace 2: web
-bindsym $mod+3 workspace 3: misc
-bindsym $mod+4 workspace 4: chat
-bindsym $mod+5 workspace 5: steam
-bindsym $mod+6 workspace 6: media
-bindsym $mod+7 workspace 7: docs
-bindsym $mod+8 workspace 8: misc
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace 9: vm
 bindsym $mod+0 workspace 10: games
 	# }}}
@@ -165,7 +214,7 @@ bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 # 2}}}
 # modes {{{1
 mode "resize" {
-#		
+#
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -186,62 +235,24 @@ mode "resize" {
 		bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 # }}}
-# workspaces {{{1
-#
-    # put the workspaces on the right screens
-workspace   "1: shell"   output    DVI-I-2
-workspace   "2: web"     output    DVI-I-2
-workspace   "3: misc"    output    DVI-I-2
-workspace   "4: chat"    output    DVI-I-3
-workspace   "5: steam"   output    DVI-I-3
-workspace   "6: media"   output    DVI-I-3
-workspace   "7: docs"    output    DVI-I-2
-workspace   "8: misc"    output    DVI-I-2
-workspace   "9: vm"      output    DVI-I-3
-workspace  "10: games"   output    DVI-I-2
-# }}}
-# window classes {{{1
-    # bind applications to their appropriate workspaces
-    # get window class with xprop
-assign [class="Firefox"] → 2: web
-assign [class="Opera"] → 2: web
-assign [class="Midori"] → 2: web
-assign [class="Dwb"] → 2: web
-assign [class="Chromium"] → 4: chat
-assign [class="Mumble"] → 5: steam
-assign [class="Steam"] → 5: steam
-#assign [class="Smplayer"] → 6: media
-assign [class="Smtube"] → 6: media
-assign [class="Mplayer"] → 6: media
-assign [class="Vlc"] → 6: media
-assign [class="evince"] → 7: docs
-assign [class="Zathura"] → 7: docs
-assign [class="libreoffice-writer"] → 7: docs
-assign [class="Xsane"] → 7: docs
-assign [class="Gimp"] → 7: docs
-#assign [class="VirtualBox"] → 9: vm
-assign [class="hl2_linux"] → 10: games
-assign [class="EufloriaHD.bin.x86_64"]	10: games
-assign [class="csgo_linux"]	10: games
-# }}}
 # auto-run {{{1
 #
     # auto-run these apps when starting i3
         # 1:shell
-exec --no-startup-id i3-msg 'workspace 1: shell;new_window none'
-exec --no-startup-id i3-msg 'workspace 1: shell;exec myterm'
+exec --no-startup-id i3-msg 'workspace $WS1;new_window none'
+exec --no-startup-id i3-msg 'workspace $WS1;exec myterm'
         # 2:web
-exec --no-startup-id i3-msg 'workspace 2: web;new_window none'
-#exec --no-startup-id i3-msg 'workspace 2: web;exec dwb'
-#exec --no-startup-id i3-msg 'workspace 2: web;exec tor-browser-en'
-exec --no-startup-id i3-msg 'workspace 2: web;workspace_layout tabbed'
+exec --no-startup-id i3-msg 'workspace $WS2;new_window none'
+#exec --no-startup-id i3-msg 'workspace $WS2;exec dwb'
+#exec --no-startup-id i3-msg 'workspace $WS2;exec tor-browser-en'
+exec --no-startup-id i3-msg 'workspace $WS2;workspace_layout tabbed'
         # 4:chat
-exec --no-startup-id i3-msg 'workspace 4: chat;exec myterm'
+exec --no-startup-id i3-msg 'workspace $WS4;exec myterm'
         # 5:steam
-exec --no-startup-id i3-msg 'workspace 5: steam;workspace_layout splitv'
-exec --no-startup-id i3-msg 'workspace 5: steam;new_window 1pixel'
-exec --no-startup-id i3-msg 'workspace 5: steam;new_float normal'
-exec --no-startup-id i3-msg 'workspace 5: steam;exec mumble'
+exec --no-startup-id i3-msg 'workspace $WS5;workspace_layout splitv'
+exec --no-startup-id i3-msg 'workspace $WS5;new_window 1pixel'
+exec --no-startup-id i3-msg 'workspace $WS5;new_float normal'
+exec --no-startup-id i3-msg 'workspace $WS5;exec mumble'
 
 exec --no-startup-id i3-msg 'workspace 1;'
 # }}}
