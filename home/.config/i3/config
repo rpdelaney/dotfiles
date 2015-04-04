@@ -235,6 +235,10 @@ mode "resize" {
 		bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 # }}}
+# for-window {{{1
+# for_window[class="gnome-control-center"] floating enable
+for_window[class="Dwb"] focus child, layout tabbed, focus
+# 1}}}
 # auto-run {{{1
 #
     # auto-run these apps when starting i3
