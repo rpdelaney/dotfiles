@@ -301,3 +301,5 @@
 	url = git@github.com:junegunn/vim-easy-align.git
 [submodule "home/.vim/bundle/targets.vim"]
 	url = https://github.com/wellle/targets.vim
+[submodule "home/.vim/bundle/diffchanges"]
+	url = git@github.com:jmcantrell/vim-diffchanges.git
