@@ -226,6 +226,7 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   # GVIM
   if type gvim &> /dev/null; then export VISUAL="gvim"; fi
   # NVIDIA {{{3
+  if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
     if [[ -d "$XDG_CACHE_HOME/nvidia" ]] ; then
       export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nvidia"
     else
@@ -246,6 +247,7 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   # Configuring TwinView "Configuring Twinview" and the section on Ensuring
   # Identical Mode Timings in Chapter 19, Programming Modes.
   # export __GL_SYNC_DISPLAY_DEVICE=""
+  fi
   # }}}
 fi
 # }}}
