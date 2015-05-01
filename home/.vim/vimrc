@@ -38,6 +38,17 @@ else
   set showbreak=
 endif " }}}
   " 2}}}
+  " Fonts {{{2
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata-g\ 14
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
+  " 2}}}
   " Cursor {{{2
 "if &term =~ "xterm\\|rxvt|screen-256color"
 " " use an orange cursor in insert mode
