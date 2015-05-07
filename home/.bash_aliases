@@ -11,7 +11,14 @@ if [[ $UID -ne 0 ]]; then
     alias yas='\yaourt -S'
     alias yass='\yaourt -Ss'
     alias yars='\yaourt -Rs'
+  else
+    alias ya='\pacman'
+    alias yaq='\pacman -Q'
+    alias yas='\pacman -S'
+    alias yass='\pacman -Ss'
+    alias yars='\pacman -Rs'
   fi
+
     # watch incoming network connections
   alias netmonitor='\sudo watch -n 3 lsof -i'
 
