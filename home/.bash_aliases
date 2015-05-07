@@ -12,11 +12,11 @@ if [[ $UID -ne 0 ]]; then
     alias yass='\yaourt -Ss'
     alias yars='\yaourt -Rs'
   else
-    alias ya='\pacman'
-    alias yaq='\pacman -Q'
-    alias yas='\pacman -S'
-    alias yass='\pacman -Ss'
-    alias yars='\pacman -Rs'
+    alias ya='\pacman --color=always'
+    alias yaq='\pacman --color=always -Q'
+    alias yas='\pacman --color=always -S'
+    alias yass='\pacman --color=always -Ss'
+    alias yars='\pacman --color=always -Rs'
   fi
 
     # watch incoming network connections
