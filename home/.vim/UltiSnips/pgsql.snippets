@@ -3,13 +3,14 @@ snippet table "table schema definition" b
 	${1:tabletype}table: ${2:tableName}
 	${3:tableComment}
 	created on: `date`
+	copyright
 */
 begin;
 
 create $1table $2
 (
 		-- primary key column
-	id			  serial
+	id				serial
 		-- foreign key columns
 		-- maintenance columns
 ,   insertedTime	timestamptz		default "now"()
@@ -23,9 +24,9 @@ create $1table $2
 ,   constraint pkey_$2				primary key ( id )
 );
 	-- privileges
-alter		table			$2 owner to		${4:postgres};
-grant		all	  on		$2 to			$4;
-revoke		all	  on		$2 from			public;
+alter table $2 owner to ${4:postgres};
+grant all on $2 to $4;
+revoke all on $2 from public;
 	-- indexes
 	-- triggers
 	-- comments
