@@ -112,6 +112,18 @@ hide_edge_borders   both
 #client.background       #121212
 # }}}
 # hotkeys {{{1
+    # switch to workspace {{{3
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+	# }}}
 # windows {{{2
 # containers {{{3
     # focus {{{4
@@ -166,18 +178,6 @@ bindsym $mod+Shift+space floating toggle
     # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
 # }}}
-    # switch to workspace {{{3
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace 9: vm
-bindsym $mod+0 workspace 10: games
-	# }}}
     # session {{{3
 bindsym $mod+r reload
     # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
