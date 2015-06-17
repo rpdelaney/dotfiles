@@ -145,6 +145,14 @@ type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weech
   # dosbox coercion to use XDG standard
 type dosbox &> /dev/null && [[ -f "$XDG_CONFIG_HOME/dosbox/dosbox.conf" ]] && alias dosbox="dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox.conf"
 
+  # getmail coercion to use XDG standard
+getmaildir="$XDG_CONFIG_HOME/getmail"
+if type getmail &> /dev/null; then
+  if [[ -d  "$getmaildir" ]]; then
+    alias getmail='getmail --getmaildir='"$getmaildir"
+  fi
+fi
+
   # get (s)mplayer to use sensible defaults
 if type mplayer &> /dev/null ; then
   alias mplayer='mplayer -loop 0 -fixed-vo -softvol -msgcolor'
