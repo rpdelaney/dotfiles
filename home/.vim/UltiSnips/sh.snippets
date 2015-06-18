@@ -34,14 +34,22 @@ endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
 verbose() {
-  if [[ "\$verbose" -ge "1" ]] && [[ -z "\$quiet" ]]; then
-    echo "\$1" >&2 || return 1
+  # $1 is the message to be printed
+  message="\$1"
+  # $2 is the verbosity threshold (default: 1)
+  threshold="$2"
+
+  if [[ "\$verbose" -ge "$threshold" ]] && [[ -z "\$quiet" ]]; then
+    echo "\$message" >&2 || return 1
   fi
 }
 
 error() {
+  # $1 is the message to be printed
+  message="\$1"
+
   if [[ -z "\$quiet" ]]; then
-    echo "\$1" >&2 || return 1
+    echo "\$message" >&2 || return 1
   fi
 }
 # 1}}}
