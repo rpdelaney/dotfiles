@@ -14,12 +14,6 @@ snippet usage "usage function" b
 #
 usage() {
 cat <<EOD
-${1:appname}
-© Copyright `date +%Y` Ryan Delaney. All rights reserved.
-Web site: http://github.com/rpdelaney
-
-$1 ${2:description}
-
 Usage: $1 [OPTION]
 
 Options
@@ -33,6 +27,7 @@ exit 1
 endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
+# verbose {{{2
 verbose() {
   # $1 is the message to be printed
   message="\$1"
@@ -43,7 +38,8 @@ verbose() {
     echo "\$message" >&2 || return 1
   fi
 }
-
+# verbose() 2}}}
+# error() {{{2
 error() {
   # $1 is the message to be printed
   message="\$1"
@@ -52,6 +48,7 @@ error() {
     echo "\$message" >&2 || return 1
   fi
 }
+# error() 2}}}
 # Functions 1}}}
 endsnippet
 snippet parameters "command-line arguments reader" b
