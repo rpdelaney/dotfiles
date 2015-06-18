@@ -29,7 +29,7 @@ Options
 EOD
 exit 1
 }
-# 1}}}
+# Usage 1}}}
 endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
@@ -52,7 +52,7 @@ error() {
     echo "\$message" >&2 || return 1
   fi
 }
-# 1}}}
+# Functions 1}}}
 endsnippet
 snippet parameters "command-line arguments reader" b
 # Parameters {{{1
@@ -87,7 +87,7 @@ do
       ;;
   esac
 done
-# 1}}}
+# Parameters 1}}}
 endsnippet
 snippet depends "template for dependency check"
 if ! type $1 &> /dev/null; then echo "ERROR: Missing dependency: $1" 1>&2; exit 1; fi
