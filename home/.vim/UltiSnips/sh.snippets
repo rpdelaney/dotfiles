@@ -27,14 +27,14 @@ exit 1
 endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
-# verbose {{{2
+# verbose() {{{2
 verbose() {
-  # $1 is the message to be printed
+  # \$1 is the message to be printed
   message="\$1"
-  # $2 is the verbosity threshold (default: 1)
-  threshold="$2"
+  # \$2 is the verbosity threshold (default: 1)
+  threshold="\$2"
 
-  if [[ "\$verbose" -ge "$threshold" ]] && [[ -z "\$quiet" ]]; then
+  if [[ "\$verbose" -ge "\$threshold" ]] && [[ -z "\$quiet" ]]; then
     echo "\$message" >&2 || return 1
   fi
 }
