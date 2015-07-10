@@ -97,3 +97,6 @@
 [submodule "home/.vim/bundle/diffchanges"]
 	path = home/.vim/bundle/diffchanges
 	url = git@github.com:jmcantrell/vim-diffchanges.git
+[submodule "home/.vim/bundle/airline-colornum"]
+	path = home/.vim/bundle/airline-colornum
+	url = git://github.com/ntpeters/vim-airline-colornum.git
