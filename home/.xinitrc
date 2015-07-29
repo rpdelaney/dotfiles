@@ -10,7 +10,7 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # xautolock -time 45 -locker xlock -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
 
     # redshift
-redshift -b 1:0.65 -l 37:-122 -t 6500:3500 &
+redshift -b 1:0.55 -l 37:-122 -t 6500:2500 &
 
 	# notify daemon
 dunst &
