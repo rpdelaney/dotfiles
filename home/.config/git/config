@@ -303,3 +303,9 @@
 	url = https://github.com/wellle/targets.vim
 [submodule "home/.vim/bundle/diffchanges"]
 	url = git@github.com:jmcantrell/vim-diffchanges.git
+[submodule "home/.vim/bundle/airline-colornum"]
+	url = git://github.com/ntpeters/vim-airline-colornum.git
+[submodule "home/.vim/bundle/smartusline"]
+	url = git@github.com:molok/vim-smartusline.git
+[submodule "base16-shell"]
+	url = git@github.com:chriskempson/base16-shell
