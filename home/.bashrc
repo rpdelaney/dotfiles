@@ -435,44 +435,6 @@ if type adb &> /dev/null; then
 # export ANDROID_LOG_TAGS=
 fi
 # 2}}}
-# SSH {{{2
-# If:
-#   there is at least one tmux session,
-if tmux has-session &> /dev/null; then
-  # and:
-  #     we aren't attached to tmux yet,
-  if [[ -z "$TMUX" ]]; then
-    # and:
-    #     we are not connected remotely,
-    echo "Propagating environment to tmux"
-    if [[ -z "$SSH_CONNECTION" ]]; then
-      # then:
-      #      propagate the environment settings to tmux
-      tmux set-environment -g DISPLAY "$DISPLAY"
-      tmux set-environment -g -u SSH_TTY
-      tmux set-environment -g -u SSH_CONNECTION
-      for session in $(tmux list-sessions -F "#S"); do
-        tmux set-environment -t "$session" DISPLAY "$DISPLAY"
-        tmux set-environment -t "$session" -u SSH_TTY
-        tmux set-environment -t "$session" -u SSH_CONNECTION
-      done
-    # else if:
-    #   we are connected remotely,
-    else
-      # then:
-      # purge ssh environment settings from tmux
-      tmux set-environment -g -u DISPLAY
-      tmux set-environment -g SSH_TTY "$SSH_TTY"
-      tmux set-environment -g SSH_CONNECTION "$SSH_CONNECTION"
-      for session in $(tmux list-sessions -F "#S"); do
-        tmux set-environment -t "$session" -u DISPLAY
-        tmux set-environment -t "$session" SSH_TTY "$SSH_TTY"
-        tmux set-environment -t "$session" SSH_CONNECTION "$SSH_CONNECTION"
-      done
-    fi
-  fi
-fi
-# 2}}}
 # WINE {{{2
 if type wine &> /dev/null; then
   # Hide fixme messages. I don't do winedev
