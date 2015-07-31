@@ -215,27 +215,20 @@ fi
 # 2}}}
 # EDITOR {{{2
 if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
+if type gvim &> /dev/null; then export VISUAL="gvim"; fi
 # }}}
 # DISPLAY {{{2
-  # If we are connected remotely, then don't assign a value to DISPLAY
-if [[ -n "$SSH_CONNECTION" ]]; then
-  :
-#   unset DISPLAY
-  # Otherwise, set-up the display environment
+# NVIDIA {{{3
+if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
+  if [[ -d "$XDG_CACHE_HOME/nvidia" ]] ; then
+    export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nvidia"
   else
-  # GVIM
-  if type gvim &> /dev/null; then export VISUAL="gvim"; fi
-  # NVIDIA {{{3
-  if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
-    if [[ -d "$XDG_CACHE_HOME/nvidia" ]] ; then
-      export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nvidia"
-    else
-      echo "__GL_SHADER_DISK_CACHE_PATH not found." >&2
-    fi
+    echo "__GL_SHADER_DISK_CACHE_PATH not found." >&2
+  fi
   # Setting the environment variable __GL_SYNC_TO_VBLANK to a non-zero value
   # will force glXSwapBuffers to sync to your monitor's vertical refresh
   # (perform a swap only during the vertical blanking period).
-    export __GL_SYNC_TO_VBLANK="0"
+  export __GL_SYNC_TO_VBLANK="0"
   # When using __GL_SYNC_TO_VBLANK with TwinView, OpenGL can only sync to one
   # of the display devices; this may cause tearing corruption on the display
   #  device to which OpenGL is not syncing. You can use the environment variable
@@ -247,10 +240,9 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   # Configuring TwinView "Configuring Twinview" and the section on Ensuring
   # Identical Mode Timings in Chapter 19, Programming Modes.
   # export __GL_SYNC_DISPLAY_DEVICE=""
-  fi
-  # }}}
 fi
-# }}}
+# NVIDIA 3}}}
+# DISPLAY 2}}}
 # PAGER {{{2
 if type pager &> /dev/null; then
   export PAGER="pager"
