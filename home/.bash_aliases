@@ -68,9 +68,6 @@ alias lr='ll -R'
 alias lla='la'
 alias lll='ll | pager'
 alias llla='lla | pager'
-alias .='ll'
-alias ..='\cd ..'
-alias ....='\cd ../..'
 
     # safety valve
 alias mv='\mv -iv'
