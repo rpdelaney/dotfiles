@@ -14,7 +14,7 @@ snippet usage "usage function" b
 #
 usage() {
 cat <<EOD
-Usage: $1 [OPTION]
+Usage: \$(basename \$0) [OPTION]
 
 Options
   -?, --help                  print this help and exit
