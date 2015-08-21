@@ -54,7 +54,7 @@ assign [class="Firefox"] → $WS2
 assign [class="Opera"] → $WS2
 assign [class="Midori"] → $WS2
 assign [class="Dwb"] → $WS2
-assign [class="Chromium"] → $WS4
+#assign [class="Chromium"] → $WS4
 assign [class="Mumble"] → $WS5
 assign [class="Steam"] → $WS5
 #assign [class="Smplayer"] → $WS6
@@ -237,28 +237,32 @@ mode "resize" {
 # }}}
 # for-window {{{1
 # for_window[class="gnome-control-center"] floating enable
-for_window[class="Dwb"] focus child, layout tabbed, focus
+#for_window[class="Dwb"] focus child, layout tabbed, focus
+##for_window[class="Pidgin" window_role="conversation"] focus child, layout tabbed, focus
+#for_window[instance="Toplevel"] floating enable
+#for_window[title="foobar2000.exe - Wine desktop"] 
+#or_window[class="Steam" title="*Chat$"] floating enable
 # 1}}}
 # auto-run {{{1
 #
     # auto-run these apps when starting i3
         # 1:shell
-exec --no-startup-id i3-msg 'workspace $WS1;new_window none'
-exec --no-startup-id i3-msg 'workspace $WS1;exec myterm'
-        # 2:web
-exec --no-startup-id i3-msg 'workspace $WS2;new_window none'
-#exec --no-startup-id i3-msg 'workspace $WS2;exec dwb'
-#exec --no-startup-id i3-msg 'workspace $WS2;exec tor-browser-en'
-exec --no-startup-id i3-msg 'workspace $WS2;workspace_layout tabbed'
-        # 4:chat
-exec --no-startup-id i3-msg 'workspace $WS4;exec myterm'
-        # 5:steam
-exec --no-startup-id i3-msg 'workspace $WS5;workspace_layout splitv'
-exec --no-startup-id i3-msg 'workspace $WS5;new_window 1pixel'
-exec --no-startup-id i3-msg 'workspace $WS5;new_float normal'
-exec --no-startup-id i3-msg 'workspace $WS5;exec mumble'
-
-exec --no-startup-id i3-msg 'workspace 1;'
+#exec --no-startup-id i3-msg 'workspace $WS1;new_window none'
+#exec --no-startup-id i3-msg 'workspace $WS1;exec myterm'
+#        # 2:web
+#exec --no-startup-id i3-msg 'workspace $WS2;new_window none'
+##exec --no-startup-id i3-msg 'workspace $WS2;exec dwb'
+##exec --no-startup-id i3-msg 'workspace $WS2;exec tor-browser-en'
+#exec --no-startup-id i3-msg 'workspace $WS2;workspace_layout tabbed'
+#        # 4:chat
+#exec --no-startup-id i3-msg 'workspace $WS4;exec myterm'
+#        # 5:steam
+#exec --no-startup-id i3-msg 'workspace $WS5;workspace_layout splitv'
+#exec --no-startup-id i3-msg 'workspace $WS5;new_window 1pixel'
+#exec --no-startup-id i3-msg 'workspace $WS5;new_float normal'
+#exec --no-startup-id i3-msg 'workspace $WS5;exec mumble'
+#
+#exec --no-startup-id i3-msg 'workspace 1;'
 # }}}
 
 # vim: foldmethod=marker:
