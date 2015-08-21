@@ -7,7 +7,7 @@ setxkbmap dvorak
 setxkbmap -option terminate:ctrl_alt_bksp
 
 	# security
-# xautolock -time 45 -locker xlock -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
+xautolock -time 45 -locker freeze -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
 
     # redshift
 redshift -b 1:0.55 -l 37:-122 -t 6500:2500 &
