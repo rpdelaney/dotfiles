@@ -29,7 +29,7 @@
 #  # completions.
 #set -b
 #  # causes the shell to exit if any command exits nonzero, excepting procedural
-#  # logic and subshells (see `man set`)
+#  # logic and subshells (see 'man set')
 #set +e
 #  # Don't use ^D to exit a shell: require an explicit exit command
 #set -o ignoreeof
@@ -263,7 +263,7 @@ fi
 # GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
-  export GPG_TTY=`tty`
+  export GPG_TTY="$(tty)"
   if [[ -d "$XDG_CONFIG_HOME/gnupg2/" ]] ; then
     export GNUPGHOME="$XDG_CONFIG_HOME/gnupg2/"
   else
@@ -468,7 +468,7 @@ fi
   # bold red foreground text on the terminal's default background.
 export GREP_COLOR=
   # Specifies the colors and other attributes used to highlight various parts
-  # of the output. See `man grep` for details.
+  # of the output. See 'man grep' for details.
 export GREP_COLORS=
 # 2}}}
 # PROMPT {{{1
