@@ -264,8 +264,8 @@ fi
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
   export GPG_TTY=`tty`
-  if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]] ; then
-    export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"
+  if [[ -d "$XDG_CONFIG_HOME/gnupg2/" ]] ; then
+    export GNUPGHOME="$XDG_CONFIG_HOME/gnupg2/"
   else
     echo "GNUPGHOME not found." >&2
   fi
