@@ -1,3 +1,7 @@
-*gtk-2.0/
+*gtk*/
 *menus/
-transmission/
+transmission*/
+dconf*/
+gconf*/
+libreoffice*/
+Trolltech.conf
