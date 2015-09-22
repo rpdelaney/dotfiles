@@ -1,18 +1,5 @@
 # git config
 # 
-# © Copyright 2014 Ryan Delaney.
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-# 
-# This program is free software: you can redistribute it and/or modify it
-# under the terms of the GNU General Public License as published by the
-# Free Software Foundation, either version 3 of the License, or (at your
-# option) any later version.
-# 
-# You should have received a copy of the GNU General Public License along
-# with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 [user] # {{{1
 	name = Ryan Delaney
@@ -44,7 +31,7 @@
 	default = tracking
 # 1}}}
 [branch] # {{{1
-		# auto-reupbase is dumb, because rebase is evil
+		# auto-reupbase is bad, because rebase is evil
 	autosetuprebase = never
 # 1}}}
 [diff] # {{{1
@@ -231,81 +218,3 @@
 #         push = <refspec>
 #         fetch = <refspec>/
 # }}}
-# Submodules {{{
-#
-[submodule "home/.vim/bundle/fsharp"]
-	url = git://github.com/kongo2002/fsharp-vim.git
-[submodule "home/.vim/bundle/sourcecfg"]
-	url = git@github.com:rpdelaney/vim-sourcecfg.git
-[submodule "home/.vim/bundle/vim-excel"]
-	url = git@github.com:yakiang/excel.vim.git
-[submodule "home/.vim/bundle/vim-daylight"]
-	url = git@github.com:rpdelaney/vim-daylight.git
-[submodule "home/.vim/bundle/pgsql"]
-	url = git@github.com:rpdelaney/vim-pgsql.git
-[submodule "home/.vim/bundle/sprunge"]
-	url = git@github.com:chilicuil/vim-sprunge.git
-[submodule "home/bin/fdupes"]
-	url = git@github.com:tobiasschulz/fdupes.git
-[submodule "home/.vim/bundle/fugitive"]
-	url = git@github.com:tpope/vim-fugitive.git
-[submodule "home/.vim/bundle/vim-shell-executor"]
-	url = git@github.com:rpdelaney/vim-shell-executor.git
-[submodule "home/.vim/bundle/solarized"]
-	url = git@github.com:altercation/solarized.git
-[submodule "home/.vim/bundle/rtorrent"]
-	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
-[submodule "home/.vim/bundle/json"]
-	url = git@github.com:jkufner/vim-json.git
-[submodule "home/.vim/bundle/sourcepawn"]
-	url = git@github.com:/withgod/vim-sourcepawn.git
-[submodule "home/.vim/bundle/psqlrc"]
-	url = git@github.com:rpdelaney/vim-psqlrc.git
-[submodule "home/.vim/bundle/airline"]
-	url = git@github.com:bling/vim-airline.git
-[submodule "home/.vim/bundle/gitgutter"]
-	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "home/.vim/bundle/syntastic"]
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "home/.vim/bundle/gnupg"]
-	url = https://github.com/jamessan/vim-gnupg.git
-[submodule "aurvote"]
-	url = https://github.com/rpdelaney/aurvote
-[submodule "shellcheck"]
-	url = https://github.com/koalaman/shellcheck.git
-[submodule "home/.vim/bundle/minibufexpl"]
-	url = https://github.com/fholgado/minibufexpl.vim.git
-[submodule "home/.vim/bundle/surround"]
-	url = https://github.com/tpope/vim-surround.git
-[submodule "home/.vim/bundle/pathogen"]
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "home/.vim/bundle/repeat"]
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "home/.vim/bundle/characterize"]
-	url = https://github.com/tpope/vim-characterize
-[submodule "home/.vim/bundle/obsession"]
-	url = https://github.com/tpope/vim-obsession.git
-[submodule "home/.vim/bundle/abolish"]
-	url = https://github.com/tpope/vim-abolish.git
-[submodule "home/.vim/bundle/jedi"]
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "home/.vim/bundle/ultisnips"]
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "LS_COLORS"]
-	url = https://github.com/rpdelaney/LS_COLORS
-[submodule "home/.vim/bundle/recover"]
-	url = git@github.com:chrisbra/Recover.vim.git
-[submodule "home/.vim/bundle/tabular"]
-	url = git://github.com/godlygeek/tabular.git
-[submodule "home/.vim/bundle/easy-align"]
-	url = git@github.com:junegunn/vim-easy-align.git
-[submodule "home/.vim/bundle/targets.vim"]
-	url = https://github.com/wellle/targets.vim
-[submodule "home/.vim/bundle/diffchanges"]
-	url = git@github.com:jmcantrell/vim-diffchanges.git
-[submodule "home/.vim/bundle/airline-colornum"]
-	url = git://github.com/ntpeters/vim-airline-colornum.git
-[submodule "home/.vim/bundle/smartusline"]
-	url = git@github.com:molok/vim-smartusline.git
-[submodule "base16-shell"]
-	url = git@github.com:chriskempson/base16-shell
