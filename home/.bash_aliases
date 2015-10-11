@@ -101,6 +101,11 @@ if type grc &> /dev/null ; then
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
+    # use colors in ip
+if type ip &> /dev/null; then
+  alias ip='ip -c'
+fi
+
     # disk usage in plain english
 alias disk='\df -lTH'
 alias df='\df -h'
@@ -169,7 +174,3 @@ if type abook &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] ; then
     alias abook="abook --config $XDG_CONFIG_HOME/abook/abookrc"
   fi
 fi
-
-  # test the output of commands
-  # this doesn't really work
-alias winfail='if $!; then echo "win"; else echo "fail"; fi'
