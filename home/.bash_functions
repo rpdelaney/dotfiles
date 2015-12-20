@@ -5,7 +5,7 @@
 unalias sprunge &> /dev/null
 sprunge() { curl -F 'sprunge=<-' http://sprunge.us < "${1:-/dev/stdin}"; } 
 
-rot13() { echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' ; }
+rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
 
 #
 # pacman

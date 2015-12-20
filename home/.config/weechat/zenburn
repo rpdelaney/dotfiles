@@ -94,6 +94,12 @@ PMenu_bg='0'
 PMenuSel='223'
 PMenuSel_bg='235'
 
+echo "*/set weechat.bar.status.color_fg ""$Title"
+echo "*/set weechat.bar.status.color_bg ""$Title_bg"
+echo "*/set weechat.bar.status.color_delim ""$Delimiter"
+echo "*/set weechat.bar.title.color_fg ""$Title"
+echo "*/set weechat.bar.title.color_bg ""$Title_bg"
+echo "*/set weechat.bar.title.color_delim ""$Delimiter"
 echo "*/set weechat.color.bar_more ""$VertSplit"
 echo "*/set weechat.color.chat ""$Normal"
 echo "*/set weechat.color.chat_bg ""$Normal_bg"
