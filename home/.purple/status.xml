@@ -1,6 +1,55 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 
 <statuses version='1.0'>
+	<status name='Auto-Cached' transient='true' created='1448081976' lastused='1448081976' usage_count='1'>
+		<state>away</state>
+	</status>
+	<status name='comicsans' created='1429849181' lastused='1447977602' usage_count='2'>
+		<state>available</state>
+		<message>Burning Swine: this page definitely isn&apos;t going to render correctly without comic sans fyi</message>
+	</status>
+	<status name='Auto-Cached' transient='true' created='1399907083' lastused='1447977598' usage_count='2'>
+		<state>available</state>
+	</status>
+	<status name='Auto-Cached' transient='true' created='1444888885' lastused='1447865276' usage_count='2'>
+		<state>away</state>
+		<substatus>
+			<account protocol='prpl-aim'>purereasoning</account>
+			<state>available</state>
+			<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+		</substatus>
+	</status>
+	<status name='praxis' created='1436454251' lastused='1447116907' usage_count='11'>
+		<state>available</state>
+		<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+	</status>
+	<status name='Auto-Cached' transient='true' created='1438334795' lastused='1445907913' usage_count='2'>
+		<state>away</state>
+		<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+	</status>
+	<status name='Auto-Cached' transient='true' created='1441227890' lastused='1445918137' usage_count='1'>
+		<state>available</state>
+		<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+		<substatus>
+			<account protocol='prpl-aim'>purereasoning</account>
+			<state>away</state>
+			<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+		</substatus>
+		<substatus>
+			<account protocol='prpl-aim'>ninecastles</account>
+			<state>away</state>
+			<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+		</substatus>
+		<substatus>
+			<account protocol='prpl-jabber'>ryan.delaney@gmail.com</account>
+			<state>away</state>
+			<message>If your feminism doesn&apos;t include a true luxury bitch murder aesthetic then don&apos;t nobody give no shits about your backwards-ass praxis.</message>
+		</substatus>
+	</status>
+	<status name='Auto-Cached' transient='true' created='1436477501' lastused='1436477501' usage_count='1'>
+		<state>available</state>
+		<message>If your feminism doesn&amp;apos;t include a true luxury bitch murder aesthetic then don&amp;apos;t nobody give no shits about your backwards-ass praxis.</message>
+	</status>
 	<status name='Auto-Cached' transient='true' created='1372729319' lastused='1402685208' usage_count='2'>
 		<state>available</state>
 		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
@@ -10,20 +59,9 @@
 			<message>&amp;quot;FUCK WHAT YA HEARD! YALL LICK BALLS IN BONERTOWN, USA AND THAT SHIT IS ABSURD!&amp;quot; -- Aristotle</message>
 		</substatus>
 	</status>
-	<status name='Shai Hulud' created='1402685226' lastused='1402685226' usage_count='1'>
-		<state>available</state>
-		<message>Jason P: i may have to rename my penis from mjollnir to shai-hulud</message>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1399907083' lastused='1399907083' usage_count='1'>
-		<state>available</state>
-	</status>
 	<status name='fopedush-linux' created='1366125477' lastused='1385945076' usage_count='3'>
 		<state>available</state>
 		<message>Fopedush: my team is basically the only one still operational because 80% of us use linux</message>
-	</status>
-	<status name='linuxbasement' created='1377723170' lastused='1377723170' usage_count='1'>
-		<state>available</state>
-		<message>ninecastles: click click click ninecastles: windows tagline: the diablo of operating systems Fopedush: did you know desktop linux market share has reached 85% if you only include basement installations?</message>
 	</status>
 	<status name='Auto-Cached' transient='true' created='1366125461' lastused='1374543467' usage_count='2'>
 		<state>away</state>
@@ -33,23 +71,7 @@
 		<state>away</state>
 		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &quot;Every man for himself!&quot; And the London Underground is not a political movement!</message>
 	</status>
-	<status name='fuck what ya herd' created='1374024761' lastused='1374024761' usage_count='1'>
-		<state>away</state>
-		<message>&amp;quot;FUCK WHAT YA HEARD - YALL LICK BALLS IN BONERTOWN USA AND THAT SHIT IS ABSURD&amp;quot; - Aristotle</message>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1367946306' lastused='1367946306' usage_count='1'>
-		<state>away</state>
-		<message>Now let me correct you on a couple things, okay? Aristotle was not Belgian! The central message of Buddhism is not &amp;quot;Every man for himself!&amp;quot; And the London Underground is not a political movement!</message>
-	</status>
-	<status name='thick' created='1365630466' lastused='1365630466' usage_count='1'>
-		<state>away</state>
-		<message>Awesome pics. Great size. Look thick. Solid. Tight. Keep us all posted on your continued progress with any new progress pics or vid clips. Show us what you got man. Wanna see how freakin&apos; huge, solid, thick and tight you can get. Thanks for the motivation. </message>
-	</status>
-	<status name='Auto-Cached' transient='true' created='1363559098' lastused='1363559098' usage_count='1'>
-		<state>available</state>
-	</status>
-	<status name='Trolling' created='1360710668' lastused='1360710668' usage_count='1'>
-		<state>available</state>
-		<message>Sufficiently advanced trolling is indistinguishable from thought leadership.</message>
+	<status name='Auto-Cached' transient='true' created='1441227887' lastused='0' usage_count='0'>
+		<state>unset</state>
 	</status>
 </statuses>

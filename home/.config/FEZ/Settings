@@ -8,7 +8,7 @@
 	musicVolume 0.5F
 	vibration false
 	brightness 0.5F
-	keyboardMapping Jump="Space" GrabThrow="F" CancelTalk="C" Up="R" Down="F" Left="D" Right="G" LookUp="Up" LookDown="Down" LookRight="Right" LookLeft="Left" OpenMap="Escape" OpenInventory="Tab" MapZoomIn="Add" MapZoomOut="OemMinus" Pause="Enter" RotateLeft="E" RotateRight="T" FpViewToggle="RightAlt" ClampLook="LeftShift"
+	keyboardMapping Jump="Space" GrabThrow="LeftControl" CancelTalk="LeftShift" Up="Up" Down="Down" Left="Left" Right="Right" LookUp="W" LookDown="S" LookRight="D" LookLeft="A" OpenMap="Escape" OpenInventory="Tab" MapZoomIn="W" MapZoomOut="S" Pause="Enter" RotateLeft="A" RotateRight="D" FpViewToggle="RightAlt" ClampLook="RightShift"
 	gamepadMapping Jump=1 GrabThrow=0 CancelTalk=2 OpenMap=8 OpenInventory=3 MapZoomIn=5 MapZoomOut=4 Pause=9 RotateLeft=6 RotateRight=7 FpViewToggle=10 ClampLook=11
 	uiKeyboardMapping Up="Up" Down="Down" Left="Left" Right="Right" Jump="Enter" CancelTalk="Escape" Pause="Enter" OpenMap="Escape" GrabThrow="LeftControl" LookUp="I" LookDown="K" LookRight="L" LookLeft="J" OpenInventory="Tab" MapZoomIn="W" MapZoomOut="S" RotateLeft="A" RotateRight="D" FpViewToggle="RightAlt" ClampLook="RightShift"
 	additionalDeadzone 0.4F
