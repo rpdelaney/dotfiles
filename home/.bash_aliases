@@ -103,7 +103,7 @@ fi
 
     # use colors in ip
 if type ip &> /dev/null; then
-  alias ip='ip -c'
+  alias ip='ip -d -c'
 fi
 
     # disk usage in plain english
