@@ -11,7 +11,6 @@ snippet shebang "shebang for bash"
 endsnippet
 snippet usage "usage function" b
 # Usage {{{1
-#
 usage() {
 cat <<EOD
 Usage: \$(basename \$0) [OPTION]
@@ -34,7 +33,7 @@ verbose() {
   # \$2 is the verbosity threshold (default: 1)
   local threshold="\$2"
 
-  if [[ "\$verbose" -ge "\$threshold" ]] && [[ -z "\$quiet" ]]; then
+  if [ "\$verbose" -ge "\$threshold" ] && [ -z "\$quiet" ]; then
     echo "\$message" >&2 || return 1
   fi
 }
@@ -44,7 +43,7 @@ error() {
   # $1 is the message to be printed
   local message="\$1"
 
-  if [[ -z "\$quiet" ]]; then
+  if [ -z "\$quiet" ]; then
     echo "\$message" >&2 || return 1
   fi
 }
@@ -87,7 +86,7 @@ done
 # Parameters 1}}}
 endsnippet
 snippet depends "template for dependency check"
-if ! type $1 &> /dev/null; then echo "ERROR: Missing dependency: $1" 1>&2; exit 1; fi
+if ! which $1 &> /dev/null; then echo "Missing dependency: $1" 1>&2; exit 1; fi
 endsnippet
 snippet mktemp
 tmpfile="$(mktemp)"

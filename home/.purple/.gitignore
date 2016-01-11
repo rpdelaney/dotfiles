@@ -4,4 +4,3 @@ prefs.xml
 
 # except
 !.gitignore
-!status.xml

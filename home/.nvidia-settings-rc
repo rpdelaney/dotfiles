@@ -2,7 +2,7 @@
 # /home/ryan/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed Jan 14 18:22:46 2015
+# Generated on Wed Nov 25 13:44:29 2015
 #
 
 # ConfigProperties:
@@ -14,9 +14,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
 ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
@@ -31,7 +31,6 @@ ryanpd.me:0.0/FSAAAppControlled=1
 ryanpd.me:0.0/LogAnisoAppControlled=1
 ryanpd.me:0.0/OpenGLImageSettings=1
 ryanpd.me:0.0/FSAAAppEnhanced=0
-ryanpd.me:0.0/XVideoSyncToDisplayID=DVI-I-0
 ryanpd.me:0[DPY:DVI-I-0]/Dithering=0
 ryanpd.me:0[DPY:DVI-I-0]/DitheringMode=0
 ryanpd.me:0[DPY:DVI-I-0]/DitheringDepth=0
@@ -59,6 +58,8 @@ ryanpd.me:0[DPY:DVI-I-2]/SynchronousPaletteUpdates=0
 ryanpd.me:0[DPY:HDMI-0]/Dithering=0
 ryanpd.me:0[DPY:HDMI-0]/DitheringMode=0
 ryanpd.me:0[DPY:HDMI-0]/DitheringDepth=0
+ryanpd.me:0[DPY:HDMI-0]/ColorSpace=0
+ryanpd.me:0[DPY:HDMI-0]/ColorRange=0
 ryanpd.me:0[DPY:HDMI-0]/SynchronousPaletteUpdates=0
 ryanpd.me:0[DPY:DVI-I-3]/RedBrightness=0.000000
 ryanpd.me:0[DPY:DVI-I-3]/GreenBrightness=0.000000
