@@ -211,6 +211,10 @@ bindsym $mod+w exec i3-input -F 'exec pw %s type password'
 	# facilitates sending arbitrary commands to i3
 bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 # 3}}}
+# simulate ctrl {{{3
+# for systems where the ctrl key is stuck (like my laptop)
+bindsym --release $mod+alt exec --no-startup-id xdotool key --clearmodifiers ctrl
+# 3}}} simulate ctrl
 # 2}}}
 # modes {{{1
 mode "resize" {
