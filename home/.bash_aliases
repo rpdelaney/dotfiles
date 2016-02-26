@@ -174,3 +174,8 @@ if type abook &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] ; then
     alias abook="abook --config $XDG_CONFIG_HOME/abook/abookrc"
   fi
 fi
+
+  # copy-paste to clipboard
+if type xclip &> /dev/null ; then
+  alias clip="xclip -selection clipboard"
+fi
