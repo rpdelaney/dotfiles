@@ -5,9 +5,9 @@ snippet table "table schema definition" b
 	created on: `date`
 	copyright
 */
-begin;
+BEGIN;
 
-create $1table $2
+CREATE $1TABLE $2
 (
 		-- primary key column
 	id				serial
@@ -15,8 +15,6 @@ create $1table $2
 		-- maintenance columns
 ,   insertedTime	timestamptz		default "now"()
 ,   insertedUser	text			default "current_user"()
-,   updatedTime		timestamptz
-,   updatedUser		text
 		-- data columns
 		-- data validation constraints
 		-- foreign key constraints
@@ -24,16 +22,16 @@ create $1table $2
 ,   constraint pkey_$2				primary key ( id )
 );
 	-- privileges
-alter table $2 owner to ${4:postgres};
-grant all on $2 to $4;
-revoke all on $2 from public;
+ALTER TABLE $2 OWNER TO ${4:postgres};
+GRANT ALL ON $2 TO $4;
+REVOKE ALL ON $2 FROM public;
 	-- indexes
 	-- triggers
 	-- comments
-comment on table	$2				is '$3';
-comment on column	$2.id			is 'primary key';
+COMMENT ON TABLE	$2				IS '$3';
+COMMENT ON COLUMN	$2.ID			IS 'primary key';
 
-end;
+END;
 endsnippet
 snippet function "function definer" b
 /*

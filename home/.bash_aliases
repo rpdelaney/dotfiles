@@ -4,6 +4,9 @@ if [[ $UID -ne 0 ]]; then
     # cleanly become another user
   alias become='sudo su --login'
 
+    # sudo a command, preserving the current environment
+  alias sudoe='sudo -E'
+
     # yaourt
   if type yaourt &> /dev/null; then
     alias ya='\yaourt'
