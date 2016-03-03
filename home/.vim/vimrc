@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+Plug 'git@github.com:greyblake/vim-preview.git'
 Plug 'git://github.com/JarrodCTaylor/vim-shell-executor'
 Plug 'git://github.com/withgod/vim-sourcepawn.git'
 Plug 'git://github.com/SirVer/ultisnips.git'
