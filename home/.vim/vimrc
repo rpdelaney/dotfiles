@@ -47,7 +47,6 @@ Plug 'git://github.com/tpope/vim-pathogen.git'
 Plug 'git://github.com/tpope/vim-repeat.git'
 Plug 'git://github.com/tpope/vim-surround.git'
 Plug 'git://github.com/wellle/targets.vim'
-Plug 'git://github.com/yakiang/excel.vim.git'
 
 " Plugin options
 " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
