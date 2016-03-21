@@ -124,4 +124,13 @@ schedule = watch_directory_10,10,10,"load=/home/ryan/torrent/video/*.torrent,d.s
 # You need to quote the command in this case.
 #on_finished = link3,"create_link=base_filename,/media/vault/outgoing/"
 
+#Options: color_inactive_fg, color_inactive_bg, color_dead_fg, color_dead_bg, 
+#         color_active_fg, color_active_bg, color_finished_fg, color_finished_bg, 
+#
+#Colors: 0 = black 1 = red 2 = green 3 = yellow 4 = blue 5 = magenta 6 = cyan 7 = white
+color_inactive_fg = 6
+color_dead_fg = 1
+color_active_fg = 3
+color_finished_fg = 2
+
 # vim: set filetype=rtorrent:
