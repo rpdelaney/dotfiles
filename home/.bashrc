@@ -205,7 +205,9 @@ done
 # }}}
 # TERM {{{2
   # read /etc/lsb-release for distribution name and version
-source /etc/lsb-release
+if [[ -r /etc/lsb-release ]]; then
+  source /etc/lsb-release
+fi
   # If running urxvt in Ubuntu/debian, reset the terminal.
   # This is necessary because most debian systems don't have terminfo for
   # rxvt-unicode-256color
