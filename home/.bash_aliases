@@ -69,7 +69,7 @@ if type exa 2> /dev/null; then
   alias l='exa'
   alias ll='exa --long --header --git --links --group'
   alias la='ll --all'
-  alias lr='ll -T --level 1'
+  alias lr='ll -T --level 2'
 else
   alias l='\ls --color=always --format=across --group-directories-first'
   alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
