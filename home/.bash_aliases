@@ -63,11 +63,20 @@ else
     # watch incoming network connections
   alias netmonitor='watch -n 3 lsof -i'
 fi
-    # ls
-alias l='\ls --color=always --format=across --group-directories-first'
-alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
-alias la='ll -H -a'
-alias lr='ll -R'
+    # ls / exa
+if type exa 2> /dev/null; then
+  # exa aliases go here
+  alias l='exa'
+  alias ll='exa --long --header --git --links --group'
+  alias la='ll --all'
+  alias lr='ll -T --level 1'
+else
+  alias l='\ls --color=always --format=across --group-directories-first'
+  alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+  alias la='ll -H -a'
+  alias lr='ll -R'
+fi 
+
 alias lla='la'
 alias lll='ll | pager'
 alias llla='lla | pager'
