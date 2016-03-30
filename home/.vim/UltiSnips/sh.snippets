@@ -34,7 +34,7 @@ verbose() {
   local threshold="\$2"
 
   if [ "\$verbose" -ge "\$threshold" ] && [ -z "\$quiet" ]; then
-    echo "\$message" >&2 || return 1
+    echo "[INFO] \$message" >&2 || return 1
   fi
 }
 # verbose() 2}}}
@@ -44,7 +44,7 @@ error() {
   local message="\$1"
 
   if [ -z "\$quiet" ]; then
-    echo "\$message" >&2 || return 1
+    echo "[ERROR] \$message" >&2 || return 1
   fi
 }
 # error() 2}}}
