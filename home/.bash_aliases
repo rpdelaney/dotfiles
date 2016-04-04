@@ -66,8 +66,8 @@ fi
     # ls / exa
 if type exa &> /dev/null; then
   # exa aliases go here
-  alias l='exa'
-  alias ll='exa --long --header --git --links --group'
+  alias l='exa --group-directories-first'
+  alias ll='exa --long --header --git --links --group-directories-first'
   alias la='ll --all'
   alias lr='ll -T --level 2'
 else
