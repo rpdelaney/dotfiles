@@ -151,7 +151,7 @@ type mountpoint &> /dev/null && alias mp='mountpoint'
 type shred &> /dev/null && alias shred=' shred -v'
 
   # always make secure passwords
-type pwgen &> /dev/null && alias pwgen=' pwgen -scny'
+type pwgen &> /dev/null && alias pwgen=' pwgen -scny -1 15'
 
   # weechat is dumb
 type weechat &> /dev/null && [[ -n "$XDG_CONFIG_HOME" ]] && alias weechat='weechat -d '"$XDG_CONFIG_HOME"'/weechat/'
