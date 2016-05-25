@@ -240,6 +240,8 @@ endif
 if !empty(&viminfo)
   set viminfo^=!
 endif
+  " Don't redraw while executing macros (good performance config)
+set lazyredraw
   " 2}}}
   " 1}}}
 " Bindings {{{1
