@@ -259,14 +259,19 @@ map K <Nop>
 set ttimeout
 set ttimeoutlen=50
 	" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+if maparg('<C-n>', 'n') ==# ''
+  nnoremap <silent> <C-n> :nohlsearch<CR><C-L>
 endif
 	" Editing a protected file as 'sudo'
 " cmap W w !sudo tee % >/dev/null<CR>
+	" More easily navigate tabs
+noremap <c-l> :bn<cr>
+noremap <c-h> :bp<cr>
 	" Copy-paste mode
 noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set paste! <CR> <Insert>
+	" Save the file
+noremap <c-w> :w<cr>
 " 1}}}
 " Plugins {{{1
   " better header {{{2
