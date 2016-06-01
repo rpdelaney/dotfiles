@@ -271,7 +271,9 @@ noremap <c-h> :bp<cr>
 noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set paste! <CR> <Insert>
 	" Save the file
-noremap <c-w> :w<cr>
+if maparg('<c-s>', 's') ==# ''
+	noremap <c-s> :w<cr>
+endif
 " 1}}}
 " Plugins {{{1
   " better header {{{2
