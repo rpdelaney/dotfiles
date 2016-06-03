@@ -138,3 +138,9 @@ jobscount(){
   # download files from web via tor
 turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
 
+  # spit out N random words
+werd() { 
+  # Default 1 word, unless an integer is passed
+  i="${1:-1}"
+  shuf -n "$i" /usr/share/dict/english
+}
