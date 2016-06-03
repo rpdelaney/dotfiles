@@ -64,7 +64,7 @@ else
   alias netmonitor='watch -n 3 lsof -i'
 fi
     # ls / exa
-if type exa &> /dev/null; then
+if type exa &> /dev/null && exa $TMPDIR &> /dev/null ; then
   # exa aliases go here
   alias l='exa --group-directories-first'
   alias ll='exa --long --header --git --links --group-directories-first'
