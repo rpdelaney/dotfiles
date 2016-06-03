@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+Plug 'git@github.com:wincent/terminus.git'
+Plug 'git@github.com:vim-scripts/groovy.vim.git'
 Plug 'git@github.com:greyblake/vim-preview.git'
 Plug 'git://github.com/JarrodCTaylor/vim-shell-executor'
 Plug 'git://github.com/withgod/vim-sourcepawn.git'
@@ -238,6 +240,8 @@ endif
 if !empty(&viminfo)
   set viminfo^=!
 endif
+  " Don't redraw while executing macros (good performance config)
+set lazyredraw
   " 2}}}
   " 1}}}
 " Bindings {{{1
@@ -255,14 +259,21 @@ map K <Nop>
 set ttimeout
 set ttimeoutlen=50
 	" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+if maparg('<C-n>', 'n') ==# ''
+  nnoremap <silent> <C-n> :nohlsearch<CR><C-L>
 endif
 	" Editing a protected file as 'sudo'
 " cmap W w !sudo tee % >/dev/null<CR>
+	" More easily navigate tabs
+noremap <c-l> :bn<cr>
+noremap <c-h> :bp<cr>
 	" Copy-paste mode
 noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set paste! <CR> <Insert>
+	" Save the file
+if maparg('<c-s>', 's') ==# ''
+	noremap <c-s> :w<cr>
+endif
 " 1}}}
 " Plugins {{{1
   " better header {{{2
@@ -347,6 +358,21 @@ vmap <s-Enter> <Plug>(LiveEasyAlign)
 "
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
+  " 2}}}
+  " terminus {{{2
+" Controls whether the cursor changes shape when changing modes
+let g:TerminusCursorShape = 1
+" Controls the shape of the cursor in insert mode: 0 block 1 bar 2 underline
+let g:TerminusInsertCursorShape = 1
+" Controls the shape of the cursor in normal mode
+let g:TerminusNormalCursorShape = 0
+" Controls the shape of the cursor in replace mode
+let g:TerminusReplaceCursorShape = 2
+" Controls whether terminus attempts to improve mouse function by setting
+" 'mouse' and 'typemouse' settings.
+let g:TerminusMouse = 0
+" Controls whether terminus attempts to enable focus reporting
+let g:TerminusFocusReporting = 1
   " 2}}}
 " 1}}}
 " Functions {{{1
