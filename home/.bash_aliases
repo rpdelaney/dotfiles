@@ -191,3 +191,8 @@ fi
 if type xclip &> /dev/null ; then
   alias clip="xclip -selection clipboard"
 fi
+
+  # steamcurses
+if type steamcurses &> /dev/null ; then
+  alias steamcurses='steamcurses --config-path ~/.config/steamcurses/config'
+fi
