@@ -1,0 +1,59 @@
+#
+# /etc/fstab: static file system information
+#
+# <file system>								<dir>					<type>		<options>					<dump>	<pass>
+
+# root
+# /dev/sda1
+UUID=8a930413-5697-4d1c-ae7e-76512d88cdb9	/						ext4		defaults,noatime,discard	1		1
+
+# apps
+# /dev/sdf2
+UUID=224ad1ba-f829-4f7d-9094-be3892f20010	/media/apps				ext4		defaults,noatime,discard	1		2
+
+# tmp
+# /tmp/
+tmpfs										/tmp					tmpfs		nodev,nosuid				0		0
+
+# swap
+UUID=e2d1f4f0-0f31-4165-9c64-f70b94ec15e1	none					swap 		defaults					0		0
+
+# devel
+UUID=73da39ae-92c7-400f-873f-22b6a1df8697	/media/devel		 	ext4 		defaults,auto,owner			0		2
+
+# vault
+# /dev/md0p2
+UUID=edd37b26-1b90-4c02-bfe8-f997b75bbd80	/media/vault			ext4 		defaults,auto,owner			0		2
+
+# var
+/media/devel/var							/var/					none		bind
+
+#  <file system>        <dir>         <type>    <options>             <dump> <pass>
+
+# <file system> - the partition or storage device to be mounted.
+# <dir> - the mountpoint where <file system> is mounted to.
+# <type> - the file system type of the partition or storage device to be mounted. Many different file systems are supported: ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap and auto. The auto type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
+# <options> - mount options of the filesystem to be used. Note that some mount options are filesystem specific. Some of the most common options are:
+#   auto - Mount automatically at boot, or when the command mount -a is issued.
+#   noauto - Mount only when you tell it to.
+#   exec - Allow execution of binaries on the filesystem.
+#   noexec - Disallow execution of binaries on the filesystem.
+#   ro - Mount the filesystem read-only.
+#   rw - Mount the filesystem read-write.
+#   user - Allow any user to mount the filesystem. This automatically implies noexec, nosuid, nodev, unless overridden.
+#   users - Allow any user in the users group to mount the filesystem.
+#   nouser - Allow only root to mount the filesystem.
+#   owner - Allow the owner of device to mount.
+#   sync - I/O should be done synchronously.
+#   async - I/O should be done asynchronously.
+#   dev - Interpret block special devices on the filesystem.
+#   nodev - Don't interpret block special devices on the filesystem.
+#   suid - Allow the operation of suid, and sgid bits. They are mostly used to allow users on a computer system to execute binary executables with temporarily elevated privileges in order to perform a specific task.
+#   nosuid - Block the operation of suid, and sgid bits.
+#   noatime - Don't update inode access times on the filesystem. Can help performance (see atime options).
+#   nodiratime - Do not update directory inode access times on the filesystem. Can help performance (see atime options).
+#   relatime - Update inode access times relative to modify or change time. Access time is only updated if the previous access time was earlier than the current modify or change time. (Similar to noatime, but doesn't break mutt or other applications that need to know if a file has been read since the last time it was modified.) Can help performance (see atime options).
+# flush - The vfat option to flush data more often, thus making copy dialogs or progress bars to stay up until all data is written.
+# defaults - the default mount options for the filesystem to be used. The default options for ext4 are: rw, suid, dev, exec, auto, nouser, async.
+# <dump> - used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the <dump> entry.
+# <pass> - used by fsck to decide which order filesystems are to be checked. Possible entries are 0, 1 and 2. The root file system should have the highest priority 1 - all other file systems you want to have checked should have a 2. File systems with a value 0 will not be checked by the fsck utility.
