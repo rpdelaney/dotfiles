@@ -73,8 +73,6 @@ thumbs.db
 *.dmp
 
 # ssh, keys and etc
-*.ssh
-*.ssh/
 id_rsa
 id_rsa.*
 id_dsa
