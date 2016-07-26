@@ -104,8 +104,7 @@ fi
 # miscellaneous
 #
   #download album art from amazon
-albumart() { local y="$*";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s
-'http://www.albumart.org/index.php?srchkey='"${y// /+}"'&itempage=1&newsearch=1&searchindex=Music');}
+albumart() { local y="$*";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s 'http://www.albumart.org/index.php?srchkey='"${y// /+}"'&itempage=1&newsearch=1&searchindex=Music');}
 
   # define words
 define() { 
@@ -136,6 +135,7 @@ jobscount(){
 }
 
   # download files from web via tor
+  # it's better to just use torsocks though
 turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
 
   # spit out N random words
