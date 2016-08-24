@@ -1,102 +1,15 @@
-[submodule "home/.vim/bundle/fsharp"]
-	path = home/.vim/bundle/fsharp
-	url = git://github.com/kongo2002/fsharp-vim.git
-[submodule "home/.vim/bundle/sourcecfg"]
-	path = home/.vim/bundle/sourcecfg
-	url = git@github.com:rpdelaney/vim-sourcecfg.git
-[submodule "home/.vim/bundle/vim-excel"]
-	path = home/.vim/bundle/excel
-	url = git@github.com:yakiang/excel.vim.git
 [submodule "home/.vim/bundle/vim-daylight"]
 	path = home/.vim/bundle/daylight
 	url = git@github.com:rpdelaney/vim-daylight.git
-[submodule "home/.vim/bundle/pgsql"]
-	path = home/.vim/bundle/pgsql
-	url = git@github.com:rpdelaney/vim-pgsql.git
-[submodule "home/.vim/bundle/sprunge"]
-	path = home/.vim/bundle/sprunge
-	url = git@github.com:chilicuil/vim-sprunge.git
-[submodule "home/.vim/bundle/vim-shell-executor"]
-	path = home/.vim/bundle/shell-executor
-	url = git@github.com:rpdelaney/vim-shell-executor.git
-[submodule "home/.vim/bundle/fugitive"]
-	path = home/.vim/bundle/fugitive
-	url = git@github.com:tpope/vim-fugitive.git
-[submodule "home/.vim/bundle/smartusline"]
-	path = home/.vim/bundle/smartusline
-	url = git@github.com:molok/vim-smartusline.git
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
 	url = git@github.com:altercation/solarized.git
-[submodule "home/.vim/bundle/rtorrent"]
-	path = home/.vim/bundle/rtorrent
-	url = git@github.com:rpdelaney/rtorrent-syntax-file.git
-[submodule "home/.vim/bundle/json"]
-	path = home/.vim/bundle/json
-	url = git@github.com:jkufner/vim-json.git
-[submodule "home/.vim/bundle/sourcepawn"]
-	path = home/.vim/bundle/sourcepawn
-	url = git@github.com:/withgod/vim-sourcepawn.git
-[submodule "home/.vim/bundle/psqlrc"]
-	path = home/.vim/bundle/psqlrc
-	url = git@github.com:rpdelaney/vim-psqlrc.git
-[submodule "home/.vim/bundle/airline"]
-	path = home/.vim/bundle/airline
-	url = git@github.com:bling/vim-airline.git
-[submodule "home/.vim/bundle/gitgutter"]
-	path = home/.vim/bundle/gitgutter
-	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "home/.vim/bundle/syntastic"]
-	path = home/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "home/.vim/bundle/gnupg"]
-	path = home/.vim/bundle/gnupg
-	url = https://github.com/jamessan/vim-gnupg.git
-[submodule "home/.vim/bundle/minibufexpl"]
-	path = home/.vim/bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
-[submodule "home/.vim/bundle/surround"]
-	path = home/.vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "home/.vim/bundle/pathogen"]
-	path = home/.vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "home/.vim/bundle/repeat"]
-	path = home/.vim/bundle/repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "home/.vim/bundle/characterize"]
-	path = home/.vim/bundle/characterize
-	url = https://github.com/tpope/vim-characterize
-[submodule "home/.vim/bundle/obsession"]
-	path = home/.vim/bundle/obsession
-	url = https://github.com/tpope/vim-obsession.git
-[submodule "home/.vim/bundle/abolish"]
-	path = home/.vim/bundle/abolish
-	url = https://github.com/tpope/vim-abolish.git
-[submodule "home/.vim/bundle/jedi"]
-	path = home/.vim/bundle/jedi
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/rpdelaney/LS_COLORS
-[submodule "home/.vim/bundle/recover"]
-	path = home/.vim/bundle/recover
-	url = git@github.com:chrisbra/Recover.vim.git
-[submodule "home/.vim/bundle/tabular"]
-	path = home/.vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
-[submodule "home/.vim/bundle/easy-align"]
-	path = home/.vim/bundle/easy-align
-	url = git@github.com:junegunn/vim-easy-align.git
-[submodule "home/.vim/bundle/targets.vim"]
-	path = home/.vim/bundle/targets.vim
-	url = https://github.com/wellle/targets.vim
 [submodule "home/.vim/bundle/diffchanges"]
 	path = home/.vim/bundle/diffchanges
 	url = git@github.com:jmcantrell/vim-diffchanges.git
-[submodule "home/.vim/bundle/airline-colornum"]
-	path = home/.vim/bundle/airline-colornum
-	url = git://github.com/ntpeters/vim-airline-colornum.git
