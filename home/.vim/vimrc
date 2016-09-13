@@ -461,6 +461,7 @@ if has("autocmd")
   autocmd FileType python let python_slow_sync = 1
   autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python set completeopt=preview
+  autocmd FileType python let g:syntastic_python_checkers = ['flake8']
   autocmd FileType python let g:syntastic_python_flake8_post_args = '--ignore=E501,E241'
     " archlinux package build
   autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
