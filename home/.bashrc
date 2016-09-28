@@ -405,10 +405,11 @@ if type yaourt &> /dev/null; then
 fi
 # }}}
 # TORSOCKS {{{2
-if type torsocks &> /dev/null && [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
-  export TORSOCKS_CONF_FILE="$XDG_CONFIG_HOME/torsocks/config"
-else
-  echo "torsocks.conf not found." >&2
+if type torsocks &> /dev/null
+  if [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
+    export TORSOCKS_CONF_FILE="$XDG_CONFIG_HOME/torsocks/config"
+  else
+    echo "torsocks.conf not found." >&2
 fi
 # 2}}}
 # PSQL {{{2
