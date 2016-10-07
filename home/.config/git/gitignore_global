@@ -93,3 +93,6 @@ sitemanager.xml
 recentservers.xml
 trustedcerts.xml
 bookmarks.xml
+
+# python
+__pycache__
