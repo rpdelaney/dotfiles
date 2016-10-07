@@ -17,7 +17,7 @@ redshift &
 dunst &
 
     # environment variables for the desktop environment only
-export BROWSER="firefox"
+export BROWSER="chromium"
 
     # xscreensaver daemon
 #/usr/bin/xscreensaver -no-splash &
