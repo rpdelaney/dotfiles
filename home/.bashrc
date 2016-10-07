@@ -591,6 +591,7 @@ if type alsi &> /dev/null ; then
   timeout 1 alsi 2> /dev/null
 else
   echo "TERM is $TERM"
+  echo "DISPLAY is $DISPLAY"
 fi
 # }}}
 
