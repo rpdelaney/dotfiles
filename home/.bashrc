@@ -331,9 +331,7 @@ fi
 if type git &> /dev/null; then
     # git(hub) {{{3
   if type hub &> /dev/null; then
-    alias git='hub'
     export GITHUB_USER="rpdelaney"
-#   export GITHUB_PASSWORD="$(pass show github.com)"
   fi
     # }}}
     # TIG {{{3
@@ -405,10 +403,12 @@ if type yaourt &> /dev/null; then
 fi
 # }}}
 # TORSOCKS {{{2
-if type torsocks &> /dev/null && [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
-  export TORSOCKS_CONF_FILE="$XDG_CONFIG_HOME/torsocks/config"
-else
-  echo "torsocks.conf not found." >&2
+if type torsocks &> /dev/null; then
+  if [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
+    export TORSOCKS_CONF_FILE="$XDG_CONFIG_HOME/torsocks/config"
+  else
+    echo "torsocks.conf not found." >&2
+  fi
 fi
 # 2}}}
 # PSQL {{{2
