@@ -26,8 +26,10 @@ if [[ $UID -ne 0 ]]; then
   alias netmonitor='\sudo watch -n 3 lsof -i'
 
   if type youtube-dl &> /dev/null ; then
+      # don't mark videos watched
+    alias youtube-dl='youtube-dl --no-mark-watched'
       # youtube-dl with lots of metadata
-    alias youget='\youtube-dl -t -c -w --write-info-json --write-description --'
+    alias youget='youtube-dl -t -c -w --write-info-json --write-description --'
       # Convert Youtube videos to MP3
     alias youtube-dla='youtube-dl -t --extract-audio --audio-format mp3 --'
   fi
