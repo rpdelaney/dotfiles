@@ -189,7 +189,7 @@ if [[ -d "/run/user/$uid" ]] ; then
       echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
     fi
   else
-    echo "XDG_RUNTIME_DIR is not owned by $uid." >&2
+    echo "XDG_RUNTIME_DIR is not owned by UID $uid." >&2
   fi
 else
   echo "XDG_RUNTIME_DIR not found." >&2
