@@ -204,7 +204,7 @@ bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
     # password {{{3
 	# ask for user input, then pass it to xkeypass
 	# facilitates reading passwords from the password store
-bindsym $mod+w exec i3-input -F 'exec pw %s type password'
+bindsym $mod+w exec i3-input -F 'exec /home/ryan/src/shell/xkeypass/xkeypass %s type password'
 # 3}}}
 	# i3-input {{{3
 	# ask for user input, then pass it to i3-msg
