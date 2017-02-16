@@ -70,7 +70,7 @@ shopt -s histappend
 HISTCONTROL=ignoreboth
   # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=80
-HISTFILESIZE=1000
+HISTFILESIZE=50
   # Ignore some controlling instructions
   # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
   # The '&' is a special pattern which suppresses duplicate entries.
