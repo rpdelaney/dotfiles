@@ -70,6 +70,9 @@ assign [class="Gimp"] → $WS7
 assign [class="hl2_linux"] → 10: games
 assign [class="EufloriaHD.bin.x86_64"]	10: games
 assign [class="csgo_linux"]	10: games
+# playonlinux
+assign [class="Mainwindow.py"]	10: games
+assign [class="PathOfExile.exe"]	10: games
 # 2}}}
 # 1}}}
 # styles {{{1
@@ -204,7 +207,7 @@ bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
     # password {{{3
 	# ask for user input, then pass it to xkeypass
 	# facilitates reading passwords from the password store
-bindsym $mod+w exec i3-input -F 'exec /home/ryan/src/shell/xkeypass/xkeypass %s type password'
+bindsym $mod+w exec i3-input -F 'exec python3 /home/ryan/src/py/pw/pw.py %s type password &> /tmp/pw.log'
 # 3}}}
 	# i3-input {{{3
 	# ask for user input, then pass it to i3-msg
@@ -244,8 +247,9 @@ mode "resize" {
 #for_window[class="Dwb"] focus child, layout tabbed, focus
 ##for_window[class="Pidgin" window_role="conversation"] focus child, layout tabbed, focus
 #for_window[instance="Toplevel"] floating enable
-#for_window[title="foobar2000.exe - Wine desktop"] 
+#for_window[title="foobar2000.exe - Wine desktop"]
 #or_window[class="Steam" title="*Chat$"] floating enable
+for_window[class="Mainwindow.py"] layout tabbed
 # 1}}}
 # auto-run {{{1
 #
