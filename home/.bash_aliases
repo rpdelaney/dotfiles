@@ -203,3 +203,7 @@ fi
 if type pudb3 &> /dev/null; then
   alias pudb='pudb3'
 fi
+
+  # vim monkey stuff
+alias ZQ='exit'
+alias ZZ='exit'
