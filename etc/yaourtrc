@@ -6,14 +6,15 @@
 
 # General
 #AUTOSAVEBACKUPFILE=0
-#DEVELSRCDIR=""
 #DEVEL=0
-#VISUAL="$VISUAL"
-#EDITOR="$EDITOR"
-#FORCEENGLISH=0
+#DEVELSRCDIR=""
 #FORCE=0
-#TMPDIR="/tmp"
 #NO_TESTDB=0
+
+# Environment variables
+#EDITOR="$EDITOR"
+#TMPDIR="/tmp"
+#VISUAL="$VISUAL"
 
 # SUDO
 #SUDONOVERIF=0      # Avoid multiple sudo checks when timestamp_timeout=0
@@ -30,6 +31,7 @@
 #AURCOMMENT=5
 #AURDEVELONLY=0
 #AURSEARCH=1
+#AURSHOWDIFF=0
 #AURUPGRADE=0
 #AURVOTE=1
 #AURUSEGIT=0
@@ -38,7 +40,7 @@
 #EXPORT=0           # Export to 1: EXPORTDIR or PKGDEST
                     # 2: pacman cache (as root)
 #EXPORTSRC=0        # Need EXPORT>0 to be used
-#EXPORTDIR=""       # If empty, use makepkg's connfiguration (see makepkg.conf)
+#EXPORTDIR=""       # If empty, use makepkg's configuration (see makepkg.conf)
 
 # Prompt
 #NOCONFIRM=0
