@@ -354,11 +354,12 @@ if type git &> /dev/null; then
   fi
     # }}}
 # XDG-git {{{3
-  if [[ ! -d "$XDG_CONFIG_HOME/git/config" ]] ; then
-    export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"
-  else
-    echo "GIT_CONFIG not found." >&2
-  fi
+# VVV This confuses lots of apps for some reason VVV
+# if [[ ! -d "$XDG_CONFIG_HOME/git/config" ]] ; then
+#   export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"
+# else
+#   echo "GIT_CONFIG not found." >&2
+# fi
     # Always vim to edit even if I have a window manager.
   export GIT_EDITOR="vim"
     # Number of context lines shown in a diff

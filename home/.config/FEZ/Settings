@@ -1,18 +1,28 @@
 ﻿settings type="FezEngine.Tools.Settings, FezEngine" {
 	useCurrentMode false
 	screenMode "Fullscreen"
+	scaleMode "FullAspect"
 	width 1920
 	height 1080
+	highDPI false
 	language "English"
-	soundVolume 0.75F
-	musicVolume 0.5F
-	vibration false
+	soundVolume 1F
+	musicVolume 1F
+	vibration true
+	pauseOnLostFocus true
+	singlethreaded false
 	brightness 0.5F
-	keyboardMapping Jump="Space" GrabThrow="LeftControl" CancelTalk="LeftShift" Up="Up" Down="Down" Left="Left" Right="Right" LookUp="W" LookDown="S" LookRight="D" LookLeft="A" OpenMap="Escape" OpenInventory="Tab" MapZoomIn="R" MapZoomOut="F" Pause="Enter" RotateLeft="X" RotateRight="D" FpViewToggle="RightAlt" ClampLook="RightShift"
-	gamepadMapping Jump=1 GrabThrow=0 CancelTalk=2 OpenMap=8 OpenInventory=3 MapZoomIn=5 MapZoomOut=4 Pause=9 RotateLeft=6 RotateRight=7 FpViewToggle=10 ClampLook=11
-	uiKeyboardMapping Up="Up" Down="Down" Left="Left" Right="Right" Jump="Enter" CancelTalk="Escape" Pause="Enter" OpenMap="Escape" GrabThrow="LeftControl" LookUp="I" LookDown="K" LookRight="L" LookLeft="J" OpenInventory="Tab" MapZoomIn="W" MapZoomOut="S" RotateLeft="A" RotateRight="D" FpViewToggle="RightAlt" ClampLook="RightShift"
-	additionalDeadzone 0.4F
+	keyboardMapping Jump="Space" GrabThrow="LeftControl" CancelTalk="LeftShift" Up="Up" Down="Down" Left="Left" Right="Right" LookUp="C" LookDown="T" LookRight="N" LookLeft="H" OpenMap="Escape" OpenInventory="Tab" MapZoomIn="OemComma" MapZoomOut="O" Pause="Enter" RotateLeft="A" RotateRight="E" FpViewToggle="RightAlt" ClampLook="RightShift"
+	controllerMapping Jump="A" GrabThrow="X" CancelTalk="B" OpenMap="Back" OpenInventory="Y" MapZoomIn="RightShoulder" MapZoomOut="LeftShoulder" Pause="Start" RotateLeft="LeftTrigger" RotateRight="RightTrigger" FpViewToggle="LeftStick" ClampLook="RightStick"
+	uiKeyboardMapping Up="Up" Down="Down" Left="Left" Right="Right" Jump="Enter" CancelTalk="Escape" Pause="Enter" OpenMap="Escape" GrabThrow="LeftControl" LookUp="C" LookDown="T" LookRight="N" LookLeft="H" OpenInventory="Tab" MapZoomIn="OemComma" MapZoomOut="O" RotateLeft="A" RotateRight="E" FpViewToggle="RightAlt" ClampLook="RightShift"
+	deadZone 40
+	disableController false
 	invertLookX false
 	invertLookY false
-	borderless false
+	vSync true
+	hardwareInstancing true
+	multiSampleCount 0
+	multiSampleOption false
+	lighting true
+	disableSteamworks false
 }
