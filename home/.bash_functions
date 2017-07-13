@@ -5,6 +5,11 @@
 unalias sprunge &> /dev/null
 sprunge() { curl -F 'sprunge=<-' http://sprunge.us < "${1:-/dev/stdin}"; } 
 
+# usage: qrcode FILE
+# or some_command | qrcode
+unalias qrcode &> /dev/null
+qrcode() { curl -F-=\<- qrenco.de < "${1:-/dev/stdin}"; }
+
 rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
 
 #
