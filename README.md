@@ -1,5 +1,5 @@
 #LICENSE
-Copyright (C) 2014 Ryan Delaney.
+Copyright (C) 2014-17 Ryan Delaney.
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
