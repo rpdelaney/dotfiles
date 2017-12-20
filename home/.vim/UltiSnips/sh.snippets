@@ -26,28 +26,12 @@ exit 1
 endsnippet
 snippet functions "standard functions" b
 # Functions {{{1
-# verbose() {{{2
-verbose() {
-  # \$1 is the message to be printed
-  local message="\$1"
-  # \$2 is the verbosity threshold (default: 1)
-  local threshold="\$2"
-
-  if [ "\$verbose" -ge "\$threshold" ] && [ -z "\$quiet" ]; then
-    echo "[INFO] \$message" >&2 || return 1
-  fi
+log() {
+  local msg=\$1
+  local level="\${2:-INFO}"
+  now=$(date "+%Y-%m-%d %H:%M:%S%z")
+  echo "$now $(hostname) \$0:$level $msg" 1>&2
 }
-# verbose() 2}}}
-# error() {{{2
-error() {
-  # \$1 is the message to be printed
-  local message="\$1"
-
-  if [ -z "\$quiet" ]; then
-    echo "[ERROR] \$message" >&2 || return 1
-  fi
-}
-# error() 2}}}
 # Functions 1}}}
 endsnippet
 snippet parameters "command-line arguments reader" b
@@ -130,11 +114,5 @@ traperror () {
 
 }
 
-log() {
-  local msg=\$1
-  local level="\${2:-INFO}"
-  now=$(date "+%Y-%m-%d %H:%M:%S%z")
-  echo "$now $(hostname) \$0:$level $msg" 1>&2
-}
 # End debugging tools. 1}}}
 endsnippet
