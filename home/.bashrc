@@ -512,7 +512,7 @@ export PS3='#?'
   # PS4 {{{2
   # Script debug mode prefix
   # Default: '+'
-export PS4="    +++"
+export PS4="+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: "
   # 2}}}
 # 1}}}
 # KEYCHAIN {{{1
