@@ -30,7 +30,7 @@ log() {
   local msg=\$1
   local level="\${2:-INFO}"
   now=$(date "+%Y-%m-%d %H:%M:%S%z")
-  echo "$now $(hostname) \$0:$level $msg" 1>&2
+  echo "$now $(hostname) \$(basename \$0):$level $msg" 1>&2
 }
 # Functions 1}}}
 endsnippet
