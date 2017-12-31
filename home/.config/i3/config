@@ -73,6 +73,7 @@ assign [class="csgo_linux"]	10: games
 # playonlinux
 assign [class="Mainwindow.py"]	10: games
 assign [class="PathOfExile.exe"]	10: games
+assign [class="Civ5XP"]	10: games
 # 2}}}
 # 1}}}
 # styles {{{1
@@ -207,7 +208,7 @@ bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
     # password {{{3
 	# ask for user input, then pass it to xkeypass
 	# facilitates reading passwords from the password store
-bindsym $mod+w exec i3-input -F 'exec python3 /home/ryan/src/py/pw/pw.py %s type password &> /tmp/pw.log'
+bindsym $mod+w exec i3-input -F 'exec python3 /home/ryan/src/py/pwstore/pwstore %s type password &> /tmp/pw.log'
 # 3}}}
 	# i3-input {{{3
 	# ask for user input, then pass it to i3-msg
