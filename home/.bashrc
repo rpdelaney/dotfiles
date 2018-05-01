@@ -202,6 +202,7 @@ PATH="${PATH}:$HOME/bin/"
 for dir in find "$HOME"/bin -type d -not -path "*/.git/*" -not -name ".git"; do
   [[ -d $dir ]] && PATH=${dir%/}:"$PATH"
 done
+[[ -d "$HOME"/.local/bin/ ]] && PATH="${PATH}:$HOME/.local/bin/"
 # }}}
 # TERM {{{2
   # read /etc/lsb-release for distribution name and version
@@ -433,7 +434,7 @@ if type adb &> /dev/null; then
     # all, adb, sockets, packets, rwx, usb, sync, sysdeps, transport, jdwp
   export ADB_TRACE=""
     # The serial number to connect to. -s takes priority over this if given.
-  export ANDROID_SERIAL="0146B5040401801E"
+# export ANDROID_SERIAL="0146B5040401801E"
     # When used with the logcat option, only these debug tags are printed.
 # export ANDROID_LOG_TAGS=
 fi
