@@ -96,3 +96,5 @@ bookmarks.xml
 
 # python
 __pycache__
+.idea
+*.pyc
