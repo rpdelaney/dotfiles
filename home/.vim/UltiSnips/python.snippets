@@ -59,4 +59,23 @@ except ${2:Exception}, ${3:e}:
 	${4:raise $3}
 endsnippet
 
+# Argparse
+snippet argparse "Argparse" b
+import argparse
+
+
+def parse_args():
+    """
+    Define an argument parser and return the parsed arguments
+    """
+    parser = argparse.ArgumentParser(
+        prog='${1:program}',
+        description='${2:description}')
+    parser.add_argument("--file", "-f", help="input file", required=True, metavar="FILE")
+    parser.add_argument("--option", "-o", help="option description (default: %(default)s)", default="default")
+    parser.add_argument("--option2", "-o2", help="option description")
+    parser.add_argument("--verbose", "-v", help="increase verbosity", action="count")
+
+    return parser.parse_args()
+endsnippet
 # vim:ft=snippets:
