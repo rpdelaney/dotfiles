@@ -64,9 +64,12 @@ snippet argparse "Argparse" b
 import argparse
 
 
-def parse_args():
+def get_parser():
     """
     Define an argument parser and return the parsed arguments
+    Usage:
+
+    args = get_parser().parse_args()
     """
     parser = argparse.ArgumentParser(
         prog='${1:program}',
@@ -76,6 +79,6 @@ def parse_args():
     parser.add_argument("--option2", "-o2", help="option description")
     parser.add_argument("--verbose", "-v", help="increase verbosity", action="count")
 
-    return parser.parse_args()
+    return parser
 endsnippet
 # vim:ft=snippets:
