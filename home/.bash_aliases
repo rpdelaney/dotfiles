@@ -207,3 +207,13 @@ fi
   # vim monkey stuff
 alias ZQ='exit'
 alias ZZ='exit'
+
+  # netctl-auto
+  # if netctl-auto is running, then manually starting a wireless network with
+  # 'netctl' will always fail. therefore, we alias 'netctl' to 'netctl-auto'
+if type netctl-auto &> /dev/null; then
+  systemctl status netctl-auto@wlp7s0 &> /dev/null
+  if [[ $? -eq 0 ]]; then
+    alias netctl='netctl-auto'
+  fi
+fi
