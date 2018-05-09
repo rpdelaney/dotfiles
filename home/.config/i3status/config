@@ -7,34 +7,43 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = false
+        colors = true
         interval = 5
-        output_format = "none"
+#       output_format = "none"
 }
 
 #order += "ipv6"
 order += "disk /"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
-#order += "wireless wlan0"
-#order += "ethernet eth0"
-#order += "battery 0"
-order += "load"
+order += "wireless wlp7s0"
+order += "ethernet enp9s0"
+order += "battery 0"
+#order += "load"
+order += "cpu_usage"
 order += "tztime local"
 
-wireless wlan0 {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+wireless wlp7s0 {
+        format_up = "wlp7s0 (%quality at %essid, %bitrate / %frequency) %ip"
+        format_down = "wlp7s0 down"
 }
 
-ethernet eth0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+ethernet enp9s0 {
+        # if you use %speed, i3status requires cap_net_admin capability
+        format_up = "enp9s0 %ip (%speed)"
+        format_down = "enp9s0 down"
 }
 
 battery 0 {
         format = "%status %percentage %remaining"
+        format_down = "NO BATTERY"
+        status_chr = "CHRG"
+        status_bat = "BAT"
+        status_unk = "BATTERY UNKNOWN"
+        status_full = "FULL"
+        low_threshold = 15
+        hide_seconds = true
+        integer_battery_capacity = true
 }
 
 run_watch DHCP {
@@ -46,14 +55,28 @@ run_watch VPN {
 }
 
 tztime local {
-#       format = "%Y-%m-%d %H:%M:%S"
-        format = "%a %b %d %H:%M:%S"
+        format = "%a %Y-%m-%d %H:%M:%S"
 }
 
 load {
-        format = "%1min"
+        format = "load %1min"
+        max_threshold = "0.5"
+        format_above_threshold = "load HIGH %1min"
+}
+
+cpu_usage {
+        format = "cpu %usage"
+        max_threshold = 95
+        format_above_threshold = "cpu HIGH %usage"
+        degraded_threshold = 65
+        format_above_degraded_threshold = "cpu WARN %usage"
 }
 
 disk "/" {
-        format = "%free"
+        format = "%avail"
+        prefix_type = custom
+        low_threshold = 20
+        threshold_type = percentage_avail
 }
+
+# vim: ft=conf smarttab et
