@@ -118,16 +118,16 @@ hide_edge_borders   both
 # }}}
 # hotkeys {{{1
     # switch to workspace {{{3
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
-bindsym $mod+0 workspace $WS0
+bindsym $mod+1 workspace number $WS1
+bindsym $mod+2 workspace number $WS2
+bindsym $mod+3 workspace number $WS3
+bindsym $mod+4 workspace number $WS4
+bindsym $mod+5 workspace number $WS5
+bindsym $mod+6 workspace number $WS6
+bindsym $mod+7 workspace number $WS7
+bindsym $mod+8 workspace number $WS8
+bindsym $mod+9 workspace number $WS9
+bindsym $mod+0 workspace number $WS0
 	# }}}
 # windows {{{2
 # containers {{{3
@@ -275,4 +275,4 @@ for_window[class="Mainwindow.py"] layout tabbed
 #exec --no-startup-id i3-msg 'workspace 1;'
 # }}}
 
-# vim: foldmethod=marker:
+# vim: foldmethod=marker: et
