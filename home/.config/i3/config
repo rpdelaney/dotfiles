@@ -88,7 +88,8 @@ bar {
         tray_output primary
             # use our custom statusbar command
 #       status_command statusbar
-        status_command i3status
+#       status_command i3status
+        status_command py3status
 }
 # 2}}}
     # Font for window titles. Will also be used by the bar unless a different font
