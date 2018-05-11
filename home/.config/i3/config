@@ -50,10 +50,10 @@ workspace   $WS0      output    DVI-I-2
 # window classes {{{2
     # bind applications to their appropriate workspaces
     # get window class with xprop
-assign [class="Firefox"] → $WS2
-assign [class="Opera"] → $WS2
-assign [class="Midori"] → $WS2
-assign [class="Dwb"] → $WS2
+#assign [class="Firefox"] → $WS2
+#assign [class="Opera"] → $WS2
+#assign [class="Midori"] → $WS2
+#assign [class="Dwb"] → $WS2
 #assign [class="Chromium"] → $WS4
 assign [class="Mumble"] → $WS5
 assign [class="Steam"] → $WS5
@@ -83,11 +83,12 @@ bar {
             # show the workspace buttons
         workspace_buttons yes
             # use a more readable font
-        font pango:Consolas 10
+        font pango:Consolas 8
             # show tray icons on the primary monitor
         tray_output primary
             # use our custom statusbar command
-        status_command statusbar
+#       status_command statusbar
+        status_command i3status
 }
 # 2}}}
     # Font for window titles. Will also be used by the bar unless a different font
