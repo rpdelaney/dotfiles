@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+Plug 'https://github.com/pbondoer/vim-42header.git'
 Plug 'git://github.com/elzr/vim-json.git'
 Plug 'git://github.com/PotatoesMaster/i3-vim-syntax.git'
 Plug 'git://github.com/vim-scripts/python.vim--Vasiliev'
@@ -467,6 +468,7 @@ if has("autocmd")
   autocmd FileType python set completeopt=preview
   autocmd FileType python let g:syntastic_python_checkers = ['flake8']
   autocmd FileType python let g:syntastic_python_flake8_post_args = '--ignore=E501,E241'
+  autocmd FileType c let g:syntastic_c_checkers = ['gcc']
     " archlinux package build
   autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
     " LaTeX
