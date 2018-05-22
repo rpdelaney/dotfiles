@@ -1,3 +1,4 @@
+" WHY IS ULTI-SNIPS NOT IN VIM-PLUG??
   " load vim-plug and plugins {{{1
 call plug#begin('~/.vim/plug')
 
@@ -15,7 +16,8 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/pbondoer/vim-42header.git'
+Plug 'git://github.com/rpdelaney/bats.vim.git'
+Plug 'git://github.com/pbondoer/vim-42header.git'
 Plug 'git://github.com/elzr/vim-json.git'
 Plug 'git://github.com/PotatoesMaster/i3-vim-syntax.git'
 Plug 'git://github.com/vim-scripts/python.vim--Vasiliev'
@@ -48,7 +50,12 @@ Plug 'git://github.com/rpdelaney/rtorrent-syntax-file.git'
 Plug 'git://github.com/rpdelaney/vim-pgsql.git'
 Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
 Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
-Plug 'git://github.com/scrooloose/syntastic.git'
+" Plug 'git://github.com/scrooloose/syntastic.git'
+Plug 'git://github.com/w0rp/ale.git'
+	"" Norminette
+	"" See https://github.com/junegunn/vim-plug/wiki/tips under 'gist as plugin'
+Plug 'https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177.git',
+    \ { 'as': 'norminette', 'do': 'mkdir -p plugin; cp -f *.vim plugin/' }
 Plug 'git://github.com/tpope/vim-abolish.git'
 Plug 'git://github.com/tpope/vim-characterize'
 Plug 'git://github.com/tpope/vim-fugitive.git'
@@ -152,6 +159,18 @@ if has('syntax') && !exists('g:syntax_on')
   set foldmethod=syntax
 endif
   " 2}}}
+  " Ale {{{2
+let g:ale_linters = {
+\	'c': ['gcc', 'norminette'],
+\   'cpp': ['gcc', 'norminette'],
+\   'h': ['gcc', 'norminette'],
+\   'hpp': ['gcc', 'norminette'],
+\	'python': ['flake8']
+\}
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+
+  " Syntax 2}}}
   " Indentation {{{2
   " do smart autoindenting on new lines
 set smartindent
@@ -466,9 +485,10 @@ if has("autocmd")
   autocmd FileType python let python_slow_sync = 1
   autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python set completeopt=preview
-  autocmd FileType python let g:syntastic_python_checkers = ['flake8']
-  autocmd FileType python let g:syntastic_python_flake8_post_args = '--ignore=E501,E241'
-  autocmd FileType c let g:syntastic_c_checkers = ['gcc']
+  autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
+" autocmd FileType python let g:syntastic_python_checkers = ['flake8']
+" autocmd FileType python let g:syntastic_python_flake8_post_args = '--ignore=E501,E241'
+" autocmd FileType c let g:syntastic_c_checkers = ['gcc']
     " archlinux package build
   autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
     " LaTeX
