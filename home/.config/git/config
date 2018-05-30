@@ -220,3 +220,4 @@
 #         push = <refspec>
 #         fetch = <refspec>/
 # }}}
+# vim: ft=gitconfig noet foldmethod=marker
