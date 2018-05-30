@@ -204,7 +204,7 @@
 [url "git@github.com:"]
 	insteadOf = github:
 	insteadOf = http://github.com/
-	insteadOf = https://github.com
+#	insteadOf = https://github.com
 	# A URL like "work:repo.git" or like "host.xz:/path/to/repo.git" will be
 	# rewritten in any context that takes a URL to be "git://git.host.xz/repo.git".
 

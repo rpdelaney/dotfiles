@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/diffchanges"]
 	path = home/.vim/bundle/diffchanges
 	url = git@github.com:jmcantrell/vim-diffchanges.git
+[submodule "home/.config/tmux/tmux-resurrect"]
+	path = home/.config/tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
