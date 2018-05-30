@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# usage: sprunge FILE 
+# usage: sprunge FILE
 # or some_command | sprunge
 unalias sprunge &> /dev/null
-sprunge() { curl -F 'sprunge=<-' http://sprunge.us < "${1:-/dev/stdin}"; } 
+sprunge() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
 
 # usage: qrcode FILE
 # or some_command | qrcode
@@ -112,7 +112,7 @@ fi
 albumart() { local y="$*";awk '/View larger image/{gsub(/^.*largeImagePopup\(.|., .*$/,"");print;exit}' <(curl -s 'http://www.albumart.org/index.php?srchkey='"${y// /+}"'&itempage=1&newsearch=1&searchindex=Music');}
 
   # define words
-define() { 
+define() {
   if type torsocks &> /dev/null; then
     torsocks curl -s dict://dict.org/d:"$1"
   else
@@ -121,11 +121,11 @@ define() {
 }
 
   # define words shorter
-def() { 
+def() {
   if type torsocks &> /dev/null; then
-    torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; 
+    torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
   else
-    curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/'; 
+    curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
   fi
 }
 
@@ -144,7 +144,7 @@ jobscount(){
 turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
 
   # spit out N random words
-werd() { 
+werd() {
   # Default 1 word, unless an integer is passed
   i="${1:-1}"
   shuf -n "$i" /usr/share/dict/english
