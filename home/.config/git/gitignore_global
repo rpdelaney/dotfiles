@@ -96,5 +96,6 @@ bookmarks.xml
 
 # python
 __pycache__
+.pytest_cache/*
 .idea
 *.pyc
