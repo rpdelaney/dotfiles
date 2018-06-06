@@ -50,7 +50,6 @@ Plug 'git://github.com/rpdelaney/rtorrent-syntax-file.git'
 Plug 'git://github.com/rpdelaney/vim-pgsql.git'
 Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
 Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
-" Plug 'git://github.com/scrooloose/syntastic.git'
 Plug 'git://github.com/w0rp/ale.git'
 	"" Norminette
 	"" See https://github.com/junegunn/vim-plug/wiki/tips under 'gist as plugin'
@@ -167,6 +166,7 @@ let g:ale_linters = {
 \   'hpp': ['gcc', 'norminette'],
 \	'python': ['flake8']
 \}
+let g:ale_python_flake8_options = '--ignore=E501 --doctests'
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
@@ -486,9 +486,6 @@ if has("autocmd")
   autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python set completeopt=preview
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
-" autocmd FileType python let g:syntastic_python_checkers = ['flake8']
-" autocmd FileType python let g:syntastic_python_flake8_post_args = '--ignore=E501,E241'
-" autocmd FileType c let g:syntastic_c_checkers = ['gcc']
     " archlinux package build
   autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
     " LaTeX
