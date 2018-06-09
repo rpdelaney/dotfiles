@@ -11,13 +11,13 @@ setxkbmap -option terminate:ctrl_alt_bksp
 #xautolock -time 45 -locker freeze -notify 30 -notifier notify-send -t 30000 "Locking due to idle state..."
 
     # redshift
-redshift &
+#redshift &
 
 	# notify daemon
 dunst &
 
     # environment variables for the desktop environment only
-export BROWSER="chromium"
+export BROWSER="firefox"
 
     # xscreensaver daemon
 #/usr/bin/xscreensaver -no-splash &
