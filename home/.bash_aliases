@@ -12,7 +12,7 @@ if [[ $UID -ne 0 ]]; then
     alias ya='\pacaur'
     alias yaq='\pacaur -Q'
     alias yas='\pacaur -S'
-    alias yass='\pacaur -Ss'
+    alias yass='\pacaur -Ss --color=always'
     alias yars='\pacaur -Rs'
   else
     alias ya='\pacman --color=always'
