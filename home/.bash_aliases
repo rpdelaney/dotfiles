@@ -7,13 +7,13 @@ if [[ $UID -ne 0 ]]; then
     # sudo a command, preserving the current environment
   alias sudoe='sudo -E'
 
-    # pacaur
-  if type pacaur &> /dev/null; then
-    alias ya='\pacaur'
-    alias yaq='\pacaur -Q'
-    alias yas='\pacaur -S'
-    alias yass='\pacaur -Ss'
-    alias yars='\pacaur -Rs'
+    # aurman
+  if type aurman &> /dev/null; then
+    alias ya='\aurman'
+    alias yaq='\aurman -Q'
+    alias yas='\aurman -S'
+    alias yass='\aurman -Ss'
+    alias yars='\aurman -Rs'
   else
     alias ya='\pacman --color=always'
     alias yaq='\pacman --color=always -Q'
@@ -55,13 +55,6 @@ if [[ $UID -ne 0 ]]; then
   type vlc &> /dev/null && alias ncvlc='vlc -I ncurses'
 
 else
-  #if type yaourt &> /dev/null; then
-  #  alias ya='\yaourt'
-  #  alias yaq='\yaourt -Q'
-  #  alias yas='\yaourt -S'
-  #  alias yass='\yaourt -Ss'
-  #  alias yars='\yaourt -Rs'
-  #fi
     # watch incoming network connections
   alias netmonitor='watch -n 3 lsof -i'
 fi
