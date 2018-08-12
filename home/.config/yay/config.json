@@ -1,6 +1,6 @@
 {
-	"buildDir": "/home/ryan/.cache/yay",
-	"editor": "",
+	"buildDir": "/tmp/yay",
+	"editor": "vim",
 	"editorflags": "",
 	"makepkgbin": "makepkg",
 	"makepkgconf": "",
@@ -23,7 +23,7 @@
 	"requestsplitn": 150,
 	"sortmode": 0,
 	"completionrefreshtime": 7,
-	"sudoloop": false,
+	"sudoloop": true,
 	"timeupdate": false,
 	"devel": false,
 	"cleanAfter": false,
