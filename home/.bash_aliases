@@ -7,13 +7,13 @@ if [[ $UID -ne 0 ]]; then
     # sudo a command, preserving the current environment
   alias sudoe='sudo -E'
 
-    # aurman
-  if type aurman &> /dev/null; then
-    alias ya='\aurman'
-    alias yaq='\aurman -Q'
-    alias yas='\aurman -S'
-    alias yass='\aurman -Ss'
-    alias yars='\aurman -Rs'
+    # yay
+  if type yay &> /dev/null; then
+    alias ya='\yay'
+    alias yaq='\yay -Q'
+    alias yas='\yay -S'
+    alias yass='\yay -Ss'
+    alias yars='\yay -Rs'
   else
     alias ya='\pacman --color=always'
     alias yaq='\pacman --color=always -Q'
