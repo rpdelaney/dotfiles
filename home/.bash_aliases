@@ -215,3 +215,8 @@ fi
 if type pypi2pkgbuild.py &> /dev/null; then
   alias pypi2pkg='PKGEXT=.pkg.tar pypi2pkgbuild.py -g cython -b /tmp/pypi2pkgbuild/ -f'
 fi
+
+  # macos
+if type gtimeout &> /dev/null; then
+  alias timeout='gtimeout'
+fi
