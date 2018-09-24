@@ -220,3 +220,8 @@ fi
 if type sxiv &> /dev/null; then
   alias sxiv='sxiv -a -p'
 fi
+
+  # macos
+if type gtimeout &> /dev/null; then
+  alias timeout='gtimeout'
+fi
