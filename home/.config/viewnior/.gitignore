@@ -1,7 +1,0 @@
-# ignore all
-*
-
-# except
-!.gitignore
-viewnior.conf
-accel_map
