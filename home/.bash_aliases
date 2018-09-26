@@ -77,9 +77,9 @@ alias lll='ll | pager'
 alias llla='lla | pager'
 
     # safety valve
-alias mv='\mv -iv'
-alias cp='\cp -iv'
-alias rm='\rm -Iv'
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias rm='rm -Iv'
 alias chown='\chown -c --preserve-root'
 alias chmod='\chmod -c --preserve-root'
 alias chgrp='\chgrp -c --preserve-root'
@@ -219,4 +219,13 @@ fi
   # macos
 if type gtimeout &> /dev/null; then
   alias timeout='gtimeout'
+fi
+if type mv &> /dev/null; then
+  alias mv='gmv'
+fi
+if type cp &> /dev/null; then
+  alias cp='gcp'
+fi
+if type rm &> /dev/null; then
+  alias rm='grm'
 fi
