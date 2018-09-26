@@ -68,12 +68,12 @@ assign [class="Xsane"] → $WS7
 assign [class="Gimp"] → $WS7
 #assign [class="VirtualBox"] → 9: vm
 assign [class="hl2_linux"] → 10: games
-assign [class="EufloriaHD.bin.x86_64"]	10: games
-assign [class="csgo_linux"]	10: games
+assign [class="EufloriaHD.bin.x86_64"]  10: games
+assign [class="csgo_linux"] 10: games
 # playonlinux
-assign [class="Mainwindow.py"]	10: games
-assign [class="PathOfExile.exe"]	10: games
-assign [class="Civ5XP"]	10: games
+assign [class="Mainwindow.py"]  10: games
+assign [class="PathOfExile.exe"]    10: games
+assign [class="Civ5XP"] 10: games
 # 2}}}
 # 1}}}
 # styles {{{1
@@ -88,8 +88,8 @@ bar {
         tray_output primary
             # use our custom statusbar command
 #       status_command statusbar
-#       status_command i3status
-        status_command py3status
+        status_command i3status
+#       status_command py3status
 }
 # 2}}}
     # Font for window titles. Will also be used by the bar unless a different font
@@ -129,7 +129,7 @@ bindsym $mod+7 workspace number $WS7
 bindsym $mod+8 workspace number $WS8
 bindsym $mod+9 workspace number $WS9
 bindsym $mod+0 workspace number $WS0
-	# }}}
+    # }}}
 # windows {{{2
 # containers {{{3
     # focus {{{4
@@ -153,7 +153,7 @@ bindsym $mod+shift+minus split h
 bindsym $mod+shift+v     split v
 bindsym $mod+bar         split v
 # 4}}}
-	# layout {{{4
+    # layout {{{4
     # enter fullscreen mode for the focused container
 bindsym $mod+u fullscreen
     # change container layout (stacked, tabbed, toggle split)
@@ -161,7 +161,7 @@ bindsym $mod+apostrophe layout stacking
 bindsym $mod+comma      layout tabbed
 bindsym $mod+period     layout toggle split
 # 4}}}
-	# move {{{4
+    # move {{{4
     # move focused container within workspace
 bindsym $mod+space+h move left
 bindsym $mod+space+j move down
@@ -208,19 +208,22 @@ bindsym $mod+e exec dmenu_run
 bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
 # 3}}}
     # password {{{3
-	# ask for user input, then pass it to xkeypass
-	# facilitates reading passwords from the password store
+    # ask for user input, then pass it to xkeypass
+    # facilitates reading passwords from the password store
 bindsym $mod+w exec i3-input -F 'exec python3 /home/ryan/src/py/pwstore/pwstore %s type password &> /tmp/pw.log'
 # 3}}}
-	# i3-input {{{3
-	# ask for user input, then pass it to i3-msg
-	# facilitates sending arbitrary commands to i3
+    # i3-input {{{3
+    # ask for user input, then pass it to i3-msg
+    # facilitates sending arbitrary commands to i3
 bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 # 3}}}
 # simulate ctrl {{{3
 # for systems where the ctrl key is stuck (like my laptop)
 bindsym --release $mod+alt exec --no-startup-id xdotool key --clearmodifiers ctrl
 # 3}}} simulate ctrl
+# X window renamer {{{3
+bindsym --release $mod+F5 exec i3-input -P 'rename window title: ' -F 'exec i3_window_title %s'
+# 3}}} X window renamer
 # 2}}}
 # modes {{{1
 mode "resize" {
@@ -242,7 +245,7 @@ mode "resize" {
 
         # back to normal: same hotkey
         bindsym $mod+p mode "default"
-		bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
+        bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 # }}}
 # for-window {{{1
