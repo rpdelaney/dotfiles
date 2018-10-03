@@ -1,9 +1,0 @@
-# by default ignore everything in here
-*
-
-# except
-
-# gpg.conf
-!gpg.conf
-!gpg-agent.conf
-!.gitignore
