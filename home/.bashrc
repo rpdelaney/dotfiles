@@ -266,7 +266,8 @@ fi
 # GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
-  export GPG_TTY="$(tty)"
+  GPG_TTY="$(tty)"
+  export GPG_TTY
   if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]] ; then
     export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"
   else
