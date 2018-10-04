@@ -225,12 +225,12 @@ fi
 if type gtimeout &> /dev/null; then
   alias timeout='gtimeout'
 fi
-if type mv &> /dev/null; then
+if type gmv &> /dev/null; then
   alias mv='gmv'
 fi
-if type cp &> /dev/null; then
+if type gcp &> /dev/null; then
   alias cp='gcp'
 fi
-if type rm &> /dev/null; then
+if type grm &> /dev/null; then
   alias rm='grm'
 fi
