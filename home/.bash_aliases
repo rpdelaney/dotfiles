@@ -237,3 +237,6 @@ fi
 if type ggrep &> /dev/null; then
   alias grep='ggrep'
 fi
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias chmod='\chmod --preserve-root'
+fi
