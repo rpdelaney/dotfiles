@@ -70,7 +70,7 @@ done
 # Parameters 1}}}
 endsnippet
 snippet depends "template for dependency check"
-if ! type $1 &> /dev/null; then echo "Missing dependency: $1" 1>&2; exit 1; fi
+if ! command -v $1 &> /dev/null; then echo "Missing dependency: $1" 1>&2; exit 1; fi
 endsnippet
 snippet mktemp
 tmpfile="$(mktemp)"
