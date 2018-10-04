@@ -7,6 +7,7 @@
 # See the README file for additional terms and conditions on your use of this
 # software.
 #
+# shellcheck disable=SC2174
 
 if [[ -z "$HOME" ]] || [[ ! -x "$HOME" ]]; then
   # shellcheck disable=SC2016
@@ -16,13 +17,19 @@ fi
 main() {
   if [[ "$OSTYPE" =~ ^darwin ]]; then
     # we are on macos
+    mkdir --parents --mode=0700 "$HOME/Caches/" || exit 1
     export XDG_CACHE_HOME="$HOME/Caches/"
+    mkdir --parents --mode=0700 "$HOME/Preferences/" || exit 1
     export XDG_CONFIG_HOME="$HOME/Preferences/"
+    mkdir --parents --mode=0700 "$HOME/Application Support/" || exit 1
     export XDG_DATA_HOME="$HOME/Application Support/"
   else
     # we're probably on linux
+    mkdir --parents --mode=0700 "$HOME/.cache/" || exit 1
     export XDG_CACHE_HOME="$HOME/.cache/"
+    mkdir --parents --mode=0700 "$HOME/.config/" || exit 1
     export XDG_CONFIG_HOME="$HOME/.config/"
+    mkdir --parents --mode=0700 "$HOME/.local/share" || exit 1
     export XDG_DATA_HOME="$HOME/.local/share"
   fi
 }
