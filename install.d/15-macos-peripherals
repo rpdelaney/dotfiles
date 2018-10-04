@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+main() {
+  # Ignore if we're not on OSX
+  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+
+  ###############################################################################
+  # Mice, keyboard, etc                                                         #
+  ###############################################################################
+  # Set a blazingly fast keyboard repeat rate
+  defaults write NSGlobalDomain KeyRepeat -int 0
+
+  # disable Natural scrolling
+  defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+}
+
+main "$@"
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

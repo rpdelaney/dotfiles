@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+main() {
+  # Ignore if we're not on OSX
+  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+
+  # show all filename extensions
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # show status bar
+  defaults write com.apple.finder ShowStatusBar -bool true
+
+  # show path bar
+  defaults write com.apple.finder ShowPathbar -bool true
+
+  # allow text selection in Quick Look
+  defaults write com.apple.finder QLEnableTextSelection -bool true
+
+  # Display full POSIX path as Finder window title
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  # When performing a search, search the current folder by default
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+  # Disable the warning when changing a file extension
+  defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+  # show hidden files by default
+  defaults write com.apple.finder AppleShowAllFiles -bool true
+
+  # Avoid creating .DS_Store files on network volumes
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+  # Automatically open a new Finder window when a volume is mounted
+  defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+  defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+  defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+  # Disable the warning before emptying the Trash
+  defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+  # Empty Trash securely by default
+  defaults write com.apple.finder EmptyTrashSecurely -bool true
+}
+
+main "$@"
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
