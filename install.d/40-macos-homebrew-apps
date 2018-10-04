@@ -10,16 +10,99 @@
 
 if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; exit 1; fi
 
-main() {
-  brew install awscli bash bash-completion binutils brew-cask-completion cmake colordiff || exit 1
-  brew install coreutils csvkit curl dateutils dialog diffutils dos2unix enca encfs exa || exit 1
-  brew install exiftool file-formula findutils flake8 git glances gnu-indent gnu-sed gnu-tar || exit 1
-  brew install gnu-which gnupg grc grep gzip htop hub inetutils jq keychain less libnotify || exit 1
-  brew install libqalculate lynx mailutils make media-info moreutils mosh mps-youtube ncdu || exit 1
-  brew install ncurses nmap openssh openvpn pandoc pipenv pv pwgen pyenv qrencode ranger || exit 1
-  brew install rename rsync sendemail shellcheck sox sshfs sxiv terminal-notifier terraform || exit 1
-  brew install terraform-docs tig tmux tree unar vim vimpager watch wget wine || exit 1
+brew_install() {
+  local app
+  app="$1"
+
+  brew install "$app" || exit 1
 }
+
+main() {
+  for app in "${homebrew_apps[@]}"; do
+    brew_install "$app"
+  done
+}
+
+homebrew_apps=(
+  awscli
+  bash
+  bash-completion
+  binutils
+  brew-cask-completion
+  cmake
+  colordiff
+  coreutils
+  csvkit
+  curl
+  dateutils
+  dialog
+  diffutils
+  dos2unix
+  enca
+  encfs
+  exa
+  exiftool
+  file-formula
+  findutils
+  flake8
+  git
+  glances
+  gnu-indent
+  gnu-sed
+  gnu-tar
+  gnu-which
+  gnupg
+  grc
+  grep
+  gzip
+  htop
+  hub
+  inetutils
+  jq
+  keychain
+  less
+  libnotify
+  libqalculate
+  lynx
+  mailutils
+  make
+  media-info
+  moreutils
+  mosh
+  mps-youtube
+  ncdu
+  ncurses
+  nmap
+  openssh
+  openvpn
+  pandoc
+  pipenv
+  pv
+  pwgen
+  pyenv
+  qrencode
+  ranger
+  rename
+  rsync
+  sendemail
+  shellcheck
+  sox
+  sshfs
+  sxiv
+  terminal-notifier
+  terraform
+  terraform-docs
+  tig
+  tmux
+  tree
+  unar
+  vim
+  vimpager
+  watch
+  wget
+  wine
+)
+
 
 main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
