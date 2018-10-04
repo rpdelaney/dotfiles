@@ -1,6 +1,6 @@
 00-10		Base system configuration
 	0-5		Hardware
-	6-10	
+	6-10	Shell
 11-19	External devices and peripherals
 20-29	UX/UI configuration
 30-39	Home directory setup
