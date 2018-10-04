@@ -9,12 +9,13 @@
 #
 
 # shellcheck disable=SC2154
-if [[ -z $dotfiles_dest ]]; then echo "XDG env var is unset: dotfiles_dest" 1>&2; exit 1; fi
+if [[ ! -d $dotfiles_dest ]]; then echo "dotfiles_dest var not found: $dotfiles_dest" 1>&2; exit 1; fi
+
+if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; exit 1; fi
 
 main() {
   cd "$HOME" || exit 1
-  if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; exit 1; fi
-  find "$dotfiles_dest/$HOME" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
 }
 
 main "$@"
