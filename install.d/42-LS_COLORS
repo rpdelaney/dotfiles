@@ -11,7 +11,7 @@
 main() {
   cd "$dotfiles_dest" || exit 1
   git submodule init LS_COLORS || exit 1
-  git submodule sync LS_COLORS || exit 1
+  git submodule update LS_COLORS || exit 1
 }
 
 main "$@"
