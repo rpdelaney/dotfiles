@@ -57,10 +57,12 @@ homebrew_apps=(
   gzip
   htop
   hub
+  imagemagick
   inetutils
   jq
   keychain
   less
+  lesspipe
   libnotify
   libqalculate
   lynx
