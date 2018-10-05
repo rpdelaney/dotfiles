@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
 # This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
@@ -8,14 +8,8 @@
 # software.
 #
 
-# shellcheck disable=SC2154
-if [[ ! -d $dotfiles_dest ]]; then echo "dotfiles_dest var not found: $dotfiles_dest" 1>&2; exit 1; fi
-
-if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; exit 1; fi
-
 main() {
-  cd "$HOME" || exit 1
-  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+  vim -c "PlugUpgrade" -c "PlugUpdate" -c 'qall!' || exit 1
 }
 
 main "$@"
