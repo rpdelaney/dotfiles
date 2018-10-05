@@ -13,6 +13,8 @@ main() {
   [[ "$OSTYPE" =~ ^darwin ]] || exit 0
 
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
+
+  brew tap homebrew/cask-fonts || exit 1
 }
 
 main "$@"

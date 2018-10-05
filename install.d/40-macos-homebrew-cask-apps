@@ -27,6 +27,7 @@ casks=(
   1password
   1password-cli
   firefox
+  font-inconsolata-g-for-powerline
   kitty
   osxfuse
   scroll-reverser
