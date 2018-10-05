@@ -24,11 +24,12 @@ main() {
 }
 
 casks=(
-  osxfuse
   1password
   1password-cli
-  kitty
   firefox
+  kitty
+  osxfuse
+  scroll-reverser
   visual-studio-code
 )
 
