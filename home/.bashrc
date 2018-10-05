@@ -78,6 +78,19 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
 export HISTIGNORE="$HISTIGNORE"':clear'
 # }}}
 # }}}
+# ALIASES {{{1
+#
+  # Alias definitions.
+[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
+  # chdir
+[[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
+  # Functions
+[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
+  # make less more friendly for non-text input files, see lesspipe(1)
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+  # additional configuration options for when running in cygwin
+[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
+# }}}
 # SETTINGS {{{1
 #  # Mark variables which are modified or created for export.
 ##set +a
@@ -575,19 +588,6 @@ if [[ "$TERM" = "linux" ]]; then
 fi
 # 2}}}
 # 1}}}
-# ALIASES {{{1
-#
-  # Alias definitions.
-[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
-  # chdir
-[[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
-  # Functions
-[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
-  # make less more friendly for non-text input files, see lesspipe(1)
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-  # additional configuration options for when running in cygwin
-[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
-# }}}
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
