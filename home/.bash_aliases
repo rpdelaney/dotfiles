@@ -218,7 +218,13 @@ fi
 
   # sxiv
 if type sxiv &> /dev/null; then
-  alias sxiv='sxiv -a -p'
+  if grep -q '.' <(\sxiv -v); then
+    # we are on a version before 24
+    # therefore -p isn't supported
+    alias sxiv='sxiv -a'
+  else
+    alias sxiv='sxiv -a -p'
+  fi
 fi
 
   # macos
