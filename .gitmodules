@@ -1,18 +1,6 @@
-[submodule "home/.vim/bundle/vim-daylight"]
-	path = home/.vim/bundle/daylight
-	url = git@github.com:rpdelaney/vim-daylight.git
-[submodule "home/.vim/bundle/solarized"]
-	path = home/.vim/bundle/solarized
-	url = git@github.com:altercation/solarized.git
-[submodule "home/.vim/bundle/ultisnips"]
-	path = home/.vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = https://github.com/rpdelaney/LS_COLORS
-[submodule "home/.vim/bundle/diffchanges"]
-	path = home/.vim/bundle/diffchanges
-	url = git@github.com:jmcantrell/vim-diffchanges.git
 [submodule "home/.config/tmux/tmux-resurrect"]
 	path = home/.config/tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
