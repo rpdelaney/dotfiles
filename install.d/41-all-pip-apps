@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+if ! command -v pip2 &> /dev/null; then echo "Missing dependency: pip2" 1>&2; exit 1; fi
+if ! command -v pip3 &> /dev/null; then echo "Missing dependency: pip3" 1>&3; exit 1; fi
+
+python2apps=(
+  daff
+  pudb
+)
+
+python3apps=(
+)
+
+p2install() {
+  local targetapp
+  targetapp="$1"
+
+  pip2 install "$targetapp" || return 1
+}
+
+p3install() {
+  local targetapp
+  targetapp="$1"
+
+  pip3 install "$targetapp" || return 1
+}
+
+main() {
+  for p2app in "${python2apps[@]}"; do
+    p2install "$p2app" || exit 1
+  done
+
+  for p3app in "${python3apps[@]}"; do
+    p3install "$p3app" || exit 1
+  done
+}
+
+main "$@"
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
