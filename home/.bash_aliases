@@ -218,19 +218,31 @@ fi
 
   # sxiv
 if type sxiv &> /dev/null; then
-  alias sxiv='sxiv -a -p'
+  if grep -q '.' <(\sxiv -v); then
+    # we are on a version before 24
+    # therefore -p isn't supported
+    alias sxiv='sxiv -a'
+  else
+    alias sxiv='sxiv -a -p'
+  fi
 fi
 
   # macos
 if type gtimeout &> /dev/null; then
   alias timeout='gtimeout'
 fi
-if type mv &> /dev/null; then
+if type gmv &> /dev/null; then
   alias mv='gmv'
 fi
-if type cp &> /dev/null; then
+if type gcp &> /dev/null; then
   alias cp='gcp'
 fi
-if type rm &> /dev/null; then
+if type grm &> /dev/null; then
   alias rm='grm'
+fi
+if type ggrep &> /dev/null; then
+  alias grep='ggrep'
+fi
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias chmod='\chmod --preserve-root'
 fi

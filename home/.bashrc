@@ -78,6 +78,19 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
 export HISTIGNORE="$HISTIGNORE"':clear'
 # }}}
 # }}}
+# ALIASES {{{1
+#
+  # Alias definitions.
+[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
+  # chdir
+[[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
+  # Functions
+[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
+  # make less more friendly for non-text input files, see lesspipe(1)
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+  # additional configuration options for when running in cygwin
+[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
+# }}}
 # SETTINGS {{{1
 #  # Mark variables which are modified or created for export.
 ##set +a
@@ -266,7 +279,8 @@ fi
 # GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
-  export GPG_TTY="$(tty)"
+  GPG_TTY="$(tty)"
+  export GPG_TTY
   if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]] ; then
     export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"
   else
@@ -574,19 +588,12 @@ if [[ "$TERM" = "linux" ]]; then
 fi
 # 2}}}
 # 1}}}
-# ALIASES {{{1
-#
-  # Alias definitions.
-[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
-  # chdir
-[[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
-  # Functions
-[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
-  # make less more friendly for non-text input files, see lesspipe(1)
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-  # additional configuration options for when running in cygwin
-[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
-# }}}
+# MACOS {{{1
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  # Initialize homebrew command-not-found
+  if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+fi
+# MACOS 1}}}
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
