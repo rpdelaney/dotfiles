@@ -69,6 +69,8 @@ main() {
   defaults write com.apple.screencapture location ~/Documents/Screenshots
   killall SystemUIServer
 
+  # Turn off press-and-hold giving the non-ANSI unicode characters
+  defaults write -g ApplePressAndHoldEnabled -bool false
 }
 
 main "$@"
