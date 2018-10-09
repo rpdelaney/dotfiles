@@ -1,0 +1,275 @@
+#!/usr/bin/env sh
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+command_exists() {
+  command="$1"
+
+  # shellcheck disable=SC2069
+  if command -v "$command" 2>&1 >/dev/null; then
+    return 0
+  else
+    return 1
+  fi
+  return 1
+}
+
+main() {
+  if [ "$(id -u "$USER")" -ne 0 ]; then
+      # cleanly become another user
+    alias become='sudo su --login'
+
+      # sudo a command, preserving the current environment
+    alias sudoe='sudo -E'
+
+      # yay
+    if command_exists yay; then
+      alias ya='\yay'
+      alias yaq='\yay -Q'
+      alias yas='\yay -S'
+      alias yass='\yay -Ss'
+      alias yars='\yay -Rs'
+    else
+      alias ya='\pacman --color=always'
+      alias yaq='\pacman --color=always -Q'
+      alias yas='\pacman --color=always -S'
+      alias yass='\pacman --color=always -Ss'
+      alias yars='\pacman --color=always -Rs'
+    fi
+
+      # watch incoming network connections
+    alias netmonitor='\sudo watch -n 3 lsof -i'
+
+    if command_exists youtube-dl ; then
+        # don't mark videos watched
+      alias youtube-dl='youtube-dl --no-mark-watched'
+        # youtube-dl with lots of metadata
+      alias youget='youtube-dl -t -c -w --write-info-json --write-description --'
+        # Convert Youtube videos to MP3
+      alias youtube-dla='youtube-dl -t --extract-audio --audio-format mp3 --'
+    fi
+
+      # save a dnuos list with stats starting from pwd
+    command_exists dnuos && alias oidua='\dnuos --file=list -D -S -t .'
+
+      # tmux is the new screen
+    command_exists tmux && [ -f "$XDG_CONFIG_HOME"/tmux/tmux.conf ] && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+
+      # mpd
+    if command_exists ncmpcpp ; then
+        alias mplay='ncmpcpp play'
+        alias mpause='ncmpcpp pause'
+        alias mtoggle='ncmpcpp toggle'
+        alias mstop='ncmpcpp stop'
+        alias mnext='ncmpcpp next'
+        alias mprev='ncmpcpp prev'
+        alias mvolume='ncmpcpp volume'
+    fi
+
+      # vlc is best from a terminal :V
+    command_exists vlc && alias ncvlc='vlc -I ncurses'
+
+  else
+      # watch incoming network connections
+    alias netmonitor='watch -n 3 lsof -i'
+  fi
+      # ls / exa
+  if command_exists exa ; then
+    # exa aliases go here
+    alias l='exa --group-directories-first'
+    alias ll='exa --long --header --git --links --group-directories-first'
+    alias la='ll --all'
+    alias lr='ll -T --level 2'
+  else
+    alias l='\ls --color=always --format=across --group-directories-first'
+    alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+    alias la='ll -H -a'
+    alias lr='ll -R'
+  fi 
+
+  alias lla='la'
+  alias lll='ll | pager'
+  alias llla='lla | pager'
+
+      # safety valve
+  alias mv='mv -iv'
+  alias cp='cp -iv'
+  alias rm='rm -Iv'
+  alias chown='\chown -c --preserve-root'
+  alias chmod='\chmod -c --preserve-root'
+  alias chgrp='\chgrp -c --preserve-root'
+
+    # Make directory including intermediate directories
+  alias mkdir='\mkdir -vp'
+
+      # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
+  alias asdf='setxkbmap dvorak'
+
+      # colordiff is the new diff
+  command_exists colordiff && alias diff='colordiff'
+
+      # use grc to add color command support
+  if command_exists grc ; then
+      alias hilite='\grc -es --colour=on'
+      alias configure='hilite ./configure'
+      alias make='hilite make'
+      alias gcc='hilite gcc'
+      alias g++='hilite g++'
+      alias as='hilite as'
+      alias gas='hilite gas'
+      alias ld='hilite ld'
+      alias netstat='hilite netstat'
+      alias ping='hilite ping'
+      alias traceroute='hilite /usr/sbin/traceroute'
+  fi
+
+      # use colors in ip
+  if command_exists ip ; then
+    alias ip='ip -d -c'
+  fi
+
+      # disk usage in plain english
+  alias disk='\df -lTH'
+  alias df='\df -h'
+
+      # gpg is the new pgp
+  command_exists gpg && alias pgp='gpg'
+
+      # console pastebin
+  command_exists curl && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
+
+      # rsync is the new (s)cp
+  command_exists rsync && alias rp='\rsync -a --append --stats --progress'
+
+      # rsync is the new mv
+  command_exists rsync && alias rv='\rsync -a --append --stats --progress --remove-source-files'
+
+      # grep can be pretty :*
+  if command_exists grep ; then
+    alias crep='\grep --color=always'
+    alias acrep='\agrep --color=always'
+    alias fcrep='\fgrep --color=always'
+    alias ecrep='\egrep --color=always'
+    alias search='\grep --color=never -H --binary-files=text --directories=recurse --files-with-matches -n'
+  fi
+
+      # mount
+  command_exists mount && command_exists column && alias mounts='\mount | \column -t | pager'
+  command_exists mountpoint && alias mp='mountpoint'
+
+      # private shredder
+  command_exists shred && alias shred=' shred -v'
+
+    # always make secure passwords
+  command_exists apg && alias apg=' apg -a 1 -n 1 -m 16 -x 32'
+
+    # weechat is dumb
+  command_exists weechat && [ -n "$XDG_CONFIG_HOME" ] && alias weechat='weechat -d "$XDG_CONFIG_HOME"/weechat/'
+
+    # dosbox coercion to use XDG standard
+  command_exists dosbox && [ -f "$XDG_CONFIG_HOME/dosbox/dosbox.conf" ] && alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
+
+    # getmail coercion to use XDG standard
+  getmaildir="$XDG_CONFIG_HOME/getmail"
+  if command_exists getmail ; then
+    if [ -d  "$getmaildir" ]; then
+      # shellcheck disable=SC2139
+      alias getmail='getmail --getmaildir='"$getmaildir"
+    fi
+  fi
+
+    # get (s)mplayer to use sensible defaults
+  if command_exists mplayer ; then
+    alias mplayer='mplayer -loop 0 -fixed-vo -softvol -msgcolor'
+  fi
+
+  if command_exists smplayer ; then
+    alias smplayer='smplayer -no-close-at-end -mpcgui'
+    alias smadd='smplayer -add-to-playlist'
+  fi
+
+    # abook coercion to use XDG standard
+  if command_exists abook ; then
+    datafile="$HOME/docs/addressbook"
+    if [ -r "$datafile" ]; then
+      alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile $datafile'
+    else
+      alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc'
+    fi
+  fi
+
+    # copy-paste to clipboard
+  if command_exists xclip ; then
+    alias clip="xclip -selection clipboard"
+  fi
+
+    # steamcurses
+  if command_exists steamcurses ; then
+    alias steamcurses='steamcurses --config-path ~/.config/steamcurses/config'
+  fi
+
+    # pudb
+  if command_exists pudb3 ; then
+    alias pudb='pudb3'
+  fi
+
+    # vim monkey stuff
+  alias ZQ='exit'
+  alias ZZ='exit'
+
+    # netctl-auto
+    # if netctl-auto is running, then manually starting a wireless network with
+    # 'netctl' will always fail. therefore, we alias 'netctl' to 'netctl-auto'
+  if command_exists netctl-auto ; then
+    systemctl status netctl-auto@wlp7s0 &> /dev/null
+    if [ $? -eq 0 ]; then
+      alias netctl='netctl-auto'
+    fi
+  fi
+
+    # pypi2pkgbuild
+  if command_exists pypi2pkgbuild.py ; then
+    alias pypi2pkg='PKGEXT=.pkg.tar pypi2pkgbuild.py -g cython -b /tmp/pypi2pkgbuild/ -f'
+  fi
+
+    # sxiv
+  if command_exists sxiv ; then
+    if \sxiv -v | grep -q '.' ; then
+      # we are on a version before 24
+      # therefore -p isn't supported
+      alias sxiv='sxiv -a'
+    else
+      alias sxiv='sxiv -a -p'
+    fi
+  fi
+
+    # macos
+  if command_exists gtimeout ; then
+    alias timeout='gtimeout'
+  fi
+  if command_exists gmv ; then
+    alias mv='gmv'
+  fi
+  if command_exists gcp ; then
+    alias cp='gcp'
+  fi
+  if command_exists grm ; then
+    alias rm='grm'
+  fi
+  if command_exists ggrep ; then
+    alias grep='ggrep'
+  fi
+  # We disable SC2039 here because on MacOS, /bin/sh is bash, so this check still works.
+  # shellcheck disable=SC2039
+  if [ "$OSTYPE" =~ ^darwin ]; then
+    alias chmod='\chmod --preserve-root'
+  fi
+}
+
+main "$@"
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

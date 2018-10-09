@@ -29,7 +29,8 @@ shellrc_exec() {
   type=$(basename "$script" | cut -f 2 -d'-')
 
   if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
-    bash "$script"
+    # shellcheck disable=SC1090
+    source "$script"
     return 0
   fi
   return 1
