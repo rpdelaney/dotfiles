@@ -24,7 +24,7 @@ fi
 
 main() {
   if [[ ! -d "$dotfiles_dest" ]]; then
-    git clone "$dotfiles_repo" "$dotfiles_dest" || exit 1
+    git clone --recurse-submodules --jobs 8 "$dotfiles_repo" "$dotfiles_dest" || exit 1
   fi
 
   cd "$dotfiles_dest" || exit 1
