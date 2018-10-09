@@ -33,8 +33,8 @@ main() {
   # Disable the “Are you sure you want to open this application?” dialog
   defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-  # Disable Resume system-wide
-  defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+  # Enable Resume system-wide
+  defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool true
 
   # Disable automatic termination of inactive apps
   defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
