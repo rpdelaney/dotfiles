@@ -25,6 +25,7 @@ main() {
 
 homebrew_apps=(
   awscli
+  base64
   bash
   bash-completion
   binutils
