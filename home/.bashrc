@@ -44,8 +44,6 @@ done
 #
   # chdir
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
-  # Functions
-[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
   # additional configuration options for when running in cygwin
