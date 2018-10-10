@@ -17,6 +17,7 @@ python2apps=(
 )
 
 python3apps=(
+  bpython
 )
 
 p2install() {
