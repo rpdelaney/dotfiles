@@ -264,11 +264,6 @@ main() {
   if command_exists ggrep ; then
     alias grep='ggrep'
   fi
-  # We disable SC2039 here because on MacOS, /bin/sh is bash, so this check still works.
-  # shellcheck disable=SC2039
-  if [ "$OSTYPE" =~ ^darwin ]; then
-    alias chmod='\chmod --preserve-root'
-  fi
 }
 
 main "$@"
