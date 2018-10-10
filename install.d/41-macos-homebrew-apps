@@ -53,6 +53,7 @@ homebrew_apps=(
   gnu-tar --with-default-names
   gnu-which --with-default-names
   gnupg
+  golang
   grc
   grep --with-default-names
   gzip
