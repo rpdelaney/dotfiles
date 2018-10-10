@@ -11,7 +11,7 @@ command_exists() {
   command="$1"
 
   # shellcheck disable=SC2069
-  if command -v "$command" 2>&1 >/dev/null; then
+  if command -v "$command" >/dev/null 2>&1 ; then
     return 0
   else
     return 1
@@ -90,7 +90,7 @@ main() {
     alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
     alias la='ll -H -a'
     alias lr='ll -R'
-  fi 
+  fi
 
   alias lla='la'
   alias lll='ll | pager'
@@ -226,7 +226,7 @@ main() {
     # if netctl-auto is running, then manually starting a wireless network with
     # 'netctl' will always fail. therefore, we alias 'netctl' to 'netctl-auto'
   if command_exists netctl-auto ; then
-    systemctl status netctl-auto@wlp7s0 &> /dev/null
+    systemctl status netctl-auto@wlp7s0 >/dev/null 2>&1
     if [ $? -eq 0 ]; then
       alias netctl='netctl-auto'
     fi

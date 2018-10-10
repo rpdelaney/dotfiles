@@ -12,12 +12,12 @@
 main() {
   # usage: sprunge FILE
   # or some_command | sprunge
-  unalias sprunge 2>&1 >/dev/null
+  unalias sprunge >/dev/null 2>&1
   sprunge() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
 
   # usage: qrcode FILE
   # or some_command | qrcode
-  unalias qrcode 2>&1 >/dev/null
+  unalias qrcode >/dev/null 2>&1
   qrcode() { curl -F-=\<- qrenco.de < "${1:-/dev/stdin}"; }
 
   rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
@@ -27,7 +27,7 @@ main() {
   #
 
     # print a sorted list of available applications with their descriptions
-  if command -v whatis 2>&1 >/dev/null ; then alias whatisall='whatis /usr/bin/* 2> /dev/null'; fi
+  if command -v whatis >/dev/null 2>&1 ; then alias whatisall='whatis /usr/bin/* 2> /dev/null'; fi
 
     # recursively remove orphaned packages
   rmorphans() {
@@ -56,7 +56,7 @@ main() {
   #
     # define words
   define() {
-    if command -v torsocks 2>&1 >/dev/null ; then
+    if command -v torsocks >/dev/null 2>&1 ; then
       torsocks curl -s dict://dict.org/d:"$1"
     else
       curl -s dict://dict.org/d:"$1"
@@ -65,7 +65,7 @@ main() {
 
     # define words shorter
   def() {
-    if command -v torsocks 2>&1 >/dev/null ; then
+    if command -v torsocks >/dev/null 2>&1 ; then
       torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
     else
       curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
