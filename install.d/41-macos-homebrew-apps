@@ -80,6 +80,7 @@ homebrew_apps=(
   openssh
   openvpn
   pandoc
+  pip-completion
   pipenv
   pv
   pwgen
