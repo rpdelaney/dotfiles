@@ -57,6 +57,7 @@ homebrew_apps=(
   grc
   grep --with-default-names
   gzip
+  hashdeep
   htop
   hub
   imagemagick
