@@ -22,6 +22,18 @@ main() {
     'sed' -r 's@\.[0-9]{2}KiB@MiB@'
   }
 
+    # jobs count
+  jobscount() {
+      jobs_cnt=$(jobs -s | wc -l)
+      if [[ "$jobs_cnt" -eq 0 ]]; then
+          return 0
+      else
+          printf "%s" "$jobs_cnt"
+          return 0
+      fi
+      return 1
+  }
+
 }
 
 main "$@"

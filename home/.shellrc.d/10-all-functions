@@ -72,16 +72,6 @@ main() {
     fi
   }
 
-    # jobs count
-  jobscount(){
-      jobs_cnt=$(jobs -s | wc -l)
-      if [ "$jobs_cnt" -eq 0 ]; then
-          return 0
-      else
-          printf "%s" "$jobs_cnt"
-      fi
-  }
-
     # download files from web via tor
     # it's better to just use torsocks though
   turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
