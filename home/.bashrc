@@ -37,7 +37,6 @@ shellrc_exec() {
 }
 
 for file in "${HOME}"/.shellrc.d/*; do
-  echo "Running $(basename "$file")"
   shellrc_exec "$file" || exit 1
 done
 
