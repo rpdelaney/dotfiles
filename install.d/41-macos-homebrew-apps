@@ -32,6 +32,7 @@ homebrew_apps=(
   bash-completion
   binutils
   brew-cask-completion
+  checkbashisms
   cmake
   colordiff
   coreutils
