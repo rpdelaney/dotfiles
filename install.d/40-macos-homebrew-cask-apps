@@ -21,6 +21,8 @@ main() {
   for cask in "${casks[@]}"; do
     cask_install "$cask"
   done
+
+  brew cleanup
 }
 
 casks=(

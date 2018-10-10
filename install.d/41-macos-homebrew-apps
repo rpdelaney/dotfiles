@@ -21,6 +21,8 @@ main() {
   for app in "${homebrew_apps[@]}"; do
     brew_install "$app"
   done
+
+  brew cleanup
 }
 
 homebrew_apps=(
