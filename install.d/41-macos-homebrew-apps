@@ -103,6 +103,7 @@ homebrew_apps=(
   terminal-notifier
   terraform
   terraform-docs
+  terraform_landscape
   tig
   tmux
   tree
