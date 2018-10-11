@@ -1,5 +1,5 @@
 # git config
-# 
+# vim: ft=gitconfig noet foldmethod=marker
 
 [user] # {{{1
 	name = Ryan Delaney
@@ -220,4 +220,5 @@
 #         push = <refspec>
 #         fetch = <refspec>/
 # }}}
-# vim: ft=gitconfig noet foldmethod=marker
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt
