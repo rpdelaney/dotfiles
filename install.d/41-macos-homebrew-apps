@@ -93,6 +93,8 @@ homebrew_apps=(
   ranger
   rename
   rsync
+  ruby
+  ruby-completion
   sendemail
   shellcheck
   sox
