@@ -107,6 +107,7 @@ homebrew_apps=(
   unar
   vim --override-system-vi
   vimpager
+  w3m
   watch
   wget
   wine
