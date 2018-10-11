@@ -8,11 +8,8 @@
 # software.
 #
 
-main() {
-  if [[ "$OSTYPE" =~ ^darwin ]]; then
-    alias chmod='\chmod --preserve-root'
-  fi
-}
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias chmod='\chmod --preserve-root'
+fi
 
-main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
