@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; exit 1; fi
+
+brew_install() {
+  local app
+  app="$1"
+
+  brew install "$app" || exit 1
+}
+
+main() {
+  for app in "${homebrew_apps[@]}"; do
+    brew_install "$app"
+  done
+}
+
+homebrew_apps=(
+  awscli
+  bash
+  bash-completion
+  binutils
+  brew-cask-completion
+  cmake
+  colordiff
+  coreutils
+  csvkit
+  curl
+  dateutils
+  dialog
+  diffutils
+  dos2unix
+  enca
+  encfs
+  exa
+  exiftool
+  file-formula
+  findutils
+  flake8
+  git
+  glances
+  gnu-indent
+  gnu-sed
+  gnu-tar
+  gnu-which
+  gnupg
+  grc
+  grep
+  gzip
+  htop
+  hub
+  imagemagick
+  inetutils
+  jq
+  keychain
+  less
+  lesspipe
+  libnotify
+  libqalculate
+  lynx
+  mailutils
+  make
+  media-info
+  moreutils
+  mosh
+  mps-youtube
+  ncdu
+  ncurses
+  nmap
+  openssh
+  openvpn
+  pandoc
+  pipenv
+  pv
+  pwgen
+  pyenv
+  qrencode
+  ranger
+  rename
+  rsync
+  sendemail
+  shellcheck
+  sox
+  sshfs
+  sxiv
+  terminal-notifier
+  terraform
+  terraform-docs
+  tig
+  tmux
+  tree
+  unar
+  vim
+  vimpager
+  watch
+  wget
+  wine
+)
+
+
+main "$@"
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
