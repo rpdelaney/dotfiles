@@ -26,6 +26,7 @@ main() {
 }
 
 homebrew_apps=(
+  aspell --with-all-langs
   awscli
   base64
   bash
