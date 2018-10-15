@@ -28,6 +28,7 @@ main() {
 casks=(
   1password
   1password-cli
+  electric-sheep
   firefox
   font-consolas-for-powerline
   font-inconsolata-g-for-powerline
