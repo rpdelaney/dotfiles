@@ -107,6 +107,8 @@ homebrew_apps=(
   terraform_landscape
   tig
   tmux
+  tor
+  torsocks
   tree
   unar
   vim --override-system-vi
