@@ -42,6 +42,7 @@ homebrew_apps=(
   dateutils
   dialog
   diffutils
+  direnv
   dos2unix
   enca
   encfs
