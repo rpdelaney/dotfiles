@@ -58,6 +58,7 @@ thumbs.db
 # state files
 *.pid
 *.state
+*.tfstate
 # error logs
 *.err
 *.error
