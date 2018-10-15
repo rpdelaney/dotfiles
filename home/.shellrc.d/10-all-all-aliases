@@ -85,15 +85,15 @@ if command_exists exa ; then
   alias la='ll --all'
   alias lr='ll -T --level 2'
 else
-  alias l='\ls --color=always --format=across --group-directories-first'
-  alias ll='\ls --color=always --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+  alias l='\ls --format=across --group-directories-first'
+  alias ll='\ls --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
   alias la='ll -H -a'
   alias lr='ll -R'
 fi
 
 alias lla='la'
-alias lll='ll | pager'
-alias llla='lla | pager'
+alias lll='ll --color=always | pager'
+alias llla='lla --color=always | pager'
 
     # safety valve
 alias mv='mv -iv'
