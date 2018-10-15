@@ -81,7 +81,7 @@ fi
 if command_exists exa ; then
   # exa aliases go here
   alias l='exa --group-directories-first'
-  alias ll='exa --long --header --git --links --group-directories-first'
+  alias ll='exa --long --header --git --links --group-directories-first --color-scale'
   alias la='ll --all'
   alias lr='ll -T --level 2'
 else
