@@ -25,18 +25,26 @@
 shellrc_exec() {
   local script
   script="$1"
+  local ostype
+  ostype="$2"
+  local platform
+  platform=$(basename "$script" | cut -f 2 -d'-')
   local type
-  type=$(basename "$script" | cut -f 2 -d'-')
+  type=$(basename "$script" | cut -f 3 -d'-')
 
-  if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
-    # shellcheck disable=SC1090
-    source "$script" || return 1
+  if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
+    if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
+      # shellcheck disable=SC1090
+      source "$script" || return 1
+    fi
   fi
   return 0
 }
 
+_ostype="$(ostype)"
+
 for file in "${HOME}"/.shellrc.d/*; do
-  if ! shellrc_exec "$file" ; then
+  if ! shellrc_exec "$file" "$_ostype" ; then
     echo "ERROR: failure when executing $file" 1>&2
     echo "Terminating shellrc.d" 1>&2
     break
