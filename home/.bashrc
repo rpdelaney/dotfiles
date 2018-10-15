@@ -36,7 +36,11 @@ shellrc_exec() {
 }
 
 for file in "${HOME}"/.shellrc.d/*; do
-  shellrc_exec "$file" || exit 1
+  if ! shellrc_exec "$file" ; then
+    echo "ERROR: failure when executing $file" 1>&2
+    echo "Terminating shellrc.d" 1>&2
+    break
+  fi
 done
 
 # ALIASES {{{1
