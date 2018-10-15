@@ -30,10 +30,9 @@ shellrc_exec() {
 
   if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
     # shellcheck disable=SC1090
-    source "$script"
-    return 0
+    source "$script" || return 1
   fi
-  return 1
+  return 0
 }
 
 for file in "${HOME}"/.shellrc.d/*; do
