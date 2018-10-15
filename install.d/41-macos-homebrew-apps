@@ -83,6 +83,7 @@ homebrew_apps=(
   ncdu
   ncurses
   nmap
+  open-completion
   openssh
   openvpn
   pandoc
