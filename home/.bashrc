@@ -570,4 +570,4 @@ else
 fi
 # }}}
 
-# vim: ft=sh foldmethod=marker
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
