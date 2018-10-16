@@ -57,8 +57,6 @@ done
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-  # additional configuration options for when running in cygwin
-[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
 # }}}
 # SETTINGS {{{1
 #  # Mark variables which are modified or created for export.
