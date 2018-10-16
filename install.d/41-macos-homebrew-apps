@@ -75,7 +75,7 @@ homebrew_apps=(
   libqalculate
   lynx
   mailutils
-  make
+  make --with-default-names
   media-info
   moreutils
   mosh
