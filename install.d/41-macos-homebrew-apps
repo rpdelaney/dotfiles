@@ -113,7 +113,7 @@ homebrew_apps=(
   torsocks
   tree
   unar
-  vim --override-system-vi
+  vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl
   vimpager
   w3m
   watch
