@@ -109,7 +109,7 @@ homebrew_apps=(
   terraform_landscape
   tig
   tmux
-  tor
+  tor --with-libscrypt
   torsocks
   tree
   unar
