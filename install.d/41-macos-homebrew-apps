@@ -63,7 +63,7 @@ homebrew_apps=(
   grep --with-default-names
   gzip
   hashdeep
-  htop
+  htop --with-ncurses
   hub
   imagemagick
   inetutils
