@@ -100,7 +100,7 @@ homebrew_apps=(
   ruby-completion
   sendemail
   shellcheck
-  sox
+  sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile
   sshfs
   sxiv
   terminal-notifier
