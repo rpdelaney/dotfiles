@@ -69,7 +69,7 @@ homebrew_apps=(
   inetutils
   jq
   keychain
-  less
+  less --with-pcre
   lesspipe
   libnotify
   libqalculate
