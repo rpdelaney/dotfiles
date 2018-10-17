@@ -38,7 +38,7 @@ homebrew_apps=(
   colordiff
   coreutils
   csvkit
-  curl
+  curl --with-libssh2 --with-gssapi --with-rtmpdump
   dateutils
   dialog
   diffutils
