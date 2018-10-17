@@ -1,30 +1,29 @@
 " Vim plugin for using Vim as manpager.
 " Maintainer: Enno Nagel <ennonagel+vim@gmail.com>
-" Last Change: 2018 Feb 04
+" Last Change: 2016 May 20
 
-command! -nargs=0 MANPAGER call s:ManPager() | delcommand MANPAGER
+" $MAN_PN is supposed to be set by MANPAGER, see ":help manpager.vim".
+if empty($MAN_PN)
+  finish
+endif
 
-function! s:ManPager()
-  set nocompatible
-  if exists('+viminfofile')
-    set viminfofile=NONE
+command! -nargs=0 MANPAGER call s:MANPAGER() | delcommand MANPAGER
+
+function! s:MANPAGER()
+  let page_pattern = '\v\w+%([-_.]\w+)*'
+  let sec_pattern = '\v\w+%(\+\w+)*'
+  let pagesec_pattern = '\v(' . page_pattern . ')\((' . sec_pattern . ')\)'
+
+  if $MAN_PN is '1'
+    let manpage = matchstr( getline(1), '^' . pagesec_pattern )
+  else
+    let manpage = expand('$MAN_PN')
   endif
-  set noswapfile 
 
-  setlocal ft=man
-  runtime ftplugin/man.vim
-  setlocal buftype=nofile bufhidden=hide iskeyword+=: modifiable
+  let page_sec = matchlist(tolower(manpage), '^' . pagesec_pattern  . '$')
 
-  " Emulate 'col -b'
-  silent keepj keepp %s/\v(.)\b\ze\1?//ge
+  bwipe!
 
-  " Remove empty lines above the header
-  call cursor(1, 1)
-  let n = search(".*(.*)", "c")
-  if n > 1
-    exe "1," . n-1 . "d"
-  endif
-  setlocal nomodified readonly
-
-  syntax on
+  setlocal filetype=man
+  exe 'Man' page_sec[2] page_sec[1]
 endfunction
