@@ -14,6 +14,8 @@ main() {
 
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
 
+  brew analytics off || exit 1
+
   brew tap homebrew/cask-fonts || exit 1
   brew tap homebrew/command-not-found || exit 1
 }
