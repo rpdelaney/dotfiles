@@ -121,6 +121,10 @@ homebrew_apps=(
   weechat --with-aspell --with-curl --with-lua --with-perl --with-python@2 --with-ruby
   wget --with-gpgme --with-libmetalink --with-pcre
   wine
+  zsh --with-gdbm --with-pcre
+  zsh-autosuggestions
+  zsh-completions
+  zshdb
 )
 
 
