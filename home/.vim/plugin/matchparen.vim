@@ -1,6 +1,6 @@
 " Vim plugin for showing matching parens
 " Maintainer:  Bram Moolenaar <Bram@vim.org>
-" Last Change: 2013 May 08
+" Last Change: 2017 Sep 30
 
 " Exit quickly when:
 " - this plugin was already loaded (or disabled)
@@ -39,7 +39,7 @@ set cpo-=C
 function! s:Highlight_Matching_Pair()
   " Remove any previous match.
   if exists('w:paren_hl_on') && w:paren_hl_on
-    3match none
+    silent! call matchdelete(3)
     let w:paren_hl_on = 0
   endif
 
@@ -54,14 +54,20 @@ function! s:Highlight_Matching_Pair()
   let c_col = col('.')
   let before = 0
 
-  let c = getline(c_lnum)[c_col - 1]
+  let text = getline(c_lnum)
+  let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')
+  if empty(matches)
+    let [c_before, c] = ['', '']
+  else
+    let [c_before, c] = matches[1:2]
+  endif
   let plist = split(&matchpairs, '.\zs[:,]')
   let i = index(plist, c)
   if i < 0
     " not found, in Insert mode try character before the cursor
     if c_col > 1 && (mode() == 'i' || mode() == 'R')
-      let before = 1
-      let c = getline(c_lnum)[c_col - 2]
+      let before = strlen(c_before)
+      let c = c_before
       let i = index(plist, c)
     endif
     if i < 0
@@ -87,14 +93,27 @@ function! s:Highlight_Matching_Pair()
   " Find the match.  When it was just before the cursor move it there for a
   " moment.
   if before > 0
-    let save_cursor = winsaveview()
+    let has_getcurpos = exists("*getcurpos")
+    if has_getcurpos
+      " getcurpos() is more efficient but doesn't exist before 7.4.313.
+      let save_cursor = getcurpos()
+    else
+      let save_cursor = winsaveview()
+    endif
     call cursor(c_lnum, c_col - before)
   endif
 
-  " When not in a string or comment ignore matches inside them.
+  " Build an expression that detects whether the current cursor position is in
+  " certain syntax types (string, comment, etc.), for use as searchpairpos()'s
+  " skip argument.
   " We match "escape" for special items, such as lispEscapeSpecial.
-  let s_skip ='synIDattr(synID(line("."), col("."), 0), "name") ' .
-	\ '=~?  "string\\|character\\|singlequote\\|escape\\|comment"'
+  let s_skip = '!empty(filter(map(synstack(line("."), col(".")), ''synIDattr(v:val, "name")''), ' .
+	\ '''v:val =~? "string\\|character\\|singlequote\\|escape\\|comment"''))'
+  " If executing the expression determines that the cursor is currently in
+  " one of the syntax types, then we want searchpairpos() to find the pair
+  " within those syntax types (i.e., not skip).  Otherwise, the cursor is
+  " outside of the syntax types and s_skip should keep its value so we skip any
+  " matching pair inside the syntax types.
   execute 'if' s_skip '| let s_skip = 0 | endif'
 
   " Limit the search to lines visible in the window.
@@ -147,21 +166,43 @@ function! s:Highlight_Matching_Pair()
   endtry
 
   if before > 0
-    call winrestview(save_cursor)
+    if has_getcurpos
+      call setpos('.', save_cursor)
+    else
+      call winrestview(save_cursor)
+    endif
   endif
 
   " If a match is found setup match highlighting.
   if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
-    exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) .
-	  \ 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+    if exists('*matchaddpos')
+      call matchaddpos('MatchParen', [[c_lnum, c_col - before], [m_lnum, m_col]], 10, 3)
+    else
+      exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) .
+	    \ 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+    endif
     let w:paren_hl_on = 1
   endif
 endfunction
 
 " Define commands that will disable and enable the plugin.
-command! NoMatchParen windo 3match none | unlet! g:loaded_matchparen |
-	  \ au! matchparen
-command! DoMatchParen runtime plugin/matchparen.vim | windo doau CursorMoved
+command! DoMatchParen call s:DoMatchParen()
+command! NoMatchParen call s:NoMatchParen()
+
+func! s:NoMatchParen()
+  let w = winnr()
+  noau windo silent! call matchdelete(3)
+  unlet! g:loaded_matchparen
+  exe "noau ". w . "wincmd w"
+  au! matchparen
+endfunc
+
+func! s:DoMatchParen()
+  runtime plugin/matchparen.vim
+  let w = winnr()
+  silent windo doau CursorMoved
+  exe "noau ". w . "wincmd w"
+endfunc
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
