@@ -15,8 +15,8 @@ main() {
   ###############################################################################
   # Mice, keyboard, etc                                                         #
   ###############################################################################
-  # Set a blazingly fast keyboard repeat rate
-# defaults write NSGlobalDomain KeyRepeat -int 0
+  # Set a blazingly fast keyboard repeat rate (default 300)
+# defaults write NSGlobalDomain KeyRepeat -int 50
 
   # disable Natural scrolling
   defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
