@@ -10,14 +10,14 @@
 
 if ! command -v vim &> /dev/null; then echo "Missing dependency: vim" 1>&2; exit 1; fi
 
-if ! [[ -d "$HOME/.vim/" ]]
- then echo "Directory not found: $HOME/.vim/" 1>&2
- exit 1
+if ! [[ -d "$HOME/.vim/" ]] ; then
+  echo "Directory not found: $HOME/.vim/" 1>&2
+  exit 1
 fi
 
-if ! [[ -r "$HOME/.vim/autoload/plug.vim" ]]
- then echo "File not found: $HOME/.vim/autoload/plug.vim" 1>&2
- exit 1
+if ! [[ -r "$HOME/.vim/autoload/plug.vim" ]] ; then
+  echo "File not found: $HOME/.vim/autoload/plug.vim" 1>&2
+  exit 1
 fi
 
 main() {

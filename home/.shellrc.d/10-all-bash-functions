@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+  # make a backup list of installed packages
+packagebackup() {
+  comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)
+}
+
+  # sort installed packages by size and print a list to stdout
+packagesize() {
+  paste <(pacman -Q | awk '{ print $1; }' | xargs pacman -Qi | \
+  grep 'Size' | awk '{ print $4$5; }') \
+  <(pacman -Q | awk '{print $1;}') | sort -n | column -t | \
+  'sed' -r 's@\.[0-9]{2}KiB@MiB@'
+}
+
+  # jobs count
+jobscount() {
+    jobs_cnt=$(jobs -s | wc -l)
+    if [[ "$jobs_cnt" -eq 0 ]]; then
+        return 0
+    else
+        printf "%s" "$jobs_cnt"
+        return 0
+    fi
+    return 1
+}
+
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

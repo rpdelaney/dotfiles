@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+:
+# SHOPT {{{3
+#  # causes the shell to notify the user asynchronously of background job
+#  # completions.
+#set -b
+#  # causes the shell to exit if any command exits nonzero, excepting procedural
+#  # logic and subshells (see 'man set')
+#set +e
+#  # Don't use ^D to exit a shell: require an explicit exit command
+#set -o ignoreeof
+#  # Allow shell command line editing using the built-in vi editor. Enabling vi
+#  # mode shall disable any other command line editing mode provided as an
+#  # implementation extension.
+#set -o vi
+#  # The shell shall read commands but does not execute them; this can be used to
+#  # check for shell script syn‐ tax errors. An interactive shell may ignore this
+#  # option.
+##set -o noexec
+#  # The shell shall write its input to standard error as it is read.
+##set -v
+#  # Use case-insensitive filename globbing
+#shopt -s nocaseglob
+#  # Make bash append rather than overwrite the history on disk
+#shopt -s histappend
+#  # Use extended globbing
+##shopt -s extglob
+#  # When changing directory small typos can be ignored by bash for example, cd
+#  # /vr/lgo/apaache would find /var/log/apache
+#shopt -s cdspell
+#  # check the window size after each command and, if necessary, update the
+#  # values of LINES and COLUMNS.
+#shopt -s checkwinsize
+# }}}
+
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

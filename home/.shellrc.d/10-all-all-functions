@@ -1,0 +1,84 @@
+#!/usr/bin/env sh
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+# shellcheck disable=SC2069
+
+# usage: sprunge FILE
+# or some_command | sprunge
+unalias sprunge >/dev/null 2>&1
+sprunge() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
+
+# usage: qrcode FILE
+# or some_command | qrcode
+unalias qrcode >/dev/null 2>&1
+qrcode() { curl -F-=\<- qrenco.de < "${1:-/dev/stdin}"; }
+
+rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
+
+#
+# pacman
+#
+
+  # print a sorted list of available applications with their descriptions
+if command -v whatis >/dev/null 2>&1 ; then alias whatisall='whatis /usr/bin/* 2> /dev/null'; fi
+
+  # recursively remove orphaned packages
+rmorphans() {
+  if [ -z "$(pacman -Qdt)" ]; then
+    echo "No orphans to remove."
+  else
+    sudo pacman -Rs "$(pacman -Qdtq)"
+  fi
+}
+
+#
+# manipulating multimedia
+#
+  # create a thumbnail of a video file
+thumbnail() { ffmpeg  -itsoffset -20 -i "$1" -vcodec mjpeg -vframes 1 -an -f rawvideo -s 640x272 "${1%.*}".jpg; }
+
+  # capture alsa audio to an mp3 file
+  # not working: sox captures audio and pipes a stream. but as written, ffmpeg does not read from stdin.
+#alsamp3() { ffmpeg -f alsa -ac 2 -i hw:1,0 -acodec libmp3lame -ab 96k output.mp3; }
+
+  # get duration of audio file
+duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo "${durline#*\: }"; }
+
+#
+# miscellaneous
+#
+  # define words
+define() {
+  if command -v torsocks >/dev/null 2>&1 ; then
+    torsocks curl -s dict://dict.org/d:"$1"
+  else
+    curl -s dict://dict.org/d:"$1"
+  fi
+}
+
+  # define words shorter
+def() {
+  if command -v torsocks >/dev/null 2>&1 ; then
+    torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
+  else
+    curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
+  fi
+}
+
+  # download files from web via tor
+  # it's better to just use torsocks though
+turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
+
+  # spit out N random words
+werd() {
+  # Default 1 word, unless an integer is passed
+  i="${1:-1}"
+  shuf -n "$i" /usr/share/dict/english
+}
+
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

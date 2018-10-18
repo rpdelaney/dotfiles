@@ -21,53 +21,64 @@ main() {
   for app in "${homebrew_apps[@]}"; do
     brew_install "$app"
   done
+
+  brew cleanup
 }
 
 homebrew_apps=(
+  aspell --with-all-langs
   awscli
+  baobab
+  base64
   bash
   bash-completion
   binutils
   brew-cask-completion
+  checkbashisms
   cmake
   colordiff
   coreutils
   csvkit
-  curl
+  curl --with-libssh2 --with-gssapi --with-rtmpdump
   dateutils
   dialog
   diffutils
+  direnv
   dos2unix
   enca
   encfs
   exa
   exiftool
   file-formula
-  findutils
+  findutils --with-default-names
   flake8
-  git
+  gem-completion
+  git --with-curl --with-openssl
   glances
-  gnu-indent
-  gnu-sed
-  gnu-tar
-  gnu-which
+  gnu-indent --with-default-names
+  gnu-sed --with-default-names
+  gnu-tar --with-default-names
+  gnu-which --with-default-names
   gnupg
+  golang
   grc
-  grep
+  grep --with-default-names
   gzip
-  htop
+  hashdeep
+  htop --with-ncurses
   hub
   imagemagick
   inetutils
   jq
   keychain
-  less
-  lesspipe
+  ksh
+  less --with-pcre
+  lesspipe --with-syntax-highlighting
   libnotify
   libqalculate
   lynx
   mailutils
-  make
+  make --with-default-names
   media-info
   moreutils
   mosh
@@ -75,9 +86,11 @@ homebrew_apps=(
   ncdu
   ncurses
   nmap
+  open-completion
   openssh
   openvpn
   pandoc
+  pip-completion
   pipenv
   pv
   pwgen
@@ -86,23 +99,34 @@ homebrew_apps=(
   ranger
   rename
   rsync
+  ruby
+  ruby-completion
   sendemail
   shellcheck
-  sox
+  sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile
   sshfs
   sxiv
   terminal-notifier
   terraform
   terraform-docs
+  terraform_landscape
   tig
   tmux
+  tor --with-libscrypt
+  torsocks
   tree
   unar
-  vim
-  vimpager
+  vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl
+  vimpager --with-pandoc
+  w3m
   watch
-  wget
+  weechat --with-aspell --with-curl --with-lua --with-perl --with-python@2 --with-ruby
+  wget --with-gpgme --with-libmetalink --with-pcre
   wine
+  zsh --with-gdbm --with-pcre
+  zsh-autosuggestions
+  zsh-completions
+  zshdb
 )
 
 

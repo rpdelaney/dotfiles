@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
 # This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
@@ -8,17 +8,13 @@
 # software.
 #
 
-main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+:
+# UMASK {{{3
+  # /etc/profile sets 022, removing write perms to group + others.
+  # Set a more restrictive umask: i.e. no exec perms for others:
+# umask 027
+  # Paranoid: neither group nor others have any perms:
+# umask 0077
+# }}}
 
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
-
-  brew analytics off || exit 1
-
-  brew tap homebrew/cask-fonts || exit 1
-  brew tap homebrew/command-not-found || exit 1
-}
-
-main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+Plug 'git@github.com:direnv/direnv.vim.git'
 Plug 'git@github.com:hashivim/vim-terraform.git'
 " https://github.com/juliosueiras/vim-terraform-completion " <-- check this out later
 Plug 'git@github.com:rickhowe/diffchar.vim.git'
@@ -169,7 +170,8 @@ let g:ale_linters = {
 \   'hpp': ['gcc', 'norminette'],
 \	'python': ['flake8']
 \}
-let g:ale_python_flake8_options = '--ignore=E501 --doctests'
+" let g:ale_python_flake8_options = '--ignore=E501 --doctests'  " ignore line too long
+let g:ale_python_flake8_options = '--doctests'
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 

@@ -21,18 +21,22 @@ main() {
   for cask in "${casks[@]}"; do
     cask_install "$cask"
   done
+
+  brew cleanup
 }
 
 casks=(
   1password
   1password-cli
+  electric-sheep
   firefox
-  font-inconsolata-g-for-powerline
   font-consolas-for-powerline
+  font-inconsolata-g-for-powerline
   kitty
   muzzle
   osxfuse
   scroll-reverser
+  signal
   visual-studio-code
   xquartz
 )

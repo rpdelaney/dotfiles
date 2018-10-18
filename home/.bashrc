@@ -22,74 +22,41 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
-# SHELL OPTIONS {{{2
-#
-# SHOPT {{{3
-#  # causes the shell to notify the user asynchronously of background job
-#  # completions.
-#set -b
-#  # causes the shell to exit if any command exits nonzero, excepting procedural
-#  # logic and subshells (see 'man set')
-#set +e
-#  # Don't use ^D to exit a shell: require an explicit exit command
-#set -o ignoreeof
-#  # Allow shell command line editing using the built-in vi editor. Enabling vi
-#  # mode shall disable any other command line editing mode provided as an
-#  # implementation extension.
-#set -o vi
-#  # The shell shall read commands but does not execute them; this can be used to
-#  # check for shell script syn‐ tax errors. An interactive shell may ignore this
-#  # option.
-##set -o noexec
-#  # The shell shall write its input to standard error as it is read.
-##set -v
-#  # Use case-insensitive filename globbing
-#shopt -s nocaseglob
-#  # Make bash append rather than overwrite the history on disk
-#shopt -s histappend
-#  # Use extended globbing
-##shopt -s extglob
-#  # When changing directory small typos can be ignored by bash for example, cd
-#  # /vr/lgo/apaache would find /var/log/apache
-#shopt -s cdspell
-#  # check the window size after each command and, if necessary, update the
-#  # values of LINES and COLUMNS.
-#shopt -s checkwinsize
-# }}}
-# UMASK {{{3
-  # /etc/profile sets 022, removing write perms to group + others.
-  # Set a more restrictive umask: i.e. no exec perms for others:
-# umask 027
-  # Paranoid: neither group nor others have any perms:
-# umask 0077
-# }}}
-# HISTORY {{{3
-  # append to the history file, don't overwrite it
-shopt -s histappend
-  # don't put duplicate lines in the history. See bash(1) for more options
-HISTCONTROL=ignoreboth
-  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=80
-HISTFILESIZE=50
-  # Ignore some controlling instructions
-  # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-  # The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:fc:exit:.:whereami:ranger*:hist*'
-export HISTIGNORE="$HISTIGNORE"':clear'
-# }}}
-# }}}
+shellrc_exec() {
+  local script
+  script="$1"
+  local ostype
+  ostype="$2"
+  local platform
+  platform=$(basename "$script" | cut -f 2 -d'-')
+  local type
+  type=$(basename "$script" | cut -f 3 -d'-')
+
+  if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
+    if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
+      # shellcheck disable=SC1090
+      source "$script" || return 1
+    fi
+  fi
+  return 0
+}
+
+_ostype="$(ostype)"
+
+for file in "${HOME}"/.shellrc.d/*; do
+  if ! shellrc_exec "$file" "$_ostype" ; then
+    echo "ERROR: failure when executing $file" 1>&2
+    echo "Terminating shellrc.d" 1>&2
+    break
+  fi
+done
+
 # ALIASES {{{1
 #
-  # Alias definitions.
-[[ -f "$HOME"/.bash_aliases ]] && source "$HOME"/.bash_aliases
   # chdir
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
-  # Functions
-[[ -f "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-  # additional configuration options for when running in cygwin
-[[ "$(head -c 6 /proc/version)" == "CYGWIN" ]] && [[ -f "$HOME/.bash_cygwin" ]] && source "$HOME/.bash_cygwin"
 # }}}
 # SETTINGS {{{1
 #  # Mark variables which are modified or created for export.
@@ -609,4 +576,4 @@ else
 fi
 # }}}
 
-# vim: ft=sh foldmethod=marker
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

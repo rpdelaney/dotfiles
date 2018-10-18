@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
 # This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
@@ -8,17 +8,8 @@
 # software.
 #
 
-main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+if command -v direnv &>/dev/null; then
+    eval "$(direnv hook bash)"
+fi
 
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
-
-  brew analytics off || exit 1
-
-  brew tap homebrew/cask-fonts || exit 1
-  brew tap homebrew/command-not-found || exit 1
-}
-
-main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
