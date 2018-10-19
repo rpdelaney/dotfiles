@@ -1,3 +1,7 @@
+Installation instructions:
+
+`curl -s https://raw.githubusercontent.com/rpdelaney/dotfiles/master/remote_install | bash`
+
 # LICENSE
 Copyright (C) 2014-18 Ryan Delaney.
 
