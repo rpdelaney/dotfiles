@@ -1,47 +1,49 @@
+---
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.0.0  # Use the ref you want to point at
     hooks:
       # Makes sure files end in a newline and only a newline.
       # See also: mixed-line-ending
-      -   id: end-of-file-fixer
+      - id: end-of-file-fixer
 
       # Trims trailing whitespace.
-      #         To preserve Markdown hard linebreaks use args:
-      #         [--markdown-linebreak-ext=md] (or other extensions used by your
-      #         markdownfiles). If for some reason you want to treat all files as
-      #         markdown, use --markdown-linebreak-ext=*.
-      -   id: trailing-whitespace
-          args: [--markdown-linebreak-ext=md]
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
 
       #  Prevent giant files from being committed.
-      #         Specify what is "too large" with args: ['--maxkb=123'] (default=500kB).
-      -   id: check-added-large-files
+      #  Specify what is "too large" with args: ['--maxkb=123'] (default=500kB)
+      - id: check-added-large-files
 
       # Checks that non-binary executables have a proper shebang.
-      -   id: check-executables-have-shebangs
+      - id: check-executables-have-shebangs
 
       # Checks for symlinks which do not point to anything.
-      -   id: check-symlinks
+      - id: check-symlinks
 
-    # git
+      # git {{{
       # Check for files that contain merge conflict strings.
-      -   id: check-merge-conflict
+      - id: check-merge-conflict
+      # git }}}
 
-    # Secrets
+      # Secrets {{{
       # Check for the existence of private keys.
-      -   id: detect-private-key
+      - id: detect-private-key
 
       # Checks for the existence of AWS secrets that you have set up with the
       # AWS CLI. The following arguments are available:
-      #         --credentials-file - additional AWS CLI style configuration file in a
-      #         non-standard location to fetch configured credentials from. Can be
-      #         repeated multiple times.
-      -   id: detect-aws-credentials
+      #    --credentials-file - additional AWS CLI style configuration file in a
+      #    non-standard location to fetch configured credentials from. Can be
+      #    repeated multiple times.
+      - id: detect-aws-credentials
+      # Secrets }}}
 
-    # Python
+      # Python {{{
       # Run flake8 on your python files.
-      -   id: flake8
+      - id: flake8
 
       # Add # -*- coding: utf-8 -*- to the top of python files.
-      -   id: fix-encoding-pragma
+      - id: fix-encoding-pragma
+      # Python }}}
+
+# vim: ft=yaml foldmethod=marker
