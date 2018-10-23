@@ -54,7 +54,7 @@ main() {
   gitconfig_global alias.m "merge" || return 1
   gitconfig_global alias.mt "mergetool -t vimdiff" || return 1
   gitconfig_global alias.cp "cherry-pick" || return 1
-  gitconfig_global alias.dc "diff --cached" || return 1
+  gitconfig_global alias.dc "difftool -t vimdiff --cached" || return 1
   gitconfig_global alias.ours 'f() { git checkout --ours $@ && git add $@; }; f' || return 1
   gitconfig_global alias.theirs 'f() { git checkout --theirs $@ && git add $@; }; f' || return 1
   gitconfig_global alias.cl "clone" || return 1
@@ -121,4 +121,4 @@ main() {
 }
 
 main "$@"
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4: || exit 1
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
