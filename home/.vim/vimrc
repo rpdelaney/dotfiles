@@ -220,8 +220,8 @@ set wildmenu
 set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
   " Suffixes that are ignored when doing filename autocompletion
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-  " ignore case
-set ignorecase
+  " smart case
+set smartcase
   " highlight all search matches
 set hlsearch
   " always search the whole file regardless of cursor position
