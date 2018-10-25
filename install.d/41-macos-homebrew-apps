@@ -92,6 +92,7 @@ homebrew_apps=(
   pandoc
   pip-completion
   pipenv
+  psgrep
   pv
   pwgen
   pyenv
