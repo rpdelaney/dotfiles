@@ -6,5 +6,5 @@
 30-39       Home directory setup
 40-49       Applications
         40-44   Installation
-        45-49   Setup / first-time configuration
+        45-49   Post-install setup / first-time configuration
 100+        Post-installation
