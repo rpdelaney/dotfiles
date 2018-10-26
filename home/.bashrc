@@ -524,12 +524,6 @@ fi
   # If we're running in screen then use colors anyway
 [[ "$TERM" = "screen" ]] && export TERM="screen-256color"
 [[ "$TERM" = "screen-bce" ]] && export TERM="screen-256color-bce"
-  # read in dircolors
-if [[ -e "$HOME"/.bash_colors ]] ; then
-  eval "$(dircolors -b "$HOME"/.bash_colors)"
-else
-  eval "$(dircolors -b)"
-fi
   # enable color support
 [[ -f "$HOME"/.bash_styles ]] && source "$HOME"/.bash_styles
 # tty {{{2
