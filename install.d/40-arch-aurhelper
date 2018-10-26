@@ -1,0 +1,23 @@
+#!/usr/bin/env dash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+if ! command -v mktemp 1> /dev/null 2>&1 ; then echo "Missing dependency: mktemp" 1>&2; exit 1; fi
+tmpdir=$(dirname "$(mktemp -u || exit 1)")
+
+main() {
+  # install 'yay'
+  # https://github.com/Jguer/yay
+  cd "$tmpdir" || return 1
+  git clone https://aur.archlinux.org/yay.git || return 1
+  cd yay || return 1
+  makepkg --install --needed --syncdeps --noconfirm || return 1
+}
+
+main "$@" || exit 1
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

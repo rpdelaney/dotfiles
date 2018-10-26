@@ -1,4 +1,5 @@
-00-10       Base system configuration
+00          Pre-installation
+01-10       Base system configuration
         0-5     Hardware
         6-10    Shell
 11-19       External devices and peripherals
