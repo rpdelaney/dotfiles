@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+if [[ "$(ostype)" == "macos" ]]; then
+  # we are on macos
+  cache_home="$HOME/Caches/"
+  config_home="$HOME/Preferences/"
+  data_home="$HOME/Application Support/"
+else
+  # we're probably on linux
+  cache_home="$HOME/.cache/"
+  config_home="$HOME/.config/"
+  data_home="$HOME/.local/share"
+fi
+
+  # Because lots of apps are dumb and don't use the defaults like they should
+  #
+  # defines the base directory relative to which user specific configuration
+  # files should be stored. If $XDG_CONFIG_HOME is either not set or empty, a
+  # default equal to $HOME/.config should be used.
+if [[ -d "$config_home" ]] ; then
+  export XDG_CONFIG_HOME="$config_home"
+else
+  echo "XDG_CONFIG_HOME not found: $XDG_CONFIG_HOME" >&2
+fi
+  # defines the base directory relative to which user specific data files
+  # should be stored. If $XDG_DATA_HOME is either not set or empty, a default
+  # equal to $HOME/.local/share should be used.
+if [[ -d "$data_home" ]] ; then
+  export XDG_DATA_HOME="$data_home"
+else
+  echo "XDG_DATA_HOME not found: $XDG_DATA_HOME" >&2
+fi
+  # defines the preference-ordered set of base directories to search for data
+  # files in addition to the $XDG_DATA_HOME base directory. The directories in
+  # $XDG_DATA_DIRS should be seperated with a colon ':'. If $XDG_DATA_DIRS is
+  # either not set or empty, a value equal to /usr/local/share/:/usr/share/
+  # should be used.
+if [[ -d "/usr/local/share/" ]] || [[ -d "/usr/share/" ]] ; then
+  export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+else
+  echo "XDG_DATA_DIRS not found: $XDG_DATA_DIRS" >&2
+fi
+  # defines the base directory relative to which user specific non-essential
+  # data files should be stored. If $XDG_CACHE_HOME is either not set or
+  # empty, a default equal to $HOME/.cache should be used.
+if [[ -d "$cache_home" ]] ; then
+  export XDG_CACHE_HOME="$cache_home"
+else
+  echo "XDG_CACHE_HOME not found." >&2
+fi
+  # defines the base directory relative to which user-specific non-essential
+  # runtime files and other file objects (such as sockets, named pipes, ...)
+  # should be stored. The directory MUST be owned by the user, and he MUST be
+  # the only one having read and write access to it. Its Unix access mode MUST
+  # be 0700.
+# Test runtime directory exists
+uid="$(id -u)"
+if [[ -d "/run/user/$uid" ]] ; then
+  # Test runtime directory is owned by us
+  if [[ "$(stat -c "%u" "/run/user/$uid")" == "$uid" ]] ; then
+    # Test runtime directory permissions
+    if [[ "$(stat -c "%a" "/run/user/$uid")" == "700" ]] ; then
+      export XDG_RUNTIME_DIR="/run/user/$uid"
+    else
+      echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
+    fi
+  else
+    echo "XDG_RUNTIME_DIR is not owned by UID $uid." >&2
+  fi
+else
+  echo "XDG_RUNTIME_DIR not found." >&2
+fi
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
