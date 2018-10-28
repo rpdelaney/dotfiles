@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+# shellcheck disable=SC2174
+
+main() {
+  mkdir --parents --mode=0700 "$HOME/Caches/" || return 1
+  export XDG_CACHE_HOME="$HOME/Caches/"
+  mkdir --parents --mode=0700 "$HOME/Preferences/" || return 1
+  export XDG_CONFIG_HOME="$HOME/Preferences/"
+  mkdir --parents --mode=0700 "$HOME/Application Support/" || return 1
+  export XDG_DATA_HOME="$HOME/Application Support/"
+}
+
+main "$@"
+exit $?
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
