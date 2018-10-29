@@ -115,10 +115,6 @@ done
 #  # The -x and -v options are turned off.
 ## 1}}}
 # ENVIRONMENT {{{1
-# EDITOR {{{2
-if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
-if type gvim &> /dev/null; then export VISUAL="gvim"; fi
-# }}}
 # DISPLAY {{{2
 # NVIDIA {{{3
 if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
