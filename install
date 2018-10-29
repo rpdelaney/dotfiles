@@ -17,13 +17,40 @@ fi
 
 if [[ ! -x "$install_dir" ]]; then echo "Install scripts directory not found: $install_dir" 1>&2; exit 1; fi
 
+# Get the ostype and distro if applicable
+ostype="$(ostype)"
+[[ "$ostype" == "linux" ]] && distro="$(distro)"
+
+installd_exec() {
+  local script
+  script="$1"
+
+  # shellcheck disable=SC1090
+  if ! source "$script" ; then
+    echo "Installation error with $script" 1>&2
+    echo "Aborting." 1>&2
+    exit 1
+  fi
+}
+
 main() {
-  for file in $install_files; do
-    if ! bash "$file"; then
-      echo "Installation error with $file" 1>&2
-      echo "Aborting." 1>&2
-      exit 1
-    fi
+  for script in $install_files ; do
+    local platform
+    platform=$(basename "$script" | cut -f 2 -d'-')
+
+    case "$platform" in
+      "all")
+        installd_exec "$script"
+        ;;
+      "$ostype")
+        installd_exec "$script"
+        ;;
+      "$distro")
+        installd_exec "$script"
+        ;;
+      * )
+        : ;;
+    esac
   done
 }
 
