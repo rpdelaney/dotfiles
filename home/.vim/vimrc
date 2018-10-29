@@ -1,4 +1,3 @@
-" WHY IS ULTI-SNIPS NOT IN VIM-PLUG??
   " load vim-plug and plugins {{{1
 call plug#begin('~/.vim/plug')
 
