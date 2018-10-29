@@ -168,6 +168,8 @@ if type gpg &> /dev/null; then
     echo "GNUPGHOME not found." >&2
   fi
 fi
+# 2}}}
+# password-store {{{2
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then
   if [[ -d "$HOME/docs/passwords/" ]] ; then
@@ -183,7 +185,7 @@ if type pass &> /dev/null; then
   export PASSWORD_STORE_CLIP_TIME="15"
   export PASSWORD_STORE_UMASK="0077"
 fi
-# }}}
+# 2}}}
 # MAIL {{{2
   # If this parameter is set to a filename or directory name and the MAILPATH
   # variable is not set, Bash informs the user of the arrival of mail in the
