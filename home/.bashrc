@@ -115,12 +115,6 @@ done
 #  # The -x and -v options are turned off.
 ## 1}}}
 # ENVIRONMENT {{{1
-# TERM {{{2
-  # read /etc/lsb-release for distribution name and version
-if [[ -r /etc/lsb-release ]]; then
-  source /etc/lsb-release
-fi
-# 2}}}
 # EDITOR {{{2
 if type vim &> /dev/null; then export EDITOR="vim" && export VISUAL="vim"; fi
 if type gvim &> /dev/null; then export VISUAL="gvim"; fi
