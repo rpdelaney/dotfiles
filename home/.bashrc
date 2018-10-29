@@ -157,23 +157,6 @@ if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
 fi
 # NVIDIA 3}}}
 # DISPLAY 2}}}
-# PAGER {{{2
-if type pager &> /dev/null; then
-  export PAGER="pager"
-elif type most &> /dev/null; then
-  export PAGER="most"
-  export MOST_EDITOR="vim"
-  if [[ -f "$XDG_CONFIG_HOME/most/mostrc" ]] ; then
-    export MOST_INITFILE="$XDG_CONFIG_HOME/most/mostrc"
-  else
-    echo "MOST_INITFILE not found." >&2
-  fi
-elif type less &> /dev/null; then
-  export PAGER="less"
-  export LESSHISTSIZE="0"
-  export LESSEDIT="vim"
-fi
-# }}}
 # GPG {{{2
 if type gpg &> /dev/null; then
     # Remember the current tty (so we don't bleed permissions?)
