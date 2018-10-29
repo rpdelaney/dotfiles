@@ -157,18 +157,6 @@ if [[ -n "$(pacman -Q nvidia 2> /dev/null)" ]]; then
 fi
 # NVIDIA 3}}}
 # DISPLAY 2}}}
-# GPG {{{2
-if type gpg &> /dev/null; then
-    # Remember the current tty (so we don't bleed permissions?)
-  GPG_TTY="$(tty)"
-  export GPG_TTY
-  if [[ -d "$XDG_CONFIG_HOME/gnupg/" ]] ; then
-    export GNUPGHOME="$XDG_CONFIG_HOME/gnupg/"
-  else
-    echo "GNUPGHOME not found." >&2
-  fi
-fi
-# 2}}}
 # password-store {{{2
   # Don't ask which gpg key to use with the pass store; use this one
 if type pass &> /dev/null; then
