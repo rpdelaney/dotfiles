@@ -304,6 +304,7 @@ export GREP_COLOR=
   # of the output. See 'man grep' for details.
 export GREP_COLORS=
 # 2}}}
+# ENVIRONMENT 1}}}
 # PROMPT {{{1
   # PS1 {{{2
 if [[ -f "$HOME"/.bash_prompt ]]; then
