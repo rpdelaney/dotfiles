@@ -213,57 +213,6 @@ if type mutt &> /dev/null; then
 fi
 # 3}}}
 # 2}}}
-# GIT {{{2
-if type git &> /dev/null; then
-    # git(hub) {{{3
-  if type hub &> /dev/null; then
-    export GITHUB_USER="rpdelaney"
-  fi
-    # }}}
-    # TIG {{{3
-  if type tig &> /dev/null; then
-  #         Path of the user configuration file (defaults to ~/.tigrc).
-  if [[ -f "$XDG_CONFIG_HOME/tig/tigrc" ]] ; then
-    export TIGRC_USER="$XDG_CONFIG_HOME/tig/tigrc"
-  else
-    echo "TIGRC_USER not found." >&2
-  fi
-  #         Path of the system wide configuration file (defaults to {sysconfdir}/tigrc).
-  # TIGRC_SYSTEM
-  #         Set command for retrieving all repository references. The command should output data in the same format as git-ls-remote(1).
-  # TIG_LS_REMOTE
-  #         The diff options to use in the diff view. The diff view uses git-show(1) for formatting and always passes --patch-with-stat. You may also set
-  #         the diff-options setting in your tigrc(5).
-    export TIG_DIFF_OPTS="-y"
-  #         Path for trace file where information about Git commands are logged.
-  # TIG_TRACE
-  fi
-    # }}}
-# XDG-git {{{3
-# VVV This confuses lots of apps for some reason VVV
-# if [[ ! -d "$XDG_CONFIG_HOME/git/config" ]] ; then
-#   export GIT_CONFIG="$XDG_CONFIG_HOME/git/config"
-# else
-#   echo "GIT_CONFIG not found." >&2
-# fi
-    # Always vim to edit even if I have a window manager.
-  export GIT_EDITOR="vim"
-    # Number of context lines shown in a diff
-# export GIT_DIFF_OPTS=
-    # Use vimdiff for git diff
-# export GIT_EXTERNAL_DIFF="vimdiff"
-    # Stop searching here when trying to find git repos
-# export GIT_CEILING_DIRECTORIES=""
-    # Search for repos across filesystems. I like my symlinks
-  export GIT_DISCOVER_ACROSS_FILESYSTEM="1"
-    # Don't automatically add "glob" magic to all pathspecs
-  export GIT_GLOB_PATHSPECS="0"
-  export GIT_NOGLOB_PATHSPECS="1"
-    # Passwords
-# export GIT_ASKPASS=""
-fi
-# }}}
-# }}}
 # LYNX {{{2
 if type lynx &> /dev/null; then
     # Where to find the config
