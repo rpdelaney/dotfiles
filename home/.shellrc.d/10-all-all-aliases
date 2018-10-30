@@ -246,21 +246,4 @@ if command_exists sxiv ; then
   fi
 fi
 
-  # macos
-if command_exists gtimeout ; then
-  alias timeout='gtimeout'
-fi
-if command_exists gmv ; then
-  alias mv='gmv'
-fi
-if command_exists gcp ; then
-  alias cp='gcp'
-fi
-if command_exists grm ; then
-  alias rm='grm'
-fi
-if command_exists ggrep ; then
-  alias grep='ggrep'
-fi
-
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
