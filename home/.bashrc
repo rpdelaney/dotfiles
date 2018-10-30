@@ -115,23 +115,6 @@ done
 #  # The -x and -v options are turned off.
 ## 1}}}
 # ENVIRONMENT {{{1
-# password-store {{{2
-  # Don't ask which gpg key to use with the pass store; use this one
-if type pass &> /dev/null; then
-  if [[ -d "$HOME/docs/passwords/" ]] ; then
-    export PASSWORD_STORE_DIR="$HOME/docs/passwords/"
-  else
-    if [[ -d "$HOME/.password-store" ]] ; then
-      export PASSWORD_STORE_DIR="$HOME/.password-store"
-    else
-      echo "PASSWORD_STORE_DIR not found." >&2
-    fi
-  fi
-  export PASSWORD_STORE_KEY="0D98863B4E1D07B6"
-  export PASSWORD_STORE_CLIP_TIME="15"
-  export PASSWORD_STORE_UMASK="0077"
-fi
-# 2}}}
 # MAIL {{{2
   # If this parameter is set to a filename or directory name and the MAILPATH
   # variable is not set, Bash informs the user of the arrival of mail in the
