@@ -39,6 +39,11 @@ if [ "$(id -u "$USER")" -ne 0 ]; then
     alias yas='\pacman --color=always -S'
     alias yass='\pacman --color=always -Ss'
     alias yars='\pacman --color=always -Rs'
+  elif command_exists brew ; then
+    alias ya='\brew'
+    alias yaq='\brew info'
+    alias yas='\brew install'
+    alias yass='\brew search'
   fi
 
     # watch incoming network connections
