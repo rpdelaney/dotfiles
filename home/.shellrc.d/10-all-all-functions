@@ -27,14 +27,16 @@ rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
   # print a sorted list of available applications with their descriptions
 if command -v whatis >/dev/null 2>&1 ; then alias whatisall='whatis /usr/bin/* 2> /dev/null'; fi
 
-  # recursively remove orphaned packages
-rmorphans() {
-  if [ -z "$(pacman -Qdt)" ]; then
-    echo "No orphans to remove."
-  else
-    sudo pacman -Rs "$(pacman -Qdtq)"
-  fi
-}
+# recursively remove orphaned packages
+if command -v pacman >/dev/null 2>&1 ; then
+  rmorphans() {
+    if [ -z "$(pacman -Qdt)" ]; then
+      echo "No orphans to remove."
+    else
+      sudo pacman -Rs "$(pacman -Qdtq)"
+    fi
+  }
+fi
 
 #
 # manipulating multimedia
