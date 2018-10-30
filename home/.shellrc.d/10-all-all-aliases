@@ -33,7 +33,7 @@ if [ "$(id -u "$USER")" -ne 0 ]; then
     alias yas='\yay -S'
     alias yass='\yay -Ss'
     alias yars='\yay -Rs'
-  else
+  elif command_exists pacman ; then
     alias ya='\pacman --color=always'
     alias yaq='\pacman --color=always -Q'
     alias yas='\pacman --color=always -S'
