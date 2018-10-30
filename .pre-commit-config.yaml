@@ -43,8 +43,9 @@ repos:
       # Run flake8 on your python files.
       - id: flake8
 
-      # Add # -*- coding: utf-8 -*- to the top of python files.
+      # Remove # -*- coding: utf-8 -*- to the top of python files.
       - id: fix-encoding-pragma
+        args: [--remove]
       # Python }}}
 
   # shellcheck {{{
