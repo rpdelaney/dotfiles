@@ -225,8 +225,7 @@ alias ZZ='exit'
   # if netctl-auto is running, then manually starting a wireless network with
   # 'netctl' will always fail. therefore, we alias 'netctl' to 'netctl-auto'
 if command_exists netctl-auto ; then
-  systemctl status netctl-auto@wlp7s0 >/dev/null 2>&1
-  if [ $? -eq 0 ]; then
+  if systemctl status netctl-auto@wlp7s0 >/dev/null 2>&1 ; then
     alias netctl='netctl-auto'
   fi
 fi
