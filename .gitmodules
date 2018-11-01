@@ -7,3 +7,6 @@
 [submodule "home/.config/tmux/plugins/tpm"]
 	path = home/.config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "home/.config/tmux/plugins/tmux-continuum"]
+	path = home/.config/tmux/plugins/tmux-continuum
+	url = git@github.com:tmux-plugins/tmux-continuum.git
