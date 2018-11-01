@@ -7,9 +7,6 @@
 # See the README file for additional terms and conditions on your use of this
 # software.
 #
-echo "gitconfig doesn't really work yet. skipping this." 1>&2
-exit 0
-
 gitconfig_global() {
   local field
   field="$1"
