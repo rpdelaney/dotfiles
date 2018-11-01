@@ -171,7 +171,7 @@ let g:ale_linters = {
 \	'python': ['flake8']
 \}
 " let g:ale_python_flake8_options = '--ignore=E501 --doctests'  " ignore line too long
-let g:ale_python_flake8_options = '--doctests'
+let g:ale_python_flake8_options = '--doctests --ignore'  " Don't use the default ignore list (catch everything)
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
