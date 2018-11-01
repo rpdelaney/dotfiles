@@ -41,7 +41,8 @@ shellrc_exec() {
   return 0
 }
 
-_ostype="$(ostype)"
+if ! command -v "$HOME"/bin/ostype >/dev/null 2>&1 ; then echo "Missing dependency: $HOME/bin/ostype" 1>&2 ; exit 1 ; fi
+_ostype="$("$HOME"/bin/ostype)"
 
 for file in "${HOME}"/.shellrc.d/*; do
   if ! shellrc_exec "$file" "$_ostype" ; then
