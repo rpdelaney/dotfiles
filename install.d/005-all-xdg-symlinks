@@ -14,9 +14,10 @@ if [[ ! -d $dotfiles_dest ]]; then echo "dotfiles_dest var not found: $dotfiles_
 if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; exit 1; fi
 
 main() {
-  cd "$HOME" || exit 1
-  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+  cd "$HOME" || return 1
+  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \; || return 1
 }
 
 main "$@"
+exit "$?"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
