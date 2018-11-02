@@ -1,3 +1,4 @@
+" vim600: set foldmethod=marker foldlevel=0 nolist:
 source ~/.vim/vimrc.d/00-plugins.vim
 
   " Use vim defaults in favor of backward-compatibility with vi
@@ -347,5 +348,3 @@ if has("autocmd")
 endif
 " }}}
 " 1}}}
-" Modelines {{{1
-" vim600: set foldmethod=marker foldlevel=0 nolist:
