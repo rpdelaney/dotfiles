@@ -162,20 +162,6 @@ if has('syntax') && !exists('g:syntax_on')
   set foldmethod=syntax
 endif
   " 2}}}
-  " Ale {{{2
-let g:ale_linters = {
-\	'c': ['gcc', 'norminette'],
-\   'cpp': ['gcc', 'norminette'],
-\   'h': ['gcc', 'norminette'],
-\   'hpp': ['gcc', 'norminette'],
-\	'python': ['flake8']
-\}
-" let g:ale_python_flake8_options = '--ignore=E501 --doctests'  " ignore line too long
-let g:ale_python_flake8_options = '--doctests --ignore'  " Don't use the default ignore list (catch everything)
-let g:ale_completion_enabled = 1
-let g:airline#extensions#ale#enabled = 1
-
-  " Syntax 2}}}
   " Indentation {{{2
   " do smart autoindenting on new lines
 set smartindent
@@ -308,6 +294,20 @@ if maparg('<c-s>', 's') ==# ''
 endif
 " 1}}}
 " Plugins {{{1
+  " Ale {{{2
+let g:ale_linters = {
+\	'c': ['gcc', 'norminette'],
+\   'cpp': ['gcc', 'norminette'],
+\   'h': ['gcc', 'norminette'],
+\   'hpp': ['gcc', 'norminette'],
+\	'python': ['flake8']
+\}
+" let g:ale_python_flake8_options = '--ignore=E501 --doctests'  " ignore line too long
+let g:ale_python_flake8_options = '--doctests --ignore'  " Don't use the default ignore list (catch everything)
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+
+  " Syntax 2}}}
   " supertab {{{2
   " binds to start the autocompletion
 let g:SuperTabMappingForward = '<c-space>'
