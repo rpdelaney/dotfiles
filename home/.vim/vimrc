@@ -324,12 +324,6 @@ let g:UltiSnipsExpandTrigger      = "<s-tab>"
 let g:UltiSnipsJumpForwardTrigger   = "<s-l>"
 let g:UltiSnipsJumpBackwardTrigger  = "<s-h>"
   " 2}}}
-  " matchit {{{2
-  " Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-  " 2}}}
   " smartusline {{{2
 let g:smartusline_string_to_highlight = '(%n) %f '
 let g:smartusline_hi_replace = 'guibg=#e454ba guifg=black ctermbg=magenta ctermfg=black'
