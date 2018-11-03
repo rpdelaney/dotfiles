@@ -49,6 +49,8 @@ for file in "${HOME}"/.shellrc.d/*; do
     echo "ERROR: failure when executing $file" 1>&2
     echo "Terminating shellrc.d" 1>&2
     break
+  else
+    echo "Successfully executed $file"
   fi
 done
 
@@ -247,47 +249,6 @@ export GREP_COLOR=
 export GREP_COLORS=
 # 2}}}
 # ENVIRONMENT 1}}}
-# PROMPT {{{1
-  # PS1 {{{2
-if [[ -f "$HOME"/.bash_prompt ]]; then
-  if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
-    # If we are root, try to make that hard to miss.
-    # And de-emphasize git status (we don't work as root)
-    export PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
-    export PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -qP '(\bwheel\b|\badmin\b|\bsysop\b)'; then
-    # If we are wheel, try to make that hard to miss.
-    # And de-emphasize git status (we don't work as superuser)
-    export PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
-    export PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
-  elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
-    # If we are in sudoers,
-    # Use defaults - do nothing
-  :
-  else
-    # If we are not root, wheel, nor a sudoer,
-    # Use unprivileged colorscheme
-    export PROMPT_USER_COLOR="$(tput setaf 2)"
-  fi
-  source "$HOME"/.bash_prompt
-fi
-# 2}}}
-  # PS2 {{{2
-  # Continuation prompt
-  # Default: '> '
-export PS2="... "
-  # 2}}}
-  # PS3 {{{2
-  # Option select prompt
-  # Default: '#?'
-export PS3='#?'
-  # 2}}}
-  # PS4 {{{2
-  # Script debug mode prefix
-  # Default: '+'
-export PS4="+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: "
-  # 2}}}
-# 1}}}
 # KEYCHAIN {{{1
 #
   # determine if we want to run a new ssh-agent for this session
