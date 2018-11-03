@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+  # PS1 {{{2
+if [[ -f "$HOME"/.bash_prompt ]]; then
+  if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
+    # If we are root, try to make that hard to miss.
+    # And de-emphasize git status (we don't work as root)
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 196)$(tput setaf 0)"
+    export PROMPT_USER_COLOR
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    export PROMPT_GIT_STATUS_COLOR
+  elif groups "$USER" | grep -qP '(\bwheel\b|\bsysop\b)'; then
+    # If we are wheel, try to make that hard to miss.
+    # And de-emphasize git status (we don't work as superuser)
+    PROMPT_USER_COLOR="$(tput bold)$(tput setab 11)$(tput setaf 0)"
+    export PROMPT_USER_COLOR
+    PROMPT_GIT_STATUS_COLOR="$(tput setaf 7)"
+    export PROMPT_GIT_STATUS_COLOR
+  elif groups "$USER" | grep -qP 'sudo(er(s)?)?'; then
+    # If we are in sudoers,
+    # Use defaults - do nothing
+  :
+  else
+    # If we are not root, wheel, nor a sudoer,
+    # Use unprivileged colorscheme
+    PROMPT_USER_COLOR="$(tput setaf 2)"
+    export PROMPT_USER_COLOR
+  fi
+  # shellcheck disable=SC1090
+  source "$HOME"/.bash_prompt
+fi
+  # PS1 2}}}
+  # PS2 {{{2
+  # Continuation prompt
+  # Default: '> '
+export PS2="... "
+  # PS2 2}}}
+  # PS3 {{{2
+  # Option select prompt
+  # Default: '#?'
+export PS3='#?'
+  # PS3 2}}}
+  # PS4 {{{2
+  # Script debug mode prefix
+  # Default: '+'
+export PS4="+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: "
+  # PS4 2}}}
+
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
