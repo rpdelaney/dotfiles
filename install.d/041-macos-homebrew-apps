@@ -52,6 +52,7 @@ homebrew_apps=(
   file-formula
   findutils --with-default-names
   flake8
+  gcc
   gem-completion
   git --with-curl --with-openssl
   glances
