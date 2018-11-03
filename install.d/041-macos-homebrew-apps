@@ -69,7 +69,7 @@ homebrew_apps=(
   htop --with-ncurses
   hub
   imagemagick
-  inetutils
+  inetutils --with-default-names
   jq
   keychain
   ksh
