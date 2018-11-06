@@ -75,12 +75,12 @@ if [ -d "$runtime_dir" ] ; then
     if [ "$(stat -c "%a" "/run/user/$uid")" = "700" ] ; then
       export XDG_RUNTIME_DIR="/run/user/$uid"
     else
-      echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
+      echo "XDG_RUNTIME_DIR has incorrect permissions: $runtime_dir" >&2
     fi
   else
-    echo "XDG_RUNTIME_DIR is not owned by UID $uid." >&2
+    echo "XDG_RUNTIME_DIR is not owned by UID $uid: $runtime_dir." >&2
   fi
 else
-  echo "XDG_RUNTIME_DIR not found." >&2
+  echo "XDG_RUNTIME_DIR not found: $runtime_dir" >&2
 fi
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
