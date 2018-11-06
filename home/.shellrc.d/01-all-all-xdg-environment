@@ -20,6 +20,8 @@ else
   data_home="$HOME/.local/share"
 fi
 
+runtime_dir="/run/user/$uid"
+
   # Because lots of apps are dumb and don't use the defaults like they should
   #
   # defines the base directory relative to which user specific configuration
@@ -66,19 +68,19 @@ fi
   # be 0700.
 # Test runtime directory exists
 uid="$(id -u)"
-if [ -d "/run/user/$uid" ] ; then
+if [ -d "$runtime_dir" ] ; then
   # Test runtime directory is owned by us
   if [ "$(stat -c "%u" "/run/user/$uid")" = "$uid" ] ; then
     # Test runtime directory permissions
     if [ "$(stat -c "%a" "/run/user/$uid")" = "700" ] ; then
       export XDG_RUNTIME_DIR="/run/user/$uid"
     else
-      echo "XDG_RUNTIME_DIR has incorrect permissions." >&2
+      echo "XDG_RUNTIME_DIR has incorrect permissions: $runtime_dir" >&2
     fi
   else
-    echo "XDG_RUNTIME_DIR is not owned by UID $uid." >&2
+    echo "XDG_RUNTIME_DIR is not owned by UID $uid: $runtime_dir." >&2
   fi
 else
-  echo "XDG_RUNTIME_DIR not found." >&2
+  echo "XDG_RUNTIME_DIR not found: $runtime_dir" >&2
 fi
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
