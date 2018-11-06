@@ -19,5 +19,7 @@ newpath="$(append2path "$py3base")"
 py2base="$(python2 -m site --user-base)"
 newpath="$(append2path "$py2base")"
 
+[ -d "$HOME"/bin ] && newpath="$(append2path "$HOME"/bin)"
+
 export PATH="$newpath"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
