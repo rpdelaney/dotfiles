@@ -47,6 +47,7 @@ homebrew_apps=(
   dos2unix
   enca
   encfs
+  espeak
   exa
   exiftool
   file-formula
