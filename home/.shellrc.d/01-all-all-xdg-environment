@@ -20,6 +20,8 @@ else
   data_home="$HOME/.local/share"
 fi
 
+runtime_dir="/run/user/$uid"
+
   # Because lots of apps are dumb and don't use the defaults like they should
   #
   # defines the base directory relative to which user specific configuration
@@ -66,7 +68,7 @@ fi
   # be 0700.
 # Test runtime directory exists
 uid="$(id -u)"
-if [ -d "/run/user/$uid" ] ; then
+if [ -d "$runtime_dir" ] ; then
   # Test runtime directory is owned by us
   if [ "$(stat -c "%u" "/run/user/$uid")" = "$uid" ] ; then
     # Test runtime directory permissions
