@@ -14,6 +14,7 @@ source ~/.vim/vimrc.d/01-interface-listchars.vim
 source ~/.vim/vimrc.d/01-interface-fonts.vim
 source ~/.vim/vimrc.d/01-interface-cursor.vim
 source ~/.vim/vimrc.d/01-interface-syntax.vim
+source ~/.vim/vimrc.d/01-interface-navigation.vim
 source ~/.vim/vimrc.d/01-interface-indentation.vim
 source ~/.vim/vimrc.d/01-interface-orientation.vim
 source ~/.vim/vimrc.d/01-interface-statusline.vim
