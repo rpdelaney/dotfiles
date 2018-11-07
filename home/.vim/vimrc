@@ -4,184 +4,23 @@ source ~/.vim/vimrc.d/00-plugins.vim
   " Use vim defaults in favor of backward-compatibility with vi
 set nocompatible
 
-" Interface {{{1
-  " Styles {{{2
-  " Colorscheme {{{3
-  " Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-    " If terminal does not support 256 colors, use Mustang2 instead of zenburn
-  set t_Co=16
-  colorscheme mustang2
-else
-    " otherwise, use zenburn
-  set t_Co=256
-  let g:zenburn_high_contrast=1
-  colorscheme zenburn
-endif
-  " Disable background color erase - this could cause bugs in some terminals
-set t_ut=
-  " 3}}}
-  " Listchars {{{3
-  " listchars to highlight stuff we don't like
-set list
-  " Make sure NonText looks grey
-set highlight+=8:NonText
-if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-    " If we have utf-8 encoding, use fancy listchars
-  set listchars=tab:→\ ,eol:\ ,trail:·,extends:≻,precedes:≺,conceal:�,nbsp:—
-    " Show this character on a wrapped line
-  set showbreak=
-else
-    " Otherwise, use ANSI
-  set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<,conceal:*,nbsp:-
-  " Show this character on a wrapped line
-  set showbreak=
-endif " }}}
-  " 2}}}
-  " Fonts {{{2
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata-g\ 14
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
-  " 2}}}
-  " Cursor {{{2
-"if &term =~ "xterm\\|rxvt|screen-256color"
-" " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-" " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;white\x7"
-" silent !echo -ne "\033]12;red\007"
-" " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-" " use \003]12;gray\007 for gnome-terminal
-"endif
-
-"if &term =~ '^xterm|^screen'
-  " start insert mode
-  let &t_SI .= "\<Esc>[3 q"
-  " exit insert mode
-  let &t_EI .= "\<Esc>[0 q"
-  " 1 or 0 -> blinking block
-  " 3 -> blinking underscore
-  " Recent versions of xterm (282 or above) also support
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
-"endif
-
-  " 2}}}
-  " Syntax {{{2
-  " if we have syntax, use it
-if has('syntax') && !exists('g:syntax_on')
-  syntax enable
-    " use syntax engine to control folding
-  set foldmethod=syntax
-endif
-  " 2}}}
-  " Indentation {{{2
-  " do smart autoindenting on new lines
-set smartindent
-  " indent like the previous line
-set autoindent
-  " shift keys in normal mode add or remove 4 spaces
-set shiftwidth=4
-  " use tabs for indentation and spaces everywhere else
-set smarttab
-  " don't automatically expand tabs into whitespace
-set noexpandtab
-  " tabstop is 4 characters
-set tabstop=4
-  " delete key in insert mode deletes 4 spaces
-set softtabstop=4
-  " auto-shift to tab stop
-set shiftround
-  " 2}}}
-  " Orientation {{{2
-  " Tell me where I am in the file
-set ruler
-  " show line numbers relative to the cursor position
-set relativenumber
-  " don't show line numbers in absolute terms
-set nonumber
-  " highlight current row
-set cursorline
-set nocursorcolumn
-  " 2}}}
-  " Statusline {{{2
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-  " show last command
-set showcmd
-  " Always show the file status
-set laststatus=2
-  " 2}}}
-  " Searching {{{2
-  " enable enhanced command-line completion
-set wildmenu
-  " Exclude these files and directories from search
-set wildignore+=*.git/*,*.hg/*,*.svn/*,*.so,*.pdf,*.py[co],*.o,*.swp,*.aux,*.toc
-  " Suffixes that are ignored when doing filename autocompletion
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-  " smart case
-set smartcase
-  " highlight all search matches
-set hlsearch
-  " always search the whole file regardless of cursor position
-set wrapscan
-  " show search results visually
-set showmatch
-  " search incrementally
-set incsearch
-  " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
-set scrolloff=4
-  " 2}}}
-  " Buffers {{{2
-  " Permit switching buffers when the current buffer is dirty
-  set hidden
-  " 2}}}
-  " Navigation {{{2
+  " Use modelines
 set modeline
-  " what to do when I hit backspace
-set backspace=indent,eol,start
-  " don't wrap unless I say so
-set nowrap
-  " make left/right keys wrap to start of the next line
-set whichwrap+=h,l,<,>,[,]
-  " how many rows to show on each side of the cursor
-  " a large value like 999 will keep the cursor in the center of the screen
-set scrolloff=3
-  " how many columns to show on each side of the cursor
-set sidescrolloff=1
-  " Enforce 50 tabs maximum
-if &tabpagemax < 50
-  set tabpagemax=50
-endif
-  " }}}
-  " Spelling {{{2
-set spellfile="~/.aspell/vim.utf8.add"
-  " }}}
-  " Other {{{2
-  "
-set complete-=i
-  "
-" set display+=lastline
-  " update the buffer if the source file changes on disk and we have not edited it
-set autoread
-  " Enforce 1000 lines of history maximum
-if &history < 1000
-  set history=1000
-endif
-  " Put something in viminfo for some reason
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-  " Don't redraw while executing macros (good performance config)
-set lazyredraw
-  " 2}}}
-  " 1}}}
+
+  " Interface
+source ~/.vim/vimrc.d/01-interface-colorscheme.vim
+source ~/.vim/vimrc.d/01-interface-listchars.vim
+source ~/.vim/vimrc.d/01-interface-fonts.vim
+source ~/.vim/vimrc.d/01-interface-cursor.vim
+source ~/.vim/vimrc.d/01-interface-syntax.vim
+source ~/.vim/vimrc.d/01-interface-indentation.vim
+source ~/.vim/vimrc.d/01-interface-orientation.vim
+source ~/.vim/vimrc.d/01-interface-statusline.vim
+source ~/.vim/vimrc.d/01-interface-searching.vim
+source ~/.vim/vimrc.d/01-interface-spelling.vim
+source ~/.vim/vimrc.d/01-interface-other.vim
+
+  " Bindings
 source ~/.vim/vimrc.d/05-bindings.vim
 " Plugins {{{1
   " Ale {{{2
