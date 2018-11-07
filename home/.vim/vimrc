@@ -30,7 +30,7 @@ source ~/.vim/vimrc.d/10-functions-whitespace.vim
 source ~/.vim/vimrc.d/10-functions-hexedit.vim
 
 " Files {{{1
-  " Use strong encryption when invoked with :X
+  " Use strong encryption when invoked with :X or -x
 set cryptmethod=blowfish2
   " EOL formats to try when parsing new files with unclear MIMEtypes
 set fileformats="unix,dos"
