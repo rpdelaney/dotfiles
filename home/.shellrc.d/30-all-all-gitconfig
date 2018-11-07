@@ -17,7 +17,12 @@ gitconfig_global() {
 
 main() {
   gitconfig_global user.name "Ryan Delaney" || return 1
-  gitconfig_global user.email "ryan.delaney@gmail.com" || return 1
+  if [ -r "$HOME"/.emailaddress ] ; then
+    email_address="$(cat "$HOME"/.emailaddress)"
+  else
+    email_address="ryan.delaney@gmail.com"
+  fi
+  gitconfig_global user.email "$email_address" || return 1
   gitconfig_global core.excludesfile "home/ryan/.config/git/gitignore_global" || return 1
   gitconfig_global core.whitespace "trailing-space,space-before-tab" || return 1
   gitconfig_global core.filemode "true" || return 1
@@ -116,4 +121,5 @@ main() {
 }
 
 main "$@"
+return "$?"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
