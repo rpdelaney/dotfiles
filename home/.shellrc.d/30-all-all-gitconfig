@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
@@ -8,12 +8,10 @@
 # software.
 #
 gitconfig_global() {
-  local field
   field="$1"
-  local setting
   setting="$2"
 
-  [[ -n "$field" ]] && [[ -n "$setting" ]] || return 1
+  [ -n "$field" ] && [ -n "$setting" ] || return 1
   git config --global "$field" "$setting" || return 1
 }
 
