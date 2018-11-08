@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+#
+
+default_shell="/usr/local/bin/bash"
+if [[ ! -x "$default_shell" ]] ; then
+  echo "FATAL: Default shell not found: $default_shell" 1>&2
+  return 1
+fi
+
+main() {
+  echo "Installing $default_shell as the default shell for $USER"
+  echo "$default_shell" | sudo tee -a /etc/shells || return 1
+  sudo chsh -s "$default_shell" || return 1
+}
+
+main "$@"
+exit $?
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
