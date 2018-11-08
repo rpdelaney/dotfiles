@@ -100,7 +100,6 @@ homebrew_apps=(
   pyenv
   qrencode
   ranger
-  rename
   rsync
   ruby
   ruby-completion
@@ -119,6 +118,7 @@ homebrew_apps=(
   torsocks
   tree
   unar
+  util-linux
   vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl
   vimpager --with-pandoc
   w3m
