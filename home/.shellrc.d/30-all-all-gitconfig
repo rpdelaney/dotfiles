@@ -16,7 +16,7 @@ main() {
     email_address="ryan.delaney@gmail.com"
   fi
   git config --global user.email "$email_address" || return 1
-  git config --global core.excludesfile "/home/ryan/.config/git/ignore" || return 1
+  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore" || return 1
   git config --global core.whitespace "trailing-space,space-before-tab" || return 1
   git config --global core.filemode "true" || return 1
   git config --global core.symlinks "true" || return 1
