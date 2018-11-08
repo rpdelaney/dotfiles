@@ -28,14 +28,14 @@ p2install() {
   local targetapp
   targetapp="$1"
 
-  pip2 install "$targetapp" || return 1
+  pip2 install --user "$targetapp" || return 1
 }
 
 p3install() {
   local targetapp
   targetapp="$1"
 
-  pip3 install "$targetapp" || return 1
+  pip3 install --user "$targetapp" || return 1
 }
 
 main() {
