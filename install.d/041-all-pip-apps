@@ -19,7 +19,9 @@ python2apps=(
 python3apps=(
   bpython
   flake8
+  setuptools
   twine
+  wheel
 )
 
 p2install() {
