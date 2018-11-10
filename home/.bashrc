@@ -45,6 +45,9 @@ if ! command -v "$HOME"/bin/ostype >/dev/null 2>&1 ; then echo "Missing dependen
 _ostype="$("$HOME"/bin/ostype)"
 
 for file in "${HOME}"/.shellrc.d/*; do
+  # Only run the executable files
+  [[ ! -x "$file" ]] && continue
+
   if ! shellrc_exec "$file" "$_ostype" ; then
     echo "ERROR: failure when executing $file" 1>&2
     echo "Terminating shellrc.d" 1>&2
