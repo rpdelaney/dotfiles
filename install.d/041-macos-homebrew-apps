@@ -8,13 +8,13 @@
 # software.
 #
 
-if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; exit 1; fi
+if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; return 1; fi
 
 brew_install() {
   local app
   app="$1"
 
-  brew install "$app" || exit 1
+  brew install "$app" || return $?
 }
 
 main() {
@@ -133,5 +133,5 @@ homebrew_apps=(
 )
 
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

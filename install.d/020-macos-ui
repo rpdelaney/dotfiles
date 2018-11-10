@@ -10,7 +10,7 @@
 
 main() {
   # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+  [[ "$OSTYPE" =~ ^darwin ]] || return 0
 
   # A lot of these have been stolen from various guides
   # notable guides:
@@ -73,5 +73,5 @@ main() {
   defaults write -g ApplePressAndHoldEnabled -bool false
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -10,15 +10,15 @@
 
 main() {
   # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+  [[ "$OSTYPE" =~ ^darwin ]] || return 0
 
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || exit 1
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || return $?
 
-  brew analytics off || exit 1
+  brew analytics off || return $?
 
-  brew tap homebrew/cask-fonts || exit 1
-  brew tap homebrew/command-not-found || exit 1
+  brew tap homebrew/cask-fonts || return $?
+  brew tap homebrew/command-not-found || return $?
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

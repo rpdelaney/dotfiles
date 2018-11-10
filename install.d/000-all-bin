@@ -12,12 +12,12 @@ bin_repo='git://github.com/rpdelaney/dotfiles'
 
 if [ -d "$bin_dest" ]; then
   echo "bin destination dir already exists: $bin_dest" 1>&2
-  exit 1
+  return 1
 fi
 
 main() {
-    git clone --recurse-submodules --jobs 8 "$bin_repo" "$bin_dest" || return 1
+    git clone --recurse-submodules --jobs 8 "$bin_repo" "$bin_dest" || return $?
 }
 
-main "$@" || exit 1
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

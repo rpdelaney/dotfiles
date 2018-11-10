@@ -9,17 +9,18 @@
 #
 
 append2path() {
-  printf "%s:%s" "$PATH" "$1"
+  printf "%s:%s" "$1" "$PATH"
 }
 
 # https://docs.python.org/3/library/site.html
-py3base="$(python3 -m site --user-base)"
+py3base="$(python3 -m site --user-base)"/bin
 newpath="$(append2path "$py3base")"
+export PATH="$newpath"
 
-py2base="$(python2 -m site --user-base)"
+py2base="$(python2 -m site --user-base)"/bin
 newpath="$(append2path "$py2base")"
+export PATH="$newpath"
 
 [ -d "$HOME"/bin ] && newpath="$(append2path "$HOME"/bin)"
-
 export PATH="$newpath"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

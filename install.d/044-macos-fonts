@@ -13,10 +13,10 @@ inconsolata_file='Inconsolata-g_for_powerline.otf'
 system_fonts_dir='/Library/Fonts/'
 
 main() {
-  cd "$TMP" || exit 1
-  curl -L -s "$inconsolata_url" > "$inconsolata_file" || exit 1
-  cp "$inconsolata_file" "$system_fonts_dir"
+  cd "$TMP" || return $?
+  curl -L -s "$inconsolata_url" > "$inconsolata_file" || return $?
+  cp "$inconsolata_file" "$system_fonts_dir" || return $?
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

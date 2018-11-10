@@ -10,7 +10,7 @@
 
 main() {
   # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+  [[ "$OSTYPE" =~ ^darwin ]] || return 0
 
   # Faster Dock
   defaults write com.apple.Dock autohide-delay -float 0.1
@@ -38,5 +38,5 @@ main() {
   killall Dock
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
