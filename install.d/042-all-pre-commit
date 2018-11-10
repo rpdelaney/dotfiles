@@ -11,15 +11,15 @@
 # shellcheck disable=SC2154
 if [[ ! -d "$dotfiles_dest" ]] ; then
   echo "FATAL: dotfiles_dest is not found. I don't know what to do." 1>&2
-  exit 1
+  return 1
 fi
 
 main() {
-  pip3 install pre-commit || return 1
+  pip3 install pre-commit || return $?
 
-  cd "$dotfiles_dest" || return 1
-  pre-commit install || return 1
+  cd "$dotfiles_dest" || return $?
+  pre-commit install || return $?
 }
 
-main "$@" ; exit "$?"
+main "$@" || return "$?"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

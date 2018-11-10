@@ -10,7 +10,7 @@
 
 main() {
   # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || exit 0
+  [[ "$OSTYPE" =~ ^darwin ]] || return 0
 
   # show all filename extensions
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -51,5 +51,5 @@ main() {
   defaults write com.apple.finder EmptyTrashSecurely -bool true
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

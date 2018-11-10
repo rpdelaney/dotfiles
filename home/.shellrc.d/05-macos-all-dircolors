@@ -10,9 +10,9 @@
 
   # read in dircolors
 if [[ -e "$HOME"/.bash_colors ]] ; then
-  eval "$(gdircolors -b "$HOME"/.bash_colors || exit 1)"
+  eval "$(gdircolors -b "$HOME"/.bash_colors || return $?)"
 else
-  eval "$(gdircolors -b || exit 1)"
+  eval "$(gdircolors -b || return $?)"
 fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

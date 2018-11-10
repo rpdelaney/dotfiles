@@ -14,7 +14,7 @@ authorized_users_url='https://gist.githubusercontent.com/rpdelaney/c747e45ed2326
 
 main() {
   if [ -d "$authorized_users_dir" ] && [ -x "$authorized_users_dir" ] ; then
-    curl -s "$authorized_users_url" >> "$authorized_users_file" || return 1
+    curl -s "$authorized_users_url" >> "$authorized_users_file" || return $?
     vim "$authorized_users_file" -c 'sort u' -c 'wq!'
   else
     echo "WARNING: ssh directory not found: $authorized_users_dir" 1>&2
@@ -22,5 +22,5 @@ main() {
 }
 
 main "$@"
-exit $?
+return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

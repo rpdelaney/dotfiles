@@ -9,8 +9,8 @@
 #
 
 main() {
-  vim -c "PlugUpgrade" -c "PlugUpdate" -c 'qall!' || exit 1
+  vim -c "PlugUpgrade" -c "PlugUpdate" -c 'qall!' || return $?
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -9,107 +9,107 @@
 #
 
 main() {
-  git config --global user.name "Ryan Delaney" || return 1
+  git config --global user.name "Ryan Delaney" || return $?
   if [ -r "$HOME"/.emailaddress ] ; then
     email_address="$(cat "$HOME"/.emailaddress)"
   else
     email_address="ryan.delaney@gmail.com"
   fi
-  git config --global user.email "$email_address" || return 1
-  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore" || return 1
-  git config --global core.whitespace "trailing-space,space-before-tab" || return 1
-  git config --global core.filemode "true" || return 1
-  git config --global core.symlinks "true" || return 1
-  git config --global push.default "tracking" || return 1
-  git config --global branch.autosetuprebase "never" || return 1
+  git config --global user.email "$email_address" || return $?
+  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore" || return $?
+  git config --global core.whitespace "trailing-space,space-before-tab" || return $?
+  git config --global core.filemode "true" || return $?
+  git config --global core.symlinks "true" || return $?
+  git config --global push.default "tracking" || return $?
+  git config --global branch.autosetuprebase "never" || return $?
   # diff {{{1
-  git config --global diff.tool "vimdiff" || return 1
-  git config --global diff.renames "copies" || return 1
-  git config --global diff.mnemonicprefix "true" || return 1
-  git config --global difftool.prompt "true" || return 1
+  git config --global diff.tool "vimdiff" || return $?
+  git config --global diff.renames "copies" || return $?
+  git config --global diff.mnemonicprefix "true" || return $?
+  git config --global difftool.prompt "true" || return $?
   # 1}}} diff
   # Merge {{{1
-  git config --global merge.tool "vimdiff" || return 1
-  git config --global merge.conflictstyle "diff3" || return 1
-  git config --global mergetool.prompt "true" || return 1
+  git config --global merge.tool "vimdiff" || return $?
+  git config --global merge.conflictstyle "diff3" || return $?
+  git config --global mergetool.prompt "true" || return $?
   # 1}}} Merge
-  git config --global pager.diff "less" || return 1
+  git config --global pager.diff "less" || return $?
   # Alias {{{1
-  git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges' || return 1
-  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return 1
-  git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short' || return 1
-  git config --global alias.d "difftool -t vimdiff" || return 1
-  git config --global alias.f "fetch" || return 1
-  git config --global alias.fa "fetch --all --recurse-submodules=on-demand" || return 1
-  git config --global alias.fd "fetch --dry-run" || return 1
-  git config --global alias.fp "fetch --prune" || return 1
-  git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand" || return 1
-  git config --global alias.m "merge" || return 1
-  git config --global alias.mt "mergetool -t vimdiff" || return 1
-  git config --global alias.cp "cherry-pick" || return 1
-  git config --global alias.dc "difftool -t vimdiff --cached" || return 1
-  git config --global alias.ours 'f() { git checkout --ours $@ && git add $@; }; f' || return 1
-  git config --global alias.theirs 'f() { git checkout --theirs $@ && git add $@; }; f' || return 1
-  git config --global alias.cl "clone" || return 1
-  git config --global alias.remotes "remote -v" || return 1
-  git config --global alias.s "status -s" || return 1
-  git config --global alias.st "status" || return 1
-  git config --global alias.sp "status --porcelain" || return 1
-  git config --global alias.c "commit" || return 1
-  git config --global alias.cs "commit -S" || return 1
-  git config --global alias.tags "tag --list -n3" || return 1
-  git config --global alias.co "checkout" || return 1
-  git config --global alias.br "branch -v" || return 1
-  git config --global alias.bra "branch -va" || return 1
-  git config --global alias.r "reset" || return 1
-  git config --global alias.find "git ls-files | grep -i" || return 1
-  git config --global alias.g "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I" || return 1
-  git config --global alias.leaders "shortlog -sn --all --no-merges" || return 1
+  git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges' || return $?
+  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return $?
+  git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short' || return $?
+  git config --global alias.d "difftool -t vimdiff" || return $?
+  git config --global alias.f "fetch" || return $?
+  git config --global alias.fa "fetch --all --recurse-submodules=on-demand" || return $?
+  git config --global alias.fd "fetch --dry-run" || return $?
+  git config --global alias.fp "fetch --prune" || return $?
+  git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand" || return $?
+  git config --global alias.m "merge" || return $?
+  git config --global alias.mt "mergetool -t vimdiff" || return $?
+  git config --global alias.cp "cherry-pick" || return $?
+  git config --global alias.dc "difftool -t vimdiff --cached" || return $?
+  git config --global alias.ours 'f() { git checkout --ours $@ && git add $@; }; f' || return $?
+  git config --global alias.theirs 'f() { git checkout --theirs $@ && git add $@; }; f' || return $?
+  git config --global alias.cl "clone" || return $?
+  git config --global alias.remotes "remote -v" || return $?
+  git config --global alias.s "status -s" || return $?
+  git config --global alias.st "status" || return $?
+  git config --global alias.sp "status --porcelain" || return $?
+  git config --global alias.c "commit" || return $?
+  git config --global alias.cs "commit -S" || return $?
+  git config --global alias.tags "tag --list -n3" || return $?
+  git config --global alias.co "checkout" || return $?
+  git config --global alias.br "branch -v" || return $?
+  git config --global alias.bra "branch -va" || return $?
+  git config --global alias.r "reset" || return $?
+  git config --global alias.find "git ls-files | grep -i" || return $?
+  git config --global alias.g "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I" || return $?
+  git config --global alias.leaders "shortlog -sn --all --no-merges" || return $?
   # 1}}} Alias
   # Color {{{1
-  git config --global color.diff "auto" || return 1
-  git config --global color.status "auto" || return 1
-  git config --global color.branch "auto" || return 1
-  git config --global color.interactive "auto" || return 1
-  git config --global color.ui "auto" || return 1
-  git config --global color.branch.current "green bold" || return 1
-  git config --global color.branch.local "green" || return 1
-  git config --global color.branch.remote "red bold" || return 1
-  git config --global color.diff.meta "yellow bold" || return 1
-  git config --global color.diff.frag "magenta bold" || return 1
-  git config --global color.diff.old "red bold" || return 1
-  git config --global color.diff.new "green bold" || return 1
-  git config --global color.status.added "green bold" || return 1
-  git config --global color.status.changed "yellow bold" || return 1
-  git config --global color.status.untracked "red bold" || return 1
-  git config --global color.sh.branch "yellow" || return 1
+  git config --global color.diff "auto" || return $?
+  git config --global color.status "auto" || return $?
+  git config --global color.branch "auto" || return $?
+  git config --global color.interactive "auto" || return $?
+  git config --global color.ui "auto" || return $?
+  git config --global color.branch.current "green bold" || return $?
+  git config --global color.branch.local "green" || return $?
+  git config --global color.branch.remote "red bold" || return $?
+  git config --global color.diff.meta "yellow bold" || return $?
+  git config --global color.diff.frag "magenta bold" || return $?
+  git config --global color.diff.old "red bold" || return $?
+  git config --global color.diff.new "green bold" || return $?
+  git config --global color.status.added "green bold" || return $?
+  git config --global color.status.changed "yellow bold" || return $?
+  git config --global color.status.untracked "red bold" || return $?
+  git config --global color.sh.branch "yellow" || return $?
   # 1}}} Color
   # Advice {{{1
-  git config --global advice.pushnonffcurrent "true" || return 1
-  git config --global advice.pushnonffdefault "true" || return 1
-  git config --global advice.pushnonffmatching "true" || return 1
-  git config --global advice.pushalreadyexists "true" || return 1
-  git config --global advice.pushfetchfirst "true" || return 1
-  git config --global advice.pushneedsforce "true" || return 1
-  git config --global advice.statushints "false" || return 1
-  git config --global advice.statusuoption "true" || return 1
-  git config --global advice.commitbeforemerge "false" || return 1
-  git config --global advice.resolveconflict "true" || return 1
-  git config --global advice.implicitidentity "true" || return 1
-  git config --global advice.detachedhead "false" || return 1
-  git config --global advice.amworkdir "true" || return 1
-  git config --global advice.rmhints "true" || return 1
+  git config --global advice.pushnonffcurrent "true" || return $?
+  git config --global advice.pushnonffdefault "true" || return $?
+  git config --global advice.pushnonffmatching "true" || return $?
+  git config --global advice.pushalreadyexists "true" || return $?
+  git config --global advice.pushfetchfirst "true" || return $?
+  git config --global advice.pushneedsforce "true" || return $?
+  git config --global advice.statushints "false" || return $?
+  git config --global advice.statusuoption "true" || return $?
+  git config --global advice.commitbeforemerge "false" || return $?
+  git config --global advice.resolveconflict "true" || return $?
+  git config --global advice.implicitidentity "true" || return $?
+  git config --global advice.detachedhead "false" || return $?
+  git config --global advice.amworkdir "true" || return $?
+  git config --global advice.rmhints "true" || return $?
   # 1}}} Advice
   # GUI {{{1
-  git config --global gui.wmstate "normal" || return 1
-  git config --global gui.geometry "1920x1014+1680+18 192 177" || return 1
+  git config --global gui.wmstate "normal" || return $?
+  git config --global gui.geometry "1920x1014+1680+18 192 177" || return $?
   # 1}}} GUI
   # URL replacements {{{1
-  git config --global --replace-all url."git@github.com:".insteadof "github:" || return 1
-  git config --global --replace-all url."https://github.com:".insteadof "http://github.com/" || return 1
-  git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/" || return 1
-  git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/" || return 1
-  git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt" || return 1
+  git config --global --replace-all url."git@github.com:".insteadof "github:" || return $?
+  git config --global --replace-all url."https://github.com:".insteadof "http://github.com/" || return $?
+  git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/" || return $?
+  git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/" || return $?
+  git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt" || return $?
   # 1}}} URL replacements
 }
 
