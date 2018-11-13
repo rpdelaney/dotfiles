@@ -37,5 +37,8 @@ fi
 if command_exists ggrep ; then
   alias grep='ggrep'
 fi
+if command_exists gchmod ; then
+  alias chmod='gchmod'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
