@@ -26,6 +26,8 @@ if has("autocmd")
   autocmd FileType mail setlocal textwidth=79 spell
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+	" Terraform
+  autocmd FileType terraform expandtab
     " Treat document formats as zip files
     " TODO: this doesn't really work
   " au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
