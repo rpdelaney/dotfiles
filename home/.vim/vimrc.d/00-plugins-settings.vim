@@ -6,6 +6,7 @@ let g:ale_linters = {
 \   'hpp': ['gcc', 'norminette'],
 \	'python': ['flake8']
 \}
+let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
 	" Don't use the default ignore list (catch everything)
 let g:ale_python_flake8_options = '--doctests --ignore'
 let g:ale_completion_enabled = 1
