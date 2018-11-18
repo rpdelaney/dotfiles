@@ -249,4 +249,9 @@ if command_exists sxiv ; then
   fi
 fi
 
+  # pwstore
+if command_exists pwstore ; then
+  alias pw='pwstore'
+fi
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
