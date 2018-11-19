@@ -46,5 +46,8 @@ fi
 if command_exists gchgrp ; then
   alias chgrp='gchgrp -c --preserve-root'
 fi
+if command_exists gstat ; then
+  alias stat='gstat'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
