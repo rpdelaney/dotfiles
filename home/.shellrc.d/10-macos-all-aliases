@@ -40,5 +40,11 @@ fi
 if command_exists gchmod ; then
   alias chmod='gchmod -c --preserve-root'
 fi
+if command_exists gchown ; then
+  alias chown='gchown -c --preserve-root'
+fi
+if command_exists gchgrp ; then
+  alias chgrp='gchgrp -c --preserve-root'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
