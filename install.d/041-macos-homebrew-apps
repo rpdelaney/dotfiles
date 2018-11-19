@@ -44,6 +44,7 @@ homebrew_apps=(
   dialog
   diffutils
   direnv
+  docx2txt
   dos2unix
   enca
   encfs
