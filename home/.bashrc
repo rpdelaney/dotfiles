@@ -34,8 +34,10 @@ shellrc_exec() {
 
   if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
     if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
+      echo "Executing $script"
       # shellcheck disable=SC1090
       source "$script" || return 1
+      echo "Executed  $script"
     fi
   fi
   return 0
@@ -52,8 +54,6 @@ for file in "${HOME}"/.shellrc.d/*; do
     echo "ERROR: failure when executing $file" 1>&2
     echo "Terminating shellrc.d" 1>&2
     break
-  else
-    echo "Successfully executed $file"
   fi
 done
 
