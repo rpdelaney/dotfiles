@@ -6,12 +6,12 @@
 	email = ryan.delaney@gmail.com
 # 1}}}
 [core] # {{{1
-	excludesfile = /home/ryan/.config/git/gitignore_global
+	excludesfile = /home/ryan/.config/git/ignore
 	whitespace=trailing-space,space-before-tab
 	# core.filemode
 	#	If false, the executable bit differences between the index and the working tree
 	#	are ignored; useful on broken filesystems like FAT. See git-update-index(1).
-	#	
+	#
 	#	The default is true, except git-clone(1) or git-init(1) will probe and set
 	#	core.fileMode false if appropriate when the repository is created.
 	filemode = true

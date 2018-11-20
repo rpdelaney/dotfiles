@@ -26,16 +26,28 @@ if command_exists gtimeout ; then
   alias timeout='gtimeout'
 fi
 if command_exists gmv ; then
-  alias mv='gmv'
+  alias mv='gmv -iv'
 fi
 if command_exists gcp ; then
-  alias cp='gcp'
+  alias cp='gcp -iv'
 fi
 if command_exists grm ; then
-  alias rm='grm'
+  alias rm='grm -Iv'
 fi
 if command_exists ggrep ; then
   alias grep='ggrep'
+fi
+if command_exists gchmod ; then
+  alias chmod='gchmod -c --preserve-root'
+fi
+if command_exists gchown ; then
+  alias chown='gchown -c --preserve-root'
+fi
+if command_exists gchgrp ; then
+  alias chgrp='gchgrp -c --preserve-root'
+fi
+if command_exists gstat ; then
+  alias stat='gstat'
 fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

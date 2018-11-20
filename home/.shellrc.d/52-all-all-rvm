@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
@@ -8,11 +8,14 @@
 # software.
 #
 
-  # read in dircolors
-if [[ -e "$HOME"/.bash_colors ]] ; then
-  eval "$(gdircolors -b "$HOME"/.bash_colors || return $?)"
-else
-  eval "$(gdircolors -b || return $?)"
-fi
+main() {
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+  # shellcheck disable=SC1090
+  if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
+    . "$HOME/.rvm/scripts/rvm" || return $?
+  fi
+}
 
+main "$@"
+return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

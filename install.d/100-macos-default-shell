@@ -8,11 +8,18 @@
 # software.
 #
 
-  # read in dircolors
-if [[ -e "$HOME"/.bash_colors ]] ; then
-  eval "$(gdircolors -b "$HOME"/.bash_colors || return $?)"
-else
-  eval "$(gdircolors -b || return $?)"
+default_shell="/usr/local/bin/bash"
+if [[ ! -x "$default_shell" ]] ; then
+  echo "FATAL: Default shell not found: $default_shell" 1>&2
+  return 1
 fi
 
+main() {
+  echo "Installing $default_shell as the default shell for $USER"
+  echo "$default_shell" | sudo tee -a /etc/shells || return $?
+  sudo chsh -s "$default_shell" || return $?
+}
+
+main "$@"
+return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

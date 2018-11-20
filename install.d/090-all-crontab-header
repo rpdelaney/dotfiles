@@ -11,7 +11,7 @@
 if ! crontab -l > /dev/null ; then
   crontaburl="https://gist.githubusercontent.com/rpdelaney/2ec7b518390f87090f3f5f356c258942/raw/77fbc079b1212bd0dc4e47406363f64aedd27183/crontab.header"
   echo "Installing crontab header..."
-  crontab < <(curl -s "$crontaburl" || exit 1)
+  crontab < <(curl -s "$crontaburl" || return $?)
 fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

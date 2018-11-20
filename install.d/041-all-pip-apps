@@ -8,8 +8,8 @@
 # software.
 #
 
-if ! command -v pip2 &> /dev/null; then echo "Missing dependency: pip2" 1>&2; exit 1; fi
-if ! command -v pip3 &> /dev/null; then echo "Missing dependency: pip3" 1>&3; exit 1; fi
+if ! command -v pip2 &> /dev/null; then echo "Missing dependency: pip2" 1>&2; return 1; fi
+if ! command -v pip3 &> /dev/null; then echo "Missing dependency: pip3" 1>&3; return 1; fi
 
 python2apps=(
   daff
@@ -19,32 +19,35 @@ python2apps=(
 python3apps=(
   bpython
   flake8
+  pwstore
+  setuptools
   twine
+  wheel
 )
 
 p2install() {
   local targetapp
   targetapp="$1"
 
-  pip2 install "$targetapp" || return 1
+  pip2 install --user "$targetapp" || return $?
 }
 
 p3install() {
   local targetapp
   targetapp="$1"
 
-  pip3 install "$targetapp" || return 1
+  pip3 install --user "$targetapp" || return $?
 }
 
 main() {
   for p2app in "${python2apps[@]}"; do
-    p2install "$p2app" || exit 1
+    p2install "$p2app" || return $?
   done
 
   for p3app in "${python3apps[@]}"; do
-    p3install "$p3app" || exit 1
+    p3install "$p3app" || return $?
   done
 }
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

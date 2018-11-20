@@ -8,13 +8,13 @@
 # software.
 #
 
-if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; exit 1; fi
+if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; return 1; fi
 
 brew_install() {
   local app
   app="$1"
 
-  brew install "$app" || exit 1
+  brew install "$app" || return $?
 }
 
 main() {
@@ -44,6 +44,7 @@ homebrew_apps=(
   dialog
   diffutils
   direnv
+  docx2txt
   dos2unix
   enca
   encfs
@@ -94,13 +95,13 @@ homebrew_apps=(
   pandoc
   pip-completion
   pipenv
+  proctools
   psgrep
   pv
   pwgen
   pyenv
   qrencode
   ranger
-  rename
   rsync
   ruby
   ruby-completion
@@ -119,6 +120,7 @@ homebrew_apps=(
   torsocks
   tree
   unar
+  util-linux
   vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl
   vimpager --with-pandoc
   w3m
@@ -133,5 +135,5 @@ homebrew_apps=(
 )
 
 
-main "$@"
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -7,17 +7,17 @@
 # See the README file for additional terms and conditions on your use of this
 # software.
 #
-if ! command -v mktemp 1> /dev/null 2>&1 ; then echo "Missing dependency: mktemp" 1>&2; exit 1; fi
-tmpdir=$(dirname "$(mktemp -u || exit 1)")
+if ! command -v mktemp 1> /dev/null 2>&1 ; then echo "Missing dependency: mktemp" 1>&2; return 1; fi
+tmpdir=$(dirname "$(mktemp -u || return 1)")
 
 main() {
   # install 'yay'
   # https://github.com/Jguer/yay
-  cd "$tmpdir" || return 1
-  git clone https://aur.archlinux.org/yay.git || return 1
-  cd yay || return 1
-  makepkg --install --needed --syncdeps --noconfirm || return 1
+  cd "$tmpdir" || return $?
+  git clone https://aur.archlinux.org/yay.git || return $?
+  cd yay || return $?
+  makepkg --install --needed --syncdeps --noconfirm || return $?
 }
 
-main "$@" || exit 1
+main "$@" || return $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

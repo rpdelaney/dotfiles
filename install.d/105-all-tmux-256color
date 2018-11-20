@@ -8,11 +8,18 @@
 # software.
 #
 
-  # read in dircolors
-if [[ -e "$HOME"/.bash_colors ]] ; then
-  eval "$(gdircolors -b "$HOME"/.bash_colors || return $?)"
-else
-  eval "$(gdircolors -b || return $?)"
-fi
+# imports tmux-256color terminfo
 
+x_txt="${dotfiles_dest:-$HOME/.dotfiles/}"/data/x.txt
+
+main() {
+  if [[ -s "$x_txt" ]] ; then
+    tic -x "$x_txt"
+  else
+    echo "WARNING: tmux-256color terminfo not found: $x_txt"
+  fi
+}
+
+main "$@"
+exit $?
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
