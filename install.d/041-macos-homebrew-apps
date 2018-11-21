@@ -27,6 +27,7 @@ main() {
 
 homebrew_apps=(
   aspell --with-all-langs
+  atool
   awscli
   baobab
   base64
