@@ -2,6 +2,10 @@ Installation instructions:
 
 `curl -s https://raw.githubusercontent.com/rpdelaney/dotfiles/master/remote_install | bash`
 
+For `direnv` users:
+
+If you have cloned this repository, you will want to be sure to edit the `/.envrc` file. I use this to coerce git into using my personal identity so I can stop pushing commits with my work email and whatnot.
+
 # LICENSE
 Copyright (C) 2014-18 Ryan Delaney.
 
