@@ -28,8 +28,6 @@ main() {
 homebrew_apps=(
   aspell --with-all-langs
   atool
-  awscli
-  baobab
   base64
   bash
   bash-completion
@@ -39,7 +37,6 @@ homebrew_apps=(
   cmake
   colordiff
   coreutils
-  csvkit
   curl --with-libssh2 --with-gssapi --with-rtmpdump
   dateutils
   dialog
@@ -48,7 +45,6 @@ homebrew_apps=(
   docx2txt
   dos2unix
   enca
-  encfs
   espeak
   exa
   exiftool
@@ -78,14 +74,12 @@ homebrew_apps=(
   ksh
   less --with-pcre
   lesspipe --with-syntax-highlighting
-  libnotify
   libqalculate
   lynx
   mailutils
   make --with-default-names
   media-info
   moreutils
-  mosh
   mps-youtube
   ncdu
   ncurses
@@ -101,20 +95,15 @@ homebrew_apps=(
   pv
   pwgen
   pyenv
-  qrencode
   ranger
   rsync
   ruby
   ruby-completion
-  sendemail
   shellcheck
   sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile
   sshfs
   sxiv
   terminal-notifier
-  terraform
-  terraform-docs
-  terraform_landscape
   tig
   tmux
   tor --with-libscrypt
