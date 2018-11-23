@@ -14,7 +14,7 @@ brew_install() {
   local app
   app="$1"
 
-  brew install "$app" || return $?
+  brew install $app || return $?
 }
 
 main() {
@@ -26,102 +26,102 @@ main() {
 }
 
 homebrew_apps=(
-  aspell --with-all-langs
-  atool
-  base64
-  bash
-  bash-completion
-  binutils
-  brew-cask-completion
-  checkbashisms
-  cmake
-  colordiff
-  coreutils
-  curl --with-libssh2 --with-gssapi --with-rtmpdump
-  dateutils
-  dialog
-  diffutils
-  direnv
-  docx2txt
-  dos2unix
-  enca
-  espeak
-  exa
-  exiftool
-  file-formula
-  findutils --with-default-names
-  flake8
-  gcc
-  gem-completion
-  git --with-curl --with-openssl
-  glances
-  gnu-indent --with-default-names
-  gnu-sed --with-default-names
-  gnu-tar --with-default-names
-  gnu-which --with-default-names
-  gnupg
-  golang
-  grc
-  grep --with-default-names
-  gzip
-  hashdeep
-  htop --with-ncurses
-  hub
-  imagemagick
-  inetutils --with-default-names
-  jq
-  keychain
-  ksh
-  less --with-pcre
-  lesspipe --with-syntax-highlighting
-  libqalculate
-  lynx
-  mailutils
-  make --with-default-names
-  media-info
-  moreutils
-  mps-youtube
-  ncdu
-  ncurses
-  nmap
-  open-completion
-  openssh
-  openvpn
-  pandoc
-  pip-completion
-  pipenv
-  proctools
-  psgrep
-  pv
-  pwgen
-  pyenv
-  ranger
-  rsync
-  ruby
-  ruby-completion
-  shellcheck
-  sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile
-  sshfs
-  sxiv
-  terminal-notifier
-  tig
-  tmux
-  tor --with-libscrypt
-  torsocks
-  tree
-  unar
-  util-linux
-  vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl
-  vimpager --with-pandoc
-  w3m
-  watch
-  weechat --with-aspell --with-curl --with-lua --with-perl --with-python@2 --with-ruby
-  wget --with-gpgme --with-libmetalink --with-pcre
-  wine
-  zsh --with-gdbm --with-pcre
-  zsh-autosuggestions
-  zsh-completions
-  zshdb
+  'aspell --with-all-langs'
+  'atool'
+  'base64'
+  'bash'
+  'bash-completion'
+  'binutils'
+  'brew-cask-completion'
+  'checkbashisms'
+  'cmake'
+  'colordiff'
+  'coreutils'
+  'curl --with-libssh2 --with-gssapi --with-rtmpdump'
+  'dateutils'
+  'dialog'
+  'diffutils'
+  'direnv'
+  'docx2txt'
+  'dos2unix'
+  'enca'
+  'espeak'
+  'exa'
+  'exiftool'
+  'file-formula'
+  'findutils --with-default-names'
+  'flake8'
+  'gcc'
+  'gem-completion'
+  'git --with-curl --with-openssl'
+  'glances'
+  'gnu-indent --with-default-names'
+  'gnu-sed --with-default-names'
+  'gnu-tar --with-default-names'
+  'gnu-which --with-default-names'
+  'gnupg'
+  'golang'
+  'grc'
+  'grep --with-default-names'
+  'gzip'
+  'hashdeep'
+  'htop --with-ncurses'
+  'hub'
+  'imagemagick'
+  'inetutils --with-default-names'
+  'jq'
+  'keychain'
+  'ksh'
+  'less --with-pcre'
+  'lesspipe --with-syntax-highlighting'
+  'libqalculate'
+  'lynx'
+  'mailutils'
+  'make --with-default-names'
+  'media-info'
+  'moreutils'
+  'mps-youtube'
+  'ncdu'
+  'ncurses'
+  'nmap'
+  'open-completion'
+  'openssh'
+  'openvpn'
+  'pandoc'
+  'pip-completion'
+  'pipenv'
+  'proctools'
+  'psgrep'
+  'pv'
+  'pwgen'
+  'pyenv'
+  'ranger'
+  'rsync'
+  'ruby'
+  'ruby-completion'
+  'shellcheck'
+  'sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile'
+  'sshfs'
+  'sxiv'
+  'terminal-notifier'
+  'tig'
+  'tmux'
+  'tor --with-libscrypt'
+  'torsocks'
+  'tree'
+  'unar'
+  'util-linux'
+  'vim --with-client-server --with-gettext --with-luajit --with-override-system-vi --with-tcl'
+  'vimpager --with-pandoc'
+  'w3m'
+  'watch'
+  'weechat --with-aspell --with-curl --with-lua --with-perl --with-python@2 --with-ruby'
+  'wget --with-gpgme --with-libmetalink --with-pcre'
+  'wine'
+  'zsh --with-gdbm --with-pcre'
+  'zsh-autosuggestions'
+  'zsh-completions'
+  'zshdb'
 )
 
 
