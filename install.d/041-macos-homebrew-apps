@@ -19,7 +19,9 @@ brew_install() {
 
 main() {
   for app in "${homebrew_apps[@]}"; do
-    brew_install "$app"
+    if ! brew_install "$app" ; then
+      echo "ERROR: (exit code $?) Failed to install $app" 1>&2
+    fi
   done
 
   brew cleanup
