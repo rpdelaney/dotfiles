@@ -182,36 +182,6 @@ if type wine &> /dev/null; then
   export WINEDEBUG="fixme-all"
 fi
 # 2}}}
-# GREP {{{2
-  # If set, grep behaves as POSIX requires; otherwise, grep behaves more like
-  # other GNU programs. POSIX requires that options that follow file names must
-  # be treated as file names; by default, such options are permuted to the front
-  # of the operand list and are treated as options. Also, POSIX requires that
-  # unrecognized options be diagnosed as “illegal”, but since they are not
-  # really against the law the default is to diagnose them as “invalid”.
-  # POSIXLY_CORRECT also disables _N_GNU_nonoption_argv_flags_, described below.
-if [[ -n "$POSIXLY_CORRECT" ]]; then
-  unset POSIXLY_CORRECT
-fi
-  # This variable specifies default options to be placed in front of any
-  # explicit options. As this causes problems when writing portable scripts,
-  # this feature will be removed in a future release of grep, and grep warns if
-  # it is used. Please use an alias or script instead.
-if [[ -n "$GREP_OPTIONS" ]]; then
-  unset GREP_OPTIONS
-fi
-  # This variable specifies the color used to highlight matched (non-empty)
-  # text. It is deprecated in favor of GREP_COLORS, but still supported. The mt,
-  # ms, and mc capabilities of GREP_COLORS have priority over it. It can only
-  # specify the color used to highlight the matching non-empty text in any
-  # matching line (a selected line when the -v command-line option is omitted,
-  # or a context line when -v is specified). The default is 01;31, which means a
-  # bold red foreground text on the terminal's default background.
-export GREP_COLOR=
-  # Specifies the colors and other attributes used to highlight various parts
-  # of the output. See 'man grep' for details.
-export GREP_COLORS=
-# 2}}}
 # ENVIRONMENT 1}}}
 # KEYCHAIN {{{1
 #
