@@ -35,6 +35,9 @@ main() {
   # 1}}} Merge
   git config --global pager.diff "less" || return $?
   # Alias {{{1
+    # hub {{{2
+  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer || return $? ; } && _issu' || return $?
+    # hub 2}}}
   git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges' || return $?
   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return $?
   git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short' || return $?
