@@ -20,7 +20,7 @@ endif
 noremap <c-l> :bn<cr>
 noremap <c-h> :bp<cr>
 	" Copy-paste mode
-noremap <silent> <c-c> :set nolist nonumber relativenumber! wrap! <CR>
+noremap <silent> <c-c> :GitGutterToggle <CR>:set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set list paste! <CR> <Insert>
 	" Save the file
 if maparg('<c-s>', 's') ==# ''
