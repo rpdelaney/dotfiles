@@ -121,45 +121,6 @@ done
 #  # The -x and -v options are turned off.
 ## 1}}}
 # ENVIRONMENT {{{1
-# MAIL {{{2
-  # If this parameter is set to a filename or directory name and the MAILPATH
-  # variable is not set, Bash informs the user of the arrival of mail in the
-  # specified file or Maildir-format directory.
-if [[ -d "/var/mail/$USERNAME" ]] ; then
-  export MAIL="/var/mail/$USERNAME"
-else
-  echo "MAIL not found." >&2
-fi
-
-  # How often (in seconds) that the shell should check for mail in the files
-  # specified in the MAILPATH or MAIL variables. The default is 60 seconds. When
-  # it is time to check for mail, the shell does so before displaying the primary
-  # prompt. If this variable is unset, or set to a value that is not a number
-  # greater than or equal to zero, the shell disables mail checking.
-export MAILCHECK=60
-
-# Mutt {{{3
-if type mutt &> /dev/null; then
-  if [[ -d "$GNUPGHOME" ]] ; then
-    export PGPPATH="$GNUPGHOME"
-  else
-    echo "PGPPATH not found." >&2
-  fi
-  if [[ -d "/tmp/" ]] ; then
-    export TMPDIR="/tmp/"
-  else
-    echo "TMPDIR not found." >&2
-  fi
-  # Full  path  of  the  user's  spool mailbox if MAIL is unset.  Commonly used
-  # when the spool mailbox is a maildir (5) folder.
-  if [[ -d "/var/mail/" ]] ; then
-    export MAILDIR="/var/mail/"
-  else
-    echo "MAILDIR not found." >&2
-  fi
-fi
-# 3}}}
-# 2}}}
 # LYNX {{{2
 if type lynx &> /dev/null; then
     # Where to find the config
@@ -220,36 +181,6 @@ if type wine &> /dev/null; then
   # Hide fixme messages. I don't do winedev
   export WINEDEBUG="fixme-all"
 fi
-# 2}}}
-# GREP {{{2
-  # If set, grep behaves as POSIX requires; otherwise, grep behaves more like
-  # other GNU programs. POSIX requires that options that follow file names must
-  # be treated as file names; by default, such options are permuted to the front
-  # of the operand list and are treated as options. Also, POSIX requires that
-  # unrecognized options be diagnosed as “illegal”, but since they are not
-  # really against the law the default is to diagnose them as “invalid”.
-  # POSIXLY_CORRECT also disables _N_GNU_nonoption_argv_flags_, described below.
-if [[ -n "$POSIXLY_CORRECT" ]]; then
-  unset POSIXLY_CORRECT
-fi
-  # This variable specifies default options to be placed in front of any
-  # explicit options. As this causes problems when writing portable scripts,
-  # this feature will be removed in a future release of grep, and grep warns if
-  # it is used. Please use an alias or script instead.
-if [[ -n "$GREP_OPTIONS" ]]; then
-  unset GREP_OPTIONS
-fi
-  # This variable specifies the color used to highlight matched (non-empty)
-  # text. It is deprecated in favor of GREP_COLORS, but still supported. The mt,
-  # ms, and mc capabilities of GREP_COLORS have priority over it. It can only
-  # specify the color used to highlight the matching non-empty text in any
-  # matching line (a selected line when the -v command-line option is omitted,
-  # or a context line when -v is specified). The default is 01;31, which means a
-  # bold red foreground text on the terminal's default background.
-export GREP_COLOR=
-  # Specifies the colors and other attributes used to highlight various parts
-  # of the output. See 'man grep' for details.
-export GREP_COLORS=
 # 2}}}
 # ENVIRONMENT 1}}}
 # KEYCHAIN {{{1
