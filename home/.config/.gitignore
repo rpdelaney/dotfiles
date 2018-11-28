@@ -6,5 +6,12 @@ gconf*/
 libreoffice*/
 signal*/
 Signal*/
+chromium*/
+deluge*/
+midori*/
+Code/
+pulse/
 Trolltech.conf
 hub
+QtProject.conf
+configstore/
