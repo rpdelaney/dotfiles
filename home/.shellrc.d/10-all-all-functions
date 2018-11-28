@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
 # This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
@@ -83,4 +84,8 @@ werd() {
   shuf -n "$i" /usr/share/dict/english
 }
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+dirpath() {
+  echo "$PATH" | split ':'
+}
+
+# EOF
