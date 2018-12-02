@@ -27,4 +27,7 @@ py2base="$(python2 -m site --user-base)"/bin
 newpath="$(append2path "$py2base")"
 export PATH="$newpath"
 
+[ -d "$HOME"/.rvm/bin ] && newpath="$(append2path "$HOME"/.rvm/bin)"
+export PATH="$newpath"
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
