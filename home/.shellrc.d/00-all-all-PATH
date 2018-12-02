@@ -15,6 +15,9 @@ append2path() {
 [ -d "$HOME"/bin ] && newpath="$(append2path "$HOME"/bin)"
 export PATH="$newpath"
 
+[ -d "$HOME"/.homebrew/bin ] && newpath="$(append2path "$HOME"/.homebrew/bin)"
+export PATH="$newpath"
+
 # https://docs.python.org/3/library/site.html
 py3base="$(python3 -m site --user-base)"/bin
 newpath="$(append2path "$py3base")"
