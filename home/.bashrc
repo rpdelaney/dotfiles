@@ -183,23 +183,6 @@ if type wine &> /dev/null; then
 fi
 # 2}}}
 # ENVIRONMENT 1}}}
-# KEYCHAIN {{{1
-#
-  # determine if we want to run a new ssh-agent for this session
-if type keychain &> /dev/null; then
-  keychain --nogui -q
-  [[ -f "$HOME/.keychain/$HOSTNAME"-sh ]]      && source "$HOME/.keychain/$HOSTNAME"-sh
-  [[ -f "$HOME/.keychain/$HOSTNAME"-sh-gpg ]]  && source "$HOME/.keychain/$HOSTNAME"-sh-gpg
-else
-  echo "keychain(1) not found."
-  if type ssh-agent &> /dev/null && [[ -z "$SSH_AGENT_PID" ]]; then
-    if timeout --foreground 1s confirm "keychain(1) not found. initialize ssh-agent?"; then
-       eval "$(ssh-agent)" \
-       ssh-add -t 8h "$HOME/.ssh/id_rsa"
-    fi
-  fi
-fi
-# }}}
 # COLORS {{{1
 #
   # If we're running in screen then use colors anyway
