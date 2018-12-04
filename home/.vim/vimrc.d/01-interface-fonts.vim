@@ -8,4 +8,4 @@ if has("gui_running")
   endif
 endif
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

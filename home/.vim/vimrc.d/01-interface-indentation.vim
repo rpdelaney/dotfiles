@@ -15,4 +15,4 @@ set softtabstop=4
   " auto-shift to tab stop
 set shiftround
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

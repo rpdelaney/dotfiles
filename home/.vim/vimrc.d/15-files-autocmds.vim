@@ -34,4 +34,4 @@ if has("autocmd")
   " au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
 endif
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

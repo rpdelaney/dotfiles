@@ -17,4 +17,4 @@ set incsearch
   " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
 set scrolloff=4
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

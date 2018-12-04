@@ -59,4 +59,4 @@ let g:TerminusMouse = 0
 let g:TerminusFocusReporting = 1
   " terminus 2}}}
 
-" vim600: set foldmethod=marker foldlevel=2 nolist:
+" vim600: set foldmethod=marker foldlevel=2 expandtab tabstop=2:
