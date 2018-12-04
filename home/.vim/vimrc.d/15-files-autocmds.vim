@@ -1,7 +1,7 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-	" bash vi-mode
+    " bash vi-mode
   autocmd BufRead,BufNewFile /tmp/bash-fc-* set filetype=sh
     " Syntax of these languages is fussy over tabs vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -26,7 +26,7 @@ if has("autocmd")
   autocmd FileType mail setlocal textwidth=79 spell
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
-	" Terraform
+    " Terraform
   autocmd FileType terraform set expandtab
     " Treat document formats as zip files
     " TODO: this doesn't really work
