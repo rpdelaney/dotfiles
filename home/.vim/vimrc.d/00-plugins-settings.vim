@@ -1,13 +1,13 @@
   " Ale {{{2
 let g:ale_linters = {
-\	'c': ['gcc', 'norminette'],
+\   'c': ['gcc', 'norminette'],
 \   'cpp': ['gcc', 'norminette'],
 \   'h': ['gcc', 'norminette'],
 \   'hpp': ['gcc', 'norminette'],
-\	'python': ['flake8']
+\   'python': ['flake8']
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
-	" Don't use the default ignore list (catch everything)
+    " Don't use the default ignore list (catch everything)
 let g:ale_python_flake8_options = '--doctests --ignore'
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -59,4 +59,4 @@ let g:TerminusMouse = 0
 let g:TerminusFocusReporting = 1
   " terminus 2}}}
 
-" vim600: set foldmethod=marker foldlevel=2 nolist:
+" vim600: set foldmethod=marker foldlevel=2 expandtab tabstop=2:

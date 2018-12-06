@@ -15,4 +15,4 @@ endif
   " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:
