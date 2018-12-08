@@ -41,4 +41,4 @@ function ToggleHex()
   let &modifiable=l:oldmodifiable
 endfunction
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

@@ -12,4 +12,4 @@ endif
   " Disable background color erase - this could cause bugs in some terminals
 set t_ut=
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

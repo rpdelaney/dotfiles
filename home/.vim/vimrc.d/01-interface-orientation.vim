@@ -8,4 +8,4 @@ set nonumber
 set cursorline
 set nocursorcolumn
 
-" vim600: set foldmethod=marker foldlevel=0 nolist:
+" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:
