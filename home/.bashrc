@@ -241,14 +241,5 @@ fi
   # private stuff not to be cloned to public repositories / backups
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
-# GREETING {{{1
-#
-if type alsi &> /dev/null ; then
-  timeout 1 alsi 2> /dev/null
-else
-  echo "TERM is $TERM"
-  echo "DISPLAY is $DISPLAY"
-fi
-# }}}
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
