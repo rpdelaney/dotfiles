@@ -165,17 +165,6 @@ if type psql &> /dev/null; then
 # export PGUSER
 fi
 # }}}
-# ADB {{{2
-if type adb &> /dev/null; then
-    # Print debug information. A comma separated list of the following values 1 or
-    # all, adb, sockets, packets, rwx, usb, sync, sysdeps, transport, jdwp
-  export ADB_TRACE=""
-    # The serial number to connect to. -s takes priority over this if given.
-# export ANDROID_SERIAL="0146B5040401801E"
-    # When used with the logcat option, only these debug tags are printed.
-# export ANDROID_LOG_TAGS=
-fi
-# 2}}}
 # ENVIRONMENT 1}}}
 # MACOS {{{1
 if [[ "$OSTYPE" =~ ^darwin ]]; then
