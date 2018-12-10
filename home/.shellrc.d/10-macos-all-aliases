@@ -49,5 +49,8 @@ fi
 if command_exists gstat ; then
   alias stat='gstat'
 fi
+if command_exists gdate ; then
+  alias date='gdate'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
