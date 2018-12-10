@@ -15,17 +15,6 @@
 if ! command -v hostname >/dev/null 2>&1 ; then echo "Missing dependency: hostname" 1>&2 ; exit 1 ; fi
 _hostname="$(hostname)"
 
-_timeout() {
-  if command -v gtimeout >/dev/null 2>&1 ; then
-    timeout "$@"
-  elif command -v timeout >/dev/null 2>&1 ; then
-    gtimeout "$@"
-  else
-    eval "$1"
-  fi
-  return $?
-}
-
   # determine if we want to run a new ssh-agent for this session
 if command -v keychain >/dev/null 2>&1 ; then
   keychain --noask --nogui --quick
@@ -34,15 +23,6 @@ if command -v keychain >/dev/null 2>&1 ; then
   keychain -l | column -t
 else
   echo "keychain(1) not found."
-  if command -v ssh-agent >/dev/null 2>&1 && [ -z "$SSH_AGENT_PID" ] ; then
-    if _timeout --foreground 1s confirm 'initialize ssh-agent?'; then
-       eval "$(ssh-agent)"
-       ssh-add -t 8h "$HOME/.ssh/id_rsa" "$HOME/.ssh/id_ed25519"
-       ssh-add -l | column -t
-    fi
-  else
-    echo "ssh-agent not found."
-  fi
 fi
 
 # EOF
