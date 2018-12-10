@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+#
+# © Copyright 2018 Ryan Delaney. All rights reserved.
+# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the README file for additional terms and conditions on your use of this
+# software.
+
+  # If we're running in screen then use colors anyway
+[ "$TERM" = "screen" ] && export TERM="screen-256color"
+[ "$TERM" = "screen-bce" ] && export TERM="screen-256color-bce"
+  # enable color support
+  # shellcheck disable=SC1090
+if [ -s "$HOME"/.bash_styles ] ; then
+  . "$HOME"/.bash_styles
+else
+  echo "bash_styles not found." 1>&2
+fi
+
+  # zenburn theme for tty by way of http://phraktured.net/linux-console-colors.html
+if [ "$TERM" = "linux" ]; then
+  printf '%s' "\e]P0222222" # black
+  printf '%s' "\e]P8222222" # darkgrey
+  printf '%s' "\e]P1803232" # darkred
+  printf '%s' "\e]P9982b2b" # red
+  printf '%s' "\e]P25b762f" # darkgreen
+  printf '%s' "\e]PA89b83f" # green
+  printf '%s' "\e]P3aa9943" # brown
+  printf '%s' "\e]PBefef60" # yellow
+  printf '%s' "\e]P4324c80" # darkblue
+  printf '%s' "\e]PC2b4f98" # blue
+  printf '%s' "\e]P5706c9a" # darkmagenta
+  printf '%s' "\e]PD826ab1" # magenta
+  printf '%s' "\e]P692b19e" # darkcyan
+  printf '%s' "\e]PEa1cdcd" # cyan
+  printf '%s' "\e]P7ffffff" # lightgrey
+  printf '%s' "\e]PFdedede" # white
+  clear                     # for background artifacting
+fi
+
+# EOF
