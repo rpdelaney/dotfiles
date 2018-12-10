@@ -176,12 +176,6 @@ if type adb &> /dev/null; then
 # export ANDROID_LOG_TAGS=
 fi
 # 2}}}
-# WINE {{{2
-if type wine &> /dev/null; then
-  # Hide fixme messages. I don't do winedev
-  export WINEDEBUG="fixme-all"
-fi
-# 2}}}
 # ENVIRONMENT 1}}}
 # MACOS {{{1
 if [[ "$OSTYPE" =~ ^darwin ]]; then
