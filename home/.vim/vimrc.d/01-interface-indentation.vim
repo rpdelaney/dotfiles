@@ -6,8 +6,8 @@ set autoindent
 set shiftwidth=4
   " use tabs for indentation and spaces everywhere else
 set smarttab
-  " don't automatically expand tabs into whitespace
-set noexpandtab
+  " automatically expand tabs into whitespace
+set expandtab
   " tabstop is 4 characters
 set tabstop=4
   " delete key in insert mode deletes 4 spaces

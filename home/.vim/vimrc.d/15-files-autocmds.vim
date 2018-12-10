@@ -5,9 +5,9 @@ if has("autocmd")
   autocmd BufRead,BufNewFile /tmp/bash-fc-* set filetype=sh
     " Syntax of these languages is fussy over tabs vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2
     " shell
-  autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
+  autocmd FileType sh set shiftwidth=2 softtabstop=4
     " python
   autocmd FileType python let python_highlight_all = 1
   autocmd FileType python let python_slow_sync = 1
@@ -17,19 +17,19 @@ if has("autocmd")
     " C comment style enforced by the 42 school
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://'
     " archlinux package build
-  autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
+  autocmd FileType PKGBUILD set shiftwidth=2 softtabstop=4
     " LaTeX
   autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
   autocmd Filetype tex,latex let g:tex_flavor = "latex"
     " Customisations based on house-style (arbitrary)
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2
+  autocmd FileType css setlocal ts=2 sts=2 sw=2
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType mail setlocal textwidth=79 spell
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
     " Terraform
-  autocmd FileType terraform set expandtab
+  " autocmd FileType terraform
     " Treat document formats as zip files
     " TODO: this doesn't really work
   " au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
