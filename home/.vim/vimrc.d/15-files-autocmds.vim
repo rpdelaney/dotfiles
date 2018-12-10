@@ -14,6 +14,8 @@ if has("autocmd")
   autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python set completeopt=preview
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
+    " C comment style enforced by the 42 school
+  autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://'
     " archlinux package build
   autocmd FileType PKGBUILD set expandtab shiftwidth=2 softtabstop=4
     " LaTeX
