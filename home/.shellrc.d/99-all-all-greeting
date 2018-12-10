@@ -8,8 +8,10 @@
 # See the README file for additional terms and conditions on your use of this
 # software.
 
-echo "\$USER is $USER"
-echo "\$TERM is $TERM"
-echo "\$DISPLAY is $DISPLAY"
+{
+  echo "\$USER is $USER" ;
+  echo "\$TERM is $TERM" ;
+  echo "\$DISPLAY is $DISPLAY" ;
+} | column -t
 
 # EOF
