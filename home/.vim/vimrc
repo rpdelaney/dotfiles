@@ -25,7 +25,7 @@ source ~/.vim/vimrc.d/01-interface-other.vim
   " Bindings
 source ~/.vim/vimrc.d/05-bindings.vim
 
-	" Functions
+  " Functions
 source ~/.vim/vimrc.d/10-functions-whitespace.vim
 source ~/.vim/vimrc.d/10-functions-hexedit.vim
 
