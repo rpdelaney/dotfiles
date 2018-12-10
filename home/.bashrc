@@ -121,26 +121,6 @@ done
 #  # The -x and -v options are turned off.
 ## 1}}}
 # ENVIRONMENT {{{1
-# LYNX {{{2
-if type lynx &> /dev/null; then
-    # Where to find the config
-  if [[ -f "$XDG_CONFIG_HOME/lynx/config" ]]; then
-    export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
-  fi
-    # Where to save downloaded files
-  if [[ -d "$HOME/incoming/" ]]; then
-    export LYNX_SAVE_SPACE="$HOME/incoming"
-  else
-    export LYNX_SAVE_SPACE="$HOME"
-  fi
-# these settings don't just affect lynx, unfortunately.
-# http_proxy causes ALL http requests to be filtered through tor. :(
-  export WWW_HOME="https://duckduckgo.com/"
-# export http_proxy="http://localhost:9050/"
-# export ftp_proxy="http://localhost:9050/"
-# export gopher_proxy="http://localhost:9050/"
-fi
-# }}}
 # TORSOCKS {{{2
 if type torsocks &> /dev/null; then
   if [[ -f "$XDG_CONFIG_HOME/torsocks/config" ]]; then
