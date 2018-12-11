@@ -15,6 +15,7 @@ if has("autocmd")
   autocmd FileType python let python_slow_sync = 1
   autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
   autocmd FileType python set completeopt=preview
+  autocmd BufRead Pipfile.lock set ft=json
     " C
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
