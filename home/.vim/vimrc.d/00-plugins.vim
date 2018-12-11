@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plug')
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
 Plug 'vmchale/ion-vim' " Amazon Ion
+  " Portable Game Notation syntax
+Plug 'git://github.com/rpdelaney/vim-pgn.git'
 Plug 'git://github.com/direnv/direnv.vim.git'
 Plug 'git://github.com/hashivim/vim-terraform.git'
 " https://github.com/juliosueiras/vim-terraform-completion " <-- check this out later
