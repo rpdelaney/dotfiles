@@ -52,5 +52,8 @@ fi
 if command_exists gdate ; then
   alias date='gdate'
 fi
+if command_exists gprintf ; then
+  alias printf='gprintf'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
