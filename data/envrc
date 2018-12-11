@@ -4,3 +4,4 @@ export GIT_COMITTER_NAME="Ryan Delaney"
 export GIT_COMITTER_EMAIL="ryan.delaney@gmail.com"
 export COPYRIGHT_HOLDER="Ryan Delaney"
 export COPYRIGHT_CLAIM="All rights reserved"
+export PYTHONWARNINGS="default"  # use 'error' to convert warnings into exceptions
