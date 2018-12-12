@@ -52,8 +52,8 @@ main() {
   git config --global alias.mt "mergetool -t vimdiff" || return $?
   git config --global alias.cp "cherry-pick" || return $?
   git config --global alias.dc "difftool -t vimdiff --cached" || return $?
-  git config --global alias.ours 'f() { git checkout --ours $@ && git add $@; }; f' || return $?
-  git config --global alias.theirs 'f() { git checkout --theirs $@ && git add $@; }; f' || return $?
+  git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f' || return $?
+  git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
   git config --global alias.cl "clone" || return $?
   git config --global alias.remotes "remote -v" || return $?
   git config --global alias.s "status -s" || return $?
@@ -66,8 +66,8 @@ main() {
   git config --global alias.br "branch -v" || return $?
   git config --global alias.bra "branch -va" || return $?
   git config --global alias.r "reset" || return $?
-  git config --global alias.find "git ls-files | grep -i" || return $?
-  git config --global alias.g "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I" || return $?
+  git config --global alias.find '!git ls-files | grep -i' || return $?
+  git config --global alias.g '!grep --color=auto --perl-regexp --full-name --heading --break --line-number -I' || return $?
   git config --global alias.leaders "shortlog -sn --all --no-merges" || return $?
   # 1}}} Alias
   # Color {{{1
