@@ -55,5 +55,8 @@ fi
 if command_exists gprintf ; then
   alias printf='gprintf'
 fi
+if command_exists gmktemp ; then
+  alias mktemp='gmktemp'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
