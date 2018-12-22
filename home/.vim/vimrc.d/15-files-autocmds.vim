@@ -21,6 +21,11 @@ if has("autocmd")
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
     " archlinux package build
   autocmd FileType PKGBUILD set shiftwidth=2 softtabstop=4
+    " markdown
+  autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
+  autocmd FileType markdown setlocal wrap spell autoindent tabstop=4 softtabstop=4
+    " github issues
+  autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
     " LaTeX
   autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
   autocmd Filetype tex,latex let g:tex_flavor = "latex"
