@@ -56,7 +56,7 @@ main() {
   git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
   git config --global alias.cl "clone" || return $?
   git config --global alias.remotes "remote -v" || return $?
-  git config --global alias.s "status -s" || return $?
+  git config --global alias.s "status --short --untracked-files=no" || return $?
   git config --global alias.st "status" || return $?
   git config --global alias.sp "status --porcelain" || return $?
   git config --global alias.c "commit" || return $?
