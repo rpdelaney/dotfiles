@@ -37,6 +37,7 @@ main() {
   # Alias {{{1
     # hub {{{2
   git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer || return $? ; } && _issu' || return $?
+  git config --global alias.issues 'issue --format="%sC %i%Creset %t %l%n %Cblue%U%Creset%n%n %b %n%n"'
     # hub 2}}}
   git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges' || return $?
   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return $?
@@ -51,11 +52,11 @@ main() {
   git config --global alias.mt "mergetool -t vimdiff" || return $?
   git config --global alias.cp "cherry-pick" || return $?
   git config --global alias.dc "difftool -t vimdiff --cached" || return $?
-  git config --global alias.ours 'f() { git checkout --ours $@ && git add $@; }; f' || return $?
-  git config --global alias.theirs 'f() { git checkout --theirs $@ && git add $@; }; f' || return $?
+  git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f' || return $?
+  git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
   git config --global alias.cl "clone" || return $?
   git config --global alias.remotes "remote -v" || return $?
-  git config --global alias.s "status -s" || return $?
+  git config --global alias.s "status --short --untracked-files=no" || return $?
   git config --global alias.st "status" || return $?
   git config --global alias.sp "status --porcelain" || return $?
   git config --global alias.c "commit" || return $?
@@ -65,8 +66,8 @@ main() {
   git config --global alias.br "branch -v" || return $?
   git config --global alias.bra "branch -va" || return $?
   git config --global alias.r "reset" || return $?
-  git config --global alias.find "git ls-files | grep -i" || return $?
-  git config --global alias.g "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I" || return $?
+  git config --global alias.find '!git ls-files | grep -i' || return $?
+  git config --global alias.g '!grep --color=auto --perl-regexp --full-name --heading --break --line-number -I' || return $?
   git config --global alias.leaders "shortlog -sn --all --no-merges" || return $?
   # 1}}} Alias
   # Color {{{1

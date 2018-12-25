@@ -99,6 +99,7 @@ homebrew_apps=(
   'pwgen'
   'pyenv'
   'ranger'
+  'rst-lint'
   'rsync'
   'ruby'
   'ruby-completion'
