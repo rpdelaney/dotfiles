@@ -56,6 +56,7 @@ homebrew_apps=(
   'flake8'
   'gcc'
   'gem-completion'
+  'ghostscript'
   'git --with-curl --with-openssl'
   'glances'
   'gnu-indent --with-default-names'
