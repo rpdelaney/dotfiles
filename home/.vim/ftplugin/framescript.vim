@@ -1,7 +1,7 @@
 " Vim ftplugin file
-" Language:         FrameScript
-" Maintainer:       Nikolai Weibull <now@bitwi.se>
-" Latest Revision:  2008-07-19
+" Language:             FrameScript
+" Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
+" Latest Revision:      2008-07-19
 
 let s:cpo_save = &cpo
 set cpo&vim
@@ -26,5 +26,5 @@ if exists("loaded_matchit")
   unlet s:not_end
 endif
 
-let &cpo = s:cpo_save 
+let &cpo = s:cpo_save
 unlet s:cpo_save
