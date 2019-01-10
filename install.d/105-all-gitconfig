@@ -52,6 +52,7 @@ main() {
   git config --global alias.mt "mergetool -t vimdiff" || return $?
   git config --global alias.cp "cherry-pick" || return $?
   git config --global alias.dc "difftool -t vimdiff --cached" || return $?
+  git config --global alias.exec '!$@' || return $?
   git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f' || return $?
   git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
   git config --global alias.cl "clone" || return $?
