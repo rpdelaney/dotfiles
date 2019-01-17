@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# GNU bash, version 5.0.0(1)-release (x86_64-apple-darwin17.7.0)
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+#
+# © Copyright 2019 Ryan Delaney. All rights reserved.
+
+
+main() {
+  echo "# ------ POST INSTALLATION MANUAL ----------------"
+  echo "# weechat authentication certificate must be decrypted and extracted:"
+  echo "mkdir -p \$HOME/.local/weechat"
+  echo "gpg --decrypt \$HOME/${dotfiles_dest:-.dotfiles}/data/private/ecdsa_freenode.pem.gpg > \$HOME/.local/weechat/ecdsa_freenode.pem"
+}
+
+main "$@"
+
+# EOF
