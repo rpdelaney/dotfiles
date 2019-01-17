@@ -10,3 +10,6 @@
 [submodule "home/.config/tmux/plugins/tmux-continuum"]
 	path = home/.config/tmux/plugins/tmux-continuum
 	url = git@github.com:tmux-plugins/tmux-continuum.git
+[submodule "data/private"]
+	path = data/private
+	url = git@github.com:rpdelaney/dotfiles-private.git
