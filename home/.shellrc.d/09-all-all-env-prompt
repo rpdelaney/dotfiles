@@ -51,7 +51,7 @@ export PS3='#?'
 # PS4 {{{1
   # Script debug mode prefix
   # Default: '+'
-export PS4="+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: "
+export PS4='+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: '
 # PS4 1}}}
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
