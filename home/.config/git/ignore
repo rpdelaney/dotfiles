@@ -59,6 +59,7 @@ Icon?
 *.err
 *.error
 *.stderr
+*.stderror
 # state dumps
 *.dump
 *.stackdump
