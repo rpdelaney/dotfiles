@@ -95,7 +95,18 @@ __pycache__
 .pytest_cache/*
 .mypy_cache/
 .idea
-*.pyc
+*.py[cod]
+venv/
+.coverage
+.coveralls.yml
+nosetests.xml
+.tox
+.mypy_cache
+
+dist/
+build/
+python_chess.egg-info/
+docs/_build/
 
 # ide
 .vscode/*
