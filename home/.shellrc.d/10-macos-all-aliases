@@ -58,5 +58,11 @@ fi
 if command_exists gmktemp ; then
   alias mktemp='gmktemp'
 fi
+if command_exists gtac ; then
+  alias tac='gtac'
+fi
+if command_exists gcat ; then
+  alias cat='gcat'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
