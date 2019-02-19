@@ -8,8 +8,10 @@
 main() {
   echo "# ------ POST INSTALLATION MANUAL ----------------"
   echo "# weechat authentication certificate must be decrypted and extracted:"
-  echo "mkdir -p \$HOME/.local/weechat"
-  echo "gpg --decrypt \$HOME/${dotfiles_dest:-.dotfiles}/data/private/ecdsa_freenode.pem.gpg > \$HOME/.local/weechat/ecdsa_freenode.pem"
+  echo "mkdir -p \"\$HOME/.local/weechat\""
+  echo "gpg --decrypt \"\$HOME/${dotfiles_dest:-.dotfiles}/data/private/ecdsa_freenode.pem.gpg\" > \"\$HOME/.local/weechat/ecdsa_freenode.pem\""
+  echo "# \`mas\` tool must be signed in manually"
+  echo "mas signin \"\$(pw apple.com get username)\" \"\$(pw apple.com get password)\""
 }
 
 main "$@"

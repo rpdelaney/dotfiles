@@ -82,6 +82,7 @@ homebrew_apps=(
   'lynx'
   'mailutils'
   'make --with-default-names'
+  'mas'
   'media-info'
   'moreutils'
   'mps-youtube'
