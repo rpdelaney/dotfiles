@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
 #
-# © Copyright 2014 Ryan Delaney. All rights reserved.
+# © Copyright 2019 Ryan Delaney. All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -21,6 +22,8 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
+
+echo ":: Begin .bashrc" 1>&2
 
 shellrc_exec() {
   local script
@@ -158,4 +161,7 @@ fi
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+
+echo ":: End .bashrc" 1>&2
+
+# EOF
