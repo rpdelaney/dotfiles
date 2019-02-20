@@ -9,13 +9,19 @@
 # software.
 #
 
-# Make sure we have ~/bin
-if [ -d "$HOME"/bin ] ; then
-  echo "$PATH" | grep -q "$HOME"/bin || export PATH="$HOME/bin:${PATH}"
-else
-  echo "$0: FATAL: bin directory not found: $HOME/bin"
-  return 1
-fi
+_path() {
+  dir="$1"
+  if [ -d "$dir" ] ; then
+    echo "$PATH" | grep -q "$dir" || export PATH="$dir:${PATH}"
+  else
+    echo "$0: FATAL: directory not found: $dir"
+    return 1
+  fi
+}
+
+# Make sure we have ~/bin and /usr/local/bin
+_path /usr/local/bin
+_path "$HOME"/bin
 
 # Make sure we have `path`
 if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
