@@ -30,6 +30,7 @@ if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2
 # prepends
 #
 
+[ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
 [ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
 
 
