@@ -11,7 +11,7 @@
 
 # Make sure we have ~/bin
 if [ -d "$HOME"/bin ] ; then
-  echo "$PATH" | grep -q "$HOME"/bin && export PATH="$HOME/bin:${PATH}"
+  echo "$PATH" | grep -q "$HOME"/bin || export PATH="$HOME/bin:${PATH}"
 else
   echo "$0: FATAL: bin directory not found: $HOME/bin"
   exit 1
