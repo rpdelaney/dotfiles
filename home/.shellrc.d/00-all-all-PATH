@@ -20,8 +20,8 @@ _path() {
 }
 
 # Make sure we have ~/bin and /usr/local/bin
-_path /usr/local/bin
-_path "$HOME"/bin
+_path /usr/local/bin || return 1
+_path "$HOME"/bin || return 1
 
 # Make sure we have `path`
 if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
