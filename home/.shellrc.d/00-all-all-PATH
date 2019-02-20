@@ -14,11 +14,11 @@ if [ -d "$HOME"/bin ] ; then
   echo "$PATH" | grep -q "$HOME"/bin || export PATH="$HOME/bin:${PATH}"
 else
   echo "$0: FATAL: bin directory not found: $HOME/bin"
-  exit 1
+  return 1
 fi
 
 # Make sure we have `path`
-if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; exit 1 ; fi
+if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
 
 #
 # Do the business
