@@ -27,10 +27,15 @@ _path "$HOME"/bin
 if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
 
 #
-# Do the business
+# prepends
 #
 
 [ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
+
+
+#
+# appends
+#
 
 # https://docs.python.org/3/library/site.html
 if ! command -v python3 >/dev/null 2>&1 ; then
