@@ -10,6 +10,8 @@
 #
 
 _path() {
+  # prepend $1 to the PATH if it's not already there
+
   dir="$1"
   if [ -d "$dir" ] ; then
     echo "$PATH" | grep -q "$dir" || export PATH="$dir:${PATH}"
