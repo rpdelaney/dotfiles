@@ -26,13 +26,11 @@
 echo ":: Begin .bashrc" 1>&2
 
 shellrc_exec() {
-  local script
-  script="$1"
-  local ostype
-  ostype="$2"
-  local platform
+  declare script="$1"
+  declare ostype="$2"
+  declare platform
   platform=$(basename "$script" | cut -f 2 -d'-')
-  local type
+  declare type
   type=$(basename "$script" | cut -f 3 -d'-')
 
   if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
