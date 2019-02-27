@@ -35,10 +35,8 @@ shellrc_exec() {
 
   if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
     if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
-      echo "Executing $script"
       # shellcheck disable=SC1090
       source "$script" || return 1
-      echo "Executed  $script"
     fi
   fi
   return 0
