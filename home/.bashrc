@@ -59,6 +59,7 @@ done
 # ALIASES {{{1
 #
   # chdir
+  # shellcheck disable=SC1090
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -154,6 +155,7 @@ fi
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
+  # shellcheck disable=SC1090
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
 
