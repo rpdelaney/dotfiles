@@ -123,24 +123,24 @@ function s:GetMSL(lnum)
 	" If we have a continuation line, or we're in a string, use line as MSL.
 	" Otherwise, terminate search as we have found our MSL already.
 	let line = getline(lnum)
-	
+
 	if s:Match(line, s:non_bracket_continuation_regex) &&
           	\ s:Match(msl, s:non_bracket_continuation_regex)
 	    " If the current line is a non-bracket continuation and so is the
 	    " previous one, keep its indent and continue looking for an MSL.
-	    "    
+	    "
 	    " Example:
 	    "   method_call one,
 	    "       two,
 	    "           three
-	    "           
+	    "
 	    let msl = lnum
 	elseif s:Match(lnum, s:non_bracket_continuation_regex) &&
 		    \ (s:Match(msl, s:bracket_continuation_regex) || s:Match(msl, s:block_continuation_regex))
 	    " If the current line is a bracket continuation or a block-starter, but
 	    " the previous is a non-bracket one, respect the previous' indentation,
 	    " and stop here.
-	    " 
+	    "
 	    " Example:
 	    "   method_call one,
 	    "       two {
@@ -162,7 +162,7 @@ function s:GetMSL(lnum)
 		    \ !s:Match(msl, s:block_continuation_regex)
 	    " If the previous line is a block-starter and the current one is
 	    " mostly ordinary, use the current one as the MSL.
-	    " 
+	    "
 	    " Example:
 	    "   method_call do
 	    "       something
@@ -177,7 +177,7 @@ function s:GetMSL(lnum)
 		break
 	    endif
 	endif
-	
+
 	let msl_body = getline(msl)
 	let lnum = s:PrevNonBlankNonString(lnum - 1)
     endwhile
@@ -223,7 +223,7 @@ function s:ExtraBrackets(lnum)
 		endif
 	    endif
 	endif
-	
+
 	let pos = match(line, '[][(){}]', pos + 1)
     endwhile
 
@@ -339,7 +339,7 @@ function FalconGetIndent(...)
 
     " If the previous line ended with a block opening, add a level of indent.
     if s:Match(lnum, s:block_regex)
-	return indent(s:GetMSL(lnum)) + &sw
+	return indent(s:GetMSL(lnum)) + shiftwidth()
     endif
 
     " If it contained hanging closing brackets, find the rightmost one, find its
@@ -350,25 +350,25 @@ function FalconGetIndent(...)
 	if opening.pos != -1
 	    if opening.type == '(' && searchpair('(', '', ')', 'bW', s:skip_expr) > 0
 		if col('.') + 1 == col('$')
-		    return ind + &sw
+		    return ind + shiftwidth()
 		else
 		    return virtcol('.')
 		endif
 	    else
 		let nonspace = matchend(line, '\S', opening.pos + 1) - 1
-		return nonspace > 0 ? nonspace : ind + &sw
+		return nonspace > 0 ? nonspace : ind + shiftwidth()
 	    endif
 	elseif closing.pos != -1
 	    call cursor(lnum, closing.pos + 1)
 	    normal! %
 
 	    if s:Match(line('.'), s:falcon_indent_keywords)
-		return indent('.') + &sw
+		return indent('.') + shiftwidth()
 	    else
 		return indent('.')
 	    endif
 	else
-	    call cursor(clnum, vcol)
+	    call cursor(clnum, 0)  " FIXME: column was vcol
 	end
     endif
 
@@ -392,7 +392,7 @@ function FalconGetIndent(...)
     let col = s:Match(lnum, s:falcon_indent_keywords)
     if col > 0
 	call cursor(lnum, col)
-	let ind = virtcol('.') - 1 + &sw
+	let ind = virtcol('.') - 1 + shiftwidth()
 	" TODO: make this better (we need to count them) (or, if a searchpair
 	" fails, we know that something is lacking an end and thus we indent a
 	" level
@@ -422,9 +422,9 @@ function FalconGetIndent(...)
     " TODO: this does not take into account contrived things such as
     " module Foo; class Bar; end
     if s:Match(lnum, s:falcon_indent_keywords)
-	let ind = msl_ind + &sw
+	let ind = msl_ind + shiftwidth()
 	if s:Match(lnum, s:end_end_regex)
-	    let ind = ind - &sw
+	    let ind = ind - shiftwidth()
 	endif
 	return ind
     endif
@@ -433,7 +433,7 @@ function FalconGetIndent(...)
     " closing bracket, indent one extra level.
     if s:Match(lnum, s:non_bracket_continuation_regex) && !s:Match(lnum, '^\s*\([\])}]\|end\)')
 	if lnum == p_lnum
-	    let ind = msl_ind + &sw
+	    let ind = msl_ind + shiftwidth()
 	else
 	    let ind = msl_ind
 	endif

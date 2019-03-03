@@ -1,5 +1,5 @@
 " Vim indent file
-" Language:    Hamster Script 
+" Language:    Hamster Script
 " Version:     2.0.6.0
 " Last Change: Wed Nov 08 2006 12:02:42 PM
 " Maintainer:  David Fishburn <fishburn@ianywhere.com>
@@ -26,14 +26,14 @@ function HamGetIndent(lnum)
 
   " Add a shiftwidth to statements following if,  else, elseif,
   " case, select, default, do, until, while, for, start
-  if prevline =~? '^\s*\<\(if\|else\%(if\)\?\|for\|repeat\|do\|while\|sub\)\>' 
-    let ind = ind + &sw
+  if prevline =~? '^\s*\<\(if\|else\%(if\)\?\|for\|repeat\|do\|while\|sub\)\>'
+    let ind = ind + shiftwidth()
   endif
 
   " Subtract a shiftwidth from else, elseif, end(if|while|for), until
   let line = getline(v:lnum)
   if line =~? '^\s*\(else\|elseif\|loop\|until\|end\%(if\|while\|for\|sub\)\)\>'
-    let ind = ind - &sw
+    let ind = ind - shiftwidth()
   endif
 
   return ind
