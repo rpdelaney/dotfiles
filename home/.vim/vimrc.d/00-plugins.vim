@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plug')
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
 Plug 'vmchale/ion-vim' " Amazon Ion
+  " Render ANSI color codes in the buffer
+Plug 'git@github.com:vim-scripts/AnsiEsc.vim.git'
   " Portable Game Notation syntax
 Plug 'git://github.com/rpdelaney/vim-pgn.git'
 Plug 'git://github.com/direnv/direnv.vim.git'

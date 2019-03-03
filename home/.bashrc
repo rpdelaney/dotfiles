@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # GNU bash, version 4.2.45(2)-release (x86_64-unknown-linux-gnu)
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
 #
-# © Copyright 2014 Ryan Delaney. All rights reserved.
+# © Copyright 2019 Ryan Delaney. All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -22,22 +23,20 @@
 [[ "$-" != *i* ]] && return
 [[ -z "$PS1" ]] && return
 
+echo ":: Begin .bashrc" 1>&2
+
 shellrc_exec() {
-  local script
-  script="$1"
-  local ostype
-  ostype="$2"
-  local platform
+  declare script="$1"
+  declare ostype="$2"
+  declare platform
   platform=$(basename "$script" | cut -f 2 -d'-')
-  local type
+  declare type
   type=$(basename "$script" | cut -f 3 -d'-')
 
   if [[ "$platform" == "all" ]] || [[ "$platform" == "$ostype" ]]; then
     if [[ "$type" == "bash" ]] || [[ "$type" == "all" ]]; then
-      echo "Executing $script"
       # shellcheck disable=SC1090
       source "$script" || return 1
-      echo "Executed  $script"
     fi
   fi
   return 0
@@ -60,6 +59,7 @@ done
 # ALIASES {{{1
 #
   # chdir
+  # shellcheck disable=SC1090
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -155,7 +155,11 @@ fi
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
+  # shellcheck disable=SC1090
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+
+echo ":: End .bashrc" 1>&2
+
+# EOF

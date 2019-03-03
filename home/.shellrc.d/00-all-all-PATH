@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 # GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
+# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
 #
 # © Copyright 2018 Ryan Delaney. All rights reserved.
 # This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
@@ -8,31 +9,56 @@
 # software.
 #
 
-append2path() {
-  printf "%s:%s" "$1" "$PATH"
+_path() {
+  # prepend $1 to the PATH if it's not already there
+
+  dir="$1"
+  if [ -d "$dir" ] ; then
+    echo "$PATH" | grep -q "$dir" || export PATH="$dir:${PATH}"
+  else
+    echo "$0: FATAL: directory not found: $dir"
+    return 1
+  fi
 }
 
-[ -d "$HOME"/bin ] && newpath="$(append2path "$HOME"/bin)"
-export PATH="$newpath"
+# Make sure we have ~/bin, /usr/local/bin, and /usr/local/sbin
+_path /usr/local/sbin || return 1
+_path /usr/local/bin || return 1
+_path "$HOME"/bin || return 1
 
-[ -d "$HOME"/.homebrew/bin ] && newpath="$(append2path "$HOME"/.homebrew/bin)"
-export PATH="$newpath"
+# Make sure we have `path`
+if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
+
+#
+# prepends
+#
+
+[ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
+[ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
+
+eval "$(~/bin/path --prepend "$HOME"/bin --replace)"
+
+#
+# appends
+#
 
 # https://docs.python.org/3/library/site.html
-py3base="$(python3 -m site --user-base)"/bin
-newpath="$(append2path "$py3base")"
-export PATH="$newpath"
+if ! command -v python3 >/dev/null 2>&1 ; then
+  py3base="$(python3 -m site --user-base)"/bin
+  eval "$(~/bin/path --append "$py3base")"
+fi
 
-py2base="$(python2 -m site --user-base)"/bin
-newpath="$(append2path "$py2base")"
-export PATH="$newpath"
+if ! command -v python2 >/dev/null 2>&1 ; then
+  py2base="$(python2 -m site --user-base)"/bin
+  eval "$(~/bin/path --append "$py2base")"
+fi
 
 # https://guides.rubygems.org/faqs/#user-install
-rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
-newpath="$(append2path "$rubygembase")"
-export PATH="$newpath"
+if ! command -v ruby >/dev/null 2>&1 ; then
+  rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
+  eval "$(~/bin/path "$rubygembase")"
 
-[ -d "$HOME"/.rvm/bin ] && newpath="$(append2path "$HOME"/.rvm/bin)"
-export PATH="$newpath"
+  [ -d "$HOME"/.rvm/bin ] && eval "$(~/bin/path --append "$HOME"/.rvm/bin)"
+fi
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+# EOF

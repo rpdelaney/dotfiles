@@ -176,8 +176,8 @@ bindsym $mod+Shift+5 move container to workspace $WS5
 bindsym $mod+Shift+6 move container to workspace $WS6
 bindsym $mod+Shift+7 move container to workspace $WS7
 bindsym $mod+Shift+8 move container to workspace $WS8
-bindsym $mod+Shift+9 move container to workspace 9: vm
-bindsym $mod+Shift+0 move container to workspace 10: games
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
 # }}}
     # floating {{{3
 bindsym $mod+Shift+space floating toggle

@@ -85,7 +85,7 @@ werd() {
 }
 
 dirpath() {
-  echo "$PATH" | split ':'
+  echo "$PATH" | ~/bin/split ':'
 }
 
 # EOF

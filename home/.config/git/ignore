@@ -22,9 +22,7 @@
 *.dmg
 *.gz
 *.iso
-*.jar
-*.rar
-*.tar
+*.[jrt]ar
 *.zip
 *.xz
 *.lzma
@@ -42,8 +40,7 @@ log/
 .DS_Store*
 ehthumbs.db
 Icon?
-Thumbs.db
-thumbs.db
+[Tt]humbs.db
 
 # temporary files
 *.un~
@@ -52,8 +49,7 @@ thumbs.db
 *.bak
 *.o
 # temporary files
-*.swp
-*.swo
+*.sw[po]
 *.tmp
 # state files
 *.pid
@@ -63,6 +59,7 @@ thumbs.db
 *.err
 *.error
 *.stderr
+*.stderror
 # state dumps
 *.dump
 *.stackdump
@@ -74,10 +71,8 @@ thumbs.db
 *.dmp
 
 # ssh, keys and etc
-id_rsa
-id_rsa.*
-id_dsa
-id_dsa.*
+id_[rd]sa
+id_[rd]sa.*
 id_ed25519
 id_ed25519.*
 *.gpg
@@ -100,7 +95,18 @@ __pycache__
 .pytest_cache/*
 .mypy_cache/
 .idea
-*.pyc
+*.py[cod]
+venv/
+.coverage
+.coveralls.yml
+nosetests.xml
+.tox
+.mypy_cache
+
+dist/
+build/
+python_chess.egg-info/
+docs/_build/
 
 # ide
 .vscode/*

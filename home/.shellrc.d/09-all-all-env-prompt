@@ -8,7 +8,7 @@
 # software.
 #
 
-  # PS1 {{{2
+# PS1 {{{1
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
     # If we are root, try to make that hard to miss.
@@ -37,21 +37,21 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   # shellcheck disable=SC1090
   source "$HOME"/.bash_prompt
 fi
-  # PS1 2}}}
-  # PS2 {{{2
+# PS1 1}}}
+# PS2 {{{1
   # Continuation prompt
   # Default: '> '
 export PS2="... "
-  # PS2 2}}}
-  # PS3 {{{2
+# PS2 1}}}
+# PS3 {{{1
   # Option select prompt
   # Default: '#?'
 export PS3='#?'
-  # PS3 2}}}
-  # PS4 {{{2
+# PS3 1}}}
+# PS4 {{{1
   # Script debug mode prefix
   # Default: '+'
-export PS4="+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: "
-  # PS4 2}}}
+export PS4='+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: '
+# PS4 1}}}
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
