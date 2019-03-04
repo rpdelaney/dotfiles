@@ -18,8 +18,6 @@ if has("autocmd")
     " C
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
-    " archlinux package build
-  autocmd FileType PKGBUILD set shiftwidth=2 softtabstop=4
     " markdown
   autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
   autocmd FileType markdown setlocal wrap spell autoindent tabstop=4 softtabstop=4
