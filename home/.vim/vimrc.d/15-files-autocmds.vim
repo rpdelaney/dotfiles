@@ -30,7 +30,6 @@ if has("autocmd")
   autocmd Filetype tex,latex let g:tex_flavor = "latex"
     " Customisations based on house-style (arbitrary)
   autocmd FileType html setlocal ts=2 sts=2 sw=2
-  autocmd FileType css setlocal ts=2 sts=2 sw=2
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType mail setlocal textwidth=79 spell
     " Treat .rss files as XML
