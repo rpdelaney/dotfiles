@@ -21,8 +21,6 @@ if has("autocmd")
     " markdown
   autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
   autocmd FileType markdown setlocal wrap spell autoindent tabstop=4 softtabstop=4
-    " git commit
-  autocmd FileType gitcommit setlocal textwidth=72 spell
     " github issues
   autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
     " LaTeX
