@@ -1,8 +1,6 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-    " Treat .rss files as XML
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
     " Treat document formats as zip files
     " TODO: this doesn't really work
   " au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(""))
