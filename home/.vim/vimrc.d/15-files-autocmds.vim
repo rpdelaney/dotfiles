@@ -1,8 +1,6 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-    " vim
-  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
     " Syntax of these languages is fussy over tabs vs spaces
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2
     " C
