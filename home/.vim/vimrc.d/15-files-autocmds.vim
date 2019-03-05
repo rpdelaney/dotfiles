@@ -26,8 +26,6 @@ if has("autocmd")
     " LaTeX
   autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
   autocmd Filetype tex,latex let g:tex_flavor = "latex"
-    " Customisations based on house-style (arbitrary)
-  autocmd FileType mail setlocal textwidth=79 spell
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
     " Treat document formats as zip files
