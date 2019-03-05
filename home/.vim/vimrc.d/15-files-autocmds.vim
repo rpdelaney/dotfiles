@@ -1,14 +1,10 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-    " bash vi-mode
-  autocmd BufRead,BufNewFile /tmp/bash-fc-* set filetype=sh
     " vim
   autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
     " Syntax of these languages is fussy over tabs vs spaces
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2
-    " shell
-  autocmd FileType sh set shiftwidth=2 softtabstop=4
     " C
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
