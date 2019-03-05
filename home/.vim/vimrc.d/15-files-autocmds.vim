@@ -1,9 +1,6 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-    " C
-  autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
-  autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
     " github issues
   autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
     " Treat .rss files as XML
