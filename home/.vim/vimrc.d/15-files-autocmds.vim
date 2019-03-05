@@ -6,9 +6,6 @@ if has("autocmd")
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
     " github issues
   autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
-    " LaTeX
-  autocmd Filetype tex,latex set grepprg=grep\ -nH\ $
-  autocmd Filetype tex,latex let g:tex_flavor = "latex"
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
     " Treat document formats as zip files
