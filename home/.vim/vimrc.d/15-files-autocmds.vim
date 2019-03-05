@@ -17,9 +17,6 @@ if has("autocmd")
     " C
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
-    " markdown
-  autocmd BufNewFile,BufRead \*.{md,mdwn,mkd,mkdn,mark\*} set filetype=markdown
-  autocmd FileType markdown setlocal wrap spell autoindent tabstop=4 softtabstop=4
     " github issues
   autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
     " LaTeX
