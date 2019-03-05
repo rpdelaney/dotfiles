@@ -9,11 +9,6 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2
     " shell
   autocmd FileType sh set shiftwidth=2 softtabstop=4
-    " python
-  autocmd FileType python let python_highlight_all = 1
-  autocmd FileType python let python_slow_sync = 1
-  autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType python set completeopt=preview
     " C
   autocmd FileType c set foldmethod=marker shiftwidth=4 noexpandtab softtabstop=4
   autocmd FileType c let &comments = 'sO:* -,mO:*  ,exO:*/,s0:/*,mb:**,ex:*/,://' " C comment style enforced by the 42 school
