@@ -1,8 +1,6 @@
 if has("autocmd")
     " Enable file type detection
   filetype on
-    " github issues
-  autocmd BufNewFile,BufRead ISSUE_EDITMSG setlocal filetype=markdown
     " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
     " Treat document formats as zip files
