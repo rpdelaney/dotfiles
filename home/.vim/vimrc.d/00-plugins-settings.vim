@@ -58,5 +58,12 @@ let g:TerminusMouse = 0
 " Controls whether terminus attempts to enable focus reporting
 let g:TerminusFocusReporting = 1
   " terminus 2}}}
+  " python {{{2
+let g:python_highlight_all = 1
+let g:python_slow_sync = 1
+  " python 2}}}
+  " latex {{{2
+let g:tex_flavor = "latex"
+  " latex 2}}}
 
 " vim600: set foldmethod=marker foldlevel=2 expandtab tabstop=2:

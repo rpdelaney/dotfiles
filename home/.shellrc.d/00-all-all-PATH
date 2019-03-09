@@ -33,10 +33,24 @@ if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2
 # prepends
 #
 
+# homebrew curl
+# For compilers to find curl you may need to set:
+#   export LDFLAGS="-L/usr/local/opt/curl/lib"
+#   export CPPFLAGS="-I/usr/local/opt/curl/include"
+#
+# For pkg-config to find curl you may need to set:
+#   export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+hb_curl_dir=/usr/local/opt/curl/bin
+
+if [ -x "$hb_curl_dir" ] ; then
+  eval "$(~/bin/path --prepend "$hb_curl_dir")"
+fi
+
 [ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
 [ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
 
 eval "$(~/bin/path --prepend "$HOME"/bin --replace)"
+
 
 #
 # appends
