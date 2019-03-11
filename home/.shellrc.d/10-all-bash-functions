@@ -33,4 +33,10 @@ jobscount() {
     return 1
 }
 
+dirpath() {
+  # print the PATH with each directory on a newline
+  IFS=: read -ra paths <<< "$PATH"
+  printf '%s\n' "${paths[@]}"
+}
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

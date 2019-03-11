@@ -84,8 +84,4 @@ werd() {
   shuf -n "$i" /usr/share/dict/english
 }
 
-dirpath() {
-  echo "$PATH" | ~/bin/split ':'
-}
-
 # EOF
