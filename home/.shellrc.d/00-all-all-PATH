@@ -46,7 +46,7 @@ if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2
 hb_curl_dir=/usr/local/opt/curl/bin
 
 if [ -x "$hb_curl_dir" ] ; then
-  eval "$(~/bin/path --prepend "$hb_curl_dir")"
+  eval "$(~/bin/path --replace --prepend "$hb_curl_dir")"
 fi
 
 [ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
