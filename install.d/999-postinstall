@@ -12,6 +12,20 @@ main() {
   echo "gpg --decrypt \"\$HOME/${dotfiles_dest:-.dotfiles}/data/private/ecdsa_freenode.pem.gpg\" > \"\$HOME/.local/weechat/ecdsa_freenode.pem\""
   echo "# \`mas\` tool must be signed in manually"
   echo "mas signin \"\$(pw apple.com get username)\" \"\$(pw apple.com get password)\""
+  echo '# cacert.org certificate installation'
+  echo '# further reading: http://wiki.cacert.org/FAQ/ImportRootCert'
+  echo '  # Download the certificates'
+  echo 'curl -k -o "cacert-root.crt"   "https://www.cacert.org/certs/root.crt"'
+  echo 'curl -k -o "cacert-class3.crt" "https://www.cacert.org/certs/class3.crt"'
+  echo '#'
+  echo '# CAUTION: Verify the certificate fingerprints before proceeding!'
+  echo '#'
+  echo '# Import the certificates into the desired keychain'
+  echo 'sudo certtool i "cacert-root.crt"   k=/System/Library/Keychains/X509Anchors'
+  echo 'sudo certtool i "cacert-class3.crt" k=/System/Library/Keychains/X509Anchors'
+  echo '# Clean up after ourselves'
+  echo 'rm "cacert-root.crt"'
+  echo 'rm "cacert-class3.crt"'
 }
 
 main "$@"
