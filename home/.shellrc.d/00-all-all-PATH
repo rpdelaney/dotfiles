@@ -52,7 +52,7 @@ fi
 [ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
 [ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
 
-eval "$(~/bin/path --prepend "$HOME"/bin --replace)"
+eval "$(~/bin/path --replace --prepend "$HOME"/bin)"
 
 
 #
