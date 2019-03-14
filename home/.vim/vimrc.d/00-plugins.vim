@@ -25,6 +25,8 @@ Plug 'git://github.com/hashivim/vim-terraform.git'
 Plug 'git@github.com:rickhowe/diffchar.vim.git'
 Plug 'git://github.com/rpdelaney/bats.vim.git'
 Plug 'git://github.com/pbondoer/vim-42header.git'
+  " TOML syntax highlighting
+Plug 'git://github.com/cespare/vim-toml'
 Plug 'git://github.com/elzr/vim-json.git'
 Plug 'git://github.com/PotatoesMaster/i3-vim-syntax.git'
 Plug 'git://github.com/vim-scripts/python.vim--Vasiliev'
