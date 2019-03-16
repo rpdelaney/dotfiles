@@ -75,7 +75,9 @@ if command -v ruby >/dev/null 2>&1 ; then
   rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
   eval "$(~/bin/path --append "$rubygembase")"
 
-  [ -d "$HOME"/.rvm/bin ] && eval "$(~/bin/path --append "$HOME"/.rvm/bin)"
+  if [ -d "$HOME"/.rvm/bin ] ; then
+    eval "$(~/bin/path --append "$HOME"/.rvm/bin)"
+  fi
 fi
 
 # EOF
