@@ -9,9 +9,6 @@
 #
 
 main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || return 0
-
   # show all filename extensions
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 

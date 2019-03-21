@@ -9,9 +9,6 @@
 #
 
 main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || return 0
-
   # A lot of these have been stolen from various guides
   # notable guides:
   # - https://github.com/mathiasbynens/dotfiles/blob/master/.osx
