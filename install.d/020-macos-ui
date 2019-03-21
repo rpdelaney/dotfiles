@@ -51,6 +51,9 @@ main() {
   # Disable local Time Machine snapshots
   sudo tmutil disablelocal
 
+  # Disable the 'Dictionary' irritation
+  defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+
   # Require password for login
   defaults write com.apple.screensaver askForPassword -int 1
   defaults write com.apple.screensaver askForPasswordDelay -int 0
