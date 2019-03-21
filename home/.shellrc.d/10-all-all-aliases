@@ -254,4 +254,9 @@ if command_exists pwstore ; then
   alias pw='pwstore'
 fi
 
+  # pylint
+if command_exists pylint ; then
+  alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
+fi
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
