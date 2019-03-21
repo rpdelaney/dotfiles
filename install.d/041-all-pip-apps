@@ -17,6 +17,7 @@ python2apps=(
 )
 
 python3apps=(
+  bandit
   bpython
   flake8
   grip

@@ -4,7 +4,7 @@ let g:ale_linters = {
 \   'cpp': ['gcc', 'norminette'],
 \   'h': ['gcc', 'norminette'],
 \   'hpp': ['gcc', 'norminette'],
-\   'python': ['flake8', 'mypy']
+\   'python': ['flake8', 'bandit', 'mypy']
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
     " Don't use the default ignore list (catch everything)
