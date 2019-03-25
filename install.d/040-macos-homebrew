@@ -9,9 +9,6 @@
 #
 
 main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || return 0
-
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || return $?
 
   brew analytics off || return $?
