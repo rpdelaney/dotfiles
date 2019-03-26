@@ -71,6 +71,9 @@ main() {
 
   # Turn off press-and-hold giving the non-ANSI unicode characters
   defaults write -g ApplePressAndHoldEnabled -bool false
+
+  # Stop dock icons from bouncing
+  defaults write com.apple.dock no-bouncing -bool TRUE
 }
 
 main "$@" || return $?
