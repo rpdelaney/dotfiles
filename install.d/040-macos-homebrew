@@ -17,5 +17,5 @@ main() {
   brew tap homebrew/command-not-found || return $?
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

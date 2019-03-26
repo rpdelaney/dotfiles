@@ -48,5 +48,5 @@ main() {
   defaults write com.apple.finder EmptyTrashSecurely -bool true
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -20,5 +20,5 @@ main() {
     ( cd "$bin_dest" && { git config --local user.email 'ryan.delaney@gmail.com' ; git config --local user.name 'Ryan Delaney' ; } || return $? )
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

@@ -23,5 +23,5 @@ main() {
   defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

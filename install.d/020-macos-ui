@@ -76,5 +76,5 @@ main() {
   defaults write com.apple.dock no-bouncing -bool TRUE
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
