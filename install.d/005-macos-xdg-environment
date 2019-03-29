@@ -10,12 +10,12 @@
 # shellcheck disable=SC2174
 
 main() {
-  mkdir --parents --mode=0700 "$HOME/Caches/" || return $?
+  mkdir -p -m 0700 "$HOME/Caches/" || return $?
   export XDG_CACHE_HOME="$HOME/Caches/"
-  mkdir --parents --mode=0700 "$HOME/Preferences/" || return $?
+  mkdir -p -m 0700 "$HOME/Preferences/" || return $?
   export XDG_CONFIG_HOME="$HOME/Preferences/"
-  mkdir --parents --mode=0700 "$HOME/Application Support/" || return $?
-  export XDG_DATA_HOME="$HOME/Application Support/"
+  mkdir -p -m 0700 "$HOME/Library/Application Support/" || return $?
+  export XDG_DATA_HOME="$HOME/Library/Application Support/"
 }
 
 main "$@"
