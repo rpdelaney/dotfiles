@@ -30,7 +30,6 @@ main() {
 
 homebrew_apps=(
   'aspell --with-all-langs'
-  'atool'
   'base64'
   'bash'
   'bash-completion'
@@ -99,7 +98,6 @@ homebrew_apps=(
   'psgrep'
   'pv'
   'pwgen'
-  'pyenv'
   'ranger'
   'rst-lint'
   'rsync'
