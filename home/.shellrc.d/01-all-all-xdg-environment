@@ -12,7 +12,7 @@ if [ "$(ostype)" = "macos" ]; then
   # we are on macos
   cache_home="$HOME/Caches/"
   config_home="$HOME/Preferences/"
-  data_home="$HOME/Application Support/"
+  data_home="$HOME/Library/Application Support/"
 else
   # we're probably on linux
   cache_home="$HOME/.cache/"
@@ -31,7 +31,7 @@ if [ -d "$config_home" ] ; then
   export XDG_CONFIG_HOME="$config_home"
 else
   echo "XDG_CONFIG_HOME not found: $config_home" >&2
-  echo "Maintaining default: $XDG_CONFIG_HOME" >&2
+  echo "Maintaining default: ${XDG_CONFIG_HOME:-null}" >&2
 fi
   # defines the base directory relative to which user specific data files
   # should be stored. If $XDG_DATA_HOME is either not set or empty, a default
@@ -40,7 +40,7 @@ if [ -d "$data_home" ] ; then
   export XDG_DATA_HOME="$data_home"
 else
   echo "XDG_DATA_HOME not found: $data_home" >&2
-  echo "Maintaining default: $XDG_DATA_HOME" >&2
+  echo "Maintaining default: ${XDG_DATA_HOME:-null}" >&2
 fi
   # defines the preference-ordered set of base directories to search for data
   # files in addition to the $XDG_DATA_HOME base directory. The directories in
@@ -59,7 +59,7 @@ if [ -d "$cache_home" ] ; then
   export XDG_CACHE_HOME="$cache_home"
 else
   echo "XDG_CACHE_HOME not found: $cache_home" >&2
-  echo "Maintaining default: $XDG_CACHE_HOME" >&2
+  echo "Maintaining default: ${XDG_CACHE_HOME:-null}" >&2
 fi
   # defines the base directory relative to which user-specific non-essential
   # runtime files and other file objects (such as sockets, named pipes, ...)
