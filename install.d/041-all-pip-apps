@@ -20,6 +20,7 @@ python3apps=(
   bandit
   bpython
   flake8
+  flake8-bugbear
   grip
   pwstore
   setuptools
