@@ -21,6 +21,7 @@ python3apps=(
   bpython
   flake8
   flake8-colors
+  flake8-bugbear
   grip
   pwstore
   setuptools
