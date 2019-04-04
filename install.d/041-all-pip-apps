@@ -17,9 +17,9 @@ python2apps=(
 )
 
 python3apps=(
-  bandit
   bpython
   flake8
+  flake8-bandit
   flake8-bugbear
   grip
   pwstore
