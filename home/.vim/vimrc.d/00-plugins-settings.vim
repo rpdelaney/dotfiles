@@ -62,6 +62,7 @@ let g:TerminusFocusReporting = 1
   " python {{{2
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
+let g:black_linelength = 79
   " python 2}}}
   " latex {{{2
 let g:tex_flavor = "latex"

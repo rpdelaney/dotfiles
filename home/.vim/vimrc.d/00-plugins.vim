@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+  " python code formatter
+Plug 'ambv/black'
 Plug 'vmchale/ion-vim' " Amazon Ion
   " Render ANSI color codes in the buffer
 Plug 'git@github.com:vim-scripts/AnsiEsc.vim.git'
