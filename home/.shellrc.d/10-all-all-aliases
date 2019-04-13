@@ -146,10 +146,10 @@ command_exists gpg && alias pgp='gpg'
 command_exists curl && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 
     # rsync is the new (s)cp
-command_exists rsync && alias rp='\rsync -a --append --stats --progress'
+command_exists rsync && alias rp='\rsync -a --inplace --verbose --stats --progress'
 
     # rsync is the new mv
-command_exists rsync && alias rv='\rsync -a --append --stats --progress --remove-source-files'
+command_exists rsync && alias rv='\rsync -a --inplace --stats --progress --remove-source-files'
 
     # grep can be pretty :*
 if command_exists grep ; then
