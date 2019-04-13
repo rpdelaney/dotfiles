@@ -9,9 +9,6 @@
 #
 
 main() {
-  # Ignore if we're not on OSX
-  [[ "$OSTYPE" =~ ^darwin ]] || return 0
-
   # Power Settings for all Users (Display Sleep, Workstation Sleep, Wake for
   # network access)
   #     Pmset -a = All Power modes
@@ -53,5 +50,5 @@ main() {
     lidwake 1
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

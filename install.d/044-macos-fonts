@@ -15,8 +15,8 @@ system_fonts_dir='/Library/Fonts/'
 main() {
   cd "$TMP" || return $?
   curl -L -s "$inconsolata_url" > "$inconsolata_file" || return $?
-  cp "$inconsolata_file" "$system_fonts_dir" || return $?
+  cp "$inconsolata_file" "$system_fonts_dir"
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

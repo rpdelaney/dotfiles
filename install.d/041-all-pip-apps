@@ -19,6 +19,12 @@ python2apps=(
 python3apps=(
   bpython
   flake8
+  flake8-bandit
+  flake8-bugbear
+  flake8-confusables
+  flake8-pytest
+  flake8-mutable
+  flake8-return
   grip
   pwstore
   setuptools
@@ -50,5 +56,5 @@ main() {
   done
 }
 
-main "$@" || return $?
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

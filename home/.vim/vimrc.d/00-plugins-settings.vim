@@ -1,4 +1,8 @@
   " Ale {{{2
+let g:ale_echo_msg_info_str='I'
+let g:ale_echo_msg_error_str='E'
+let g:ale_echo_msg_warning_str="W"
+let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
 let g:ale_linters = {
 \   'c': ['gcc', 'norminette'],
 \   'cpp': ['gcc', 'norminette'],
@@ -61,6 +65,7 @@ let g:TerminusFocusReporting = 1
   " python {{{2
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
+let g:black_linelength = 79
   " python 2}}}
   " latex {{{2
 let g:tex_flavor = "latex"
