@@ -12,8 +12,8 @@ let g:ale_linters = {
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
     " Don't use the default ignore list (catch everything)
-let g:ale_python_flake8_options = '--doctests --ignore'
 let g:ale_python_flake8_auto_pipenv=1
+let g:ale_python_flake8_options = '--doctests --ignore=""'
 let g:ale_python_mypy_auto_pipenv=1
 let g:ale_python_pylint_auto_pipenv=1
 let g:ale_completion_enabled = 1
