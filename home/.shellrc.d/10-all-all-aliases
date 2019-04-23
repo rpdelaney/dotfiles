@@ -136,8 +136,8 @@ if command_exists ip ; then
 fi
 
     # disk usage in plain english
-alias disk='\df -lTH'
-alias df='\df -h'
+alias disk='df -lTH'
+alias df='df -h'
 
     # gpg is the new pgp
 command_exists gpg && alias pgp='gpg'
