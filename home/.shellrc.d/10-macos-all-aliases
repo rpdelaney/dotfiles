@@ -64,5 +64,8 @@ fi
 if command_exists gcat ; then
   alias cat='gcat'
 fi
+if command_exists gdf ; then
+  alias df='gdf'
+fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
