@@ -127,6 +127,7 @@ homebrew_apps=(
   'zsh-autosuggestions'
   'zsh-completions'
   'zshdb'
+  'zstd'
 )
 
 
