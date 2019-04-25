@@ -16,3 +16,7 @@
 [submodule "sexy-bash-prompt"]
 	path = sexy-bash-prompt
 	url = git@github.com:rpdelaney/sexy-bash-prompt.git
+[submodule "git.commit.template"]
+	path = data/git.commit.template
+	url = git@gist.github.com:41651befb2326a19aafec4660ff315e9.git
+	branch = master
