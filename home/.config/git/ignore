@@ -113,3 +113,6 @@ docs/_build/
 
 # direnv
 .env
+
+# test results
+test-results/*
