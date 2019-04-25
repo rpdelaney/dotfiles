@@ -1,4 +1,5 @@
 # based on https://github.com/datawire/quark/blob/master/.pylintrc
+# vim: ft=toml
 #
 [MESSAGES CONTROL]
 
@@ -168,3 +169,5 @@ enable=import-error,
        bare-except,
        not-async-context-manager,
        yield-inside-async-function
+
+# EOF
