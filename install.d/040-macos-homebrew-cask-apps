@@ -33,6 +33,7 @@ casks=(
   font-consolas-for-powerline
   font-inconsolata-g-for-powerline
   kitty
+  marmaduke-chromium-ungoogled
   muzzle
   osxfuse
   scroll-reverser
