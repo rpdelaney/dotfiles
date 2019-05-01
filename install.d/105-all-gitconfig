@@ -60,8 +60,8 @@ main() {
   git config --global alias.s "status --short --untracked-files=no" || return $?
   git config --global alias.st "status" || return $?
   git config --global alias.sp "status --porcelain" || return $?
-  git config --global alias.c "commit" || return $?
-  git config --global alias.cs "commit -S" || return $?
+  git config --global alias.c "commit --verbose" || return $?
+  git config --global alias.cs "commit --verbose -S" || return $?
   git config --global alias.tags "tag --list -n3" || return $?
   git config --global alias.co "checkout" || return $?
   git config --global alias.br "branch -v" || return $?
