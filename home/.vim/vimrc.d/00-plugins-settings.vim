@@ -9,6 +9,7 @@ let g:ale_linters = {
 \   'h': ['gcc', 'norminette'],
 \   'hpp': ['gcc', 'norminette'],
 \   'python': ['flake8', 'mypy']
+\   'markdown': ['markdownlint']
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
     " Don't use the default ignore list (catch everything)

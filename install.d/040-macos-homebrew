@@ -14,6 +14,7 @@ main() {
   brew analytics off || return $?
 
   brew tap homebrew/cask-fonts || return $?
+  brew tap cpbotha/marmaduke-chromium || return $?
   brew tap homebrew/command-not-found || return $?
 }
 
