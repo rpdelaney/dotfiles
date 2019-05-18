@@ -8,7 +8,7 @@ let g:ale_linters = {
 \   'cpp': ['gcc', 'norminette'],
 \   'h': ['gcc', 'norminette'],
 \   'hpp': ['gcc', 'norminette'],
-\   'python': ['flake8', 'mypy']
+\   'python': ['flake8', 'mypy'],
 \   'markdown': ['markdownlint']
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
