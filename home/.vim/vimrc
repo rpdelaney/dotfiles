@@ -1,6 +1,6 @@
 " vim600: set foldmethod=marker foldlevel=0 nolist:
-source ~/.vim/vimrc.d/00-plugins.vim
-source ~/.vim/vimrc.d/00-plugins-settings.vim
+source ~/.vim/rc.d/00-plugins.vim
+source ~/.vim/rc.d/00-plugins-settings.vim
 
   " Use vim defaults in favor of backward-compatibility with vi
 set nocompatible
@@ -9,28 +9,28 @@ set nocompatible
 set modeline
 
   " Interface
-source ~/.vim/vimrc.d/01-interface-colorscheme.vim
-source ~/.vim/vimrc.d/01-interface-listchars.vim
-source ~/.vim/vimrc.d/01-interface-fonts.vim
-source ~/.vim/vimrc.d/01-interface-cursor.vim
-source ~/.vim/vimrc.d/01-interface-syntax.vim
-source ~/.vim/vimrc.d/01-interface-navigation.vim
-source ~/.vim/vimrc.d/01-interface-indentation.vim
-source ~/.vim/vimrc.d/01-interface-orientation.vim
-source ~/.vim/vimrc.d/01-interface-statusline.vim
-source ~/.vim/vimrc.d/01-interface-searching.vim
-source ~/.vim/vimrc.d/01-interface-spelling.vim
-source ~/.vim/vimrc.d/01-interface-other.vim
+source ~/.vim/rc.d/01-interface-colorscheme.vim
+source ~/.vim/rc.d/01-interface-listchars.vim
+source ~/.vim/rc.d/01-interface-fonts.vim
+source ~/.vim/rc.d/01-interface-cursor.vim
+source ~/.vim/rc.d/01-interface-syntax.vim
+source ~/.vim/rc.d/01-interface-navigation.vim
+source ~/.vim/rc.d/01-interface-indentation.vim
+source ~/.vim/rc.d/01-interface-orientation.vim
+source ~/.vim/rc.d/01-interface-statusline.vim
+source ~/.vim/rc.d/01-interface-searching.vim
+source ~/.vim/rc.d/01-interface-spelling.vim
+source ~/.vim/rc.d/01-interface-other.vim
 
   " Bindings
-source ~/.vim/vimrc.d/05-bindings.vim
+source ~/.vim/rc.d/05-bindings.vim
 
   " Functions
-source ~/.vim/vimrc.d/10-functions-whitespace.vim
-source ~/.vim/vimrc.d/10-functions-hexedit.vim
+source ~/.vim/rc.d/10-functions-whitespace.vim
+source ~/.vim/rc.d/10-functions-hexedit.vim
 
 " Files
-source ~/.vim/vimrc.d/15-files-autocmds.vim
+source ~/.vim/rc.d/15-files-autocmds.vim
   " Use strong encryption when invoked with :X or -x
 set cryptmethod=blowfish2
   " EOL formats to try when parsing new files with unclear MIMEtypes
