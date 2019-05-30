@@ -43,6 +43,7 @@ main() {
   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return $?
   git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short' || return $?
   git config --global alias.d "difftool -t vimdiff" || return $?
+  git config --global alias.dc "difftool -t vimdiff --cached" || return $?
   git config --global alias.f "fetch" || return $?
   git config --global alias.fa "fetch --all --recurse-submodules=on-demand" || return $?
   git config --global alias.fd "fetch --dry-run" || return $?
@@ -51,7 +52,6 @@ main() {
   git config --global alias.m "merge" || return $?
   git config --global alias.mt "mergetool -t vimdiff" || return $?
   git config --global alias.cp "cherry-pick" || return $?
-  git config --global alias.dc "difftool -t vimdiff --cached" || return $?
   git config --global alias.exec '!$@' || return $?
   git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f' || return $?
   git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
