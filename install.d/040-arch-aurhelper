@@ -16,7 +16,7 @@ main() {
   cd "$tmpdir" || return $?
   git clone https://aur.archlinux.org/yay.git || return $?
   cd yay || return $?
-  makepkg --install --needed --syncdeps --noconfirm || return $?
+  makepkg --install --needed --syncdeps --noconfirm
 }
 
 main "$@"

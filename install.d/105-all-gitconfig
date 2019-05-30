@@ -9,118 +9,118 @@
 #
 
 main() {
-  git config --global user.name "Ryan Delaney" || return $?
+  git config --global user.name "Ryan Delaney"
   if [ -r "$HOME"/.emailaddress ] ; then
     email_address="$(cat "$HOME"/.emailaddress)"
   else
     email_address="ryan.delaney@gmail.com"
   fi
-  git config --global user.email "$email_address" || return $?
-  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore" || return $?
-  git config --global core.whitespace "trailing-space,space-before-tab" || return $?
-  git config --global core.filemode "true" || return $?
-  git config --global core.symlinks "true" || return $?
-  git config --global push.default "tracking" || return $?
-  git config --global branch.autosetuprebase "never" || return $?
+  git config --global user.email "$email_address"
+  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
+  git config --global core.whitespace "trailing-space,space-before-tab"
+  git config --global core.filemode "true"
+  git config --global core.symlinks "true"
+  git config --global push.default "tracking"
+  git config --global branch.autosetuprebase "never"
   # diff {{{1
-  git config --global diff.tool "vimdiff" || return $?
-  git config --global diff.renames "copies" || return $?
-  git config --global diff.mnemonicprefix "true" || return $?
-  git config --global difftool.prompt "true" || return $?
+  git config --global diff.tool "vimdiff"
+  git config --global diff.renames "copies"
+  git config --global diff.mnemonicprefix "true"
+  git config --global difftool.prompt "true"
   # 1}}} diff
   # Merge {{{1
-  git config --global merge.tool "vimdiff" || return $?
-  git config --global merge.conflictstyle "diff3" || return $?
-  git config --global mergetool.prompt "true" || return $?
+  git config --global merge.tool "vimdiff"
+  git config --global merge.conflictstyle "diff3"
+  git config --global mergetool.prompt "true"
   # 1}}} Merge
-  git config --global pager.diff "less" || return $?
+  git config --global pager.diff "less"
   # Alias {{{1
     # hub {{{2
-  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer || return $? ; } && _issu' || return $?
+  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu' || return $?
   git config --global alias.issues 'issue --format="%sC %i%Creset %t %l%n %Cblue%U%Creset%n%n %b %n%n"'
     # hub 2}}}
-  git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges' || return $?
-  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit" || return $?
-  git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short' || return $?
-  git config --global alias.d "difftool -t vimdiff" || return $?
-  git config --global alias.dc "difftool -t vimdiff --cached" || return $?
-  git config --global alias.f "fetch" || return $?
-  git config --global alias.fa "fetch --all --recurse-submodules=on-demand" || return $?
-  git config --global alias.fd "fetch --dry-run" || return $?
-  git config --global alias.fp "fetch --prune" || return $?
-  git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand" || return $?
-  git config --global alias.m "merge" || return $?
-  git config --global alias.mt "mergetool -t vimdiff" || return $?
-  git config --global alias.cp "cherry-pick" || return $?
-  git config --global alias.exec '!$@' || return $?
-  git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f' || return $?
-  git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f' || return $?
-  git config --global alias.cl "clone" || return $?
-  git config --global alias.remotes "remote -v" || return $?
-  git config --global alias.s "status --short --untracked-files=no" || return $?
-  git config --global alias.st "status" || return $?
-  git config --global alias.sp "status --porcelain" || return $?
-  git config --global alias.c "commit --verbose" || return $?
-  git config --global alias.cs "commit --verbose -S" || return $?
-  git config --global alias.tags "tag --list -n3" || return $?
-  git config --global alias.co "checkout" || return $?
-  git config --global alias.br "branch -v" || return $?
-  git config --global alias.bra "branch -va" || return $?
-  git config --global alias.r "reset" || return $?
-  git config --global alias.find '!git ls-files | grep -i' || return $?
-  git config --global alias.g '!grep --color=auto --perl-regexp --full-name --heading --break --line-number -I' || return $?
-  git config --global alias.leaders "shortlog -sn --all --no-merges" || return $?
+  git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges'
+  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+  git config --global alias.lgd 'log --pretty=format:%C(yellow)%h\ %ad%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --date=short'
+  git config --global alias.d "difftool -t vimdiff"
+  git config --global alias.dc "difftool -t vimdiff --cached"
+  git config --global alias.f "fetch"
+  git config --global alias.fa "fetch --all --recurse-submodules=on-demand"
+  git config --global alias.fd "fetch --dry-run"
+  git config --global alias.fp "fetch --prune"
+  git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand"
+  git config --global alias.m "merge"
+  git config --global alias.mt "mergetool -t vimdiff"
+  git config --global alias.cp "cherry-pick"
+  git config --global alias.exec '!$@'
+  git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f'
+  git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f'
+  git config --global alias.cl "clone"
+  git config --global alias.remotes "remote -v"
+  git config --global alias.s "status --short --untracked-files=no"
+  git config --global alias.st "status"
+  git config --global alias.sp "status --porcelain"
+  git config --global alias.c "commit --verbose"
+  git config --global alias.cs "commit --verbose -S"
+  git config --global alias.tags "tag --list -n3"
+  git config --global alias.co "checkout"
+  git config --global alias.br "branch -v"
+  git config --global alias.bra "branch -va"
+  git config --global alias.r "reset"
+  git config --global alias.find '!git ls-files | grep -i'
+  git config --global alias.g '!grep --color=auto --perl-regexp --full-name --heading --break --line-number -I'
+  git config --global alias.leaders "shortlog -sn --all --no-merges"
   # 1}}} Alias
   # Color {{{1
-  git config --global color.diff "auto" || return $?
-  git config --global color.status "auto" || return $?
-  git config --global color.branch "auto" || return $?
-  git config --global color.interactive "auto" || return $?
-  git config --global color.ui "auto" || return $?
-  git config --global color.branch.current "green bold" || return $?
-  git config --global color.branch.local "green" || return $?
-  git config --global color.branch.remote "red bold" || return $?
-  git config --global color.diff.meta "yellow bold" || return $?
-  git config --global color.diff.frag "magenta bold" || return $?
-  git config --global color.diff.old "red bold" || return $?
-  git config --global color.diff.new "green bold" || return $?
-  git config --global color.status.added "green bold" || return $?
-  git config --global color.status.changed "yellow bold" || return $?
-  git config --global color.status.untracked "red bold" || return $?
-  git config --global color.sh.branch "yellow" || return $?
+  git config --global color.diff "auto"
+  git config --global color.status "auto"
+  git config --global color.branch "auto"
+  git config --global color.interactive "auto"
+  git config --global color.ui "auto"
+  git config --global color.branch.current "green bold"
+  git config --global color.branch.local "green"
+  git config --global color.branch.remote "red bold"
+  git config --global color.diff.meta "yellow bold"
+  git config --global color.diff.frag "magenta bold"
+  git config --global color.diff.old "red bold"
+  git config --global color.diff.new "green bold"
+  git config --global color.status.added "green bold"
+  git config --global color.status.changed "yellow bold"
+  git config --global color.status.untracked "red bold"
+  git config --global color.sh.branch "yellow"
   # 1}}} Color
   # Advice {{{1
-  git config --global advice.pushnonffcurrent "true" || return $?
-  git config --global advice.pushnonffdefault "true" || return $?
-  git config --global advice.pushnonffmatching "true" || return $?
-  git config --global advice.pushalreadyexists "true" || return $?
-  git config --global advice.pushfetchfirst "true" || return $?
-  git config --global advice.pushneedsforce "true" || return $?
-  git config --global advice.statushints "false" || return $?
-  git config --global advice.statusuoption "true" || return $?
-  git config --global advice.commitbeforemerge "false" || return $?
-  git config --global advice.resolveconflict "true" || return $?
-  git config --global advice.implicitidentity "true" || return $?
-  git config --global advice.detachedhead "false" || return $?
-  git config --global advice.amworkdir "true" || return $?
-  git config --global advice.rmhints "true" || return $?
+  git config --global advice.pushnonffcurrent "true"
+  git config --global advice.pushnonffdefault "true"
+  git config --global advice.pushnonffmatching "true"
+  git config --global advice.pushalreadyexists "true"
+  git config --global advice.pushfetchfirst "true"
+  git config --global advice.pushneedsforce "true"
+  git config --global advice.statushints "false"
+  git config --global advice.statusuoption "true"
+  git config --global advice.commitbeforemerge "false"
+  git config --global advice.resolveconflict "true"
+  git config --global advice.implicitidentity "true"
+  git config --global advice.detachedhead "false"
+  git config --global advice.amworkdir "true"
+  git config --global advice.rmhints "true"
   # 1}}} Advice
   # GUI {{{1
-  git config --global gui.wmstate "normal" || return $?
-  git config --global gui.geometry "1920x1014+1680+18 192 177" || return $?
+  git config --global gui.wmstate "normal"
+  git config --global gui.geometry "1920x1014+1680+18 192 177"
   # 1}}} GUI
   # URL replacements {{{1
-  git config --global --replace-all url."git@github.com:".insteadof "github:" || return $?
-  git config --global --replace-all url."https://github.com:".insteadof "http://github.com/" || return $?
-  git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/" || return $?
-  git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/" || return $?
-  git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt" || return $?
+  git config --global --replace-all url."git@github.com:".insteadof "github:"
+  git config --global --replace-all url."https://github.com:".insteadof "http://github.com/"
+  git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/"
+  git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/"
+  git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt"
   # 1}}} URL replacements
   # Commit template {{{1
     # shellcheck disable=SC2154
   commit_template_file=${dotfiles_dest:-$HOME/.dotfiles}/data/git.commit.template/git.commit.template
   if [ -r "$commit_template_file" ]; then
-    git config --global commit.template "$commit_template_file" || return $?
+    git config --global commit.template "$commit_template_file"
   else
     echo "WARNING: git commit template not found: $commit_template_file"
   fi
@@ -128,5 +128,5 @@ main() {
 }
 
 main "$@"
-return "$?"
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

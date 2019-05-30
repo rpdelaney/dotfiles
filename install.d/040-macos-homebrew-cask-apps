@@ -14,7 +14,7 @@ cask_install() {
   local app
   app="$1"
 
-  brew cask install "$app" || return $?
+  brew cask install "$app"
 }
 
 main() {

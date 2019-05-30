@@ -22,5 +22,5 @@ main() {
 }
 
 main "$@"
-return $?
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

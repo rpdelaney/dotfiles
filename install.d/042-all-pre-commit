@@ -18,8 +18,8 @@ main() {
   pip3 install pre-commit || return $?
 
   cd "$dotfiles_dest" || return $?
-  pre-commit install || return $?
+  pre-commit install
 }
 
-main "$@" || return "$?"
+main "$@"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

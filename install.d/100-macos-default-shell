@@ -17,9 +17,9 @@ fi
 main() {
   echo "Installing $default_shell as the default shell for $USER"
   echo "$default_shell" | sudo tee -a /etc/shells || return $?
-  sudo chsh -s "$default_shell" || return $?
+  sudo chsh -s "$default_shell"
 }
 
 main "$@"
-return $?
+
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:

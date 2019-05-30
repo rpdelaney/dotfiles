@@ -15,9 +15,8 @@ if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; re
 
 main() {
   cd "$HOME" || return $?
-  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \; || return $?
+  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
 }
 
 main "$@"
-return "$?"
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
