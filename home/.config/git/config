@@ -7,7 +7,7 @@
 # 1}}}
 [core] # {{{1
 	excludesfile = /home/ryan/.config/git/ignore
-	whitespace=trailing-space,space-before-tab
+	whitespace = trailing-space,space-before-tab
 	# core.filemode
 	#	If false, the executable bit differences between the index and the working tree
 	#	are ignored; useful on broken filesystems like FAT. See git-update-index(1).
@@ -52,11 +52,12 @@
 # 1}}}
 [alias] # {{{1
 		# logs
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --no-merges
+	ls = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --no-merges
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-	lgd = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	lgd = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short
 		# diff
 	d = difftool -t vimdiff
+	dc = difftool -t vimdiff --cached
 		# fetch
 	# Should we use --recurse-submodules-yes by default?
 	f = fetch
@@ -68,19 +69,18 @@
 	m = merge
 	mt = mergetool -t vimdiff
 	cp = cherry-pick
-	dc = diff --cached
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 		# remotes
 	cl = clone
 	remotes = remote -v
 		# status
-	s  = status -s
+	s = status --short --untracked-files=no
 	st = status
 	sp = status --porcelain
 		# commits
-	c  = commit
-	cs = commit -S
+	c = commit --verbose
+	cs = commit --verbose -S
 	tags = tag --list -n3
 		# branches
 	co = checkout
@@ -88,10 +88,13 @@
 	bra = branch -va
 	r = reset
 		# searching
-	find = "!git ls-files | grep -i"
-	g = "grep --color=auto --perl-regexp --full-name --heading --break --line-number -I"
+	find = !git ls-files | grep -i
+	g = !grep --color=auto --perl-regexp --full-name --heading --break --line-number -I
 		# leaderboard
 	leaders = shortlog -sn --all --no-merges
+	issu = "! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format=\"<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>\" | colorizer || return $? ; } && _issu"
+	issues = issue --format=\"%sC %i%Creset %t %l%n %Cblue%U%Creset%n%n %b %n%n\"
+	exec = !$@
 # 1}}}
 [color] # {{{1
 	diff = auto
@@ -202,8 +205,7 @@
 	# rewritten into URLs that work), you can create a configuration section of the
 	# form:
 [url "git@github.com:"]
-	insteadOf = github:
-	insteadOf = http://github.com/
+	insteadof = github:
 #	insteadOf = https://github.com
 	# A URL like "work:repo.git" or like "host.xz:/path/to/repo.git" will be
 	# rewritten in any context that takes a URL to be "git://git.host.xz/repo.git".
