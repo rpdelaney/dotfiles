@@ -39,7 +39,7 @@ main() {
   git config --global pager.diff "less"
   # Alias {{{1
     # hub {{{2
-  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu' || return $?
+  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu'
   git config --global alias.issues 'issue --format="%sC %i%Creset %t %l%n %Cblue%U%Creset%n%n %b %n%n"'
     # hub 2}}}
   git config --global alias.ls 'log --pretty=format:%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn] --decorate --no-merges'
