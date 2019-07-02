@@ -10,13 +10,15 @@
 #
 
 main() {
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || return $?
+  if /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; then
+    brew analytics off || return $?
 
-  brew analytics off || return $?
-
-  brew tap homebrew/cask-fonts || return $?
-  brew tap cpbotha/marmaduke-chromium || return $?
-  brew tap homebrew/command-not-found
+    brew tap homebrew/cask-fonts || return $?
+    brew tap cpbotha/marmaduke-chromium || return $?
+    brew tap homebrew/command-not-found
+  else
+    return $?
+  fi
 }
 
 main "$@"

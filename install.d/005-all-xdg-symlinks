@@ -15,8 +15,9 @@ if [[ ! -d $dotfiles_dest ]]; then echo "dotfiles_dest var not found: $dotfiles_
 if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; return 1; fi
 
 main() {
-  cd "$HOME" || return $?
-  find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+  if cd "$HOME" ; then
+    find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+  fi
 }
 
 main "$@"

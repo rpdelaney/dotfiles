@@ -14,10 +14,11 @@ tmpdir=$(dirname "$(mktemp -u || return 1)")
 main() {
   # install 'yay'
   # https://github.com/Jguer/yay
-  cd "$tmpdir" || return $?
-  git clone https://aur.archlinux.org/yay.git || return $?
-  cd yay || return $?
-  makepkg --install --needed --syncdeps --noconfirm
+  if cd "$tmpdir" ; then
+    if git clone https://aur.archlinux.org/yay.git ; then
+      cd yay && makepkg --install --needed --syncdeps --noconfirm
+    fi
+  fi
 }
 
 main "$@"

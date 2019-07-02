@@ -18,8 +18,9 @@ fi
 main() {
   pip3 install pre-commit || return $?
 
-  cd "$dotfiles_dest" || return $?
-  pre-commit install
+  if cd "$dotfiles_dest" ; then
+    pre-commit install
+  fi
 }
 
 main "$@"

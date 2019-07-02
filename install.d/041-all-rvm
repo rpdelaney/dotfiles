@@ -10,9 +10,10 @@
 #
 
 main() {
-  \curl -sSL https://get.rvm.io | bash || return $?
-  # shellcheck disable=SC1090
-  source "$HOME/.rvm/scripts/rvm"
+  if \curl -sSL https://get.rvm.io | bash ; then
+    # shellcheck disable=SC1090
+    source "$HOME/.rvm/scripts/rvm"
+  fi
 }
 
 main "$@"
