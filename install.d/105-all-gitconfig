@@ -94,18 +94,25 @@ main() {
   # 1}}} Color
   # Advice {{{1
   git config --global advice.amWorkDir "true"
+  git config --global advice.checkoutAmbiguousRemoteBranchName "true"
   git config --global advice.commitBeforeMerge "false"
   git config --global advice.detachedHead "false"
+  git config --global advice.ignoredHook "false"
   git config --global advice.implicitIdentity "true"
+  git config --global advice.nestedTag "true"
   git config --global advice.pushAlreadyExists "true"
   git config --global advice.pushFetchFirst "true"
   git config --global advice.pushNeedsForce "true"
   git config --global advice.pushNonFFCurrent "true"
   git config --global advice.pushNonFFMatching "true"
+  git config --global advice.pushUnqualifiedRefname "true"
+# git config --global advice.pushUpdateRejected
+  git config --global advice.resetQuiet "true"
   git config --global advice.resolveConflict "true"
   git config --global advice.rmHints "true"
   git config --global advice.statusHints "false"
   git config --global advice.statusUoption "true"
+  git config --global advice.waitingForEditor "true"
   # 1}}} Advice
   # GUI {{{1
   git config --global gui.wmstate "normal"
