@@ -101,7 +101,6 @@ main() {
   git config --global advice.pushfetchfirst "true"
   git config --global advice.pushneedsforce "true"
   git config --global advice.pushnonffcurrent "true"
-  git config --global advice.pushnonffdefault "true"
   git config --global advice.pushnonffmatching "true"
   git config --global advice.resolveconflict "true"
   git config --global advice.rmhints "true"

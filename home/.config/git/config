@@ -129,13 +129,6 @@
 	# update to the current branch.
 	pushNonFFCurrent = true
 
-   # Advice to set push.default to upstream or current when you
-	# ran git-push(1) and pushed matching refs by default (i.e. you
-	# did not provide an explicit refspec, and no push.default
-	# configuration was set) and it resulted in a non-fast-forward
-	# error.
-	pushNonFFDefault = true
-
 	# Advice shown when you ran git-push(1) and pushed matching
 	# refs explicitly (i.e. you used :, or specified a refspec that
 	# isn’t your current branch) and it resulted in a
