@@ -1,0 +1,3 @@
+# Ignore the git config, because we actually edit this through dotfiles'
+# install.d
+config
