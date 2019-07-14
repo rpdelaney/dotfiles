@@ -1,0 +1,37 @@
+[flake8]
+ignore = E123,E133,W503
+
+# From https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+#
+# > In the default configuration, these checks are ignored:
+#     - E121: continuation line under-indented for hanging indent
+#     - E123: closing bracket does not match indentation of opening bracket’s line
+#       - Mutually exclusive with E133.
+#       - PEP8 is neutral on this. Defer to the code formatter. Ignore it.
+#       - See discussion: https://github.com/PyCQA/pycodestyle/issues/103
+#     - E126: continuation line over-indented for hanging indent
+#     - E133: closing bracket is missing indentation
+#       - Mutually exclusive with E123.
+#       - PEP8 is neutral on this. Defer to the code formatter. Ignore it.
+#     - E226: too many leading '#' for block comment
+#     - E241: multiple spaces after ','
+#     - E242: tab after ','
+#     - E704: multiple statements on one line (def)
+#     - W503: line break before binary operator
+#       - Mutually exclusive with W504.
+#       - This is now incompatible with PEP8. It should be ignored.
+#         See discussion: https://mail.python.org/pipermail/python-ideas/2016-April/039752.html
+#     - W504: line break after binary operator
+#       - Mutually exclusive with W503.
+#       - Black follows W504. Therefore W504 should not be ignored.
+#     - W505: doc line too long (82 > 79 characters)
+#       - Not enforced even when `--ignore=''` is passed. Use --max-doc-length=n to get this warning.
+
+# > because they are not rules unanimously accepted, and PEP 8 does not enforce
+# > them. Please note that if the option –ignore=errors is used, the default
+# > configuration will be overridden and ignore only the check(s) you skip. The
+# > check W503 is mutually exclusive with check W504. The check E133 is mutually
+# > exclusive with check E123. Use switch --hang-closing to report E133 instead
+# > of E123. Use switch --max-doc-length=n to report W505.
+
+# set ft=toml
