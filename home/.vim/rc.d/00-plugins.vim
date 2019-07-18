@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plug')
 " Using git URL
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
+  " markdown folding
+Plug 'git@github.com:masukomi/vim-markdown-folding.git'
   " python code formatter
 Plug 'ambv/black'
   " Amazon Ion
