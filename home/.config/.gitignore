@@ -20,3 +20,5 @@ vlc
 mps-youtube
 exercism
 direnv
+mpd
+!mpd/mpd.conf
