@@ -1,3 +1,5 @@
+# vim: ft=conf:
+#
 *gtk*/
 *menus/
 transmission*/
@@ -42,4 +44,7 @@ ranger/!rc.conf
 ranger/!commands.py
 ranger/!scope.sh
 
-# vim: ft=conf:
+weechat/**/*.log
+weechat/logs
+
+# EOF
