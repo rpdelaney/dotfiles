@@ -20,6 +20,7 @@ vlc
 mps-youtube
 exercism
 direnv
+getmail
 
 mpd
 !mpd/mpd.conf
