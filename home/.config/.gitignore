@@ -23,3 +23,5 @@ direnv
 mpd
 !mpd/mpd.conf
 qalc.history
+# since mumble.conf has the certificate in it (herpa derp) we have to ignore it
+Mumble
