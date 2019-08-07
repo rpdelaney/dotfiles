@@ -20,12 +20,19 @@ vlc
 mps-youtube
 exercism
 direnv
+
 mpd
 !mpd/mpd.conf
+
 qalc.history
+
 # since mumble.conf has the certificate in it (herpa derp) we have to ignore it
 Mumble
+
 # Ignore the git config, because we actually edit this through install.d
 git/config
+
+pip/*
+pip/!pip.conf
 
 # vim: ft=conf:
