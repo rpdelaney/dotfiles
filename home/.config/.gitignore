@@ -35,4 +35,10 @@ git/config
 pip/*
 pip/!pip.conf
 
+ranger/*
+ranger/!.gitignore
+ranger/!rc.conf
+ranger/!commands.py
+ranger/!scope.sh
+
 # vim: ft=conf:
