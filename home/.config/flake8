@@ -1,6 +1,6 @@
 [flake8]
 ignore = E123,E133,W503
-max-doc-length = 72
+#max-doc-length = 72
 
 # From https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
 #
@@ -21,7 +21,7 @@ max-doc-length = 72
 #     - W503: line break before binary operator
 #       - Mutually exclusive with W504.
 #       - This is now incompatible with PEP8. It should be ignored.
-#         See discussion: https://mail.python.org/pipermail/python-ideas/2016-April/039752.html
+#       - "For new code, [break before the binary operator] is suggested." -- PEP8
 #     - W504: line break after binary operator
 #       - Mutually exclusive with W503.
 #       - Black follows W504. Therefore W504 should not be ignored.
