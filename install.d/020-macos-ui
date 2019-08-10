@@ -50,7 +50,7 @@ main() {
   sudo nvram SystemAudioVolume=" "
 
   # Disable local Time Machine snapshots
-  sudo tmutil disablelocal
+  sudo tmutil disable
 
   # Disable the 'Dictionary' irritation
   defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
