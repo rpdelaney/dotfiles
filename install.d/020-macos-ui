@@ -74,6 +74,14 @@ main() {
 
   # Stop dock icons from bouncing
   defaults write com.apple.dock no-bouncing -bool TRUE
+
+  # No analog clock in the menubar
+  defaults write com.apple.menuextra.clock IsAnalog -bool false
+
+  # Set menubar datestamp
+  defaults write com.apple.menuextra.clock "DateFormat" "EEE d MMM HH:mm:ss"
+  defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
+  killall SystemUIServer
 }
 
 main "$@"
