@@ -13,20 +13,26 @@ alias become='sudo su --login'
   # sudo a command, preserving the current environment
 alias sudoe='sudo -E'
 
-  # yay
+  # package manager
+if command -v pacman >/dev/null 2>&1 ; then
+  alias pacman='\pacman --color=always'
+  alias ya='pacman'
+  alias yaq='ya -Q'
+  alias yas='ya -S'
+  alias yass='ya -Ss'
+  alias yars='ya -Rs'
+fi
+
 if command -v yay >/dev/null 2>&1 ; then
   alias ya='\yay --color=always'
   alias yaq='ya -Q'
   alias yas='ya -S'
   alias yass='ya -Ss'
   alias yars='ya -Rs'
-elif command -v pacman >/dev/null 2>&1 ; then
-  alias ya='\pacman --color=always'
-  alias yaq='ya -Q'
-  alias yas='ya -S'
-  alias yass='ya -Ss'
-  alias yars='ya -Rs'
-elif command -v brew >/dev/null 2>&1 ; then
+fi
+
+
+if command -v brew >/dev/null 2>&1 ; then
   alias ya='\brew'
   alias yaq='ya info'
   alias yas='ya install'
@@ -151,7 +157,7 @@ fi
 
     # mount
 command -v mount >/dev/null 2>&1 && command -v column >/dev/null 2>&1 && alias mounts='\mount | \column -t | pager'
-command -v mountpoint && alias mp='mountpoint'
+command -v mountpoint >/dev/null 2>&1 && alias mp='mountpoint'
 
     # private shredder
 command -v shred >/dev/null 2>&1 && alias shred=' shred --verbose'
