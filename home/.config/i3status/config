@@ -14,7 +14,7 @@ general {
 
 #order += "ipv6"
 order += "disk /"
-#order += "run_watch DHCP"
+order += "run_watch DHCP"
 #order += "run_watch VPN"
 order += "wireless wlp7s0"
 order += "ethernet enp3s0"
@@ -47,7 +47,7 @@ battery 0 {
 }
 
 run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+        pidfile = "/var/run/dhcpcd*.pid"
 }
 
 run_watch VPN {
