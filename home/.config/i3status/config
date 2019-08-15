@@ -55,7 +55,7 @@ run_watch VPN {
 }
 
 tztime local {
-        format = "%a %Y-%m-%d %H:%M:%S"
+        format = "%a %Y-%m-%d %H:%M"
 }
 
 load {
@@ -79,4 +79,4 @@ disk "/" {
         threshold_type = percentage_avail
 }
 
-# vim: ft=conf smarttab et
+# EOF
