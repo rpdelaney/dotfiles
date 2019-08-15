@@ -1,6 +1,9 @@
 # bell on tab-completion
 set bell-style visual
 
+set visible-stats on
+set colored-stats on
+
 # meta {{{
 # Enable eight-bit input regardless of terminal support
 set input-meta on
@@ -17,11 +20,13 @@ set expand-tilde on
 
 # Append "/" to all dirnames
 set mark-directories on
-set mark-symlinked-directories off
+set mark-symlinked-directories on
 
 # auto-completion {{{
 	# ignore case when auto-completing
 set completion-ignore-case on
+    # maximum characters to display of the common prefix
+set completion-prefix-display-length 3
 	# show all if ambiguous
 set show-all-if-ambiguous on
 	# Match all files
