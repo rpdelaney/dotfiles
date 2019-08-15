@@ -16,16 +16,16 @@ general {
 order += "disk /"
 order += "run_watch DHCP"
 #order += "run_watch VPN"
-order += "wireless wlp7s0"
+order += "wireless wlo1"
 order += "ethernet enp3s0"
 order += "battery 0"
 #order += "load"
 order += "cpu_usage"
 order += "tztime local"
 
-wireless wlp7s0 {
-        format_up = "wlp7s0 (%quality at %essid, %bitrate / %frequency) %ip"
-        format_down = "wlp7s0 down"
+wireless wlo1 {
+        format_up = "wlo1 (%quality at %essid, %bitrate / %frequency) %ip"
+        format_down = "wlo1 down"
 }
 
 ethernet enp3s0 {
