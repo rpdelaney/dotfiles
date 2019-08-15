@@ -17,7 +17,7 @@ order += "disk /"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
 order += "wireless wlp7s0"
-order += "ethernet enp9s0"
+order += "ethernet enp3s0"
 order += "battery 0"
 #order += "load"
 order += "cpu_usage"
@@ -28,7 +28,7 @@ wireless wlp7s0 {
         format_down = "wlp7s0 down"
 }
 
-ethernet enp9s0 {
+ethernet enp3s0 {
         # if you use %speed, i3status requires cap_net_admin capability
         format_up = "enp9s0 %ip (%speed)"
         format_down = "enp9s0 down"
