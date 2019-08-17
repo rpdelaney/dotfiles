@@ -36,17 +36,6 @@ set $WS8 "8: misc"
 set $WS9 "9: vm"
 set $WS0 "10: games"
 
-    # put the workspaces on the right screens
-workspace   $WS1      output    DVI-I-2
-workspace   $WS2      output    DVI-I-2
-workspace   $WS3      output    DVI-I-2
-workspace   $WS4      output    DVI-I-3
-workspace   $WS5      output    DVI-I-3
-workspace   $WS6      output    DVI-I-3
-workspace   $WS7      output    DVI-I-2
-workspace   $WS8      output    DVI-I-2
-workspace   $WS9      output    DVI-I-3
-workspace   $WS0      output    DVI-I-2
 # window classes {{{2
     # bind applications to their appropriate workspaces
     # get window class with xprop
