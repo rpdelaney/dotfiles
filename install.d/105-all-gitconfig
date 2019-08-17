@@ -24,6 +24,7 @@ main() {
   git config --global push.default "tracking"
   git config --global branch.autosetuprebase "never"
   # diff {{{1
+  git config --global --unset diff.external
   git config --global diff.tool "vimdiff"
   git config --global diff.renames "copies"
   git config --global diff.mnemonicprefix "true"
