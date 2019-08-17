@@ -34,7 +34,20 @@ main() {
   git config --global merge.conflictstyle "diff3"
   git config --global mergetool.prompt "true"
   # 1}}} Merge
-  git config --global pager.diff "less"
+  if type diffr 2>/dev/null 1>/dev/null ; then
+    diffr="diffr \
+          --colors removed:background:00:foreground:01 \
+          --colors refine-removed:background:0:foreground:196 \
+          --colors added:background:0:foreground:10 \
+          --colors refine-added:background:0:foreground:220:intense \
+          | less -R"
+
+    git config --global pager.diff "$diffr"
+    git config --global pager.show "$diffr"
+    git config --global pager.log "$diffr"
+  else
+    git config --global pager.diff "less"
+  fi
   # Alias {{{1
     # hub {{{2
   git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu'
