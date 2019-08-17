@@ -9,7 +9,7 @@
 # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
 if type tput &> /dev/null; then
 # TERMCAP 2.0 {{{1
-    if [[ -t 2 ]]; then 
+    if [[ -t 2 ]]; then
     # TERMCAP 2.0 256 color {{{2
             # Foreground {{{3
         red=$(      tput setaf 124|| tput AF 124 2> /dev/null ) # Red
@@ -32,7 +32,7 @@ if type tput &> /dev/null; then
         bgblack=$(  tput setab 0  || tput AB 0   2> /dev/null ) # Black
             # }}}
     # 2}}}
-    else 
+    else
     # TERMCAP 2.0 88 color {{{2
         #
         # "TERMCAP Version 2.0 (88 colors)"
@@ -70,6 +70,8 @@ if type tput &> /dev/null; then
     blink=$(        tput blink   || tput mb   2> /dev/null ) # Start blinking
     italic=$(       tput sitm    || tput ZH   2> /dev/null ) # Start italic
     eitalic=$(      tput ritm    || tput ZR   2> /dev/null ) # End   italic
+    dim=$(          tput dim     || tput mh   2> /dev/null ) # Start dim
+    reverse=$(      tput rev     || tput mr   2> /dev/null ) # Start reverse
     default=$(      tput op                   2> /dev/null ) # Reset all modes
         # 3}}}
       # alt {{{3
