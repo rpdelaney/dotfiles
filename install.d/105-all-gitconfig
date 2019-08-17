@@ -9,8 +9,6 @@
 # software.
 #
 
-set -u
-
 main() {
   git config --global user.name "Ryan Delaney"
   if [ -r "$HOME"/.emailaddress ] ; then
