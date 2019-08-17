@@ -188,7 +188,7 @@ fi
   # begin blinking
 export LESS_TERMCAP_mb=$blink
   # begin half-bright mode
-export LESS_TERMCAP_mh=$uline
+export LESS_TERMCAP_mh=$dim
   # begin double-bright mode
 export LESS_TERMCAP_md=$blue
   # begin standout-mode
@@ -196,9 +196,9 @@ export LESS_TERMCAP_so=$stout
   # end standout-mode
 export LESS_TERMCAP_se=$estout
   # begin underline
-export LESS_TERMCAP_us=$default
+export LESS_TERMCAP_us=$italic
   # end underline
-export LESS_TERMCAP_ue=$default
+export LESS_TERMCAP_ue=$eitalic
   # disable all modes
 export LESS_TERMCAP_me=$default
 # mangpages 1}}}
