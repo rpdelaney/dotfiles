@@ -7,18 +7,6 @@
 # software.
 #
 
-command_exists() {
-  command="$1"
-
-  # shellcheck disable=SC2069
-  if command -v "$command" >/dev/null 2>&1 ; then
-    return 0
-  else
-    return 1
-  fi
-  return 1
-}
-
   # cleanly become another user
 alias become='sudo su --login'
 
@@ -26,19 +14,19 @@ alias become='sudo su --login'
 alias sudoe='sudo -E'
 
   # yay
-if command_exists yay; then
+if command -v yay >/dev/null 2>&1 ; then
   alias ya='\yay'
   alias yaq='\yay -Q'
   alias yas='\yay -S'
   alias yass='\yay -Ss'
   alias yars='\yay -Rs'
-elif command_exists pacman ; then
+elif command -v pacman >/dev/null 2>&1 ; then
   alias ya='\pacman --color=always'
   alias yaq='\pacman --color=always -Q'
   alias yas='\pacman --color=always -S'
   alias yass='\pacman --color=always -Ss'
   alias yars='\pacman --color=always -Rs'
-elif command_exists brew ; then
+elif command -v brew >/dev/null 2>&1 ; then
   alias ya='\brew'
   alias yaq='\brew info'
   alias yas='\brew install'
@@ -48,7 +36,7 @@ fi
   # watch incoming network connections
 alias netmonitor='\sudo watch -n 3 lsof -i'
 
-if command_exists youtube-dl ; then
+if command -v youtube-dl >/dev/null 2>&1 ; then
     # don't mark videos watched
   alias youtube-dl='youtube-dl --no-mark-watched'
     # youtube-dl with lots of metadata
@@ -58,13 +46,13 @@ if command_exists youtube-dl ; then
 fi
 
   # save a dnuos list with stats starting from pwd
-command_exists dnuos && alias oidua='\dnuos --file=list -D -S -t .'
+command -v dnuos >/dev/null 2>&1 && alias oidua='\dnuos --file=list -D -S -t .'
 
   # tmux is the new screen
-command_exists tmux && [ -f "$XDG_CONFIG_HOME"/tmux/tmux.conf ] && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+command -v tmux >/dev/null 2>&1 && [ -f "$XDG_CONFIG_HOME"/tmux/tmux.conf ] && alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 
   # mpd
-if command_exists ncmpcpp ; then
+if command -v ncmpcpp >/dev/null 2>&1 ; then
     alias mplay='ncmpcpp play'
     alias mpause='ncmpcpp pause'
     alias mtoggle='ncmpcpp toggle'
@@ -75,23 +63,23 @@ if command_exists ncmpcpp ; then
 fi
 
   # vlc is best from a terminal :V
-command_exists vlc && alias ncvlc='vlc -I ncurses'
+command -v vlc >/dev/null 2>&1 && alias ncvlc='vlc -I ncurses'
 
   # watch incoming network connections
 alias netmonitor='watch -n 3 lsof -i'
 
     # ls / exa
-if command_exists exa ; then
+if command -v exa >/dev/null 2>&1 ; then
   # exa aliases go here
   alias l='exa --group-directories-first'
   alias ll='exa --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
   alias la='ll --all'
-  alias lr='ll -T --level 2'
+  alias lr='ll --tree --level 2'
 else
-  alias l='\ls --format=across --group-directories-first'
-  alias ll='\ls --group-directories-first -h -L -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
-  alias la='ll -H -a'
-  alias lr='ll -R'
+  alias l='ls --format=across --group-directories-first'
+  alias ll='ls --group-directories-first --human-readable --dereference -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+  alias la='ll --dereference-command-line --all'
+  alias lr='ll recursive'
 fi
 
 alias lla='la'
@@ -99,25 +87,25 @@ alias lll='ll --color=always | pager'
 alias llla='lla --color=always | pager'
 
     # safety valve
-alias mv='mv -iv'
-alias cp='cp -iv'
-alias rm='rm -Iv'
-alias chown='\chown -c --preserve-root'
-alias chmod='\chmod -c --preserve-root'
-alias chgrp='\chgrp -c --preserve-root'
+alias mv='mv --verbose --interactive'
+alias cp='cp --verbose --interactive'
+alias rm='rm --verbose -I'
+alias chown='chown --changes --preserve-root'
+alias chmod='chmod --changes --preserve-root'
+alias chgrp='chgrp --changes --preserve-root'
 
   # Make directory including intermediate directories
-alias mkdir='\mkdir -vp'
+alias mkdir='mkdir --verbose --parents'
 
     # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
 alias asdf='setxkbmap dvorak'
 
     # colordiff is the new diff
-command_exists colordiff && alias diff='colordiff'
+command -v colordiff >/dev/null 2>&1 && alias diff='colordiff'
 
     # use grc to add color command support
-if command_exists grc ; then
-    alias hilite='\grc -es --colour=on'
+if command -v grc >/dev/null 2>&1 ; then
+    alias hilite='\grc --stdout --stderr --colour=on'
     alias configure='hilite ./configure'
     alias make='hilite make'
     alias gcc='hilite gcc'
@@ -131,54 +119,54 @@ if command_exists grc ; then
 fi
 
     # use colors in ip
-if command_exists ip ; then
+if command -v ip >/dev/null 2>&1 ; then
   alias ip='ip -d -c'
 fi
 
     # disk usage in plain english
-alias disk='df -lTH'
-alias df='df -h'
+alias disk='df --local --print-type --si'
+alias df='df --si'
 
     # gpg is the new pgp
-command_exists gpg && alias pgp='gpg'
+command -v gpg >/dev/null 2>&1 && alias pgp='gpg'
 
     # console pastebin
-command_exists curl && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
+command -v curl >/dev/null 2>&1 && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 
     # rsync is the new (s)cp
-command_exists rsync && alias rp='\rsync --archive --copy-links --inplace --verbose --stats --progress'
+command -v rsync >/dev/null 2>&1 && alias rp='\rsync --archive --copy-links --inplace --verbose --stats --progress'
 
     # rsync is the new mv
-command_exists rsync && alias rv='\rsync --archive --copy-links --inplace --verbose --stats --progress --remove-source-files'
+command -v rsync >/dev/null 2>&1 && alias rv='\rsync --archive --copy-links --inplace --verbose --stats --progress --remove-source-files'
 
     # grep can be pretty :*
-if command_exists grep ; then
+if command -v grep >/dev/null 2>&1 ; then
   alias crep='\grep --color=always'
   alias acrep='\agrep --color=always'
   alias fcrep='\fgrep --color=always'
   alias ecrep='\egrep --color=always'
-  alias search='\grep --color=never -H --binary-files=text --directories=recurse --files-with-matches -n'
+  alias search='\grep --color=never --with-filename --binary-files=text --directories=recurse --files-with-matches --line-number'
 fi
 
     # mount
-command_exists mount && command_exists column && alias mounts='\mount | \column -t | pager'
-command_exists mountpoint && alias mp='mountpoint'
+command -v mount >/dev/null 2>&1 && command -v column >/dev/null 2>&1 && alias mounts='\mount | \column -t | pager'
+command -v mountpoint && alias mp='mountpoint'
 
     # private shredder
-command_exists shred && alias shred=' shred -v'
+command -v shred >/dev/null 2>&1 && alias shred=' shred --verbose'
 
   # always make secure passwords
-command_exists apg && alias apg=' apg -a 1 -n 1 -m 16 -x 32'
+command -v apg >/dev/null 2>&1 && alias apg=' apg -a 1 -n 1 -m 16 -x 32'
 
   # weechat is dumb
-command_exists weechat && [ -n "$XDG_CONFIG_HOME" ] && alias weechat='weechat -d "$XDG_CONFIG_HOME"/weechat/'
+command -v weechat >/dev/null 2>&1 && [ -n "$XDG_CONFIG_HOME" ] && alias weechat='weechat --dir "$XDG_CONFIG_HOME"/weechat/'
 
   # dosbox coercion to use XDG standard
-command_exists dosbox && [ -f "$XDG_CONFIG_HOME/dosbox/dosbox.conf" ] && alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
+command -v dosbox >/dev/null 2>&1 && [ -f "$XDG_CONFIG_HOME/dosbox/dosbox.conf" ] && alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
 
   # getmail coercion to use XDG standard
 getmaildir="$XDG_CONFIG_HOME/getmail"
-if command_exists getmail ; then
+if command -v getmail >/dev/null 2>&1 ; then
   if [ -d  "$getmaildir" ]; then
     # shellcheck disable=SC2139
     alias getmail='getmail --getmaildir='"$getmaildir"
@@ -186,17 +174,17 @@ if command_exists getmail ; then
 fi
 
   # get (s)mplayer to use sensible defaults
-if command_exists mplayer ; then
+if command -v mplayer >/dev/null 2>&1 ; then
   alias mplayer='mplayer -loop 0 -fixed-vo -softvol -msgcolor'
 fi
 
-if command_exists smplayer ; then
+if command -v smplayer >/dev/null 2>&1 ; then
   alias smplayer='smplayer -no-close-at-end -mpcgui'
   alias smadd='smplayer -add-to-playlist'
 fi
 
   # abook coercion to use XDG standard
-if command_exists abook ; then
+if command -v abook >/dev/null 2>&1 ; then
   datafile="$HOME/docs/addressbook"
   if [ -r "$datafile" ]; then
     alias abook='abook --config "$XDG_CONFIG_HOME"/abook/abookrc --datafile $datafile'
@@ -206,17 +194,12 @@ if command_exists abook ; then
 fi
 
   # copy-paste to clipboard
-if command_exists xclip ; then
+if command -v xclip >/dev/null 2>&1 ; then
   alias clip="xclip -selection clipboard"
 fi
 
-  # steamcurses
-if command_exists steamcurses ; then
-  alias steamcurses='steamcurses --config-path ~/.config/steamcurses/config'
-fi
-
   # pudb
-if command_exists pudb3 ; then
+if command -v pudb3 >/dev/null 2>&1 ; then
   alias pudb='pudb3'
 fi
 
@@ -227,30 +210,30 @@ alias ZZ='exit'
   # netctl-auto
   # if netctl-auto is running, then manually starting a wireless network with
   # 'netctl' will always fail. therefore, we alias 'netctl' to 'netctl-auto'
-if command_exists netctl-auto ; then
+if command -v netctl-auto >/dev/null 2>&1 ; then
   if systemctl status netctl-auto@wlp7s0 >/dev/null 2>&1 ; then
     alias netctl='netctl-auto'
   fi
 fi
 
   # pypi2pkgbuild
-if command_exists pypi2pkgbuild.py ; then
+if command -v pypi2pkgbuild.py >/dev/null 2>&1 ; then
   alias pypi2pkg='PKGEXT=.pkg.tar pypi2pkgbuild.py -g cython -b /tmp/pypi2pkgbuild/ -f'
 fi
 
   # sxiv
-if command_exists sxiv ; then
+if command -v sxiv >/dev/null 2>&1 ; then
   alias sxiv='sxiv -a -p'
 fi
 
   # pwstore
-if command_exists pwstore ; then
+if command -v pwstore >/dev/null 2>&1 ; then
   alias pw='pwstore'
 fi
 
   # pylint
-if command_exists pylint ; then
+if command -v pylint >/dev/null 2>&1 ; then
   alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 fi
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+# EOF
