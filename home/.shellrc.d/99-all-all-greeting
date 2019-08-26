@@ -13,5 +13,6 @@
   echo "\$TERM is $TERM" ;
   echo "\$DISPLAY is $DISPLAY" ;
 } | column -t
+echo ""
 
 # EOF

@@ -15,22 +15,22 @@ alias sudoe='sudo -E'
 
   # yay
 if command -v yay >/dev/null 2>&1 ; then
-  alias ya='\yay'
-  alias yaq='\yay -Q'
-  alias yas='\yay -S'
-  alias yass='\yay -Ss'
-  alias yars='\yay -Rs'
+  alias ya='\yay --color=always'
+  alias yaq='ya -Q'
+  alias yas='ya -S'
+  alias yass='ya -Ss'
+  alias yars='ya -Rs'
 elif command -v pacman >/dev/null 2>&1 ; then
   alias ya='\pacman --color=always'
-  alias yaq='\pacman --color=always -Q'
-  alias yas='\pacman --color=always -S'
-  alias yass='\pacman --color=always -Ss'
-  alias yars='\pacman --color=always -Rs'
+  alias yaq='ya -Q'
+  alias yas='ya -S'
+  alias yass='ya -Ss'
+  alias yars='ya -Rs'
 elif command -v brew >/dev/null 2>&1 ; then
   alias ya='\brew'
-  alias yaq='\brew info'
-  alias yas='\brew install'
-  alias yass='\brew search'
+  alias yaq='ya info'
+  alias yas='ya install'
+  alias yass='ya search'
 fi
 
   # watch incoming network connections
@@ -71,6 +71,7 @@ alias netmonitor='watch -n 3 lsof -i'
     # ls / exa
 if command -v exa >/dev/null 2>&1 ; then
   # exa aliases go here
+  alias exa='exa --color=always'
   alias l='exa --group-directories-first'
   alias ll='exa --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
   alias la='ll --all'

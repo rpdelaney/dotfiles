@@ -17,10 +17,11 @@ _hostname="$(hostname)"
 
   # determine if we want to run a new ssh-agent for this session
 if command -v keychain >/dev/null 2>&1 ; then
-  keychain --noask --nogui --quick
+  keychain --noask --nogui --quick --quiet
   [ -f "$HOME/.keychain/$_hostname"-sh ]      && . "$HOME/.keychain/$_hostname"-sh
   [ -f "$HOME/.keychain/$_hostname"-sh-gpg ]  && . "$HOME/.keychain/$_hostname"-sh-gpg
   keychain -l | column -t
+  echo ""
 else
   echo "keychain(1) not found."
 fi
