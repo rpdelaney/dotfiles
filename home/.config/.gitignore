@@ -47,4 +47,7 @@ ranger/!scope.sh
 weechat/**/*.log
 weechat/logs
 
+tox/*
+!/tox/toxic.conf
+
 # EOF
