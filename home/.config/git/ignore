@@ -104,6 +104,7 @@ venv/
 nosetests.xml
 .tox
 .mypy_cache
+.pythonrc.py
 
 dist/
 build/
