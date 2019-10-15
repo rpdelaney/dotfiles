@@ -243,4 +243,10 @@ if command -v pylint >/dev/null 2>&1 ; then
   alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 fi
 
+  # ptpython
+if command -v ptpython >/dev/null 2>&1 ; then
+  alias ptpython='ptpython --config-dir "$XDG_CONFIG_HOME"/ptpython'
+  alias ptpython3='ptpython3 --config-dir "$XDG_CONFIG_HOME"/ptpython'
+fi
+
 # EOF
