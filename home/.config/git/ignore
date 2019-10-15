@@ -105,6 +105,7 @@ nosetests.xml
 .tox
 .mypy_cache
 .pythonrc.py
+pip-wheel-metadata
 
 dist/
 build/
