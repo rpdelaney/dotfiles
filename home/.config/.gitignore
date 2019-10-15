@@ -38,6 +38,8 @@ git/config
 pip/*
 pip/!pip.conf
 
+ptpython/history
+
 ranger/*
 ranger/!.gitignore
 ranger/!rc.conf
