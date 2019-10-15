@@ -50,4 +50,9 @@ weechat/logs
 tox/*
 !/tox/toxic.conf
 
+zoomus.conf
+zoom.conf
+
+praw.ini
+
 # EOF
