@@ -176,7 +176,7 @@ bindsym $mod+e exec dmenu_run
     # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # 3}}}
     # screenshot {{{3
-bindsym $mod+PrintScreen exec scrot  ~/screenshot_%Y_%m_%d_%H_%M_%S.png
+bindsym $mod+F12 exec scrot -usdf
 # 3}}}
     # password {{{3
     # ask for user input, then pass it to xkeypass
