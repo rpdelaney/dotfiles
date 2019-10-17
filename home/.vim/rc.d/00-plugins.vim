@@ -63,6 +63,7 @@ Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
 " Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
 Plug 'git://github.com/w0rp/ale.git'
 Plug 'git://github.com/morhetz/gruvbox.git'
+Plug 'git://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     "" Norminette
     "" See https://github.com/junegunn/vim-plug/wiki/tips under 'gist as plugin'
