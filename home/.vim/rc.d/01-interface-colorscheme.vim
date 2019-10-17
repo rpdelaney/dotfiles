@@ -14,7 +14,7 @@ else
     " otherwise, use zenburn
   set t_Co=256
   let g:zenburn_high_contrast=1
-  colorscheme zenburn
+  colorscheme gruvbox
 endif
   " Disable background color erase - this could cause bugs in some terminals
 set t_ut=

@@ -62,6 +62,8 @@ Plug 'git://github.com/rpdelaney/vim-pgsql.git'
 Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
 " Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
 Plug 'git://github.com/w0rp/ale.git'
+Plug 'git://github.com/morhetz/gruvbox.git'
+
     "" Norminette
     "" See https://github.com/junegunn/vim-plug/wiki/tips under 'gist as plugin'
 ""Plug 'https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177.git',
