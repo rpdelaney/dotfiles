@@ -31,7 +31,6 @@ Plug 'git://github.com/hashivim/vim-terraform.git'
 " https://github.com/juliosueiras/vim-terraform-completion " <-- check this out later
 Plug 'git@github.com:rickhowe/diffchar.vim.git'
 Plug 'git://github.com/rpdelaney/bats.vim.git'
-Plug 'git://github.com/pbondoer/vim-42header.git'
   " TOML syntax highlighting
 Plug 'git://github.com/cespare/vim-toml'
 Plug 'git://github.com/PotatoesMaster/i3-vim-syntax.git'
@@ -65,6 +64,8 @@ Plug 'git://github.com/rpdelaney/vim-pgsql.git'
 Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
 " Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
 Plug 'git://github.com/w0rp/ale.git'
+Plug 'git://github.com/morhetz/gruvbox.git'
+
     "" Norminette
     "" See https://github.com/junegunn/vim-plug/wiki/tips under 'gist as plugin'
 ""Plug 'https://gist.github.com/SuperSpyTX/887922786834aa8e1914cfb0ee0d4177.git',
