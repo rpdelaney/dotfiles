@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#
+
+if command -v rbenv >/dev/null 2>&1 ; then
+  # Use XDG spec for storing shims
+  export RBENV_ROOT="${XDG_DATA_HOME:-${HOME}/.local/share}/rbenv"
+fi
+
+# EOF
