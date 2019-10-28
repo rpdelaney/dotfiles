@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plug')
 " Plug 'git://github.com/davidhalter/jedi-vim.git'
   " colorscheme forest night
 Plug 'git@github.com:sainnhe/vim-color-forest-night.git'
+  " editorconfig support
+Plug 'git@github.com:editorconfig/editorconfig-vim.git'
   " markdown folding
 Plug 'git@github.com:masukomi/vim-markdown-folding.git'
   " python code formatter
