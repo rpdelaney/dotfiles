@@ -80,4 +80,8 @@ if command -v ruby >/dev/null 2>&1 ; then
   fi
 fi
 
+if command -v cargo >/dev/null 2>&1 ; then
+  eval "$(~/bin/path --append ~/.cargo/bin)"
+fi
+
 # EOF
