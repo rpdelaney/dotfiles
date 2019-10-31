@@ -10,7 +10,7 @@ let g:ale_linters = {
 \   'hpp': ['gcc', 'norminette'],
 \   'python': ['flake8', 'mypy', 'pylint'],
 \   'markdown': ['markdownlint'],
-\   'go': ['gofmt']
+\   'go': ['gofmt', 'golint', 'golangci-lint']
 \}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
 let g:ale_python_flake8_auto_pipenv=1
