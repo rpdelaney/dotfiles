@@ -1,1 +1,1 @@
-setl shiftwidth=2 softtabstop=4 expandtab
+setl foldmethod=marker shiftwidth=2 softtabstop=4 expandtab
