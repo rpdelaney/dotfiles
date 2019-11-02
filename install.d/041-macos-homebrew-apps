@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 
 if ! command -v brew &> /dev/null; then echo "Missing dependency: brew" 1>&2; return 1; fi
@@ -75,17 +67,14 @@ homebrew_apps=(
   'inetutils --with-default-names'
   'jq'
   'keychain'
-  'ksh'
   'less --with-pcre'
   'lesspipe'
   'libqalculate'
-  'lynx'
   'mailutils'
   'make --with-default-names'
   'mas'
   'media-info'
   'moreutils'
-  'mps-youtube'
   'ncdu'
   'ncurses'
   'nmap'
@@ -112,8 +101,6 @@ homebrew_apps=(
   'terminal-notifier'
   'tig'
   'tmux'
-  'tor'
-  'torsocks'
   'tree'
   'unar'
   'util-linux'
@@ -123,12 +110,6 @@ homebrew_apps=(
   'watch'
   'weechat --with-aspell --with-curl --with-lua --with-perl --with-python@2 --with-ruby'
   'wget --with-gpgme --with-libmetalink --with-pcre'
-  'wine'
-  'zsh'
-  'zsh-autosuggestions'
-  'zsh-completions'
-  'zshdb'
-  'zstd'
 )
 
 
