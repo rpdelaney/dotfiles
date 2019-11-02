@@ -45,7 +45,6 @@ homebrew_apps=(
   'exiftool'
   'file-formula'
   'findutils --with-default-names'
-  'flake8'
   'gcc'
   'gem-completion'
   'ghostscript'
