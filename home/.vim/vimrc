@@ -1,6 +1,6 @@
 " vim600: set foldmethod=marker foldlevel=0 nolist:
 source ~/.vim/rc.d/00-plugins.vim
-source ~/.vim/rc.d/00-plugins-settings.vim
+source ~/.vim/rc.d/01-plugins-settings.vim
 
   " Use vim defaults in favor of backward-compatibility with vi
 set nocompatible
@@ -9,18 +9,18 @@ set nocompatible
 set modeline
 
   " Interface
-source ~/.vim/rc.d/01-interface-colorscheme.vim
-source ~/.vim/rc.d/01-interface-listchars.vim
-source ~/.vim/rc.d/01-interface-fonts.vim
-source ~/.vim/rc.d/01-interface-cursor.vim
-source ~/.vim/rc.d/01-interface-syntax.vim
-source ~/.vim/rc.d/01-interface-navigation.vim
-source ~/.vim/rc.d/01-interface-indentation.vim
-source ~/.vim/rc.d/01-interface-orientation.vim
-source ~/.vim/rc.d/01-interface-statusline.vim
-source ~/.vim/rc.d/01-interface-searching.vim
-source ~/.vim/rc.d/01-interface-spelling.vim
-source ~/.vim/rc.d/01-interface-other.vim
+source ~/.vim/rc.d/02-interface-colorscheme.vim
+source ~/.vim/rc.d/02-interface-listchars.vim
+source ~/.vim/rc.d/02-interface-fonts.vim
+source ~/.vim/rc.d/02-interface-cursor.vim
+source ~/.vim/rc.d/02-interface-syntax.vim
+source ~/.vim/rc.d/02-interface-navigation.vim
+source ~/.vim/rc.d/02-interface-indentation.vim
+source ~/.vim/rc.d/02-interface-orientation.vim
+source ~/.vim/rc.d/02-interface-statusline.vim
+source ~/.vim/rc.d/02-interface-searching.vim
+source ~/.vim/rc.d/02-interface-spelling.vim
+source ~/.vim/rc.d/02-interface-other.vim
 
   " Bindings
 source ~/.vim/rc.d/05-bindings.vim
