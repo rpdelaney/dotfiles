@@ -46,6 +46,7 @@ main() {
     git config --global pager.diff "$diffr"
     git config --global pager.show "$diffr"
     git config --global pager.log "$diffr"
+    git config --global interactive.diffFilter "$diffr"
   else
     git config --global pager.diff "less"
   fi
