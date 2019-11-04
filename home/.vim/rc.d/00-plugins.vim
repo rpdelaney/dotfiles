@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plug')
 
 Plug 'git@github.com:scrooloose/nerdtree.git'
-Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
+  " See https://github.com/Xuyuanp/nerdtree-git-plugin/issues/127
+" Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'git@github.com:ryanoasis/vim-devicons.git'
