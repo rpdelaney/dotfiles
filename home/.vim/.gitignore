@@ -1,3 +1,6 @@
 .netrwhist
 # Ignore plug directory since this is updated dynamically
 plug/*
+# vim-plug is self-updating
+autoload/plug.vim
+autoload/plug.vim.old
