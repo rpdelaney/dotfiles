@@ -10,8 +10,10 @@ main() {
   echo "# weechat authentication certificate must be decrypted and extracted:"
   echo "mkdir -p \"\$HOME/.local/weechat\""
   echo "gpg --decrypt \"\$HOME/${dotfiles_dest:-.dotfiles}/data/private/ecdsa_freenode.pem.gpg\" > \"\$HOME/.local/weechat/ecdsa_freenode.pem\""
+  echo ""
   echo "# \`mas\` tool must be signed in manually"
   echo "mas signin \"\$(pw apple.com get username)\" \"\$(pw apple.com get password)\""
+  echo ""
   echo '# cacert.org certificate installation'
   echo '# further reading: http://wiki.cacert.org/FAQ/ImportRootCert'
   echo '  # Download the certificates'
@@ -26,6 +28,7 @@ main() {
   echo '# Clean up after ourselves'
   echo 'rm "cacert-root.crt"'
   echo 'rm "cacert-class3.crt"'
+  echo ""
 }
 
 main "$@"

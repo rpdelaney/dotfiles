@@ -1,5 +1,12 @@
 call plug#begin('~/.vim/plug')
 
+Plug 'git@github.com:scrooloose/nerdtree.git'
+  " See https://github.com/Xuyuanp/nerdtree-git-plugin/issues/127
+" Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'git@github.com:ryanoasis/vim-devicons.git'
+
 Plug 'git@github.com:editorconfig/editorconfig-vim.git'
   " markdown folding
 Plug 'git@github.com:masukomi/vim-markdown-folding.git'

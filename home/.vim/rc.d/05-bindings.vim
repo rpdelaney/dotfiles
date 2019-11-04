@@ -1,12 +1,3 @@
-    " stop using arrow keys ya dummy
-noremap <left> :echoe "Stop using arrow keys."<cr>
-noremap <right> :echoe "Stop using arrow keys."<cr>
-noremap <up> :echoe "Stop using arrow keys."<cr>
-noremap <down> :echoe "Stop using arrow keys."<cr>
-    " Disable Ex mode
-map Q <Nop>
-    " Disable K looking stuff up
-map K <Nop>
     " time out bindings that don't respond quickly
 set ttimeout
 set ttimeoutlen=50
