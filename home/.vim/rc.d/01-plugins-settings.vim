@@ -74,5 +74,32 @@ let g:black_linelength = 79
   " latex {{{2
 let g:tex_flavor = "latex"
   " latex 2}}}
+  " nerdtree {{{2
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✳",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "⬦",
+    \ "Clean"     : " ",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" run nerdtree if we ran vim without a filepath argument
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" close vim if the only remaining window is a nerdtree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " nerdtree 2}}}
+    " vimdevicons {{{2
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:airline_powerline_fonts = 1
+map <silent> <F2> :NERDTreeToggle<CR>
+    " vimdevicons 2}}}
 
 " vim600: set foldmethod=marker foldlevel=2 expandtab tabstop=2:
