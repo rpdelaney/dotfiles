@@ -8,7 +8,7 @@ set autoread
 if &history < 1000
   set history=1000
 endif
-  " Put something in viminfo for some reason
+  " TODO: Put something in viminfo for some reason
 if !empty(&viminfo)
   set viminfo^=!
 endif
