@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plug')
 
+Plug 'davidhalter/jedi-vim'
+
 Plug 'git@github.com:scrooloose/nerdtree.git'
   " See https://github.com/Xuyuanp/nerdtree-git-plugin/issues/127
 " Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
