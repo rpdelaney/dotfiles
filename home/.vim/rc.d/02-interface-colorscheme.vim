@@ -3,7 +3,7 @@
 
 if &t_Co == 8 && $TERM !~# '^linux'
   let g:gruvbox_termcolors = 16
-else
+elseif exists('+termguicolors')
     " See https://vimhelp.org/term.txt.html#xterm-true-color
   set termguicolors
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
