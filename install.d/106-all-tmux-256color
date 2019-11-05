@@ -3,7 +3,7 @@
 
 # imports tmux-256color terminfo
 
-x_txt="${dotfiles_dest:-$HOME/.dotfiles/}"/data/x.txt
+x_txt="${dotfiles_dest:-$HOME/.dotfiles/}"/data/tmux-256color.txt
 
 main() {
   if [[ -s "$x_txt" ]] ; then
