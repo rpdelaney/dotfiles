@@ -3,21 +3,7 @@ let g:ale_echo_msg_info_str='I'
 let g:ale_echo_msg_error_str='E'
 let g:ale_echo_msg_warning_str="W"
 let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
-let g:ale_linters = {
-\   'c': ['gcc', 'norminette'],
-\   'cpp': ['gcc', 'norminette'],
-\   'h': ['gcc', 'norminette'],
-\   'hpp': ['gcc', 'norminette'],
-\   'python': ['flake8', 'mypy', 'pylint'],
-\   'markdown': ['markdownlint'],
-\   'go': ['gofmt', 'golint', 'golangci-lint']
-\}
 let g:ale_c_gcc_options = '-Wall -Werror -Wextra'
-let g:ale_python_flake8_auto_pipenv=1
-let g:ale_python_flake8_options = '--doctests'
-let g:ale_python_mypy_auto_pipenv=1
-let g:ale_python_pylint_auto_pipenv=1
-let g:ale_python_pylint_options='--rcfile="~/.config/pylint/config"'
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
   " Ale 2}}}
