@@ -13,6 +13,3 @@ setlocal formatoptions-=t formatoptions+=croql
 setlocal comments=:#,:; commentstring=;\ %s
 
 let b:undo_ftplugin = "setl fo< com< cms<"
-
-" added by rpd 2019-08-20
-setlocal noexpandtab

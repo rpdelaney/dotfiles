@@ -12,3 +12,4 @@ endif
 let b:did_ftplugin = 1
 
 runtime! ftplugin/scala.vim
+

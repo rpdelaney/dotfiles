@@ -25,7 +25,7 @@ endif
 " Debian changelogs are not supposed to have any other text width,
 " so the user cannot override this setting
 setlocal tw=78
-setlocal comments=f:*
+setlocal comments=f:* 
 
 " Clean unloading
 let b:undo_ftplugin = 'setlocal tw< comments< foldmethod< foldexpr< foldtext<'

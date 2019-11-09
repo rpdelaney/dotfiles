@@ -39,9 +39,9 @@
 " Version 12.0 (April 2013)
 "
 " NF: Added support for "BEGIN TRY ... END TRY ... BEGIN CATCH ... END CATCH
-" BF: This plugin is designed to be used with other plugins to enable the
-"     SQL completion with Perl, Python, Java, ...  The loading mechanism
-"     was not checking if the SQL objects were created, which can lead to
+" BF: This plugin is designed to be used with other plugins to enable the 
+"     SQL completion with Perl, Python, Java, ...  The loading mechanism 
+"     was not checking if the SQL objects were created, which can lead to 
 "     the plugin not loading the SQL support.
 "
 " Version 11.0 (May 2013)
@@ -400,7 +400,7 @@ endif
 
 " Predefined SQL objects what are used by the below mappings using
 " the ]} style maps.
-" This global variable allows the users to override it's value
+" This global variable allows the users to override its value
 " from within their vimrc.
 " Note, you cannot use \?, since these patterns can be used to search
 " backwards, you must use \{,1}
@@ -486,10 +486,10 @@ if exists('&omnifunc')
     " OMNI function prior to setting up the SQL OMNI function
     let b:sql_compl_savefunc = &omnifunc
 
-    " Source it to determine it's version
+    " Source it to determine its version
     runtime autoload/sqlcomplete.vim
     " This is used by the sqlcomplete.vim plugin
-    " Source it for it's global functions
+    " Source it for its global functions
     runtime autoload/syntaxcomplete.vim
 
     setlocal omnifunc=sqlcomplete#Complete

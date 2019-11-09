@@ -55,7 +55,7 @@ if &filetype == 'changelog'
     elseif $EMAIL_ADDRESS != ""
       return $EMAIL_ADDRESS
     endif
-
+    
     let login = s:login()
     return printf('%s <%s@%s>', s:name(login), login, s:hostname())
   endfunction

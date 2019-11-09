@@ -26,5 +26,5 @@ if exists("loaded_matchit")
   unlet s:not_end
 endif
 
-let &cpo = s:cpo_save
+let &cpo = s:cpo_save 
 unlet s:cpo_save
