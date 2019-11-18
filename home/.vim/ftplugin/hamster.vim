@@ -49,7 +49,7 @@ if exists("loaded_matchit")
   let b:match_words =
 	\ '\<sub\>:\<return\>:\<endsub\>,' .
         \ '\<do\|while\|repeat\|for\>:\<break\>:\<continue\>:\<loop\|endwhile\|until\|endfor\>,' .
-	\ '\<if\>:\<else\%[if]\>:\<endif\>'
+	\ '\<if\>:\<else\%[if]\>:\<endif\>' 
 
   " Ignore ":syntax region" commands, the 'end' argument clobbers if-endif
   " let b:match_skip = 'getline(".") =~ "^\\s*sy\\%[ntax]\\s\\+region" ||

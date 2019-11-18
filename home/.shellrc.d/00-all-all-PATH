@@ -84,4 +84,8 @@ if command -v cargo >/dev/null 2>&1 ; then
   eval "$(~/bin/path --append ~/.cargo/bin)"
 fi
 
+if command -v go >/dev/null 2>&1 ; then
+  eval "$(~/bin/path --append ~/go/bin)"
+fi
+
 # EOF

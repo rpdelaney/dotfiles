@@ -1,11 +1,5 @@
 #!/usr/bin/env sh
 #
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
-#
 
   # cleanly become another user
 alias become='sudo su --login'
@@ -134,12 +128,6 @@ fi
 alias disk='df --local --print-type --si'
 alias df='df --si'
 
-    # gpg is the new pgp
-command -v gpg >/dev/null 2>&1 && alias pgp='gpg'
-
-    # console pastebin
-command -v curl >/dev/null 2>&1 && alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
-
     # rsync is the new (s)cp
 command -v rsync >/dev/null 2>&1 && alias rp='\rsync --archive --copy-links --inplace --verbose --stats --progress'
 
@@ -178,16 +166,6 @@ if command -v getmail >/dev/null 2>&1 ; then
     # shellcheck disable=SC2139
     alias getmail='getmail --getmaildir='"$getmaildir"
   fi
-fi
-
-  # get (s)mplayer to use sensible defaults
-if command -v mplayer >/dev/null 2>&1 ; then
-  alias mplayer='mplayer -loop 0 -fixed-vo -softvol -msgcolor'
-fi
-
-if command -v smplayer >/dev/null 2>&1 ; then
-  alias smplayer='smplayer -no-close-at-end -mpcgui'
-  alias smadd='smplayer -add-to-playlist'
 fi
 
   # abook coercion to use XDG standard
@@ -239,14 +217,12 @@ if command -v pwstore >/dev/null 2>&1 ; then
 fi
 
   # pylint
-if command -v pylint >/dev/null 2>&1 ; then
-  alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
-fi
+  # always alias this since maybe it's only in the venv
+alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 
   # ptpython
-if command -v ptpython >/dev/null 2>&1 ; then
-  alias ptpython='ptpython --config-dir "$XDG_CONFIG_HOME"/ptpython'
-  alias ptpython3='ptpython3 --config-dir "$XDG_CONFIG_HOME"/ptpython'
-fi
+  # always alias this since maybe it's only in the venv
+alias ptpython='ptpython --config-dir "$XDG_CONFIG_HOME"/ptpython'
+alias ptpython3='ptpython3 --config-dir "$XDG_CONFIG_HOME"/ptpython'
 
 # EOF

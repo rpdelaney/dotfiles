@@ -78,6 +78,7 @@ homebrew_apps=(
   'ncdu'
   'ncurses'
   'nmap'
+  'npm'
   'open-completion'
   'openssh'
   'openvpn'

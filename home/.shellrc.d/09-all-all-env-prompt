@@ -1,14 +1,7 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 
-# PS1 {{{1
+# PS1: Prompt
 if [[ -f "$HOME"/.bash_prompt ]]; then
   if [[ "$UID" == 0 ]] && type tput &> /dev/null; then
     # If we are root, try to make that hard to miss.
@@ -37,21 +30,15 @@ if [[ -f "$HOME"/.bash_prompt ]]; then
   # shellcheck disable=SC1090
   source "$HOME"/.bash_prompt
 fi
-# PS1 1}}}
-# PS2 {{{1
-  # Continuation prompt
-  # Default: '> '
-export PS2="... "
-# PS2 1}}}
-# PS3 {{{1
-  # Option select prompt
-  # Default: '#?'
-export PS3='#?'
-# PS3 1}}}
-# PS4 {{{1
-  # Script debug mode prefix
-  # Default: '+'
-export PS4='+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: '
-# PS4 1}}}
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+# PS2: Continuation prompt
+# Default: '> '
+export PS2="... "
+# PS3: Option select prompt
+# Default: '#?'
+export PS3='#?'
+# PS4: Script debug mode prefix
+# Default: '+'
+export PS4='+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: '
+
+# EOF
