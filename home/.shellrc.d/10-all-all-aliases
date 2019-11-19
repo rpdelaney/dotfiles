@@ -31,6 +31,7 @@ if command -v brew >/dev/null 2>&1 ; then
   alias yaq='ya info'
   alias yas='ya install'
   alias yass='ya search'
+  alias yars='ya uninstall'
 fi
 
   # watch incoming network connections
@@ -128,11 +129,12 @@ fi
 alias disk='df --local --print-type --si'
 alias df='df --si'
 
+if command -v rsync >/dev/null 2>&1 ; then
     # rsync is the new (s)cp
-command -v rsync >/dev/null 2>&1 && alias rp='\rsync --archive --copy-links --inplace --verbose --stats --progress'
-
+  alias rp='\rsync --archive --copy-links --inplace --verbose --stats --progress'
     # rsync is the new mv
-command -v rsync >/dev/null 2>&1 && alias rv='\rsync --archive --copy-links --inplace --verbose --stats --progress --remove-source-files'
+  alias rv='\rsync --archive --copy-links --inplace --verbose --stats --progress --remove-source-files'
+fi
 
     # grep can be pretty :*
 if command -v grep >/dev/null 2>&1 ; then
