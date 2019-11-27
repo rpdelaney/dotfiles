@@ -27,12 +27,9 @@ ignore = E123,E133,W503
 #       - Black follows W504. Therefore W504 should not be ignored.
 #     - W505: doc line too long (82 > 79 characters)
 #       - Not enforced even when `--ignore=''` is passed. Use --max-doc-length=n to get this warning.
-
 # > because they are not rules unanimously accepted, and PEP 8 does not enforce
 # > them. Please note that if the option –ignore=errors is used, the default
 # > configuration will be overridden and ignore only the check(s) you skip. The
 # > check W503 is mutually exclusive with check W504. The check E133 is mutually
 # > exclusive with check E123. Use switch --hang-closing to report E133 instead
 # > of E123. Use switch --max-doc-length=n to report W505.
-
-# set ft=toml
