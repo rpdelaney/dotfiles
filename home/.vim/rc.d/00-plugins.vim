@@ -51,7 +51,7 @@ Plug 'git://github.com/ntpeters/vim-airline-colornum.git'
 Plug 'git://github.com/rpdelaney/rtorrent-syntax-file.git'
 Plug 'git://github.com/rpdelaney/vim-pgsql.git'
 Plug 'git://github.com/rpdelaney/vim-psqlrc.git'
-" Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
+Plug 'git://github.com/rpdelaney/vim-sourcecfg.git'
 Plug 'git://github.com/w0rp/ale.git'
 Plug 'git://github.com/morhetz/gruvbox.git'
 Plug 'git://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
