@@ -1,10 +1,14 @@
+# Archwiki [[Nvidia_Optimus]] told me to put this here
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
     # Disable mouse acceleration and set sensitivity
 xset m 0 4
 
     # set keyboard layout again
-setxkbmap dvorak
+#setxkbmap dvorak
     # Kill X with Ctrl-Alt-Backspace
-setxkbmap -option terminate:ctrl_alt_bksp
+#setxkbmap -option terminate:ctrl_alt_bksp
 
     # security
     # this throws an error as-is. fix it before re-enabling
@@ -24,7 +28,7 @@ export BROWSER="firefox"
 
     #i3
 export DE="i3"
-exec i3
+i3
 
     # Merge in .Xdefaults
 [[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
