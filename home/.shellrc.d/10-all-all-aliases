@@ -72,7 +72,7 @@ alias netmonitor='watch -n 3 lsof -i'
     # ls / exa
 if command -v exa >/dev/null 2>&1 ; then
   # exa aliases go here
-  alias exa='exa --color=always'
+  alias exa='exa --color=always --icons'
   alias l='exa --group-directories-first'
   alias ll='exa --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
   alias la='ll --all'
