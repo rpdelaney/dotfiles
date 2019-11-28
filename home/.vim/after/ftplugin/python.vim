@@ -1,4 +1,4 @@
-autocmd FileType autocmd BufWritePre <buffer> execute ':Black'
+autocmd BufWritePre <buffer> execute ':Black'
 
 setlocal expandtab shiftwidth=4 softtabstop=4
 setlocal completeopt=preview
