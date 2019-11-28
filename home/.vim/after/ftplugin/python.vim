@@ -21,3 +21,6 @@ let b:ale_python_pylint_auto_pipenv=1
 let b:ale_python_pylint_options='--rcfile="~/.config/pylint/config"'
 
 let g:black_linelength = 79
+
+  " call formatter when we hit a key
+nnoremap <buffer> <F5> :execute 'Black' <CR>
