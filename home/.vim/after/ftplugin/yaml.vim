@@ -1,2 +1,2 @@
-setlocal ts=2 sts=2 sw=2
+setlocal tabstop=2 softtabstop=2 shiftwidth=2
 setlocal foldmethod=indent

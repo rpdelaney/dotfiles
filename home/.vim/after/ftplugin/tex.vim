@@ -1,1 +1,1 @@
-setl grepprg=grep\ -nH\ $
+setlocal grepprg=grep\ -nH\ $

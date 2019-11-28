@@ -1,1 +1,1 @@
-setlocal ts=8 sts=8 sw=8 noexpandtab
+setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab

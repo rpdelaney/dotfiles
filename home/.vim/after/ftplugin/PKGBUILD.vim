@@ -1,2 +1,2 @@
   " archlinux package build
-setl shiftwidth=2 softtabstop=4
+setlocal shiftwidth=2 softtabstop=4

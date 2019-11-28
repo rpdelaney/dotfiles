@@ -1,7 +1,7 @@
-autocmd FileType autocmd BufWritePre <buffer> Black
+autocmd FileType autocmd BufWritePre <buffer> execute ':Black'
 
-setl expandtab shiftwidth=4 softtabstop=4
-setl completeopt=preview
+setlocal expandtab shiftwidth=4 softtabstop=4
+setlocal completeopt=preview
 
 let b:python_highlight_all = 1
 let b:python_slow_sync = 1
