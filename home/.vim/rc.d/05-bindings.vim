@@ -13,6 +13,8 @@ noremap <c-h> :bp<cr>
     " Copy-paste mode
 noremap <silent> <c-c> :GitGutterToggle <CR>:set nolist nonumber relativenumber! wrap! <CR>
 noremap <silent> <c-p> :set list paste! <CR> <Insert>
+    " Pairing mode
+noremap <silent> <F4> :set number! relativenumber! <CR>
     " Save the file
 if maparg('<c-s>', 's') ==# ''
     noremap <c-s> :w<cr>
