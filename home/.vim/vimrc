@@ -29,8 +29,6 @@ source ~/.vim/rc.d/05-bindings.vim
 source ~/.vim/rc.d/10-functions-whitespace.vim
 source ~/.vim/rc.d/10-functions-hexedit.vim
 
-" Files
-source ~/.vim/rc.d/15-files-autocmds.vim
   " Use strong encryption when invoked with :X or -x
 set cryptmethod=blowfish2
   " EOL formats to try when parsing new files with unclear MIMEtypes
