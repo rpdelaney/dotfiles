@@ -57,6 +57,11 @@ zoom.conf
 
 praw.ini
 
+pavucontrol.ini
+
+fontforge/
+antimicro/
+
 pypoetry/*
 !pypoetry/config.toml
 
