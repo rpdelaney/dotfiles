@@ -1,0 +1,8 @@
+[settings]
+
+[repositories]
+[repositories.pypi_test]
+url = "https://test.pypi.org/legacy/"
+
+[repositories.pypi]
+url = "https://upload.pypi.org/legacy/"

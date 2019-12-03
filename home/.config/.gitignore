@@ -57,4 +57,7 @@ zoom.conf
 
 praw.ini
 
+pypoetry/*
+!pypoetry/config.toml
+
 # EOF
