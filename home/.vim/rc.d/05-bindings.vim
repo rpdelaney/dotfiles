@@ -15,6 +15,9 @@ noremap <silent> <c-c> :GitGutterToggle <CR>:set nolist nonumber relativenumber!
 noremap <silent> <c-p> :set list paste! <CR> <Insert>
     " Pairing mode
 noremap <silent> <F4> :set number! relativenumber! <CR>
+    " fold/unfold
+noremap <silent> <F7> :set foldlevel=1 <CR>
+noremap <silent> <F8> :set foldlevel=999 <CR>
     " Save the file
 if maparg('<c-s>', 's') ==# ''
     noremap <c-s> :w<cr>
