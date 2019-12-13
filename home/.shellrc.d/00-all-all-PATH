@@ -84,3 +84,7 @@ fi
 if command -v go >/dev/null 2>&1 ; then
   eval "$(~/bin/path --append ~/go/bin)" || return
 fi
+
+if command -v pipx >/dev/null 2>&1 ; then
+  eval "$(~/bin/path --append "$HOME/.local/bin")" || return
+fi
