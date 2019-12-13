@@ -1,12 +1,4 @@
 #!/usr/bin/env sh
-# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 
 _path() {
@@ -22,9 +14,9 @@ _path() {
 }
 
 # Make sure we have ~/bin, /usr/local/bin, and /usr/local/sbin
-_path /usr/local/sbin || return 1
-_path /usr/local/bin || return 1
-_path "$HOME"/bin || return 1
+_path /usr/local/sbin || return
+_path /usr/local/bin || return
+_path "$HOME"/bin || return
 
 # Make sure we have `path`
 if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
@@ -46,13 +38,18 @@ if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2
 hb_curl_dir=/usr/local/opt/curl/bin
 
 if [ -x "$hb_curl_dir" ] ; then
-  eval "$(~/bin/path --replace --prepend "$hb_curl_dir")"
+  eval "$(~/bin/path --replace --prepend "$hb_curl_dir")" || return
 fi
 
-[ -d /usr/local/Cellar ] &&     eval "$(~/bin/path --replace --prepend /usr/local/Cellar)"
-[ -d "$HOME"/.homebrew/bin ] && eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)"
+if [ -d /usr/local/Cellar ] ; then
+  eval "$(~/bin/path --replace --prepend /usr/local/Cellar)" || return
+fi
 
-eval "$(~/bin/path --replace --prepend "$HOME"/bin)"
+if [ -d "$HOME"/.homebrew/bin ] ; then
+  eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)" || return
+fi
+
+eval "$(~/bin/path --replace --prepend "$HOME"/bin)" || return
 
 
 #
@@ -62,30 +59,28 @@ eval "$(~/bin/path --replace --prepend "$HOME"/bin)"
 # https://docs.python.org/3/library/site.html
 if command -v python3 >/dev/null 2>&1 ; then
   py3base="$(python3 -m site --user-base)"/bin
-  eval "$(~/bin/path --append "$py3base")"
+  eval "$(~/bin/path --append "$py3base")" || return
 fi
 
 if command -v python2 >/dev/null 2>&1 ; then
   py2base="$(python2 -m site --user-base)"/bin
-  eval "$(~/bin/path --append "$py2base")"
+  eval "$(~/bin/path --append "$py2base")" || return
 fi
 
 # https://guides.rubygems.org/faqs/#user-install
 if command -v ruby >/dev/null 2>&1 ; then
-  rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
-  eval "$(~/bin/path --append "$rubygembase")"
+  rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" || return
+  eval "$(~/bin/path --append "$rubygembase")" || return
 
   if [ -d "$HOME"/.rvm/bin ] ; then
-    eval "$(~/bin/path --append "$HOME"/.rvm/bin)"
+    eval "$(~/bin/path --append "$HOME"/.rvm/bin)" || return
   fi
 fi
 
 if command -v cargo >/dev/null 2>&1 ; then
-  eval "$(~/bin/path --append ~/.cargo/bin)"
+  eval "$(~/bin/path --append ~/.cargo/bin)" || return
 fi
 
 if command -v go >/dev/null 2>&1 ; then
-  eval "$(~/bin/path --append ~/go/bin)"
+  eval "$(~/bin/path --append ~/go/bin)" || return
 fi
-
-# EOF
