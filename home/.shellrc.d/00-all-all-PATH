@@ -49,6 +49,10 @@ if [ -d "$HOME"/.homebrew/bin ] ; then
   eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)" || return
 fi
 
+if [ -d "$HOME"/.local/bin ] ; then
+  eval "$(~/bin/path --prepend "$HOME"/.local/bin)" || return
+fi
+
 eval "$(~/bin/path --replace --prepend "$HOME"/bin)" || return
 
 
