@@ -49,14 +49,14 @@ main() {
     # hub 2}}}
   _git_reset='%C(reset)'
   _git_abbrev_hash='%C(magenta)%h'"$_git_reset"
-  _git_ref='%C(yellow)%d'"$_git_reset"
+  _git_ref='%C(yellow ul)%D'"$_git_reset"
   _git_subject='%C(bold) %s'"$_git_reset"
   _git_author_name='%C(blue dim)<%an>'"$_git_reset"
   _git_author_date='%C(green)%ad'"$_git_reset"
   _git_relatime='%C(green)(%cr)'"$_git_reset"
 
-  _git_long_log_format="$_git_abbrev_hash -$_git_subject $_git_relatime$_git_author_name$_git_ref"
-  _git_short_log_format="$_git_abbrev_hash $_git_author_date$_git_reset$_git_subject $_git_author_name$_git_ref"
+  _git_long_log_format="$_git_abbrev_hash -$_git_subject $_git_relatime$_git_author_name $_git_ref"
+  _git_short_log_format="$_git_abbrev_hash $_git_author_date$_git_reset$_git_subject $_git_author_name $_git_ref"
 
   git config --global alias.ls    "log --pretty=format:'$_git_long_log_format' --decorate --no-merges"
   git config --global alias.lg    "log --pretty=format:'$_git_long_log_format' --graph"
