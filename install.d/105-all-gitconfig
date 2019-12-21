@@ -50,7 +50,7 @@ main() {
   _git_reset='%C(reset)'
   _git_abbrev_hash='%C(magenta)%h'"$_git_reset"
   _git_ref='%C(yellow ul)%D'"$_git_reset"
-  _git_subject='%C(bold) %s'"$_git_reset"
+  _git_subject=' %s'
   _git_author_name='%C(blue dim)-- %an'"$_git_reset"
   _git_author_date='%C(green)%ad'"$_git_reset"
   _git_relatime='%C(green dim)(%cr)'"$_git_reset"
