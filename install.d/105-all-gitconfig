@@ -30,7 +30,7 @@ main() {
   if type diffr 2>/dev/null 1>/dev/null ; then
     diffr="diffr \
           --colors removed:background:00:foreground:01 \
-          --colors refine-removed:background:0:foreground:124 \
+          --colors refine-removed:background:0:foreground:124:italic \
           --colors added:background:0:foreground:10 \
           --colors refine-added:background:0:foreground:35:intense \
           | less -R"
