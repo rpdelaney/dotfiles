@@ -68,7 +68,7 @@ if command_exists gdf ; then
   alias df='gdf'
 fi
 if command_exists gmkdir ; then
-  alias mkdir='gmkdir'
+  alias mkdir='gmkdir --verbose --parents'
 fi
 
 # vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
