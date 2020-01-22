@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+
+if [[ -s "$HOME"/.bash_colors.sh ]] ; then
+  # shellcheck disable=SC1090
+  source "$HOME"/.bash_colors.sh
+elif [[ -s "$HOME"/.bash_colors ]] ; then
+  eval "$(dircolors -b "$HOME"/.bash_colors || return)"
+else
+  eval "$(dircolors -b || return)"
+fi
