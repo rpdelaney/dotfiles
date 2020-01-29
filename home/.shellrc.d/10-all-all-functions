@@ -1,11 +1,4 @@
 #!/usr/bin/env sh
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 # shellcheck disable=SC2069
 
@@ -57,20 +50,12 @@ duration() { durline=$(sox "$1" -n stat 2>&1|grep "Length (seconds):");echo "${d
 #
   # define words
 define() {
-  if command -v torsocks >/dev/null 2>&1 ; then
-    torsocks curl -s dict://dict.org/d:"$1"
-  else
-    curl -s dict://dict.org/d:"$1"
-  fi
+  curl -s dict://dict.org/d:"$1"
 }
 
   # define words shorter
 def() {
-  if command -v torsocks >/dev/null 2>&1 ; then
-    torsocks curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
-  else
-    curl -s dict://dict.org/d:"$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
-  fi
+  define "$1" | perl -ne 's/\r//; last if /^\.$/; print if /^151/../^250/';
 }
 
   # download files from web via tor
@@ -83,5 +68,3 @@ werd() {
   i="${1:-1}"
   shuf -n "$i" /usr/share/dict/english
 }
-
-# EOF
