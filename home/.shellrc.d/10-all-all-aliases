@@ -117,6 +117,7 @@ if command -v grc >/dev/null 2>&1 ; then
     alias ld='hilite ld'
     alias netstat='hilite netstat'
     alias ping='hilite ping'
+    alias ifconfig='hilite ifconfig'
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
