@@ -1,3 +1,4 @@
+# `docker images` is a thing, but `docker containers` isn't because of reasons
 def match(command):
     return "docker: 'containers' is not a docker command." in command.output
 
