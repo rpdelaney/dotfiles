@@ -117,6 +117,7 @@ if command -v grc >/dev/null 2>&1 ; then
     alias ld='hilite ld'
     alias netstat='hilite netstat'
     alias ping='hilite ping'
+    alias ifconfig='hilite ifconfig'
     alias traceroute='hilite /usr/sbin/traceroute'
 fi
 
@@ -224,7 +225,7 @@ alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 
   # ptpython
   # always alias this since maybe it's only in the venv
-alias ptpython='ptpython --config-dir "$XDG_CONFIG_HOME"/ptpython'
-alias ptpython3='ptpython3 --config-dir "$XDG_CONFIG_HOME"/ptpython'
+alias ptpython='ptpython --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
+alias ptpython3='ptpython3 --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
 
 # EOF

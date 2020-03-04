@@ -21,12 +21,6 @@ main() {
   git config --global diff.renames "copies"
   git config --global diff.mnemonicprefix "true"
   git config --global difftool.prompt "true"
-  # 1}}} diff
-  # Merge {{{1
-  git config --global merge.tool "vimdiff"
-  git config --global merge.conflictstyle "diff3"
-  git config --global mergetool.prompt "true"
-  # 1}}} Merge
   if type diffr 2>/dev/null 1>/dev/null ; then
     diffr="diffr \
           --colors removed:background:00:foreground:01 \
@@ -42,6 +36,12 @@ main() {
   else
     git config --global pager.diff "less"
   fi
+  # 1}}} diff
+  # Merge {{{1
+  git config --global merge.tool "vimdiff"
+  git config --global merge.conflictstyle "diff3"
+  git config --global mergetool.prompt "true"
+  # 1}}} Merge
   # Alias {{{1
     # hub {{{2
   git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu'

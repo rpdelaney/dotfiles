@@ -1,11 +1,18 @@
 ---
 repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
       - id: end-of-file-fixer
+        exclude: .vim/(autoload|bin|black|colors|compiler|ftplugin|indent|keymap|plugin|plug|print|spell|syntax)/.+
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
+        exclude: .vim/(autoload|bin|black|colors|compiler|ftplugin|indent|keymap|plugin|plug|print|spell|syntax)/.+
       - id: check-added-large-files
       - id: check-executables-have-shebangs
       - id: check-symlinks
@@ -13,9 +20,8 @@ repos:
       - id: check-symlinks
       - id: check-merge-conflict
       - id: detect-private-key
+
   - repo: git://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
     hooks:
       - id: shell-lint
-
-# EOF

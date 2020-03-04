@@ -1,11 +1,5 @@
 #!/usr/bin/env sh
 #
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
-#
 
 command_exists() {
   command="$1"
@@ -21,6 +15,10 @@ command_exists() {
 
 alias screensaver='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 alias lock='pmset displaysleepnow'
+
+unset ip && ip() {
+  ifconfig | grep 'inet ' | awk '{print $2}' | grep -v '127.0.0.1'
+}
 
 if command_exists gtimeout ; then
   alias timeout='gtimeout'
@@ -73,5 +71,6 @@ fi
 if command_exists gdircolors ; then
   alias dircolors='gdircolors'
 fi
-
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+if command_exists greadlink ; then
+  alias readlink='greadlink'
+fi
