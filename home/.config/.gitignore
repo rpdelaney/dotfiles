@@ -27,7 +27,7 @@ getmail
 mpd
 !mpd/mpd.conf
 
-qalc.history
+qalculate/
 
 # since mumble.conf has the certificate in it (herpa derp) we have to ignore it
 Mumble
