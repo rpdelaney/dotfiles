@@ -1,5 +1,0 @@
-cmd:prompt \u\@\h/\w
-color:use-color true
-ftp:ssl-allow true
-ssl:ca-path /home/ryan/identity
-ssl:key-file /home/ryan/identity/mykey.pem

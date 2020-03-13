@@ -1,4 +1,4 @@
-source_up  # Load all .envrc found higher in the directory structure
+source_up
 
 export GIT_AUTHOR_NAME="Ryan Delaney"
 export GIT_AUTHOR_EMAIL="ryan.delaney@gmail.com"
