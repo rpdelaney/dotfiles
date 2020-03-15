@@ -1,7 +1,7 @@
 # autoplay youtube ids in mpv
 import re
 
-_PATTERN=r"^\[file\] Cannot open file '([0-9A-Za-z_-]+)': No such file or directory"
+_PATTERN=r"^\[file\] Cannot open file '([0-9A-Za-z_-]{11,})': No such file or directory"
 _prog = re.compile(_PATTERN)
 
 def match(command):
