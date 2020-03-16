@@ -2,10 +2,17 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+#
+# list of keys at /usr/include/X11/keysymdef.h
+#
+
 set $mod Mod4
 
 focus_follows_mouse yes
 popup_during_fullscreen smart
+
+set $DIS1 "HDMI-0"
+set $DIS2 "eDP-1-1"
 
 # workspaces
 set $WS1 "1: shell"
@@ -30,13 +37,13 @@ for_window[class="Steam" title="*Chat$"] floating enable
 for_window[class="Steam"] floating enable
 
 # styles
-font pango:Consolas 10
+font pango:Inconsolata-g 12
 
     # i3bar
 bar {
         workspace_buttons yes
-        font pango:Consolas 8
-        tray_output primary
+        font pango:Inconsolata-g 09
+        tray_output $DIS1
         status_command i3status
 }
 
