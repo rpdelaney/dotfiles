@@ -65,4 +65,6 @@ antimicro/
 pypoetry/*
 !pypoetry/config.toml
 
+mpv/watch_later/*
+
 # EOF

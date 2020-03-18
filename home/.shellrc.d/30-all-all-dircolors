@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
 
-if [[ -s "$HOME"/.bash_colors.sh ]] ; then
+lscolors_file="${XDG_DATA_HOME:-$HOME/.local/share}/lscolors.sh"
+
+if [[ -s "$lscolors_file" ]] ; then
   # shellcheck disable=SC1090
-  source "$HOME"/.bash_colors.sh
-elif [[ -s "$HOME"/.bash_colors ]] ; then
-  eval "$(dircolors -b "$HOME"/.bash_colors || return)"
+  source "$lscolors_file"
 else
-  eval "$(dircolors -b || return)"
+  echo "LS_COLORS file not found: $lscolors_file" 1>&2
 fi
