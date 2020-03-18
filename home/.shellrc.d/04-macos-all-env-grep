@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+#
+
+if command -v ggrep 2>/dev/null 1>/dev/null ; then
+  ggrep_path="/usr/local/opt/grep/libexec/gnubin"
+  if [ -d "$ggrep_path" ] && [ -x "$ggrep_path"/grep ] ; then
+    export PATH="$ggrep_path:$PATH"
+  fi
+  unset ggrep_path
+fi

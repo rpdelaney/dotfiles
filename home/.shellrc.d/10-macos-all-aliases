@@ -32,9 +32,6 @@ fi
 if command_exists grm ; then
   alias rm='grm -Iv'
 fi
-if command_exists ggrep ; then
-  alias grep='ggrep'
-fi
 if command_exists gchmod ; then
   alias chmod='gchmod -c --preserve-root'
 fi
