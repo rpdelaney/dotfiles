@@ -1,7 +1,10 @@
 #
 # `docker images` is a thing, but `docker containers` isn't because of reasons
 #
+from thefuck.utils import for_app
 
+
+@for_app("docker")
 def match(command):
     return "docker: 'containers' is not a docker command." in command.output
 
