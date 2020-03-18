@@ -2,6 +2,7 @@
 # when doing 'terraform plan' if we have not done 'terraform init' there will
 # be an error. handle it here
 #
+from thefuck.utils import for_app
 
 needs_init_strings = [
     "Initialization required",
@@ -10,6 +11,7 @@ needs_init_strings = [
 ]
 
 
+@for_app("terraform")
 def match(command):
     return any([string in command.output for string in needs_init_strings])
 
