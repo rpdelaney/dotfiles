@@ -15,6 +15,7 @@ main() {
   git config --global core.symlinks "true"
   git config --global push.default "tracking"
   git config --global branch.autosetuprebase "never"
+  git config --global push.followTags "true"
   # diff {{{1
   git config --global --unset diff.external
   git config --global diff.tool "vimdiff"
