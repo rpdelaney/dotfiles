@@ -13,7 +13,8 @@ Plug 'git@github.com:editorconfig/editorconfig-vim.git'
   " markdown folding
 Plug 'git@github.com:masukomi/vim-markdown-folding.git'
   " python code formatter
-Plug 'ambv/black'
+  " https://github.com/psf/black/issues/1293
+Plug 'psf/black', { 'tag': '19.10b0' }
   " Amazon Ion
 Plug 'vmchale/ion-vim'
   " Render ANSI color codes in the buffer
