@@ -118,5 +118,9 @@ docs/_build/
 # direnv
 .env
 
+# other source control
+.hg
+.hgtags
+
 # test results
 test-results/*
