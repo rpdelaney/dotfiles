@@ -5,3 +5,4 @@ plug/*
 autoload/plug.vim
 autoload/plug.vim.old
 Black/*
+black/*
