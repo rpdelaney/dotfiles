@@ -20,3 +20,6 @@
 	path = data/git.commit.template
 	url = git@gist.github.com:41651befb2326a19aafec4660ff315e9.git
 	branch = master
+[submodule "gruvbox-material-kitty"]
+	path = gruvbox-material-kitty
+	url = git@github.com:rsaihe/gruvbox-material-kitty.git
