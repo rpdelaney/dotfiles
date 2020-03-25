@@ -149,9 +149,13 @@ main() {
   if [ -r "$commit_template_file" ]; then
     git config --global commit.template "$commit_template_file"
   else
-    echo "WARNING: git commit template not found: $commit_template_file"
+    echo "WARNING: git commit template not found: $commit_template_file" 1>&2
   fi
+  unset commit_template_file
   # Commit template 1}}}
+  # Repo template {{{1
+  git config --global init.templateDir "$XDG_CONFIG_HOME/git/template"
+  # Repo template 1}}}
 }
 
 main "$@"
