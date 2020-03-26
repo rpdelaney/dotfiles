@@ -122,5 +122,8 @@ docs/_build/
 .hg
 .hgtags
 
+# fuse weirdness
+.fuse_hidden*
+
 # test results
 test-results/*
