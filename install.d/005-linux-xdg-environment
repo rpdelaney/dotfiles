@@ -2,15 +2,6 @@
 # shellcheck disable=SC2174
 #
 
-main() {
-  mkdir --parents --mode=0700 "$HOME/.cache/" || return $?
-  export XDG_CACHE_HOME="$HOME/.cache/"
-  mkdir --parents --mode=0700 "$HOME/.config/" || return $?
-  export XDG_CONFIG_HOME="$HOME/.config/"
-  mkdir --parents --mode=0700 "$HOME/.local/share" || return $?
-  export XDG_DATA_HOME="$HOME/.local/share"
-}
-
-main "$@"
-
-# EOF
+mkdir --parents --mode=0700 "$HOME/.cache/" && export XDG_CACHE_HOME="$HOME/.cache/"
+mkdir --parents --mode=0700 "$HOME/.config/" && export XDG_CONFIG_HOME="$HOME/.config/"
+mkdir --parents --mode=0700 "$HOME/.local/share" && export XDG_DATA_HOME="$HOME/.local/share"
