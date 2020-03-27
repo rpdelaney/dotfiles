@@ -23,7 +23,7 @@ main() {
   git config --global diff.mnemonicprefix "true"
   git config --global difftool.prompt "true"
   if type diffr 2>/dev/null 1>/dev/null ; then
-    diffr="dif"
+    diffr="dif | pager"
 
     git config --global pager.diff "$diffr"
     git config --global pager.show "$diffr"
