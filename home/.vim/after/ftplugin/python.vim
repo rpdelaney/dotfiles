@@ -6,17 +6,12 @@ setlocal completeopt=menuone,preview
 let b:python_highlight_all = 1
 let b:python_slow_sync = 1
 
-let b:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'bandit']}
+let b:ale_linters = {'python': ['flake8', 'mypy']}
 
-let b:ale_python_flake8_auto_pipenv=1
-let b:ale_python_flake8_change_directory = 1
+let b:ale_python_flake8_change_directory=0
+let b:ale_python_flake8_executable='poetry run flake8'
 
-let b:ale_python_bandit_auto_pipenv = 1
-
-let b:ale_python_mypy_auto_pipenv = 1
 let b:ale_python_mypy_ignore_invalid_syntax = 1
-
-let b:ale_python_pylint_auto_pipenv=1
 
 let g:black_linelength = 79
 
