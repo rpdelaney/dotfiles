@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+ln -i -v scripts/libhooks .git/hooks/ && ln -i -v scripts/post-merge .git/hooks/

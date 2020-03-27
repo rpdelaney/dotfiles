@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+
+log() {
+  local msg=${1:-}
+  local level="${2:-INFO}"
+  now=$(date "+%Y-%m-%d %H:%M:%S%z")
+  echo "$now $(hostname) $(basename "$0"):$level $msg" 1>&2
+}
+
+check_run() {
+  declare changed_files
+  changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+  declare file="$1"
+  declare action="$2"
+
+  if grep --fixed-strings --quiet "$file" <<< "$changed_files" ; then
+    log "Performing action for changed file: $file"
+    ( set -x ; eval "$action" )
+  fi
+}

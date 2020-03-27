@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# git hook to run a command after `git pull` if a specified file was changed
+#
+
+_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# shellcheck disable=SC1090
+if source "${_dir}/libhooks" ; then
+  # source the gitconfig if it was changed
+    # shellcheck disable=SC2016
+  check_run install.d/105-all-gitconfig 'source install.d/105-all-gitconfig'
+else
+  echo "Failed to source libhooks: ${_dir}/libhooks" 1>&2
+  exit 1
+fi
