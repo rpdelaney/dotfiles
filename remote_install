@@ -17,11 +17,12 @@ fi
 
 main() {
   if [[ ! -d "$dotfiles_dest" ]]; then
-    git clone --recurse-submodules --jobs 8 "$dotfiles_repo" "$dotfiles_dest" || exit 1
+    git clone --recurse-submodules --jobs 8 "$dotfiles_repo" "$dotfiles_dest" || exit
   fi
 
   if cd "$dotfiles_dest" ; then
-    git pull origin master
+    git pull origin master || return
+    ./scripts/setup_hooks || return
     git config --local user.name 'Ryan Delaney'
     git config --local user.email 'ryan.delaney@gmail.com'
     bash install
