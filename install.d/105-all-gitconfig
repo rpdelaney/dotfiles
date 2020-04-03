@@ -56,7 +56,7 @@ main() {
 
   git config --global alias.ls    "log --pretty=format:'$_git_long_log_format' --decorate --no-merges"
   git config --global alias.lg    "log --pretty=format:'$_git_long_log_format' --graph"
-  git config --global alias.lgd   "log --pretty=format:'$_git_short_log_format' --date=short"
+  git config --global alias.lgd   "log --pretty=format:'$_git_short_log_format' --date=short --first-parent"
 
   git config --global alias.d "difftool -t vimdiff"
   git config --global alias.dc "diff --cached"
