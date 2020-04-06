@@ -22,7 +22,7 @@ main() {
   git config --global diff.renames "copies"
   git config --global diff.mnemonicprefix "true"
   git config --global difftool.prompt "true"
-  if type diffr 2>/dev/null 1>/dev/null ; then
+  if command -v diffr 2>/dev/null 1>/dev/null ; then
     diffr="dif | pager"
 
     git config --global pager.diff "$diffr"
