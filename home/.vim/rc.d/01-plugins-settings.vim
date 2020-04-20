@@ -5,7 +5,10 @@ let g:ale_echo_msg_warning_str="W"
 let g:ale_echo_msg_format = '[%linter%] %code%: %s [%severity%]'
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
-  " Ale 2}}}
+let g:ale_sign_priority = 30
+    " required to tell gitgutter to stop over-writing ale signs
+let g:gitgutter_sign_priority = 9
+" Ale 2}}}
   " supertab {{{2
   " binds to start the autocompletion
 let g:SuperTabMappingForward = '<c-space>'
