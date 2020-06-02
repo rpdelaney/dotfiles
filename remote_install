@@ -4,7 +4,7 @@
 dotfiles_dest="$HOME/.dotfiles"
 dotfiles_repo='git://github.com/rpdelaney/dotfiles'
 
-if [[ ! -r install ]]; then echo "Missing dependency: install" 1>&2; exit 1; fi
+if [[ ! -s install ]]; then echo "Missing dependency: install" 1>&2; exit 1; fi
 
 if ! command -v git &> /dev/null; then
   echo "Missing dependency: git" 1>&2

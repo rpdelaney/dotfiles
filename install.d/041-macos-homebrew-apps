@@ -84,7 +84,6 @@ homebrew_apps=(
   'openvpn'
   'pandoc'
   'pip-completion'
-  'pipenv'
   'proctools'
   'psgrep'
   'pv'
