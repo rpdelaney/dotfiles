@@ -3,7 +3,9 @@
 
 if command -v lynx >/dev/null 2>&1 ; then
     # Where to find the config
-  export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
+  if [ -s "$XDG_CONFIG_HOME/lynx/config" ] ; then
+    export LYNX_CFG="$XDG_CONFIG_HOME/lynx/config"
+  fi
     # Where to save downloaded files
   if [ -d "$HOME/incoming/" ] ; then
     export LYNX_SAVE_SPACE="$HOME/incoming"
