@@ -78,8 +78,8 @@ if command -v exa >/dev/null 2>&1 ; then
   alias la='ll --all'
   alias lr='ll --tree --level 2'
 else
-  alias l='ls --format=across --group-directories-first'
-  alias ll='ls --group-directories-first --human-readable --dereference -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+  alias l='ls --color=auto --format=across --group-directories-first'
+  alias ll='l --group-directories-first --human-readable --dereference -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
   alias la='ll --dereference-command-line --all'
   alias lr='ll recursive'
 fi
