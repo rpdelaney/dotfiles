@@ -78,8 +78,8 @@ if command -v exa >/dev/null 2>&1 ; then
   alias la='ll --all'
   alias lr='ll --tree --level 2'
 else
-  alias l='ls --format=across --group-directories-first'
-  alias ll='ls --group-directories-first --human-readable --dereference -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
+  alias l='ls --color=auto --format=across --group-directories-first'
+  alias ll='l --group-directories-first --human-readable --dereference -l --indicator-style=slash --time-style=+"%Y-%m-%d"'
   alias la='ll --dereference-command-line --all'
   alias lr='ll recursive'
 fi
@@ -119,6 +119,10 @@ if command -v grc >/dev/null 2>&1 ; then
     alias ping='hilite ping'
     alias ifconfig='hilite ifconfig'
     alias traceroute='hilite /usr/sbin/traceroute'
+        # use colors in ifconfig
+    if command -v ifconfig >/dev/null 2>&1 ; then
+        alias ifconfig='hilite ifconfig'
+    fi
 fi
 
     # use colors in ip
@@ -227,5 +231,3 @@ alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
   # always alias this since maybe it's only in the venv
 alias ptpython='ptpython --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
 alias ptpython3='ptpython3 --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
-
-# EOF
