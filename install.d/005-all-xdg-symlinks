@@ -9,7 +9,7 @@ if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; re
 main() {
   (
     if cd "$HOME" ; then
-      find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -type f -exec ln -s {} \;
+      find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
     fi
   )
 }
