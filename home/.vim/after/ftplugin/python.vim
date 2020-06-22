@@ -9,7 +9,7 @@ let b:python_slow_sync = 1
 let b:ale_linters = {'python': ['flake8', 'mypy']}
 
 let b:ale_python_flake8_change_directory=0
-let b:ale_python_flake8_executable='poetry run flake8'
+let b:ale_python_flake8_executable='flake8'
 
 let b:ale_python_mypy_ignore_invalid_syntax = 1
 
