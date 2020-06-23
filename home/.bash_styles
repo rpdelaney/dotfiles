@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 #
-# © Copyright 2014-2017 Ryan Delaney. All rights reserved. This work is
-# distributed WITHOUT ANY WARRANTY whatsoever; without even the implied
-# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# README file for terms and conditions on your use of this software.
-#
 
 # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_toc.html
 if type tput &> /dev/null; then
@@ -72,7 +67,7 @@ if type tput &> /dev/null; then
     eitalic=$(      tput ritm    || tput ZR   2> /dev/null ) # End   italic
     dim=$(          tput dim     || tput mh   2> /dev/null ) # Start dim
     reverse=$(      tput rev     || tput mr   2> /dev/null ) # Start reverse
-    default=$(      tput op                   2> /dev/null ) # Reset all modes
+    default=$(      tput op                   2> /dev/null ) # Reset all modes -- this doesn't reset underline or reverse
         # 3}}}
       # alt {{{3
     alt=$(          tput smcup   || tput ti   2> /dev/null ) # Start alt display
@@ -202,5 +197,3 @@ export LESS_TERMCAP_ue=$eitalic
   # disable all modes
 export LESS_TERMCAP_me=$default
 # mangpages 1}}}
-
-# vim: ft=sh foldmethod=marker foldlevel=0:
