@@ -10,6 +10,7 @@ if source "${_dir}/libhooks" ; then
   # source the gitconfig if it was changed
     # shellcheck disable=SC2016
   check_run install.d/105-all-gitconfig 'source install.d/105-all-gitconfig'
+  check_run home/.vim/rc.d/00-plugins.vim 'vimplug_upgrade'
 else
   echo "Failed to source libhooks: ${_dir}/libhooks" 1>&2
   exit 1
