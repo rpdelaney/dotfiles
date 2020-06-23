@@ -36,9 +36,12 @@ main() {
   fi
   # 1}}} diff
   # Merge {{{1
-  git config --global merge.tool "vimdiff"
-  git config --global merge.conflictstyle "diff3"
+  git config --global merge.tool "diffconflicts"
   git config --global mergetool.prompt "true"
+  # shellcheck disable=SC2016
+  git config --global mergetool.diffconflicts.cmd 'vim -c DiffConflicts "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'
+  git config --global mergetool.diffconflicts.trustExitCode true
+  git config --global mergetool.keepBackup false
   # 1}}} Merge
   # Alias {{{1
     # hub {{{2

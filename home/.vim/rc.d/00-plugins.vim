@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plug')
 
+  " merge conflict resolution for humans
+Plug 'whiteinge/diffconflicts'
+  " python integrations
 Plug 'davidhalter/jedi-vim'
 
 Plug 'git@github.com:scrooloose/nerdtree.git'
