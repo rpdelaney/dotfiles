@@ -21,6 +21,8 @@ Plug 'psf/black', { 'tag': '19.10b0' }
   " Amazon Ion
 Plug 'vmchale/ion-vim'
   " Render ANSI color codes in the buffer
+  " TODO: this provides a command 'AnsiEsc' but currently I lack a memorable
+  " way to run it when needed
 Plug 'git@github.com:vim-scripts/AnsiEsc.vim.git'
   " Portable Game Notation syntax
 Plug 'git://github.com/rpdelaney/vim-pgn.git'
