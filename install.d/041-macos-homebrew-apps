@@ -97,6 +97,7 @@ homebrew_apps=(
   'shellcheck'
   'sox --with-libao --with-libsndfile --with-opencore-amr --with-opusfile'
   'sshfs'
+  'starship'
   'sxiv'
   'terminal-notifier'
   'tig'

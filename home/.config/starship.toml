@@ -1,0 +1,48 @@
+# https://starship.rs/config/
+
+[character]
+symbol = "$"
+add_newline = true
+
+[username]
+disabled = false
+show_always = true
+style_user = "fg:20 bold"
+style_root = "bg:red fg:black"
+
+[cmd_duration]
+min_time = 500
+
+[env_var]
+style = "fg:black bg:white"
+variable = "PYTHONWARNINGS"
+prefix = "PYTHONWARNINGS="
+
+[aws]
+disabled = true
+
+[terraform]
+disabled = false
+
+[python]
+python_binary = "python3"
+
+[git_branch]
+style = "green"
+
+[git_status]
+# prefix = ""
+# suffix = ""
+ahead = "👆🏻"
+behind = "👇🏻"
+# conflicted = "💥"
+conflicted = "⚔️"
+# modified = "🛠️"
+modified = "✏️"
+stashed = "📦"
+renamed = "🌈"
+untracked = "❔"
+deleted = "❌"
+diverged = "🔀"
+staged = "🎭"
+style = "green"
