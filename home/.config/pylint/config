@@ -91,7 +91,6 @@ enable=import-error,
        unused-format-string-argument
        unused-format-string-key,
        invalid-format-index,
-       bad-indentation,
        mixed-indentation,
        unnecessary-semicolon,
        lowercase-l-suffix,
