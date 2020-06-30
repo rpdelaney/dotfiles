@@ -229,5 +229,5 @@ alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 
   # ptpython
   # always alias this since maybe it's only in the venv
-alias ptpython='ptpython --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
-alias ptpython3='ptpython3 --config-file "$XDG_CONFIG_HOME"/ptpython/config.py'
+alias ptpython='python3 -m ptpython'
+alias ptpython3='python3 -m ptpython'
