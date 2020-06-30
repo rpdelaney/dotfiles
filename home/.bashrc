@@ -125,12 +125,6 @@ if type psql &> /dev/null; then
 fi
 # }}}
 # ENVIRONMENT 1}}}
-# MACOS {{{1
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  # Initialize homebrew command-not-found
-  if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
-fi
-# MACOS 1}}}
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
