@@ -3,18 +3,22 @@
 [character]
 symbol = "$"
 add_newline = true
+style_success = "white"
+style_failure = "red"
 
 [username]
 disabled = false
 show_always = true
-style_user = "fg:20 bold"
+style_user = "fg:38 bold"
 style_root = "bg:red fg:black"
 
 [cmd_duration]
-min_time = 500
+prefix = "⏲️"
+min_time = 2000
+style = "fg:15 dimmed"
 
 [env_var]
-style = "fg:black bg:white"
+style = "fg:0 bg:15"
 variable = "PYTHONWARNINGS"
 prefix = "PYTHONWARNINGS="
 
