@@ -33,8 +33,8 @@ def configure(repl):
     repl.paste_mode = False
     repl.prompt_style = "classic"
     repl.insert_blank_line_after_output = False
-    repl.enable_history_search = False
-    repl.enable_auto_suggest = False
+    repl.enable_history_search = True
+    repl.enable_auto_suggest = True
     repl.enable_open_in_editor = True
     repl.enable_system_bindings = True
     repl.confirm_exit = False
