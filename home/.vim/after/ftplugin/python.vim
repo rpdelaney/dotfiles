@@ -8,7 +8,9 @@ let b:python_slow_sync = 1
 
 let b:ale_linters = {'python': ['flake8', 'mypy']}
 
-let b:ale_python_flake8_change_directory=1
+    " this must be 0 or else setup.cfg will sometimes not be loaded correctly
+    " for example, flake8 documentation errors in tests/*
+let b:ale_python_flake8_change_directory=0
 let b:ale_python_flake8_executable='flake8'
 
 let b:ale_python_mypy_ignore_invalid_syntax = 1
