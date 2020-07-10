@@ -1,8 +1,40 @@
 # https://starship.rs/config/
 
+add_newline = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "docker_context",
+    "package",
+    "golang",
+    "python",
+    "ruby",
+    "rust",
+    "terraform",
+    "nix_shell",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "cmd_duration",
+    "jobs",
+    "custom",
+    "line_break",
+    "battery",
+    "time",
+    "character",
+]
+
+
 [character]
 symbol = "$"
-add_newline = true
 style_success = "white"
 style_failure = "red"
 
