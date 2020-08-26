@@ -18,11 +18,6 @@ if command -v git >/dev/null 2>&1 ; then
     # Passwords
 # export GIT_ASKPASS=""
 
-  # hub
-  if command -v hub >/dev/null 2>&1 ; then
-    export GITHUB_USER="rpdelaney"
-  fi
-
   # tig
   if command -v tig >/dev/null 2>&1 ; then
     if [ -f "$XDG_CONFIG_HOME/tig/tigrc" ] ; then
