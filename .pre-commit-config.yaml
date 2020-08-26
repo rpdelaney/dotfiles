@@ -6,7 +6,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v3.2.0
     hooks:
       - id: end-of-file-fixer
         exclude: .vim/(autoload|bin|black|colors|compiler|ftplugin|indent|keymap|plugin|plug|print|spell|syntax)/.+
@@ -28,7 +28,7 @@ repos:
       - id: shell-lint
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.9
+    rev: 3.8.3
     hooks:
       - id: flake8
         additional_dependencies: [flake8-bugbear, flake8-comprehensions, flake8-bandit]
