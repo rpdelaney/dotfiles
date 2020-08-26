@@ -70,4 +70,6 @@ mpv/watch_later/*
 gh/*
 !gh/config.yml
 
+mimeapps*
+
 # EOF
