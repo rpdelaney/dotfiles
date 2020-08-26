@@ -1,0 +1,1 @@
+../plug/black/plugin/black.vim
