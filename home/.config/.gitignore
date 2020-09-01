@@ -73,4 +73,6 @@ gh/*
 pgcli/*
 !config
 
+mimeapps*
+
 # EOF
