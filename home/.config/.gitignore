@@ -70,4 +70,7 @@ mpv/watch_later/*
 gh/*
 !gh/config.yml
 
+pgcli/*
+!config
+
 # EOF
