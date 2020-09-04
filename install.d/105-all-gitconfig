@@ -6,7 +6,7 @@ main() {
   if [ -r "$HOME"/.emailaddress ] ; then
     email_address="$(cat "$HOME"/.emailaddress)"
   else
-    email_address="ryan.delaney@gmail.com"
+    email_address="ryan.patrick.delaney@protonmail.com"
   fi
   git config --global user.email "$email_address"
   git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
