@@ -231,3 +231,7 @@ alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
   # always alias this since maybe it's only in the venv
 alias ptpython='python3 -m ptpython'
 alias ptpython3='python3 -m ptpython'
+
+if command -v tree >/dev/null 2>&1 ; then
+  alias tree='tree -C -I "__pycache__"'
+fi
