@@ -1,14 +1,5 @@
 #!/usr/bin/env sh
-# GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin17)
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
 #
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
-#
-
 # silence warnings about SC1090:
 # shellcheck source=/dev/null
 
@@ -25,5 +16,3 @@ if command -v keychain >/dev/null 2>&1 ; then
 else
   echo "keychain(1) not found."
 fi
-
-# EOF
