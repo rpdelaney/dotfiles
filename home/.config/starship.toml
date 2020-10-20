@@ -2,41 +2,40 @@
 
 add_newline = false
 
-prompt_order = [
-    "username",
-    "hostname",
-    "kubernetes",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "docker_context",
-    "package",
-    "golang",
-    "python",
-    "ruby",
-    "rust",
-    "terraform",
-    "nix_shell",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "jobs",
-    "custom",
-    "line_break",
-    "battery",
-    "time",
-    "character",
-]
+format = """\
+    $username\
+    $hostname\
+    $kubernetes\
+    $directory\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $hg_branch\
+    $docker_context\
+    $package\
+    $golang\
+    $python\
+    $ruby\
+    $rust\
+    $terraform\
+    $nix_shell\
+    $memory_usage\
+    $aws\
+    $env_var\
+    $cmd_duration\
+    $jobs\
+    $custom\
+    $line_break\
+    $battery\
+    $time\
+    $character\
+    """
 
 
 [character]
-symbol = "$"
-style_success = "white"
-style_failure = "red"
+success_symbol = "[\\$](white)"
+error_symbol = "[\\$](red)"
 
 [username]
 disabled = false
@@ -45,14 +44,13 @@ style_user = "fg:38 bold"
 style_root = "bg:red fg:black"
 
 [cmd_duration]
-prefix = "⏲️"
 min_time = 2000
-style = "fg:15 dimmed"
+format = "⏲️ [$duration](fg:15 dimmed)"
 
 [env_var]
 style = "fg:0 bg:15"
 variable = "PYTHONWARNINGS"
-prefix = "PYTHONWARNINGS="
+format = "PYTHONWARNINGS="
 
 [aws]
 disabled = true
@@ -67,8 +65,6 @@ python_binary = "python3"
 style = "green"
 
 [git_status]
-# prefix = ""
-# suffix = ""
 ahead = "↑"
 behind = "↓"
 conflicted = "C"
