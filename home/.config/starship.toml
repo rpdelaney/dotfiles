@@ -3,6 +3,7 @@
 add_newline = false
 
 format = """\
+    [#](black)\
     $username\
     $hostname\
     $kubernetes\
@@ -34,8 +35,8 @@ format = """\
 
 
 [character]
-success_symbol = "[\\$](white)"
-error_symbol = "[\\$](red)"
+success_symbol = "[;](white)"
+error_symbol = "[;](red)"
 
 [username]
 disabled = false
