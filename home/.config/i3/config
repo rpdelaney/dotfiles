@@ -121,7 +121,7 @@ bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; m
 
 # commands
 bindsym $mod+e exec dmenu_run
-bindsym $mod+F12 exec scrot --focused --delay 1
+bindsym $mod+F12 exec scrot --focused --quality 75 '%Y-%m-%d_$wx$h.jpg'
 bindsym $mod+w exec i3-input -F 'exec python3 /home/ryan/src/py/pwstore/pwstore %s type password &> /tmp/pw.log'
 bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
 bindsym --release $mod+F5 exec i3-input -P 'rename window title: ' -F 'exec i3_window_title %s'
