@@ -75,4 +75,7 @@ pgcli/*
 
 mimeapps*
 
+# onepassword cli
+.op/*
+
 # EOF
