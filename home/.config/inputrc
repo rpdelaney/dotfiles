@@ -1,6 +1,3 @@
-# bell on tab-completion
-set bell-style visual
-
 set visible-stats on
 set colored-stats on
 
