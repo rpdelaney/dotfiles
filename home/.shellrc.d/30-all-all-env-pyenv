@@ -5,5 +5,9 @@ if command -v pyenv >/dev/null 2>&1 ; then
   eval "$(pyenv init -)"
 
   # Use XDG spec for storing shims
-  export PYENV_ROOT="${XDG_DATA_HOME:-${HOME}/.local/share}/pyenv"
+  if [ "$(ostype)" != "macos" ]; then
+    # This breaks on MacOS because stupid MacOS has whitespace in "Application Support"
+    # as of this writing, stupid python can't build from paths with whitespace
+    export PYENV_ROOT="${XDG_DATA_HOME:-${HOME}/.local/share}/pyenv"
+  fi
 fi
