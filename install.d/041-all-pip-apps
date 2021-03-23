@@ -4,13 +4,10 @@
 if ! command -v pip2 &> /dev/null; then echo "Missing dependency: pip2" 1>&2; return 1; fi
 if ! command -v pip3 &> /dev/null; then echo "Missing dependency: pip3" 1>&3; return 1; fi
 
-python2apps=(
-  daff
-  pudb
-)
-
 python3apps=(
+  black
   bpython
+  daff
   flake8
   flake8-bandit
   flake8-bugbear
@@ -18,43 +15,16 @@ python3apps=(
   flake8-pytest
   flake8-mutable
   flake8-return
+  pudb
   pwstore
   setuptools
   twine
   wheel
 )
 
-p2install() {
-  local targetapp
-  targetapp="$1"
-
-  if [[ "$ostype" = "macos" ]] ; then
-    sudo pip2 install "$targetapp"
-  else
-    pip2 install --user "$targetapp"
-  fi
-}
-
-p3install() {
-  local targetapp
-  targetapp="$1"
-
-  if [[ "$ostype" = "macos" ]] ; then
-    sudo pip3 install "$targetapp"
-  else
-    pip3 install --user "$targetapp"
-  fi
-}
-
 main() {
-  ostype="$(ostype)"
-
-  for p2app in "${python2apps[@]}"; do
-    p2install "$p2app" || return $?
-  done
-
-  for p3app in "${python3apps[@]}"; do
-    p3install "$p3app" || return $?
+  for targetapp in "${python3apps[@]}"; do
+    pipx install "$targetapp" || return
   done
 }
 
