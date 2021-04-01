@@ -63,6 +63,7 @@ main() {
   git config --global alias.lg    "log --color=always --pretty=format:'$_git_long_log_format' --graph"
   git config --global alias.lgd   "log --color=always --pretty=format:'$_git_short_log_format' --date=short --first-parent"
 
+  git config --global alias.ap "add --patch"
   git config --global alias.d "difftool -t vimdiff"
   git config --global alias.dc "diff --cached"
   git config --global alias.f "fetch"
