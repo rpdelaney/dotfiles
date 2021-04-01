@@ -236,3 +236,7 @@ alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
 if command -v tree >/dev/null 2>&1 ; then
   alias tree='tree -C -I "__pycache__"'
 fi
+
+if command -v pip; then
+  alias pip3i='pip3 --isolated'
+fi
