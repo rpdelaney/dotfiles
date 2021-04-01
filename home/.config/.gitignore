@@ -71,7 +71,7 @@ gh/*
 !gh/config.yml
 
 pgcli/*
-!config
+!pgcli/config
 
 mimeapps*
 
