@@ -2,5 +2,5 @@
 #
 
 if command -v rg >/dev/null 2>&1 ; then
-  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep"
+  export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep.conf"
 fi

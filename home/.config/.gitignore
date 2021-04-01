@@ -75,6 +75,8 @@ pgcli/*
 
 mimeapps*
 
+Bitwarden/*
+
 # onepassword cli
 .op/*
 
