@@ -1,5 +1,6 @@
 # bell on tab-completion
-set bell-style visual
+#  this doesn't seem to be supported anymore
+#set bell-style visual
 
 set visible-stats on
 set colored-stats on
