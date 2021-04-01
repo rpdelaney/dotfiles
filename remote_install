@@ -24,7 +24,7 @@ main() {
     git pull origin master || return
     ./scripts/setup_hooks || return
     git config --local user.name 'Ryan Delaney'
-    git config --local user.email 'ryan.delaney@gmail.com'
+    git config --local user.email 'ryan.patrick.delaney@protonmail.com'
     bash install
   fi
 }

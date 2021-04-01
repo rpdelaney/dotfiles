@@ -11,7 +11,7 @@ fi
 
 main() {
     git clone --recurse-submodules --jobs 8 "$bin_repo" "$bin_dest" || return $?
-    ( cd "$bin_dest" && { git config --local user.email 'ryan.delaney@gmail.com' ; git config --local user.name 'Ryan Delaney' ; } )
+    ( cd "$bin_dest" && { git config --local user.email 'ryan.patrick.delaney@protonmail.com' ; git config --local user.name 'Ryan Delaney' ; } )
 }
 
 main "$@"

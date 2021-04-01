@@ -77,4 +77,7 @@ mimeapps*
 
 Bitwarden/*
 
+# onepassword cli
+.op/*
+
 # EOF

@@ -17,7 +17,7 @@ alias screensaver='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/M
 alias lock='pmset displaysleepnow'
 
 unset ip && ip() {
-  ifconfig | grep 'inet ' | awk '{print $2}' | grep -v '127.0.0.1'
+  ifconfig | grep 'inet' | grep -v '127.0.0.1' | grep -v 'fe80' | awk '{print $3}'
 }
 
 if command_exists gtimeout ; then

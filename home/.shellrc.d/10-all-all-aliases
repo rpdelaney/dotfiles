@@ -237,6 +237,10 @@ if command -v tree >/dev/null 2>&1 ; then
   alias tree='tree -C -I "__pycache__"'
 fi
 
-if command -v pip; then
+if command -v pip >/dev/null 2>&1 ; then
+  alias pipi='pip --isolated'
+fi
+
+if command -v pip3 >/dev/null 2>&1 ; then
   alias pip3i='pip3 --isolated'
 fi

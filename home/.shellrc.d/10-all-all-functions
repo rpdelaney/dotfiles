@@ -88,3 +88,8 @@ werd() {
   i="${1:-1}"
   shuf -n "$i" /usr/share/dict/english
 }
+
+gittop() {
+  # go to the root of the current git repo
+  cd "$(git rev-parse --show-toplevel)" || return
+}
