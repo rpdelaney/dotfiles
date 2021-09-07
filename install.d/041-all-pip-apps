@@ -20,6 +20,7 @@ python3apps=(
   setuptools
   twine
   wheel
+  yamllint
 )
 
 main() {
