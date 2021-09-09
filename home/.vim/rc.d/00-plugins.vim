@@ -13,8 +13,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'git@github.com:ryanoasis/vim-devicons.git'
 
 Plug 'git@github.com:editorconfig/editorconfig-vim.git'
-  " markdown folding
-Plug 'git@github.com:masukomi/vim-markdown-folding.git'
+  " markdown formatting
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
   " python code formatter
   " https://github.com/psf/black/issues/1293
 Plug 'psf/black', { 'tag': '20.8b0' }
