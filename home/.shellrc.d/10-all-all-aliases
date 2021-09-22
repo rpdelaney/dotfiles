@@ -17,8 +17,8 @@ if command -v pacman >/dev/null 2>&1 ; then
   alias yars='ya -Rs'
 fi
 
-if command -v yay >/dev/null 2>&1 ; then
-  alias ya='\yay --color=always'
+if command -v paru >/dev/null 2>&1 ; then
+  alias ya='\paru --color=always'
   alias yaq='ya -Q'
   alias yas='ya -S'
   alias yass='ya -Ss'
