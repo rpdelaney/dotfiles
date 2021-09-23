@@ -1,5 +1,6 @@
 " autocmd BufWritePre <buffer> execute ':Black'
 
+setlocal foldmethod=indent
 setlocal expandtab shiftwidth=4 softtabstop=4
 setlocal completeopt=menuone,preview
 
