@@ -2,11 +2,6 @@
 #
 # shellcheck disable=SC2069
 
-# usage: sprunge FILE
-# or some_command | sprunge
-unalias sprunge >/dev/null 2>&1
-sprunge() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
-
 # usage: qrcode FILE
 # or some_command | qrcode
 unalias qrcode >/dev/null 2>&1
