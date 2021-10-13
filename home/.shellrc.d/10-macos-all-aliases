@@ -74,3 +74,5 @@ fi
 if command_exists gtar ; then
   alias tar='gtar'
 fi
+
+# EOF

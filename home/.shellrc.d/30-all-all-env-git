@@ -39,3 +39,5 @@ if command -v git >/dev/null 2>&1 ; then
     # TIG_TRACE
   fi
 fi
+
+# EOF

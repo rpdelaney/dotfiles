@@ -14,26 +14,6 @@ qrcode() { curl -F-=\<- qrenco.de < "${1:-/dev/stdin}"; }
 
 rot13() { tr 'A-Za-z' 'N-ZA-Mn-za-m' < "${1:-/dev/stdin}"; }
 
-# create a venv here and activate it
-
-venv() {
-   if [ -n "$VIRTUAL_ENV" ] ; then
-    echo "VIRTUAL_ENV is already set: $VIRTUAL_ENV" 1>&2
-    exit 1
-   fi
-
-   venv_target_dir="${1:-.venv}"
-
-   if ( set -x ; python3 -m venv "$venv_target_dir" ) ; then
-     # shellcheck disable=SC1090
-     . "$venv_target_dir"/bin/activate
-     unset venv_target_dir
-   else
-     unset venv_target_dir
-     return
-   fi
-}
-
 #
 # pacman
 #
@@ -93,3 +73,5 @@ gittop() {
   # go to the root of the current git repo
   cd "$(git rev-parse --show-toplevel)" || return
 }
+
+# EOF

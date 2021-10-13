@@ -9,3 +9,5 @@ if [[ -s "$lscolors_file" ]] ; then
 else
   echo "LS_COLORS file not found: $lscolors_file" 1>&2
 fi
+
+# EOF

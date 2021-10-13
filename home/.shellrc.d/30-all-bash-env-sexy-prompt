@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#
 
 bash_prompt="$HOME/.bash_prompt"
 
@@ -18,3 +19,5 @@ export PS3='#?'
 # PS4: Script debug mode prefix
 # Default: '+'
 export PS4='+ ${FUNCNAME[0]:+${FUNCNAME[0]}():}line ${LINENO}: '
+
+# EOF

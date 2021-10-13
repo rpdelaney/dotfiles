@@ -11,3 +11,5 @@ else
   } | column -t
   echo ""
 fi
+
+# EOF

@@ -1,11 +1,4 @@
 #!/usr/bin/env sh
-# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 
 if command -v pager >/dev/null 2>&1 ; then
@@ -24,4 +17,4 @@ elif command -v less >/dev/null 2>&1 ; then
   export LESSEDIT="vim"
 fi
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+# EOF

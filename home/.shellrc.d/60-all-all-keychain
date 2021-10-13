@@ -16,3 +16,5 @@ if command -v keychain >/dev/null 2>&1 ; then
 else
   echo "keychain(1) not found."
 fi
+
+# EOF

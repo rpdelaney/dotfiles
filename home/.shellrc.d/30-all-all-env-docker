@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
+#
 
 if command -v docker >/dev/null 2>&1 ; then
   # https://docs.docker.com/develop/develop-images/build_enhancements/
   export DOCKER_BUILDKIT=1
 fi
+
+# EOF

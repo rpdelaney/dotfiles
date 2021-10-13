@@ -244,3 +244,5 @@ fi
 if command -v pip3 >/dev/null 2>&1 ; then
   alias pip3i='pip3 --isolated'
 fi
+
+# EOF

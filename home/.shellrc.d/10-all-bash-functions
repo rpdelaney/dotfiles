@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 #
 
   # make a backup list of installed packages
@@ -39,4 +32,4 @@ dirpath() {
   printf '%s\n' "${paths[@]}"
 }
 
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
+# EOF

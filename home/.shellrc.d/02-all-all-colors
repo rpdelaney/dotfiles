@@ -1,19 +1,11 @@
 #!/usr/bin/env sh
-# GNU bash, version 4.4.23(1)-release (x86_64-apple-darwin17.5.0)
-# vim: filetype=sh foldmethod=marker shiftwidth=2 expandtab softtabstop=4:
-#
-# © Copyright 2018 Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
 
   # If we're running in screen then use colors anyway
 [ "$TERM" = "screen" ] && export TERM="screen-256color"
 [ "$TERM" = "screen-bce" ] && export TERM="screen-256color-bce"
   # enable color support
-  # shellcheck disable=SC1090
 if [ -s "$HOME"/.bash_styles ] ; then
+  # shellcheck disable=SC1091
   . "$HOME"/.bash_styles
 else
   echo "bash_styles not found." 1>&2
