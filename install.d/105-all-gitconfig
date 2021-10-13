@@ -36,6 +36,7 @@ main() {
   fi
   # 1}}} diff
   # Merge {{{1
+  git config --global merge.conflictstyle "diff3"
   git config --global merge.tool "diffconflicts"
   git config --global mergetool.prompt "true"
   # shellcheck disable=SC2016
