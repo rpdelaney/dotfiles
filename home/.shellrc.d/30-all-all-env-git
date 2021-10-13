@@ -4,6 +4,8 @@
 if command -v git >/dev/null 2>&1 ; then
     # Always vim to edit even if I have a window manager.
   export GIT_EDITOR="vim"
+    # Take the configuration from the given files instead from global or system-level configuration.
+  export GIT_CONFIG_GLOBAL="${XDG_CONFIG_HOME:-$HOME/.config}/git/config"
     # Number of context lines shown in a diff
 # export GIT_DIFF_OPTS=
     # Use vimdiff for git diff
