@@ -45,10 +45,6 @@ main() {
   git config --global mergetool.keepBackup false
   # 1}}} Merge
   # Alias {{{1
-    # hub {{{2
-  git config --global alias.issu '! command -v hub >/dev/null 2>&1 && _issu() { hub issue --format="<#reset#><#green#> %i<#reset#> %t %l <#blue#><%au><#reset#> <#white#><#dim#>%U %n<#reset#>" | colorizer ; } && _issu'
-  git config --global alias.issues 'issue --format="%sC %i%Creset %t %l%n %Cblue%U%Creset%n%n %b %n%n"'
-    # hub 2}}}
   _git_reset='%C(reset)'
   _git_abbrev_hash='%C(magenta)%h'"$_git_reset"
   _git_ref='%C(yellow ul)%D'"$_git_reset"
