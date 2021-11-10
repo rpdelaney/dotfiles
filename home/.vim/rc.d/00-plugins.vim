@@ -7,12 +7,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " https://github.com/juliosueiras/vim-terraform-completion " <-- check this out later
 
                                       " /* session management /*
-
 Plug 'chrisbra/Recover.vim'           " - diff mode for swap files
 Plug 'fholgado/minibufexpl.vim'
 
                                       " /* vi language extensions */
-
 Plug 'tpope/vim-characterize'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-repeat'
@@ -21,7 +19,6 @@ Plug 'vim-scripts/vim-indent-object'  " - adds a motion to an indentation level
 Plug 'wellle/targets.vim'
 
                                       " /* appearance */
-
 Plug 'bling/vim-airline'              " - the most baller status line
 Plug 'molok/vim-smartusline'          " - change statusline color with vim mode
 Plug 'rickhowe/diffchar.vim'          " - smarter diff mode
@@ -42,7 +39,6 @@ Plug 'whiteinge/diffconflicts'        " - merge conflict resolution for humans
 Plug 'morhetz/gruvbox'
 
                                       " /* syntax & file format handlers  */
-
 Plug 'cespare/vim-toml'               " - toml ftdetect and highlighting
 Plug 'davidhalter/jedi-vim'           " - python pseudo-ide
 Plug 'hashivim/vim-terraform'         " - terraform ftdetect and highlighting
