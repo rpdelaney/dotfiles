@@ -1,3 +1,5 @@
+" this is a bunch of cruft. I don't really know what it does.
+
   " TODO: what is this?
 set complete-=i
   " TODO: what is this?

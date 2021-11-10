@@ -1,3 +1,6 @@
+" I don't know if any of this is actually required now that vim-terminus is
+" handling it
+
 "if &term =~ "xterm\\|rxvt|screen-256color"
 " " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
