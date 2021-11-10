@@ -30,7 +30,7 @@ Plug 'ryanoasis/vim-devicons'         " - add filetype glyphs in NERDtree
 Plug 'vim-scripts/AnsiEsc.vim'        " - render and conceal ANSI escape sequences
 Plug 'wincent/terminus'               " - change cursor shape with vim mode while in tmux
 
-                                      " - dev tools
+                                      " /* dev tools */
 Plug 'airblade/vim-gitgutter'         " - git status in the gutter
 Plug 'dense-analysis/ale'             " - awesome asynchronous linting integration in the gutter
 Plug 'direnv/direnv.vim'              " - load direnv when shelling out from inside vim
