@@ -21,7 +21,6 @@ source ~/.vim/rc.d/02-interface-syntax.vim
 source ~/.vim/rc.d/05-bindings.vim
 source ~/.vim/rc.d/10-functions-hexedit.vim
 source ~/.vim/rc.d/10-functions-whitespace.vim
-source ~/.vim/rc.d/black.vim
 
   " Use modelines
 set modeline

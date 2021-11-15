@@ -45,7 +45,6 @@ Plug 'hashivim/vim-terraform'         " - terraform ftdetect and highlighting
 Plug 'jamessan/vim-gnupg'             " - seamlessly edit gpg encrypted files
 Plug 'plasticboy/vim-markdown'        " - markdown jiu jitsu
 Plug 'potatoesmaster/i3-vim-syntax'   " - i3wm config files
-Plug 'psf/black', { 'tag': '20.8b0' } " - python code formatter
 Plug 'rpdelaney/rtorrent-syntax-file' " - rtorrent config files
 Plug 'rpdelaney/vim-pgn'              " - portable game notation files (chess)
 Plug 'rpdelaney/vim-pgsql'            " - postgres SQL
