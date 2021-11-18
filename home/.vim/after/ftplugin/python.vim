@@ -1,5 +1,3 @@
-" autocmd BufWritePre <buffer> execute ':Black'
-
 setlocal foldmethod=indent
 setlocal expandtab shiftwidth=4 softtabstop=4
 setlocal completeopt=menuone,preview
@@ -18,7 +16,5 @@ let b:ale_python_mypy_ignore_invalid_syntax = 1
 
 let g:black_linelength = 79
 
-  " call formatter when we hit a key
-nnoremap <buffer> <F5> :%! black - --quiet 2>/dev/null <CR>
-
-setlocal formatprg=black\ -\ --quiet
+setlocal formatprg=black\ -\ --quiet\ 2>/dev/null
+setlocal formatexpr=
