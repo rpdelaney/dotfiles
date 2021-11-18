@@ -3,12 +3,7 @@
 
 main() {
   git config --global user.name "Ryan Delaney"
-  if [ -r "$HOME"/.emailaddress ] ; then
-    email_address="$(cat "$HOME"/.emailaddress)"
-  else
-    email_address="ryan.patrick.delaney@protonmail.com"
-  fi
-  git config --global user.email "$email_address"
+  git config --global user.email "ryan.patrick.delaney@protonmail.com"
   git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
   git config --global core.whitespace "trailing-space,space-before-tab"
   git config --global core.filemode "true"
