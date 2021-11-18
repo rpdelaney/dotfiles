@@ -3,10 +3,6 @@
 
 install_dir="$HOME/.dotfiles/install.d"
 
-if [[ -z $dotfiles_dest ]]; then
-  export dotfiles_dest="$HOME/.dotfiles"
-fi
-
 if [[ ! -x "$install_dir" ]]; then echo "Install scripts directory not found: $install_dir" 1>&2; exit 1; fi
 
 # Get the ostype and distro if applicable

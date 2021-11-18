@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 #
 
-# shellcheck disable=SC2154
-if [[ ! -d "$(realpath "$dotfiles_dest")" ]]; then echo "dotfiles_dest var not found: $dotfiles_dest" 1>&2; return 1; fi
-
 if ! command -v find &> /dev/null; then echo "Missing dependency: find" 1>&2; return 1; fi
 
 main() {
   (
     if cd "$HOME" ; then
-      find "$dotfiles_dest/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
+      find ".dotfiles/home/" -maxdepth 1 -mindepth 1 -exec ln -s {} \;
     fi
   )
 }

@@ -138,7 +138,7 @@ main() {
   # 1}}} URL replacements
   # Commit template {{{1
     # shellcheck disable=SC2154
-  commit_template_file=${dotfiles_dest:-$HOME/.dotfiles}/data/git.commit.template/git.commit.template
+  commit_template_file="$HOME/.dotfiles/data/git.commit.template/git.commit.template"
   if [ -r "$commit_template_file" ]; then
     git config --global commit.template "$commit_template_file"
   else

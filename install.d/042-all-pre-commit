@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 #
 
-# shellcheck disable=SC2154
-if [[ ! -d "$dotfiles_dest" ]] ; then
-  echo "FATAL: dotfiles_dest is not found. I don't know what to do." 1>&2
-  return 1
-fi
-
 main() {
   if ! type pre-commit &>/dev/null ; then
     p3install pre-commit || return $?
   fi
 
-  if cd "$dotfiles_dest" ; then
+  if cd "$HOME/.dotfiles" ; then
     pre-commit install
   fi
 }
