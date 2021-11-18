@@ -20,3 +20,5 @@ let g:black_linelength = 79
 
   " call formatter when we hit a key
 nnoremap <buffer> <F5> :%! black - --quiet 2>/dev/null <CR>
+
+setlocal formatprg=black\ -\ --quiet
