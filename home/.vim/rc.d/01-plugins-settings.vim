@@ -17,8 +17,10 @@ let g:smartusline_hi_virtual_replace = 'guibg=#e454ba guifg=black ctermbg=magent
 let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black'
 
   " easy-align
-xmap ga <Plug>(EasyAlign)  " Start interactive EasyAlign in visual mode (e.g. vipga)
-nmap ga <Plug>(EasyAlign)  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
   " terminus
 let g:TerminusCursorShape = 1        " Controls whether the cursor changes shape when changing modes
