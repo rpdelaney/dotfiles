@@ -30,9 +30,6 @@ let g:TerminusReplaceCursorShape = 2 " Controls the shape of the cursor in repla
 let g:TerminusMouse = 0              " Controls whether terminus attempts to improve mouse function by setting 'mouse' and 'typemouse' settings.
 let g:TerminusFocusReporting = 1     " Controls whether terminus attempts to enable focus reporting
 
-  " latex
-let g:tex_flavor = "latex"
-
   " nerdtree {{{2
 let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✳",
