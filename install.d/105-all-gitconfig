@@ -10,6 +10,7 @@ main() {
   git config --global core.symlinks "true"
   git config --global push.default "tracking"
   git config --global branch.autosetuprebase "never"
+  git config --global init.defaultBranch main
   git config --global push.followTags "true"
   git config --global pull.rebase "false"
   git config --global --unset blame.ignoreRevsFile
