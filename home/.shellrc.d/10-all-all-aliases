@@ -90,7 +90,7 @@ alias llla='lla --color=always | pager'
 
     # safety valve
 alias mv='mv --verbose --interactive'
-alias cp='cp --verbose --interactive'
+alias cp='cp --verbose --interactive --reflink=auto'
 alias rm='rm --verbose -I'
 alias chown='chown --changes --preserve-root'
 alias chmod='chmod --changes --preserve-root'
