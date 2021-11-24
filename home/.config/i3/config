@@ -1,6 +1,6 @@
 # i3 config file (v4)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# TODO: split this into includes. https://i3wm.org/docs/userguide.html#include
 
 #
 # list of keys at /usr/include/X11/keysymdef.h
