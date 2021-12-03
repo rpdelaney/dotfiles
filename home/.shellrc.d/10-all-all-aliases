@@ -74,7 +74,7 @@ if command -v exa >/dev/null 2>&1 ; then
   # exa aliases go here
   alias exa='exa --color=always --icons'
   alias l='exa --group-directories-first'
-  alias ll='exa --long --header --git --links --group-directories-first --color-scale --time-style=long-iso'
+  alias ll='exa --long --git --links --group-directories-first --color-scale --time-style=long-iso'
   alias la='ll --all'
   alias lr='ll --tree --level 2'
 else
@@ -90,7 +90,7 @@ alias llla='lla --color=always | pager'
 
     # safety valve
 alias mv='mv --verbose --interactive'
-alias cp='cp --verbose --interactive'
+alias cp='cp --verbose --interactive --reflink=auto'
 alias rm='rm --verbose -I'
 alias chown='chown --changes --preserve-root'
 alias chmod='chmod --changes --preserve-root'
