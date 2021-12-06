@@ -19,14 +19,11 @@ main() {
 }
 
 casks=(
-  1password-cli
   font-consolas-for-powerline
   font-inconsolata-g-for-powerline
   kitty
   muzzle
-  osxfuse
   scroll-reverser
-  xquartz
 )
 
 main "$@"

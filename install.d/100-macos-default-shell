@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 
-default_shell="/usr/local/bin/bash"
+default_shell="/opt/homebrew/bin/bash"
+
 if [[ ! -x "$default_shell" ]] ; then
   echo "FATAL: Default shell not found: $default_shell" 1>&2
   return 1

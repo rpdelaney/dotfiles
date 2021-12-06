@@ -13,8 +13,7 @@ _path() {
   fi
 }
 
-# Make sure we have ~/bin, /usr/local/bin, and /usr/local/sbin
-_path /usr/local/sbin || return
+# Make sure we have ~/bin and /usr/local/bin
 _path /usr/local/bin || return
 _path "$HOME"/bin || return
 
