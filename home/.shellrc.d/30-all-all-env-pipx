@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+#
+
+if command -v pipx >/dev/null 2>&1 ; then
+  # for reasons that are mysterious to me, this causes pipx to play nice with
+  # pyenv and asdf
+  export PIPX_DEFAULT_PYTHON="python"
+fi
+
+# EOF
