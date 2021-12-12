@@ -106,6 +106,7 @@ nosetests.xml
 .mypy_cache
 .pythonrc.py
 pip-wheel-metadata
+.hypothesis
 
 dist/
 build/

@@ -17,9 +17,7 @@ python3apps=(
   flake8-return
   pudb
   pwstore
-  setuptools
   twine
-  wheel
   yamllint
 )
 

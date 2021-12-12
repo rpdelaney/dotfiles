@@ -86,7 +86,6 @@ homebrew_apps=(
   'psgrep'
   'pv'
   'pwgen'
-  'pyenv'
   'ranger'
   'rst-lint'
   'rsync'
