@@ -61,6 +61,8 @@ disabled = false
 
 [python]
 python_binary = "python3"
+symbol = " "
+style = "green bold"
 
 [git_branch]
 style = "green"
