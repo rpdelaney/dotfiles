@@ -3,7 +3,6 @@
 add_newline = false
 
 format = """\
-    [#](black) \
     $username\
     $hostname\
     $kubernetes\
@@ -33,7 +32,6 @@ format = """\
     $character\
     """
 
-
 [character]
 success_symbol = "[\\$](white)"
 error_symbol = "[\\$](red)"
@@ -41,12 +39,23 @@ error_symbol = "[\\$](red)"
 [username]
 disabled = false
 show_always = true
+format = "[$user]($style)"
 style_user = "fg:38 bold"
 style_root = "bg:red fg:black"
 
+[hostname]
+style = "#028080"
+ssh_only = true
+format = "@[$hostname](fg:38)"
+
+[directory]
+truncate_to_repo=false
+style = "bold green"
+format = " [in](bold #6b6b6b) [$path]($style) "
+
 [cmd_duration]
 min_time = 2000
-format = "⏲️ [$duration](fg:15 dimmed)"
+format = " [$duration](fg:15 dimmed) "
 
 [env_var]
 style = "fg:0 bg:15"
@@ -54,7 +63,8 @@ variable = "PYTHONWARNINGS"
 format = "PYTHONWARNINGS="
 
 [aws]
-disabled = true
+symbol = " "
+disabled = false
 
 [terraform]
 disabled = false
@@ -65,7 +75,17 @@ symbol = " "
 style = "green bold"
 
 [git_branch]
-style = "green"
+style = "#ddb100"
+symbol = " "
+format = "[on](bold #6b6b6b) [$symbol]($style)[$branch](bold $style) "
+
+[git_commit]
+style = "#ddb100"
+only_detached = false
+tag_disabled = false
+
+[git_state]
+am = "APPLY-MAILBOX"
 
 [git_status]
 ahead = "↑"
