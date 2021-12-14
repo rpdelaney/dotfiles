@@ -67,7 +67,7 @@ if type tput &> /dev/null; then
     eitalic=$(      tput ritm    || tput ZR   2> /dev/null ) # End   italic
     dim=$(          tput dim     || tput mh   2> /dev/null ) # Start dim
     reverse=$(      tput rev     || tput mr   2> /dev/null ) # Start reverse
-    default=$(      tput op                   2> /dev/null ) # Reset all modes -- this doesn't reset underline or reverse
+    default=$(      tput sgr0                 2> /dev/null ) # Reset all modes -- this doesn't reset underline or reverse
         # 3}}}
       # alt {{{3
     alt=$(          tput smcup   || tput ti   2> /dev/null ) # Start alt display
