@@ -39,6 +39,7 @@ homebrew_apps=(
   'docx2txt'
   'dos2unix'
   'enca'
+  'entr'
   'espeak'
   'exa'
   'exiftool'
