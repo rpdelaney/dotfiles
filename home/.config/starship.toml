@@ -76,7 +76,7 @@ style = "green bold"
 
 [git_branch]
 style = "#ddb100"
-symbol = " "
+symbol = " "
 format = "[on](bold #6b6b6b) [$symbol]($style)[$branch](bold $style) "
 
 [git_commit]
