@@ -17,3 +17,7 @@ function! Format(type, ...)
 endfunction
 
 nmap <silent> GQ :let w:gqview = winsaveview()<CR>:set opfunc=Format<CR>g@
+
+    " run the formatter (formatprg or formatexpr) on the selected buffer and return cursor to its
+    " original position
+nnoremap <silent> <buffer> <F5> :let b:view = winsaveview()<CR>gggqG:call winrestview(b:view)<CR>:unlet b:view<CR>

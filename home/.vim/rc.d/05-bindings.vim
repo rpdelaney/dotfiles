@@ -23,8 +23,4 @@ if maparg('<c-s>', 's') ==# ''
     noremap <c-s> :w<cr>
 endif
 
-    " run the formater (formatprg or formatexpr) on the selected buffer and return cursor to its
-    " original position
-nnoremap <buffer> <F5> :let b:view = winsaveview()<CR>gggqG:call winrestview(b:view)<CR>:unlet b:view<CR>
-
 " vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:
