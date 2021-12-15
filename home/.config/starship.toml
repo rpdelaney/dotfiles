@@ -53,6 +53,9 @@ truncate_to_repo=false
 style = "bold green"
 format = " [in](bold #6b6b6b) [$path]($style) "
 
+[package]
+format = "[is](bold #6b6b6b) [$symbol$version]($style) "
+
 [cmd_duration]
 min_time = 2000
 format = " [$duration](fg:15 dimmed) "
@@ -73,6 +76,7 @@ disabled = false
 python_binary = "python3"
 symbol = " "
 style = "green bold"
+format = "[via](bold #6b6b6b) [${symbol}${pyenv_prefix}(${version} )($virtualenv)]($style)"
 
 [git_branch]
 style = "#ddb100"
