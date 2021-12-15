@@ -81,7 +81,7 @@ format = "[on](bold #6b6b6b) [$symbol]($style)[$branch](bold $style) "
 
 [git_commit]
 style = "#ddb100"
-only_detached = false
+only_detached = true
 tag_disabled = false
 
 [git_state]
