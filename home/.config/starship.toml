@@ -1,4 +1,5 @@
 # https://starship.rs/config/
+# https://english.lingolia.com/en/grammar/prepositions
 
 add_newline = false
 
@@ -51,13 +52,13 @@ format = "@[$hostname](fg:38)"
 [directory]
 truncate_to_repo = false
 style = "bold #a683ab"
-format = " [in](bold #6b6b6b) [ﱮ $path]($style) [$read_only]($read_only_style)"
+format = " [in](bold italic #6b6b6b) [ﱮ $path]($style) [$read_only]($read_only_style)"
 read_only = ""
 read_only_style = "bold red"
 
 [package]
 symbol = " "
-format = "[is](bold #6b6b6b) [$symbol$version]($style) "
+format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 
 [cmd_duration]
 min_time = 2000
@@ -70,7 +71,7 @@ format = "PYTHONWARNINGS="
 
 [aws]
 symbol = " "
-format = '[at](bold #6b6b6b) [$symbol($profile)]($style)[@($region )](dimmed $style) '
+format = '[at](bold italic #6b6b6b) [$symbol($profile)]($style)[@($region )](yellow) '
 disabled = false
 [aws.region_aliases]
 us-east-2 = "us-east-2 (Ohio)"
@@ -96,18 +97,19 @@ me-south-1 = "me-south-1 (Bahrain)"
 sa-east-1 = "sa-east-1 (São Paulo)"
 
 [terraform]
+format = "[via](bold italic #6b6b6b) [$symbol$version]($style) "
 disabled = false
 
 [python]
 python_binary = "python3"
 symbol = " "
 style = "green bold"
-format = '[via](bold #6b6b6b) [${symbol}${pyenv_prefix}(${version} )]($style)[(\($virtualenv\) )]($style dimmed)'
+format = '[via](bold italic #6b6b6b) [${symbol}${pyenv_prefix}(${version} )]($style)[(\($virtualenv\) )]($style dimmed)'
 
 [git_branch]
 style = "#ddb100"
 symbol = " "
-format = "[on](bold #6b6b6b) [$symbol]($style)[$branch](bold $style) "
+format = "[on](bold italic #6b6b6b) [$symbol]($style)[$branch](bold $style) "
 
 [git_commit]
 style = "#ddb100"
