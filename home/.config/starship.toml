@@ -49,11 +49,14 @@ ssh_only = true
 format = "@[$hostname](fg:38)"
 
 [directory]
-truncate_to_repo=false
-style = "bold green"
-format = " [in](bold #6b6b6b) [$path]($style) "
+truncate_to_repo = false
+style = "bold #a683ab"
+format = " [in](bold #6b6b6b) [ﱮ $path]($style) [$read_only]($read_only_style)"
+read_only = ""
+read_only_style = "bold red"
 
 [package]
+symbol = " "
 format = "[is](bold #6b6b6b) [$symbol$version]($style) "
 
 [cmd_duration]
