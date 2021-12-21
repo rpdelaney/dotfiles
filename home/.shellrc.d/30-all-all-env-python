@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+#
+
+if ! command -v python3 >/dev/null 2>&1 ; then
+  # If this is the name of a readable file, the Python commands in that file
+  # are executed before the first prompt is displayed in interactive mode. The
+  # file is executed in the same namespace where interactive commands are
+  # executed so that objects defined or imported in it can be used without
+  # qualification in the interactive session.
+  export PYTHONSTARTUP=".pythonrc.py"
+
+  export PYTHONOPTIMIZE=""
+
+  # If this is set, Python will write .pyc files in a mirror directory tree at
+  # this path, instead of in __pycache__ directories within the source tree.
+  # This is equivalent to specifying the -X pycache_prefix=PATH option.
+  export PYTHONPYCACHEPREFIX="$HOME/.local/python3/pycache"
+fi
+
+# EOF
