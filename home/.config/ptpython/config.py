@@ -3,10 +3,10 @@ Configuration example for ``ptpython``.
 Copy this file to $XDG_CONFIG_HOME/ptpython/config.py
 On Linux, this is: ~/.config/ptpython/config.py
 """
-from prompt_toolkit.filters import ViInsertMode
-from prompt_toolkit.key_binding.key_processor import KeyPress
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.styles import Style
+from prompt_toolkit.filters import ViInsertMode  # noqa: F401
+from prompt_toolkit.key_binding.key_processor import KeyPress  # noqa: F401
+from prompt_toolkit.keys import Keys  # noqa: F401
+from prompt_toolkit.styles import Style  # noqa: F401
 
 from ptpython.layout import CompletionVisualisation
 
@@ -124,4 +124,4 @@ def configure(repl):
     repl.vi_start_in_navigation_mode = True
 
     # Preserve last used Vi input mode between main loop iterations
-    repl.vi_keep_last_used_mode = False
+    repl.vi_keep_last_used_mode = True
