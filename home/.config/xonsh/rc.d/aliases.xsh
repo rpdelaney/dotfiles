@@ -24,6 +24,7 @@ _GNU_UTILS = {
     "mv": "gmv",
     "rm": "grm",
     "rmdir": "grmdir",
+    "stat": "gstat",
 }
 if platform.system() == "Darwin":
     for util in _GNU_UTILS.keys():
