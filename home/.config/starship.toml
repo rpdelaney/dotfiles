@@ -4,6 +4,7 @@
 add_newline = false
 
 format = """\
+    $shell\
     $username\
     $hostname\
     $kubernetes\
@@ -20,7 +21,6 @@ format = """\
     $ruby\
     $rust\
     $terraform\
-    $nix_shell\
     $memory_usage\
     $aws\
     $env_var\
@@ -32,6 +32,14 @@ format = """\
     $time\
     $character\
     """
+
+[shell]
+disabled = false
+bash_indicator = "⌥"
+zsh_indicator = "z"
+xonsh_indicator = "Ж"  # Cyrillic Capital Letter Zhe U+0416
+fish_indicator = "◉"  # Fisheye U+25C6 lul
+style="bold #6b6b6b"
 
 [character]
 success_symbol = "[\\$](white)"
