@@ -185,11 +185,6 @@ if command -v abook >/dev/null 2>&1 ; then
   fi
 fi
 
-  # copy-paste to clipboard
-if command -v xclip >/dev/null 2>&1 ; then
-  alias clip="xclip -selection clipboard"
-fi
-
   # pudb
 if command -v pudb3 >/dev/null 2>&1 ; then
   alias pudb='pudb3'
@@ -208,11 +203,6 @@ if command -v netctl-auto >/dev/null 2>&1 ; then
   fi
 fi
 
-  # pypi2pkgbuild
-if command -v pypi2pkgbuild.py >/dev/null 2>&1 ; then
-  alias pypi2pkg='PKGEXT=.pkg.tar pypi2pkgbuild.py -g cython -b /tmp/pypi2pkgbuild/ -f'
-fi
-
   # sxiv
 if command -v sxiv >/dev/null 2>&1 ; then
   alias sxiv='sxiv -a -p'
@@ -223,26 +213,8 @@ if command -v pwstore >/dev/null 2>&1 ; then
   alias pw='pwstore'
 fi
 
-  # pylint
-  # always alias this since maybe it's only in the venv
-alias pylint='pylint --rcfile "$XDG_CONFIG_HOME"/pylint/config'
-
-  # ptpython
-  # always alias this since maybe it's only in the venv
-  # this breaks with pipx. maybe we have to detect if we are in a venv or not before doing this. oy vey
-# alias ptpython='python3 -m ptpython'
-# alias ptpython3='python3 -m ptpython'
-
 if command -v tree >/dev/null 2>&1 ; then
   alias tree='tree -C -I "__pycache__"'
-fi
-
-if command -v pip >/dev/null 2>&1 ; then
-  alias pipi='pip --isolated'
-fi
-
-if command -v pip3 >/dev/null 2>&1 ; then
-  alias pip3i='pip3 --isolated'
 fi
 
 # EOF
