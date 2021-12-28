@@ -9,6 +9,8 @@ _first("ZZ", "exit")
 _first("ch", "cd <edit> && ll")
 _first("pw", "pwstore")
 _first("keychain", 'keychain --dir "$XDG_DATA_HOME/keychain" --absolute')
+_first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
+_first("jq", "jq --color-output")
 
 _first("chgrp", "chgrp -c")
 _first("chmod", "chmod -c")
