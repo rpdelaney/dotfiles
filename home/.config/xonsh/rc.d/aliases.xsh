@@ -13,6 +13,10 @@ _a["ll"]=f"{_a['exa']} --long --git --links --group-directories-first --color-sc
 
 _a["tree"]="tree -C -I '__pycache__'"
 
+_a["hilite"]="grc --stdout --stderr --colour=on"
+for cmd in "ping ifconfig traceroute gcc make".split():
+    _a[cmd] = f"hilite {cmd}"
+
 # use GNU utils on macOS
 _GNU_UTILS = {
     "chgrp": "gchgrp",
