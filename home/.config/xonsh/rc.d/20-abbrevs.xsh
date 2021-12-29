@@ -33,7 +33,7 @@ _first("ch", "cd <edit> && ll")
 _first("pw", "pwstore")
 _first("keychain", 'keychain --dir "$XDG_DATA_HOME/keychain" --absolute')
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
-_first("jq", "jq --color-output")
+_first("jq", "jq -C")
 _first("ip", "ip -color")
 
 _first("chgrp", "chgrp -c")
@@ -45,16 +45,16 @@ _first("mv", "mv -v -i")
 _first("rm", "rm -v --interactive=once")
 _first("rmdir", "rmdir -v")
 
-_first("la", "ll --all")
+_first("la", "ll -a")
 _first("lll", f"ll <edit>| {abbrevs['pager']}")
-_first("lla", f"ll --all <edit>| {abbrevs['pager']}")
-_first("lt", f"ll --all --tree --level 2")
+_first("lla", f"ll -a <edit>| {abbrevs['pager']}")
+_first("lt", f"ll -a -T -L 2")
 
 _GIT_SUBCOMMANDS = {
-    "ap": "add --patch",
+    "ap": "add -p",
     "br": "branch -v",
-    "bra": "branch -v --all",
-    "c": "commit --verbose",
+    "bra": "branch -v -a",
+    "c": "commit -v",
     "co": "checkout",
     "cp": "cherry-pick",
     "d": "diff",
@@ -63,9 +63,9 @@ _GIT_SUBCOMMANDS = {
     "fa": "fetch --all",
     "lgd": "lg --first-parent",
     "r": "reset",
-    "s": "status --short",
+    "s": "status -s",
     "st": "status",
-    "tags": "tag --list -n3",
+    "tags": "tag -l -n3",
     "m": "merge -v",
     "leaders": "shortlog -sn --all --no-merges",
 }
