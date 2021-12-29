@@ -16,9 +16,15 @@ def _subcommand(command, subcommand, sub):
         else word
     )
 
+def define(word):
+    execx(f"curl -s dict://dict.org/d:{word}")
 
 abbrevs["ix"] = "curl --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -R -X"
+abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"
+abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+abbrevs["define"] = "define('<edit>')"
+abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
