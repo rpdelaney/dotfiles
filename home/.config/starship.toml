@@ -64,7 +64,7 @@ read_only = ""
 read_only_style = "bold red"
 
 [package]
-symbol = " "
+symbol = ""
 format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 
 [cmd_duration]
@@ -77,7 +77,7 @@ variable = "PYTHONWARNINGS"
 format = "PYTHONWARNINGS="
 
 [aws]
-symbol = " "
+symbol = ""
 format = '[at](bold italic #6b6b6b) [$symbol($profile)]($style)[@($region )](yellow) '
 disabled = false
 [aws.region_aliases]
@@ -109,13 +109,13 @@ disabled = false
 
 [python]
 python_binary = "python3"
-symbol = " "
+symbol = ""
 style = "green bold"
 format = '[via](bold italic #6b6b6b) [${symbol}${pyenv_prefix}(${version} )]($style)[(\($virtualenv\) )]($style dimmed)'
 
 [git_branch]
 style = "#ddb100"
-symbol = " "
+symbol = ""
 format = "[on](bold italic #6b6b6b) [$symbol]($style)[$branch](bold $style) "
 
 [git_commit]
