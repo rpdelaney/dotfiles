@@ -64,10 +64,12 @@ _GIT_SUBCOMMANDS = {
     "lgd": "lg --first-parent",
     "r": "reset",
     "s": "status -s",
+    "sh": "show",
     "st": "status",
     "tags": "tag -l -n3",
     "m": "merge -v",
     "leaders": "shortlog -sn --all --no-merges",
+    "rbi": "rebase --interactive",
 }
 
 for command in _GIT_SUBCOMMANDS.keys():
