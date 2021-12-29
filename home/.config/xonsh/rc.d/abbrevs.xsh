@@ -25,6 +25,7 @@ abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 abbrevs["define"] = "define('<edit>')"
 abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
+abbrevs["sxiv"] = "sxiv -a -p"
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
@@ -33,6 +34,7 @@ _first("pw", "pwstore")
 _first("keychain", 'keychain --dir "$XDG_DATA_HOME/keychain" --absolute')
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
 _first("jq", "jq --color-output")
+_first("ip", "ip -color")
 
 _first("chgrp", "chgrp -c")
 _first("chmod", "chmod -c")
