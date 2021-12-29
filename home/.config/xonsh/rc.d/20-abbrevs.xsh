@@ -61,15 +61,15 @@ _GIT_SUBCOMMANDS = {
     "dc": "diff --cached",
     "f": "fetch",
     "fa": "fetch --all",
+    "leaders": "shortlog -sn --all --no-merges",
     "lgd": "lg --first-parent",
+    "m": "merge -v",
     "r": "reset",
+    "rbi": "rebase --interactive",
     "s": "status -s",
     "sh": "show",
     "st": "status",
     "tags": "tag -l -n3",
-    "m": "merge -v",
-    "leaders": "shortlog -sn --all --no-merges",
-    "rbi": "rebase --interactive",
 }
 
 for command in _GIT_SUBCOMMANDS.keys():
