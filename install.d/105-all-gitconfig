@@ -66,12 +66,8 @@ main() {
   git config --global alias.fp "fetch --prune"
   git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand"
   git config --global alias.m "merge"
-  git config --global alias.mt "mergetool -t vimdiff"
   git config --global alias.cp "cherry-pick"
   git config --global alias.exec '!$@'
-  git config --global alias.ours '!f() { git checkout --ours $@ && git add $@; }; f'
-  git config --global alias.theirs '!f() { git checkout --theirs $@ && git add $@; }; f'
-  git config --global alias.cl "clone"
   git config --global alias.remotes "remote -v"
   git config --global alias.s "status --short"
   git config --global alias.st "status"
@@ -83,8 +79,6 @@ main() {
   git config --global alias.br "branch -v"
   git config --global alias.bra "branch -va"
   git config --global alias.r "reset"
-  git config --global alias.find '!git ls-files | grep -i'
-  git config --global alias.g '!grep --color=auto --perl-regexp --full-name --heading --break --line-number -I'
   git config --global alias.leaders "shortlog -sn --all --no-merges"
   # 1}}} Alias
   # Color {{{1
