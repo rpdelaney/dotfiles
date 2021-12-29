@@ -20,6 +20,8 @@ unset ip && ip() {
   ifconfig | grep 'inet' | grep -v '127.0.0.1' | grep -v 'fe80' | awk '{print $3}'
 }
 
+# the "right" way to do this is to set the PATH to point to wherever homebrew
+# install the GNU versions
 if command_exists gtimeout ; then
   alias timeout='gtimeout'
 fi

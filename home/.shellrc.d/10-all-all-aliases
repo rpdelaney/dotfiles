@@ -119,10 +119,6 @@ if command -v grc >/dev/null 2>&1 ; then
     alias ping='hilite ping'
     alias ifconfig='hilite ifconfig'
     alias traceroute='hilite /usr/sbin/traceroute'
-        # use colors in ifconfig
-    if command -v ifconfig >/dev/null 2>&1 ; then
-        alias ifconfig='hilite ifconfig'
-    fi
 fi
 
     # use colors in ip
