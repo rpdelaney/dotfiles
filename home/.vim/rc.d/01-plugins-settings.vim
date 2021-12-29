@@ -18,6 +18,7 @@ let g:smartusline_hi_normal = 'guibg=#95e454 guifg=black ctermbg=lightgreen cter
 
   " easy-align
     " Start interactive EasyAlign in visual mode (e.g. vipga)
+    " WARNING: Conflicts with vim-characterize
 xmap ga <Plug>(EasyAlign)
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
