@@ -31,6 +31,14 @@ _GNU_UTILS = {
     "stat": "gstat",
     "timeout": "gtimeout",
     "date": "gdate",
+    "tar": "gtar",
+    "sed": "gsed",
+    "cat": "gcat",
+    "grep": "ggrep",
+    "df": "gdf",
+    "dircolors": "gdircolors",
+    "readlink": "greadlink",
+    "traceroute": "gtraceroute",
 }
 if platform.system() == "Darwin":
     for util in _GNU_UTILS.keys():
