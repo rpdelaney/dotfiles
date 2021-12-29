@@ -30,6 +30,7 @@ _GNU_UTILS = {
     "rmdir": "grmdir",
     "stat": "gstat",
     "timeout": "gtimeout",
+    "date": "gdate",
 }
 if platform.system() == "Darwin":
     for util in _GNU_UTILS.keys():
