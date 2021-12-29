@@ -35,11 +35,10 @@ format = """\
 
 [shell]
 disabled = false
-bash_indicator = "⌥"
+bash_indicator = "_"
 zsh_indicator = "z"
-xonsh_indicator = "Ж"  # Cyrillic Capital Letter Zhe U+0416
-fish_indicator = "◉"  # Fisheye U+25C6 lul
-style="bold #6b6b6b"
+xonsh_indicator = ">"
+style="#6b6b6b"
 
 [character]
 success_symbol = "[\\$](white)"
@@ -60,7 +59,7 @@ format = "@[$hostname](fg:38)"
 [directory]
 truncate_to_repo = false
 style = "bold #a683ab"
-format = " [in](bold italic #6b6b6b) [ﱮ $path]($style) [$read_only]($read_only_style)"
+format = " [in](bold italic #6b6b6b) [ﱮ]($style)[$read_only]($read_only_style) [$path]($style) "
 read_only = ""
 read_only_style = "bold red"
 
