@@ -1,3 +1,5 @@
+import platform
+
 xontrib load abbrevs
 
 def _first(word, sub):
@@ -60,3 +62,11 @@ _GIT_SUBCOMMANDS = {
 
 for command in _GIT_SUBCOMMANDS.keys():
     _subcommand("git", command, _GIT_SUBCOMMANDS[command])
+
+# Do different stuff when we are on macOS
+if platform.system() == "Darwin":
+    abbrevs["clip"] = "pbcopy"
+    abbrevs["paste"] = "pbpaste"
+else:
+    abbrevs["clip"] = "kitty +kitten clipboard"
+    abbrevs["paste"] = "kitty +kitten clipboard --get-clipboard"
