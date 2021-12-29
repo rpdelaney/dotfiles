@@ -1,5 +1,3 @@
-import platform
-
 xontrib load abbrevs
 
 

@@ -1,7 +1,6 @@
 # use GNU utils on macOS
 # homebrew does this to avoid version ambiguity in utils with the
 # same name
-import platform
 
 if platform.system() == "Darwin":
     for util in [
