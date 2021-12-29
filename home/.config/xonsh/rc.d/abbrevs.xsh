@@ -2,6 +2,7 @@ import platform
 
 xontrib load abbrevs
 
+
 def _first(word, sub):
     """Perform the substitution if and only if the command is the first word on the line."""
     abbrevs[word] = lambda buffer, word: sub if buffer.text.startswith(word) else word
@@ -17,6 +18,7 @@ def _subcommand(command, subcommand, sub):
 
 
 abbrevs["ix"] = "curl --data-binary @- https://paste.rs"
+abbrevs["pager"] = "ifne less -R -X"
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
@@ -36,9 +38,9 @@ _first("rm", "rm -v --interactive=once")
 _first("rmdir", "rmdir -v")
 
 _first("la", "ll --all")
-_first("lll", "ll <edit> | pager")
-_first("lla", "ll --all <edit> | pager")
-_first("lt", "ll --all --tree --level 2")
+_first("lll", f"ll <edit>| {abbrevs['pager']}")
+_first("lla", f"ll --all <edit>| {abbrevs['pager']}")
+_first("lt", f"ll --all --tree --level 2")
 
 _GIT_SUBCOMMANDS = {
     "ap": "add --patch",
