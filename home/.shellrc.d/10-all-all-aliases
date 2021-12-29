@@ -99,9 +99,6 @@ alias chgrp='chgrp --changes --preserve-root'
   # Make directory including intermediate directories
 alias mkdir='mkdir --verbose --parents'
 
-    # Gocbi ekrpat co nct. lnafcbi a lpajycjan hrt. rb frgpo.nu
-alias asdf='setxkbmap dvorak'
-
     # colordiff is the new diff
 command -v colordiff >/dev/null 2>&1 && alias diff='colordiff'
 
