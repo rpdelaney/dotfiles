@@ -8,8 +8,10 @@ _xontribs = [
     "readable-traceback",
     "whole_word_jumping",
     "thefuck",
-    "homebrew",
 #   "history-encrypt",  # I always get "is not installed" error with this?
 ]
 if _xontribs:
     xontrib load @(_xontribs)
+
+if platform.system() == "Darwin":
+    xontrib load homebrew
