@@ -17,6 +17,7 @@ def _subcommand(command, subcommand, sub):
 def define(word):
     execx(f"curl -s dict://dict.org/d:{word}")
 
+abbrevs["emacs"] = "vim"
 abbrevs["ix"] = "curl --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -R -X"
 #abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"  # this doesn't work because python is dumb about \ in strings
