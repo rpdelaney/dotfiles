@@ -15,5 +15,5 @@ _a["tree"]="tree -C -I '__pycache__'"
 _a["diff"] = "colordiff"
 
 _a["hilite"]="grc --stdout --stderr --colour=on"
-for cmd in "ping ifconfig traceroute gcc make".split():
+for cmd in "ping ifconfig traceroute gcc make ip".split():
     _a[cmd] = f"hilite {cmd}"

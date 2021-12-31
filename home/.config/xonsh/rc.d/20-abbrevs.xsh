@@ -33,7 +33,6 @@ _first("pw", "pwstore")
 _first("keychain", 'keychain --dir "$XDG_DATA_HOME/keychain" --absolute')
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
 _first("jq", "jq -C")
-_first("ip", "ip -color")
 
 _first("chgrp", "chgrp -c")
 _first("chmod", "chmod -c")
