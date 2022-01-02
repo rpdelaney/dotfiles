@@ -141,4 +141,6 @@ mode "resize" {
         bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 
+exec kitty
+
 # EOF
