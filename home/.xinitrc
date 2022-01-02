@@ -33,4 +33,8 @@ i3
     # Merge in .Xdefaults
 [[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
 
+    # mod maps
+    # probably want to get rid of this. see disclaimers on archwiki page about xmodmap
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
 # EOF
