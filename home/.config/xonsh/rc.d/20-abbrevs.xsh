@@ -17,6 +17,7 @@ def _subcommand(command, subcommand, sub):
 def define(word):
     execx(f"curl -s dict://dict.org/d:{word}")
 
+abbrevs["emacs"] = "vim"
 abbrevs["ix"] = "curl --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -R -X"
 #abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"  # this doesn't work because python is dumb about \ in strings
@@ -32,7 +33,6 @@ _first("pw", "pwstore")
 _first("keychain", 'keychain --dir "$XDG_DATA_HOME/keychain" --absolute')
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
 _first("jq", "jq -C")
-_first("ip", "ip -color")
 
 _first("chgrp", "chgrp -c")
 _first("chmod", "chmod -c")
