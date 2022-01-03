@@ -1,8 +1,0 @@
-keycode 66 = Hyper_L
-add mod4 = Hyper_L
-
-! Bind CAPSLOCK to press Escape instead
-clear Lock
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
-add Lock = Caps_Lock
