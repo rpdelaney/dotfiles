@@ -21,6 +21,14 @@ unset _path
 # Make sure we have `path`
 if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2 ; return 1 ; fi
 
+_shellenv_path_append() {
+  eval "export PATH=$(path.py append "$1")"
+}
+
+_shellenv_path_prepend() {
+  eval "export PATH=$(path.py prepend "$1")"
+}
+
 #
 # prepends
 #
@@ -38,22 +46,22 @@ if ! command -v path >/dev/null 2>&1 ; then echo "Missing dependency: path" 1>&2
 hb_curl_dir=/usr/local/opt/curl/bin
 
 if [ -x "$hb_curl_dir" ] ; then
-  eval "$(~/bin/path --replace --prepend "$hb_curl_dir")" || return
+  _shellenv_path_prepend "$hb_curl_dir" || return
 fi
 
 if [ -d /usr/local/Cellar ] ; then
-  eval "$(~/bin/path --replace --prepend /usr/local/Cellar)" || return
+  _shellenv_path_prepend /usr/local/Cellar || return
 fi
 
 if [ -d "$HOME"/.homebrew/bin ] ; then
-  eval "$(~/bin/path --prepend "$HOME"/.homebrew/bin)" || return
+  _shellenv_path_prepend "$HOME"/.homebrew/bin || return
 fi
 
 if [ -d "$HOME"/.local/bin ] ; then
-  eval "$(~/bin/path --prepend "$HOME"/.local/bin)" || return
+  _shellenv_path_prepend "$HOME"/.local/bin || return
 fi
 
-eval "$(~/bin/path --replace --prepend "$HOME"/bin)" || return
+eval _shellenv_path_prepend "$HOME"/bin || return
 
 
 #
@@ -63,32 +71,32 @@ eval "$(~/bin/path --replace --prepend "$HOME"/bin)" || return
 # https://docs.python.org/3/library/site.html
 if command -v python3 >/dev/null 2>&1 ; then
   py3base="$(python3 -m site --user-base)"/bin
-  eval "$(~/bin/path --append "$py3base")" || return
+  _shellenv_path_append "$py3base" || return
 fi
 
 if command -v python2 >/dev/null 2>&1 ; then
   py2base="$(python2 -m site --user-base)"/bin
-  eval "$(~/bin/path --append "$py2base")" || return
+  _shellenv_path_append "$py2base" || return
 fi
 
 # https://guides.rubygems.org/faqs/#user-install
 if command -v ruby >/dev/null 2>&1 ; then
   rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" || return
-  eval "$(~/bin/path --append "$rubygembase")" || return
+  _shellenv_path_append "$rubygembase" || return
 
   if [ -d "$HOME"/.rvm/bin ] ; then
-    eval "$(~/bin/path --append "$HOME"/.rvm/bin)" || return
+    _shellenv_path_append "$HOME"/.rvm/bin || return
   fi
 fi
 
 if command -v cargo >/dev/null 2>&1 ; then
-  eval "$(~/bin/path --append ~/.cargo/bin)" || return
+  _shellenv_path_append ~/.cargo/bin || return
 fi
 
 if command -v go >/dev/null 2>&1 ; then
-  eval "$(~/bin/path --append ~/go/bin)" || return
+  _shellenv_path_append ~/go/bin || return
 fi
 
 if command -v pipx >/dev/null 2>&1 ; then
-  eval "$(~/bin/path --append "$HOME/.local/bin")" || return
+  _shellenv_path_append "$HOME/.local/bin" || return
 fi
