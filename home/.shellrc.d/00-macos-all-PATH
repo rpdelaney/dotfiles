@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 #
 
-PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-which/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+_shellenv_path_prepend "/opt/homebrew/opt/grep/libexec/gnubin"
+_shellenv_path_prepend "/opt/homebrew/opt/gnu-sed/libexec/gnubin"
+_shellenv_path_prepend "/opt/homebrew/opt/gnu-tar/libexec/gnubin"
+_shellenv_path_prepend "/opt/homebrew/opt/gnu-which/libexec/gnubin"
+_shellenv_path_prepend "/opt/homebrew/opt/findutils/libexec/gnubin"
