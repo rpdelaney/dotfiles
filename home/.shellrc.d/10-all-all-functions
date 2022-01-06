@@ -55,7 +55,7 @@ def() {
 
   # download files from web via tor
   # it's better to just use torsocks though
-turl(){ curl --sslv3 --socks5-hostname localhost:9050 "$*" ; }
+turl(){ curl --socks5-hostname localhost:9050 "$@" ; }
 
   # spit out N random words
 werd() {
