@@ -8,7 +8,8 @@
 _a = {}
 
 _a["exa"]="exa --color=always --icons"
-_a["ll"]=f"{_a['exa']} --long --git --links --group-directories-first --color-scale --time-style=long-iso"
+_a["l"]=f"{_a['exa']} --group-directories-first"
+_a["ll"]=f"{_a['l']} --long --git --links --color-scale --time-style=long-iso"
 
 _a["tree"]="tree -C -I '__pycache__'"
 
