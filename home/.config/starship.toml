@@ -59,9 +59,9 @@ format = "@[$hostname](fg:38)"
 [directory]
 truncate_to_repo = false
 style = "bold #a683ab"
-format = " [in](bold italic #6b6b6b) [ﱮ]($style)[$read_only]($read_only_style) [$path]($style) "
-read_only = ""
-read_only_style = "bold red"
+format = " [in](bold italic #6b6b6b) [ﱮ]($style)[$path]($style) "
+#read_only = ""
+#read_only_style = "bold red"
 
 [package]
 symbol = ""
