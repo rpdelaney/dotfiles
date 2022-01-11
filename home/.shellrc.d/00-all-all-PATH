@@ -68,17 +68,6 @@ eval _shellenv_path_prepend "$HOME"/bin || return
 # appends
 #
 
-# https://docs.python.org/3/library/site.html
-if command -v python3 >/dev/null 2>&1 ; then
-  py3base="$(python3 -m site --user-base)"/bin
-  _shellenv_path_append "$py3base" || return
-fi
-
-if command -v python2 >/dev/null 2>&1 ; then
-  py2base="$(python2 -m site --user-base)"/bin
-  _shellenv_path_append "$py2base" || return
-fi
-
 # https://guides.rubygems.org/faqs/#user-install
 if command -v ruby >/dev/null 2>&1 ; then
   rubygembase="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" || return
