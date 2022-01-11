@@ -71,6 +71,7 @@ _GIT_SUBCOMMANDS = {
     "st": "status",
     "tags": "tag -l -n3",
     "p": "push --progress -v",
+    "push": "push --progress -v",
 }
 
 for command in _GIT_SUBCOMMANDS.keys():
