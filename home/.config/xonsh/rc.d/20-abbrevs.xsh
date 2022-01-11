@@ -54,6 +54,7 @@ _GIT_SUBCOMMANDS = {
     "bra": "branch -v -a",
     "c": "commit -v",
     "co": "checkout",
+    "ca": "commit --amend",
     "cp": "cherry-pick",
     "d": "diff",
     "dc": "diff --cached",
