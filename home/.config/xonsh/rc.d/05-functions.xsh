@@ -8,3 +8,8 @@ def _up(args):
     execx("ll")
 
 aliases['up'] = _up
+
+
+def _command_exists(cmd: str) -> bool:
+    x = !(command -v f"{cmd}")
+    return x.returncode
