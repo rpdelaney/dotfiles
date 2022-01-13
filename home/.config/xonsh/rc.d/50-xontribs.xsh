@@ -3,11 +3,12 @@
 #
 _xontribs = [
     "argcomplete",
-    "kitty",
     "direnv",
+    "jedi",
+    "kitty",
     "readable-traceback",
-    "whole_word_jumping",
     "thefuck",
+    "whole_word_jumping",
 #   "history-encrypt",  # I always get "is not installed" error with this?
 ]
 if _xontribs:
