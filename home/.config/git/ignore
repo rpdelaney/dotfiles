@@ -49,7 +49,7 @@ Icon?
 *.bak
 *.o
 # temporary files
-*.sw[po]
+*.sw[pon]
 *.tmp
 # state files
 *.pid
