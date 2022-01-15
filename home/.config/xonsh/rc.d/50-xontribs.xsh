@@ -3,6 +3,7 @@
 #
 _xontribs = [
     "argcomplete",
+    "commands",
     "direnv",
     "jedi",
     "kitty",
