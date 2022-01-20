@@ -1,24 +1,12 @@
-snippet shebang "Shebang header for python scripts" b
-#!/usr/bin/env python3
-# -*- coding: UTF-8 -*-
-# `python --version`
-#
-# © Copyright `date +%Y` Ryan Delaney. All rights reserved.
-# This work is distributed WITHOUT ANY WARRANTY whatsoever; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the README file for additional terms and conditions on your use of this
-# software.
-#
-$0
-endsnippet
-
-snippet modelines "Modelines for python scripts" b
-# vim: ft=python expandtab smarttab shiftwidth=4 softtabstop=4 fileencoding=UTF-8:
-endsnippet
-
 snippet ifmain "ifmain" b
-if __name__ == '__main__':
-	${1:main()}$0
+def main() -> None:
+    pass
+
+
+if __name__ == "__main__":
+    main()
+
+# EOF
 endsnippet
 
 snippet from "from module import name" b
@@ -29,21 +17,21 @@ endsnippet
 # If / Else / Elif #
 ####################
 snippet if "If" b
-if ${1:condition}:
+if ${1:False}:
 	${2:pass}
 endsnippet
 
 snippet ife "If / Else" b
-if ${1:condition}:
+if ${1:False}:
 	${2:pass}
 else:
 	${3:pass}
 endsnippet
 
 snippet ifee "If / Elif / Else" b
-if ${1:condition}:
+if ${1:False}:
 	${2:pass}
-elif ${3:condition}:
+elif ${3:False}:
 	${4:pass}
 else:
 	${5:pass}
