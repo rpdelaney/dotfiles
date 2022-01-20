@@ -83,6 +83,10 @@ for command in _GIT_SUBCOMMANDS.keys():
 if platform.system() == "Darwin":
     abbrevs["clip"] = "pbcopy"
     abbrevs["paste"] = "pbpaste"
+    abbrevs["ya"] = "brew"
+    abbrevs["yas"] = "brew install"
+    abbrevs["yass"] = "brew search"
+    abbrevs["yasyu"] = "brew upgrade"
 else:
     abbrevs["clip"] = "kitty +kitten clipboard"
     abbrevs["paste"] = "kitty +kitten clipboard --get-clipboard"
