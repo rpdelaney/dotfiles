@@ -69,4 +69,11 @@ def get_parser():
 
     return parser
 endsnippet
+
+# ptpython embeds
+snippet embed "ptpython" b
+from ptpython.repl import embed
+embed(globals(), locals())
+endsnippet
+
 # vim:ft=snippets:
