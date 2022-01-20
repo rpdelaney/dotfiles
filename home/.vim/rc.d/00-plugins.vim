@@ -34,6 +34,7 @@ Plug 'direnv/direnv.vim'              " - load direnv when shelling out from ins
 Plug 'editorconfig/editorconfig-vim'  " - editorconfig support
 Plug 'tpope/vim-fugitive'             " - git inside vim
 Plug 'whiteinge/diffconflicts'        " - merge conflict resolution for humans
+Plug 'SirVer/ultisnips'               " - ultimate snippets with extra sauce
 
                                       " /* colorschemes */
 Plug 'morhetz/gruvbox'
