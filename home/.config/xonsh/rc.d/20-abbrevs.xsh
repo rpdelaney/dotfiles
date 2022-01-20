@@ -65,13 +65,15 @@ _GIT_SUBCOMMANDS = {
     "lgd": "lg --first-parent",
     "m": "merge -v",
     "r": "reset",
+    "rb": "rebase",
     "rbi": "rebase --interactive",
     "s": "status -s",
-    "sh": "show",
     "st": "status",
+    "sh": "show",
     "tags": "tag -l -n3",
-    "p": "push --progress -v",
-    "push": "push --progress -v",
+    "p": "push",
+# this is causing problems with thefuck
+#   "push": "push --progress -v",
 }
 
 for command in _GIT_SUBCOMMANDS.keys():
