@@ -4,6 +4,7 @@ xontrib load abbrevs
 _first("g", "git")
 
 _GIT_SUBCOMMANDS = {
+    "a": "add",
     "ap": "add -p",
     "br": "branch -v",
     "bra": "branch -v -a",
