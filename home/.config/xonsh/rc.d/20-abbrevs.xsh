@@ -55,6 +55,7 @@ if platform.system() == "Darwin":
     abbrevs["ya"] = "brew"
     abbrevs["yas"] = "brew install"
     abbrevs["yass"] = "brew search"
+    abbrevs["yars"] = "brew uninstall"
     abbrevs["yasyu"] = "brew upgrade"
 else:
     abbrevs["clip"] = "kitty +kitten clipboard"
