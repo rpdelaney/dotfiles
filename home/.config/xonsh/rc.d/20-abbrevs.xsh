@@ -45,7 +45,8 @@ _first("rmdir", "rmdir -v")
 
 _first("la", "ll -a")
 _first("lll", f"ll <edit>| {abbrevs['pager']}")
-_first("lla", f"ll -a <edit>| {abbrevs['pager']}")
+_first("lla", f"ll -a <edit>")
+_first("llla", f"ll -a <edit>| {abbrevs['pager']}")
 _first("lt", f"ll -a -T -L 2")
 
 _GIT_SUBCOMMANDS = {
