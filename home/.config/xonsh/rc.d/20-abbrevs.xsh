@@ -23,7 +23,6 @@ abbrevs["pager"] = "ifne less -R -X"
 #abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"  # this doesn't work because python is dumb about \ in strings
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 abbrevs["define"] = "define('<edit>')"
-abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
 abbrevs["sxiv"] = "sxiv -a -p"
 
 _first("ZQ", "exit")
@@ -48,37 +47,6 @@ _first("lll", f"ll <edit>| {abbrevs['pager']}")
 _first("lla", f"ll -a <edit>")
 _first("llla", f"ll -a <edit>| {abbrevs['pager']}")
 _first("lt", f"ll -a -T -L 2")
-
-_GIT_SUBCOMMANDS = {
-    "ap": "add -p",
-    "br": "branch -v",
-    "bra": "branch -v -a",
-    "c": "commit -v",
-    "co": "checkout",
-    "ca": "commit --amend",
-    "cm": "commit -v -m",
-    "cp": "cherry-pick",
-    "d": "diff",
-    "dc": "diff --cached",
-    "f": "fetch",
-    "fa": "fetch --all",
-    "leaders": "shortlog -sn --all --no-merges",
-    "lgd": "lg --first-parent",
-    "m": "merge -v",
-    "r": "reset",
-    "rb": "rebase",
-    "rbi": "rebase --interactive",
-    "s": "status -s",
-    "st": "status",
-    "sh": "show",
-    "tags": "tag -l -n3",
-    "p": "push",
-# this is causing problems with thefuck
-#   "push": "push --progress -v",
-}
-
-for command in _GIT_SUBCOMMANDS.keys():
-    _subcommand("git", command, _GIT_SUBCOMMANDS[command])
 
 # Do different stuff when we are on macOS
 if platform.system() == "Darwin":
