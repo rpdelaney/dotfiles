@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#
+
+if command -v asdf >/dev/null 2>&1 ; then
+  export ASDF_DATA_DIR="${XDG_DATA_HOME:-~./local/share}/asdf"
+  export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-~./config}/asdf/asdfrc"
+fi
+
+# EOF
