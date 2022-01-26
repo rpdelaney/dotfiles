@@ -48,6 +48,7 @@ ranger/!scope.sh
 
 weechat/**/*.log
 weechat/logs
+weechat/sec.conf
 
 tox/*
 !/tox/toxic.conf
