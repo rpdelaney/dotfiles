@@ -58,8 +58,8 @@ if platform.system() == "Darwin":
     abbrevs["yars"] = "brew uninstall"
     abbrevs["yasyu"] = "brew upgrade"
 else:
-    abbrevs["clip"] = "kitty +kitten clipboard"
-    abbrevs["paste"] = "kitty +kitten clipboard --get-clipboard"
+    abbrevs["clip"] = "xclip -in -selection clipboard"
+    abbrevs["paste"] = "xclip -out -selection clipboard"
 
 # python3 one-liners
 abbrevs["base64"] = 'python3 -m base64'
