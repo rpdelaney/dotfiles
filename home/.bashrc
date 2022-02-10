@@ -43,17 +43,25 @@ done
 # ALIASES {{{1
 #
   # chdir
-  # shellcheck disable=SC1090
+  # shellcheck disable=SC1090,1091
 [[ -f "$HOME"/bin/chdir ]] && source "$HOME"/bin/chdir 1> /dev/null
+  # shellcheck disable=SC1090,1091
   # make less more friendly for non-text input files, see lesspipe(1)
 [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 # }}}
 # PRIVATE {{{1
 #
   # private stuff not to be cloned to public repositories / backups
-  # shellcheck disable=SC1090
+  # shellcheck disable=SC1090,SC1091
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
 
+if [[ "$TERM" != "linux" ]] ; then
+  # I don't want xonsh to be auto-started in a tty:
+  # - `exec startx` lets me use ctrl-alt-backspace to kill X without allowing anyone to unlock my computer
+  # - I sometimes share these configurations in places where I only work in a tty and I don't want
+  #   to use xonsh at all
+  xonsh
+fi
 
 # EOF
