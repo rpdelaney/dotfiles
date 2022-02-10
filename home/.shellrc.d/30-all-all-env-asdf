@@ -2,8 +2,12 @@
 #
 
 if command -v asdf >/dev/null 2>&1 ; then
-  export ASDF_DATA_DIR="${XDG_DATA_HOME:-~./local/share}/asdf"
   export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-~./config}/asdf/asdfrc"
+  export ASDF_DATA_DIR="${XDG_DATA_HOME:-~./local/share}/asdf"
+
+  export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME:-~./config}/pip/default-python-packages"
+  export ASDF_NPM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME:-~./config}/npm/default-npm-packages"
+  export ASDF_GEM_DEFAULT_PACKAGES_FILE="${XDG_CONFIG_HOME:-~./config}/gem/default-gems"
 fi
 
 # EOF
