@@ -31,8 +31,8 @@ _GIT_SUBCOMMANDS = {
 # this is causing problems with thefuck
 #   "push": "push --progress -v",
 }
-
 for command in _GIT_SUBCOMMANDS.keys():
     _subcommand("git", command, _GIT_SUBCOMMANDS[command])
+del _GIT_SUBCOMMANDS
 
 abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
