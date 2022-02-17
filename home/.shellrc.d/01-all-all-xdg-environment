@@ -1,16 +1,18 @@
 #!/usr/bin/env sh
 #
 
+# assume we're probably on linux
+cache_home="$HOME/.cache/"
+config_home="$HOME/.config/"
+data_home="$HOME/.local/share"
+
 if [ "$(ostype)" = "macos" ]; then
   # we are on macos
   cache_home="$HOME/Caches/"
   config_home="$HOME/Preferences/"
-  data_home="$HOME/Library/Application Support/"
-else
-  # we're probably on linux
-  cache_home="$HOME/.cache/"
-  config_home="$HOME/.config/"
-  data_home="$HOME/.local/share"
+  # "Application Support" breaks everything because of whitespace.
+  # just make a symlink instead.
+  # data_home="$HOME/Library/Application Support/"
 fi
 
 runtime_dir="/run/user/$uid"
