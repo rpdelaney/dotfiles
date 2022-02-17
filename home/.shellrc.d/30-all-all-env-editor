@@ -2,6 +2,5 @@
 #
 
 if command -v vim >/dev/null 2>&1 ; then export EDITOR="vim" && export VISUAL="vim"; fi
-if command -v gvim >/dev/null 2>&1 ; then export VISUAL="gvim"; fi
 
 # EOF
