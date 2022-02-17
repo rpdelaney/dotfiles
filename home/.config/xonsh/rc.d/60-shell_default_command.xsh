@@ -12,7 +12,7 @@ def _default_command_transform(cmd):
 
 def _defaultcmd():
     if !(git rev-parse):
-        newcmd = "git status -s"
+        newcmd = "git status -s ."
     else:
         newcmd = _DEFAULT_COMMAND
 
