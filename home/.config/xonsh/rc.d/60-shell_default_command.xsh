@@ -11,6 +11,11 @@ def _default_command_transform(cmd):
     return cmd
 
 def _defaultcmd():
+    return _DEFAULT_COMMAND
+
+    # exa is already giving me the local git status, so this is pointless
+    # in its current state. I'm leaving this unreachable code here for now
+    # in case I think of some other way to use this pattern
     if !(git rev-parse):
         newcmd = "git status -s ."
     else:
