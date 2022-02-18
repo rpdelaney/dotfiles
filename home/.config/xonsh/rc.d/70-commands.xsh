@@ -17,12 +17,12 @@ def up(num=0):
 def md2rst(from_file):
     """An incantation to convert markdown to RST using pandoc."""
     to_file = from_file
-    for needle in (".md", ".MD", ".markdown"):
-        to_file = to_file.replace(needle, ".rst")
+    for extension in (".md", ".MD", ".markdown"):
+        to_file = to_file.replace(extension, ".rst")
         print(to_file)
 
     pandoc @(from_file) --from markdown --to rst -s -o @(to_file)
 
 @Command.reg
 def define(word):
-    execx(f"curl -s dict://dict.org/d:{word}")
+    execx(f"curl -Ss dict://dict.org/d:{word}")
