@@ -22,3 +22,7 @@ def md2rst(from_file):
         print(to_file)
 
     pandoc @(from_file) --from markdown --to rst -s -o @(to_file)
+
+@Command.reg
+def define(word):
+    execx(f"curl -s dict://dict.org/d:{word}")
