@@ -2,6 +2,7 @@ from xontrib.commands import Command
 
 @Command.reg
 def record_stats(pkg_name=".", path=".local/stats.txt"):
+    """Wtf does this do? I have no memory of making it."""
     stat = $(scc @(pkg_name))
     echo @($(date) + stat) | tee -a @(path)
 
@@ -11,7 +12,7 @@ def up(num=0):
     Based on code from here: https://github.com/oh-my-xonsh/xontrib-up"""
     balloons = ('../' * int(num))
     cd @(balloons)
-    execx("ll")
+    ll
 
 @Command.reg
 def md2rst(from_file):
