@@ -1,7 +1,7 @@
 xontrib load abbrevs
 
-
 _first("g", "git")
+_first("gittop", "cd @$(git rev-parse --show-toplevel)")
 
 _GIT_SUBCOMMANDS = {
     "a": "add",
@@ -34,5 +34,3 @@ _GIT_SUBCOMMANDS = {
 for command in _GIT_SUBCOMMANDS.keys():
     _subcommand("git", command, _GIT_SUBCOMMANDS[command])
 del _GIT_SUBCOMMANDS
-
-abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
