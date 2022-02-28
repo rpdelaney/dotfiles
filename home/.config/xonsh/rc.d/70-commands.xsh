@@ -26,4 +26,16 @@ def md2rst(from_file):
 
 @Command.reg
 def define(word):
-    execx(f"curl -Ss dict://dict.org/d:{word}")
+    p = !(curl -Ss f"dict://dict.org/d:{word}")
+
+    for line in p:
+        if len(line.strip()) == 0:
+            print(line, end="")
+            continue
+
+        try:
+            int(line[0:3])
+        except ValueError:
+            print(line, end="")
+        else:
+            continue
