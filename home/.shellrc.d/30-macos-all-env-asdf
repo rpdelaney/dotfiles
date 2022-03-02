@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+#
+
+if command -v asdf >/dev/null 2>&1 ; then
+  # shellcheck disable=SC1091
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
+# EOF
