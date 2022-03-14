@@ -27,7 +27,8 @@ _GIT_SUBCOMMANDS = {
     "st": "status",
     "sh": "show",
     "tags": "tag -l -n3",
-    "p": "push",
+# I can't stop doing this by accident lol
+#   "p": "push",
 # this is causing problems with thefuck
 #   "push": "push --progress -v",
 }
