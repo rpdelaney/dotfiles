@@ -14,6 +14,7 @@ _xontribs = [
     "readable-traceback",
     "thefuck",
     "whole_word_jumping",
+    "vox",
 #   "history-encrypt",  # I always get "is not installed" error with this?
 ]
 if _xontribs:
