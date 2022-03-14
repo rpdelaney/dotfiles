@@ -51,7 +51,6 @@ Plug 'potatoesmaster/i3-vim-syntax'          " - i3wm config files
 Plug 'rpdelaney/rtorrent-syntax-file'        " - rtorrent config files
 Plug 'rpdelaney/vim-pgn'                     " - portable game notation files (chess)
 Plug 'rpdelaney/vim-pgsql'                   " - postgres SQL
-Plug 'rpdelaney/vim-psqlrc'                  " - psql client config
 Plug 'rpdelaney/vim-sourcecfg'               " - source engine configuration files
 Plug 'vmchale/ion-vim'                       " - amazon ION
 Plug 'withgod/vim-sourcepawn'                " - sourcepawn code
