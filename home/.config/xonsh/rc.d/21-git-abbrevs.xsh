@@ -5,7 +5,7 @@ _first("gittop", "cd @$(git rev-parse --show-toplevel)")
 
 _GIT_SUBCOMMANDS = {
     "a": "add",
-    "ap": "add -p",
+    "ap": "add --patch",
     "br": "branch -v",
     "bra": "branch -v -a",
     "c": "commit -v",
