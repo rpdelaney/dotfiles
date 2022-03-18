@@ -20,6 +20,7 @@ abbrevs["pager"] = "ifne less -R -X"
 #abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"  # this doesn't work because python is dumb about \ in strings
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 abbrevs["sxiv"] = "sxiv -a -p"
+abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
