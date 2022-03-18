@@ -32,7 +32,6 @@ Plug 'wincent/terminus'                      " - change cursor shape with vim mo
                                              " /* dev tools */
 Plug 'airblade/vim-gitgutter'                " - git status in the gutter
 Plug 'dense-analysis/ale'                    " - awesome asynchronous linting integration in the gutter
-Plug 'direnv/direnv.vim'                     " - load direnv when shelling out from inside vim
 Plug 'editorconfig/editorconfig-vim'         " - editorconfig support
 Plug 'tpope/vim-fugitive'                    " - git inside vim
 Plug 'whiteinge/diffconflicts'               " - merge conflict resolution for humans
