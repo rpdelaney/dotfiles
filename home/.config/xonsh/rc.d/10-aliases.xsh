@@ -10,6 +10,9 @@ _a["tree"]="tree -C -I '__pycache__'"
 
 _a["diff"] = "colordiff"
 
+# poor man's "thefuck" integration
+_a["fuck"] = lambda args, stdin=None: execx($(thefuck @(__xonsh__.history[-1].cmd)))
+
 _a["hilite"]="grc --stdout --stderr --colour=on"
 for cmd in "ping ifconfig traceroute gcc make ip".split():
     _a[cmd] = f"hilite {cmd}"
