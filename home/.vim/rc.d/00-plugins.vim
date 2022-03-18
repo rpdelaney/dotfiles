@@ -32,7 +32,6 @@ Plug 'wincent/terminus'                      " - change cursor shape with vim mo
                                              " /* dev tools */
 Plug 'airblade/vim-gitgutter'                " - git status in the gutter
 Plug 'dense-analysis/ale'                    " - awesome asynchronous linting integration in the gutter
-Plug 'direnv/direnv.vim'                     " - load direnv when shelling out from inside vim
 Plug 'editorconfig/editorconfig-vim'         " - editorconfig support
 Plug 'tpope/vim-fugitive'                    " - git inside vim
 Plug 'whiteinge/diffconflicts'               " - merge conflict resolution for humans
@@ -51,7 +50,6 @@ Plug 'potatoesmaster/i3-vim-syntax'          " - i3wm config files
 Plug 'rpdelaney/rtorrent-syntax-file'        " - rtorrent config files
 Plug 'rpdelaney/vim-pgn'                     " - portable game notation files (chess)
 Plug 'rpdelaney/vim-pgsql'                   " - postgres SQL
-Plug 'rpdelaney/vim-psqlrc'                  " - psql client config
 Plug 'rpdelaney/vim-sourcecfg'               " - source engine configuration files
 Plug 'vmchale/ion-vim'                       " - amazon ION
 Plug 'withgod/vim-sourcepawn'                " - sourcepawn code

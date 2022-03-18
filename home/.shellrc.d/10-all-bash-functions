@@ -6,26 +6,6 @@ packagebackup() {
   comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort)
 }
 
-  # sort installed packages by size and print a list to stdout
-packagesize() {
-  paste <(pacman -Q | awk '{ print $1; }' | xargs pacman -Qi | \
-  grep 'Size' | awk '{ print $4$5; }') \
-  <(pacman -Q | awk '{print $1;}') | sort -n | column -t | \
-  'sed' -r 's@\.[0-9]{2}KiB@MiB@'
-}
-
-  # jobs count
-jobscount() {
-    jobs_cnt=$(jobs -s | wc -l)
-    if [[ "$jobs_cnt" -eq 0 ]]; then
-        return 0
-    else
-        printf "%s" "$jobs_cnt"
-        return 0
-    fi
-    return 1
-}
-
 dirpath() {
   # print the PATH with each directory on a newline
   IFS=: read -ra paths <<< "$PATH"

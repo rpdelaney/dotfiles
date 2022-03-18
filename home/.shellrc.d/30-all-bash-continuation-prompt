@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 #
 
-bash_prompt="$HOME/.bash_prompt"
-
-if [[ -f "$bash_prompt" ]]; then
-  # shellcheck disable=SC1090
-  source "$bash_prompt"
-else
-  echo "bash prompt not found: $bash_prompt" 1>&2
-fi
-
 # PS2: Continuation prompt
 # Default: '> '
 export PS2="... "

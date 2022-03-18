@@ -1,11 +1,11 @@
 xontrib load abbrevs
 
-
 _first("g", "git")
+_first("gittop", "cd @$(git rev-parse --show-toplevel)")
 
 _GIT_SUBCOMMANDS = {
     "a": "add",
-    "ap": "add -p",
+    "ap": "add --patch",
     "br": "branch -v",
     "bra": "branch -v -a",
     "c": "commit -v",
@@ -26,13 +26,12 @@ _GIT_SUBCOMMANDS = {
     "s": "status -s",
     "st": "status",
     "sh": "show",
-    "tags": "tag -l -n3",
-    "p": "push",
+    "tags": "tag -l -n3 | sort -V",
+# I can't stop doing this by accident lol
+#   "p": "push",
 # this is causing problems with thefuck
 #   "push": "push --progress -v",
 }
 for command in _GIT_SUBCOMMANDS.keys():
     _subcommand("git", command, _GIT_SUBCOMMANDS[command])
 del _GIT_SUBCOMMANDS
-
-abbrevs["gittop"] = "cd @$(git rev-parse --show-toplevel)"
