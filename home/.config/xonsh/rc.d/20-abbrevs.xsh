@@ -57,10 +57,3 @@ if platform.system() == "Darwin":
 else:
     abbrevs["clip"] = "xclip -in -selection clipboard"
     abbrevs["paste"] = "xclip -out -selection clipboard"
-
-# python3 one-liners
-_first("filecmp", "python3 -m filecmp")
-_first("platform", "python3 -m platform")
-_first("modulefinder", "python3 -m modulefinder")
-_first("ftp", "python3 -m ftplib")
-_first("site", "python3 -m site")
