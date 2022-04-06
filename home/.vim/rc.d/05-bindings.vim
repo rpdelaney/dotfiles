@@ -22,5 +22,3 @@ noremap <silent> <F8> :set foldlevel=999 <CR>
 if maparg('<c-s>', 's') ==# ''
     noremap <c-s> :w<cr>
 endif
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

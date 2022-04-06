@@ -57,4 +57,3 @@ Plug 'fladson/vim-kitty'                     " - Kitty terminal config files
 Plug 'meatballs/vim-xonsh'                   " - xonsh
 
 call plug#end()
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

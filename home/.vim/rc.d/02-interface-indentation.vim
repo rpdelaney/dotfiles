@@ -7,5 +7,3 @@ set expandtab     " automatically expand tabs into whitespace
 set tabstop=4     " tabstop is 4 characters
 set softtabstop=4 " delete key in insert mode deletes 4 spaces
 set shiftround    " auto-shift to tab stop
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

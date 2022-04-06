@@ -4,5 +4,3 @@ if has('syntax') && !exists('g:syntax_on')
     " use syntax engine to control folding
   set foldmethod=syntax
 endif
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

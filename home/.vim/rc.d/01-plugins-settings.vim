@@ -62,5 +62,3 @@ let g:airline_powerline_fonts = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" vim600: set foldmethod=marker foldlevel=2 expandtab tabstop=2:

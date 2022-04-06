@@ -1,6 +1,3 @@
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:
-"
-
 if &t_Co == 8 && $TERM !~# '^linux'
   let g:gruvbox_termcolors = 16
 elseif exists('+termguicolors')

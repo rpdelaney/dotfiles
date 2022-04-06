@@ -8,5 +8,3 @@ set wrapscan    " always search the whole file regardless of cursor position
 set showmatch   " show search results visually
 set incsearch   " search incrementally
 set scrolloff=4 " When searching, scroll to the next search pattern automatically with 4+ lines visible above and below the cursor
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

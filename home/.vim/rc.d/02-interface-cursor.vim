@@ -23,5 +23,3 @@
   " 5 -> blinking vertical bar
   " 6 -> solid vertical bar
 "endif
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

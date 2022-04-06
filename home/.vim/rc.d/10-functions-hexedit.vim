@@ -40,5 +40,3 @@ function ToggleHex()
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
 endfunction
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

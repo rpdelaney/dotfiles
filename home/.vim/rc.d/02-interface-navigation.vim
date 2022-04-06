@@ -8,5 +8,3 @@ set sidescrolloff=1            " how many columns to show on each side of the cu
 if &tabpagemax < 50            " Enforce 50 tabs maximum
   set tabpagemax=50
 endif
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:

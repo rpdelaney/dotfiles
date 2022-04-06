@@ -13,5 +13,3 @@ else
   " Show this character on a wrapped line
   set showbreak=
 endif
-
-" vim600: set foldmethod=marker foldlevel=0 expandtab tabstop=2:
