@@ -1,6 +1,10 @@
-autocmd BufNewFile,BufRead Pipfile set filetype=toml
-autocmd BufNewFile,BufRead .flake8 set filetype=toml
-autocmd BufNewFile,BufRead flake8 set filetype=toml
-autocmd BufNewFile,BufRead .gntrc set filetype=toml
-autocmd BufNewFile,BufRead poetry.lock set filetype=toml
 autocmd BufNewFile,BufRead .coveragerc set filetype=toml
+autocmd BufNewFile,BufRead .flake8 set filetype=toml
+autocmd BufNewFile,BufRead .gntrc set filetype=toml
+autocmd BufNewFile,BufRead .pydocstyle setl filetype=toml
+autocmd BufNewFile,BufRead .pydocstylerc setl filetype=toml
+autocmd BufNewFile,BufRead Pipfile set filetype=toml
+autocmd BufNewFile,BufRead flake8 set filetype=toml
+autocmd BufNewFile,BufRead pip.conf setl filetype=toml
+autocmd BufNewFile,BufRead poetry.lock set filetype=toml
+autocmd BufNewFile,BufRead setup.cfg setl filetype=toml
