@@ -1,4 +1,4 @@
-set wrapmargin=0 textwidth=0
+setlocal wrapmargin=0 textwidth=0
 setlocal foldmethod=indent foldlevel=999
 setlocal expandtab shiftwidth=4 softtabstop=4
 setlocal completeopt=menuone,preview
