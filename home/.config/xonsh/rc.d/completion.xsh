@@ -10,7 +10,7 @@ $UPDATE_COMPLETIONS_ON_KEYPRESS = True
 on first TAB, then cycles through all completions. ‘menu-complete’
 selects the first whole completion on the first TAB, then cycles
 through the remaining completions, then the common prefix."""
-$COMPLETION_MODE = "menu-complete"
+$COMPLETION_MODE = "default"
 
 """When generating the completions takes time, it’s better to do this in a
 background thread. When this is True, background threads is used for completion."""
