@@ -11,8 +11,9 @@ _xontribs = [
     "jedi",
     "kitty",
     "readable-traceback",
-    "whole_word_jumping",
+    "prompt_starship",
     "vox",
+    "whole_word_jumping",
 ]
 if _xontribs:
     xontrib load @(_xontribs)
