@@ -37,7 +37,7 @@ format = """\
 disabled = false
 bash_indicator = "_"
 zsh_indicator = "z"
-xonsh_indicator = ">"
+xonsh_indicator = "@"
 style="#6b6b6b"
 
 [character]
