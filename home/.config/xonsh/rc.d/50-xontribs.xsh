@@ -6,12 +6,13 @@
 
 _xontribs = [
     "argcomplete",
+    "autovox",
     "commands",
     "direnv",
     "jedi",
     "kitty",
-    "readable-traceback",
     "prompt_starship",
+    "readable-traceback",
     "vox",
     "whole_word_jumping",
 ]
