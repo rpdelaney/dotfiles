@@ -25,6 +25,17 @@ def md2rst(from_file):
     pandoc @(from_file) --from markdown --to rst -s -o @(to_file)
 
 @Command.reg
+def rst2md(from_file):
+    """An incantation to convert RST to markdown using pandoc."""
+    to_file = from_file
+    for extension in (".rst", ".RST"):
+        to_file = to_file.replace(extension, ".md")
+        print(to_file)
+
+    pandoc @(from_file) --from rst --to markdown -s -o @(to_file)
+
+
+@Command.reg
 def define(word):
     p = !(curl -Ss f"dict://dict.org/d:{word}")
 
