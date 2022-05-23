@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 _asdf_config_path = Path(f"{$XDG_CONFIG_HOME}", "asdf", "asdfrc")

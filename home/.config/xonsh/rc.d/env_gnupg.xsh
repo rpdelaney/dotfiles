@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 _gpg_path = Path(f"{$XDG_CONFIG_HOME}", "gnupg")
