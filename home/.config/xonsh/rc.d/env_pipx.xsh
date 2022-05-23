@@ -1,0 +1,1 @@
+$PIPX_DEFAULT_PYTHON="python"
