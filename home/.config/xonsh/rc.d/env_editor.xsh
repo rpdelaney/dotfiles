@@ -1,0 +1,2 @@
+$EDITOR="vim"
+$VISUAL="vim"
