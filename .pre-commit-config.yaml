@@ -22,7 +22,7 @@ repos:
       - id: check-merge-conflict
       - id: detect-private-key
 
-  - repo: git://github.com/detailyang/pre-commit-shell
+  - repo: https://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
     hooks:
       - id: shell-lint
