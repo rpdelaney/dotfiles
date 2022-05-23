@@ -7,6 +7,7 @@
 _xontribs = [
     "argcomplete",
     "autovox",
+    "avox_poetry",
     "commands",
     "direnv",
     "jedi",
