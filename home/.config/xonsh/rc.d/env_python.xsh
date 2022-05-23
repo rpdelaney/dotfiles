@@ -1,0 +1,2 @@
+$PYTHONSTARTUP=".pythonrc.py"
+$PYTHONPYCACHEPREFIX=f"{$XDG_DATA_HOME}/python3/pycache"
