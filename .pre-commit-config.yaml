@@ -16,7 +16,6 @@ repos:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
       - id: check-symlinks
-      - id: check-json
       - id: check-yaml
       - id: check-symlinks
       - id: check-merge-conflict
