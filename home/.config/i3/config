@@ -142,6 +142,13 @@ mode "resize" {
         bindsym Escape exec notify-send -u low --app-name="i3" "Exiting RESIZE mode"; mode "default"
 }
 
+# macOS keybinds
+# I have to use macOS for work so my muscle memory won't die
+# https://www.reddit.com/r/i3wm/comments/v38t6h/macoslike_clipboard_keybindings_supercvx/
+bindsym --release Mod4+c exec --no-startup-id xdotool key --clearmodifiers Ctrl+Insert
+bindsym --release Mod4+x exec --no-startup-id xdotool key --clearmodifiers Shift+Delete
+bindsym --release Mod4+v exec --no-startup-id xdotool key --clearmodifiers Shift+Insert
+
 exec kitty
 
 # EOF
