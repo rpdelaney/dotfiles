@@ -1,8 +1,8 @@
 from pathlib import Path
 
-neofetch_file = Path("/tmp", "neofetch_cache.tmp")
+_neofetch_file = Path("/tmp", "neofetch_cache.tmp")
 
-if neofetch_file.is_file():
-    cat f"{str(neofetch_file)}"
+if _neofetch_file.is_file():
+    cat f"{str(_neofetch_file)}"
 else:
-    neofetch | tee f"{str(neofetch_file)}"
+    neofetch | tee f"{str(_neofetch_file)}"
