@@ -115,6 +115,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+r reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+x exec "i3-msg exit"
+bindsym $mod+Shift+l exec "freeze"
 
 # resize
 bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; mode "resize"
