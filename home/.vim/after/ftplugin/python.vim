@@ -17,5 +17,5 @@ let b:ale_python_mypy_ignore_invalid_syntax = 1
 
 let g:black_linelength = 79
 
-setlocal formatprg=black\ -\ --quiet\ 2>/dev/null
+setlocal formatprg=black\ -\ --quiet\ 2>>\ /tmp/black.err
 setlocal formatexpr=
