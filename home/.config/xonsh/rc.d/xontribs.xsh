@@ -17,8 +17,8 @@ _xontribs = [
     "vox",
     "whole_word_jumping",
 ]
-if _xontribs:
-    xontrib load @(_xontribs)
+for _xontrib in _xontribs:
+    xontrib load _xontrib
 
 if platform.system() == "Darwin":
     xontrib load homebrew
