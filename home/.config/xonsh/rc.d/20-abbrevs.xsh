@@ -21,6 +21,7 @@ abbrevs["pager"] = "ifne less -R -X"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 abbrevs["sxiv"] = "sxiv -a -p"
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
+abbrevs["terrafrom"] = "terraform"
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
