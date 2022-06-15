@@ -25,7 +25,5 @@ source ~/.vim/rc.d/10-functions-whitespace.vim
   " Use modelines
 set modeline
 
-  " Use strong encryption when invoked with :X or -x
-set cryptmethod=blowfish2
   " EOL formats to try when parsing new files with unclear MIMEtypes
 set fileformats="unix,dos"
