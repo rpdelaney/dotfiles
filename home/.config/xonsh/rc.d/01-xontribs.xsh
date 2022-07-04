@@ -3,19 +3,36 @@
 #
 # TODO:
 #   https://pypi.org/project/xontrib-termcolors/
+import os
 
-xontrib load --verbose argcomplete
-xontrib load --verbose autovox
-xontrib load --verbose avox_poetry
-xontrib load --verbose commands
-xontrib load --verbose direnv
-xontrib load --verbose jedi
-xontrib load --verbose kitty
-xontrib load --verbose prompt_starship
-xontrib load --verbose readable-traceback
-xontrib load --verbose thefuck
-xontrib load --verbose vox
-xontrib load --verbose whole_word_jumping
+_xontribs = [
+    "abbrevs",
+    "argcomplete",
+    "autovox",
+    "avox_poetry",
+    "commands",
+    "direnv",
+    "jedi",
+    "kitty",
+    "prompt_starship",
+    "readable-traceback",
+    "thefuck",
+    "vox",
+    "whole_word_jumping",
+]
+
+def _xontrib_load(xontr):
+    result = !(xontrib load @(xontr))
+
+    if result.returncode != os.EX_OK:
+        print(f"Failed loading xontrib: {xontr} {repr(result.returncode)}")
+
+for _xontrib in _xontribs:
+    _xontrib_load(_xontrib)
 
 if platform.system() == "Darwin":
-    xontrib load homebrew
+    _xontrib_load("homebrew")
+
+del _xontrib_load
+del _xontribs
+del _xontrib
