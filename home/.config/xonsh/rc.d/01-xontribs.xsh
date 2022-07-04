@@ -13,6 +13,7 @@ xontrib load --verbose jedi
 xontrib load --verbose kitty
 xontrib load --verbose prompt_starship
 xontrib load --verbose readable-traceback
+xontrib load --verbose thefuck
 xontrib load --verbose vox
 xontrib load --verbose whole_word_jumping
 
