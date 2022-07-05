@@ -14,9 +14,7 @@ _xontribs = [
     ("direnv", "xonsh-direnv"),
     ("jedi", "xontrib-jedi"),
     ("kitty", "xontrib-kitty"),
-    ("prompt_starship", None),
     ("readable-traceback", None),
-    ("thefuck", None),
     ("vox", None),
     ("whole_word_jumping", None),
 ]
