@@ -91,3 +91,5 @@ if platform.system() == "Darwin":
         "yes",
     ]:
         _a[util] = f"g{util}"
+
+del util

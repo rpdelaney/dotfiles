@@ -30,9 +30,6 @@ def _xontrib_load(xontr, pkg):
 for _xontrib, _pkg in _xontribs:
     _xontrib_load(_xontrib, _pkg)
 
-if platform.system() == "Darwin":
-    _xontrib_load("homebrew", None)
-
 del _xontrib_load
 del _xontribs
 del _xontrib
