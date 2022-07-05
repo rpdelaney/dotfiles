@@ -1,4 +1,4 @@
-from xontrib.commands import Command
+from xontrib_commands.argerize import Command
 
 @Command.reg
 def record_stats(pkg_name=".", path=".local/stats.txt"):
