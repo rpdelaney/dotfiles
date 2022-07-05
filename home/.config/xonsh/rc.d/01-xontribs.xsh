@@ -6,33 +6,36 @@
 import os
 
 _xontribs = [
-    "abbrevs",
-    "argcomplete",
-    "autovox",
-    "avox_poetry",
-    "commands",
-    "direnv",
-    "jedi",
-    "kitty",
-    "prompt_starship",
-    "readable-traceback",
-    "thefuck",
-    "vox",
-    "whole_word_jumping",
+    ("abbrevs", None),
+    ("argcomplete", "xontrib-argcomplete"),
+    ("autovox", None),
+    ("avox_poetry", "xontrib-avox-poetry"),
+    ("commands", "xontrib-commands"),
+    ("direnv", "xonsh-direnv"),
+    ("jedi", "xontrib-jedi"),
+    ("kitty", "xontrib-kitty"),
+    ("prompt_starship", None),
+    ("readable-traceback", None),
+    ("thefuck", None),
+    ("vox", None),
+    ("whole_word_jumping", None),
 ]
 
-def _xontrib_load(xontr):
+def _xontrib_load(xontr, pkg):
     result = !(xontrib load @(xontr))
 
     if result.returncode != os.EX_OK:
         print(f"Failed loading xontrib: {xontr} {repr(result.returncode)}")
+        if pkg:
+            print(f"Try: xpip install {pkg}")
 
-for _xontrib in _xontribs:
-    _xontrib_load(_xontrib)
+for _xontrib, _pkg in _xontribs:
+    _xontrib_load(_xontrib, _pkg)
 
 if platform.system() == "Darwin":
-    _xontrib_load("homebrew")
+    _xontrib_load("homebrew", None)
 
 del _xontrib_load
 del _xontribs
 del _xontrib
+del _pkg
