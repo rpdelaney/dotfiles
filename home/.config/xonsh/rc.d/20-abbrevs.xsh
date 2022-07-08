@@ -58,3 +58,8 @@ if platform.system() == "Darwin":
 else:
     abbrevs["clip"] = "xclip -in -selection clipboard"
     abbrevs["paste"] = "xclip -out -selection clipboard"
+    abbrevs["ya"] = "pacman"
+    abbrevs["yas"] = "pacman -S"
+    abbrevs["yass"] = "pacman -Ss"
+    abbrevs["yars"] = "pacman -Rs"
+    abbrevs["yasyu"] = "pacman -Syu"
