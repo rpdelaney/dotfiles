@@ -32,6 +32,8 @@ _GIT_SUBCOMMANDS = {
 # this is causing problems with thefuck
 #   "push": "push --progress -v",
 }
-for command in _GIT_SUBCOMMANDS.keys():
-    _subcommand("git", command, _GIT_SUBCOMMANDS[command])
+for _command in _GIT_SUBCOMMANDS.keys():
+    _subcommand("git", _command, _GIT_SUBCOMMANDS[_command])
+
 del _GIT_SUBCOMMANDS
+del _command
