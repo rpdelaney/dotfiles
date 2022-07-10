@@ -3,7 +3,7 @@
 
 main() {
   git config --global user.name "Ryan Delaney"
-  git config --global user.email "ryan.patrick.delaney@protonmail.com"
+  git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
   git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
   git config --global core.whitespace "trailing-space,space-before-tab"
   git config --global core.filemode "true"
