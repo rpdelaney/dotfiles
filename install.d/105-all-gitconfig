@@ -9,6 +9,7 @@ main() {
   git config --global core.filemode "true"
   git config --global core.symlinks "true"
   git config --global push.default "upstream"
+  git config --global push.autoSetupRemote "true"
   git config --global branch.autosetuprebase "never"
   git config --global init.defaultBranch main
   git config --global push.followTags "true"
