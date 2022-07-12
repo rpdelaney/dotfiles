@@ -4,7 +4,6 @@
 main() {
   git config --global user.name "Ryan Delaney"
   git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
-  git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
   git config --global core.whitespace "trailing-space,space-before-tab"
   git config --global core.filemode "true"
   git config --global core.symlinks "true"
@@ -14,6 +13,7 @@ main() {
   git config --global init.defaultBranch main
   git config --global push.followTags "true"
   git config --global pull.rebase "false"
+  git config --global --unset core.excludesfile
   git config --global --unset blame.ignoreRevsFile
   # diff {{{1
   git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt"
