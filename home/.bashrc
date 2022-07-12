@@ -56,12 +56,4 @@ done
 [[ -f "$HOME"/.bash_private ]] && source "$HOME"/.bash_private
 # }}}
 
-if [[ "$TERM" != "linux" ]] ; then
-  # I don't want xonsh to be auto-started in a tty:
-  # - `exec startx` lets me use ctrl-alt-backspace to kill X without allowing anyone to unlock my computer
-  # - I sometimes share these configurations in places where I only work in a tty and I don't want
-  #   to use xonsh at all
-  xonsh
-fi
-
 # EOF
