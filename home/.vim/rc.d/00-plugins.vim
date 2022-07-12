@@ -41,7 +41,7 @@ Plug 'morhetz/gruvbox'
 
                                                        " /* syntax & file format handlers  */
 Plug 'cespare/vim-toml', { 'for': 'toml'}              " - toml ftdetect and highlighting
-Plug 'davidhalter/jedi-vim', { 'for': 'python'}        " - python pseudo-ide
+" Plug 'davidhalter/jedi-vim', { 'for': 'python'}        " - python pseudo-ide
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }  " - terraform ftdetect and highlighting
 Plug 'jamessan/vim-gnupg'                              " - seamlessly edit gpg encrypted files
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }  " - markdown jiu jitsu
