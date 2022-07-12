@@ -147,6 +147,6 @@ main() {
   # Repo template 1}}}
 }
 
-main "$@"
+( set -u ; main "$@" )
 
 # EOF
