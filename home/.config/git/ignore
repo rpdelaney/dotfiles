@@ -42,30 +42,25 @@ ehthumbs.db
 Icon?
 [Tt]humbs.db
 
-# temporary files
+# temporary & state files
 *.un~
-# backups
 *.BUP
 *.bak
-*.o
-# temporary files
 *.sw[pon]
 *.tmp
-# state files
 *.pid
-*.state
-*.tfstate
-# error logs
 *.err
 *.error
 *.stderr
 *.stderror
+
 # state dumps
+*.state
+*.tfstate
 *.dump
 *.stackdump
 *.zcompdump
 *.zwc
-# tcpdump, network traffic capture
 *.pcap
 *.cap
 *.dmp
@@ -84,29 +79,23 @@ random_seed
 # git
 *.git/
 
-# filezilla
-sitemanager.xml
-recentservers.xml
-trustedcerts.xml
-bookmarks.xml
-
 # python
-__pycache__
-.pytest_cache/*
-.mypy_cache/
-.idea
 *.py[cod]
-venv/
-.venv/
 .cache
 .coverage
 .coveralls.yml
-nosetests.xml
-.tox
-.mypy_cache
-.pythonrc.py
-pip-wheel-metadata
+coverage.xml
+htmlcov
 .hypothesis
+.idea
+.mypy_cache
+.pytest_cache
+.tox
+.venv
+__pycache__
+nosetests.xml
+pip-wheel-metadata
+venv/
 
 dist/
 build/
@@ -114,10 +103,10 @@ build/
 docs/_build/
 
 # ide
-.vscode/*
+.vscode
 
 # direnv
-.env
+.envrc.local
 
 # other source control
 .hg
@@ -125,6 +114,3 @@ docs/_build/
 
 # fuse weirdness
 .fuse_hidden*
-
-# test results
-test-results/*
