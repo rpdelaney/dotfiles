@@ -3,6 +3,7 @@
 #
 # TODO:
 #   https://pypi.org/project/xontrib-termcolors/
+#   https://pypi.org/project/xontrib-output-search/
 import os
 
 _xontribs = [
