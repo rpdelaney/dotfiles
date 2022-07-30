@@ -15,7 +15,7 @@ def _subcommand(command, subcommand, sub):
     )
 
 abbrevs["emacs"] = "vim"
-abbrevs["ix"] = "curl --data-binary @- https://paste.rs"
+abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -R -X"
 #abbrevs["qrcode"] = "curl -F-=\<- qrenco.de"  # this doesn't work because python is dumb about \ in strings
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
