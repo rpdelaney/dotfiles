@@ -10,7 +10,6 @@ python3apps=(
   daff
   flake8
   pudb
-  pwstore
   twine
   mypy
   xonsh
