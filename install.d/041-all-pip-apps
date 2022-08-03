@@ -13,6 +13,7 @@ python3apps=(
   pwstore
   twine
   mypy
+  xonsh
   yamllint
 )
 
@@ -22,6 +23,16 @@ flake8_injects=(
   flake8-simplify
 )
 
+xonsh_injects=(
+  xonsh-direnv
+  xontrib-argcomplete
+  xontrib-avox-poetry
+  xontrib-commands
+  xontrib-gruvbox
+  xontrib-jedi
+  xontrib-kitty
+)
+
 main() {
   for targetapp in "${python3apps[@]}"; do
     pipx install "$targetapp" || return
@@ -29,6 +40,10 @@ main() {
 
   for inject in "${flake8_injects[@]}"; do
     pipx inject flake8 "$inject" || return
+  done
+
+  for inject in "${xonsh_injects[@]}"; do
+    pipx inject xonsh "$inject" || return
   done
 }
 
