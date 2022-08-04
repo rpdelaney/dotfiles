@@ -29,14 +29,14 @@ color graph-commit color004 default
 color main-tag color088 default #
 color main-local-tag color249 default # Exception
 #color main-ref color201 default
-# 
+#
 #color status color201 color108 #
 color status.header color187 default # Label
 color status.section color223 default # ModeMsg
 color stat-staged color108 default # SpecialComment
 color stat-unstaged color015 color236 # WarningMsg
 color stat-untracked color236 color210 # VisualNOS
-# 
+#
 # color diff-header color231 color243
 # color diff-chunk color183 default
 color diff-add color066 color237 # DiffAdd
@@ -50,7 +50,7 @@ color diff-del color236 color238 # DiffDel
 # color 'dissimilarity ' color220 default
 # color 'diff-tree ' color220 default
 # color diff-index color247 default
-# 
+#
 color date color108 default # Comment
 # color 'Date: ' color166 default # ?
 # color 'Commit: ' color007 default # ?
@@ -59,6 +59,6 @@ color author color079 default # ?
 # color 'AuthorDate: ' color166 default # ?
 # color 'Author: ' color181 default # ?
 # color pp-refs color190 default
-# 
+#
 
 # vim: ft=gitconfig
