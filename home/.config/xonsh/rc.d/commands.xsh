@@ -1,3 +1,4 @@
+import sys
 from xontrib_commands.argerize import Command
 
 @Command.reg
@@ -44,3 +45,15 @@ def define(word):
             print(line, end="")
         else:
             continue
+
+@Command.reg
+def alias(key, value=None):
+    """Set a shell alias, or retrieve its value."""
+    if value is None:
+        try:
+            print(f'aliases["{key}"]="{" ".join(aliases[key])}"')
+        except KeyError:
+            print(f"Error: no such alias `{key}`", file=sys.stdout)
+            return 1
+    else:
+        aliases[key]=value
