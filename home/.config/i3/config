@@ -1,4 +1,5 @@
 # i3 config file (v4)
+# vim: ft=i3
 #
 # TODO: split this into includes. https://i3wm.org/docs/userguide.html#include
 
