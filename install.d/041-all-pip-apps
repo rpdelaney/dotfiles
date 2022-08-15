@@ -33,15 +33,15 @@ xonsh_injects=(
 
 main() {
   for targetapp in "${python3apps[@]}"; do
-    pipx install "$targetapp" || return
+    ( set -x ; pipx install "$targetapp" || return )
   done
 
   for inject in "${flake8_injects[@]}"; do
-    pipx inject flake8 "$inject" || return
+    ( set -x ; pipx inject flake8 "$inject" || return )
   done
 
   for inject in "${xonsh_injects[@]}"; do
-    pipx inject xonsh "$inject" || return
+    ( set -x ; pipx inject xonsh "$inject" || return )
   done
 }
 
