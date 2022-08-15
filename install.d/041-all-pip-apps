@@ -31,6 +31,11 @@ xonsh_injects=(
   xontrib-kitty
 )
 
+mdformat_injects=(
+  mdformat-toc
+  mdformat-gfm
+)
+
 main() {
   for targetapp in "${python3apps[@]}"; do
     ( set -x ; pipx install "$targetapp" || return )
@@ -42,6 +47,10 @@ main() {
 
   for inject in "${xonsh_injects[@]}"; do
     ( set -x ; pipx inject xonsh "$inject" || return )
+  done
+
+  for inject in "${mdformat_injects[@]}"; do
+    ( set -x ; pipx inject mdformat "$inject" || return )
   done
 }
 
