@@ -23,6 +23,9 @@ abbrevs["sxiv"] = "sxiv -a -p"
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
+abbrevs["pythno"] = "python"
+
+_first("xpip", "pipx inject xonsh")
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
