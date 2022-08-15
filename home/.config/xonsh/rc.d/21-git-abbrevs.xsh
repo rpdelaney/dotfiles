@@ -1,6 +1,7 @@
 xontrib load abbrevs
 
 _first("g", "git")
+_first("it", "git")
 _first("gittop", "cd @$(git rev-parse --show-toplevel)")
 
 _GIT_SUBCOMMANDS = {
@@ -21,6 +22,7 @@ _GIT_SUBCOMMANDS = {
     "lgd": "lg --first-parent",
     "m": "merge -v",
     "r": "reset",
+    "remotes": "remote -v",
     "rb": "rebase",
     "rbi": "rebase --interactive",
     "s": "status -s",
