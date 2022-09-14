@@ -1,2 +1,2 @@
-xontrib load gruvbox
-$XONSH_COLOR_STYLE="gruvbox"
+if ret := !(xontrib load gruvbox):
+    $XONSH_COLOR_STYLE="gruvbox"

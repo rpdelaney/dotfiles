@@ -26,6 +26,7 @@ abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
 
 _first("xpip", "pipx inject xonsh")
+_subcommand("poetry", "upgrade", "update")
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")

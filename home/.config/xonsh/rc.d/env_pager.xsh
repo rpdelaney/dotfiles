@@ -1,2 +1,2 @@
 $PAGER="pager"
-$MANPAGER="manpager"
+#$MANPAGER="manpager"  # this looks like crap
