@@ -62,8 +62,15 @@ if platform.system() == "Darwin":
 else:
     abbrevs["clip"] = "xclip -in -selection clipboard"
     abbrevs["paste"] = "xclip -out -selection clipboard"
-    abbrevs["ya"] = "pacman"
-    abbrevs["yas"] = "pacman -S"
-    abbrevs["yass"] = "pacman -Ss"
-    abbrevs["yars"] = "pacman -Rs"
-    abbrevs["yasyu"] = "pacman -Syu"
+
+    if ret := !(which paru):
+        pkgman = "paru"
+    else:
+        pkgman = "pacman"
+    del ret
+
+    abbrevs["ya"]    = f"{pkgman}"
+    abbrevs["yas"]   = f"{pkgman} -S"
+    abbrevs["yass"]  = f"{pkgman} -Ss"
+    abbrevs["yars"]  = f"{pkgman} -Rs"
+    abbrevs["yasyu"] = f"{pkgman} -Syu"
