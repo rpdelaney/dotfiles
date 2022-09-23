@@ -71,10 +71,9 @@ format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 min_time = 2000
 format = " [$duration](fg:15 dimmed) "
 
-[env_var]
-style = "fg:0 bg:15"
-variable = "PYTHONWARNINGS"
-format = "PYTHONWARNINGS="
+[env_var.PYTHONWARNINGS]
+style = "fg:0 bg:#6b6b6b"
+format = "[PYTHONWARNINGS=$env_value]($style)"
 
 [aws]
 symbol = ""
