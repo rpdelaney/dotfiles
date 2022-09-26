@@ -73,7 +73,11 @@ format = " [$duration](fg:15 dimmed) "
 
 [env_var.PYTHONWARNINGS]
 style = "fg:0 bg:#6b6b6b"
-format = "[PYTHONWARNINGS=$env_value]($style)"
+format = "[WARNINGS=$env_value]($style)"
+
+[env_var.PYTHONBREAKPOINT]
+style = "fg:0 bg:#6b6b6b"
+format = "[BREAKPOINT=$env_value]($style)"
 
 [aws]
 symbol = ""
