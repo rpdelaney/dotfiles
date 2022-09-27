@@ -141,3 +141,8 @@ diverged = "X"
 staged = "S"
 stashed = "T"
 style = "yellow"
+
+[docker_context]
+symbol = "🐳"
+style = "blue bold"
+format = "[via](bold italic #6b6b6b) [$symbol $context]($style) "
