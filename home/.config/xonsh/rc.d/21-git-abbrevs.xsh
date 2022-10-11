@@ -21,6 +21,7 @@ _GIT_SUBCOMMANDS = {
     "leaders": "shortlog -sn --all --no-merges",
     "lgd": "lg --first-parent",
     "m": "merge -v",
+    "mt": "mergetool --no-prompt",
     "r": "reset",
     "remotes": "remote -v",
     "rb": "rebase",
