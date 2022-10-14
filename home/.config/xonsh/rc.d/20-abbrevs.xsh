@@ -7,7 +7,7 @@ def _first(word, sub):
 
 
 def _subcommand(command, subcommand, sub):
-    """If and only if the first word on the line is 'command', add 'w"""
+    """If and only if the first word on the line is 'command', add substitute 'subcommand' with 'sub'"""
     abbrevs[subcommand] = (
         lambda buffer, word: sub
         if buffer.text.startswith(command) and buffer.text.split()[1] == subcommand
