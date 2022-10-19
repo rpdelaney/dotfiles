@@ -4,18 +4,30 @@
 main() {
   git config --global user.name "Ryan Delaney"
   git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
+
   git config --global core.whitespace "trailing-space,space-before-tab"
   git config --global core.filemode "true"
   git config --global core.symlinks "true"
+
+  git config --global init.defaultBranch main
+
+  git config --global branch.autosetuprebase "never"
+
   git config --global push.default "upstream"
   git config --global push.autoSetupRemote "true"
-  git config --global branch.autosetuprebase "never"
-  git config --global init.defaultBranch main
   git config --global push.followTags "true"
   git config --global pull.rebase "false"
+
   git config --global --unset core.excludesfile
   git config --global --unset blame.ignoreRevsFile
-  # diff {{{1
+
+  git config --global status.showStash "true"
+  git config --global status.submoduleSummary "true"
+
+  git config --global stash.showPatch "true"
+  git config --global stash.showIncludeUntracked "true"
+  git config --global stash.submoduleSummary "true"
+
   git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt"
   git config --global --unset diff.external
   git config --global diff.tool "vimdiff"
@@ -32,8 +44,7 @@ main() {
   else
     git config --global pager.diff "less"
   fi
-  # 1}}} diff
-  # Merge {{{1
+
   git config --global merge.conflictstyle "diff3"
   git config --global merge.tool "diffconflicts"
   git config --global mergetool.prompt "true"
@@ -41,7 +52,7 @@ main() {
   git config --global mergetool.diffconflicts.cmd 'vim -c DiffConflicts "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'
   git config --global mergetool.diffconflicts.trustExitCode true
   git config --global mergetool.keepBackup false
-  # 1}}} Merge
+
   # Alias {{{1
   _git_reset='%C(reset)'
   _git_abbrev_hash='%C(magenta)%h'"$_git_reset"
@@ -82,7 +93,7 @@ main() {
   git config --global alias.r "reset"
   git config --global alias.leaders "shortlog -sn --all --no-merges"
   # 1}}} Alias
-  # Color {{{1
+
   git config --global color.diff "auto"
   git config --global color.status "auto"
   git config --global color.branch "auto"
@@ -99,8 +110,7 @@ main() {
   git config --global color.status.changed "yellow bold"
   git config --global color.status.untracked "red bold"
   git config --global color.sh.branch "yellow"
-  # 1}}} Color
-  # Advice {{{1
+
   git config --global advice.amWorkDir "true"
   git config --global advice.checkoutAmbiguousRemoteBranchName "true"
   git config --global advice.commitBeforeMerge "false"
@@ -121,18 +131,13 @@ main() {
   git config --global advice.statusHints "false"
   git config --global advice.statusUoption "true"
   git config --global advice.waitingForEditor "true"
-  # 1}}} Advice
-  # GUI {{{1
-  git config --global gui.wmstate "normal"
-  git config --global gui.geometry "1920x1014+1680+18 192 177"
-  # 1}}} GUI
-  # URL replacements {{{1
+
   git config --global --replace-all url."git@github.com:".insteadof "github:"
   git config --global --replace-all url."https://github.com:".insteadof "http://github.com/"
   git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/"
   git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/"
-  # 1}}} URL replacements
-  # Commit template {{{1
+
+  # Commit template
     # shellcheck disable=SC2154
   commit_template_file="$HOME/.dotfiles/data/git.commit.template/git.commit.template"
   if [ -r "$commit_template_file" ]; then
@@ -141,10 +146,8 @@ main() {
     echo "WARNING: git commit template not found: $commit_template_file" 1>&2
   fi
   unset commit_template_file
-  # Commit template 1}}}
-  # Repo template {{{1
+
   git config --global init.templateDir "$HOME/.config/git/template"
-  # Repo template 1}}}
 }
 
 ( set -u ; main "$@" )
