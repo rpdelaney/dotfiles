@@ -114,3 +114,6 @@ docs/_build/
 
 # fuse weirdness
 .fuse_hidden*
+
+# terraform plans
+*.plan*
