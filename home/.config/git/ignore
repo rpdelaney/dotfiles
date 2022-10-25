@@ -46,7 +46,7 @@ Icon?
 *.un~
 *.BUP
 *.bak
-*.sw[pon]
+*.sw[ponm]
 *.tmp
 *.pid
 *.err
