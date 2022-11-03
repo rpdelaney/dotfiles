@@ -6,7 +6,7 @@ def up(num=0):
     """Go up any number of directories.
     Based on code from here: https://github.com/oh-my-xonsh/xontrib-up"""
     balloons = ('../' * int(num))
-    cd @(balloons)
+    pushd @(balloons)
     ll
 
 @Command.reg
