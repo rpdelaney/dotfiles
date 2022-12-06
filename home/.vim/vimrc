@@ -1,25 +1,6 @@
   " Use vim defaults in favor of backward-compatibility with vi
 set nocompatible
 
-" runtime! /home/ryan/vim/rc.d/*
-"
-
-source ~/.vim/rc.d/00-plugins.vim
-source ~/.vim/rc.d/01-plugins-settings.vim
-source ~/.vim/rc.d/02-interface-colorscheme.vim
-source ~/.vim/rc.d/02-interface-fonts.vim
-source ~/.vim/rc.d/02-interface-indentation.vim
-source ~/.vim/rc.d/02-interface-listchars.vim
-source ~/.vim/rc.d/02-interface-navigation.vim
-source ~/.vim/rc.d/02-interface-orientation.vim
-source ~/.vim/rc.d/02-interface-other.vim
-source ~/.vim/rc.d/02-interface-searching.vim
-source ~/.vim/rc.d/02-interface-spelling.vim
-source ~/.vim/rc.d/02-interface-statusline.vim
-source ~/.vim/rc.d/02-interface-syntax.vim
-source ~/.vim/rc.d/05-bindings.vim
-source ~/.vim/rc.d/10-functions-whitespace.vim
-
   " Use modelines
 set modeline
 
