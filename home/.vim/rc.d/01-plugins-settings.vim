@@ -7,7 +7,11 @@ let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_priority = 30
 
+  " gitgutter
 let g:gitgutter_sign_priority = 9  " required to tell gitgutter to stop over-writing ale signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '∓'
+let g:gitgutter_sign_removed = '-'
 
   " smartusline
 let g:smartusline_string_to_highlight = '(%n) %f '
