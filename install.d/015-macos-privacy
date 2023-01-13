@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+
+main() {
+  # turn off ad personalization
+  defaults write com.apple.AdLib allowIdentifierForAdvertising 0
+  defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0
+}
+
+main "$@"
+
+# EOF
