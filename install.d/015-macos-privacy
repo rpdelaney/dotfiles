@@ -5,6 +5,9 @@ main() {
   # turn off ad personalization
   defaults write com.apple.AdLib allowIdentifierForAdvertising 0
   defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0
+
+  # Don't add orders to apple wallet
+  defaults write com.apple.Wallet PKOrderManagementDisabled 1
 }
 
 main "$@"
