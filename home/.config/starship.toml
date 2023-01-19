@@ -119,7 +119,7 @@ format = '[via](bold italic #6b6b6b) [${symbol}${pyenv_prefix}(${version} )]($st
 [git_branch]
 style = "#ddb100"
 symbol = ""
-format = "[on](bold italic #6b6b6b) [$symbol]($style)[$branch](bold $style) "
+format = "[on](bold italic #6b6b6b) [$symbol]($style) [$branch](bold $style) "
 
 [git_commit]
 style = "#ddb100"
