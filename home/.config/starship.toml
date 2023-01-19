@@ -69,7 +69,7 @@ format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 
 [cmd_duration]
 min_time = 2000
-format = " [$duration](fg:15 dimmed) "
+format = " [$duration](fg:15 dimmed) "
 
 [env_var.PYTHONWARNINGS]
 style = "fg:0 bg:#6b6b6b"
@@ -118,7 +118,7 @@ format = '[via](bold italic #6b6b6b) [${symbol}${pyenv_prefix}(${version} )]($st
 
 [git_branch]
 style = "#ddb100"
-symbol = ""
+symbol = ""
 format = "[on](bold italic #6b6b6b) [$symbol]($style)[$branch](bold $style) "
 
 [git_commit]
