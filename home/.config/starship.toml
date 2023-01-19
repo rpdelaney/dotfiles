@@ -41,8 +41,8 @@ xonsh_indicator = "@"
 style="#6b6b6b"
 
 [character]
-success_symbol = "[\\$](white)"
-error_symbol = "[\\$](red)"
+success_symbol = "[\\$](#ebdbb2)"
+error_symbol = "[\\$](#cc241d)"
 
 [username]
 disabled = false
