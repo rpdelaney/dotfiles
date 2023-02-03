@@ -20,5 +20,5 @@ noremap <silent> <F7> :set foldlevel=1 <CR>
 noremap <silent> <F8> :set foldlevel=999 <CR>
     " Save the file
 if maparg('<c-s>', 's') ==# ''
-    noremap <c-s> :w<cr>
+    noremap <c-s> :update<cr>
 endif
