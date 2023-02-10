@@ -3,6 +3,11 @@
 # WHITELIST
 #How-to: http://stackoverflow.com/questions/9162919/git-whitelisting-files-in-a-complex-directory-structure
 
+# incomplete merge resolution
+*_BACKUP_*
+*_BASE_*
+*_LOCAL_*
+*_REMOTE_*
 
 # Help files
 *.help
