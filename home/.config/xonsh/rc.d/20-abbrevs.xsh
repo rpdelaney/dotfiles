@@ -30,7 +30,6 @@ _subcommand("poetry", "upgrade", "update")
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
-_first("ch", "pushd <edit> && ll")
 _first("pw", "pwstore")
 _first("keychain", 'keychain --agents "gpg,ssh" --dir "$XDG_DATA_HOME/keychain" --absolute')
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
