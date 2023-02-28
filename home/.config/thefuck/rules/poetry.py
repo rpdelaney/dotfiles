@@ -17,7 +17,7 @@ REGEX = r"(?m)(?<=Did you mean one of these\?\n)(\s+(.+)$)+"
 
 
 @for_app("poetry")
-def match(command):
+def match(command) -> bool:
     return """Did you mean one of these?""" in command.output
 
 
