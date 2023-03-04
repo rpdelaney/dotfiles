@@ -1,0 +1,53 @@
+{
+    "cookies": "/tmp/cookies.txt",
+    "directory": [
+        "{author}"
+    ],
+    "filename": {
+        "len(\"{title} + '.' + {extension}\".encode('utf-8')) > 255": "\fF {id}_{title.encode('utf-8')[:254].decode('utf-8')}\u2026.{extension}",
+        "not locals().get('title')": "{id}.{extension}",
+        "": "{id}_{title}.{extension}"
+    },
+    "postprocessors": [
+        {
+            "name": "metadata"
+        }
+    ],
+    "ytdl": {
+        "enabled": true,
+        "module": "yt_dlp"
+    },
+    "extractor": {
+        "instagram": {
+            "filename": {
+                "": "{id}_{title}.{extension}"
+            },
+            "videos": true,
+            "sleep-request": [15, 45],
+            "sleep": [2, 10],
+            "include": "all"
+        },
+        "deviantart": {
+            "#": "download 'gallery' and 'scraps' images for user profile URLs",
+            "include": "gallery,scraps"
+        },
+        "reddit": {
+            "parent-directory": true,
+            "parent-metadata": "_reddit_"
+        },
+        "tumblr":
+        {
+            "avatar": true
+        },
+        "imgur": {
+            "mp4": "always"
+        },
+        "redgifs":
+        {
+            "format": ["hd", "sd", "gif"]
+        },
+        "gfycat": {
+            "format": ["webm", "mp4", "mobile", "gif"]
+        }
+    }
+}
