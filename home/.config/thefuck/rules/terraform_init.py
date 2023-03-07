@@ -5,19 +5,21 @@
 from thefuck.utils import for_app
 
 needs_init_strings = [
-    "Initialization required",
-    """Run "terraform init" to install all modules""",
-    """Please run "terraform init".""",
+    "initialization required",
+    """run "terraform init" to install all modules""",
+    """please run "terraform init".""",
 ]
 
 
 @for_app("terraform", "tf")
 def match(command):
-    return any([string in command.output for string in needs_init_strings])
+    return any(
+        [string.lower() in command.output for string in needs_init_strings]
+    )
 
 
 def get_new_command(command):
-    return "terraform init && {}".format(command.script)
+    return f"{command.script_parts[0]} init && {command.script}"
 
 
 enabled_by_default = True
