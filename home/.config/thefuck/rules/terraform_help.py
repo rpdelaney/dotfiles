@@ -15,7 +15,7 @@ REGEX = (
 )
 
 
-@for_app("terraform")
+@for_app("terraform", "tf")
 def match(command) -> bool:
     return (
         "Terraform has no command named" in command.output
