@@ -74,6 +74,14 @@ main() {
   defaults write com.apple.menuextra.clock "DateFormat" "EEE d MMM HH:mm:ss"
   defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
   killall SystemUIServer
+
+  # Always show scroll bars
+  defaults write NSGlobalDomain AppleShowScrollBars Always
+
+  # Click the scroll bar to
+  # 0 - Jump to the next page
+  # 1 - Jump to the spot that's clicked
+  defaults write NSGlobalDomain AppleScrollerPagingBehavior 1
 }
 
 main "$@"
