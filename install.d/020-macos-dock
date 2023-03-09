@@ -16,16 +16,19 @@ main() {
   defaults write com.apple.dock autohide -bool true
 
   # Enable gestures
-  defaults write com.apple.dock scroll-to-open -bool TRUE; killall Dock
+  defaults write com.apple.dock scroll-to-open -bool TRUE
 
   # Make Dock icons of hidden applications translucent
   defaults write com.apple.dock showhidden -bool true
 
   # Dim hidden apps
-  defaults write com.apple.dock showhidden -bool TRUE; killall Dock
+  defaults write com.apple.dock showhidden -bool TRUE
 
   # Don't rearrange Spaces based on most recent use
   defaults write com.apple.dock mru-spaces -boolean NO
+
+  # Don't animate opening apps
+  defaults write com.apple.dock launchanim 0
 
   # Kill the dock, so that it will restart and all changes should be observed
   killall Dock
