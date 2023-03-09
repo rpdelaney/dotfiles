@@ -91,6 +91,9 @@ main() {
   # 2 - Medium
   # 3 - Large
   defaults write NSGlobalDomain NSTableViewDefaultSizeMode 3
+
+  # Don't use built-in password auto-filling
+  defaults write com.apple.WebUI AutoFillPasswords 0
 }
 
 main "$@"
