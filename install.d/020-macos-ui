@@ -82,6 +82,15 @@ main() {
   # 0 - Jump to the next page
   # 1 - Jump to the spot that's clicked
   defaults write NSGlobalDomain AppleScrollerPagingBehavior 1
+
+  # Accent color and highlight color! to PINK
+  defaults write NSGlobalDomain AppleAccentColor 6
+  defaults write NSGlobalDomain AppleHighlightColor "1.000000 0.749020 0.823529 Pink"
+
+  # Sidebar icon size
+  # 2 - Medium
+  # 3 - Large
+  defaults write NSGlobalDomain NSTableViewDefaultSizeMode 3
 }
 
 main "$@"
