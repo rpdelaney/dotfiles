@@ -12,8 +12,6 @@ format = """\
     $git_branch\
     $git_commit\
     $git_state\
-    $git_status\
-    $git_metrics\
     $hg_branch\
     $docker_context\
     $package\
@@ -25,8 +23,11 @@ format = """\
     $memory_usage\
     $aws\
     $env_var\
-    $cmd_duration\
     $jobs\
+    $fill\
+    $cmd_duration\
+    $git_status\
+    $git_metrics\
     $custom\
     $line_break\
     $battery\
@@ -34,8 +35,11 @@ format = """\
     $character\
     """
 
+[fill]
+symbol = "#"
+
 [shell]
-disabled = false
+disabled = true
 bash_indicator = "_"
 zsh_indicator = "z"
 xonsh_indicator = "@"
@@ -131,6 +135,7 @@ tag_disabled = false
 am = "APPLY-MAILBOX"
 
 [git_status]
+format = "([$all_status$ahead_behind]($style) )"
 ahead = "↑"
 behind = "↓"
 conflicted = "C"
