@@ -13,6 +13,7 @@ format = """\
     $git_commit\
     $git_state\
     $git_status\
+    $git_metrics\
     $hg_branch\
     $docker_context\
     $package\
@@ -141,6 +142,10 @@ diverged = "X"
 staged = "S"
 stashed = "T"
 style = "yellow"
+
+[git_metrics]
+disabled = false
+format = "([+$added]($added_style))([-$deleted]($deleted_style) )"
 
 [docker_context]
 symbol = "🐳"
