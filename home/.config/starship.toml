@@ -69,6 +69,7 @@ format = " [in](bold italic #6b6b6b) [ﱮ]($style) [$path]($style) "
 #read_only_style = "bold red"
 
 [package]
+disabled = true
 symbol = ""
 format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 
