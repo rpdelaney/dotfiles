@@ -36,7 +36,7 @@ format = """\
     """
 
 [fill]
-symbol = "#"
+symbol = " "
 
 [shell]
 disabled = true
