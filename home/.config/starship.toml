@@ -151,6 +151,9 @@ style = "yellow"
 [git_metrics]
 disabled = false
 format = "([+$added]($added_style))([-$deleted]($deleted_style) )"
+only_nonzero_diffs = true
+added_style = "green"
+deleted_style = "red"
 
 [docker_context]
 symbol = "🐳"
