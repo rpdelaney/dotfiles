@@ -75,3 +75,7 @@ else:
     abbrevs["yass"]  = f"{pkgman} -Ss"
     abbrevs["yars"]  = f"{pkgman} -Rs"
     abbrevs["yasyu"] = f"{pkgman} -Syu"
+    try:
+        del pkgman
+    except NameError:
+        pass
