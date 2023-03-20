@@ -10,9 +10,6 @@ _a["tree"]="tree -C -I '__pycache__'"
 
 _a["diff"] = "colordiff"
 
-if !(which docker-buildx):
-    _a["docker"] = "docker-buildx"
-
 # poor man's "thefuck" integration
 _a["fuck"] = lambda args, stdin=None: execx($(thefuck @(__xonsh__.history[-1].cmd)))
 
