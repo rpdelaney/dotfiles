@@ -2,6 +2,7 @@ xontrib load abbrevs
 
 _first("g", "git")
 _first("it", "git")
+_first("gti", "git")
 _first("gittop", "pushd @$(git rev-parse --show-toplevel)")
 
 _GIT_SUBCOMMANDS = {
