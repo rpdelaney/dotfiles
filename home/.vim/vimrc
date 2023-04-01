@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plug')
 
                                                        " /* experimental and new. are these actually useful? /*
+Plug 'Galicarnax/vim-regex-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
