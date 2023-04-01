@@ -27,6 +27,7 @@ abbrevs["pythno"] = "python"
 
 _first("xpip", "pipx inject xonsh")
 _subcommand("poetry", "upgrade", "update")
+_subcommand("docker", "containers", "container list")
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
@@ -75,3 +76,7 @@ else:
     abbrevs["yass"]  = f"{pkgman} -Ss"
     abbrevs["yars"]  = f"{pkgman} -Rs"
     abbrevs["yasyu"] = f"{pkgman} -Syu"
+    try:
+        del pkgman
+    except NameError:
+        pass

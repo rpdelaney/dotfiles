@@ -50,6 +50,7 @@ Plug 'hashivim/vim-terraform', { 'for': 'terraform' }  " - terraform ftdetect an
 Plug 'jamessan/vim-gnupg'                              " - seamlessly edit gpg encrypted files
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }  " - markdown jiu jitsu
 Plug 'potatoesmaster/i3-vim-syntax', { 'for': 'i3' }   " - i3wm config files
+Plug 'glench/vim-jinja2-syntax'                        " - jinja2 syntax
 Plug 'rpdelaney/rtorrent-syntax-file'                  " - rtorrent config files
 Plug 'rpdelaney/vim-pgn', { 'for': 'pgn' }             " - portable game notation files (chess)
 Plug 'rpdelaney/vim-pgsql', { 'for': 'pgsql' }         " - postgres SQL

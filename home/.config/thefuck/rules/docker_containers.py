@@ -14,3 +14,4 @@ def get_new_command(command):
 
 
 enabled_by_default = True
+priority = 10  # I need this to run before the built-in rules
