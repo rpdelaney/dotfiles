@@ -19,3 +19,5 @@ let g:black_linelength = 79
 
 setlocal formatprg=black\ -\ --quiet\ 2>>\ /tmp/black.err
 setlocal formatexpr=
+
+IndentGuidesEnable
