@@ -4,7 +4,7 @@
         "{author}"
     ],
     "filename": {
-        "len(\"{title} + '.' + {extension}\".encode('utf-8')) > 255": "\fF {id}_{title.encode('utf-8')[:254].decode('utf-8')}\u2026.{extension}",
+        "len(f\"{title} + '.' + {extension}.part\") > 254": "f\"{id}_{title.encode('utf-8')[:-200].decode('utf-8')}...{extension}\"",
         "not locals().get('title')": "{id}.{extension}",
         "": "{id}_{title}.{extension}"
     },
