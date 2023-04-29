@@ -20,7 +20,7 @@
     "extractor": {
         "instagram": {
             "filename": {
-                "": "{id}_{title}.{extension}"
+                "": "{media_id}.{extension}"
             },
             "videos": true,
             "sleep-request": [15, 45],
