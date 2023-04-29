@@ -23,6 +23,6 @@ set t_ut=
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_size = 2
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#32302f   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3836   ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2c2a29   ctermbg=4
 
 " EOF
