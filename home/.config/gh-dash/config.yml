@@ -6,6 +6,14 @@ prSections:
     filters: is:open review-requested:@me
   - title: Involved
     filters: is:open involves:@me -author:@me
+  - title: Truss Pull requests (humans)
+    filters: org:trussworks archived:false
+             type:pr is:open -is:draft
+             -author:app/renovate -author:app/dependabot
+  - title: Truss Pull requests (bots)
+    filters: org:trussworks archived:false
+             type:pr is:open -is:draft
+             author:app/renovate author:app/dependabot
 issuesSections:
   - title: My Issues
     filters: is:open author:@me
@@ -13,6 +21,15 @@ issuesSections:
     filters: is:open assignee:@me
   - title: Involved
     filters: is:open involves:@me -author:@me
+  - title: Truss Issues (humans)
+    filters: org:trussworks archived:false
+             type:issue is:open
+             -author:app/renovate -author:app/dependabot
+  - title: Truss Issues (bots)
+    filters: org:trussworks archived:false
+             type:issue is:open
+             author:app/renovate author:app/dependabot
+             NOT "Dependency Dashboard"
 defaults:
   preview:
     open: true
