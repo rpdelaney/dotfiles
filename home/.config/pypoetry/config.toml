@@ -3,7 +3,6 @@
 [virtualenvs]
 in-project = true
 [virtualenvs.options]
-system-site-packages = true  # requires poetry >=1.2
 
 [repositories]
 [repositories.pypi_test]
