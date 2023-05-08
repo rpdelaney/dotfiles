@@ -22,4 +22,4 @@ def get_new_command(command):
     return f"{command.script_parts[0]} init && {command.script}"
 
 
-enabled_by_default = True
+enabled_by_default = False

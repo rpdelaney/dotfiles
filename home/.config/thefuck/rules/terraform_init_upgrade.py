@@ -17,3 +17,6 @@ def match(command):
 
 def get_new_command(command):
     return shell.and_('terraform init -upgrade', command.script)
+
+
+enabled_by_default = False

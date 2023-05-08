@@ -31,4 +31,4 @@ def get_new_command(command) -> str | list[str]:
         return ""
 
 
-enabled_by_default = True
+enabled_by_default = False
