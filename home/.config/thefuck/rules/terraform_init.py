@@ -14,7 +14,7 @@ needs_init_strings = [
 @for_app("terraform", "tf")
 def match(command):
     return any(
-        [string.lower() in command.output for string in needs_init_strings]
+        string.lower() in command.output for string in needs_init_strings
     )
 
 
