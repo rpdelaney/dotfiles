@@ -1,4 +1,4 @@
-source_up
+source_up &> /dev/null || true
 
 export GIT_AUTHOR_NAME="Ryan Delaney"
 export GIT_AUTHOR_EMAIL="ryan.patrick.delaney+github@protonmail.com"

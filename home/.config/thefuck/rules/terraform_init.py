@@ -14,7 +14,7 @@ needs_init_strings = [
 @for_app("terraform", "tf")
 def match(command):
     return any(
-        [string.lower() in command.output for string in needs_init_strings]
+        string.lower() in command.output for string in needs_init_strings
     )
 
 
@@ -22,4 +22,4 @@ def get_new_command(command):
     return f"{command.script_parts[0]} init && {command.script}"
 
 
-enabled_by_default = True
+enabled_by_default = False
