@@ -6,7 +6,7 @@ setlocal completeopt=menuone,preview
 let b:python_highlight_all = 1
 let b:python_slow_sync = 1
 
-let b:ale_linters = {'python': 'ruff'}
+let b:ale_linters = {'python': ['ruff', 'mypy']}
 
     " this must be 0 or else setup.cfg will sometimes not be loaded correctly
     " for example, flake8 documentation errors in tests/*
