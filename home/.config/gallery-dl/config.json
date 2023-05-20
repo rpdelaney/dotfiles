@@ -1,8 +1,5 @@
 {
     "cookies": "/tmp/cookies.txt",
-    "directory": [
-        "{author}"
-    ],
     "filename": {
         "len(f\"{title} + '.' + {extension}.part\") > 254": "f\"{id}_{title.encode('utf-8')[:-200].decode('utf-8')}...{extension}\"",
         "not locals().get('title')": "{id}.{extension}",
@@ -32,6 +29,7 @@
             "include": "gallery,scraps"
         },
         "reddit": {
+            "directory": "{author}",
             "parent-directory": true,
             "parent-metadata": "_reddit_"
         },
