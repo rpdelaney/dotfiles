@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#
+# Show the pane options (or a single option if option is provided) with -p, the window options with -w, the server options
+# with -s, otherwise the session options.  If the option is not a user option, -w or -s may be unnecessary - tmux will in‐
+# fer the type from the option name, assuming -w for pane options.  Global session or window options are listed if -g is
+# used.  -v shows only the option value, not the name.  If -q is set, no error will be returned if option is unset.  -H
+# includes hooks (omitted by default).  -A includes options inherited from a parent set of options, such options are
+# marked with an asterisk.
+set -u
+
+option="$1"
+
+main() {
+  if tmux show-options -p | grep -q "$option"; then
+      echo "pane option"
+      found=1
+  fi
+  if tmux show-options -w | grep -q "$option"; then
+      echo "window option"
+      found=1
+  fi
+  if tmux show-options -s | grep -q "$option"; then
+      echo "server option"
+      found=1
+  fi
+  if tmux show-options -g | grep -q "$option"; then
+      echo "global option"
+      found=1
+  fi
+  if tmux show-options -H | grep -q "$option"; then
+      echo "hook option"
+      found=1
+  fi
+  if tmux show-options -A | grep -q "$option"; then
+      echo "inherited option"
+      found=1
+  fi
+
+  if [[ "${found:-}" -ne 1 ]]; then
+      return 1
+  fi
+}
+
+main "$@"
+
+# EOF
