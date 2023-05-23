@@ -77,13 +77,17 @@ format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 min_time = 2000
 format = " [$duration](fg:15 dimmed) "
 
-[env_var.PYTHONWARNINGS]
+[env_var.PYTHONHOME]
 style = "fg:0 bg:#6b6b6b"
 format = "[WARNINGS=$env_value]($style)"
 
-[env_var.PYTHONBREAKPOINT]
+[env_var.PYTHONPATH]
 style = "fg:0 bg:#6b6b6b"
-format = "[BREAKPOINT=$env_value]($style)"
+format = "[PATH=$env_value]($style)"
+
+[env_var.PYTHONHASHSEED]
+style = "fg:0 bg:#6b6b6b"
+format = "[HASHSEED=$env_value]($style)"
 
 [aws]
 symbol = ""

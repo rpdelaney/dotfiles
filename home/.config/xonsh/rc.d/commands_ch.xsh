@@ -14,7 +14,7 @@ def ch(user_path: str):
             break
         path = path.parent
 
-    pushd @(f"{path}")
+    pushd --quiet @(f"{path}")
     ll
 
 # EOF
