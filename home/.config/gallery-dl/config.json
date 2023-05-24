@@ -1,8 +1,5 @@
 {
     "cookies": "/tmp/cookies.txt",
-    "directory": [
-        "{author}"
-    ],
     "filename": {
         "len(f\"{title} + '.' + {extension}.part\") > 254": "f\"{id}_{title.encode('utf-8')[:-200].decode('utf-8')}...{extension}\"",
         "not locals().get('title')": "{id}.{extension}",
@@ -18,20 +15,24 @@
         "module": "yt_dlp"
     },
     "extractor": {
+        "4chan": {
+          "directory": "{title}_{num}",
+          "filename": "{filename}_{timestamp}.{extension}"
+        },
         "instagram": {
-            "filename": {
-                "": "{media_id}.{extension}"
-            },
+            "directory": "{author}",
+            "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
             "sleep-request": [15, 45],
             "sleep": [2, 10],
-            "include": "all"
+            "include": "stories"
         },
         "deviantart": {
             "#": "download 'gallery' and 'scraps' images for user profile URLs",
             "include": "gallery,scraps"
         },
         "reddit": {
+            "directory": "{author}",
             "parent-directory": true,
             "parent-metadata": "_reddit_"
         },
