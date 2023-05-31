@@ -79,7 +79,7 @@ format = " [$duration](fg:15 dimmed) "
 
 [env_var.PYTHONHOME]
 style = "fg:0 bg:#6b6b6b"
-format = "[WARNINGS=$env_value]($style)"
+format = "[PYTHONHOME=$env_value]($style)"
 
 [env_var.PYTHONPATH]
 style = "fg:0 bg:#6b6b6b"
