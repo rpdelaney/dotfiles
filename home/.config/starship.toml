@@ -77,6 +77,10 @@ format = "[is](bold italic #6b6b6b) [$symbol$version]($style) "
 min_time = 2000
 format = " [$duration](fg:15 dimmed) "
 
+[env_var.GITHUB_ACTIONS]
+style = "bold fg:0 bg:#fb4934"
+format = "[GITHUB_ACTIONS=$env_value]($style)"
+
 [env_var.PYTHONHOME]
 style = "fg:0 bg:#6b6b6b"
 format = "[PYTHONHOME=$env_value]($style)"
