@@ -1,0 +1,158 @@
+# sway config file
+# vim: ft=i3
+#
+# TODO: split this into includes. https://i3wm.org/docs/userguide.html#include
+
+#
+# list of keys at /usr/include/X11/keysymdef.h
+#
+
+set $mod Mod4
+
+focus_follows_mouse yes
+popup_during_fullscreen smart
+
+set $DIS1 "HDMI-0"
+set $DIS2 "eDP-1-1"
+
+# workspaces
+set $WS1 "1: shell"
+set $WS2 "2: web"
+set $WS3 "3: misc"
+set $WS4 "4: chat"
+set $WS5 "5: steam"
+set $WS6 "6: media"
+set $WS7 "7: docs"
+set $WS8 "8: misc"
+set $WS9 "9: vm"
+set $WS0 "10: games"
+
+# window classes
+assign [class="Firefox"] → $WS2
+assign [class="Steam"] → $WS5
+assign [class="hl2_linux"] → 10: games
+assign [class="Civ5XP"] 10: games
+
+for_window[class="Steam" title="*Chat$"] floating enable
+for_window[class="Steam"] floating enable
+
+# styles
+font pango:Inconsolata-g 12
+
+# i3bar
+bar {
+        workspace_buttons yes
+        font pango:Inconsolata-g 09
+        tray_output $DIS2
+        status_command i3status
+}
+
+floating_modifier $mod
+
+    # borders
+new_window          1pixel
+new_float           normal
+hide_edge_borders   both
+
+    #class              border  backgr. text
+client.focused          #333333 #0F94D2 #FFFFFF
+client.focused_inactive #191919 #999999 #FFFFFF
+client.unfocused        #191919 #333333 #999999
+client.urgent           #cd989a #cd989a #2e3436
+client.background       #121212
+
+# hotkeys
+bindsym $mod+1 workspace number $WS1
+bindsym $mod+2 workspace number $WS2
+bindsym $mod+3 workspace number $WS3
+bindsym $mod+4 workspace number $WS4
+bindsym $mod+5 workspace number $WS5
+bindsym $mod+6 workspace number $WS6
+bindsym $mod+7 workspace number $WS7
+bindsym $mod+8 workspace number $WS8
+bindsym $mod+9 workspace number $WS9
+bindsym $mod+0 workspace number $WS0
+
+# containers
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+q kill
+
+bindsym $mod+shift+h        split h
+bindsym $mod+shift+minus    split h
+bindsym $mod+shift+v        split v
+bindsym $mod+bar            split v
+
+# layout
+bindsym $mod+u          fullscreen
+bindsym $mod+apostrophe layout stacking
+bindsym $mod+comma      layout tabbed
+bindsym $mod+period     layout toggle split
+
+# move
+bindsym $mod+space+h move left
+bindsym $mod+space+j move down
+bindsym $mod+space+k move up
+bindsym $mod+space+l move right
+
+bindsym $mod+x move workspace to output next
+
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
+
+bindsym $mod+Shift+space floating toggle
+
+# session
+bindsym $mod+r reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+x exec "swaymsg exit"
+bindsym $mod+Shift+l exec "freeze"
+
+# resize
+# bindsym $mod+p exec swaynag -t warning -m "Entering RESIZE mode"; mode "resize"
+bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; mode "resize"
+
+# commands
+bindsym $mod+e exec dmenu_run
+bindsym $mod+i exec swaymsg
+bindsym --release $mod+F5 exec swaymsg
+# chatGPT made this up, no idea if it works (yet)
+# bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
+bindsym $mod+i exec sh -c 'swaymsg $(echo "" | rofi -dmenu -p "swaymsg: ")'
+
+# modes
+mode "resize" {
+        bindsym Shift+h resize shrink width 50 px or 50 ppt
+        bindsym Shift+l resize grow width 50 px or 50 ppt
+        bindsym Shift+k resize shrink height 50 px or 50 ppt
+        bindsym Shift+j resize grow height 50 px or 50 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+
+        bindsym $mod+p mode "default"
+        bindsym Escape exec notify-send -u low --app-name="sway" "Exiting RESIZE mode"; mode "default"
+}
+
+# macOS keybinds
+# I have to use macOS for work so my muscle memory won't die
+bindsym --release Mod4+c exec wl-copy
+bindsym --release Mod4+x exec wl-copy
+bindsym --release Mod4+v exec wl-paste
+
+exec kitty
+
+# EOF
