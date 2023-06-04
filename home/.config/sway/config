@@ -28,13 +28,13 @@ set $WS9 "9: vm"
 set $WS0 "10: games"
 
 # window classes
-assign [class="Firefox"] → $WS2
-assign [class="Steam"] → $WS5
-assign [class="hl2_linux"] → 10: games
-assign [class="Civ5XP"] 10: games
+# assign [class="Firefox"] → $WS2
+# assign [class="Steam"] → $WS5
+# assign [class="hl2_linux"] → 10: games
+# assign [class="Civ5XP"] 10: games
 
-for_window[class="Steam" title="*Chat$"] floating enable
-for_window[class="Steam"] floating enable
+# for_window[class="Steam" title="*Chat$"] floating enable
+# for_window[class="Steam"] floating enable
 
 # styles
 font pango:Inconsolata-g 12
@@ -50,9 +50,9 @@ bar {
 floating_modifier $mod
 
     # borders
-new_window          1pixel
-new_float           normal
-hide_edge_borders   both
+default_border          pixel
+default_floating_border normal
+hide_edge_borders       both
 
     #class              border  backgr. text
 client.focused          #333333 #0F94D2 #FFFFFF
@@ -126,10 +126,8 @@ bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; m
 
 # commands
 bindsym $mod+e exec dmenu_run
-bindsym $mod+i exec swaymsg
-bindsym --release $mod+F5 exec swaymsg
-# chatGPT made this up, no idea if it works (yet)
 # bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
+# chatGPT made this up, no idea if it works (yet)
 bindsym $mod+i exec sh -c 'swaymsg $(echo "" | rofi -dmenu -p "swaymsg: ")'
 
 # modes
@@ -153,6 +151,7 @@ bindsym --release Mod4+c exec wl-copy
 bindsym --release Mod4+x exec wl-copy
 bindsym --release Mod4+v exec wl-paste
 
+input * xkb_layout dvorak
 exec kitty
 
 # EOF
