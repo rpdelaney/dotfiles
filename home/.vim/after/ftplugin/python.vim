@@ -7,7 +7,7 @@ let b:python_highlight_all = 1
 let b:python_slow_sync = 1
 
 let b:ale_linters = {'python': ['flake8', 'mypy']}
-let b:ale_fixers = {'python': ['black', 'ruff']}
+let b:ale_fixers = {'python': ['black', 'RuffFixer']}
 let b:ale_fix_on_save = 1  " Enable fixing on save
 
     " this must be 0 or else setup.cfg will sometimes not be loaded correctly
