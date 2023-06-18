@@ -126,9 +126,8 @@ bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; m
 
 # commands
 bindsym $mod+e exec dmenu_run
-# bindsym $mod+i exec i3-input -P 'i3-msg: ' -F 'exec i3-msg %s'
-# chatGPT made this up, no idea if it works (yet)
 bindsym $mod+i exec sh -c 'swaymsg $(echo "" | rofi -dmenu -p "swaymsg: ")'
+bindsym $mod+F12 exec grim -g "$(slurp)" /tmp/$(date +'%Y-%m-%d_%H-%M-%S').png
 
 # modes
 mode "resize" {
