@@ -150,7 +150,13 @@ bindsym --release Mod4+c exec wl-copy
 bindsym --release Mod4+x exec wl-copy
 bindsym --release Mod4+v exec wl-paste
 
-input * xkb_layout dvorak
+input * {
+    xkb_layout "us"
+    xkb_variant "dvorak"
+    xkb_capslock disabled
+    xkb_numlock enabled
+    # xkb_options "grp:win_space_toggle"
+}
 exec kitty
 
 # EOF
