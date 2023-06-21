@@ -65,6 +65,28 @@ endsnippet
 snippet depends "template for dependency check"
 if ! command -v $1 >/dev/null 2>&1 ; then echo "Missing dependency: $1" 1>&2 ; exit 1 ; fi
 endsnippet
+snippet dependencies "Check for dependencies" b
+# Dependencies {{{1
+dependencies="${1:curl awk sed}"
+missing_dependencies=""
+
+is_missing=0
+for dependency in $dependencies; do
+    if ! command -v "$dependency" > /dev/null 2>&1; then
+        # If not found, add to missing_dependencies string
+        missing_dependencies="$missing_dependencies $dependency"
+        is_missing=1
+    fi
+done
+
+if [ $is_missing -eq 1 ]; then
+    printf "Required dependencies are missing:%s\\n" "$missing_dependencies"
+    exit 1
+fi
+
+unset dependencies missing_dependencies is_missing
+# Dependencies 1}}}
+endsnippet
 snippet which
 if command -v ${1} >/dev/null 2>&1 ; then
   ${2::}
