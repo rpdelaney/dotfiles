@@ -1,136 +1,122 @@
-# This is an example resource file for rTorrent. Copy to
-# ~/.rtorrent.rc and enable/modify the options as needed. Remember to
-# uncomment the options you wish to enable.
-
-#dvorak layout
-key_layout = dvorak
-
-# Maximum and minimum number of peers to connect to per torrent.
-min_peers = 20
-max_peers = 100
-
-# Same as above but for seeding completed torrents (-1 = same as downloading)
-min_peers_seed = 0
-max_peers_seed = 100
-
-# Maximum number of simultanious uploads per torrent.
-max_uploads = 15
-
-# Global upload and download rate in KiB. "0" for unlimited.
-download_rate = 50000
-upload_rate = 50000
-
-# Default directory to save the downloaded torrents.
-directory = /home/ryan/incoming/.rtorrent/data
-
-# Default session directory. Make sure you don't run multiple instance
-# of rtorrent using the same session directory. Perhaps using a
-# relative path?
-session = /home/ryan/incoming/.rtorrent/session
-
-# The ip address reported to the tracker.
-#ip = 127.0.0.1
-
-# The ip address the listening socket and outgoing connections is
-# bound to.
-#bind = 127.0.0.1
-
-# Port range to use for listening.
-port_range = 49152-49200
-
-# Start opening ports at a random position within the port range.
-port_random = yes
-
-# Check hash for finished torrents. Might be usefull until the bug is
-# fixed that causes lack of diskspace not to be properly reported.
-check_hash = yes
-
-# Set whether the client should try to connect to UDP trackers.
-#use_udp_trackers = yes
-
-# Alternative calls to bind and ip that should handle dynamic ip's.
-#schedule = ip_tick,0,1800,ip=rakshasa
-#schedule = bind_tick,0,1800,bind=rakshasa
-
+#############################################################################
+# A minimal rTorrent configuration that provides the basic features
+# you want to have in addition to the built-in defaults.
 #
-# Encryption options, set to none (default) or any combination of the following:
-# allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
-#
-encryption = require
+# See https://github.com/rakshasa/rtorrent/wiki/CONFIG-Template
+# for an up-to-date version.
+#############################################################################
 
-#
-# Enable DHT support for trackerless torrents or when all trackers are down.
-# May be set to "disable" (completely disable DHT), "off" (do not start DHT),
-# "auto" (start and stop DHT as needed), or "on" (start DHT immediately).
-# The default is "off". For DHT to work, a session directory must be defined.
-#
-dht = off
 
-#
-# UDP port to use for DHT.
-#
-# dht_port = 6881
-#
+## Instance layout (base paths)
+method.insert = cfg.basedir,  private|const|string, (cat,"/home/USERNAME/rtorrent/")
+method.insert = cfg.download, private|const|string, (cat,(cfg.basedir),"download/")
+method.insert = cfg.logs,     private|const|string, (cat,(cfg.basedir),"log/")
+method.insert = cfg.logfile,  private|const|string, (cat,(cfg.logs),"rtorrent-",(system.time),".log")
+method.insert = cfg.session,  private|const|string, (cat,(cfg.basedir),".session/")
+method.insert = cfg.watch,    private|const|string, (cat,(cfg.basedir),"watch/")
 
-#
-# Enable peer exchange (for torrents not marked private)
-#
-peer_exchange = no
 
-#
-# Close torrents when diskspace is low.
-#
-schedule = low_diskspace,5,60,close_low_diskspace=300M
+## Create instance directories
+execute.throw = sh, -c, (cat,\
+    "mkdir -p \"",(cfg.download),"\" ",\
+    "\"",(cfg.logs),"\" ",\
+    "\"",(cfg.session),"\" ",\
+    "\"",(cfg.watch),"/load\" ",\
+    "\"",(cfg.watch),"/start\" ")
 
-#
-# Sets the base directory to '~/download/<info_hash>'.
-#
-#d.set_directory_base = $cat=~/download/\,$d.get_hash=
 
-# Watch a directory for new torrents, and stop those that have been
-# deleted.
-schedule = watch_directory,5,5,load=/dev/null/*.torrent
-#schedule = untied_directory,5,5,stop_untied=
+## Listening port for incoming peer traffic (fixed; you can also randomize it)
+network.port_range.set = 50000-50000
+network.port_random.set = no
 
-#
-# Watch another directory with a different destination. (0.7.7+)
-#
-schedule = watch_directory_2,10,10,"load=/home/ryan/torrent/abooks/*.torrent,d.set_directory=/media/vault/incoming/abooks/"
-schedule = watch_directory_3,10,10,"load=/home/ryan/torrent/audio/*.torrent,d.set_directory=/media/vault/incoming/audio/"
-schedule = watch_directory_4,10,10,"load=/home/ryan/torrent/audio/what.cd/*.torrent,d.set_directory=/media/vault/incoming/audio/what.cd/"
-schedule = watch_directory_5,10,10,"load=/home/ryan/torrent/ebooks/*.torrent,d.set_directory=/media/vault/incoming/ebooks/"
-schedule = watch_directory_6,10,10,"load=/home/ryan/torrent/graphics/*.torrent,d.set_directory=/media/vault/incoming/graphics/"
-schedule = watch_directory_7,10,10,"load=/home/ryan/torrent/misc/*.torrent,d.set_directory=/media/vault/incoming/misc/"
-schedule = watch_directory_8,10,10,"load=/home/ryan/torrent/software/*.torrent,d.set_directory=/media/vault/incoming/software/"
-schedule = watch_directory_9,10,10,"load=/home/ryan/torrent/tv/*.torrent,d.set_directory=/media/vault/incoming/tv/"
-schedule = watch_directory_10,10,10,"load=/home/ryan/torrent/video/*.torrent,d.set_directory=/media/vault/incoming/video/"
 
-#
-# Create symlinks in the watch directory with a suffix indicating the
-# download state.
-#
-#on_start    = link1,"create_link=tied,,.started"
-#on_stop     = link1,"delete_link=tied,,.started"
-#on_finished = link1,"create_link=tied,,.finished"
-#on_erase    = link1,"delete_link=tied,,.finished"
+## Tracker-less torrent and UDP tracker support
+## (conservative settings for 'private' trackers, change for 'public')
+dht.mode.set = disable
+protocol.pex.set = no
 
-# Create symlinks in the same directory as the download.
-#on_start    = link2,"create_link=base_path,,.started"
-#on_stop     = link2,"delete_link=base_path,,.started"
-#on_finished = link2,"create_link=base_path,,.finished"
-#on_erase    = link2,"delete_link=base_path,,.finished"
+trackers.use_udp.set = no
 
-# Create a symlink in another directory without a suffix.
-# You need to quote the command in this case.
-#on_finished = link3,"create_link=base_filename,/media/vault/outgoing/"
 
-#Options: color_inactive_fg, color_inactive_bg, color_dead_fg, color_dead_bg,
-#         color_active_fg, color_active_bg, color_finished_fg, color_finished_bg,
-#
-#Colors: 0 = black 1 = red 2 = green 3 = yellow 4 = blue 5 = magenta 6 = cyan 7 = white
-color_inactive_fg = 6
-color_dead_fg = 1
-color_active_fg = 3
-color_finished_fg = 2
+## Peer settings
+throttle.max_uploads.set = 100
+throttle.max_uploads.global.set = 250
 
-# vim: set filetype=rtorrent:
+throttle.min_peers.normal.set = 20
+throttle.max_peers.normal.set = 60
+throttle.min_peers.seed.set = 30
+throttle.max_peers.seed.set = 80
+trackers.numwant.set = 80
+
+protocol.encryption.set = allow_incoming,try_outgoing,enable_retry
+
+
+## Limits for file handle resources, this is optimized for
+## an `ulimit` of 1024 (a common default). You MUST leave
+## a ceiling of handles reserved for rTorrent's internal needs!
+network.http.max_open.set = 50
+network.max_open_files.set = 600
+network.max_open_sockets.set = 300
+
+
+## Memory resource usage (increase if you have a large number of items loaded,
+## and/or the available resources to spend)
+pieces.memory.max.set = 1800M
+network.xmlrpc.size_limit.set = 4M
+
+
+## Basic operational settings (no need to change these)
+session.path.set = (cat, (cfg.session))
+directory.default.set = (cat, (cfg.download))
+log.execute = (cat, (cfg.logs), "execute.log")
+#log.xmlrpc = (cat, (cfg.logs), "xmlrpc.log")
+execute.nothrow = sh, -c, (cat, "echo >",\
+    (session.path), "rtorrent.pid", " ",(system.pid))
+
+
+## Other operational settings (check & adapt)
+encoding.add = UTF-8
+system.umask.set = 0027
+system.cwd.set = (directory.default)
+network.http.dns_cache_timeout.set = 25
+schedule2 = monitor_diskspace, 15, 60, ((close_low_diskspace, 1000M))
+#pieces.hash.on_completion.set = no
+#view.sort_current = seeding, greater=d.ratio=
+#keys.layout.set = qwerty
+#network.http.capath.set = "/etc/ssl/certs"
+#network.http.ssl_verify_peer.set = 0
+#network.http.ssl_verify_host.set = 0
+
+
+## Some additional values and commands
+method.insert = system.startup_time, value|const, (system.time)
+method.insert = d.data_path, simple,\
+    "if=(d.is_multi_file),\
+        (cat, (d.directory), /),\
+        (cat, (d.directory), /, (d.name))"
+method.insert = d.session_file, simple, "cat=(session.path), (d.hash), .torrent"
+
+
+## Watch directories (add more as you like, but use unique schedule names)
+## Add torrent
+schedule2 = watch_load, 11, 10, ((load.verbose, (cat, (cfg.watch), "load/*.torrent")))
+## Add & download straight away
+schedule2 = watch_start, 10, 10, ((load.start_verbose, (cat, (cfg.watch), "start/*.torrent")))
+
+
+## Run the rTorrent process as a daemon in the background
+## (and control via XMLRPC sockets)
+#system.daemon.set = true
+#network.scgi.open_local = (cat,(session.path),rpc.socket)
+#execute.nothrow = chmod,770,(cat,(session.path),rpc.socket)
+
+
+## Logging:
+##   Levels = critical error warn notice info debug
+##   Groups = connection_* dht_* peer_* rpc_* storage_* thread_* tracker_* torrent_*
+print = (cat, "Logging to ", (cfg.logfile))
+log.open_file = "log", (cfg.logfile)
+log.add_output = "info", "log"
+#log.add_output = "tracker_debug", "log"
+
+# EOF
