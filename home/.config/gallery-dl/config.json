@@ -1,4 +1,8 @@
 {
+    "comment": [
+        "Maybe this filename length nonsense is unnecessary now? See link:",
+        "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
+    ],
     "cookies": "/tmp/cookies.txt",
     "filename": {
         "len(f\"{title} + '.' + {extension}.part\") > 254": "f\"{id}_{title.encode('utf-8')[:-200].decode('utf-8')}...{extension}\"",
