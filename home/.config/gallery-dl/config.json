@@ -4,16 +4,6 @@
         "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
     ],
     "cookies": "/tmp/cookies.txt",
-    "filename": {
-        "len(f\"{title} + '.' + {extension}.part\") > 254": "f\"{id}_{title.encode('utf-8')[:-200].decode('utf-8')}...{extension}\"",
-        "not locals().get('title')": "{id}.{extension}",
-        "": "{id}_{title}.{extension}"
-    },
-    "postprocessors": [
-        {
-            "name": "metadata"
-        }
-    ],
     "ytdl": {
         "enabled": true,
         "module": "yt_dlp"
@@ -21,6 +11,9 @@
     "extractor": {
         "4chan": {
           "directory": "{title}_{num}",
+          "filename": "{filename}_{timestamp}.{extension}"
+        },
+        "rule34us": {
           "filename": "{filename}_{timestamp}.{extension}"
         },
         "instagram": {
