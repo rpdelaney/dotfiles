@@ -33,15 +33,13 @@
             "parent-directory": true,
             "parent-metadata": "_reddit_"
         },
-        "tumblr":
-        {
+        "tumblr": {
             "avatar": true
         },
         "imgur": {
             "mp4": "always"
         },
-        "redgifs":
-        {
+        "redgifs": {
             "format": ["hd", "sd", "gif"]
         },
         "gfycat": {
