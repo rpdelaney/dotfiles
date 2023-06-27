@@ -9,7 +9,7 @@ import os
 _xontribs = [
     ("abbrevs", None),
     ("argcomplete", "xontrib-argcomplete"),
-    ("autovox", None),
+    ("autovox", "xontrib-avox"),
     ("avox_poetry", "xontrib-avox-poetry"),
     ("commands", "xontrib-commands"),
     ("direnv", "xonsh-direnv"),
@@ -17,7 +17,7 @@ _xontribs = [
     ("jedi", "xontrib-jedi"),
     ("kitty", "xontrib-kitty"),
     ("vox", None),
-    ("whole_word_jumping", None),
+    ("whole_word_jumping", "xontrib-whole-word-jumping"),
 ]
 
 def _xontrib_load(xontr, pkg):
