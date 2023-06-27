@@ -24,6 +24,7 @@ abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
+abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
 
 _first("xpip", "pipx inject xonsh")
 _subcommand("poetry", "upgrade", "update")
