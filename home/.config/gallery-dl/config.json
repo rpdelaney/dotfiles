@@ -13,6 +13,12 @@
             "jif" : "jpg",
             "jfi" : "jpg"
         },
+        "postprocessors": [
+            {
+                "name": "metadata",
+                "mode": "json"
+            }
+        ],
 
         "ytdl": {
             "enabled": true,
@@ -26,21 +32,18 @@
           "filename": "{filename}_{timestamp}.{extension}"
         },
         "instagram": {
-            "directory": "{author}",
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
             "sleep-request": [15, 45],
             "sleep": [2, 10],
-            "include": "stories"
+            "include": "posts,stories,tagged,reels,collections,highlights,avatar"
         },
         "deviantart": {
             "#": "download 'gallery' and 'scraps' images for user profile URLs",
             "include": "gallery,scraps"
         },
         "reddit": {
-            "directory": "{author}",
             "parent-directory": true,
-            "#": "transfer metadata to any child extractor as '_reddit'",
             "parent-metadata": "_reddit",
             "videos": "true"
         },
