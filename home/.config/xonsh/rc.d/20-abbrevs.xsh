@@ -19,11 +19,12 @@ abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -r -X -F"
 abbrevs["qrcode"] = r"curl -F-=\<- qrenco.de"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
-abbrevs["sxiv"] = "nsxiv -a -p"
+abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 --stdout"
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
+abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
 
 _first("xpip", "pipx inject xonsh")
 _subcommand("poetry", "upgrade", "update")
