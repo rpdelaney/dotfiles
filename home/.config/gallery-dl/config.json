@@ -4,11 +4,20 @@
         "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
     ],
     "cookies": "/tmp/cookies.txt",
-    "ytdl": {
-        "enabled": true,
-        "module": "yt_dlp"
-    },
     "extractor": {
+        "base-directory": "~/gallery-dl/",
+        "extension-map": {
+            "jpeg": "jpg",
+            "jpe" : "jpg",
+            "jfif": "jpg",
+            "jif" : "jpg",
+            "jfi" : "jpg"
+        },
+
+        "ytdl": {
+            "enabled": true,
+            "module": "yt_dlp"
+        },
         "4chan": {
           "directory": "{title}_{num}",
           "filename": "{filename}_{timestamp}.{extension}"
@@ -31,18 +40,29 @@
         "reddit": {
             "directory": "{author}",
             "parent-directory": true,
-            "parent-metadata": "_reddit_"
+            "#": "transfer metadata to any child extractor as '_reddit'",
+            "parent-metadata": "_reddit",
+            "videos": "true"
         },
         "tumblr":
         {
             "avatar": true
         },
         "imgur": {
-            "mp4": "always"
+            "mp4": "always",
+            "directory":
+            {
+                "'_reddit' in locals()": []
+            },
+            "filename":
+            {
+                "'_reddit' in locals()": "{_reddit[id]} {id}.{extension}",
+                ""                     : "{id}.{extension}"
+            }
         },
         "redgifs":
         {
-            "format": ["hd", "sd", "gif"]
+            "format": ["hd", "gif"]
         },
         "gfycat": {
             "format": ["webm", "mp4", "mobile", "gif"]
