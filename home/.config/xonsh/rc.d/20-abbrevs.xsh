@@ -19,7 +19,7 @@ abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -r -X -F"
 abbrevs["qrcode"] = r"curl -F-=\<- qrenco.de"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
-abbrevs["sxiv"] = "sxiv -a -p"
+abbrevs["sxiv"] = "nsxiv -a -p"
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
