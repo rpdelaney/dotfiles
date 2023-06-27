@@ -1,7 +1,9 @@
 {
-    "comment": [
-        "Maybe this filename length nonsense is unnecessary now? See link:",
-        "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
+    "__comments": [
+      {
+        "Configuration reference": "https://github.com/mikf/gallery-dl/blob/master/docs/configuration.rst",
+        "Fix filename length errors with slices": "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
+      }
     ],
     "cookies": "/tmp/cookies.txt",
     "extractor": {
