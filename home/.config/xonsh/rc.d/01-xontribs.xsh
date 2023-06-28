@@ -7,16 +7,16 @@
 import os
 
 _xontribs = [
-    ("abbrevs", None),
+    ("abbrevs", "xontrib-abbrevs"),
     ("argcomplete", "xontrib-argcomplete"),
-    ("autovox", "xontrib-avox"),
+    ("autovox", "xontrib-vox"),
     ("avox_poetry", "xontrib-avox-poetry"),
     ("commands", "xontrib-commands"),
     ("direnv", "xonsh-direnv"),
     ("gruvbox", "xontrib-gruvbox"),
     ("jedi", "xontrib-jedi"),
     ("kitty", "xontrib-kitty"),
-    ("vox", None),
+    ("vox", "xontrib-vox"),
     ("whole_word_jumping", "xontrib-whole-word-jumping"),
 ]
 
