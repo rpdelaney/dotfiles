@@ -21,6 +21,7 @@
                 "mode": "json"
             }
         ],
+        "include": "all",
 
         "ytdl": {
             "enabled": true,
@@ -37,8 +38,7 @@
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
             "sleep-request": [15, 45],
-            "sleep": [2, 10],
-            "include": "posts,stories,tagged,reels,collections,highlights,avatar"
+            "sleep": [2, 10]
         },
         "deviantart": {
             "#": "download 'gallery' and 'scraps' images for user profile URLs",
