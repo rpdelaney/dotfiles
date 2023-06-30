@@ -1,7 +1,9 @@
 {
-    "comment": [
-        "Maybe this filename length nonsense is unnecessary now? See link:",
-        "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
+    "__comments": [
+      {
+        "Configuration reference": "https://github.com/mikf/gallery-dl/blob/master/docs/configuration.rst",
+        "Fix filename length errors with slices": "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
+      }
     ],
     "cookies": "/tmp/cookies.txt",
     "extractor": {
@@ -19,6 +21,7 @@
                 "mode": "json"
             }
         ],
+        "include": "all",
 
         "ytdl": {
             "enabled": true,
@@ -35,8 +38,7 @@
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
             "sleep-request": [15, 45],
-            "sleep": [2, 10],
-            "include": "posts,stories,tagged,reels,collections,highlights,avatar"
+            "sleep": [2, 10]
         },
         "deviantart": {
             "#": "download 'gallery' and 'scraps' images for user profile URLs",
