@@ -36,6 +36,7 @@ _GIT_SUBCOMMANDS = {
 #   "p": "push",
 # this is causing problems with thefuck
 #   "push": "push --progress -v",
+    "blame": "blame --color-lines --color-by-age",  # until I figure out how to force colors with git-config
 }
 for _command in _GIT_SUBCOMMANDS.keys():
     _subcommand("git", _command, _GIT_SUBCOMMANDS[_command])
