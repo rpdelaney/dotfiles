@@ -35,6 +35,10 @@
           "filename": "{filename}_{timestamp}.{extension}"
         },
         "instagram": {
+            "directory": {
+              "subcategory == 'tagged'": ["{tagged_username}", "tagged"],
+              "": ["{category}", "{username}", "{subcategory}"]
+            },
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
             "sleep-request": [15, 45],
