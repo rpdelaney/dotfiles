@@ -17,7 +17,7 @@ def _subcommand(command, subcommand, sub):
 abbrevs["emacs"] = "vim"
 abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -r -X -F"
-abbrevs["qrcode"] = r"curl -F-=\<- qrenco.de"
+abbrevs["qrencode"] = r"curl -F-=\<- qrenco.de"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 --stdout"
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
