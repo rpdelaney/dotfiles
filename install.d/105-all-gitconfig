@@ -95,6 +95,10 @@ main() {
   git config --global alias.leaders "shortlog -sn --all --no-merges"
   # 1}}} Alias
 
+  git config --global color.blame always
+  git config --global color.blame.commit yellow
+  git config --global color.blame.meta green
+
   git config --global color.diff "auto"
   git config --global color.status "auto"
   git config --global color.branch "auto"
