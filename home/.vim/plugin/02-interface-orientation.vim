@@ -5,6 +5,6 @@ set cursorline     " highlight current row
 set nocursorcolumn
 
 " Set different cursor shape for modes
-let &t_SI = "\e[5 q" " Insert mode
-let &t_EI = "\e[2 q" " Normal mode
-let &t_SR = "\e[4 q" " Replace mode
+let &t_SI = "\<Esc>]12;red\007\<Esc>[5 q"   " Insert mode
+let &t_EI = "\<Esc>]12;grey\007\<Esc>[2 q"  " Normal mode
+let &t_SR = "\<Esc>]12;green\007\<Esc>[4 q" " Replace mode
