@@ -31,7 +31,6 @@ Plug 'rickhowe/diffchar.vim'                           " - smarter diff mode
 Plug 'romainl/vim-cool'                                " - disable search highlighting when finished
 Plug 'ryanoasis/vim-devicons'                          " - add filetype glyphs in NERDtree
 Plug 'vim-scripts/AnsiEsc.vim'                         " - render and conceal ANSI escape sequences
-Plug 'wincent/terminus'                                " - change cursor shape with vim mode while in tmux
 
                                                        " /* dev tools */
 Plug 'airblade/vim-gitgutter'                          " - git status in the gutter
