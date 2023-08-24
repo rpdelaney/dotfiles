@@ -5,6 +5,9 @@ set cursorline     " highlight current row
 set nocursorcolumn
 
 " Set different cursor shape for modes
-let &t_SI = "\<Esc>]12;#689d6a\007\<Esc>[5 q"   " Insert mode, blinking green pipe
+let &t_SI = "\<Esc>]12;#53a7e0\007\<Esc>[5 q"   " Insert mode, blinking blue pipe
 let &t_EI = "\<Esc>]12;#a89984\007\<Esc>[1 q"   " Normal mode, blinking grey block
-let &t_SR = "\<Esc>]12;#cc241d\007\<Esc>[3 q"   " Replace mode, blinking red underscore
+let &t_SR = "\<Esc>]12;#e2401f\007\<Esc>[3 q"   " Replace mode, blinking red underscore
+
+autocmd VimEnter * silent execute "!echo -ne '\e[1 q'"
+autocmd VimLeave * silent execute "!echo -ne '\e[ q'"
