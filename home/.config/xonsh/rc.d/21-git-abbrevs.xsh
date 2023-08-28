@@ -13,6 +13,7 @@ _GIT_SUBCOMMANDS = {
     "c": "commit -v",
     "clean": r"""branch --merged | grep -Ev r'(^\*|master|main|dev)' | xargs git branch -d  # delete local branches that have merged to main""",
     "co": "checkout",
+    "cod": "checkout @$(basename @$(git symbolic-ref refs/remotes/origin/HEAD))  # check out the default branch",
     "ca": "commit --amend",
     "cm": "commit -v -m",
     "cp": "cherry-pick",
