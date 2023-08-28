@@ -12,6 +12,7 @@ popup_during_fullscreen smart
 
 # use `swaymsg -t get_outputs` to get output names
 # right now I have only one display, so use that for both
+output HDMI-A-1 mode 1920x1080@240Hz
 set $DIS1 "HDMI-A-1"
 set $DIS2 "HDMI-A-1"
 
