@@ -15,7 +15,7 @@ _GIT_SUBCOMMANDS = {
     "co": "checkout",
     "ca": "commit --amend",
     "cm": "commit -v -m",
-    "cp": "cherry-pick",
+    # "cp": "cherry-pick",  # TODO: this conficts with the "cp" abbrev, fix it
     "d": "diff",
     "dc": "diff --cached",
     "f": "fetch",
