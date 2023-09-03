@@ -11,8 +11,9 @@ _GIT_SUBCOMMANDS = {
     "br": "branch -v",
     "bra": "branch -v -a",
     "c": "commit -v",
-    "clean": """branch --merged | grep -Ev r'(^\*|master|main|dev)' | xargs git branch -d  # delete local branches that have merged to main""",
+    "clean": r"""branch --merged | grep -Ev r'(^\*|master|main|dev)' | xargs git branch -d  # delete local branches that have merged to main""",
     "co": "checkout",
+    "cod": "checkout @$(basename @$(git symbolic-ref refs/remotes/origin/HEAD))  # check out the default branch",
     "ca": "commit --amend",
     "cm": "commit -v -m",
     # "cp": "cherry-pick",  # TODO: this conficts with the "cp" abbrev, fix it
