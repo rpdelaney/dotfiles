@@ -80,6 +80,7 @@ Bitwarden/*
 
 # onepassword cli
 .op/*
+op/*
 
 .obs-studio/*
 
