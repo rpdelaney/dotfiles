@@ -1,4 +1,4 @@
-snippet shebang "shebang for bash"
+snippet shebang "shebang for bash" b
 #!/usr/bin/env bash
 #
 endsnippet
@@ -27,42 +27,45 @@ log() {
 }
 # Functions 1}}}
 endsnippet
-snippet parameters "command-line arguments reader" b
+snippet parameters "command-line arguments reader"
 # Parameters {{{1
 #
-while :
-do
-  case \${1:-} in
-    --help | -\?)
+_GETOPTS=$(getopt -o hvq --long help,verbose,quiet -n '$0' -- "$@")
+if [ $? != 0 ] ; then echo "Terminating..." >&2 ; exit 1 ; fi
+
+eval set -- "$_GETOPTS"
+unset _GETOPTS
+
+while true ; do
+  case "$1" in
+    -h|--help)
       usage
+      shift
       exit 0
       ;;
-    -v | --verbose)
+    -v|--verbose)
       # Each instance of -v adds 1 to verbosity
-      verbose=\$((verbose+1))
+      verbose=$((verbose+1))
       shift
       ;;
-    -q | --quiet)
+    -q|--quiet)
       quiet="1"
       shift
       ;;
-    --) # End of all options
+    --)
       shift
       break
       ;;
-    -*)
-      echo "FATAL: Unknown option : \$1" >&2
+    *)
+      echo "FATAL: Unknown option : $1" >&2
       exit 1
       shift
-      ;;
-    *)  # no more options. Stop while loop
-      break
       ;;
   esac
 done
 # Parameters 1}}}
 endsnippet
-snippet depends "template for dependency check"
+snippet depends "template for dependency check" b
 if ! command -v $1 >/dev/null 2>&1 ; then echo "Missing dependency: $1" 1>&2 ; exit 1 ; fi
 endsnippet
 snippet dependencies "Check for dependencies" b
@@ -72,16 +75,16 @@ missing_dependencies=""
 
 is_missing=0
 for dependency in $dependencies; do
-    if ! command -v "$dependency" > /dev/null 2>&1; then
-        # If not found, add to missing_dependencies string
-        missing_dependencies="$missing_dependencies $dependency"
-        is_missing=1
-    fi
+  if ! command -v "$dependency" > /dev/null 2>&1; then
+    # If not found, add to missing_dependencies string
+    missing_dependencies="$missing_dependencies $dependency"
+    is_missing=1
+  fi
 done
 
 if [ $is_missing -eq 1 ]; then
-    printf "Required dependencies are missing:%s\\n" "$missing_dependencies"
-    exit 1
+  printf "Required dependencies are missing:%s\\n" "$missing_dependencies"
+  exit 1
 fi
 
 unset dependencies missing_dependencies is_missing
