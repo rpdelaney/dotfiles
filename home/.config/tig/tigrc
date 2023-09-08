@@ -4,6 +4,7 @@ set line-graphics = utf-8
 set show-changes = true
 set tab-size = 2
 set diff-options = -y
+set blame-options = --color-lines --color-by-age
 set commit-order = date
 set mouse = false
 set grep-view = file-name:yes line-number:yes,interval=1 text
