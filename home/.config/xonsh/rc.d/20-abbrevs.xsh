@@ -71,11 +71,13 @@ else:
         pkgman = "pacman"
     del ret
 
-    abbrevs["ya"]    = f"{pkgman}"
-    abbrevs["yas"]   = f"{pkgman} -S"
-    abbrevs["yass"]  = f"{pkgman} -Ss"
-    abbrevs["yars"]  = f"{pkgman} -Rs"
-    abbrevs["yasyu"] = f"{pkgman} -Syu"
+    abbrevs["ya"]       = f"{pkgman}"
+    abbrevs["yas"]      = f"{pkgman} -S"
+    abbrevs["yass"]     = f"{pkgman} -Ss"
+    abbrevs["yars"]     = f"{pkgman} -Rs"
+    abbrevs["yeet"]     = abbrevs["yars"]
+    abbrevs["yasyu"]    = f"{pkgman} -Syu"
+    abbrevs["yaclean"]  = f"{pkgman} -Rs @$(pacman -Qtdq)"
     try:
         del pkgman
     except NameError:

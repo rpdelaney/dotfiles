@@ -29,13 +29,15 @@ set $WS9 "9: vm"
 set $WS0 "10: games"
 
 # window classes
-# assign [class="Firefox"] → $WS2
-# assign [class="Steam"] → $WS5
+assign [class="Firefox"] workspace $WS2
+assign [class="Steam"] workspace $WS5
+assign [class="chatty-Chatty"] workspace $WS6
 # assign [class="hl2_linux"] → 10: games
 # assign [class="Civ5XP"] 10: games
 
-# for_window[class="Steam" title="*Chat$"] floating enable
-# for_window[class="Steam"] floating enable
+for_window [class="chatty-Chatty" title="win*"] floating enable  # channel go-live notifications etc
+for_window [class="Steam" title=".*Chat$"] floating enable
+for_window [class="Steam"] floating enable
 
 # styles
 font pango:Inconsolata-g 12

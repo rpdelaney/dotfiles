@@ -41,7 +41,7 @@ homebrew_apps=(
   'enca'
   'entr'
   'espeak'
-  'exa'
+  'eza'
   'exiftool'
   'file-formula'
   'findutils'
