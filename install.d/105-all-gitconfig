@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 #
+# (ret=1) The section or key is invalid
+# (ret=2) no section or name was provided
+# (ret=3) the config file is invalid
+# (ret=4) the config file cannot be written
+# (ret=5) you try to unset an option which does not exist, or
+# (ret=5) you try to unset/set an option for which multiple lines match
+# (ret=6) you try to use an invalid regexp
+#
 set -e
 trap 'echo "Command failed: '\''$BASH_COMMAND'\'' (exit status: $?)"' ERR
 
