@@ -1,160 +1,157 @@
 #!/usr/bin/env sh
 #
+set -e
 
-main() {
-  git config --global user.name "Ryan Delaney"
-  git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
+git config --global user.name "Ryan Delaney"
+git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
 
-  git config --global core.whitespace "trailing-space,space-before-tab"
-  git config --global core.filemode "true"
-  git config --global core.symlinks "true"
+git config --global core.whitespace "trailing-space,space-before-tab"
+git config --global core.filemode "true"
+git config --global core.symlinks "true"
 
-  git config --global init.defaultBranch main
+git config --global init.defaultBranch main
 
-  git config --global branch.autosetuprebase "never"
+git config --global branch.autosetuprebase "never"
 
-  git config --global push.default "upstream"
-  git config --global push.autoSetupRemote "true"
-  git config --global push.followTags "true"
-  git config --global pull.rebase "false"
+git config --global push.default "upstream"
+git config --global push.autoSetupRemote "true"
+git config --global push.followTags "true"
+git config --global pull.rebase "false"
 
-  git config --global --unset core.excludesfile
-  git config --global --unset blame.ignoreRevsFile
+git config --global --unset core.excludesfile
+git config --global --unset blame.ignoreRevsFile
 
-  git config --global status.showStash "true"
-  git config --global status.submoduleSummary "true"
+git config --global status.showStash "true"
+git config --global status.submoduleSummary "true"
 
-  git config --global stash.showPatch "true"
-  git config --global stash.showIncludeUntracked "true"
-  git config --global stash.submoduleSummary "true"
+git config --global stash.showPatch "true"
+git config --global stash.showIncludeUntracked "true"
+git config --global stash.submoduleSummary "true"
 
-  git config --global diff.algorithm histogram
-  git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt"
-  git config --global --unset diff.external
-  git config --global diff.tool "vimdiff"
-  git config --global diff.renames "copies"
-  git config --global diff.mnemonicprefix "true"
-  git config --global difftool.prompt "true"
-  if command -v diffr 2>/dev/null 1>/dev/null ; then
-    diffr="dif | pager"
+git config --global diff.algorithm histogram
+git config --global --replace-all diff.gpg.textconv "gpg --no-tty --decrypt"
+git config --global --unset diff.external
+git config --global diff.tool "vimdiff"
+git config --global diff.renames "copies"
+git config --global diff.mnemonicprefix "true"
+git config --global difftool.prompt "true"
+if command -v diffr 2>/dev/null 1>/dev/null ; then
+  diffr="dif | pager"
 
-    git config --global pager.diff "$diffr"
-    git config --global pager.show "$diffr"
-    git config --global pager.log "$diffr"
-    git config --global interactive.diffFilter "$diffr"
-  else
-    git config --global pager.diff "less"
-  fi
+  git config --global pager.diff "$diffr"
+  git config --global pager.show "$diffr"
+  git config --global pager.log "$diffr"
+  git config --global interactive.diffFilter "$diffr"
+else
+  git config --global pager.diff "less"
+fi
 
-  git config --global merge.conflictstyle "diff3"
-  git config --global merge.tool "diffconflicts"
-  git config --global mergetool.prompt "true"
-  # shellcheck disable=SC2016
-  git config --global mergetool.diffconflicts.cmd 'vim -c DiffConflicts "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'
-  git config --global mergetool.diffconflicts.trustExitCode true
-  git config --global mergetool.keepBackup false
+git config --global merge.conflictstyle "diff3"
+git config --global merge.tool "diffconflicts"
+git config --global mergetool.prompt "true"
+# shellcheck disable=SC2016
+git config --global mergetool.diffconflicts.cmd 'vim -c DiffConflicts "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'
+git config --global mergetool.diffconflicts.trustExitCode true
+git config --global mergetool.keepBackup false
 
-  # Alias {{{1
-  _git_reset='%C(reset)'
-  _git_abbrev_hash='%C(magenta)%h'"$_git_reset"
-  _git_ref='%C(yellow ul)%D'"$_git_reset"
-  _git_subject=' %s'
-  _git_author_name='%C(blue dim)-- %an'"$_git_reset"
-  _git_author_date='%C(green)%ad'"$_git_reset"
-  _git_relatime='%C(green dim)(%cr)'"$_git_reset"
+# Alias {{{1
+_git_reset='%C(reset)'
+_git_abbrev_hash='%C(magenta)%h'"$_git_reset"
+_git_ref='%C(yellow ul)%D'"$_git_reset"
+_git_subject=' %s'
+_git_author_name='%C(blue dim)-- %an'"$_git_reset"
+_git_author_date='%C(green)%ad'"$_git_reset"
+_git_relatime='%C(green dim)(%cr)'"$_git_reset"
 
-  _git_long_log_format="$_git_abbrev_hash -$_git_subject $_git_ref $_git_relatime $_git_author_name"
-  _git_short_log_format="$_git_abbrev_hash $_git_author_date$_git_subject $_git_ref $_git_author_name"
+_git_long_log_format="$_git_abbrev_hash -$_git_subject $_git_ref $_git_relatime $_git_author_name"
+_git_short_log_format="$_git_abbrev_hash $_git_author_date$_git_subject $_git_ref $_git_author_name"
 
-  git config --global alias.ls    "log --color=always --pretty=format:'$_git_long_log_format' --decorate --no-merges"
-  git config --global alias.lg    "log --color=always --pretty=format:'$_git_long_log_format' --graph"
-  git config --global alias.lgd   "log --color=always --pretty=format:'$_git_short_log_format' --date=short --first-parent"
+git config --global alias.ls    "log --color=always --pretty=format:'$_git_long_log_format' --decorate --no-merges"
+git config --global alias.lg    "log --color=always --pretty=format:'$_git_long_log_format' --graph"
+git config --global alias.lgd   "log --color=always --pretty=format:'$_git_short_log_format' --date=short --first-parent"
 
-  git config --global alias.ap "add --patch"
-  git config --global alias.d "diff"
-  git config --global alias.dc "diff --cached"
-  git config --global alias.f "fetch"
-  git config --global alias.fa "fetch --all --recurse-submodules=on-demand"
-  git config --global alias.fd "fetch --dry-run"
-  git config --global alias.fp "fetch --prune"
-  git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand"
-  git config --global alias.m "merge"
-  git config --global alias.cp "cherry-pick"
-  git config --global alias.exec '!$@'
-  git config --global alias.remotes "remote -v"
-  git config --global alias.s "status --short"
-  git config --global alias.st "status"
-  git config --global alias.sp "status --porcelain"
-  git config --global alias.c "commit --verbose"
-  git config --global alias.cs "commit --verbose -S"
-  git config --global alias.tags "tag --list -n3"
-  git config --global alias.co "checkout"
-  git config --global alias.br "branch -v"
-  git config --global alias.bra "branch -va"
-  git config --global alias.r "reset"
-  git config --global alias.leaders "shortlog -sn --all --no-merges"
-  # 1}}} Alias
+git config --global alias.ap "add --patch"
+git config --global alias.d "diff"
+git config --global alias.dc "diff --cached"
+git config --global alias.f "fetch"
+git config --global alias.fa "fetch --all --recurse-submodules=on-demand"
+git config --global alias.fd "fetch --dry-run"
+git config --global alias.fp "fetch --prune"
+git config --global alias.fap "fetch --all --prune --recurse-submodules=on-demand"
+git config --global alias.m "merge"
+git config --global alias.cp "cherry-pick"
+git config --global alias.exec '!$@'
+git config --global alias.remotes "remote -v"
+git config --global alias.s "status --short"
+git config --global alias.st "status"
+git config --global alias.sp "status --porcelain"
+git config --global alias.c "commit --verbose"
+git config --global alias.cs "commit --verbose -S"
+git config --global alias.tags "tag --list -n3"
+git config --global alias.co "checkout"
+git config --global alias.br "branch -v"
+git config --global alias.bra "branch -va"
+git config --global alias.r "reset"
+git config --global alias.leaders "shortlog -sn --all --no-merges"
+# 1}}} Alias
 
-  git config --global color.blame always
-  git config --global color.blame.commit yellow
-  git config --global color.blame.meta green
+git config --global color.blame always
+git config --global color.blame.commit yellow
+git config --global color.blame.meta green
 
-  git config --global color.diff "auto"
-  git config --global color.status "auto"
-  git config --global color.branch "auto"
-  git config --global color.interactive "auto"
-  git config --global color.ui "auto"
-  git config --global color.branch.current "green bold"
-  git config --global color.branch.local "green"
-  git config --global color.branch.remote "red bold"
-  git config --global color.diff.meta "yellow bold"
-  git config --global color.diff.frag "magenta bold"
-  git config --global color.diff.old "red bold"
-  git config --global color.diff.new "green bold"
-  git config --global color.status.added "green bold"
-  git config --global color.status.changed "yellow bold"
-  git config --global color.status.untracked "red bold"
-  git config --global color.sh.branch "yellow"
+git config --global color.diff "auto"
+git config --global color.status "auto"
+git config --global color.branch "auto"
+git config --global color.interactive "auto"
+git config --global color.ui "auto"
+git config --global color.branch.current "green bold"
+git config --global color.branch.local "green"
+git config --global color.branch.remote "red bold"
+git config --global color.diff.meta "yellow bold"
+git config --global color.diff.frag "magenta bold"
+git config --global color.diff.old "red bold"
+git config --global color.diff.new "green bold"
+git config --global color.status.added "green bold"
+git config --global color.status.changed "yellow bold"
+git config --global color.status.untracked "red bold"
+git config --global color.sh.branch "yellow"
 
-  git config --global advice.amWorkDir "true"
-  git config --global advice.checkoutAmbiguousRemoteBranchName "true"
-  git config --global advice.commitBeforeMerge "false"
-  git config --global advice.detachedHead "false"
-  git config --global advice.ignoredHook "false"
-  git config --global advice.implicitIdentity "true"
-  git config --global advice.nestedTag "true"
-  git config --global advice.pushAlreadyExists "true"
-  git config --global advice.pushFetchFirst "true"
-  git config --global advice.pushNeedsForce "true"
-  git config --global advice.pushNonFFCurrent "true"
-  git config --global advice.pushNonFFMatching "true"
-  git config --global advice.pushUnqualifiedRefname "true"
+git config --global advice.amWorkDir "true"
+git config --global advice.checkoutAmbiguousRemoteBranchName "true"
+git config --global advice.commitBeforeMerge "false"
+git config --global advice.detachedHead "false"
+git config --global advice.ignoredHook "false"
+git config --global advice.implicitIdentity "true"
+git config --global advice.nestedTag "true"
+git config --global advice.pushAlreadyExists "true"
+git config --global advice.pushFetchFirst "true"
+git config --global advice.pushNeedsForce "true"
+git config --global advice.pushNonFFCurrent "true"
+git config --global advice.pushNonFFMatching "true"
+git config --global advice.pushUnqualifiedRefname "true"
 # git config --global advice.pushUpdateRejected
-  git config --global advice.resetQuiet "true"
-  git config --global advice.resolveConflict "true"
-  git config --global advice.rmHints "true"
-  git config --global advice.statusHints "false"
-  git config --global advice.statusUoption "true"
-  git config --global advice.waitingForEditor "true"
+git config --global advice.resetQuiet "true"
+git config --global advice.resolveConflict "true"
+git config --global advice.rmHints "true"
+git config --global advice.statusHints "false"
+git config --global advice.statusUoption "true"
+git config --global advice.waitingForEditor "true"
 
-  git config --global --replace-all url."git@github.com:".insteadof "github:"
-  git config --global --replace-all url."https://github.com:".insteadof "http://github.com/"
-  git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/"
-  git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/"
+git config --global --replace-all url."git@github.com:".insteadof "github:"
+git config --global --replace-all url."https://github.com:".insteadof "http://github.com/"
+git config --global --replace-all url."https://gitlab.com:".insteadof "http://gitlab.com/"
+git config --global --replace-all url."https://notabug.org:".insteadof "http://notabug.org/"
 
-  # Commit template
-    # shellcheck disable=SC2154
-  commit_template_file="$HOME/.dotfiles/data/git.commit.template/git.commit.template"
-  if [ -r "$commit_template_file" ]; then
-    git config --global commit.template "$commit_template_file"
-  else
-    echo "WARNING: git commit template not found: $commit_template_file" 1>&2
-  fi
-  unset commit_template_file
+# Commit template
+  # shellcheck disable=SC2154
+commit_template_file="$HOME/.dotfiles/data/git.commit.template/git.commit.template"
+if [ -r "$commit_template_file" ]; then
+  git config --global commit.template "$commit_template_file"
+else
+  echo "WARNING: git commit template not found: $commit_template_file" 1>&2
+fi
+unset commit_template_file
 
-  git config --global init.templateDir "$HOME/.config/git/template"
-}
-
-( set -eu ; main "$@" )
+git config --global init.templateDir "$HOME/.config/git/template"
 
 # EOF
