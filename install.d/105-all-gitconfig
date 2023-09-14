@@ -1,6 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
 set -e
+trap 'echo "Command failed: '\''$BASH_COMMAND'\'' (exit status: $?)"' ERR
 
 git config --global user.name "Ryan Delaney"
 git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
