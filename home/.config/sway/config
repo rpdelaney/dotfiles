@@ -136,7 +136,7 @@ bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; m
 bindsym $mod+e exec dmenu_run
 bindsym $mod+i exec sh -c 'swaymsg $(echo "" | rofi -dmenu -p "swaymsg: ")'
 bindsym $mod+F12 exec grim -t jpeg -q 90 -c -g "$(slurp)" /tmp/$(date +"%Y-%m-%d_%H-%M-%S").jpg
-bindsym $mod+Shift+F12 exec grim -t jpeg -q 90 /tmp/$(date +"%Y-%m-%d_%H-%M-%S").jpg
+bindsym $mod+Shift+F12 exec grim -t jpeg -q 90 -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" /tmp/$(date +"%Y-%m-%d_%H-%M-%S").jpg
 
 # modes
 mode "resize" {
