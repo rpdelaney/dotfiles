@@ -66,14 +66,14 @@ git config --global mergetool.keepBackup false
 # Alias {{{1
 _git_reset='%C(reset)'
 _git_abbrev_hash='%C(#d65d0e)%h'"$_git_reset"
-_git_ref=' %C(#d79921 ul)%D'"$_git_reset"' '
 _git_subject='%C(#fbf1c7)"%s"'"$_git_reset"
 _git_author_name='%C(#7c6f64)by %an'"$_git_reset"
-_git_author_date='%C(#b8bb26)%ad'"$_git_reset"
-_git_relatime='%C(#79740e)(%cr)'"$_git_reset"
+_git_author_date='%C(#458588)%ad'"$_git_reset"
+_git_relatime='%C(#458588)(%cr)'"$_git_reset"
+_git_ref='%C(#d79921)% D%C(reset)'
 
-_git_long_log_format="$_git_abbrev_hash -$_git_subject $_git_ref $_git_relatime $_git_author_name"
-_git_short_log_format="$_git_abbrev_hash $_git_author_date$_git_subject $_git_ref $_git_author_name"
+_git_long_log_format="$_git_abbrev_hash$_git_ref $_git_subject $_git_relatime $_git_author_name"
+_git_short_log_format="$_git_abbrev_hash$_git_ref $_git_author_date $_git_subject $_git_ref $_git_author_name"
 
 git config --global alias.ls    "log --color=always --pretty=format:'$_git_long_log_format' --decorate --no-merges"
 git config --global alias.lg    "log --color=always --pretty=format:'$_git_long_log_format' --graph"
