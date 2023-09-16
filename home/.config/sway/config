@@ -92,9 +92,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+Shift+q kill
 
-bindsym $mod+shift+h        split h
 bindsym $mod+shift+minus    split h
-bindsym $mod+shift+v        split v
 bindsym $mod+bar            split v
 
 # layout
