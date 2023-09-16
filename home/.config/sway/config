@@ -12,11 +12,11 @@ popup_during_fullscreen smart
 
 # use `swaymsg -t get_outputs` to get output names
 # right now I have only one display, so use that for both
-set $DIS1 "DP3"
+set $DIS1 "DP-3"
 set $DIS2 "HDMI-A-1"
 
-output $DIS1 mode 1920x1080@360Hz
-output $DIS2 mode 1920x1080@60Hz
+output $DIS1 mode 1920x1080@360Hz pos 0,0
+output $DIS2 mode 1920x1080@60Hz pos 1920,0
 
 # workspaces
 set $WS1 "1: shell"
