@@ -125,8 +125,8 @@ bindsym $mod+Shift+space floating toggle
 # session
 bindsym $mod+r reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+x exec "swaymsg exit"
-bindsym $mod+Shift+l exec "swaylock"
+bindsym $mod+Shift+Backspace exec "swaymsg exit"
+bindsym Pause exec "swaylock"
 
 # resize
 # bindsym $mod+p exec swaynag -t warning -m "Entering RESIZE mode"; mode "resize"
