@@ -3,6 +3,11 @@
 # WHITELIST
 #How-to: http://stackoverflow.com/questions/9162919/git-whitelisting-files-in-a-complex-directory-structure
 
+# junk files I sometimes create
+foo*
+bar*
+baz*
+
 # incomplete merge resolution
 *_BACKUP_*
 *_BASE_*
