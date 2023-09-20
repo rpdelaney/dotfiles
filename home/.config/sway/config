@@ -5,6 +5,8 @@
 #
 # https://github.com/swaywm/sway/wiki
 
+include /etc/sway/config.d/*
+
 set $mod Mod4
 
 focus_follows_mouse yes
@@ -90,9 +92,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 bindsym $mod+Shift+q kill
 
-bindsym $mod+shift+h        split h
 bindsym $mod+shift+minus    split h
-bindsym $mod+shift+v        split v
 bindsym $mod+bar            split v
 
 # layout
@@ -125,8 +125,8 @@ bindsym $mod+Shift+space floating toggle
 # session
 bindsym $mod+r reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+x exec "swaymsg exit"
-bindsym $mod+Shift+l exec "swaylock"
+bindsym $mod+Shift+Backspace exec "swaymsg exit"
+bindsym Pause exec "swaylock"
 
 # resize
 # bindsym $mod+p exec swaynag -t warning -m "Entering RESIZE mode"; mode "resize"
