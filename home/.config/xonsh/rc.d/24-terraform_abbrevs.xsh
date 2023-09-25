@@ -17,5 +17,5 @@ _TF_SUBCOMMANDS = {
 # for _command in _TF_SUBCOMMANDS.keys():
 #    _subcommand("terraform", _command, _TF_SUBCOMMANDS[_command])
 
+# del _command
 del _TF_SUBCOMMANDS
-del _command
