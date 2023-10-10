@@ -107,7 +107,8 @@ bindsym $mod+space+j move down
 bindsym $mod+space+k move up
 bindsym $mod+space+l move right
 
-bindsym $mod+x move workspace to output next
+bindsym $mod+Shift+h move workspace to output left
+bindsym $mod+Shift+l move workspace to output right
 
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
