@@ -53,7 +53,7 @@ font pango:Inconsolata-g 12
 bar {
         workspace_buttons yes
         font pango:Inconsolata-g 09
-        tray_output $DIS2
+        tray_output $DIS1
         status_command i3status
 }
 
