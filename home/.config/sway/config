@@ -17,7 +17,7 @@ popup_during_fullscreen smart
 set $DIS1 "DP-3"
 set $DIS2 "HDMI-A-1"
 
-output $DIS1 mode 1920x1080@360Hz pos 0,0
+output $DIS1 mode 1920x1080@360Hz pos 0,420
 output $DIS2 mode 1920x1080@60Hz pos 1920,0 transform 270
 
 # workspaces
