@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# xdg-settings
+
+xdg-settings set default-web-browser librewolf.desktop
+
+# EOF
