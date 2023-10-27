@@ -24,6 +24,7 @@ abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
 abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
+abbrevs["swaymsg -t show_tree"] = "swaymsg -t get_tree"
 
 _first("xpip", "pipx inject xonsh")
 _subcommand("poetry", "upgrade", "update")
