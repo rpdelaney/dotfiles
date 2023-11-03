@@ -24,6 +24,7 @@ exercism
 direnv
 getmail
 unity3d
+obs-studio
 
 mpd
 !mpd/mpd.conf
