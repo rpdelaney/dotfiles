@@ -1,11 +1,6 @@
 # i3status configuration file.
 # see "man i3status" for documentation.
 
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
-
 general {
         colors = true
         interval = 5
@@ -16,11 +11,12 @@ general {
 order += "disk /"
 order += "run_watch DHCP"
 #order += "run_watch VPN"
-order += "wireless wlo1"
-order += "ethernet enp3s0"
-order += "battery 0"
+#order += "wireless wlo1"
+order += "ethernet enp42s0"
+#order += "battery 0"
 #order += "load"
 order += "cpu_usage"
+order += "gpu_usage"
 order += "tztime local"
 
 wireless wlo1 {
@@ -28,10 +24,10 @@ wireless wlo1 {
         format_down = "wlo1 down"
 }
 
-ethernet enp3s0 {
+ethernet enp42s0 {
         # if you use %speed, i3status requires cap_net_admin capability
-        format_up = "enp9s0 %ip (%speed)"
-        format_down = "enp9s0 down"
+        format_up = "enp42s0 %ip (%speed)"
+        format_down = "enp42s0 down"
 }
 
 battery 0 {
@@ -70,6 +66,11 @@ cpu_usage {
         format_above_threshold = "cpu HIGH %usage"
         degraded_threshold = 65
         format_above_degraded_threshold = "cpu WARN %usage"
+}
+
+read_file gpu_usage {
+        format = "gpu %usage"
+        path = "/sys/class/drm/card0/device/gpu_busy_percent"
 }
 
 disk "/" {
