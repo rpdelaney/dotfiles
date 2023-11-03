@@ -37,9 +37,9 @@ set $WS0 "10: games"
 assign [class="Firefox"] workspace $WS2
 
     # steam
-assign [class="^steam$"] workspace $WS5
-for_window [class="^steam$"] floating enable
-for_window [class="^steam$" title=".*Chat$"] floating enable
+assign [class="^steam"] workspace $WS5
+for_window [class="^steam"] floating enable
+for_window [class="^steam" title=".*Chat$"] floating enable
 # assign [class="hl2_linux"] → 10: games
 # assign [class="Civ5XP"] 10: games
     # chatty
