@@ -1,0 +1,13 @@
+[Unit]
+Description=rTorrent
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/tmux new-session -d -s rtorrent /usr/bin/rtorrent
+ExecStartPost=/bin/sh -c "while ! /usr/bin/tmux has-session -t rtorrent 2>/dev/null; do sleep 1; done"
+ExecStop=/usr/bin/tmux send-keys -t rtorrent C-q
+ExecStopPost=/usr/bin/tmux kill-session -t rtorrent
+
+[Install]
+WantedBy=default.target
