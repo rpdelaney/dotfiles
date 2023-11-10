@@ -1,0 +1,18 @@
+{
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5
+  }
+}

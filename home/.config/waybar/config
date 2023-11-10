@@ -1,24 +1,22 @@
 {
-    "layer": "bottom",
-    "position": "bottom",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["clock", "network", "pulseaudio", "battery", "tray"],
-    "clock": {
-        "format-alt": "{:%a, %d %b %Y %H:%M}"
-    },
-    "sway/mode": {
-        "format": "{mode}"
-    },
-    "network": {
-        "format": "{ifname} {ipaddr}/{cidr} {signalStrength}%",
-        "format-alt": "{ifname} {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%"
-    },
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "format-alt": "{icon} {capacity}% {time}"
-    }
+  "layer": "bottom",
+  "position": "bottom",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "clock",
+    "network",
+    "pulseaudio",
+    "battery",
+    "tray"
+  ],
+  "mode": {
+    "format": "overlay"
+  },
+  "include": [
+    "~/.config/waybar/rc.d/*"
+  ]
 }

@@ -1,0 +1,6 @@
+{
+  "network": {
+    "format": "{ifname} {ipaddr}/{cidr} {signalStrength}%",
+    "format-alt": "{ifname} {ipaddr}/{cidr}"
+  }
+}
