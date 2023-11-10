@@ -49,12 +49,9 @@ for_window [class="chatty-Chatty" title="win*"] floating enable  # channel go-li
 # styles
 font pango:Inconsolata-g 12
 
-# i3bar
+# bar
 bar {
-        workspace_buttons yes
-        font pango:Inconsolata-g 09
-        tray_output $DIS1
-        status_command i3status
+    swaybar_command waybar
 }
 
 floating_modifier $mod
