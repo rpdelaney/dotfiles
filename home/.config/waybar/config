@@ -16,7 +16,37 @@
   "mode": {
     "format": "overlay"
   },
-  "include": [
-    "~/.config/waybar/rc.d/*"
-  ]
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5
+  },
+  "battery": {
+      "format": "{icon} {capacity}%",
+      "format-alt": "{icon} {capacity}% {time}"
+  },
+  "clock": {
+    "format-alt": "{:%a, %d %b %Y %H:%M}"
+  },
+  "network": {
+    "interval": 1,
+    "format": "net: {ifname}",
+    "format-wifi": "{signalStrength}%",
+    "tooltip-format-wifi": "{essid} {frequency}",
+    "format-ethernet": "🌐 {bandwidthUpBytes}/{bandwidthDownBytes}",
+    "tooltip-format-ethernet": "{ipaddr} {gwaddr}",
+    "format-linked": "",
+    "format-disconnected": "❌{ifname}"
+  }
 }

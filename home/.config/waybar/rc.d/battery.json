@@ -1,6 +1,0 @@
-{
-  "battery": {
-    "format": "{icon} {capacity}%",
-    "format-alt": "{icon} {capacity}% {time}"
-  }
-}
