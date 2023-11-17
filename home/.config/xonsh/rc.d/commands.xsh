@@ -40,6 +40,16 @@ def html2md(from_file):
     pandoc @(from_file) --from html --to markdown -s -o @(to_file)
 
 @Command.reg
+def html2txt(from_file):
+    """An incantation to convert HTML to text using pandoc."""
+    to_file = from_file
+    for extension in (".html", ".htm"):
+        to_file = to_file.replace(extension, ".txt")
+        print(to_file)
+
+    pandoc @(from_file) --from html --to plain -s -o @(to_file)
+
+@Command.reg
 def define(word):
     p = !(curl -Ss f"dict://dict.org/d:{word}")
 
