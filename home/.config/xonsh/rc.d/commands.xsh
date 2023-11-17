@@ -31,7 +31,7 @@ def rst2md(from_file):
 
 @Command.reg
 def html2md(from_file):
-    """An incantation to convert RST to markdown using pandoc."""
+    """An incantation to convert HTML to markdown using pandoc."""
     to_file = from_file
     for extension in (".html", ".htm"):
         to_file = to_file.replace(extension, ".md")
