@@ -3,7 +3,8 @@ Description=Gammastep - adjusts the color temperature
 
 [Service]
 ExecStart=/usr/bin/gammastep
-Restart=always
+Restart=on-failure
+RestartSec=30s
 
 [Install]
 WantedBy=default.target
