@@ -1,0 +1,12 @@
+[Default Applications]
+image/jpeg=nsxiv.desktop
+text/html=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
+image/png=nsxiv.desktop
+
+[Added Associations]
+application/octet-stream=librewolf.desktop;
+image/png=nsxiv.desktop;

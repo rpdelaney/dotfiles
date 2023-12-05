@@ -77,8 +77,6 @@ gh/*
 pgcli/*
 !pgcli/config
 
-mimeapps*
-
 Bitwarden/*
 
 # onepassword cli
