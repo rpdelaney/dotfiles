@@ -58,16 +58,11 @@ _first("lt", f"ll -a -T -L 2")
 
 # Do different stuff when we are on macOS
 if platform.system() == "Darwin":
-    abbrevs["clip"] = "pbcopy"
-    abbrevs["paste"] = "pbpaste"
     abbrevs["ya"] = "brew"
     abbrevs["yas"] = "brew install"
     abbrevs["yass"] = "brew search"
     abbrevs["yars"] = "brew uninstall"
     abbrevs["yasyu"] = "brew upgrade"
-else:
-    abbrevs["clip"] = "xclip -in -selection clipboard"
-    abbrevs["paste"] = "xclip -out -selection clipboard"
 
     if ret := !(which paru):
         pkgman = "paru --color always"
