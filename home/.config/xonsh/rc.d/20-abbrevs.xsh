@@ -70,9 +70,10 @@ else:
     abbrevs["paste"] = "xclip -out -selection clipboard"
 
     if ret := !(which paru):
-        pkgman = "paru"
+        pkgman = "paru --color always"
+        abbrevs["paru"] = f"paru --color always"
     else:
-        pkgman = "pacman"
+        pkgman = "pacman --color always"
     del ret
 
     abbrevs["ya"]       = f"{pkgman}"
