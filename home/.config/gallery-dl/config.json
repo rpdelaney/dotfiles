@@ -5,7 +5,7 @@
         "Fix filename length errors with slices": "https://github.com/mikf/gallery-dl/issues/2771#issuecomment-1601564411"
       }
     ],
-    "cookies": "/tmp/cookies.txt",
+    "cookies": ["firefox"],
     "extractor": {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; rv:102.0) Gecko/20100101 Firefox/102.0",
         "base-directory": "~/gallery-dl/",
