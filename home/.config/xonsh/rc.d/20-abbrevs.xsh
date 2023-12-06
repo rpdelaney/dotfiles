@@ -14,7 +14,9 @@ def _subcommand(command, subcommand, sub):
         else word
     )
 
-abbrevs["emacs"] = "vim"
+abbrevs["emacs"] = "nvim"
+abbrevs["vim"] = "nvim"
+abbrevs["vimdiff"] = "nvim -d"
 abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -r -X -F"
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
