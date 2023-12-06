@@ -14,24 +14,28 @@ def _subcommand(command, subcommand, sub):
         else word
     )
 
-abbrevs["emacs"] = "nvim"
-abbrevs["vim"] = "nvim"
-abbrevs["vimdiff"] = "nvim -d"
-abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
-abbrevs["pager"] = "ifne less -r -X -F"
-abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
-abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 --stdout"
-abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
+# my common mistakes and typos
+_subcommand("poetry", "upgrade", "update")
+_subcommand("docker", "containers", "container list")
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
-abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
+abbrevs["emacs"] = "nvim"
+abbrevs["vim"] = "nvim"
+abbrevs["vimdiff"] = "nvim -d"
 abbrevs["swaymsg -t show_tree"] = "swaymsg -t get_tree"
 
+# shell extensions
+abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
+abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
+abbrevs["pager"] = "ifne less -r -X -F"
+
+# "aliases" that work better as abbreviations
+abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 --stdout"
+abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
 _first("systemctl", "systemctl --no-ask-password")
 _first("xpip", "pipx inject xonsh")
-_subcommand("poetry", "upgrade", "update")
-_subcommand("docker", "containers", "container list")
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
