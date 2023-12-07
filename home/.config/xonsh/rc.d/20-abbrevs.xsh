@@ -67,7 +67,7 @@ if platform.system() == "Darwin":
     abbrevs["yass"] = "brew search"
     abbrevs["yars"] = "brew uninstall"
     abbrevs["yasyu"] = "brew upgrade"
-
+else:
     if ret := !(which paru):
         pkgman = "paru --color always"
         abbrevs["paru"] = f"paru --color always"
