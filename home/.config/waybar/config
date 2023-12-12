@@ -43,13 +43,13 @@
     "tooltip-format": "{:%a}"
   },
   "network": {
-    "interval": 1,
     "format": "net: {ifname}",
-    "format-wifi": "{signalStrength}%",
-    "tooltip-format-wifi": "{essid} {frequency}",
+    "format-disconnected": "❌{ifname}",
     "format-ethernet": "🌐 {bandwidthUpBytes}/{bandwidthDownBytes}",
-    "tooltip-format-ethernet": "{ipaddr} {gwaddr}",
     "format-linked": "",
-    "format-disconnected": "❌{ifname}"
+    "format-wifi": "{signalStrength}%",
+    "interval": 1,
+    "tooltip-format-ethernet": "{ipaddr} {gwaddr}",
+    "tooltip-format-wifi": "{essid} {frequency}"
   }
 }
