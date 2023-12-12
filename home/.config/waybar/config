@@ -45,11 +45,11 @@
   "network": {
     "format": "net: {ifname}",
     "format-disconnected": "❌{ifname}",
-    "format-ethernet": "🌐 {bandwidthUpBytes}/{bandwidthDownBytes}",
+    "format-ethernet": "🌐 {ipaddr}/{cidr}",
     "format-linked": "",
     "format-wifi": "{signalStrength}%",
     "interval": 1,
-    "tooltip-format-ethernet": "{ipaddr} {gwaddr}",
+    "tooltip-format-ethernet": "{bandwidthUpBytes}/{bandwidthDownBytes}",
     "tooltip-format-wifi": "{essid} {frequency}"
   }
 }
