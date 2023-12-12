@@ -33,6 +33,9 @@ set $WS9 "9: vm"
 set $WS0 "10: games"
 
 # window classes
+    # warn me about xwayland
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
     # browser
 assign [class="Firefox"] workspace $WS2
 
