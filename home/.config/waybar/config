@@ -37,7 +37,8 @@
       "format-alt": "{icon} {capacity}% {time}"
   },
   "clock": {
-    "format-alt": "{:%a, %d %b %Y %H:%M}"
+    "format": "{:%m/%d   %H:%M}",
+    "tooltip-format": "{:%a}"
   },
   "network": {
     "interval": 1,
