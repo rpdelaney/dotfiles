@@ -7,11 +7,11 @@
   ],
   "modules-center": [],
   "modules-right": [
-    "clock",
     "network",
     "pulseaudio",
     "battery",
-    "tray"
+    "tray",
+    "clock"
   ],
   "mode": {
     "format": "overlay"
