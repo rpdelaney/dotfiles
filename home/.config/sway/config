@@ -167,6 +167,10 @@ input * {
     xkb_numlock enabled
     # xkb_options "grp:win_space_toggle"
 }
+
 exec kitty
+
+# Tell systemd we have a graphical session now
+exec --no-startup-id systemctl start --user sway-session.service
 
 # EOF

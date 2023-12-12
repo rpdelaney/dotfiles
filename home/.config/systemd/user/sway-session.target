@@ -1,0 +1,13 @@
+# this target is wanted by sway-session.service
+# (started by sway config file)
+[Unit]
+Description=sway window manager session
+Requires=basic.target
+BindsTo=graphical-session.target
+Before=graphical-session.target
+
+DefaultDependencies=no
+RefuseManualStart=yes
+RefuseManualStop=yes
+Requires=basic.target
+StopWhenUnneeded=yes

@@ -1,0 +1,13 @@
+[Unit]
+Description=sway window manager session
+PartOf=sway-session.target
+Wants=sway-session.target
+
+# this service is started by sway in its config file
+# it's done like this so sway and its launched child processes
+# are not a service itself, but in the regular session scope.
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+Restart=on-failure
