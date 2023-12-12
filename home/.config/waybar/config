@@ -17,6 +17,8 @@
     "format": "overlay"
   },
   "pulseaudio": {
+    "on-click": "pavucontrol",
+    "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "format": "{icon}  {volume}%",
     "format-icons": {
       "headphone": "",
