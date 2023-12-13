@@ -13,7 +13,7 @@ _xontribs = [
     ("avox_poetry", "xontrib-avox-poetry"),
     ("commands", "xontrib-commands"),
     ("direnv", "xonsh-direnv"),
-    ("expand_braces", "xontrib-expand-braces"),
+#   ("expand_braces", "xontrib-expand-braces"),
     ("gruvbox", "xontrib-gruvbox"),
     ("jedi", "xontrib-jedi"),
     ("kitty", "xontrib-kitty"),
