@@ -36,6 +36,7 @@ abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 -
 abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
 _first("systemctl", "systemctl --no-ask-password")
 _first("xpip", "pipx inject xonsh")
+abbrevs["tw"] = "taskwarrior-tui"
 
 _first("ZQ", "exit")
 _first("ZZ", "exit")
