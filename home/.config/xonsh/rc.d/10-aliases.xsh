@@ -4,7 +4,7 @@ _a = {}
 
 _a["eza"]="eza --color=always --icons"
 _a["l"]=f"{_a['eza']} --group-directories-first"
-_a["ll"]=f"{_a['l']} --long --git --links --color-scale=all --time-style=long-iso"
+_a["ll"]=f"{_a['l']} --long --git --git-repos --links --color-scale=all --time-style=long-iso"
 
 _a["tree"]="tree -C -I '__pycache__'"
 
