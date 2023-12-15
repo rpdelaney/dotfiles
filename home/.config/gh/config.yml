@@ -6,3 +6,4 @@ editor:
 aliases:
     co: pr checkout
 prompt: enabled
+version: "1"
