@@ -1,5 +1,6 @@
 [Unit]
 Description=Gammastep - adjusts the color temperature
+After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/gammastep-indicator
