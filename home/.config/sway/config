@@ -55,9 +55,8 @@ for_window [class="chatty-Chatty" title="win*"] floating enable  # channel go-li
 font pango:Inconsolata-g 12
 
 # bar
-bar {
-    swaybar_command waybar
-}
+# We start waybar with systemd now.
+# no bar config here since that means it gets started twice
 
 floating_modifier $mod
 
