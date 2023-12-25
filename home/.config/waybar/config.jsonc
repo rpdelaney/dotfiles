@@ -5,7 +5,7 @@
     "sway/workspaces",
     "sway/mode"
   ],
-  "modules-center": ["privacy"],
+  "modules-center": ["privacy", "temperature"],
   "modules-right": [
     "network",
     "pulseaudio",
@@ -15,6 +15,14 @@
   ],
   "mode": {
     "format": "overlay"
+  },
+
+  "temperature": {
+     // https://github.com/Alexays/Waybar/wiki/Module:-Temperature
+     "format-critical": "🚨 {temperatureC}°C   🚨",
+     "format": "{temperatureC}°C ",
+     "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+     "critical-threshold": 0
   },
   "privacy": {
     "icon-spacing": 4,
