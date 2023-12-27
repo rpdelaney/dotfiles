@@ -22,7 +22,7 @@
      "format-critical": "🚨 {temperatureC}°C   🚨",
      "format": "{temperatureC}°C ",
      "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
-     "critical-threshold": 0
+     "critical-threshold": 80
   },
   "privacy": {
     "icon-spacing": 4,
