@@ -1,0 +1,7 @@
+[Unit]
+Description=Pacman Cache Cleanup
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/paccache -ruk1
+ExecStart=/usr/bin/paccache -rk2
