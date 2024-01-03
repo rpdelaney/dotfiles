@@ -5,7 +5,7 @@
     "sway/workspaces",
     "sway/mode"
   ],
-  "modules-center": ["privacy", "temperature"],
+  "modules-center": ["privacy", "temperature", "disk"],
   "modules-right": [
     "network",
     "pulseaudio",
@@ -23,6 +23,11 @@
      "format": "{temperatureC}°C ",
      "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
      "critical-threshold": 80
+  },
+  "disk": {
+      "interval": 30,
+      "format": "⛃  / {free} free",
+      "path": "/"
   },
   "privacy": {
     "icon-spacing": 4,
