@@ -43,6 +43,11 @@ assign [class="Firefox"] workspace $WS2
 assign [class="^steam"] workspace $WS5
 for_window [class="^steam"] floating enable
 for_window [class="^steam" title=".*Chat$"] floating enable
+
+    # Bitwarden
+for_window [title=".*Bitwarden.*LibreWolf"] floating enable, resize set 640 240
+
+    # file browser
 for_window [app_id="Thunar" title="File Operation Progress"] floating enable
 for_window [app_id="Thunar" title=".*Confirm.*"] floating enable
 # assign [class="hl2_linux"] → 10: games
