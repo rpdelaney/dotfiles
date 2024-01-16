@@ -17,6 +17,7 @@ popup_during_fullscreen smart
 set $DIS1 "DP-2"
 set $DIS2 "HDMI-A-1"
 
+# mirror with wl-mirror --fullscreen-output HDMI-A-1 DP-2
 output $DIS1 mode 1920x1080@360Hz pos 0,420
 output $DIS2 mode 1920x1080@60Hz pos 1920,0 transform 270
 
