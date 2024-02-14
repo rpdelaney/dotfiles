@@ -14,7 +14,7 @@ popup_during_fullscreen smart
 
 # use `swaymsg -t get_outputs` to get output names
 # right now I have only one display, so use that for both
-set $DIS1 "DP-2"
+set $DIS1 "DP-3"
 set $DIS2 "HDMI-A-1"
 
 # mirror with wl-mirror --fullscreen-output HDMI-A-1 DP-2
