@@ -180,4 +180,7 @@ exec kitty
 # Tell systemd we have a graphical session now
 exec --no-startup-id systemctl start --user sway-session.service
 
+# Restart waybar, in case this session was restarted
+exec --no-startup-id systemctl restart --user waybar.service
+
 # EOF
