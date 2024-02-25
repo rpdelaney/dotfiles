@@ -168,3 +168,11 @@ deleted_style = "red"
 symbol = "🐳"
 style = "blue bold"
 format = "[via](bold italic #6b6b6b) [$symbol $context]($style) "
+only_with_files = true
+detect_files = [
+    "Dockerfile",               "Containerfile",
+    ".dockerignore",            ".containerignore",
+    "docker-compose.yml",       "docker-compose.yaml",
+    "podman-compose.yml",       "podman-compose.yaml",
+    "container-compose.yml",    "container-compose.yaml",
+]
