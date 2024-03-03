@@ -49,8 +49,8 @@ for_window [class="^steam" title=".*Chat$"] floating enable
 for_window [title=".*Bitwarden.*LibreWolf"] floating enable, resize set 640 240
 
     # file browser
-for_window [app_id="Thunar" title="File Operation Progress"] floating enable
-for_window [app_id="Thunar" title=".*Confirm.*"] floating enable
+for_window [app_id="thunar" title="File Operation Progress"] floating enable
+for_window [app_id="thunar" title=".*Confirm.*"] floating enable
 # assign [class="hl2_linux"] → 10: games
 # assign [class="Civ5XP"] 10: games
     # chatty
