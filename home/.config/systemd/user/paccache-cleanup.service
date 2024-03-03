@@ -1,3 +1,4 @@
+# This runs as root, so it should be an AUR package or such
 [Unit]
 Description=Pacman Cache Cleanup
 
