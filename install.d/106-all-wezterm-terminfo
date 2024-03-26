@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# https://wezfurlong.org/wezterm/config/lua/config/term.html
+
+TERMINFO_URL="https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo"
+
+( set -e
+  tempfile=$(mktemp)
+  curl -o "$tempfile" "$TERMINFO_URL"
+  tic -x "$tempfile"
+  rm "$tempfile"
+)
+
+# EOF
