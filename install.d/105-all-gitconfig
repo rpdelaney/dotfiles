@@ -14,6 +14,8 @@ trap 'echo "Command failed: '\''$BASH_COMMAND'\'' (exit status: $?)"' ERR
 git config --global user.name "Ryan Delaney"
 git config --global user.email "ryan.patrick.delaney+git@protonmail.com"
 
+git config --global core.editor "vim"  # because nvim craps the bed when amending a commit
+
 git config --global core.whitespace "trailing-space,space-before-tab"
 git config --global core.filemode "true"
 git config --global core.symlinks "true"
