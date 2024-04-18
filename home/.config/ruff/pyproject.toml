@@ -64,6 +64,14 @@ exclude = [
     "S",
 ]
 
+[tool.ruff.lint.isort]
+# https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+force-single-line = false
+force-wrap-aliases = false
+lines-after-imports = false
+lines-between-types = false
+split-on-trailing-comma = false
+
 # Allow unused variables when underscore-prefixed.
 # dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
