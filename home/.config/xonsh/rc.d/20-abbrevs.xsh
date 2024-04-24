@@ -61,29 +61,33 @@ _first("lla", f"ll -a <edit>")
 _first("llla", f"ll -a <edit>| {abbrevs['pager']}")
 _first("lt", f"ll -a -T -L 2")
 
+if pkgman := $(which sudo):
+    abbrevs["sudo"] = pkgman
+
 # Do different stuff when we are on macOS
 if platform.system() == "Darwin":
-    abbrevs["ya"] = "brew"
-    abbrevs["yas"] = "brew install"
-    abbrevs["yass"] = "brew search"
-    abbrevs["yars"] = "brew uninstall"
-    abbrevs["yasyu"] = "brew upgrade"
+    if pkgman := $(which brew):
+        abbrevs["ya"] = f"{pkgman}"
+        abbrevs["yas"] = f"{pkgman} install"
+        abbrevs["yass"] = f"{pkgman} search"
+        abbrevs["yars"] = f"{pkgman} uninstall"
+        abbrevs["yasyu"] = f"{pkgman} upgrade"
 else:
-    if ret := !(which paru):
-        pkgman = "paru --color always"
-        abbrevs["paru"] = f"paru --color always"
-    else:
-        pkgman = "pacman --color always"
-    del ret
+    if pkgman := $(which paru):
+        abbrevs["paru"] = f"{pkgman} --color always"
+    elif pkgman := $(which pacman):
+        abbrevs["pacman"] = f"{pkgman} --color always"
 
-    abbrevs["ya"]       = f"{pkgman}"
-    abbrevs["yas"]      = f"{pkgman} -S"
-    abbrevs["yass"]     = f"{pkgman} -Ss"
-    abbrevs["yars"]     = f"{pkgman} -Rs"
-    abbrevs["yeet"]     = abbrevs["yars"]
-    abbrevs["yasyu"]    = f"{pkgman} -Syu"
-    abbrevs["yaclean"]  = f"{pkgman} -Rs @$(pacman -Qtdq)"
-    try:
-        del pkgman
-    except NameError:
-        pass
+    if len(pkgman):
+        abbrevs["ya"]       = f"{pkgman}"
+        abbrevs["yas"]      = f"{pkgman} -S"
+        abbrevs["yass"]     = f"{pkgman} -Ss"
+        abbrevs["yars"]     = f"{pkgman} -Rs"
+        abbrevs["yeet"]     = abbrevs["yars"]
+        abbrevs["yasyu"]    = f"{pkgman} -Syu"
+        abbrevs["yaclean"]  = f"{pkgman} -Rs @$(/usr/bin/pacman -Qtdq)"
+
+try:
+    del pkgman
+except NameError:
+    pass
