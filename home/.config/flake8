@@ -1,6 +1,6 @@
 [flake8]
-ignore = E123,E133,W503
-#max-doc-length = 72
+ignore = E123,E133,W503,E203
+max-doc-length = 72
 
 # From https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
 #
