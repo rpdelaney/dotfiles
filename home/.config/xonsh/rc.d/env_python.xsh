@@ -1,2 +1,2 @@
 $PYTHONSTARTUP=".pythonrc.py"
-$PYTHONPYCACHEPREFIX=f"{$XDG_DATA_HOME}/python3/pycache"
+$PYTHONPYCACHEPREFIX=f"{__xonsh__.env['XDG_DATA_HOME']}/python3/pycache"

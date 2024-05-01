@@ -18,11 +18,11 @@ _prepends = [
     "/opt/homebrew/opt/gnu-tar/libexec/gnubin",
     "/opt/homebrew/opt/gnu-which/libexec/gnubin",
     "/opt/homebrew/opt/grep/libexec/gnubin",
-    f"{$HOME}/go/bin",
-    f"{$HOME}/.gem/ruby/2.6.0/bin",
-    f"{$HOME}/.local/share/asdf/shims",
-    f"{$HOME}/.local/bin",
-    f"{$HOME}/bin",
+    f"{__xonsh__.env['HOME']}/go/bin",
+    f"{__xonsh__.env['HOME']}/.gem/ruby/2.6.0/bin",
+    f"{__xonsh__.env['HOME']}/.local/share/asdf/shims",
+    f"{__xonsh__.env['HOME']}/.local/bin",
+    f"{__xonsh__.env['HOME']}/bin",
 ]
 
 for prepend in _prepends:
