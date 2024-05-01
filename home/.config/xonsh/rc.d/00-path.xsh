@@ -28,3 +28,4 @@ _prepends = [
 for prepend in _prepends:
     if os.path.isdir(prepend) and prepend not in $PATH:
         $PATH.insert(0, prepend)
+del _prepends
