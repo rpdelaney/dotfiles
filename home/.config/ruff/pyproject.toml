@@ -3,21 +3,32 @@ target-version = "py312"
 
 line-length = 79
 
-[tool.ruff.lint]
-select = [
-    "ALL"
-]
+select = [ "ALL" ]
 ignore = [
+    "ANN101",
     "D203",  # prefer D211 `no-blank-line-before-class`
     "D213",  # prefer D212 `multi-line-summary-first-line`
 ]
 
-# Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = [
-    "ALL"
-]
+fixable = [ "ALL" ]
 unfixable = [
     "F401"
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules {{{1
+    "W191",
+    "E111",
+    "E114",
+    "E117",
+    "D206",
+    "D300",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "COM812",
+    "COM819",
+    "ISC001",
+    "ISC002",
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules 1}}}
 ]
 
 exclude = [
@@ -44,14 +55,33 @@ exclude = [
     "venv",
 ]
 
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs}/*" = [
+    "ARG",
+    "ANN",
+    "D",
+    "S",
+]
+
+[tool.ruff.lint.isort]
+# https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+force-single-line = false
+force-wrap-aliases = false
+lines-after-imports = false
+lines-between-types = false
+split-on-trailing-comma = false
+
 [tool.ruff.lint.mccabe]
 max-complexity = 10
 
 [tool.ruff.format]
 docstring-code-format = true
 docstring-code-line-length = "dynamic"
-exclude = ["*.pyi"]
 indent-style = "space"
 line-ending = "auto"
 quote-style = "double"
 skip-magic-trailing-comma = false
+exclude = [
+    "*.pyi",
+]

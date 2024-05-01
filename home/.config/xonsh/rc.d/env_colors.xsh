@@ -27,7 +27,7 @@ _STYLES = {
         "alt": $(tput smcup) or $(tput ti),
         "ealt": $(tput rmcup) or $(tput te),
         "bold": $(tput bold) or $(tput md),
-        "blink": $(tput blink) or $(tput mb),
+#       "blink": $(tput blink) or $(tput mb),
         "dim": $(tput dim) or $(tput mh),
         "eitalic": $(tput ritm) or $(tput ZR),
         "estout": $(tput rmso) or $(tput se),
@@ -39,7 +39,7 @@ _STYLES = {
     },
 }
 
-$LESS_TERMCAP_mb = _STYLES["mode"].get("blink", "")
+#$LESS_TERMCAP_mb = _STYLES["mode"].get("blink", "")
 $LESS_TERMCAP_md = _STYLES["color"]["fg"].get("blue", "")
 $LESS_TERMCAP_me = _STYLES["mode"].get("default", "")
 $LESS_TERMCAP_mh = _STYLES["mode"].get("dim", "")
