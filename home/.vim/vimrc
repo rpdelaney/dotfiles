@@ -11,7 +11,6 @@ endif
 call plug#begin('~/.vim/plug')
 
                                                        " /* experimental and new. are these actually useful? /*
-Plug 'preservim/vim-indent-guides'
 Plug 'Galicarnax/vim-regex-syntax'
 Plug 'ap/vim-you-keep-using-that-word'                 " this would go under language extensions
 
@@ -39,6 +38,7 @@ Plug 'rickhowe/diffchar.vim'                           " - smarter diff mode
 Plug 'romainl/vim-cool'                                " - disable search highlighting when finished
 Plug 'ryanoasis/vim-devicons'                          " - add filetype glyphs in NERDtree
 Plug 'vim-scripts/AnsiEsc.vim'                         " - render and conceal ANSI escape sequences
+Plug 'preservim/vim-indent-guides', { 'for': 'python' }
 
                                                        " /* dev tools */
 Plug 'airblade/vim-gitgutter'                          " - git status in the gutter
