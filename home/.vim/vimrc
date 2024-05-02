@@ -13,11 +13,7 @@ call plug#begin('~/.vim/plug')
                                                        " /* experimental and new. are these actually useful? /*
 Plug 'preservim/vim-indent-guides'
 Plug 'Galicarnax/vim-regex-syntax'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ap/vim-you-keep-using-that-word'                 " this would go under language extensions
-Plug 'juliosueiras/vim-terraform-completion'           " Terraform completion and linting
 
                                                        " /* session management /*
 Plug 'chrisbra/Recover.vim'                            " - diff mode for swap files
@@ -30,6 +26,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/vim-indent-object'                   " - adds a motion to an indentation level
 Plug 'wellle/targets.vim'
+
+                                                       " /* navigation */
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 
                                                        " /* appearance */
 Plug 'bling/vim-airline'                               " - the most baller status line
@@ -54,6 +55,7 @@ Plug 'morhetz/gruvbox'
 Plug 'cespare/vim-toml', { 'for': 'toml'}              " - toml ftdetect and highlighting
 " Plug 'davidhalter/jedi-vim', { 'for': 'python'}        " - python pseudo-ide
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }  " - terraform ftdetect and highlighting
+Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 Plug 'jamessan/vim-gnupg'                              " - seamlessly edit gpg encrypted files
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }  " - markdown jiu jitsu
 Plug 'potatoesmaster/i3-vim-syntax', { 'for': 'i3' }   " - i3wm config files
