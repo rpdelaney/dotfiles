@@ -46,7 +46,7 @@ Plug 'dense-analysis/ale'                              " - awesome asynchronous 
 Plug 'editorconfig/editorconfig-vim'                   " - editorconfig support
 Plug 'tpope/vim-fugitive'                              " - git inside vim
 Plug 'whiteinge/diffconflicts'                         " - merge conflict resolution for humans
-Plug 'SirVer/ultisnips'                                " - ultimate snippets with extra sauce
+" Plug 'SirVer/ultisnips'                                " - ultimate snippets with extra sauce
 
                                                        " /* colorschemes */
 Plug 'morhetz/gruvbox'
@@ -68,6 +68,6 @@ Plug 'vmchale/ion-vim', { 'for': 'ion' }               " - amazon ION
 Plug 'withgod/vim-sourcepawn', { 'for': 'sourcepawn'}  " - sourcepawn code
 Plug 'fladson/vim-kitty', { 'for': 'kitty' }           " - Kitty terminal config files
 Plug 'meatballs/vim-xonsh', { 'for': 'xonsh' }         " - xonsh
-Plug 'direnv/direnv.vim', { 'for': 'direnv' }          " - direnv
+" Plug 'direnv/direnv.vim', { 'for': 'direnv' }          " - direnv
 
 call plug#end()

@@ -1,2 +1,2 @@
-$EDITOR="nvim"
-$VISUAL="nvim"
+$EDITOR="vim"
+$VISUAL="vim"

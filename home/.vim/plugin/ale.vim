@@ -11,7 +11,7 @@ call ale#fix#registry#Add('markdown', 'FixMarkdown', ['markdown'], 'mdformat for
 " python-ruff """""""""""""""""""""""""""""""""""
 function! RuffFixer(buffer) abort
   return {
-    \ 'command': 'ruff --config ~/.config/ruff/pyproject.toml fix %',
+    \ 'command': 'ruff fix --fix-only --show-fixes %',
     \ 'read_temporary_file': 1,
     \ }
 endfunction
