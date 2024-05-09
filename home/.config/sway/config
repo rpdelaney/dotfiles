@@ -42,6 +42,7 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 
     # browser
 assign [class="Firefox"] workspace $WS2
+assign [class="LibreWolf"] workspace $WS2
 
     # steam
 assign [class="^steam"] workspace $WS5
