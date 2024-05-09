@@ -1,4 +1,4 @@
-------------------------------------------------------- {{{
+--- init config --------------------------------------- {{{
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
@@ -27,7 +27,9 @@ config.font = wezterm.font_with_fallback {
     'Noto Sans Mono Nerd Font Complete',
     'Noto Sans Mono',
     'PowerlineSymbols',
+    'Powerline Symbols',
     'PowerlineExtraSymbols',
+    'Powerline Extra Symbols',
     'Noto Color Emoji',
 }
 config.font_size = 18
@@ -45,4 +47,5 @@ config.tiling_desktop_environments = {
 -- and finally, return the configuration to wezterm
 return config
 
--- vim: foldmethod = marker }}}
+-- vim: foldmethod=marker
+-- }}}
