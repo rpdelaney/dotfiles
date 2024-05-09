@@ -1,1 +1,2 @@
-$PIPX_DEFAULT_PYTHON="python"
+if !(which pipx):
+    $PIPX_DEFAULT_PYTHON="python"
