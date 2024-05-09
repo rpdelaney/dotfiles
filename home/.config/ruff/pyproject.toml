@@ -12,7 +12,7 @@ ignore = [
 
 fixable = [ "ALL" ]
 unfixable = [
-    "F401"
+    "F401",
     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules {{{1
     "W191",
     "E111",
