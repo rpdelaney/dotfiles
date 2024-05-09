@@ -1,33 +1,20 @@
 [Added Associations]
 application/json=neovide.desktop;
 application/octet-stream=neovide.desktop;librewolf.desktop;
-application/pdf=mupdf.desktop;
-audio/mpeg=vlc.desktop;
-image/bmp=iv.desktop;
-image/gif=gimp.desktop;iv.desktop;
-image/jpeg=org.gnome.gThumb.desktop;gimp.desktop;userapp-iv-MS6NH2.desktop;
-image/png=iv.desktop;userapp-iv-KPW7G2.desktop;
-image/webp=userapp-iv-MS6NH2.desktop;
-image/x-tga=nsxiv.desktop;iv.desktop;
-inode/directory=userapp-iv-KPW7G2.desktop;
+audio/*=vlc.desktop;
+image/*=gimp.desktop;
+image/*=org.gnome.gThumb.desktop;
+inode/directory=iv.desktop;
 text/*=neovide.desktop;
-text/plain=neovide.desktop;
-video/mp4=mpv.desktop;
-video/x-flv=mpv.desktop;
+video/*=vlc.desktop
 
 [Default Applications]
 application/json=neovide.desktop
 application/pdf=mupdf.desktop
 image/*=iv.desktop
-image/bmp=iv.desktop
-image/gif=iv.desktop
-image/jpeg=userapp-iv-MS6NH2.desktop
-image/png=userapp-iv-KPW7G2.desktop
-image/webp=userapp-iv-MS6NH2.desktop
-image/x-tga=iv.desktop
 inode/directory=thunar.desktop
 text/html=librewolf.desktop
-video/x-flv=mpv.desktop
+video/*=mpv.desktop
 x-scheme-handler/about=librewolf.desktop
 x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/https=librewolf.desktop
