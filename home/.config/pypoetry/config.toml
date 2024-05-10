@@ -1,12 +1,17 @@
 [settings]
 
 [virtualenvs]
+create = true
 in-project = true
+prefer-active-python = true
+
 [virtualenvs.options]
 
 [repositories]
 [repositories.pypi_test]
 url = "https://test.pypi.org/legacy/"
-
 [repositories.pypi]
 url = "https://upload.pypi.org/legacy/"
+
+[keyring]
+enabled = false
