@@ -8,7 +8,6 @@ text/*=neovide.desktop;
 video/*=vlc.desktop;
 
 [Default Applications]
-
 audio/3gpp2=mpv.desktop
 audio/3gpp=mpv.desktop
 audio/GSM=mpv.desktop
@@ -37,10 +36,8 @@ audio/x-realaudio=mpv.desktop
 audio/x-s3m=mpv.desktop
 audio/x-stm=mpv.desktop
 audio/x-wav=mpv.desktop
-
 application/json=neovide.desktop
 application/pdf=mupdf.desktop
-
 image/apng=iv.desktop
 image/bmp=iv.desktop
 image/heic=iv.desktop
@@ -54,7 +51,6 @@ image/tiff=iv.desktop
 image/wmf=iv.desktop
 image/webp=iv.desktop
 inode/directory=thunar.desktop
-
 text/html=librewolf.desktop
 text/csv=neovide.desktop
 text/markdown=neovide.desktop
@@ -63,7 +59,6 @@ text/rtf=neovide.desktop
 text/vcard=neovide.desktop
 text/vtt=neovide.desktop
 text/xml=neovide.desktop
-
 video/3gpp-tt=mpv.desktop
 video/3gpp2=mpv.desktop
 video/3gpp=mpv.desktop
@@ -88,7 +83,6 @@ video/vnd.CCTV=mpv.desktop
 video/webm=mpv.desktop
 video/x-matroska=mpv.desktop
 video/x-flv=mpv.desktop
-
 x-scheme-handler/about=librewolf.desktop
 x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/https=librewolf.desktop
