@@ -13,6 +13,8 @@ call plug#begin('~/.vim/plug')
                                                        " /* experimental and new. are these actually useful? /*
 Plug 'Galicarnax/vim-regex-syntax'
 Plug 'ap/vim-you-keep-using-that-word'                 " this would go under language extensions
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
                                                        " /* session management /*
 Plug 'chrisbra/Recover.vim'                            " - diff mode for swap files
