@@ -28,6 +28,8 @@ abbrevs["swaymsg -t show_tree"] = "swaymsg -t get_tree"
 
 # shell extensions
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
+abbrevs["gitbranch"] = lambda buffer, word: $(git rev-parse --abbrev-ref HEAD).strip()
+abbrevs["gitorigin"] = lambda buffer, word: $(git remote get-url origin).strip()
 abbrevs["ix"] = "curl -Ss --data-binary @- https://paste.rs"
 abbrevs["pager"] = "ifne less -r -X -F"
 
