@@ -1,1 +1,11 @@
+# python
 poetry.lock
+.cache
+.mypy_cache
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+
+# vim: ft=conf
