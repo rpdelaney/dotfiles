@@ -58,6 +58,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " close vim if the only remaining window is a nerdtree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <silent> <F2> :NERDTreeToggle<CR>
+map <silent> <F9> :Files<CR>
+map <silent> <F10> :GFiles<CR>
 
     " vimdevicons
 let g:webdevicons_enable = 1
