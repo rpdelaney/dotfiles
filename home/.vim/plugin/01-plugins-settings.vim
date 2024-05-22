@@ -9,7 +9,7 @@ let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_priority = 30
 let g:ale_shell = "bash"
-let g:ale_shell_arguments = ["--norc", "--noprofile", "-c"]
+let g:ale_shell_arguments = "--norc --noprofile -c"
 
   " gitgutter
 let g:gitgutter_sign_priority = 9  " required to tell gitgutter to stop over-writing ale signs
