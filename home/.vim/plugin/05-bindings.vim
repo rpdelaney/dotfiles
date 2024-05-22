@@ -22,3 +22,5 @@ noremap <silent> <F8> :set foldlevel=999 <CR>
 if maparg('<c-s>', 's') ==# ''
     noremap <c-s> :update<cr>
 endif
+
+nnoremap <F5> :ALEFix
