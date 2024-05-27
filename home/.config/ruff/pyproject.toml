@@ -74,7 +74,7 @@ lines-between-types = 1
 split-on-trailing-comma = false
 
 [tool.ruff.lint.mccabe]
-max-complexity = 10
+max-complexity = 5
 
 [tool.ruff.format]
 docstring-code-format = true
