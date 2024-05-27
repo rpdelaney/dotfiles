@@ -69,8 +69,8 @@ unfixable = [
 # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
 force-single-line = false
 force-wrap-aliases = false
-lines-after-imports = false
-lines-between-types = false
+lines-after-imports = 2
+lines-between-types = 1
 split-on-trailing-comma = false
 
 [tool.ruff.lint.mccabe]
