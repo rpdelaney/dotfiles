@@ -3,33 +3,6 @@ target-version = "py312"
 
 line-length = 79
 
-select = [ "ALL" ]
-ignore = [
-    "ANN101",
-    "D203",  # prefer D211 `no-blank-line-before-class`
-    "D213",  # prefer D212 `multi-line-summary-first-line`
-]
-
-fixable = [ "ALL" ]
-unfixable = [
-    "F401",
-    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules {{{1
-    "W191",
-    "E111",
-    "E114",
-    "E117",
-    "D206",
-    "D300",
-    "Q000",
-    "Q001",
-    "Q002",
-    "Q003",
-    "COM812",
-    "COM819",
-    "ISC001",
-    "ISC002",
-    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules 1}}}
-]
 
 exclude = [
     ".bzr",
@@ -53,6 +26,34 @@ exclude = [
     "dist",
     "node_modules",
     "venv",
+]
+
+[tool.ruff.lint]
+select = [ "ALL" ]
+ignore = [
+    "ANN101",
+    "D203",   # prefer D211 `no-blank-line-before-class`
+    "D213",   # prefer D212 `multi-line-summary-first-line`
+]
+fixable = [ "ALL" ]
+unfixable = [
+    "F401",
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules {{{1
+    "COM812",
+    "COM819",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules 1}}}
 ]
 
 [tool.ruff.lint.per-file-ignores]
