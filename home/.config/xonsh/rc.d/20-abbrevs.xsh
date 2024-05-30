@@ -57,11 +57,11 @@ _first("mv", "mv -v -i")
 _first("rm", "rm -v --interactive=once")
 _first("rmdir", "rmdir -v")
 
-_first("la", "ll -a")
+_first("la", "ll --all")
 _first("lll", f"ll <edit>| {abbrevs['pager']}")
-_first("lla", f"ll -a <edit>")
-_first("llla", f"ll -a <edit>| {abbrevs['pager']}")
-_first("lt", f"ll -a -T -L 2")
+_first("lla", f"ll --all <edit>")
+_first("llla", f"ll --all <edit>| {abbrevs['pager']}")
+_first("lt", f"ll --all --tree --level 2")
 
 if pkgman := $(which sudo):
     abbrevs["sudo"] = pkgman
