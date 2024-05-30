@@ -62,7 +62,7 @@ _first("llg", "ll --git-ignore")
 _first("lll", f"ll <edit>| {abbrevs['pager']}")
 _first("lla", f"ll --all <edit>")
 _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
-_first("lt", f"ll --all --tree --level 2 --git-ignore")
+_first("lt", f"ll --all --tree --level 3 --git-ignore")
 
 if pkgman := $(which sudo):
     abbrevs["sudo"] = pkgman
