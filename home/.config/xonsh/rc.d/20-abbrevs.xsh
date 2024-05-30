@@ -35,7 +35,6 @@ abbrevs["pager"] = "ifne less -r -X -F"
 
 # "aliases" that work better as abbreviations
 abbrevs["rot13"] = "tr 'A-Za-z' 'N-ZA-Mn-za-m'"
-abbrevs["feh"] = "nsxiv --animate --private --recursive --thumbnail --zoom-100 --stdout"
 abbrevs["rmlint"] = "rmlint -c sh:clone <edit>  # -c sh:clone forces deduplication"
 _first("systemctl", "systemctl --no-ask-password")
 _first("xpip", "pipx inject xonsh")
