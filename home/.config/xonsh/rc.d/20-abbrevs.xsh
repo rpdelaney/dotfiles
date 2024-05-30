@@ -58,6 +58,7 @@ _first("rm", "rm -v --interactive=once")
 _first("rmdir", "rmdir -v")
 
 _first("la", "ll --all")
+_first("llg", "ll --git-ignore")
 _first("lll", f"ll <edit>| {abbrevs['pager']}")
 _first("lla", f"ll --all <edit>")
 _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
