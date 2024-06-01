@@ -45,7 +45,7 @@ config.tiling_desktop_environments = {
   'X11 dwm',
 } -- TODO: how to add wayland?
 
-------------------------------------------------------- {{{
+------------------------------------------------------- {{{ return
 -- and finally, return the configuration to wezterm
 return config
 
