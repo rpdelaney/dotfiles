@@ -24,6 +24,7 @@ config.term = 'wezterm'
 config.font = wezterm.font_with_fallback {
     'Iosevka Custom 15',
     'Iosevka Nerd Font Mono',
+    'NotoSansMono Nerd Font Mono',
     'Noto Sans Mono Nerd Font Complete',
     'Noto Sans Mono',
     'PowerlineSymbols',
