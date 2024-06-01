@@ -31,16 +31,18 @@ exclude = [
 [tool.ruff.lint]
 select = [ "ALL" ]
 ignore = [
-    "ANN101",
+    "ANN101", #
+    "COM812", # I don't get how these help
+    "COM819", # I don't get how these help
     "D203",   # prefer D211 `no-blank-line-before-class`
     "D213",   # prefer D212 `multi-line-summary-first-line`
+    "S",      # ⚠️ re-enable these checks in production code ⚠️
+    "T201",   # ⚠️ re-enable these checks in production code ⚠️
 ]
 fixable = [ "ALL" ]
 unfixable = [
     "F401",
     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules {{{1
-    "COM812",
-    "COM819",
     "D206",
     "D300",
     "E111",
