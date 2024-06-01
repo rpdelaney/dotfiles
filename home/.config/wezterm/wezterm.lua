@@ -32,8 +32,9 @@ config.font = wezterm.font_with_fallback {
     'Powerline Extra Symbols',
     'Noto Color Emoji',
 }
-config.font_size = 18
+config.font_size = 16
 config.underline_thickness = "2pt"
+config.bold_brightens_ansi_colors = true
 
     -- desktop
 config.tiling_desktop_environments = {
