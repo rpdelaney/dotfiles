@@ -3,6 +3,7 @@ xontrib load abbrevs
 _first("g", "git")
 _first("it", "git")
 _first("gti", "git")
+_first("git stashes", "git stash --list")
 abbrevs["groot"] = lambda buffer, word: $(git rev-parse --show-toplevel).strip()
 
 _GIT_SUBCOMMANDS = {
