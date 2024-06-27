@@ -5,8 +5,10 @@ image/*=gimp.desktop;
 image/*=org.gnome.gThumb.desktop;
 inode/directory=iv.desktop;
 text/*=neovide.desktop;
+text/*=clip.desktop;
 video/*=vlc.desktop;
 video/*=mpv.desktop;
+video/*=unbox.desktop;
 
 [Default Applications]
 audio/3gpp2=mpv.desktop
