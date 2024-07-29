@@ -2,27 +2,27 @@ import platform
 import os
 
 _prepends = [
-    "/bin",
-    "/sbin",
-    "/usr/bin",
-    "/usr/sbin",
-    "/usr/local/bin",
-    "/usr/sbin",
-    "/usr/local/Cellar",
     "/Applications/kitty.app/Contents/MacOS",
+    "/bin",
     "/opt/homebrew/bin",
-    "/opt/homebrew/sbin",
     "/opt/homebrew/opt/asdf/libexec/bin",
     "/opt/homebrew/opt/findutils/libexec/gnubin",
     "/opt/homebrew/opt/gnu-sed/libexec/gnubin",
     "/opt/homebrew/opt/gnu-tar/libexec/gnubin",
     "/opt/homebrew/opt/gnu-which/libexec/gnubin",
     "/opt/homebrew/opt/grep/libexec/gnubin",
-    f"{__xonsh__.env['HOME']}/go/bin",
+    "/opt/homebrew/sbin",
+    "/sbin",
+    "/usr/bin",
+    "/usr/local/Cellar",
+    "/usr/local/bin",
+    "/usr/sbin",
+    "/usr/sbin",
     f"{__xonsh__.env['HOME']}/.gem/ruby/2.6.0/bin",
-    f"{__xonsh__.env['HOME']}/.local/share/asdf/shims",
     f"{__xonsh__.env['HOME']}/.local/bin",
+    f"{__xonsh__.env['HOME']}/.local/share/asdf/shims",
     f"{__xonsh__.env['HOME']}/bin",
+    f"{__xonsh__.env['HOME']}/go/bin",
 ]
 
 for prepend in _prepends:
