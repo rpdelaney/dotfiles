@@ -47,6 +47,7 @@ _first("keychain", 'keychain --agents "gpg,ssh" --dir "$XDG_DATA_HOME/keychain" 
 _first("mediainfo", "mediainfo --Output=JSON <edit> | jq -C")
 _first("jq", "jq -C")
 _first("pc", "pre-commit")
+_first("find", "find -executable")
 
 _first("chgrp", "chgrp -c")
 _first("chmod", "chmod -c")
