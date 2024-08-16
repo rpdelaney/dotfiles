@@ -12,6 +12,7 @@ _prepends = [
     "/opt/homebrew/opt/gnu-which/libexec/gnubin",
     "/opt/homebrew/opt/grep/libexec/gnubin",
     "/opt/homebrew/sbin",
+    "/opt/asdf-vm/bin",
     "/sbin",
     "/usr/bin",
     "/usr/local/Cellar",
