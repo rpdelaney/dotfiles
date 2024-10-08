@@ -25,6 +25,7 @@ abbrevs["emacs"] = "nvim"
 abbrevs["vim"] = "nvim"
 abbrevs["vimdiff"] = "nvim -d"
 abbrevs["swaymsg -t show_tree"] = "swaymsg -t get_tree"
+abbrevs["arpscan"] = "arp-scan"
 
 # shell extensions
 abbrevs["!!"] = lambda buffer, word: __xonsh__.history[-1].cmd.strip()
