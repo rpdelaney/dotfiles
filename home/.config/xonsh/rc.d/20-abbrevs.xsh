@@ -78,10 +78,13 @@ if platform.system() == "Darwin":
         abbrevs["yars"] = f"{pkgman} uninstall"
         abbrevs["yasyu"] = f"{pkgman} upgrade"
 else:
-    if pkgman := $(which paru):
-        abbrevs["paru"] = f"{pkgman} --color always"
-    elif pkgman := $(which pacman):
+    if pkgman := $(which pacman):
         abbrevs["pacman"] = f"{pkgman} --color always"
+    if aurman := $(which paru):
+        abbrevs["paru"] = f"{pkgman} --color always"
+
+    if aurman:
+        pkgman = aurman
 
     if len(pkgman):
         abbrevs["ya"]       = f"{pkgman}"
@@ -94,5 +97,6 @@ else:
 
 try:
     del pkgman
+    del aurman
 except NameError:
     pass
