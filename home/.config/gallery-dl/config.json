@@ -50,6 +50,8 @@
             "include": "gallery,scraps"
         },
         "reddit": {
+            "directory": ["{author}", "{subreddit}"],
+            "filename": "{id}.{extension}",
             "parent-directory": true,
             "parent-metadata": "_reddit",
             "videos": "true"
