@@ -1,6 +1,6 @@
 from pathlib import Path
 
-if !(which asdf):
+if !(which asdf &>/dev/null):
     _asdf_config_path = Path(f"{__xonsh__.env['XDG_CONFIG_HOME']}", "asdf", "config")
     $ASDF_CONFIG_FILE = str(_asdf_config_path)
     del _asdf_config_path

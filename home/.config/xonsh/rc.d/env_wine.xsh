@@ -1,4 +1,4 @@
-if !(which wine):
+if !(which wine &>/dev/null):
     # hide fixme messages
     $WINEDEBUG="fixmel-all"
 

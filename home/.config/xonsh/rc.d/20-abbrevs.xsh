@@ -66,21 +66,21 @@ _first("lla", f"ll --all <edit>")
 _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
 _first("lt", f"ll --all --tree --level 3 --git-ignore")
 
-if pkgman := $(which sudo):
+if pkgman := $(which sudo &>/dev/null):
     abbrevs["sudo"] = pkgman
 
 # Do different stuff when we are on macOS
 if platform.system() == "Darwin":
-    if pkgman := $(which brew):
+    if pkgman := $(which brew &>/dev/null):
         abbrevs["ya"] = f"{pkgman}"
         abbrevs["yas"] = f"{pkgman} install"
         abbrevs["yass"] = f"{pkgman} search"
         abbrevs["yars"] = f"{pkgman} uninstall"
         abbrevs["yasyu"] = f"{pkgman} upgrade"
 else:
-    if pkgman := $(which pacman):
+    if pkgman := $(which pacman &>/dev/null):
         abbrevs["pacman"] = f"{pkgman} --color always"
-    if aurman := $(which paru):
+    if aurman := $(which paru &>/dev/null):
         abbrevs["paru"] = f"{pkgman} --color always"
 
     if aurman:
