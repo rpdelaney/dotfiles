@@ -1,4 +1,4 @@
-$PYTHONBREAKPOINT=pudb.set_trace
+$PYTHONBREAKPOINT="pudb.set_trace"
 $PYTHONPYCACHEPREFIX=f"{__xonsh__.env['XDG_DATA_HOME']}/python3/pycache"
 $PYTHONSTARTUP=".pythonrc.py"
 $PYTHONUTF8=1
