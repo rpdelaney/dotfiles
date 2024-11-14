@@ -66,37 +66,38 @@ _first("lla", f"ll --all <edit>")
 _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
 _first("lt", f"ll --all --tree --level 3 --git-ignore")
 
-if pkgman := $(which sudo &>/dev/null):
-    abbrevs["sudo"] = pkgman
+if sudopath := $(which sudo 2>/dev/null):
+    abbrevs["sudo"] = f"{sudopath} "
+
+if pkgman := $(which pacman 2>/dev/null):
+    abbrevs["pacman"] = f"{pkgman} --color always"
+if aurman := $(which paru 2>/dev/null):
+    abbrevs["paru"] = f"{pkgman} --color always"
+
+if aurman:
+    pkgman = aurman
+
+if len(pkgman):
+    abbrevs["ya"]       = f"{pkgman}"
+    abbrevs["yas"]      = f"{pkgman} -S"
+    abbrevs["yass"]     = f"{pkgman} -Ss"
+    abbrevs["yars"]     = f"{pkgman} -Rs"
+    abbrevs["yeet"]     = abbrevs["yars"]
+    abbrevs["yasyu"]    = f"{pkgman} -Syu"
+    abbrevs["yaclean"]  = f"{pkgman} -Rs @$(/usr/bin/pacman -Qtdq)"
 
 # Do different stuff when we are on macOS
 if platform.system() == "Darwin":
-    if pkgman := $(which brew &>/dev/null):
+    if pkgman := $(which brew 2>/dev/null):
         abbrevs["ya"] = f"{pkgman}"
         abbrevs["yas"] = f"{pkgman} install"
         abbrevs["yass"] = f"{pkgman} search"
         abbrevs["yars"] = f"{pkgman} uninstall"
         abbrevs["yasyu"] = f"{pkgman} upgrade"
-else:
-    if pkgman := $(which pacman &>/dev/null):
-        abbrevs["pacman"] = f"{pkgman} --color always"
-    if aurman := $(which paru &>/dev/null):
-        abbrevs["paru"] = f"{pkgman} --color always"
-
-    if aurman:
-        pkgman = aurman
-
-    if len(pkgman):
-        abbrevs["ya"]       = f"{pkgman}"
-        abbrevs["yas"]      = f"{pkgman} -S"
-        abbrevs["yass"]     = f"{pkgman} -Ss"
-        abbrevs["yars"]     = f"{pkgman} -Rs"
-        abbrevs["yeet"]     = abbrevs["yars"]
-        abbrevs["yasyu"]    = f"{pkgman} -Syu"
-        abbrevs["yaclean"]  = f"{pkgman} -Rs @$(/usr/bin/pacman -Qtdq)"
 
 try:
     del pkgman
     del aurman
+    del sudopath
 except NameError:
     pass
