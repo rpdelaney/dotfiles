@@ -2,7 +2,6 @@ import platform
 import os
 
 _prepends = [
-    "/Applications/kitty.app/Contents/MacOS",
     "/bin",
     "/opt/homebrew/bin",
     "/opt/homebrew/opt/asdf/libexec/bin",

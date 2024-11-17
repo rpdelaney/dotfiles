@@ -16,7 +16,6 @@ _xontribs = [
 #   ("expand_braces", "xontrib-expand-braces"),
     ("gruvbox", "xontrib-gruvbox"),
     ("jedi", "xontrib-jedi"),
-    ("kitty", "xontrib-kitty"),
     ("vox", "xontrib-vox"),
     ("whole_word_jumping", "xontrib-whole-word-jumping"),
 ]
