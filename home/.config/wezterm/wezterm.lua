@@ -8,12 +8,22 @@ local config = wezterm.config_builder()
 
 config.window_close_confirmation = 'NeverPrompt'
 
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
 config.initial_cols = 80
 config.initial_rows = 120
 
 config.color_scheme = 'GruvboxDark'  -- sync this with weechat
 config.scrollback_lines = 99999
+config.enable_scroll_bar = false
 config.enable_tab_bar = false
+
+    -- mouse (F that)
 config.mouse_wheel_scrolls_tabs = false
 
 config.default_cursor_style = 'SteadyBlock'
