@@ -70,6 +70,9 @@ font pango:Inconsolata-g 12
 
 floating_modifier $mod
 
+# color scheme demo:
+# https://thomashunter.name/i3-configurator/
+
     # borders
 default_border          pixel
 default_floating_border normal
