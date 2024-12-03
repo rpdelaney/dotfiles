@@ -148,7 +148,7 @@ bindsym Pause exec "swaylock"
 bindsym $mod+p exec notify-send -u low --app-name="i3" "Entering RESIZE mode"; mode "resize"
 
 # commands
-bindsym $mod+e exec rofi -show run
+bindsym $mod+e exec kickoff
 bindsym $mod+i exec sh -c 'swaymsg $(echo "" | rofi -dmenu -p "swaymsg: ")'
 bindsym $mod+F12 exec grim -t jpeg -q 90 -c -g "$(slurp)" /tmp/$(date +"%Y-%m-%d_%H-%M-%S").jpg
 bindsym $mod+Shift+F12 exec grim -t jpeg -q 90 -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" /tmp/$(date +"%Y-%m-%d_%H-%M-%S").jpg
