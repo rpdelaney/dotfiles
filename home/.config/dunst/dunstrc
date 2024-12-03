@@ -165,7 +165,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/deepin/status/32x32/:/usr/share/icons/deepin/devices/32x32/:/usr/share/icons/deepin/status/16x16/:/usr/share/icons/deepin/devices/16x16/
+    # icon_path = /usr/share/icons/deepin/status/32x32/:/usr/share/icons/deepin/devices/32x32/:/usr/share/icons/deepin/status/16x16/:/usr/share/icons/deepin/devices/16x16/
 
     ### History ###
 
