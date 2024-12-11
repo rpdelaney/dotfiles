@@ -71,7 +71,7 @@ abbrevs["sudo"] = "/usr/sbin/sudo"
 if pkgman := $(which pacman 2>/dev/null):
     abbrevs["pacman"] = f"{pkgman} --color always"
 if aurman := $(which paru 2>/dev/null):
-    abbrevs["paru"] = f"{pkgman} --color always"
+    abbrevs["paru"] = f"{aurman} --color always"
 
 if aurman:
     pkgman = aurman
