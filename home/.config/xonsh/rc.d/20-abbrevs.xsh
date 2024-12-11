@@ -66,8 +66,7 @@ _first("lla", f"ll --all <edit>")
 _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
 _first("lt", f"ll --all --tree --level 3 --git-ignore")
 
-if sudopath := $(which sudo 2>/dev/null):
-    abbrevs["sudo"] = f"{sudopath} "
+abbrevs["sudo"] = "/usr/sbin/sudo"
 
 if pkgman := $(which pacman 2>/dev/null):
     abbrevs["pacman"] = f"{pkgman} --color always"
