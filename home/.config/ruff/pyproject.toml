@@ -33,6 +33,8 @@ ignore = [
     "ANN101", #
     "COM812", # I don't get how these help
     "COM819", # I don't get how these help
+    "ISC001", # conflicts with the formatter
+    "ISC002", # conflicts with the formatter
     "D",      # ⚠️ re-enable these checks in production code ⚠️
     "S",      # ⚠️ re-enable these checks in production code ⚠️
     "T201",   # ⚠️ re-enable these checks in production code ⚠️
@@ -46,8 +48,6 @@ unfixable = [
     "E111",
     "E114",
     "E117",
-    "ISC001",
-    "ISC002",
     "Q000",
     "Q001",
     "Q002",
