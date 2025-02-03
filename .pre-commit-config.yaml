@@ -8,8 +8,6 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-      - id: end-of-file-fixer
-        exclude: (.vim/(autoload|bin|black|colors|compiler|ftplugin|indent|keymap|plugin|plug|print|spell|syntax)/.+|pudb.cfg)
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
         exclude: (.vim/(autoload|bin|black|colors|compiler|ftplugin|indent|keymap|plugin|plug|print|spell|syntax)/.+|pudb.cfg)
