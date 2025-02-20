@@ -67,6 +67,7 @@ _first("llla", f"ll --all <edit>| {abbrevs['pager']}")
 _first("lt", f"ll --all --tree --level 3 --git-ignore")
 
 abbrevs["sudo"] = "/usr/sbin/sudo"
+abbrevs["systemctl"] = "/usr/sbin/systemctl"
 
 if pkgman := $(which pacman 2>/dev/null):
     abbrevs["pacman"] = f"{pkgman} --color always"
