@@ -100,5 +100,8 @@ paperwork2.conf
 Thunar/
 audacity/
 flipflip/
+io.datasette.llm/*
+!io.datasette.llm/templates/
+
 
 # EOF
