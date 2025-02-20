@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStartPre=/usr/sbin/chmod 0700 /home/ryan/io
-ExecStart=/usr/bin/sshfs -v -f -o dir_cache=yes -o transform_symlinks -o idmap=user -o ServerAliveInterval=15 -o reconnect io:/storage/emulated/0 /home/ryan/io
-ExecStop=/usr/sbin/fusermount3 -u /home/ryan/io
-ExecStopPost=/usr/sbin/chmod 0000 /home/ryan/io
+ExecStartPre=/usr/sbin/chmod 0700 /home/ryan/remote/io
+ExecStart=/usr/bin/sshfs -v -f -o dir_cache=yes -o transform_symlinks -o idmap=user -o ServerAliveInterval=15 -o reconnect io:/storage/emulated/0 /home/ryan/remote/io
+ExecStop=/usr/sbin/fusermount3 -u /home/ryan/remote/io
+ExecStopPost=/usr/sbin/chmod 0000 /home/ryan/remote/io
 Restart=no
 Environment=SYSTEMD_LOG_LEVEL=debug
 
