@@ -4,6 +4,7 @@ After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/gammastep-indicator
+ExecStop=/usr/bin/pkill gammastep-indicator
 Restart=on-failure
 RestartSec=30s
 
