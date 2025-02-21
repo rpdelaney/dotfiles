@@ -1,0 +1,15 @@
+[Unit]
+Description=sshFS Mount for ApeRape FTP
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/chmod 0700 /home/ryan/remote/aperape
+ExecStart=/usr/bin/sshfs -v -f -o dir_cache=yes -o transform_symlinks -o idmap=user -o ServerAliveInterval=15 -o reconnect malathion@affinity.duckdns.org:/ /home/ryan/remote/aperape/
+ExecStop=/usr/sbin/fusermount3 -u /home/ryan/remote/aperape
+ExecStopPost=/usr/sbin/chmod 0000 /home/ryan/remote/aperape
+Restart=no
+Environment=SYSTEMD_LOG_LEVEL=debug
+
+[Install]
+WantedBy=default.target
