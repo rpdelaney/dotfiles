@@ -8,7 +8,7 @@
     "cookies": ["firefox"],
     "extractor": {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Gecko/20100101 Firefox/134.0",
-        "base-directory": "~/gallery-dl/",
+        "base-directory": "~/img/gallery-dl/",
         "extension-map": {
             "jpeg": "jpg",
             "jpe" : "jpg",
