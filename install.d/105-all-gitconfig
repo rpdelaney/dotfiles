@@ -24,6 +24,8 @@ git config --global init.defaultBranch main
 
 git config --global branch.autosetuprebase "never"
 
+git config --global safe.bareRepository "true"
+
 git config --global push.default "upstream"
 git config --global push.autoSetupRemote "true"
 git config --global push.followTags "true"
