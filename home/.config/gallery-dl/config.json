@@ -39,7 +39,12 @@
             "#": "try to evade bot detection",
             "directory": {
                 "subcategory == 'tagged'": ["{tagged_username}", "tagged"],
-                "": ["{category}", "{username}", "{subcategory}"]
+                "": [
+                    "{username|author|id|'unknown'}",
+                    "{category}",
+                    "{username}",
+                    "{subcategory}"
+                ]
             },
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
