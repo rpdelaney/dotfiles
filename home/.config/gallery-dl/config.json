@@ -46,9 +46,8 @@
             "directory": {
                 "subcategory == 'tagged'": ["{tagged_username}", "tagged"],
                 "": [
-                    "{username|author|id|'unknown'}",
-                    "{category}",
                     "{username}",
+                    "{category}",
                     "{subcategory}"
                 ]
             },
