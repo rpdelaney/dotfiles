@@ -29,8 +29,14 @@
             "module": "yt_dlp"
         },
         "4chan": {
-          "directory": "{title}_{num}",
-          "filename": "{filename}_{timestamp}.{extension}"
+          "directory": {
+            "": [
+              "4chan",
+              "{title}"
+            ]
+          },
+          "filename": "{filename}.{extension}",
+          "sleep": [1, 10]
         },
         "rule34us": {
           "filename": "{filename}_{timestamp}.{extension}"
