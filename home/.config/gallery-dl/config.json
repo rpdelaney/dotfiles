@@ -58,10 +58,6 @@
             "max-retries": 3,
             "retry-sleep": [30, 60]
         },
-        "deviantart": {
-            "#": "download 'gallery' and 'scraps' images for user profile URLs",
-            "include": "gallery,scraps"
-        },
         "reddit": {
             "directory": ["{author}"],
             "filename": "{id}_{num}.{extension}",
