@@ -1,3 +1,4 @@
+# TODO: Check out justpath: https://github.com/epogrebnyak/justpath
 import platform
 import os
 
