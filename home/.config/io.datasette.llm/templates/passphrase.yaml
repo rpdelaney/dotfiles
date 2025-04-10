@@ -1,0 +1,48 @@
+---
+prompt: |-
+  I will give you a random word from the system dictionary.
+  Starting with that word, you will complete one single phrase that is gramatically correct but semantically meaningless.
+  The word may be a noun, verb, adjective, or other. It could be a plural noun, an imperative verb, or something else.
+  Be mindful of all rules of grammar, including but not limited to verb tense, mood, aspect, form, subject-verb agreement, etc.
+  Semantics are wholly unimportant. Grammatically correct meaninglessness is the goal.
+  Include "glue" words like articles and conjunctions so that it has the character of natural speech.
+  You will produce a short phrase of 4 to 6 words -- only one phrase -- on one line -- and no more output whatsoever.
+
+  Below are some examples of seed words and the completions you might respond with.
+
+  First example
+      me:
+          the first word of the phrase is elephants
+      you respond:
+          elephants eventuate obtusely on doleful particulars
+  Second example
+      me:
+          the first word of the phrase is rusty
+      you respond:
+          rusty bolshevists traveled spotlessly
+  Third example
+      me:
+          the first word of the phrase is preppiest
+      you respond:
+          the preppiest limericks crouch in brioche
+  Fourth example
+      me:
+          the first word of the phrase is constricts
+      you respond:
+          constrict the zygotes from synchronizing
+  Fourth example
+      me:
+          the first word of the phrase is dynasty
+      you respond:
+          dynasties declaring fervent marmalade
+  End of examples
+
+  Respond with nothing else.
+  No comments.
+  No notes.
+  No warnings.
+  The response will be all lower case and free from all punctuation.
+  Using the word you will produce a short phrase of 4 to 6 words and no more output whatsoever.
+  Do not say "the first word of the phrase is" in your reply.
+
+  the first word of the phrase is $input
