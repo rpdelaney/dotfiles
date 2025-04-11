@@ -1,12 +1,14 @@
 ---
+# Use a high temperature, top_p, and top_k with this prompt.
 prompt: |-
   I will give you a random word from the system dictionary.
-  Starting with that word, you will complete one single phrase that is gramatically correct but semantically meaningless.
+  Starting with that word, you will complete one single phrase that is gramatically well-formed, but semantically meaningless.
   The word may be a noun, verb, adjective, or other. It could be a plural noun, an imperative verb, or something else.
-  Be mindful of all rules of grammar, including but not limited to verb tense, mood, aspect, form, subject-verb agreement, etc.
-  Semantics are wholly unimportant. Grammatically correct meaninglessness is the goal.
+  Be mindful of all rules of English grammar, including but not limited to verb tense, mood, aspect, form, subject-verb agreement, etc.
+  Semantics are wholly unimportant. Grammatically well-formed and correct meaninglessness is the goal.
   Include "glue" words like articles and conjunctions so that it has the character of natural speech.
-  You will produce a short phrase of 4 to 6 words -- only one phrase -- on one line -- and no more output whatsoever.
+  You can change the form of the word (plurality, tense, mood etc), if necessary, to achieve this goal.
+  Using the first word, you will produce a short phrase of 4 to 6 words -- only one phrase -- on one line -- and no more output whatsoever.
 
   Below are some examples of seed words and the completions you might respond with.
 
@@ -29,7 +31,7 @@ prompt: |-
       me:
           the first word of the phrase is constricts
       you respond:
-          constrict the zygotes from synchronizing
+          constricting the zygotes undoes their synchronization
   Fourth example
       me:
           the first word of the phrase is dynasty
