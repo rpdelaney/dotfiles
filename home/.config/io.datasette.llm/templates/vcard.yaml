@@ -11,68 +11,12 @@ prompt:
     go in the NOTES field.
 
     No matter what, please respond with NOTHING
-    else but vCard data. Please do not remind me what I asked you
-    for. Do not apologize. Do not self-reference.
+    else but vCard data. Do not remind me what
+    I asked you for. Do not apologize. Do not self-reference.
 
-    For example, if I give you this:
-        Best Regards,
-
-        John Smith
-        Senior Sales & Leasing Consultant | Acme Inc.
-        Email: johns@acmeinc.com
-        Work Phone: +1 123-456-7890
-        Cell Phone: +1 123-456-1234
-        Fax: +1 123-456-4321
-        Address: 1234 Elm St, Faketown, XY, 12345
-        Website: www.acmeinc.com
-        Maps: https://www.google.com/maps/place/Acme,Inc./@42.214349,-83.8011527,17z/data=!3m1!4b1!4m5!3m4!1s0x883cba8efd8d5be3:0xc26c741e3fbe844f!8m2!3d42.214349!4d-83.798964
-
-    You would reply with:
-        BEGIN:VCARD
-        VERSION:3.0
-        N:Smith;John;;;
-        FN:John Smith
-        ORG:Acme Inc;
-        TITLE:Senior Sales & Leasing Consultant
-        EMAIL;TYPE=WORK:johns@acmeinc.com
-        TEL;TYPE=WORK,VOICE:+1 123-456-7890
-        TEL;TYPE=CELL,VOICE:+1 123-456-1234
-        TEL;TYPE=FAX:+1 123-456-4321
-        ADR;TYPE=WORK:;;1234 Elm St;Faketown;XY;12345;
-        URL;TYPE=WORK:www.acmeinc.com
-        NOTES;Location: 42.214349,-83.8011527
-        END:VCARD
-
-    Or, if you get this:
-        Faketown Express Walk-in Clinic
-
-        Urgent care center
-
-        Faketown Express Walk-in Clinic is located in downtown Faketown, Maine. We accept all major insurance. We have low waiting times and our staff state is licensed and genuinely friendly. When you are here, we treat you like family. Our School/Sports Physicals are only $30 bucks.
-
-        123 Maple St, Faketown, ME, 98765, United States
-        +1 555 123 4567 | Facebook
-
-        Hours:
-        Sun 9:00 AM—5 PM
-        Mon 9:00 AM—7 PM
-        Tue 9:00 AM—7 PM
-        Wed 9:00 AM—7 PM
-        Thu 9:00 AM—7 PM
-        Fri 9:00 AM—7 PM
-        Sat 9:00 AM—5 PM
-
-    You would reply with:
-        BEGIN:VCARD
-        VERSION:3.0
-        ORG:Faketown Express Walk-in Clinic
-        TITLE:Urgent Care Center
-        TEL;TYPE=WORK,VOICE:+1 555-123-4567
-        ADR;TYPE=WORK:;;123 Maple St;Faketown;ME;98765;United States
-        NOTE:Hours: Sun 9:00 AM—5 PM, Mon 9:00 AM—7 PM, Tue 9:00 AM—7 PM, Wed 9:00 AM—7 PM, Thu 9:00 AM—7 PM, Fri 9:00 AM—7 PM, Sat 9:00 AM—5 PM
-        END:VCARD
-
-    Please be thorough and careful. Your accuracy, attention to detail, and compliance with vCard format are very important for my career.
+    Please be thorough and careful. Your accuracy,
+    attention to detail, and compliance with vCard format
+    are very important for my career.
     ```
     $input
     ```
