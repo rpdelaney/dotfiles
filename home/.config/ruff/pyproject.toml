@@ -35,9 +35,11 @@ ignore = [
     "COM819", # I don't get how these help
     "ISC001", # conflicts with the formatter
     "ISC002", # conflicts with the formatter
-    "D",      # ⚠️ re-enable these checks in production code ⚠️
-    "S",      # ⚠️ re-enable these checks in production code ⚠️
-    "T201",   # ⚠️ re-enable these checks in production code ⚠️
+    "D",      # ⚠️re-enable these checks in production code ⚠️
+    "FIX",    # ⚠️re-enable these checks in production code ⚠️
+    "S",      # ⚠️re-enable these checks in production code ⚠️
+    "T201",   # ⚠️re-enable these checks in production code ⚠️
+    "TD",     # ⚠️re-enable these checks in production code ⚠️
 ]
 fixable = [ "ALL" ]
 unfixable = [
