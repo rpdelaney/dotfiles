@@ -30,7 +30,6 @@ exclude = [
 [tool.ruff.lint]
 select = [ "ALL" ]
 ignore = [
-    "ANN101", #
     "COM812", # formatter handles this
     "COM819", # formatter handles this
     "ISC001", # conflicts with the formatter
