@@ -31,8 +31,8 @@ exclude = [
 select = [ "ALL" ]
 ignore = [
     "ANN101", #
-    "COM812", # I don't get how these help
-    "COM819", # I don't get how these help
+    "COM812", # formatter handles this
+    "COM819", # formatter handles this
     "ISC001", # conflicts with the formatter
     "ISC002", # conflicts with the formatter
     "D",      # ⚠️re-enable these checks in production code ⚠️
