@@ -34,6 +34,7 @@ ignore = [
     "COM819", # formatter handles this
     "ISC001", # conflicts with the formatter
     "ISC002", # conflicts with the formatter
+    "C",      # ⚠️re-enable these checks in production code ⚠️
     "D",      # ⚠️re-enable these checks in production code ⚠️
     "FIX",    # ⚠️re-enable these checks in production code ⚠️
     "S",      # ⚠️re-enable these checks in production code ⚠️
