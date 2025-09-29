@@ -36,6 +36,7 @@ ignore = [
     "ISC002", # conflicts with the formatter
     "C",      # ⚠️re-enable these checks in production code ⚠️
     "D",      # ⚠️re-enable these checks in production code ⚠️
+    "ERA",    # ⚠️re-enable these checks in production code ⚠️
     "FIX",    # ⚠️re-enable these checks in production code ⚠️
     "S",      # ⚠️re-enable these checks in production code ⚠️
     "T201",   # ⚠️re-enable these checks in production code ⚠️
