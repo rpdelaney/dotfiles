@@ -73,7 +73,7 @@ unfixable = [
 force-single-line = false
 force-wrap-aliases = false
 lines-after-imports = 2
-lines-between-types = 1
+lines-between-types = 0
 split-on-trailing-comma = false
 
 [tool.ruff.lint.mccabe]
