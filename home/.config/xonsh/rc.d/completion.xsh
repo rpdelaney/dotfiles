@@ -2,7 +2,7 @@
 is pressed.  This avoids the need to press TAB, except to cycle
 through the possibilities.  This currently only affects the
 prompt-toolkit shell."""
-$UPDATE_COMPLETIONS_ON_KEYPRESS = False
+$UPDATE_COMPLETIONS_ON_KEYPRESS = True
 
 """Mode of tab completion in prompt-toolkit shell (only).
 
