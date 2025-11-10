@@ -19,6 +19,7 @@ _subcommand("poetry", "upgrade", "update")
 _subcommand("docker", "containers", "ps")
 _subcommand("podman", "containers", "ps")
 _subcommand("glab", "pr", "mr")
+_subcommand("ollama", "models", "list")
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
 abbrevs["pythno"] = "python"
