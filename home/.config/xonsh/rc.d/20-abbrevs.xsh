@@ -16,7 +16,8 @@ def _subcommand(command, subcommand, sub):
 
 # my common mistakes and typos
 _subcommand("poetry", "upgrade", "update")
-_subcommand("docker", "containers", "container list")
+_subcommand("docker", "containers", "ps")
+_subcommand("podman", "containers", "ps")
 _subcommand("glab", "pr", "mr")
 abbrevs["terrafrom"] = "terraform"
 abbrevs["ptpythno"] = "ptpython"
