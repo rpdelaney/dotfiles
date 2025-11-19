@@ -42,6 +42,7 @@ config.font = wezterm.font_with_fallback {
     'PowerlineExtraSymbols',
     'Powerline Extra Symbols',
     'Noto Color Emoji',
+    'Iosevka Custom 15',
 }
 config.font_size = 16
 config.underline_thickness = "2pt"
