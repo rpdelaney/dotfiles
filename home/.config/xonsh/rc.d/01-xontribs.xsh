@@ -10,7 +10,6 @@ _xontribs = [
     ("abbrevs", "xontrib-abbrevs"),
     ("argcomplete", "xontrib-argcomplete"),
     ("autovox", "xontrib-vox"),
-    ("avox_poetry", "xontrib-avox-poetry"),
     ("commands", "xontrib-commands"),
     ("direnv", "xonsh-direnv"),
     ("expand_braces", "xontrib-expand-braces"),
