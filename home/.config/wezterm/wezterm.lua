@@ -44,7 +44,7 @@ config.font = wezterm.font_with_fallback {
     'Noto Color Emoji',
     'Iosevka Custom 15',
 }
-config.font_size = 16
+config.font_size = 12
 config.underline_thickness = "2pt"
 config.bold_brightens_ansi_colors = true
 
