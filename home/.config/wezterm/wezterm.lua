@@ -55,7 +55,10 @@ config.tiling_desktop_environments = {
   'X11 bspwm',
   'X11 i3',
   'X11 dwm',
-} -- TODO: how to add wayland?
+  'Wayland',
+}
+
+config.max_fps = 240
 
 ------------------------------------------------------- {{{ return
 -- and finally, return the configuration to wezterm
