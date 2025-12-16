@@ -14,6 +14,7 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+config.adjust_window_size_when_changing_font_size = false
 
 config.initial_cols = 80
 config.initial_rows = 120
