@@ -17,7 +17,7 @@ config.window_padding = {
 config.adjust_window_size_when_changing_font_size = false
 
 config.initial_cols = 80
-config.initial_rows = 120
+config.initial_rows = 40
 
 config.color_scheme = 'GruvboxDark'  -- sync this with weechat
 config.scrollback_lines = 99999
@@ -45,7 +45,7 @@ config.font = wezterm.font_with_fallback {
     'Noto Color Emoji',
     'Iosevka Custom 15',
 }
-config.font_size = 12
+config.font_size = 10
 config.underline_thickness = "2pt"
 config.bold_brightens_ansi_colors = true
 
