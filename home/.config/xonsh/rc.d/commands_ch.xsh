@@ -24,6 +24,5 @@ def ch(user_path: str):
         path = path.parent
 
     pushd --quiet @(f"{path}")
-    ll
 
 # EOF
