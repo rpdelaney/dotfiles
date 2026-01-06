@@ -16,7 +16,7 @@ popup_during_fullscreen smart
 # right now I have only one display, so use that for both
 set $DIS1 "DP-1"
 set $DIS2 "HDMI-A-1"
-set $DIS3 "DP-3"
+set $DIS3 "DP-2"
 
 # mirror with wl-mirror --fullscreen-output "$DIS1" "$DIS3"
 output $DIS1 mode 1920x1080@360Hz pos 0,420
