@@ -19,7 +19,7 @@ set $DIS2 "HDMI-A-1"
 set $DIS3 "DP-2"
 
 # mirror with wl-mirror --fullscreen-output "$DIS1" "$DIS3"
-output $DIS1 mode 1920x1080@360Hz pos 0,420
+output $DIS1 mode 1920x1080@360Hz pos 0,480
 output $DIS2 mode 1920x1080@60Hz pos 1920,0 transform 270
 output $DIS3 mode 1920x1080@60Hz pos 0,0
 output $DIS3 disable
