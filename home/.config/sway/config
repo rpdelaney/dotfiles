@@ -182,7 +182,7 @@ input * {
     # xkb_options "grp:win_space_toggle"
 }
 
-exec kitty
+exec wezterm
 
 # Tell systemd we have a graphical session now
 exec --no-startup-id systemctl start --user sway-session.service
