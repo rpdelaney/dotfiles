@@ -50,16 +50,15 @@ for_window [class="^steam"] floating enable
 for_window [class="^steam" title=".*Chat$"] floating enable
 
     # Bitwarden
-for_window [title=".*Bitwarden.*LibreWolf"] floating enable, resize set 640 240
+    # TODO: this gives false positives on bitwarden.com.
+    #       it should only match the password entry dialog for the desktop client.
+#for_window [title=".*Bitwarden.*LibreWolf"] floating enable, resize set 640 240
 
     # file browser
 for_window [app_id="thunar" title="File Operation Progress"] floating enable
 for_window [app_id="thunar" title=".*Confirm.*"] floating enable
 # assign [class="hl2_linux"] → 10: games
 # assign [class="Civ5XP"] 10: games
-    # chatty
-assign [class="chatty-Chatty"] workspace $WS6
-for_window [class="chatty-Chatty" title="win*"] floating enable  # channel go-live notifications etc
 
 # styles
 font pango:Inconsolata-g 12
