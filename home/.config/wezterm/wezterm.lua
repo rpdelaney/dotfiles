@@ -19,7 +19,7 @@ config.adjust_window_size_when_changing_font_size = false
 config.initial_cols = 80
 config.initial_rows = 40
 
-config.color_scheme = 'GruvboxDark'  -- sync this with weechat
+config.color_scheme = 'GruvboxDark'  -- TODO: sync this with weechat
 config.scrollback_lines = 99999
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
