@@ -58,6 +58,22 @@ config.tiling_desktop_environments = {
   'Wayland',
 }
 
+    -- hyperlink rules
+
+-- Use the defaults as a base
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+
+table.insert(config.hyperlink_rules, {
+  format = 'https://steamcommunity.com/sharedfiles/filedetails/?id=$1',
+  highlight = 0,
+  regex = [[workshop-([0-9]+)]],
+})
+table.insert(config.hyperlink_rules, {
+  format = 'https://store.steampowered.com/app/$1',
+  highlight = 0,
+  regex = [[gameID\s([0-9]+)]],
+})
+
 config.max_fps = 240
 
 ------------------------------------------------------- {{{ return
