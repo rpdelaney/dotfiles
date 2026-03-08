@@ -10,7 +10,7 @@ prompt:
         Narrative:
             A list of facts about the case.
         Prior Proceedings:
-            A brief summary of the legal actions (such as bringing a lawsuit), court hearings, or trials, if any, that preceded this one. STRICTLY EXCLUDE facts _of the case itself_, as these are not legal proceedings that must have taken place afterward.
+            A brief summary of the legal actions (such as bringing a lawsuit), court hearings, or trials, if any, that preceded this one. STRICTLY EXCLUDE the legal facts of the case itself.
         Facts:
             The facts of the case itself.
         Issue:
@@ -24,30 +24,34 @@ prompt:
         Conclusion:
             State the court's final decision or holding.
 
-    Here's an example of a brief:
-        [
-            {
-                "citation": "Rael v. Cadena, 93 N.M. 684, 604 P.2d 822 (Ct. App. 1979)",
-                "parties": [
-                    { "name": "Eddie Rael", "role": ["Plaintiff", "Appellee"] },
-                    { "name": "Emilio Cadena", "role": ["Defendant", "Appellee"] },
-                    { "name": "Manuel Cadena", "role": ["Defendant","Appellee"] }
-                ],
-                "narrative": [
-                    { "type": "fact", "data": "While visiting Emilio Cadena's home, Eddie Rael was beaten by Emilio's nephew, Manuel Cadena." },
-                    { "type": "fact", "data": "After the attack began, Emilio yelled to Manuel \"kill him!\" and \"hit him more!\"" },
-                    { "type": "fact", "data": "Emilio Cadena never actually struck Rael nor physically participated in the battery." },
-                    { "type": "fact", "data": "Rael was hospitalized as a result of the beating." },
-                    { "type": "prior_proceeding", "data": "Eddie Rael sued Emilio and Manuel Cadena for civil battery." },
-                    { "type": "prior_proceeding", "data": "The trial court, sitting without a jury, found Emilio Cadena jointly liable with Manuel Cadena for the battery." },
-                    { "type": "prior_proceeding", "data": "Cadena appealed the judgment of the trial court." }
-                ],
-                "issue": "Is a person present at a battery who verbally encourages the assailant, but does not physically assist him, civilly liable for the battery?",
-                "rule": "An individual may have liability for battery by encouraging or inciting the perpetrator by words or acts.",
-                "application": "The rule of law in the United States is: Civil liability for assault and battery is not limited to the direct perpetrator, but extends to any person who, by any means, aids or encourages the act. The act of verbal encouragement at the scene may give rise to liability because the perpetrator is goaded and encouraged at the behest of the person encouraging the battery. Here, Emilio encouraged Manuel to beat Rael and to continue to beat him. The battery may not have occurred or continued but for Emilio's encouragement. Therefore, Emilio had some part in the beating even though he never physically contacted Rael. Thus, Emilio is liable for the battery for aiding in its commission and encouraging the act.",
-                "conclusion": "The trial court's judgment against Emilio Cadena is affirmed."
-            }
-        ]
+    Here's an example of a single brief:
+    [
+      {
+        "citation": "Brandenburg v. Ohio, 395 U.S. 444 (1969)",
+        "parties": [
+          { "name": "Clarence Brandenburg", "role": ["Appellant", "Defendant"] },
+          { "name": "State of Ohio", "role": ["Appellee", "Prosecution"] }
+        ],
+        "narrative": [
+          { "type": "fact", "data": "Appellant was a Ku Klux Klan leader who organized and spoke at a Klan 'rally' on a farm in Hamilton County, Ohio." },
+          { "type": "fact", "data": "A television reporter and cameraman attended with the organizers; the meeting was filmed and portions were broadcast." },
+          { "type": "fact", "data": "Films showed hooded figures burning a large wooden cross; some participants carried firearms, although the speaker did not." },
+          { "type": "fact", "data": "The speaker made derogatory remarks about Blacks and Jews and referenced possible 'revengeance' and mass marches on Congress and into other states." },
+          { "type": "fact", "data": "State introduced the films and identifying testimony at trial and convicted appellant under the Ohio Criminal Syndicalism statute." },
+          { "type": "fact", "data": "The meeting had no audience other than participants and newsmen; the record contained strong racial and anti-Semitic rhetoric but no concrete call for immediate violent action." }
+        ],
+        "prior_proceedings": [
+          { "type": "prior_proceeding", "data": "Appellant was indicted and convicted in an Ohio trial court under Ohio Rev. Code § 2923.13 (Criminal Syndicalism); sentenced to fine and imprisonment." },
+          { "type": "prior_proceeding", "data": "Ohio intermediate appellate court affirmed without opinion." },
+          { "type": "prior_proceeding", "data": "Ohio Supreme Court dismissed the appeal sua sponte." },
+          { "type": "prior_proceeding", "data": "United States Supreme Court granted certiorari." }
+        ],
+        "issue": "May a State criminally punish mere advocacy of violence or membership/assembly to advocate violent doctrines absent advocacy directed to producing imminent lawless action and likely to produce such action?",
+        "rule": "Under the First and Fourteenth Amendments, speech advocating force or law violation is protected unless (1) it is directed to inciting or producing imminent lawless action, and (2) it is likely to produce such action. Statutes that punish mere advocacy or assembly to advocate violence without those elements are unconstitutional.",
+        "application": "Ohio's Criminal Syndicalism statute, and the indictment and jury instructions here, punished 'advocacy' and assembly to advocate violent doctrines without requiring proof of intent to incite imminent lawless action or that the advocacy was likely to produce such action. The recorded speech and scenes, while inflammatory and racist, were not shown to be directed to immediate lawless conduct nor likely to produce it (meeting contained only participants and newsmen; speaker did not incite specific imminent acts). Because the statute swept within its reach protected abstract advocacy, it violated the First and Fourteenth Amendments and could not constitutionally be applied to convict Brandenburg.",
+        "conclusion": "The Supreme Court reversed Brandenburg's conviction and held the Ohio statute unconstitutional as applied; only advocacy directed to and likely to produce imminent lawless action may be punished."
+      }
+    ]
 
     Write in a professional and clear manner, keeping the brief concise and focused on the key points of the ruling.
     Do not include additional commentary or added context.
