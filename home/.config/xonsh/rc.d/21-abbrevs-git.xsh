@@ -35,7 +35,7 @@ _GIT_SUBCOMMANDS = {
     "s": "status -s",
     "st": "status",
     "sh": "show",
-    "tags": "tag -l -n3", # "| sort -V", <-- nice idea but this breaks on multi-line tag messages
+    "tags": "tag -l -n3 --sort=-version:refname",
 # I can't stop doing this by accident lol
 #   "p": "push",
 # this is causing problems with thefuck
