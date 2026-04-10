@@ -53,8 +53,8 @@
             },
             "filename": "{media_id}_{shortcode}.{extension}",
             "videos": true,
-            "sleep-request": [15, 45],
-            "sleep": [1, 10],
+            "sleep-request": "6-24",
+            "sleep": "1-20",
             "max-retries": 3,
             "retry-sleep": [30, 60]
         },
@@ -63,7 +63,11 @@
             "filename": "{id}_{num}.{extension}",
             "parent-directory": true,
             "parent-metadata": "_reddit",
-            "videos": "true"
+            "videos": "true",
+            "sleep-request": "6-24",
+            "sleep": "1-20",
+            "max-retries": 3,
+            "retry-sleep": [30, 60]
         },
         "tumblr": {
             "avatar": true
