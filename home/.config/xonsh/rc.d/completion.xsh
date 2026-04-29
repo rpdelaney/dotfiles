@@ -29,3 +29,6 @@ $COMPLETIONS_DISPLAY = "multi"
 """Number of rows to reserve for tab-completions menu if $COMPLETIONS_DISPLAY is
 single or multi. This only affects the prompt-toolkit shell."""
 $COMPLETIONS_MENU_ROWS = 10
+
+"""Defaults to 1000"""
+$COMPLETION_QUERY_LIMIT = 10000
