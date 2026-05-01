@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://raw.githubusercontent.com/rpdelaney/dotfiles/refs/heads/main/home/.config/io.datasette.llm/templates/brief.jsonschema.json",
   "type": "array",
   "items": {
     "type": "object",
