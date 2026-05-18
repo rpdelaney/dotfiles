@@ -7,6 +7,7 @@ _first("git stashes", "git stash --list")
 abbrevs["groot"] = lambda buffer, word: $(git rev-parse --show-toplevel).strip()
 abbrevs["ghash"] = lambda buffer, word: $(git rev-parse HEAD).strip()
 abbrevs["gbranch"] = lambda buffer, word: $(git rev-parse --abbrev-ref HEAD).strip()
+abbrevs["gittop"] = lambda buffer, word: $(git rev-parse --show-toplevel)
 
 _GIT_SUBCOMMANDS = {
     "a": "add",
