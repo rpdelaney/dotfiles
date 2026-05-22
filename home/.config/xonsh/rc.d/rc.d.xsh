@@ -4,7 +4,7 @@
 from pathlib import Path
 
 
-rcd_dir = Path("/home/ryan/.config/xonsh/rc.d")
+rcd_dir = Path(Path.home(), ".config/xonsh/rc.d")
 
 for file in [
     str(path) for path in rcd_dir.rglob("*.xsh") if path.parent != rcd_dir
