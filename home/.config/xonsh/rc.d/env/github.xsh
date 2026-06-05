@@ -1,1 +1,3 @@
-$GH_TELEMETRY=false         # Decline gh-cli telemetry
+if !(which gh &>/dev/null):
+    # Decline gh-cli telemetry
+    $GH_TELEMETRY=0
