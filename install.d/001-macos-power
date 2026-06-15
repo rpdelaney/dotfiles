@@ -14,34 +14,34 @@ main() {
 
   # this will set up the battery settings
   sudo pmset -b \
-    standbydelay 10800 \
-    standby 1 \
-    halfdim 1 \
-    hibernatefile /var/vm/sleepimage \
+    autopoweroff 1 \
+    autopoweroffdelay 14400 \
     darkwakes 0 \
     disksleep 0 \
+    displaysleep 0 \
+    halfdim 1 \
+    hibernatefile /var/vm/sleepimage \
+    hibernatemode 25 \
     sleep 0 \
-    autopoweroffdelay 14400 \
-    hibernatemode 3 \
-    autopoweroff 1 \
-    ttyskeepawake 1 \
-    displaysleep 0
+    standby 1 \
+    standbydelay 10800 \
+    ttyskeepawake 1
 
   # This will set up the ac power settings
   sudo pmset -a \
-    standbydelay 10800 \
-    standby 1 \
-    halfdim 1 \
+    acwake 0 \
+    autopoweroff 1 \
+    autopoweroffdelay 14400 \
     darkwakes 0 \
     disksleep 0 \
-    sleep 0 \
-    autopoweroffdelay 14400 \
-    hibernatemode 3 \
-    autopoweroff 1 \
-    ttyskeepawake 1 \
     displaysleep 0 \
-    acwake 0 \
+    halfdim 1 \
+    hibernatemode 3 \
     lidwake 1
+    sleep 0 \
+    standby 1 \
+    standbydelay 10800 \
+    ttyskeepawake
 }
 
 main "$@"
