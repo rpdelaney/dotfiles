@@ -127,5 +127,4 @@ docs/_build/
 .fuse_hidden*
 
 # terraform
-.terraform.lock*
 *.plan*
