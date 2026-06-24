@@ -1,8 +1,6 @@
 [tool.ruff]
 target-version = "py313"
 
-line-length = 79
-
 exclude = [
     ".bzr",
     ".direnv",
@@ -84,14 +82,3 @@ split-on-trailing-comma = false
 
 [tool.ruff.lint.mccabe]
 max-complexity = 5
-
-[tool.ruff.format]
-docstring-code-format = true
-docstring-code-line-length = "dynamic"
-indent-style = "space"
-line-ending = "auto"
-quote-style = "double"
-skip-magic-trailing-comma = false
-exclude = [
-    "*.pyi",
-]
