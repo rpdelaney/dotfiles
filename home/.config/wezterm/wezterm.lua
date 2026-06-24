@@ -46,7 +46,8 @@ config.font = wezterm.font_with_fallback {
     'Iosevka Custom 15',
 }
 config.font_size = 10
-config.underline_thickness = "2pt"
+config.underline_thickness = "1pt"
+config.underline_position = "-1"
 config.bold_brightens_ansi_colors = true
 
     -- desktop
