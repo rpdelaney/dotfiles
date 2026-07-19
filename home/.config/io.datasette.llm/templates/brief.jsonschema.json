@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/rpdelaney/dotfiles/refs/heads/main/home/.config/io.datasette.llm/templates/brief.jsonschema.json",
-  "type": "array",
+  "type": "object",
   "items": {
     "type": "object",
     "properties": {
@@ -18,7 +18,7 @@
         }
       },
       "narrative": {
-        "type": "array",
+        "type": "object",
         "items": {
           "type": "object",
           "properties": {
@@ -30,23 +30,26 @@
         }
       },
       "prior_proceedings": {
-        "type": "array",
+        "type": "object",
         "items": {
           "type": "object",
           "properties": {
-            "type": {
-              "type": "string", "const": "prior_proceeding" },
+            "type": { "type": "string", "const": "prior_proceeding" },
             "data": { "type": "string" }
           },
           "required": [ "type", "data" ],
           "additionalProperties": false
         }
       },
-      "issue": {
-        "type": "array",
-        "items": { "data": { "type": "string" } }
+      "holdings": {
+        "type": "object",
+        "properties": {
+          "issue": { "type": "string" },
+          "rule": { "type": "string" }
+        },
+        "required": [ "type", "data" ],
+        "additionalProperties": false
       },
-      "rule": { "type": "string" },
       "application": { "type": "string" },
       "conclusion": { "type": "string" }
     },
@@ -55,7 +58,7 @@
       "parties",
       "narrative",
       "prior_proceedings",
-      "issues",
+      "holdings",
       "rule",
       "application",
       "conclusion"

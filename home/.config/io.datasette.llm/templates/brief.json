@@ -1,0 +1,106 @@
+[
+  {
+    "citation": "Lockhart v. Sun West Mortgage Company, Inc., No. 2:25-cv-11341 (E.D. Mich. Oct. 31, 2025)",
+    "parties": [
+      { "name": "Jameel Lockhart", "role": ["Plaintiff"] },
+      { "name": "Sun West Mortgage Company, Inc.", "role": ["Defendant"] }
+    ],
+    "narrative": [
+      { "type": "fact", "data": "On December 11, 2023, Plaintiff entered into a mortgage loan transaction with Defendant for $466,297.00 to purchase a residential property." },
+      { "type": "fact", "data": "Plaintiff alleged Defendant made nondisclosures and misrepresentations regarding the loan terms." },
+      { "type": "fact", "data": "Plaintiff sent Defendant a \"Notice of Right to Rescind\" and checks marked as \"Accord and Satisfaction\" for the full settlement of the loan." },
+      { "type": "fact", "data": "Defendant deposited the checks but continued foreclosure and collection proceedings." },
+      { "type": "fact", "data": "Plaintiff claimed he originally signed the mortgage \"without prejudice\" but was forced by a title agent to re-sign without that denotation to avoid losing the house and earnest money." }
+    ],
+    "prior_proceedings": [
+      { "type": "prior_proceeding", "data": "Plaintiff filed a \"Motion for Summary Judgment and Default Judgment\" on May 7, 2025." },
+      { "type": "prior_proceeding", "data": "Plaintiff filed an original Complaint on May 12, 2025, and an Amended Complaint on May 19, 2025." },
+      { "type": "prior_proceeding", "data": "Defendant filed a Motion to Dismiss the Amended Complaint under Federal Rule of Civil Procedure 12(b)(6)." },
+      { "type": "prior_proceeding", "data": "Plaintiff filed a Motion for a Temporary Restraining Order, a Motion for Leave to File a Second Amended Complaint, and a Motion to Strike an affidavit." }
+    ],
+    "holdings": [
+      {
+        "issue": "Does the Truth in Lending Act (TILA) right of rescission apply to a residential mortgage transaction used to acquire a dwelling?",
+        "rule": "Under 15 U.S.C. § 1635(e)(1), the TILA right of rescission does not apply to a \"residential mortgage transaction\" created to finance the acquisition of a consumer's dwelling."
+      },
+      {
+        "issue": "Can a borrower establish a breach of contract based on an accord and satisfaction of a mortgage debt without a written agreement signed by the financial institution?",
+        "rule": "Under Michigan’s statute of frauds (MCL 566.132(2)), actions against financial institutions to modify or waive loan provisions are barred unless the commitment is in writing and signed by the institution; further, UCC Article 3 applies only to negotiable instruments, which do not include real property mortgages."
+      },
+      {
+        "issue": "To survive a motion to dismiss, must a plaintiff alleging violations of the Real Estate Settlement Procedures Act (RESPA) specifically plead actual damages traceable to the defendant's conduct?",
+        "rule": "A RESPA claim under Regulation X must allege actual damages that are specifically traceable to the defendant's failure to respond to qualified written requests."
+      }
+    ],
+    "application": "The Court found that the Plaintiff’s loan was a \"residential mortgage transaction\" used to purchase his home, making the TILA rescission claims (Counts I and III) legally inapplicable. Regarding the breach of contract claim (Count II), the Court determined that because a mortgage is not a negotiable instrument, UCC § 3-311 did not apply; furthermore, the claim failed because there was no written agreement signed by the Defendant to satisfy the Michigan statute of frauds. On the RESPA claim (Count IV), the Court ruled that Plaintiff provided only conclusory allegations of damages without tracing them to Defendant's conduct. Finally, the Court denied leave to amend the complaint, reasoning that allegations of \"economic duress\" during signing do not change the fact that the transaction was a residential mortgage exempt from TILA rescission, rendering the amendment futile.",
+    "conclusion": "The Court granted Defendant’s Motion to Dismiss, denied Plaintiff’s Motion for Leave to File a Second Amended Complaint, and denied all other pending motions as moot."
+  }
+]
+[
+  {
+    "citation": "Laurel Investments, LLC et al v. Holiday Hospitality Franchising, LLC, Case No. 25-cv-10565 (E.D. Mich. 2025)",
+    "parties": [
+      {
+        "name": "Laurel Investments, LLC",
+        "role": ["Plaintiff", "Franchisee"]
+      },
+      {
+        "name": "Majid Koza, Kenny Koza, Lyon Koza, Carlo Koza, and Derek Koza",
+        "role": ["Plaintiffs", "Guarantors"]
+      },
+      {
+        "name": "Holiday Hospitality Franchising, LLC (HHF)",
+        "role": ["Defendant", "Franchisor"]
+      }
+    ],
+    "narrative": [
+      {
+        "type": "fact",
+        "data": "Laurel Investments entered into a License Agreement with HHF in 2014 to operate a Holiday Inn brand hotel in Livonia, Michigan."
+      },
+      {
+        "type": "fact",
+        "data": "The individual plaintiffs served as guarantors for the agreement."
+      },
+      {
+        "type": "fact",
+        "data": "The License Agreement granted Laurel access to HHF's \"System,\" including trademarks and reservation systems, but specifically allowed HHF to license other hotels at any location without territorial restrictions."
+      },
+      {
+        "type": "fact",
+        "data": "HHF licensed three \"Holiday Inn Express\" hotels in close proximity to Laurel’s hotel."
+      },
+      {
+        "type": "fact",
+        "data": "Plaintiffs alleged that HHF failed to differentiate the Holiday Inn and Holiday Inn Express brands in its marketing, causing consumer confusion and diverting business to the cheaper Express locations."
+      },
+      {
+        "type": "fact",
+        "data": "Plaintiffs brought eight counts including breach of contract, frustration of purpose, illusory contract, and violations of Michigan franchise and unfair competition laws."
+      }
+    ],
+    "prior_proceedings": [
+      {
+        "type": "prior_proceeding",
+        "data": "Plaintiffs filed their complaint in Michigan state court."
+      },
+      {
+        "type": "prior_proceeding",
+        "data": "Defendant removed the case to the United States District Court for the Eastern District of Michigan."
+      },
+      {
+        "type": "prior_proceeding",
+        "data": "Defendant filed a motion to dismiss for failure to state a claim and a motion to transfer venue."
+      }
+    ],
+    "issues": [
+      "May a plaintiff maintain an independent cause of action for frustration of purpose rather than asserting it as an affirmative defense?",
+      "Does a contract provision allowing a franchisor unilateral discretion to modify its system or brand marks render the agreement illusory for lack of consideration?",
+      "Does a franchisor breach a license agreement by licensing competing locations nearby when the agreement expressly reserves the right to license at any location without territorial restriction?",
+      "May a plaintiff sustain a fraud-based claim under a state franchise investment law if the alleged omissions are contradicted by express terms in the franchise disclosure documents or are barred by the statute of limitations?"
+    ],
+    "rule": "Under Georgia law (which governed the contract), frustration of purpose is an affirmative defense, not an independent cause of action. A contract is not illusory if there is mutual consideration; unilateral discretion to modify certain terms does not void the agreement if benefits are still exchanged. Breach of contract requires a violation of a specific contractual term, and the implied duty of good faith cannot override express contractual rights. Under the Michigan Franchise Investment Law (MFIL), claims must be brought within four years and must allege material misstatements or omissions with particularity under Rule 9(b).",
+    "application": "The court applied Georgia law to the contract claims per the agreement's choice-of-law provision. It dismissed the frustration of purpose claim because it cannot be brought as a cause of action. The contract was not illusory because Laurel received and used the benefits of the HHF system for ten years. There was no breach of contract because the agreement explicitly permitted HHF to license other hotels in the area; the implied duty of good faith could not prohibit what the contract expressly allowed. The court found no fiduciary duty existed because the contract explicitly defined Laurel as an independent contractor. Regarding the MFIL, claims for two locations were time-barred by the four-year statute of limitations, and the claim for the third location failed because the potential for competition was expressly disclosed in the agreement. Finally, the allegations regarding marketing confusion and non-enforcement of terms were dismissed for failing to meet the heightened pleading standards for fraud under Rule 9(b).",
+    "conclusion": "The court granted the Defendant's motion to dismiss all counts in their entirety and denied the motion to transfer venue as moot."
+  }
+]
