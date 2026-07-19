@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/rpdelaney/dotfiles/refs/heads/main/home/.config/io.datasette.llm/templates/brief.jsonschema.json",
-  "type": "object",
+  "type": "array",
   "items": {
     "type": "object",
     "properties": {
@@ -13,32 +13,29 @@
             "name": { "type": "string" },
             "role": { "type": "array", "items": { "type": "string" } }
           },
-          "required": [ "name", "role" ],
-          "additionalProperties": false
+          "required": [ "name", "role" ]
         }
       },
       "narrative": {
-        "type": "object",
+        "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "type": { "type": "string", "const": "fact" },
+            "type": { "type": "string", "enum": ["fact"] },
             "data": { "type": "string" }
           },
-          "required": [ "type", "data" ],
-          "additionalProperties": false
+          "required": [ "type", "data" ]
         }
       },
       "prior_proceedings": {
-        "type": "object",
+        "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "type": { "type": "string", "const": "prior_proceeding" },
+            "type": { "type": "string", "enum": ["prior_proceeding"] },
             "data": { "type": "string" }
           },
-          "required": [ "type", "data" ],
-          "additionalProperties": false
+          "required": [ "type", "data" ]
         }
       },
       "holdings": {
@@ -47,8 +44,7 @@
           "issue": { "type": "string" },
           "rule": { "type": "string" }
         },
-        "required": [ "type", "data" ],
-        "additionalProperties": false
+        "required": [ "issue", "rule" ]
       },
       "application": { "type": "string" },
       "conclusion": { "type": "string" }
@@ -59,10 +55,8 @@
       "narrative",
       "prior_proceedings",
       "holdings",
-      "rule",
       "application",
       "conclusion"
-    ],
-    "additionalProperties": false
+    ]
   }
 }
