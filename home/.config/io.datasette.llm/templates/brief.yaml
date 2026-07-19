@@ -13,14 +13,15 @@ prompt:
             A brief summary of the legal actions (such as bringing a lawsuit), court hearings, or trials, if any, that preceded this one. STRICTLY EXCLUDE the legal facts of the case itself.
         Facts:
             The facts of the case itself.
-        Issue:
-            In the form of a question, ask the main legal question or questions the court addressed.
-            The legal issue in question should not include details specific to the current case.
-            Instead, state the issue as a legal question that someone can answer with a yes or no without ambiguity.
-        Rule:
-            Summarize the relevant legal principles, statutes, or precedents the court applied to resolve the issue.
+        Holdings:
+            Issue:
+                In the form of a question, ask the main legal question or questions the court addressed.
+                The legal issue in question should not include details specific to the current case.
+                Instead, state the issue as a legal question that someone can answer with a yes or no without ambiguity.
+            Rule:
+                Summarize the legal principles, statutes, or precedents the court found relevant to the issue, but DO NOT explain how the rule was applied (yet).
         Application:
-            Analyze how the court applied the rule to the facts of the case. Include the reasoning and logic behind the decision.
+            Summarize how the court applied the holdings to the issues in the case. Include the reasoning and logic behind the decision(s).
         Conclusion:
             State the court's final decision or holding.
 
@@ -33,10 +34,10 @@ prompt:
           { "name": "State of Ohio", "role": ["Appellee", "Prosecution"] }
         ],
         "narrative": [
-          { "type": "fact", "data": "Appellant was a Ku Klux Klan leader who organized and spoke at a Klan 'rally' on a farm in Hamilton County, Ohio." },
+          { "type": "fact", "data": "Appellant was a Ku Klux Klan leader who organized and spoke at a Klan \"rally\" on a farm in Hamilton County, Ohio." },
           { "type": "fact", "data": "A television reporter and cameraman attended with the organizers; the meeting was filmed and portions were broadcast." },
           { "type": "fact", "data": "Films showed hooded figures burning a large wooden cross; some participants carried firearms, although the speaker did not." },
-          { "type": "fact", "data": "The speaker made derogatory remarks about Blacks and Jews and referenced possible 'revengeance' and mass marches on Congress and into other states." },
+          { "type": "fact", "data": "The speaker made derogatory remarks about Blacks and Jews and referenced possible \"revengeance\" and mass marches on Congress and into other states." },
           { "type": "fact", "data": "State introduced the films and identifying testimony at trial and convicted appellant under the Ohio Criminal Syndicalism statute." },
           { "type": "fact", "data": "The meeting had no audience other than participants and newsmen; the record contained strong racial and anti-Semitic rhetoric but no concrete call for immediate violent action." }
         ],
@@ -46,11 +47,13 @@ prompt:
           { "type": "prior_proceeding", "data": "Ohio Supreme Court dismissed the appeal sua sponte." },
           { "type": "prior_proceeding", "data": "United States Supreme Court granted certiorari." }
         ],
-        "issues": [
-            "May a State criminally punish mere advocacy of violence or membership/assembly to advocate violent doctrines absent advocacy directed to producing imminent lawless action and likely to produce such action?"
+        "holdings": [
+            {
+              "issue": "May a State criminally punish mere advocacy of violence or membership/assembly to advocate violent doctrines absent advocacy directed to producing imminent lawless action and likely to produce such action?",
+              "rule": "Under the First and Fourteenth Amendments, speech advocating force or law violation is protected unless (1) it is directed to inciting or producing imminent lawless action, and (2) it is likely to produce such action. Statutes that punish mere advocacy or assembly to advocate violence without those elements are unconstitutional."
+            }
         ],
-        "rule": "Under the First and Fourteenth Amendments, speech advocating force or law violation is protected unless (1) it is directed to inciting or producing imminent lawless action, and (2) it is likely to produce such action. Statutes that punish mere advocacy or assembly to advocate violence without those elements are unconstitutional.",
-        "application": "Ohio's Criminal Syndicalism statute, and the indictment and jury instructions here, punished 'advocacy' and assembly to advocate violent doctrines without requiring proof of intent to incite imminent lawless action or that the advocacy was likely to produce such action. The recorded speech and scenes, while inflammatory and racist, were not shown to be directed to immediate lawless conduct nor likely to produce it (meeting contained only participants and newsmen; speaker did not incite specific imminent acts). Because the statute swept within its reach protected abstract advocacy, it violated the First and Fourteenth Amendments and could not constitutionally be applied to convict Brandenburg.",
+        "application": "Ohio's Criminal Syndicalism statute, and the indictment and jury instructions here, punished \"advocacy\" and assembly to advocate violent doctrines without requiring proof of intent to incite imminent lawless action or that the advocacy was likely to produce such action. The recorded speech and scenes, while inflammatory and racist, were not shown to be directed to immediate lawless conduct nor likely to produce it (meeting contained only participants and newsmen; speaker did not incite specific imminent acts). Because the statute swept within its reach protected abstract advocacy, it violated the First and Fourteenth Amendments and could not constitutionally be applied to convict Brandenburg.",
         "conclusion": "The Supreme Court reversed Brandenburg's conviction and held the Ohio statute unconstitutional as applied; only advocacy directed to and likely to produce imminent lawless action may be punished."
       }
     ]
