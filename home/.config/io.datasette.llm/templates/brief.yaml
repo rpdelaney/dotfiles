@@ -25,7 +25,7 @@ prompt:
         Conclusion:
             State the court's final decision or holding.
 
-    Here's an example of a single brief:
+    Your response will be a JSON list. If given multiple documents, brief them all and separate the briefs into the list. For example:
     [
       {
         "citation": "Brandenburg v. Ohio, 395 U.S. 444 (1969)",
