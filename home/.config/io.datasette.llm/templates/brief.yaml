@@ -46,7 +46,9 @@ prompt:
           { "type": "prior_proceeding", "data": "Ohio Supreme Court dismissed the appeal sua sponte." },
           { "type": "prior_proceeding", "data": "United States Supreme Court granted certiorari." }
         ],
-        "issue": "May a State criminally punish mere advocacy of violence or membership/assembly to advocate violent doctrines absent advocacy directed to producing imminent lawless action and likely to produce such action?",
+        "issues": [
+            "May a State criminally punish mere advocacy of violence or membership/assembly to advocate violent doctrines absent advocacy directed to producing imminent lawless action and likely to produce such action?"
+        ],
         "rule": "Under the First and Fourteenth Amendments, speech advocating force or law violation is protected unless (1) it is directed to inciting or producing imminent lawless action, and (2) it is likely to produce such action. Statutes that punish mere advocacy or assembly to advocate violence without those elements are unconstitutional.",
         "application": "Ohio's Criminal Syndicalism statute, and the indictment and jury instructions here, punished 'advocacy' and assembly to advocate violent doctrines without requiring proof of intent to incite imminent lawless action or that the advocacy was likely to produce such action. The recorded speech and scenes, while inflammatory and racist, were not shown to be directed to immediate lawless conduct nor likely to produce it (meeting contained only participants and newsmen; speaker did not incite specific imminent acts). Because the statute swept within its reach protected abstract advocacy, it violated the First and Fourteenth Amendments and could not constitutionally be applied to convict Brandenburg.",
         "conclusion": "The Supreme Court reversed Brandenburg's conviction and held the Ohio statute unconstitutional as applied; only advocacy directed to and likely to produce imminent lawless action may be punished."
