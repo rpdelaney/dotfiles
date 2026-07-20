@@ -7,18 +7,19 @@ _first("git stashes", "git stash --list")
 abbrevs["groot"] = lambda buffer, word: $(git rev-parse --show-toplevel).strip()
 abbrevs["ghash"] = lambda buffer, word: $(git rev-parse HEAD).strip()
 abbrevs["gbranch"] = lambda buffer, word: $(git rev-parse --abbrev-ref HEAD).strip()
+abbrevs["gittop"] = lambda buffer, word: $(git rev-parse --show-toplevel)
 
 _GIT_SUBCOMMANDS = {
     "a": "add",
     "ap": "add --patch",
-    "br": "branch -v",
-    "bra": "branch -v -a",
-    "c": "commit -v",
-    "clean": r"""branch --merged | grep -Ev r'(^\*|master|main|dev)' | xargs git branch -d  # delete local branches that have merged to main""",
+    "br": "branch --no-abbrev",
+    "bra": "branch --no-abbrev --all",
+    "c": "commit --verbose",
+    "clean": r"""branch --merged | grep -Ev r'(^\*|master|main|dev)' | xargs git branch --delete # delete local branches that have merged to main""",
     "co": "checkout",
     "cod": "checkout @$(basename @$(git symbolic-ref refs/remotes/origin/HEAD))  # check out the default branch",
     "ca": "commit --amend",
-    "cm": "commit -v -m",
+    "cm": "commit --verbose --message",
     # "cp": "cherry-pick",  # TODO: this conficts with the "cp" abbrev, fix it
     "d": "diff",
     "dc": "diff --cached",
@@ -29,10 +30,10 @@ _GIT_SUBCOMMANDS = {
     "m": "merge -v",
     "mt": "mergetool --no-prompt",
     "r": "reset",
-    "remotes": "remote -v",
+    "remotes": "remote --verbose",
     "rb": "rebase",
     "rbi": "rebase --interactive",
-    "s": "status -s",
+    "s": "status --short",
     "st": "status",
     "sh": "show",
     "tags": "tag -l -n3 --sort=-version:refname",

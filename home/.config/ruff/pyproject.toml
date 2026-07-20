@@ -1,8 +1,6 @@
 [tool.ruff]
 target-version = "py313"
 
-line-length = 79
-
 exclude = [
     ".bzr",
     ".direnv",
@@ -30,17 +28,23 @@ exclude = [
 [tool.ruff.lint]
 select = [ "ALL" ]
 ignore = [
-    "COM812", # formatter handles this
-    "COM819", # formatter handles this
-    "ISC001", # conflicts with the formatter
-    "ISC002", # conflicts with the formatter
-    "C",      # ⚠️re-enable these checks in production code ⚠️
-    "D",      # ⚠️re-enable these checks in production code ⚠️
-    "ERA",    # ⚠️re-enable these checks in production code ⚠️
-    "FIX",    # ⚠️re-enable these checks in production code ⚠️
-    "S",      # ⚠️re-enable these checks in production code ⚠️
-    "T201",   # ⚠️re-enable these checks in production code ⚠️
-    "TD",     # ⚠️re-enable these checks in production code ⚠️
+    "COM812",   # formatter handles this
+    "COM819",   # formatter handles this
+    "ISC001",   # conflicts with the formatter
+    "ISC002",   # conflicts with the formatter
+    "ANN",      # ⚠️re-enable these checks in production code ⚠️
+    "C",        # ⚠️re-enable these checks in production code ⚠️
+    "D",        # ⚠️re-enable these checks in production code ⚠️
+    "E501",     # ⚠️re-enable these checks in production code ⚠️
+    "ERA",      # ⚠️re-enable these checks in production code ⚠️
+    "FIX",      # ⚠️re-enable these checks in production code ⚠️
+    "I001",     # ⚠️re-enable these checks in production code ⚠️
+    "PERF",     # ⚠️re-enable these checks in production code ⚠️
+    "PLR",      # ⚠️re-enable these checks in production code ⚠️
+    "Q",        # ⚠️re-enable these checks in production code ⚠️
+    "S",        # ⚠️re-enable these checks in production code ⚠️
+    "T201",     # ⚠️re-enable these checks in production code ⚠️
+    "TD",       # ⚠️re-enable these checks in production code ⚠️
 ]
 fixable = [ "ALL" ]
 unfixable = [
@@ -78,14 +82,3 @@ split-on-trailing-comma = false
 
 [tool.ruff.lint.mccabe]
 max-complexity = 5
-
-[tool.ruff.format]
-docstring-code-format = true
-docstring-code-line-length = "dynamic"
-indent-style = "space"
-line-ending = "auto"
-quote-style = "double"
-skip-magic-trailing-comma = false
-exclude = [
-    "*.pyi",
-]
