@@ -7,8 +7,14 @@
     ],
     "cookies": ["firefox"],
     "extractor": {
-        "user-agent": "@firefox",
         "base-directory": "~/img/gallery-dl/",
+        "TODO_directory": [
+          "this doesn't work right yet",
+          "fix it later",
+          "-- OH YEAH? WHAT WAS THE PROBLEM, IDIOT?? WRITE IT DOWN ARGHHHH",
+          "{username|author|user|datetime.now().strftime('%Y%m%d.%s')}",
+          "{category}"
+        ],
         "extension-map": {
             "jpeg": "jpg",
             "jpe" : "jpg",
@@ -61,13 +67,14 @@
         "reddit": {
             "directory": ["{author}"],
             "filename": "{id}_{num}.{extension}",
+            "max-retries": 3,
+            "refresh-token": "158243922968846-4kcqttZSjaakre02SbqNqkSLurLS_Q",
             "parent-directory": true,
             "parent-metadata": "_reddit",
-            "videos": "true",
-            "sleep-request": "6-24",
+            "retry-sleep": [30, 60],
             "sleep": "1-20",
-            "max-retries": 3,
-            "retry-sleep": [30, 60]
+            "sleep-request": "6-24",
+            "videos": "true"
         },
         "tumblr": {
             "avatar": true

@@ -21,20 +21,20 @@ set $DIS3 "DP-2"
 # mirror with wl-mirror --fullscreen-output "$DIS1" "$DIS3"
 output $DIS1 mode 1920x1080@360Hz pos 0,480
 output $DIS2 mode 1920x1080@60Hz pos 1920,0 transform 270
-output $DIS3 mode 1920x1080@60Hz pos 0,0
+#output $DIS3 mode 1920x1080@60Hz pos 0,0
 output $DIS3 disable
 
 # workspaces
-set $WS1 "1: shell"
-set $WS2 "2: web"
-set $WS3 "3: misc"
-set $WS4 "4: chat"
-set $WS5 "5: steam"
-set $WS6 "6: media"
-set $WS7 "7: docs"
-set $WS8 "8: misc"
-set $WS9 "9: vm"
-set $WS0 "10: games"
+set $WS0 "0"
+set $WS1 "1"
+set $WS2 "2"
+set $WS3 "3"
+set $WS4 "4"
+set $WS5 "5"
+set $WS6 "6"
+set $WS7 "7"
+set $WS8 "8"
+set $WS9 "9"
 
 # window classes
     # warn me about xwayland
@@ -61,7 +61,8 @@ for_window [app_id="thunar" title=".*Confirm.*"] floating enable
 # assign [class="Civ5XP"] 10: games
 
 # styles
-font pango:Inconsolata-g 12
+# font pango:Inconsolata-g 12
+# font Iosevka Custom 12
 
 # bar
 # We start waybar with systemd now.
@@ -83,6 +84,9 @@ client.focused_inactive #191919 #999999 #FFFFFF
 client.unfocused        #191919 #333333 #999999
 client.urgent           #cd989a #cd989a #2e3436
 client.background       #121212
+
+# janky window swallowing
+bindsym $mod+s split vertical; layout stacking
 
 # hotkeys
 bindsym $mod+1 workspace number $WS1

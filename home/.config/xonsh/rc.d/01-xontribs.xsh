@@ -12,7 +12,7 @@ _xontribs = [
     ("autovox", "xontrib-vox"),
     ("commands", "xontrib-commands"),
     ("direnv", "xonsh-direnv"),
-    ("expand_braces", "xontrib-expand-braces"),
+#   ("expand_braces", "xontrib-expand-braces"),
     ("gruvbox", "xontrib-gruvbox"),
     ("jedi", "xontrib-jedi"),
     ("vox", "xontrib-vox"),

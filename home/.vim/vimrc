@@ -71,5 +71,6 @@ Plug 'withgod/vim-sourcepawn', { 'for': 'sourcepawn'}  " - sourcepawn code
 Plug 'fladson/vim-kitty', { 'for': 'kitty' }           " - Kitty terminal config files
 Plug 'meatballs/vim-xonsh', { 'for': 'xonsh' }         " - xonsh
 " Plug 'direnv/direnv.vim', { 'for': 'direnv' }          " - direnv
+Plug 'kalvinpearce/ShaderHighlight', { 'for': 'shader' } " - GLSL/HLSL, cg, ShaderLab,ReShade
 
 call plug#end()

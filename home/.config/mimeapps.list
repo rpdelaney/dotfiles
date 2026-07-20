@@ -1,14 +1,22 @@
 [Added Associations]
-application/octet-stream=neovide.desktop;librewolf.desktop;
+*/*=clip.desktop;
+application/octet-stream=librewolf.desktop;neovide.desktop;
 audio/*=vlc.desktop;
 image/*=gimp.desktop;
 image/*=org.gnome.gThumb.desktop;
-inode/directory=iv.desktop;
+inode/directory=iv.desktop;playlist.desktop;org.gnome.gThumb.desktop;kitty-open.desktop;
 text/*=neovide.desktop;
-text/*=clip.desktop;
-video/*=vlc.desktop;
 video/*=mpv.desktop;
+video/*=playlist.desktop;
 video/*=unbox.desktop;
+video/*=vlc.desktop;
+image/jpeg=gimp.desktop;org.gnome.gThumb.desktop;firefox.desktop;
+video/mp4=userapp-unbox-0D5MP2.desktop;com.ozmartians.VidCutter.desktop;
+image/png=org.gnome.gThumb.desktop;gimp.desktop;
+image/webp=org.gnome.gThumb.desktop;
+text/html=playlist.desktop;
+text/plain=gvim.desktop;
+video/webm=userapp-unbox-0D5MP2.desktop;
 
 [Default Applications]
 audio/3gpp2=mpv.desktop
@@ -53,7 +61,7 @@ image/svg+xml=iv.desktop
 image/tiff=iv.desktop
 image/wmf=iv.desktop
 image/webp=iv.desktop
-inode/directory=thunar.desktop
+inode/directory=nemo.desktop
 text/html=librewolf.desktop
 text/csv=neovide.desktop
 text/markdown=neovide.desktop
@@ -93,3 +101,5 @@ x-scheme-handler/sgnl=signal-desktop.desktop
 x-scheme-handler/signalcaptcha=signal-desktop.desktop
 x-scheme-handler/terminal=wezterm.desktop
 x-scheme-handler/unknown=librewolf.desktop
+video/x-ms-wmv=playlist.desktop
+application/x-gnome-saved-search=nemo.desktop

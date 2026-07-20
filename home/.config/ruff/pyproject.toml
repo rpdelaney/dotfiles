@@ -26,7 +26,7 @@ exclude = [
 ]
 
 [tool.ruff.lint]
-select = [ "ALL" ]
+select = [ "E", "F", "B" ]
 ignore = [
     "COM812",   # formatter handles this
     "COM819",   # formatter handles this
@@ -38,7 +38,7 @@ ignore = [
     "E501",     # ⚠️re-enable these checks in production code ⚠️
     "ERA",      # ⚠️re-enable these checks in production code ⚠️
     "FIX",      # ⚠️re-enable these checks in production code ⚠️
-    "I001",     # ⚠️re-enable these checks in production code ⚠️
+    "I001",    # ⚠️re-enable these checks in production code ⚠️
     "PERF",     # ⚠️re-enable these checks in production code ⚠️
     "PLR",      # ⚠️re-enable these checks in production code ⚠️
     "Q",        # ⚠️re-enable these checks in production code ⚠️
