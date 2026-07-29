@@ -86,3 +86,8 @@ def alias(key, value=None):
             return 1
     else:
         aliases[key]=value
+
+@Command.reg
+def binary2ascii(binary):
+    """Convert a string of zeroes and ones to text."""
+    print("".join(chr(int(x, 2)) for x in binary.split()))
