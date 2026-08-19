@@ -50,27 +50,26 @@ git config --global diff.mnemonicprefix "true"
 git config --global difftool.prompt "true"
 git config --global diff.colorMoved "default"
 
-git config --global delta.line-numbers-minus-style    "172 bold underline auto" # default: auto
-git config --global delta.line-numbers-left-format    "{nm:^4} "                # default: {nm:^4}⋮
-git config --global delta.line-numbers-left-style     "auto"                    # default: auto
-git config --global delta.line-numbers-plus-style     "14 bold underline auto"  # default: auto
-git config --global delta.line-numbers-right-format   "{np:^4} "                # default: {np:^4}│
-git config --global delta.line-numbers-right-style    "auto"                    # default: auto
-git config --global delta.line-numbers-zero-style     "243 auto"                # default: auto
+git config --global delta.line-numbers-minus-style    "172 bold auto"         # default: auto
+git config --global delta.line-numbers-left-format    "{nm:^4} "              # default: {nm:^4}⋮
+git config --global delta.line-numbers-left-style     "auto"                  # default: auto
+git config --global delta.line-numbers-plus-style     "14 bold auto"          # default: auto
+git config --global delta.line-numbers-right-format   "{np:^4} "              # default: {np:^4}│
+git config --global delta.line-numbers-right-style    "auto"                  # default: auto
+git config --global delta.line-numbers-zero-style     "243 auto"              # default: auto
 
-git config --global delta.file-style                  "yellow reverse normal"   # default: blue
+git config --global delta.file-style                  "yellow reverse normal" # default: blue
 
-git config --global delta.minus-style                 "syntax       234"        # default: normal auto
-git config --global delta.minus-emph-style            "#fe8019 bold 237"        # default: normal auto
-git config --global delta.minus-non-emph-style        "syntax       234"        # default: minus-style
+git config --global delta.minus-style                 "syntax       234"      # default: normal auto
+git config --global delta.minus-emph-style            "#fe8019 bold 237"      # default: normal auto
+git config --global delta.minus-non-emph-style        "syntax       234"      # default: minus-style
 
-git config --global delta.plus-style                  "syntax       234"        # default: syntax auto
-git config --global delta.plus-emph-style             "#61e32d bold 237"        # default: syntax auto
-git config --global delta.plus-non-emph-style         "syntax       234"        # default: plus-style
+git config --global delta.plus-style                  "syntax       234"      # default: syntax auto
+git config --global delta.plus-emph-style             "#61e32d bold 237"      # default: syntax auto
+git config --global delta.plus-non-emph-style         "syntax       234"      # default: plus-style
 
 git config --global delta.syntax-theme "gruvbox-dark"
 git config --global delta.side-by-side "true"
-git config --global delta.side-by-side "false"
 git config --global delta.line-numbers "true"
 git config --global delta.hyperlinks "true"
 
