@@ -76,6 +76,7 @@ git config --global delta.hyperlinks "true"
 git config --global pager.diff "delta"
 git config --global pager.show "delta"
 git config --global pager.log "delta"
+git config --global pager.blame "delta"
 git config --global interactive.diffFilter "delta --color-only"
 
 git config --global merge.conflictstyle "diff3"
