@@ -96,6 +96,17 @@
         },
         "gfycat": {
             "format": ["webm", "mp4", "mobile", "gif"]
-        }
+        },
+        "tiktok": {
+          "user": {
+              "include": [
+                  "avatar",
+                  "likes",
+                  "posts",
+                  "saved",
+                  "stories"
+              ]
+          }
+      }
     }
 }
