@@ -1,5 +1,9 @@
 xontrib load abbrevs
 
+def _is_on_path(app):
+    """Return whether the thing is on path or not, without printing errors when it's not."""
+    result = !(which @(cmd))
+    return result.output.strip() if result.returncode == 0 else None
 
 def _first(word, sub):
     """Perform the substitution if and only if the command is the first word on the line."""
@@ -71,9 +75,9 @@ abbrevs["sudo"] = "/usr/sbin/sudo"
 abbrevs["su"] = "/usr/sbin/su"
 abbrevs["systemctl"] = "/usr/sbin/systemctl"
 
-if pkgman := $(which pacman 2>/dev/null):
+if pkgman := _is_on_path("pacman"):
     abbrevs["pacman"] = f"{pkgman} --color always"
-if aurman := $(which paru 2>/dev/null):
+if aurman := _is_on_path("paru"):
     abbrevs["paru"] = f"{aurman} --color always"
 
 if aurman:
