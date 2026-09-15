@@ -1,0 +1,9 @@
+plugin-dirs=~/.config/streamlink/plugins
+
+# playback
+player=mpv
+default-stream=best
+
+# twitch
+twitch-disable-ads
+twitch-low-latency
