@@ -1,9 +1,9 @@
 source_up &> /dev/null || true
 
 export GIT_AUTHOR_NAME="Ryan Delaney"
-export GIT_AUTHOR_EMAIL="ryan.patrick.delaney+github@protonmail.com"
+export GIT_AUTHOR_EMAIL="president@whitehouse.gov"
 export GIT_COMITTER_NAME="Ryan Delaney"
-export GIT_AUTHOR_EMAIL="ryan.patrick.delaney+github@protonmail.com"
+export GIT_AUTHOR_EMAIL="president@whitehouse.gov"
 #export PYTHONWARNINGS="default"  # use 'error' to convert warnings into exceptions
 
 # vim: ft=direnv:
