@@ -93,7 +93,7 @@ if len(pkgman):
     abbrevs["yaclean"]  = f"{pkgman} -Rs @$(/usr/bin/pacman -Qtdq)"
 
 # Do different stuff when we are on macOS
-if platform.system() == "Darwin":
+if platform.system().lower() == "darwin":
     if pkgman := $(which brew 2>/dev/null):
         abbrevs["ya"] = f"{pkgman}"
         abbrevs["yas"] = f"{pkgman} install"
