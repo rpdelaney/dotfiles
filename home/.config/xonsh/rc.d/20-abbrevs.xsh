@@ -2,8 +2,8 @@ xontrib load abbrevs
 
 def _is_on_path(app):
     """Return whether the thing is on path or not, without printing errors when it's not."""
-    result = !(which @(cmd))
-    return result.output.strip() if result.returncode == 0 else None
+    if result := !(which @(cmd)):
+        return result.strip() if result.returncode == 0 and result.errors == "" else ""
 
 def _first(word, sub):
     """Perform the substitution if and only if the command is the first word on the line."""
