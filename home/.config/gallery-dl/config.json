@@ -29,6 +29,7 @@
             }
         ],
         "include": "all",
+        "filename": "{filename[b:50]}",
 
         "ytdl": {
             "enabled": true,
