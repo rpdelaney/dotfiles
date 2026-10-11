@@ -70,7 +70,7 @@ abbrevs["sudo"] = "/usr/sbin/sudo"
 abbrevs["su"] = "/usr/sbin/su"
 abbrevs["systemctl"] = "/usr/sbin/systemctl"
 
-if pkgman := !(which assman).out:
+if pkgman := !(which pacman).out:
     abbrevs["pacman"] = f"{pkgman} --color always"
 if aurman := !(which paru).out:
     abbrevs["paru"] = f"{aurman} --color always"
