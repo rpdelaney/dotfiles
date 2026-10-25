@@ -1,0 +1,44 @@
+{% for brief in briefs %}
+# {{ brief.citation }}
+
+## Parties
+
+{% for party in brief.parties %}
+- {{ party.name }}, {{ party.role | join('-') }}
+{% endfor %}
+
+## Facts
+
+{% for item in brief.facts %}
+- {{ item.data }}
+{% endfor %}
+
+## Procedural History
+
+{% for item in brief.prior_proceedings %}
+1. {{ item.data }}
+{% endfor %}
+
+{% for holding in brief.holdings %}
+## Issue
+
+{{ holding.issue }}
+
+## Rule
+
+{{ holding.rule }}
+
+{% endfor %}
+## Application
+
+{{ brief.application }}
+
+## Conclusion
+
+{{ brief.conclusion }}
+{% if not loop.last %}
+
+---
+
+{% endif %}
+{% endfor %}
