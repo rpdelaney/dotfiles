@@ -29,7 +29,7 @@
             }
         ],
         "include": "all",
-        "filename": "{filename[b:50]}{filename:?{id:?_}{id}}.{extension}",
+        "filename": "{filename[b:50]}_{id}.{extension}",
 
         "ytdl": {
             "enabled": true,
