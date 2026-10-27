@@ -29,7 +29,7 @@
             }
         ],
         "include": "all",
-        "filename": "{filename[b:50]}.{extension}",
+        "filename": "{filename[b:50]}{filename:?{id:?_}{id}}.{extension}",
 
         "ytdl": {
             "enabled": true,
@@ -98,6 +98,7 @@
             "format": ["webm", "mp4", "mobile", "gif"]
         },
         "tiktok": {
+          "filename": "{id}_{num}.{extension}",
           "user": {
               "include": [
                   "avatar",
