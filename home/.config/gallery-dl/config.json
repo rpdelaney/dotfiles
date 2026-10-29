@@ -68,7 +68,6 @@
             "directory": ["{author}"],
             "filename": "{id}_{num}.{extension}",
             "max-retries": 3,
-            "refresh-token": "158243922968846-4kcqttZSjaakre02SbqNqkSLurLS_Q",
             "parent-directory": true,
             "parent-metadata": "_reddit",
             "retry-sleep": [30, 60],
