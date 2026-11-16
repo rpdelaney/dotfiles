@@ -66,6 +66,10 @@
         },
         "reddit": {
             "directory": ["{author}"],
+            "tls12": false,
+            "tls13": false,
+            "browser": "firefox",
+            "cookies": ["firefox"],
             "filename": "{id}_{num}.{extension}",
             "max-retries": 3,
             "parent-directory": true,
